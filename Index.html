@@ -1,366 +1,333 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="es"><head>
+<html class="light" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ARIPA | Digital Marketing Consultancy</title>
+<!-- Google Fonts: Plus Jakarta Sans & Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Plus_Jakarta_Sans:wght@400;500;600;700;800&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
             colors: {
-              "tertiary-dim": "#39bce2",
-              "on-surface-variant": "#a8abb0",
-              "tertiary-fixed": "#4dc9f1",
-              "background": "#0c0e10",
-              "on-background": "#e3e6ea",
-              "on-primary-fixed-variant": "#6100b8",
-              "on-tertiary-fixed-variant": "#00485a",
-              "primary-fixed": "#d4b2ff",
-              "tertiary-container": "#4dc9f1",
-              "on-tertiary": "#00485a",
-              "primary-container": "#9d50ff",
-              "on-secondary-fixed": "#632569",
-              "surface-tint": "#b884ff",
-              "secondary-container": "#45044d",
-              "inverse-on-surface": "#535557",
-              "secondary": "#faacfa",
-              "on-secondary": "#64266a",
-              "on-tertiary-container": "#003e4e",
-              "tertiary": "#5ed8ff",
-              "on-tertiary-fixed": "#002732",
-              "on-error": "#490013",
-              "secondary-fixed-dim": "#ffc0fe",
-              "surface-container-high": "#1d2023",
-              "surface-container-low": "#111416",
-              "on-secondary-fixed-variant": "#834288",
-              "surface-bright": "#282d31",
-              "primary": "#b884ff",
-              "outline": "#72767a",
-              "secondary-dim": "#eb9fec",
-              "surface-container": "#171a1d",
-              "secondary-fixed": "#ffd6fb",
-              "on-surface": "#e3e6ea",
-              "primary-dim": "#9547f7",
-              "on-secondary-container": "#d48ad6",
-              "surface-dim": "#0c0e10",
-              "error-dim": "#c8475d",
-              "tertiary-fixed-dim": "#39bce2",
-              "primary-fixed-dim": "#c9a1ff",
-              "on-primary-fixed": "#390072",
-              "surface": "#0c0e10",
-              "inverse-primary": "#7e29df",
-              "surface-container-lowest": "#000000",
-              "on-primary-container": "#000000",
-              "on-primary": "#2f0060",
-              "outline-variant": "#44484c",
-              "error": "#fd6f85",
-              "inverse-surface": "#f9f9fc",
-              "surface-variant": "#22262a",
-              "surface-container-highest": "#22262a",
-              "error-container": "#8a1632",
-              "on-error-container": "#ff97a3"
+              "on-tertiary-fixed": "#4e2a46",
+              "on-tertiary-fixed-variant": "#6d4664",
+              "on-primary": "#fdf7ff",
+              "on-secondary": "#f9f9fc",
+              "primary-fixed-dim": "#b9a6f0",
+              "on-secondary-fixed": "#3e3f42",
+              "tertiary-fixed-dim": "#eab7db",
+              "secondary": "#5d5f62",
+              "tertiary-container": "#f9c5ea",
+              "surface-container": "#eceef1",
+              "inverse-surface": "#0c0e10",
+              "on-primary-fixed-variant": "#49387a",
+              "primary-container": "#c7b3ff",
+              "on-tertiary": "#fff7f9",
+              "surface-container-highest": "#dfe3e7",
+              "outline": "#777b7f",
+              "primary": "#655498",
+              "on-surface-variant": "#5b6063",
+              "on-primary-fixed": "#2a185a",
+              "on-error-container": "#6e0523",
+              "error-dim": "#6b0221",
+              "on-surface": "#2e3336",
+              "primary-fixed": "#c7b3ff",
+              "on-secondary-fixed-variant": "#5a5b5e",
+              "surface-tint": "#655498",
+              "surface-container-low": "#f2f4f6",
+              "inverse-primary": "#c7b3ff",
+              "outline-variant": "#aeb2b6",
+              "secondary-dim": "#515356",
+              "surface": "#f9f9fb",
+              "tertiary": "#7b5271",
+              "tertiary-fixed": "#f9c5ea",
+              "secondary-container": "#e2e2e5",
+              "on-tertiary-container": "#633c5a",
+              "secondary-fixed-dim": "#d4d4d7",
+              "background": "#f9f9fb",
+              "surface-dim": "#d7dadf",
+              "tertiary-dim": "#6e4665",
+              "surface-container-lowest": "#ffffff",
+              "error-container": "#f97386",
+              "on-error": "#fff7f7",
+              "surface-container-high": "#e6e8ec",
+              "surface-bright": "#f9f9fb",
+              "error": "#a8364b",
+              "on-secondary-container": "#505254",
+              "primary-dim": "#59488b",
+              "secondary-fixed": "#e2e2e5",
+              "on-primary-container": "#402f70",
+              "surface-variant": "#dfe3e7",
+              "inverse-on-surface": "#9c9d9f",
+              "on-background": "#2e3336"
             },
             fontFamily: {
               "headline": ["Plus Jakarta Sans"],
               "body": ["Plus Jakarta Sans"],
               "label": ["Plus Jakarta Sans"]
             },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
           },
         },
       }
     </script>
 <style>
-      body { font-family: 'Plus Jakarta Sans', sans-serif; }
-      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-      .tonal-shift { transition: background-color 0.3s ease; }
-      .glass-effect { backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-effect {
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+      }
+      .no-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
     </style>
-</head>
-<body class="bg-surface text-on-surface selection:bg-primary/30">
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface font-body text-on-surface antialiased overflow-x-hidden">
 <!-- TopAppBar -->
-<header class="fixed top-0 w-full z-50 bg-surface/80 dark:bg-slate-950/80 backdrop-blur-md shadow-sm dark:shadow-none">
-<nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+<header class="fixed top-0 w-full z-50 bg-white/90 dark:bg-slate-900/90 backdrop-blur-md shadow-sm dark:shadow-none flex justify-between items-center px-6 py-4">
 <div class="flex items-center gap-3">
-<img alt="ARIPA Logo" class="w-10 h-10 object-contain" data-alt="Minimalist logo featuring a geometric letter 'a' in vibrant lavender purple against a dark sleek background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSYGU6csiMLDY82qmHB64UUANhwdH7XJ65fZxnK9R8XLnnvJObh3C3Ksd-QWzSOfG2Xc-wcWWFbtgZPcKuIGmXMCAhG-Wmr5n9nltYJTpf2_hCFgqnVrL6WIO0dMu1aDoR0Jx3DdDKwQTVT8IUGUD2Jlem75_vQx2HWgvzPxxbiy2vtOffBDlGcSzH8F0PTkTV_JyVhUhZO1f7ffMMo8XzH90raQ4hLH_KupsW3wX3hQjLGmp22FiDx4OKETvMOo67v6_qKfvP2_-O"/>
-<span class="text-2xl font-bold tracking-tighter text-purple-500 dark:text-purple-400">ARIPA</span>
+<img alt="ARIPA Logo" class="w-8 h-8 object-contain" data-alt="minimalist geometric isotype logo for a high-end digital agency with clean sharp lines and lavender accents" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATvKjj3JSQOVLzPBgO0k8vCGIFxxXIiN3hYE2VCBHCDj156Posw7Dym0SiCfmIm8Djc26tCWEIXiC4XrRg4d2_p2ZMeGHIsgUMIFYDKC9KzhO7NJ0kNXb9IKZffCmZKHzqQn1ujzY2QY3V5auLc3oM8_uFqjpU2Yaj1i71ujmad7VALZqK69Hk6zbcQoqYOYVB1EQabkdFCy0ZEqbRE1P5_lhbwrg1kxSC6O2N8raStLP_nHMVSYk3BrDHbMa1azps2L6S3Wi-0uoe"/>
+<span class="text-lg font-bold text-slate-800 dark:text-slate-100 font-['Plus_Jakarta_Sans'] tracking-tight">ARIPA</span>
 </div>
-<div class="hidden md:flex items-center gap-8">
-<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 dark:hover:text-purple-300 transition-colors font-medium" href="#about">Quiénes somos</a>
-<a class="text-slate-600 dark:text-slate-400 hover:text-purple-500 dark:hover:text-purple-300 transition-colors font-medium" href="#services">Servicios</a>
-<a class="px-6 py-2 bg-gradient-to-r from-primary to-primary-container text-on-primary font-bold rounded-lg hover:scale-95 duration-150 transition-transform" href="#contact">Contacto</a>
-</div>
-</nav>
+<button class="text-[#655498] dark:text-[#8E7CC3] hover:bg-slate-100/50 p-2 rounded-lg transition-colors scale-95 active:scale-100 duration-200">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
 </header>
-<main class="pt-24">
+<!-- Navigation Drawer (Hidden by default, structure provided) -->
+<div class="fixed inset-0 z-[60] bg-on-surface/20 backdrop-blur-sm hidden" id="nav-drawer">
+<aside class="w-80 max-w-[85vw] h-full bg-white dark:bg-slate-950 flex flex-col p-8 shadow-2xl">
+<div class="flex justify-between items-center mb-12">
+<span class="text-xl font-bold text-[#655498]">ARIPA</span>
+<button class="material-symbols-outlined text-slate-400">close</button>
+</div>
+<nav class="flex flex-col gap-6">
+<a class="text-slate-600 dark:text-slate-400 font-['Plus_Jakarta_Sans'] text-label-md uppercase tracking-wider hover:pl-2 transition-all duration-300 flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="info">info</span> Quiénes somos
+                </a>
+<a class="text-slate-600 dark:text-slate-400 font-['Plus_Jakarta_Sans'] text-label-md uppercase tracking-wider hover:pl-2 transition-all duration-300 flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="mail">mail</span> Contacto
+                </a>
+<a class="text-[#655498] dark:text-[#8E7CC3] font-semibold bg-slate-50 dark:bg-slate-900 p-3 rounded-lg flex items-center gap-4" href="#">
+<span class="material-symbols-outlined" data-icon="login">login</span> Área cliente
+                </a>
+</nav>
+</aside>
+</div>
+<main class="pt-20 pb-24">
 <!-- Hero Section -->
-<section class="relative min-h-[870px] flex items-center overflow-hidden px-6 lg:px-12">
-<div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-<div class="z-10">
-<h1 class="text-5xl lg:text-7xl font-extrabold tracking-tighter text-on-surface mb-6 leading-[1.1]">
-                        Marketing Digital con <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary">Sentido Estratégico.</span>
+<section class="px-6 py-12 md:py-24">
+<div class="flex flex-col gap-8">
+<div class="space-y-4">
+<h1 class="text-4xl md:text-6xl font-bold tracking-tight text-on-surface leading-tight font-headline">
+                        Autoridad Digital <br/> <span class="text-primary">Estrategia Real.</span>
 </h1>
-<p class="text-xl text-on-surface-variant max-w-xl mb-10 leading-relaxed">
-                        Elevamos marcas a través de la curación digital y la ciencia del comportamiento. Innovación que genera confianza, resultados que impulsan el crecimiento.
+<p class="text-lg text-on-surface-variant max-w-md">
+                        Maximizamos tu visibilidad mediante arquitecturas SEO avanzadas y optimización para la nueva era de AEO y GEO.
                     </p>
-<div class="flex gap-4">
-<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-bold hover:shadow-lg hover:shadow-primary/20 transition-all">Impulsa tu negocio</button>
-<button class="border border-outline-variant text-on-surface px-8 py-4 rounded-lg font-bold hover:bg-surface-variant transition-all">Nuestro método</button>
+</div>
+<div class="w-full h-64 md:h-[450px] rounded-xl overflow-hidden shadow-sm">
+<img alt="Strategy Consultation" class="w-full h-full object-cover" data-alt="professional modern office meeting room with natural light and minimalist decor where a diverse team works on digital strategy charts" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBdnMXEB3blF5YunA-QU-pS4qwQhZSJ5JeDgBNxqhm53QCmBL2J9XGZq2x2FCkQDqTQd2cwXuu-KzZoxcgVX2R33oLEzH0AEcZ53PGpYpsKcqOIRgmWbM2UGIZrY6cLpOyvaEyrkp2-Dc-usu5LyfpkpiR5TVpWJNne4cI22cGgaO2wh8wqwg_TqQnDx-en3hEENbhirSlRoqisiYPiSTjaJg-c3v5AqOrgBv5bz84CBN6-6OuDMFoKU_df4TEZ6vfKF43YYyMy_bcZ"/>
 </div>
 </div>
-<div class="relative">
-<div class="absolute -top-20 -right-20 w-80 h-80 bg-primary/20 rounded-full blur-[100px]"></div>
-<div class="rounded-2xl overflow-hidden shadow-2xl border border-outline-variant/15">
-<img class="w-full h-full object-cover" data-alt="Sleek high-tech workspace with multiple clean displays showing data analytics and abstract violet light reflections in a minimalist office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBPAGzuY0fkMbzyPCNn0Wl7GkPlXCmbF3fZ7VY78N6HZoCJDPLGoXxatiTAKMRy27XlkEA43YVFvaO7AsXx_yKN4JXGG-1BGCQL8160WVlcafqyhxyT1cWoJnHxazUYIq7uEoImBOaGTHZixVkN-18TWmU0fgXifAHraXyZoREx0q_xTd89E8-NlrNCfhPkXHy04LEOqb_yw_Z17gR3lnojAfmWE7CNoYCbZTkTmBidfB41HbrHK3zkv4ZO4PHHplMBcxOsKBm-6CVf"/>
+</section>
+<!-- ¿Qué aportamos? (Asymmetric Layout) -->
+<section class="bg-surface-container-low px-6 py-20">
+<div class="max-w-screen-xl mx-auto flex flex-col md:flex-row gap-12">
+<div class="md:w-1/3">
+<h2 class="text-3xl font-semibold tracking-tight font-headline text-on-surface">¿Qué aportamos?</h2>
+</div>
+<div class="md:w-2/3 space-y-8">
+<div class="border-l-2 border-primary/20 pl-6 py-2">
+<h3 class="text-xl font-bold mb-2">Dominio del Mercado</h3>
+<p class="text-on-surface-variant">No solo aparecemos en Google. Configuramos cómo te perciben los motores de búsqueda y las IA generativas.</p>
+</div>
+<div class="border-l-2 border-primary/20 pl-6 py-2">
+<h3 class="text-xl font-bold mb-2">Crecimiento Sostenible</h3>
+<p class="text-on-surface-variant">Modelos de escalabilidad basados en datos reales, alejados de métricas de vanidad y enfocados en el ROI.</p>
 </div>
 </div>
 </div>
 </section>
-<!-- Aportamos (Value Proposition) -->
-<section class="py-24 bg-surface-container-low">
-<div class="max-w-7xl mx-auto px-6">
-<div class="mb-16">
-<label class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Aportamos</label>
-<h2 class="text-4xl font-bold tracking-tight">Valor real en cada interacción</h2>
+<!-- Qué hacemos (Cards Grid) -->
+<section class="px-6 py-20 bg-surface">
+<div class="text-center mb-16">
+<h2 class="text-3xl font-semibold tracking-tight font-headline text-on-surface mb-4">Qué hacemos</h2>
+<div class="h-1 w-12 bg-primary mx-auto"></div>
 </div>
-<div class="grid md:grid-cols-3 gap-8">
-<div class="p-8 rounded-xl bg-surface-container border border-outline-variant/10 hover:border-primary/30 transition-all group">
-<span class="material-symbols-outlined text-4xl text-primary mb-6 block" data-icon="insights">insights</span>
-<h3 class="text-xl font-bold mb-4">Análisis Predictivo</h3>
-<p class="text-on-surface-variant leading-relaxed">Anticipamos las tendencias del mercado para posicionar su marca antes que la competencia.</p>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="bg-surface-container-low p-8 rounded-xl transition-all duration-300 hover:bg-surface-container-lowest hover:-translate-y-1 hover:shadow-lg group">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="trending_up">trending_up</span>
 </div>
-<div class="p-8 rounded-xl bg-surface-container border border-outline-variant/10 hover:border-primary/30 transition-all">
-<span class="material-symbols-outlined text-4xl text-primary mb-6 block" data-icon="psychology">psychology</span>
-<h3 class="text-xl font-bold mb-4">Economía del Comportamiento</h3>
-<p class="text-on-surface-variant leading-relaxed">Diseñamos estrategias basadas en cómo las personas realmente deciden y consumen.</p>
+<h3 class="text-xl font-bold mb-3">CRO</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Optimización de ratios de conversión mediante análisis de comportamiento heurístico.</p>
+<button class="text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Saber más <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></button>
 </div>
-<div class="p-8 rounded-xl bg-surface-container border border-outline-variant/10 hover:border-primary/30 transition-all">
-<span class="material-symbols-outlined text-4xl text-primary mb-6 block" data-icon="verified">verified</span>
-<h3 class="text-xl font-bold mb-4">Confianza Digital</h3>
-<p class="text-on-surface-variant leading-relaxed">Construimos autoridad de marca mediante coherencia visual y narrativa técnica impecable.</p>
+<!-- Card 2 -->
+<div class="bg-surface-container-low p-8 rounded-xl transition-all duration-300 hover:bg-surface-container-lowest hover:-translate-y-1 hover:shadow-lg group">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="rocket_launch">rocket_launch</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Growth</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Estrategias de crecimiento acelerado integrando producto, datos y marketing.</p>
+<button class="text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Saber más <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></button>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface-container-low p-8 rounded-xl transition-all duration-300 hover:bg-surface-container-lowest hover:-translate-y-1 hover:shadow-lg group">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="architecture">architecture</span>
+</div>
+<h3 class="text-xl font-bold mb-3">UX</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Diseño de experiencias centradas en el usuario que impulsan la lealtad de marca.</p>
+<button class="text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Saber más <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></button>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface-container-low p-8 rounded-xl transition-all duration-300 hover:bg-surface-container-lowest hover:-translate-y-1 hover:shadow-lg group">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="hub">hub</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Lead Gen</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Captación cualificada de prospectos mediante funnels de alta intención.</p>
+<button class="text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Saber más <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></button>
+</div>
+<!-- Card 5 -->
+<div class="bg-surface-container-low p-8 rounded-xl transition-all duration-300 hover:bg-surface-container-lowest hover:-translate-y-1 hover:shadow-lg group">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="ads_click">ads_click</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Paid Media</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Gestión avanzada de presupuestos en Google Ads, Meta y LinkedIn Campaign Manager.</p>
+<button class="text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Saber más <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></button>
+</div>
+<!-- Card 6 -->
+<div class="bg-surface-container-low p-8 rounded-xl transition-all duration-300 hover:bg-surface-container-lowest hover:-translate-y-1 hover:shadow-lg group">
+<div class="w-12 h-12 rounded-lg bg-primary-container flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary" data-icon="campaign">campaign</span>
+</div>
+<h3 class="text-xl font-bold mb-3">Marketing</h3>
+<p class="text-sm text-on-surface-variant leading-relaxed mb-6">Consultoría estratégica 360º para empresas en fase de expansión digital.</p>
+<button class="text-primary font-bold text-sm flex items-center gap-2 group-hover:gap-3 transition-all">Saber más <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></button>
+</div>
+</div>
+</section>
+<!-- Cómo lo hacemos (Editorial Section) -->
+<section class="bg-surface-container-high px-6 py-20">
+<div class="max-w-screen-md mx-auto">
+<h2 class="text-3xl font-semibold font-headline mb-12">Cómo lo hacemos</h2>
+<div class="space-y-16">
+<div class="flex gap-6">
+<span class="text-4xl font-extrabold text-primary/30">01</span>
+<div>
+<h4 class="text-lg font-bold mb-2">Auditoría Profunda</h4>
+<p class="text-on-surface-variant">Desgranamos cada byte de tu presencia actual para encontrar fugas de oportunidad.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="text-4xl font-extrabold text-primary/30">02</span>
+<div>
+<h4 class="text-lg font-bold mb-2">Hipótesis Basada en Datos</h4>
+<p class="text-on-surface-variant">No adivinamos. Formulamos estrategias testables con KPIs de negocio claros.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<span class="text-4xl font-extrabold text-primary/30">03</span>
+<div>
+<h4 class="text-lg font-bold mb-2">Ejecución y Refinado</h4>
+<p class="text-on-surface-variant">Ciclos ágiles de implementación y optimización constante para el máximo impacto.</p>
+</div>
 </div>
 </div>
 </div>
 </section>
 <!-- Quiénes somos -->
-<section class="py-32 px-6" id="about">
-<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-16">
-<div class="md:w-1/2 order-2 md:order-1">
-<div class="relative inline-block">
-<img class="rounded-xl grayscale hover:grayscale-0 transition-all duration-700 shadow-2xl" data-alt="Close up of a professional creative team collaborating over a tablet in a modern sunlit design studio" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrvvTz9A9GCRY5p9r8ezsWRmRsfw9aPK7s-9mV-sfq5fFwxmvx84eYL31InT3K8Tqxb2iZuGqjWIjlThKVa0tJF_PVa5IG926K0z1SCmBjgN7ExLcAk1Wr2IbyynCCJWjumMRNf13C8_Bsdwmqr9m7ThliLW6Ag3vykljZY2v8vOxcnAoPL_X9kOL54PM1sxTnccdKamLYWaW7lWpxIUJ3Kc63605sbu8XkQk7hrG-78T0--qjM3uJNujoIVLJ0SmtPvrKABsT_80t"/>
-<div class="absolute -bottom-6 -right-6 bg-primary p-6 rounded-lg text-on-primary font-black text-2xl">
-                            +10 Años
-                        </div>
+<section class="px-6 py-20 bg-white">
+<div class="flex flex-col md:flex-row gap-12 items-center">
+<div class="md:w-1/2 rounded-2xl overflow-hidden aspect-square">
+<img alt="The Team" class="w-full h-full object-cover" data-alt="a small group of professional strategists collaborating in a bright modern studio with large windows and industrial details" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6WOl_WDlLHVFlkWXEmEhpaY_FM9O309ivmz5aCAK5W9S_lbAQda5whdqElIa6pu-BvT2yLVOyowrFBZ7bdD-4TEHsnsaLuUVe8YM316SzB8a3GtpuC5v5ODmE7HQLapyFAp_BrHIWyGQ0Ef5F_EGNDDqNNOzgHvBO87R_jCa6FOg1_lgvMGZcLf6QLvzTZva_jTJvWw_QpG4aSJY6kfDPpUIqJCmr1bXg7s-6TqxBzj1acXHGpOuyVkKbq10MWlDy9X5_bvB9063O"/>
 </div>
-</div>
-<div class="md:w-1/2 order-1 md:order-2">
-<label class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Quiénes somos</label>
-<h2 class="text-4xl lg:text-5xl font-bold tracking-tight mb-8">Curadores de <br/><span class="text-primary">Estrategias Digitales</span></h2>
-<p class="text-lg text-on-surface-variant mb-6 leading-relaxed">
-                        En ARIPA, no solo gestionamos campañas; curamos experiencias. Nacimos con la visión de profesionalizar el marketing digital a través de la precisión y el análisis profundo.
+<div class="md:w-1/2">
+<h2 class="text-3xl font-semibold font-headline mb-6">Quiénes somos</h2>
+<p class="text-lg text-on-surface-variant leading-relaxed mb-6">
+                        ARIPA nace de la necesidad de aportar claridad técnica en un mercado saturado de promesas vacías. Somos un equipo boutique de consultores obsesionados con la eficiencia.
                     </p>
-<p class="text-lg text-on-surface-variant leading-relaxed">
-                        Nuestro equipo combina el rigor de los datos con la sutileza del diseño premium, asegurando que cada euro invertido se traduzca en autoridad de marca y ROI sostenible.
+<p class="text-on-surface-variant italic">
+                        "Nuestra misión es transformar el ruido digital en señales de negocio tangibles."
                     </p>
 </div>
 </div>
 </section>
-<!-- Qué hacemos (Servicios) -->
-<section class="py-24 bg-surface-container-low" id="services">
-<div class="max-w-7xl mx-auto px-6">
-<div class="text-center mb-20">
-<h2 class="text-4xl font-bold tracking-tight mb-4">Nuestras Especialidades</h2>
-<p class="text-on-surface-variant max-w-2xl mx-auto">Soluciones integrales diseñadas para el ecosistema digital moderno.</p>
-</div>
-<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-<!-- Service Cards -->
-<a class="group block p-1 bg-gradient-to-br from-transparent to-transparent hover:from-primary/20 hover:to-secondary/20 rounded-xl transition-all duration-300" href="#contact">
-<div class="h-full p-8 rounded-lg bg-surface border border-outline-variant/10 group-hover:bg-surface-container-highest transition-colors flex flex-col">
-<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="query_stats">query_stats</span>
-<h3 class="text-xl font-bold mb-3">CRO &amp; Optimizacion</h3>
-<p class="text-on-surface-variant mb-6 flex-grow">Maximizamos el rendimiento de su sitio web convirtiendo cada visita en una oportunidad de negocio.</p>
-<span class="text-primary text-sm font-bold flex items-center gap-2">Consultar servicio <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></span>
-</div>
-</a>
-<a class="group block p-1 bg-gradient-to-br from-transparent to-transparent hover:from-primary/20 hover:to-secondary/20 rounded-xl transition-all duration-300" href="#contact">
-<div class="h-full p-8 rounded-lg bg-surface border border-outline-variant/10 group-hover:bg-surface-container-highest transition-colors flex flex-col">
-<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="trending_up">trending_up</span>
-<h3 class="text-xl font-bold mb-3">Growth Hacking</h3>
-<p class="text-on-surface-variant mb-6 flex-grow">Estrategias de crecimiento acelerado basadas en experimentación y datos reales.</p>
-<span class="text-primary text-sm font-bold flex items-center gap-2">Consultar servicio <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></span>
-</div>
-</a>
-<a class="group block p-1 bg-gradient-to-br from-transparent to-transparent hover:from-primary/20 hover:to-secondary/20 rounded-xl transition-all duration-300" href="#contact">
-<div class="h-full p-8 rounded-lg bg-surface border border-outline-variant/10 group-hover:bg-surface-container-highest transition-colors flex flex-col">
-<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="web">web</span>
-<h3 class="text-xl font-bold mb-3">Diseño UX/UI</h3>
-<p class="text-on-surface-variant mb-6 flex-grow">Interfaces intuitivas que eliminan la fricción y mejoran la experiencia del usuario final.</p>
-<span class="text-primary text-sm font-bold flex items-center gap-2">Consultar servicio <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></span>
-</div>
-</a>
-<a class="group block p-1 bg-gradient-to-br from-transparent to-transparent hover:from-primary/20 hover:to-secondary/20 rounded-xl transition-all duration-300" href="#contact">
-<div class="h-full p-8 rounded-lg bg-surface border border-outline-variant/10 group-hover:bg-surface-container-highest transition-colors flex flex-col">
-<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="person_add">person_add</span>
-<h3 class="text-xl font-bold mb-3">Lead Generation</h3>
-<p class="text-on-surface-variant mb-6 flex-grow">Captación de clientes potenciales de alta calidad mediante embudos de venta optimizados.</p>
-<span class="text-primary text-sm font-bold flex items-center gap-2">Consultar servicio <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></span>
-</div>
-</a>
-<a class="group block p-1 bg-gradient-to-br from-transparent to-transparent hover:from-primary/20 hover:to-secondary/20 rounded-xl transition-all duration-300" href="#contact">
-<div class="h-full p-8 rounded-lg bg-surface border border-outline-variant/10 group-hover:bg-surface-container-highest transition-colors flex flex-col">
-<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="campaign">campaign</span>
-<h3 class="text-xl font-bold mb-3">Paid Media</h3>
-<p class="text-on-surface-variant mb-6 flex-grow">Gestión experta en Google Ads, Meta Ads y LinkedIn para un alcance quirúrgico.</p>
-<span class="text-primary text-sm font-bold flex items-center gap-2">Consultar servicio <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></span>
-</div>
-</a>
-<a class="group block p-1 bg-gradient-to-br from-transparent to-transparent hover:from-primary/20 hover:to-secondary/20 rounded-xl transition-all duration-300" href="#contact">
-<div class="h-full p-8 rounded-lg bg-surface border border-outline-variant/10 group-hover:bg-surface-container-highest transition-colors flex flex-col">
-<span class="material-symbols-outlined text-primary text-4xl mb-6" data-icon="hub">hub</span>
-<h3 class="text-xl font-bold mb-3">Marketing Automations</h3>
-<p class="text-on-surface-variant mb-6 flex-grow">Sistemas que trabajan por usted, automatizando flujos de trabajo y nutrición de leads.</p>
-<span class="text-primary text-sm font-bold flex items-center gap-2">Consultar servicio <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span></span>
-</div>
-</a>
-</div>
+<!-- Empresas que confían -->
+<section class="px-6 py-16 bg-surface-container-low overflow-hidden">
+<h2 class="text-center text-label-md font-bold text-on-surface-variant uppercase tracking-widest mb-12">Empresas que confían en nosotros</h2>
+<div class="flex flex-wrap justify-center items-center gap-12 grayscale opacity-60">
+<span class="text-xl font-extrabold tracking-tighter">TECHCORP</span>
+<span class="text-xl font-extrabold tracking-tighter">VITALIA</span>
+<span class="text-xl font-extrabold tracking-tighter">NEXUS_</span>
+<span class="text-xl font-extrabold tracking-tighter">SENSIS</span>
+<span class="text-xl font-extrabold tracking-tighter">MODERN_CO</span>
 </div>
 </section>
-<!-- Cómo lo hacemos -->
-<section class="py-32 px-6">
-<div class="max-w-7xl mx-auto">
-<div class="grid lg:grid-cols-2 gap-20 items-start">
+<!-- Formulario de contacto -->
+<section class="px-6 py-20 bg-surface" id="contacto">
+<div class="max-w-xl mx-auto">
+<h2 class="text-3xl font-semibold font-headline mb-4 text-center">Hablemos de tu proyecto</h2>
+<p class="text-center text-on-surface-variant mb-12">Cuéntanos tus objetivos y te daremos un diagnóstico inicial.</p>
+<form action="mailto:rdrgzjavier@gmail.com" class="space-y-6" enctype="text/plain" method="POST">
 <div>
-<label class="text-primary font-bold tracking-[0.2em] uppercase text-xs mb-4 block">Metodología</label>
-<h2 class="text-4xl font-bold mb-8">Un proceso Iterativo hacia el Éxito</h2>
-<div class="space-y-12 mt-12">
-<div class="flex gap-6">
-<div class="flex-shrink-0 w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center font-bold text-primary">01</div>
+<label class="block text-label-md font-semibold text-on-surface mb-2 uppercase tracking-tight" for="name">Nombre completo</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-colors placeholder:text-outline-variant" id="name" name="name" placeholder="Escribe tu nombre" required="" type="text"/>
+</div>
 <div>
-<h4 class="text-xl font-bold mb-2">Descubrimiento &amp; Auditoría</h4>
-<p class="text-on-surface-variant">Analizamos su situación actual y detectamos las fugas de conversión más críticas.</p>
+<label class="block text-label-md font-semibold text-on-surface mb-2 uppercase tracking-tight" for="email">Email corporativo</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-colors placeholder:text-outline-variant" id="email" name="email" placeholder="email@empresa.com" required="" type="email"/>
 </div>
-</div>
-<div class="flex gap-6">
-<div class="flex-shrink-0 w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center font-bold text-primary">02</div>
 <div>
-<h4 class="text-xl font-bold mb-2">Hipótesis Estratégica</h4>
-<p class="text-on-surface-variant">Planteamos soluciones basadas en ciencia de datos y psicología del consumidor.</p>
+<label class="block text-label-md font-semibold text-on-surface mb-2 uppercase tracking-tight" for="phone">Teléfono</label>
+<input class="w-full bg-transparent border-0 border-b-2 border-outline-variant focus:ring-0 focus:border-primary px-0 py-3 transition-colors placeholder:text-outline-variant" id="phone" name="phone" placeholder="+34 000 000 000" required="" type="tel"/>
 </div>
+<div class="pt-4">
+<button class="w-full bg-primary text-white py-4 rounded-full font-bold text-lg hover:brightness-110 active:scale-[0.98] transition-all shadow-md" type="submit">
+                            Enviar propuesta
+                        </button>
 </div>
-<div class="flex gap-6">
-<div class="flex-shrink-0 w-12 h-12 bg-surface-container-highest rounded-full flex items-center justify-center font-bold text-primary">03</div>
-<div>
-<h4 class="text-xl font-bold mb-2">Ejecución &amp; Escalado</h4>
-<p class="text-on-surface-variant">Implementamos con precisión quirúrgica y escalamos lo que funciona.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="bg-surface-container p-12 rounded-2xl border border-outline-variant/10 relative overflow-hidden">
-<div class="absolute top-0 right-0 p-8 opacity-10">
-<span class="material-symbols-outlined text-[10rem]" data-icon="architecture">architecture</span>
-</div>
-<h3 class="text-2xl font-bold mb-6">Marketing Inbound vs Outbound</h3>
-<p class="text-on-surface-variant mb-8">No creemos en una sola vía. Equilibramos la atracción de marca a largo plazo con la captación directa e inmediata.</p>
-<div class="space-y-4">
-<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden">
-<div class="h-full bg-primary w-[85%]"></div>
-</div>
-<div class="flex justify-between text-sm font-bold"><span class="text-primary">Eficacia en Conversión</span><span>85%</span></div>
-<div class="h-2 w-full bg-surface-container-highest rounded-full overflow-hidden mt-6">
-<div class="h-full bg-secondary w-[92%]"></div>
-</div>
-<div class="flex justify-between text-sm font-bold"><span class="text-secondary">Retención de Marca</span><span>92%</span></div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Prueba Social -->
-<section class="py-20 border-y border-outline-variant/10">
-<div class="max-w-7xl mx-auto px-6">
-<p class="text-center text-xs font-bold tracking-widest text-on-surface-variant uppercase mb-12">Marcas que confían en nuestra visión</p>
-<div class="flex flex-wrap justify-center items-center gap-12 lg:gap-24 opacity-60 grayscale">
-<img alt="Partner 1" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCC7SiV_BFoW0rYIwhs_5VNQD9CN_qCBZN4sajryUCtjbtyCGDS-2dMSm8cN06WUO8yzjqNcrEaRRCHoPFFr-zQDXpRWcDkCHoY3vEvwq6pttljle0gVF_09sreb8XKo3BzpymaGsyE2lgOUP_NtiYLPY3N8-ONCSQzAt9A_AQvXLmJKHExCtVbf7cHa1FbByZ_IPdUf3p8rfM7NEvqLHtAanau5H_WzLNjjR_Yrg0v2EntgdWcM00Gdp9ITB_B9AkNVGWVZu3FA_8d"/>
-<img alt="Partner 2" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD3DvDQvL6LaMYqnGPEtzJ_KsnnXgrT14I3b1NmAyQV4nd4_yV5qtlCSrfFa1trRQyMPHLNeDqbvDsby2hTRxAcHNMDIq8ZjvtyNm8nrC3QHixDgD8AE6y4ndzXjU1lArFuuw9gEFKMbUFBrm_gFmGZ19OIumzopoVdQSJGR5rgHvm8nvZPk1JoAbQ2RJRGiX-hOx4CIAufO-gHAIF6vECzwAtE7HAlgzdqv7cTKU8nRiFyMRP8kE39823Td5xsxcwJcKeS_Nq1FPb9"/>
-<img alt="Partner 3" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNiRZwp21AphlrhUZ5AgKMdsy7jRawVm7EDsNzOh7wkgo7Nzelgodksud9BccuB88cbBQyJlujoklHTVrZk5fA4xH27UrCggVh51JZbXs7Fj9H9jjButMRu3p-CXPgS01L3XlXoJDs-omKF_xMWijOALOHv7Po04br_7pFv3Z4hzcvy_JkUH_M1rO0_X0EdwmIKi3j-2CajQ5riwAQLOK7VwsIct1crld-s4YYa9ZOwlvwaCH6KIc6xwa75g1K_CF5_ILsgNPLCBkn"/>
-<img alt="Partner 4" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCCxSx8GlPnqxHVGeIlfkcSnfzqr7vG2nR5bFnSa4FsoBv2Nltp1HpBeVfLGtGMSh_xgurWXiA-Z2dEL8LGJiYEPHcF-O-1JQzsxaSojm317dDYCgtAeG6CbK-cvHR6NMwcaLEVQjSYgZ9_ZjTLKafib3RCgAv6gDYKzdW3x8yrRZhsFFqxyMNv5gxRpq9TkhIrM3AqgPsnV8W1Cstb68ZCK3ZdGzgqvIn_j4uR8W_hL7kLYVmQhzKGnF0di2ZPQJheHrOj4ChV9v9_"/>
-<img alt="Partner 5" class="h-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZQ8Ta1FvKcNaLWETJ0fxixY98PnvVn3MAZSZsesMuDcM_Yg1TSmPgwxGAO3bsOfw_DEq6agjKVNMJW6DIpQ_iSWRPqlq5__RnoKaHtKpGFqtWLQaaaNGqzhDQeQMCrsUhrAVvGRXdjEc0qal07m5IyWG2wmZtUobmGllajtsqqP5sIq4yIsNlT5pxYD5p8KZdO-kk8qCQ8Vlt77U7ZT_TYsnoEyCxh-NKMViigfhn0INLYLS1ykEJ4-DqSvdVZ7yQZYlEyDbSXbTk"/>
-</div>
-</div>
-</section>
-<!-- Contact Form Section -->
-<section class="py-32 bg-surface-container-low" id="contact">
-<div class="max-w-4xl mx-auto px-6">
-<div class="text-center mb-16">
-<h2 class="text-4xl font-bold mb-4">Empecemos a trabajar</h2>
-<p class="text-on-surface-variant">Cuéntanos sobre tu proyecto y descubramos cómo podemos ayudarte.</p>
-</div>
-<form action="https://formspree.io/f/rdrgzjavier@gmail.com" class="space-y-6 bg-surface p-8 lg:p-12 rounded-2xl shadow-xl border border-outline-variant/10" method="POST">
-<div class="grid md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<label class="text-sm font-bold text-on-surface-variant">Nombre</label>
-<input class="w-full bg-surface-container-highest border-none rounded-lg focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline/50 p-4 transition-all" name="nombre" placeholder="Tu nombre completo" required="" type="text"/>
-</div>
-<div class="space-y-2">
-<label class="text-sm font-bold text-on-surface-variant">Email</label>
-<input class="w-full bg-surface-container-highest border-none rounded-lg focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline/50 p-4 transition-all" name="email" placeholder="email@ejemplo.com" required="" type="email"/>
-</div>
-</div>
-<div class="space-y-2">
-<label class="text-sm font-bold text-on-surface-variant">Teléfono</label>
-<input class="w-full bg-surface-container-highest border-none rounded-lg focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline/50 p-4 transition-all" name="telefono" placeholder="+34 000 000 000" type="tel"/>
-</div>
-<div class="space-y-2">
-<label class="text-sm font-bold text-on-surface-variant">Mensaje / Brief</label>
-<textarea class="w-full bg-surface-container-highest border-none rounded-lg focus:ring-2 focus:ring-primary text-on-surface placeholder:text-outline/50 p-4 transition-all" name="mensaje" placeholder="¿En qué podemos ayudarte?" required="" rows="4"></textarea>
-</div>
-<button class="w-full bg-primary text-on-primary py-5 rounded-lg font-black text-lg hover:scale-[1.01] active:scale-[0.99] transition-all shadow-lg shadow-primary/25" type="submit">
-                        Enviar propuesta
-                    </button>
-<p class="text-[10px] text-center text-on-surface-variant mt-4">
-                        Al enviar este formulario, aceptas nuestra política de privacidad.
-                    </p>
 </form>
 </div>
 </section>
 </main>
 <!-- Footer -->
-<footer class="bg-slate-50 dark:bg-slate-950 w-full mt-auto py-12">
-<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-<div>
-<span class="text-lg font-bold text-slate-900 dark:text-slate-100 block mb-2">ARIPA</span>
-<p class="text-slate-500 dark:text-slate-400 text-sm">© 2024 ARIPA Digital Marketing. Estrategia y Curación.</p>
+<footer class="bg-surface-container-lowest px-6 py-12 pb-32 border-t border-outline-variant/10">
+<div class="flex flex-col gap-8 text-center md:text-left">
+<div class="flex justify-center md:justify-start items-center gap-3">
+<span class="text-lg font-bold text-[#655498]">ARIPA</span>
 </div>
-<div class="flex gap-6 md:justify-end">
-<a class="text-slate-500 hover:text-purple-400 transition-colors text-sm" href="#">Privacidad</a>
-<a class="text-slate-500 hover:text-purple-400 transition-colors text-sm" href="#">Aviso Legal</a>
-<a class="text-slate-500 hover:text-purple-400 transition-colors text-sm font-bold flex items-center gap-1" href="#">
-                    LinkedIn <span class="material-symbols-outlined text-xs" data-icon="open_in_new">open_in_new</span>
-</a>
+<div class="flex flex-wrap justify-center md:justify-start gap-6 text-sm text-on-surface-variant font-medium">
+<a class="hover:text-primary transition-colors" href="#">Privacidad</a>
+<a class="hover:text-primary transition-colors" href="#">Aviso Legal</a>
+<a class="hover:text-primary transition-colors" href="#">LinkedIn</a>
 </div>
+<p class="text-xs text-outline-variant">© 2024 ARIPA Digital Consultancy. All rights reserved.</p>
 </div>
 </footer>
-<!-- Sticky Bottom Bar -->
-<div class="fixed bottom-0 left-0 w-full h-16 flex justify-between items-center px-6 pb-safe bg-gradient-to-r from-purple-500 to-purple-700 z-[60] shadow-[0_-4px_12px_rgba(157,80,255,0.2)]">
-<div class="hidden md:flex items-center gap-3">
-<span class="material-symbols-outlined text-white" data-icon="verified_user">verified_user</span>
-<p class="text-white text-xs font-bold tracking-widest uppercase">Consultoría de Confianza</p>
+<!-- BottomNavBar -->
+<nav class="fixed bottom-0 left-0 w-full flex justify-between items-center bg-white/95 dark:bg-slate-900/95 backdrop-blur-md px-6 pb-6 pt-3 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] z-50">
+<div class="flex items-center justify-center text-slate-500 p-2 group transition-all">
+<span class="material-symbols-outlined" data-icon="chat">chat</span>
 </div>
-<div class="flex items-center gap-4 w-full md:w-auto">
-<a class="w-full md:w-auto text-center bg-white text-purple-700 px-8 py-2 rounded-full font-black text-sm uppercase tracking-widest hover:bg-purple-50 transition-all active:scale-95" href="#contact">
-                Contactar
-            </a>
-<div class="hidden md:flex gap-4">
-<span class="material-symbols-outlined text-white/80 cursor-pointer hover:text-white" data-icon="contact_support">contact_support</span>
-<span class="material-symbols-outlined text-white/80 cursor-pointer hover:text-white" data-icon="chat_bubble">chat_bubble</span>
-</div>
-</div>
-</div>
+<a class="flex items-center justify-center gap-2 bg-[#655498] text-white rounded-full px-8 py-4 w-auto min-w-[180px] font-['Plus_Jakarta_Sans'] font-semibold text-label-md hover:brightness-110 active:scale-95 transition-all" href="#contacto">
+            Contactar <span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</nav>
 </body></html>
