@@ -150,7 +150,7 @@
 </div>
 </div>
 <!-- Header -->
-<header class="fixed top-0 w-full z-50 bg-[#061542]/95 backdrop-blur-md shadow-lg">
+<header class="fixed top-0 w-full z-50 bg-[#061542]/95 backdrop-blur-md shadow-lg" id="main-header">
 <div class="flex justify-between items-center px-4 md:px-8 py-4 w-full max-w-7xl mx-auto">
 <div class="flex items-center gap-3 md:gap-4 flex-1">
 <button class="md:hidden text-white active:scale-95 duration-200" id="open-menu">
@@ -176,25 +176,25 @@
 </div>
 </header>
 <main>
-<!-- Hero Section (550px height preserved) -->
+<!-- Hero Section (550px height preserved, adjustments for mobile overlap and clipping) -->
 <section class="relative flex items-center overflow-hidden bg-primary px-6 h-[550px]">
 <div class="absolute inset-0 z-0">
 <div class="absolute inset-0 bg-gradient-to-br from-primary via-primary to-secondary/30 opacity-60"></div>
 <img alt="Modern high-tech office interior" class="w-full h-full object-cover mix-blend-overlay opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMbRoy74VD6ksxFC82iuCjbEPB1SXzM_U82IO61_XpRL8XCZZk10XsBT4DYpvf0H7VmXhvEVjzdtVoukNiTK0cDM3Azxz1HldpPYmEmdpgI243eAMEkLyMJoFY1LpsTgizucj4r4s0uDDKP6x21vIBEDm6T_FAGXLyiZXlvZemL2VCmOFB6Ipy05WgsEI9-OrlCXptVJlafo75EwRMeWQFgubZHqO47j4vf1y5-TZb6KCZN-jmu0At-WBAmBhUw5_Y9J85K2blJclb"/>
 </div>
-<div class="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center w-full pt-12 md:pt-0">
-<div class="">
-<h1 class="text-5xl md:text-7xl font-headline font-bold text-white tracking-tighter leading-[1.1] mb-6">
+<div class="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-4 md:gap-8 items-center w-full mt-16 md:mt-0">
+<div class="flex flex-col justify-center h-full">
+<h1 class="text-4xl sm:text-5xl md:text-7xl font-headline font-bold text-white tracking-tighter leading-[1.1] mb-4 md:mb-6">
                     Transformamos <span class="text-secondary-container">datos</span> en decisiones maestras.
                 </h1>
-<p class="text-lg md:text-xl text-slate-300 max-w-lg leading-relaxed mb-10">
+<p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-lg leading-relaxed mb-6 md:mb-10">
                     No somos una agencia más. Somos el socio estratégico que audita, optimiza y escala tu ecosistema digital bajo una mentalidad puramente analítica.
                 </p>
-<div class="flex flex-col sm:flex-row gap-4 pt-2">
-<a class="bg-secondary text-white px-8 py-4 rounded-full font-bold text-center transition-all hover:scale-105 active:scale-95 shadow-lg shadow-secondary/20" href="#contacto">
+<div class="flex flex-col sm:flex-row gap-3 pt-2">
+<a class="bg-secondary text-white px-6 py-3.5 md:px-8 md:py-4 rounded-full font-bold text-center transition-all hover:scale-105 active:scale-95 shadow-lg shadow-secondary/20 text-sm md:text-base" href="#contacto">
                         Solicitar auditoría gratuita
                     </a>
-<a class="border border-white/20 text-white px-8 py-4 rounded-full font-bold text-center hover:bg-white/5 transition-all" href="#servicios">
+<a class="border border-white/20 text-white px-6 py-3.5 md:px-8 md:py-4 rounded-full font-bold text-center hover:bg-white/5 transition-all text-sm md:text-base" href="#servicios">
                         Nuestros Servicios
                     </a>
 </div>
