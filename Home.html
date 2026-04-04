@@ -3,9 +3,10 @@
 <html class="light" lang="es"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>ARIPA | The Analytical Curator</title>
+<title>ARIPA | Digital Consulting &amp; Analytical Curation</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
 <script id="tailwind-config">
         tailwind.config = {
@@ -13,53 +14,53 @@
             theme: {
                 extend: {
                     "colors": {
-                        "on-secondary-fixed": "#24005b",
-                        "on-surface": "#1b1c1c",
-                        "on-tertiary-fixed-variant": "#543589",
-                        "on-tertiary-fixed": "#270058",
-                        "inverse-on-surface": "#f3f0ef",
+                        "secondary-fixed": "#eaddff",
+                        "primary-fixed": "#dce1ff",
+                        "on-error-container": "#93000a",
+                        "on-primary-fixed": "#091845",
+                        "surface-variant": "#e5e2e1",
+                        "secondary": "#6c45c0",
+                        "on-surface-variant": "#45464f",
+                        "background": "#fcf9f8",
+                        "on-primary-fixed-variant": "#384473",
                         "surface-container-high": "#eae7e7",
+                        "surface-container-low": "#f6f3f2",
+                        "on-secondary-container": "#3a008b",
+                        "outline": "#767680",
+                        "on-tertiary-fixed-variant": "#543589",
+                        "primary-fixed-dim": "#b8c4fb",
+                        "on-tertiary-fixed": "#270058",
+                        "surface": "#fcf9f8",
+                        "surface-container-highest": "#e5e2e1",
+                        "surface-bright": "#fcf9f8",
+                        "secondary-container": "#a67ffd",
+                        "inverse-on-surface": "#f3f0ef",
+                        "tertiary-container": "#3a196e",
+                        "on-tertiary-container": "#a685df",
+                        "on-secondary-fixed": "#24005b",
                         "on-primary-container": "#8793c7",
                         "surface-container": "#f0eded",
-                        "secondary-fixed": "#eaddff",
-                        "primary-container": "#1e2b58",
                         "outline-variant": "#c6c5d0",
-                        "inverse-surface": "#303030",
-                        "on-background": "#1b1c1c",
-                        "primary": "#061542",
-                        "secondary": "#6c45c0",
-                        "surface-dim": "#dcd9d9",
-                        "on-secondary-container": "#3a008b",
-                        "on-tertiary-container": "#a685df",
-                        "background": "#fcf9f8",
-                        "on-error": "#ffffff",
-                        "on-error-container": "#93000a",
-                        "error": "#ba1a1a",
-                        "surface-bright": "#fcf9f8",
-                        "surface-tint": "#505c8c",
-                        "on-primary-fixed": "#091845",
-                        "surface-container-lowest": "#ffffff",
-                        "on-surface-variant": "#45464f",
-                        "error-container": "#ffdad6",
-                        "tertiary-fixed": "#ebdcff",
-                        "surface-variant": "#e5e2e1",
-                        "on-secondary": "#ffffff",
-                        "surface": "#fcf9f8",
-                        "tertiary-container": "#3a196e",
-                        "tertiary-fixed-dim": "#d4bbff",
-                        "surface-container-highest": "#e5e2e1",
-                        "primary-fixed-dim": "#b8c4fb",
-                        "on-primary-fixed-variant": "#384473",
-                        "primary-fixed": "#dce1ff",
                         "on-tertiary": "#ffffff",
-                        "on-primary": "#ffffff",
-                        "outline": "#767680",
-                        "on-secondary-fixed-variant": "#5429a7",
-                        "secondary-container": "#a67ffd",
+                        "tertiary-fixed": "#ebdcff",
+                        "on-background": "#1b1c1c",
                         "inverse-primary": "#b8c4fb",
-                        "surface-container-low": "#f6f3f2",
+                        "on-secondary": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-dim": "#dcd9d9",
+                        "on-error": "#ffffff",
+                        "on-surface": "#1b1c1c",
+                        "error": "#ba1a1a",
+                        "primary": "#061542",
+                        "tertiary-fixed-dim": "#d4bbff",
+                        "surface-tint": "#505c8c",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-container": "#1e2b58",
                         "secondary-fixed-dim": "#d1bcff",
-                        "tertiary": "#240052"
+                        "inverse-surface": "#303030",
+                        "on-secondary-fixed-variant": "#5429a7",
+                        "tertiary": "#240052",
+                        "error-container": "#ffdad6"
                     },
                     "borderRadius": {
                         "DEFAULT": "0.125rem",
@@ -72,476 +73,297 @@
                         "body": ["Inter"],
                         "label": ["Inter"]
                     }
-                }
-            }
+                },
+            },
         }
     </script>
 <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
         }
-        .editorial-spacing {
-            padding-top: 120px;
-            padding-bottom: 120px;
-        }
-        .ghost-border {
-            border: 1px solid rgba(118, 118, 128, 0.2);
-        }
-        #mobile-menu-overlay {
-            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .modal-active {
-            overflow: hidden;
-        }
-        .service-card-v2 {
-            transition: all 0.3s ease;
-        }
-        .service-card-v2:hover, .service-card-v2:active {
-            background-color: #061542 !important;
-        }
-        .service-card-v2:hover h3, .service-card-v2:active h3,
-        .service-card-v2:hover span, .service-card-v2:active span,
-        .service-card-v2:hover p, .service-card-v2:active p,
-        .service-card-v2:hover .action-text, .service-card-v2:active .action-text {
-            color: #ffffff !important;
+        .glass-header {
+            background: rgba(6, 21, 66, 0.8);
+            backdrop-filter: blur(20px);
         }
     </style>
-</head>
-<body class="bg-background text-on-surface font-body selection:bg-secondary/30 pb-16 md:pb-0">
-<!-- Mobile Menu Overlay -->
-<div class="fixed inset-0 z-[100] bg-primary translate-x-full flex flex-col p-8 transition-transform duration-300" id="mobile-menu-overlay">
-<div class="flex justify-between items-center mb-12">
-<div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary-container text-3xl">insights</span>
-<div class="text-xl font-bold uppercase tracking-[0.05em] text-white font-headline">ARIPA</div>
-</div>
-<button class="text-white" id="close-menu">
-<span class="material-symbols-outlined text-3xl">close</span>
-</button>
-</div>
-<nav class="flex flex-col gap-8 text-2xl font-headline font-bold text-white">
-<a class="mobile-nav-link" href="#servicios">Servicios</a>
-<a class="mobile-nav-link" href="#metodologia">Metodología</a>
-<a class="mobile-nav-link" href="#proceso">Proceso</a>
-<a class="mobile-nav-link" href="#clientes">Clientes</a>
-<a class="mobile-nav-link bg-secondary text-white px-6 py-4 rounded-xl text-center text-lg mt-4" href="#contacto">Contactar</a>
-</nav>
-</div>
-<!-- Modal Structure -->
-<div class="fixed inset-0 z-[110] hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm" id="service-modal">
-<div class="bg-white rounded-3xl w-full max-w-lg overflow-hidden shadow-2xl transform transition-all">
-<div class="p-8">
-<div class="flex justify-between items-start mb-6">
-<div class="w-14 h-14 bg-secondary/10 rounded-2xl flex items-center justify-center text-secondary" id="modal-icon-container">
-<span class="material-symbols-outlined text-3xl" id="modal-icon">query_stats</span>
-</div>
-<button class="text-on-surface/50 hover:text-on-surface" id="close-modal">
-<span class="material-symbols-outlined">close</span>
-</button>
-</div>
-<h3 class="text-3xl font-headline font-bold text-primary mb-4" id="modal-title">Detalle del Servicio</h3>
-<p class="text-on-surface-variant leading-relaxed mb-8" id="modal-description">
-                Profundizamos en el análisis de datos para identificar cuellos de botella y optimizar cada punto de contacto en tu viaje del cliente.
-            </p>
-<button class="w-full bg-secondary text-white py-4 rounded-full font-bold hover:scale-[1.02] transition-transform active:scale-95" id="modal-cta">
-                Solicitar información
-            </button>
-</div>
-</div>
-</div>
-<!-- Header -->
-<header class="fixed top-0 w-full z-50 bg-[#061542]/95 backdrop-blur-md shadow-lg" id="main-header">
-<div class="flex justify-between items-center px-4 md:px-8 py-4 w-full max-w-7xl mx-auto">
-<div class="flex items-center gap-3 md:gap-4 flex-1">
-<button class="md:hidden text-white active:scale-95 duration-200" id="open-menu">
-<span class="material-symbols-outlined">menu</span>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-background font-body selection:bg-secondary selection:text-white">
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-50 glass-header shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)]">
+<div class="flex justify-between items-center px-8 py-4 max-w-full mx-auto">
+<div class="flex items-center gap-4">
+<button class="text-white hover:text-[#6c45c0] transition-colors duration-300">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
 </button>
 <div class="flex items-center gap-2">
-<span class="material-symbols-outlined text-secondary-container text-2xl">insights</span>
-<div class="text-lg md:text-xl font-bold uppercase tracking-[0.05em] text-white font-headline">ARIPA</div>
+<div class="w-8 h-8 bg-secondary rounded-lg flex items-center justify-center">
+<span class="material-symbols-outlined text-white text-lg" data-icon="token" style="font-variation-settings: 'FILL' 1;">token</span>
+</div>
+<span class="text-xl font-headline font-bold tracking-tighter text-white uppercase">ARIPA</span>
 </div>
 </div>
-<nav class="hidden md:flex gap-8 items-center flex-1 justify-center">
-<a class="text-white/70 hover:text-white font-medium transition-colors text-sm" href="#servicios">Servicios</a>
-<a class="text-white/70 hover:text-white font-medium transition-colors text-sm" href="#metodologia">Metodología</a>
-<a class="text-white/70 hover:text-white font-medium transition-colors text-sm" href="#proceso">Proceso</a>
-<a class="text-white/70 hover:text-white font-medium transition-colors text-sm" href="#clientes">Clientes</a>
-</nav>
-<div class="flex items-center justify-end flex-1">
-<a class="flex items-center gap-2 text-white hover:text-secondary-container transition-colors font-semibold text-sm md:text-base" href="tel:638162328">
-<span class="material-symbols-outlined text-lg md:text-xl">call</span>
-<span class="whitespace-nowrap">638 16 23 28</span>
-</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="text-white/70 font-label hover:text-[#6c45c0] transition-colors duration-300" href="#services">Servicios</a>
+<a class="text-white/70 font-label hover:text-[#6c45c0] transition-colors duration-300" href="#method">Metodología</a>
+<a class="text-white/70 font-label hover:text-[#6c45c0] transition-colors duration-300" href="#clients">Clientes</a>
+</div>
+<div class="flex items-center gap-4">
+<a class="text-white font-headline tracking-tighter font-bold hidden sm:block" href="tel:638162328">638 16 23 28</a>
+<button class="bg-secondary text-white px-6 py-2 rounded-full font-label text-xs uppercase tracking-widest font-semibold scale-95 active:opacity-80 transition-transform">900 000 000</button>
 </div>
 </div>
 </header>
 <main>
-<!-- Hero Section (550px height preserved, adjustments for mobile overlap and clipping) -->
-<section class="relative flex items-center overflow-hidden bg-primary px-6 h-[550px]">
+<!-- Hero Section -->
+<section class="relative min-h-[700px] flex items-center pt-20 overflow-hidden">
 <div class="absolute inset-0 z-0">
-<div class="absolute inset-0 bg-gradient-to-br from-primary via-primary to-secondary/30 opacity-60"></div>
-<img alt="Modern high-tech office interior" class="w-full h-full object-cover mix-blend-overlay opacity-30" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMbRoy74VD6ksxFC82iuCjbEPB1SXzM_U82IO61_XpRL8XCZZk10XsBT4DYpvf0H7VmXhvEVjzdtVoukNiTK0cDM3Azxz1HldpPYmEmdpgI243eAMEkLyMJoFY1LpsTgizucj4r4s0uDDKP6x21vIBEDm6T_FAGXLyiZXlvZemL2VCmOFB6Ipy05WgsEI9-OrlCXptVJlafo75EwRMeWQFgubZHqO47j4vf1y5-TZb6KCZN-jmu0At-WBAmBhUw5_Y9J85K2blJclb"/>
+<img class="w-full h-full object-cover" data-alt="High-end corporate office interior with architectural blue lighting and a digital data overlay representing consultancy and growth" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAh88qdCfeStRQt6gApKioD4Q0nBjNpo0vxTsU0XTnqwVZbZVfJ8lxuhn-E0AnvxdCsZ9ETY5UsmWIlvxZKkbd01dWwn4I6MdnLRYB-nqnlPhciAwzQgawu7cd208bXliMlwluMc73BXXpp38r5lqSPQ5evjMbr1MDg3cFCzcny7YSUr7zOZf26xMS5BHZZS3AS7MRX1FyiAjVfO6bQRuZHbDcuxHXzAYD_Sx5SuEyxFtSeeH7sr23iKWhEFjWbBSM5m682Gv4_FyIf"/>
+<div class="absolute inset-0 bg-gradient-to-r from-primary via-primary/80 to-transparent"></div>
 </div>
-<div class="relative z-10 max-w-7xl mx-auto grid md:grid-cols-2 gap-4 md:gap-8 items-center w-full mt-16 md:mt-0">
-<div class="flex flex-col justify-center h-full">
-<h1 class="text-4xl sm:text-5xl md:text-7xl font-headline font-bold text-white tracking-tighter leading-[1.1] mb-4 md:mb-6">
-                    Transformamos <span class="text-secondary-container">datos</span> en decisiones maestras.
-                </h1>
-<p class="text-base sm:text-lg md:text-xl text-slate-300 max-w-lg leading-relaxed mb-6 md:mb-10">
-                    No somos una agencia más. Somos el socio estratégico que audita, optimiza y escala tu ecosistema digital bajo una mentalidad puramente analítica.
-                </p>
-<div class="flex flex-col sm:flex-row gap-3 pt-2">
-<a class="bg-secondary text-white px-6 py-3.5 md:px-8 md:py-4 rounded-full font-bold text-center transition-all hover:scale-105 active:scale-95 shadow-lg shadow-secondary/20 text-sm md:text-base" href="#contacto">
-                        Solicitar auditoría gratuita
-                    </a>
-<a class="border border-white/20 text-white px-6 py-3.5 md:px-8 md:py-4 rounded-full font-bold text-center hover:bg-white/5 transition-all text-sm md:text-base" href="#servicios">
-                        Nuestros Servicios
-                    </a>
-</div>
-</div>
-</div>
-</section>
-<!-- Trusted By -->
-<section class="py-20 bg-surface-container-low" id="clientes">
-<div class="max-w-7xl mx-auto px-6 text-center">
-<p class="text-[0.75rem] uppercase tracking-[0.2em] font-bold text-on-surface-variant mb-12">Líderes que confían en nuestra visión</p>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-y-12 gap-x-12 max-w-6xl mx-auto opacity-50 grayscale hover:grayscale-0 transition-all duration-700">
-<div class="flex items-center justify-center"><span class="text-xl font-black text-primary tracking-tight">CABIFY</span></div>
-<div class="flex items-center justify-center"><span class="text-xl font-black text-primary tracking-tight">CoverManager</span></div>
-<div class="flex items-center justify-center"><span class="text-xl font-black text-primary tracking-tight">REPSOL</span></div>
-<div class="flex items-center justify-center"><span class="text-xl font-black text-primary tracking-tight">IBERIA</span></div>
-<div class="flex items-center justify-center"><span class="text-xl font-black text-primary tracking-tight">VOI</span></div>
-<div class="flex items-center justify-center"><span class="text-xl font-black text-primary tracking-tight">LOGISTA</span></div>
-</div>
-</div>
-</section>
-<!-- Value Prop -->
-<section class="editorial-spacing bg-surface">
-<div class="max-w-7xl mx-auto px-6">
-<div class="grid md:grid-cols-2 gap-12 md:gap-20 items-end mb-24">
-<h2 class="text-5xl md:text-6xl font-headline font-bold tracking-tighter leading-tight">La propuesta de valor del <br/><span class="text-secondary">Curador Analítico.</span></h2>
-<p class="text-lg md:text-xl text-on-surface-variant leading-relaxed max-w-md pb-2">
-                    Eliminamos el ruido digital para centrarnos en las métricas que realmente mueven la aguja de tu negocio. Sin rodeos, solo resultados.
-                </p>
-</div>
-<div class="grid md:grid-cols-3 gap-8 md:gap-10">
-<div class="bg-surface-container-lowest p-10 rounded-2xl border border-secondary/20 shadow-sm transition-all hover:shadow-md">
-<div class="w-14 h-14 bg-secondary/5 rounded-2xl flex items-center justify-center mb-8 text-secondary">
-<span class="material-symbols-outlined text-3xl">analytics</span>
-</div>
-<h3 class="text-2xl font-headline font-bold mb-5 text-secondary">Análisis Predictivo</h3>
-<p class="text-on-surface-variant leading-relaxed">No solo miramos lo que pasó, modelamos lo que vendrá basándonos en patrones de usuario reales.</p>
-</div>
-<div class="bg-surface-container-lowest p-10 rounded-2xl border border-secondary/20 shadow-sm transition-all hover:shadow-md">
-<div class="w-14 h-14 bg-secondary/5 rounded-2xl flex items-center justify-center mb-8 text-secondary">
-<span class="material-symbols-outlined text-3xl">strategy</span>
-</div>
-<h3 class="text-2xl font-headline font-bold mb-5 text-secondary">Estrategia Bespoke</h3>
-<p class="text-on-surface-variant leading-relaxed">Cada negocio es un organismo único. Diseñamos planes de crecimiento a medida, no plantillas.</p>
-</div>
-<div class="bg-surface-container-lowest p-10 rounded-2xl border border-secondary/20 shadow-sm transition-all hover:shadow-md">
-<div class="w-14 h-14 bg-secondary/5 rounded-2xl flex items-center justify-center mb-8 text-secondary">
-<span class="material-symbols-outlined text-3xl">speed</span>
-</div>
-<h3 class="text-2xl font-headline font-bold mb-5 text-secondary">Ejecución Ágil</h3>
-<p class="text-on-surface-variant leading-relaxed">Ciclos de iteración cortos. Menos reuniones, más lanzamientos y optimizaciones continuas.</p>
+<div class="container mx-auto px-8 relative z-10 grid md:grid-cols-2 gap-12">
+<div class="flex flex-col justify-center gap-8">
+<h1 class="text-5xl md:text-7xl font-headline font-extrabold text-white leading-tight tracking-tighter">
+                        Curación <span class="text-secondary">Analítica</span> de Negocio Digital.
+                    </h1>
+<h2 class="text-xl md:text-2xl text-white/80 font-body max-w-xl leading-relaxed">
+                        Transformamos datos en decisiones estratégicas. Elevamos el rendimiento de tu ecosistema digital mediante consultoría de alto impacto.
+                    </h2>
+<div class="flex flex-wrap gap-4 pt-4">
+<button class="bg-secondary text-white px-8 py-4 rounded-full font-headline font-bold text-lg hover:shadow-[0_0_20px_rgba(108,69,192,0.5)] transition-all">
+                            Solicitar auditoría gratuita
+                        </button>
+<button class="border-2 border-white/20 text-white px-8 py-4 rounded-full font-headline font-bold text-lg hover:bg-white/10 transition-all">
+                            Nuestros Servicios
+                        </button>
 </div>
 </div>
 </div>
 </section>
-<!-- Services -->
-<section class="editorial-spacing bg-surface-container-low overflow-hidden" id="servicios">
-<div class="max-w-7xl mx-auto px-6">
-<div class="text-center mb-24">
-<span class="text-[0.75rem] uppercase tracking-[0.2em] font-bold text-secondary mb-6 block">Nuestras Verticales</span>
-<h2 class="text-5xl md:text-6xl font-headline font-bold tracking-tighter">Especialidades que impulsan el ROI</h2>
+<!-- Client Section -->
+<section class="py-24 bg-surface-container-low" id="clients">
+<div class="container mx-auto px-8">
+<div class="flex flex-col items-center mb-16">
+<p class="font-label text-secondary uppercase tracking-[0.2em] font-bold text-sm mb-4">CONFÍAN EN NOSOTROS</p>
+<div class="h-1 w-12 bg-secondary/30"></div>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<button class="service-card-v2 bg-surface-container-lowest p-10 rounded-2xl border border-secondary/20 text-left flex flex-col h-full" data-desc="Maximizamos el rendimiento de tu tráfico actual reduciendo fricciones en el embudo de ventas. Implementamos tests A/B y análisis heurísticos avanzados." data-icon="query_stats" data-title="CRO &amp; Optimización">
-<span class="material-symbols-outlined text-secondary text-4xl mb-8">query_stats</span>
-<h3 class="text-2xl font-headline font-bold mb-5 text-secondary">CRO &amp; Optimización</h3>
-<p class="text-on-surface-variant mb-10 flex-grow leading-relaxed">Maximizamos el rendimiento de tu tráfico actual reduciendo fricciones en el embudo de ventas.</p>
-<div class="action-text text-secondary font-bold flex items-center gap-2">
-                        Saber más <span class="material-symbols-outlined">arrow_right_alt</span>
+<div class="grid grid-cols-2 md:grid-cols-3 gap-12 items-center opacity-70">
+<div class="flex justify-center p-8 bg-surface-container-lowest rounded-xl grayscale hover:grayscale-0 transition-all duration-500">
+<img class="h-12 object-contain" data-alt="Cabify logo in minimalist monochrome style" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB9Jy55hQASFf1MyFN1Wq53kQcXbcXd0-AAI6-xnFUkBQCo34-cuOq1h7wdLRen_1SCyb5Kn4BbZjSfPqsVsNufC7bhBrz9M6UhSgHuXxoS_GP6K20fqwEVsUjiU2E_bHTzJoKxl82Pyj0_Yk7-WYKutmIb0CtYASE85iQ7Q4rPv7Oq5Y6xPIuqSNmudq4nmI9h8iFFc2iDbcbq8k5OGXltg4NRdkFKIWl2SO848ZfbA7yFMokZpOXfoY6w7qpuGMsPNI-jICTlGLVz"/>
 </div>
-</button>
-<button class="service-card-v2 bg-surface-container-lowest p-10 rounded-2xl border border-secondary/20 text-left flex flex-col h-full" data-desc="Escalamos canales de adquisición rentables con foco en LTV. No solo buscamos leads, buscamos rentabilidad sostenible." data-icon="trending_up" data-title="Growth Marketing">
-<span class="material-symbols-outlined text-secondary text-4xl mb-8">trending_up</span>
-<h3 class="text-2xl font-headline font-bold mb-5 text-secondary">Growth Marketing</h3>
-<p class="text-on-surface-variant mb-10 flex-grow leading-relaxed">Escalamos canales de adquisición rentables con foco en LTV y rentabilidad.</p>
-<div class="action-text text-secondary font-bold flex items-center gap-2">
-                        Saber más <span class="material-symbols-outlined">arrow_right_alt</span>
+<div class="flex justify-center p-8 bg-surface-container-lowest rounded-xl grayscale hover:grayscale-0 transition-all duration-500">
+<img class="h-12 object-contain" data-alt="CoverManager corporate logo for high-end digital consulting section" src="https://lh3.googleusercontent.com/aida-public/AB6AXuANv60OHtyH92sJUza_STysWNqoG0OJuJ3G9ZoG7F7dCm9dAlO8Biz6xKJUkqJumQNW7Gxdf7g9158je-qoSw158bQw99atGDyyZP_0KrM-WA82-f_Tf5g7nQ9hfu6poO742qnbt0w9X-stO8LjJuHo2lL0h3T1pY7FjvO9VKhlSCk4b5VwvdMXY8f3Z7ABwVhdr3Pem80BNzfj3tmzttr704KaEap3Mpc8Mrh-pH24i4z9Z_HcLVWV_yBdUJWrYEkbkvrqPp0KJ1Sd"/>
 </div>
-</button>
-<button class="service-card-v2 bg-surface-container-lowest p-10 rounded-2xl border border-secondary/20 text-left flex flex-col h-full" data-desc="Diseño web orientado 100% a la conversión de usuarios. Páginas rápidas, persuasivas y diseñadas para dispositivos móviles." data-icon="web" data-title="High-Conv Landings">
-<span class="material-symbols-outlined text-secondary text-4xl mb-8">web</span>
-<h3 class="text-2xl font-headline font-bold mb-5 text-secondary">High-Conv Landings</h3>
-<p class="text-on-surface-variant mb-10 flex-grow leading-relaxed">Diseño web orientado 100% a la conversión y persuasión de usuarios.</p>
-<div class="action-text text-secondary font-bold flex items-center gap-2">
-                        Saber más <span class="material-symbols-outlined">arrow_right_alt</span>
+<div class="flex justify-center p-8 bg-surface-container-lowest rounded-xl grayscale hover:grayscale-0 transition-all duration-500">
+<img class="h-12 object-contain" data-alt="Repsol corporate logo displayed in a minimalist grid layout" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAc_GDIKxYR5M0MmqdPsHP67EF1jxcwHg_5V4dpGHJr3Wex2CyZbxaGWfNBcLBEEdH_L7-ywAOhXh7y-gD8GOMpMI0fQI6DUHrc63Twb3pDSyKXm5piOa2dV7hmJrkGcbantBCSwmzV1yR8EWnKLHVjq9JTBbxGTohiiJKgo5-92ylVBvicQjcIYoqgTXhbRr_e77mx5YdX_fsawfIaiLPKGTRuTDI4z454dN6dpJY1SeDfjQXW31ZlS8q4Lx5ARYTmWYxB81aAgK0d"/>
 </div>
-</button>
-<button class="service-card-v2 bg-surface-container-lowest p-10 rounded-2xl border border-secondary/20 text-left flex flex-col h-full" data-desc="Interfaces que guían al usuario de forma intuitiva y elegante. Creamos experiencias que los usuarios aman y las métricas agradecen." data-icon="touch_app" data-title="User Experience">
-<span class="material-symbols-outlined text-secondary text-4xl mb-8">touch_app</span>
-<h3 class="text-2xl font-headline font-bold mb-5 text-secondary">User Experience</h3>
-<p class="text-on-surface-variant mb-10 flex-grow leading-relaxed">Interfaces intuitivas que guían al usuario hacia sus objetivos de negocio.</p>
-<div class="action-text text-secondary font-bold flex items-center gap-2">
-                        Saber más <span class="material-symbols-outlined">arrow_right_alt</span>
+<div class="flex justify-center p-8 bg-surface-container-lowest rounded-xl grayscale hover:grayscale-0 transition-all duration-500">
+<img class="h-12 object-contain" data-alt="Iberia airline logo as featured in a professional client showcase" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCJmbK4OBeyfe-zFoKCQIlhuyQ0Z2HoJDOfKg5s8gr_khcHz4AQPv0HkJcJZN07-7FcEtt8iVg-RzRaptD9Ng8sUHvNgSqdi-cnraf6-1poKTro5x1kYHYeXxLAsTzo7vBZj1F1CxQyYwK6nqyorCD1n-NCtPyJaybBxbojUE9JzBBABacjVukmwfNFV-cPDGZGZwQRXpprtAU2nDXVrDQySleCkao8Dx738ydmMWtbBQmO_BufF922vEIoQ8IPrfrWqQpgxBhVGt4G"/>
 </div>
-</button>
-<button class="service-card-v2 bg-surface-container-lowest p-10 rounded-2xl border border-secondary/20 text-left flex flex-col h-full" data-desc="Estrategias B2B y B2C para captar clientes potenciales cualificados. Nutrición de leads automatizada para cerrar más ventas." data-icon="group_add" data-title="Lead Generation">
-<span class="material-symbols-outlined text-secondary text-4xl mb-8">group_add</span>
-<h3 class="text-2xl font-headline font-bold mb-5 text-secondary">Lead Generation</h3>
-<p class="text-on-surface-variant mb-10 flex-grow leading-relaxed">Captación de clientes potenciales cualificados con estrategias B2B y B2C.</p>
-<div class="action-text text-secondary font-bold flex items-center gap-2">
-                        Saber más <span class="material-symbols-outlined">arrow_right_alt</span>
+<div class="flex justify-center p-8 bg-surface-container-lowest rounded-xl grayscale hover:grayscale-0 transition-all duration-500">
+<img class="h-12 object-contain" data-alt="Voi technology logo for modern mobility and partnership section" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAGWKFNvrJokwJt8Jo8WmpXP_VOoXTQEo41HLtw1-RrhzAtgG2oM4yxAakD0Tvzr0eaxa9uEcqJhpi_oFDQVkD9_ZpNp6-TAU28_Bn7gUk8TNnqoh1bE8cc9Mpkcqr7hXhC3czD8WFwi5o1RQeDR6U-GZTdqbtMZfDecRM-RwsUkaaVpxHgW3Owf0XatnVJmEAWTEh1a3S6DvMvd_46vulEfiYcr6m0IRFPbuEetrXeTgKkPdezZZ7OBZYRn_i_ywFGFTgBjir80m61"/>
 </div>
-</button>
-<button class="service-card-v2 bg-surface-container-lowest p-10 rounded-2xl border border-secondary/20 text-left flex flex-col h-full" data-desc="Modelado de datos y arquitectura de medición avanzada para decisiones de negocio informadas." data-icon="query_stats" data-title="Data Strategy">
-<span class="material-symbols-outlined text-secondary text-4xl mb-8">query_stats</span>
-<h3 class="text-2xl font-headline font-bold mb-5 text-secondary">Data Strategy</h3>
-<p class="text-on-surface-variant mb-10 flex-grow leading-relaxed">Arquitectura de medición avanzada para decisiones de negocio informadas.</p>
-<div class="action-text text-secondary font-bold flex items-center gap-2">
-                        Saber más <span class="material-symbols-outlined">arrow_right_alt</span>
+<div class="flex justify-center p-8 bg-surface-container-lowest rounded-xl grayscale hover:grayscale-0 transition-all duration-500">
+<img class="h-12 object-contain" data-alt="Logista industrial logistics logo for high-performance consultancy background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCB7NTZTlbNy2yTVcxmCYMXqOix5w-nGu5FHn5NI0j79eRJ9GMORBYds5PefYOUiNvLfKV6ov6qzS6Dem7LbvY5_t6BxM5g-3YzdkU2obijbmDDGTo0hIcrmWFH7AuUitHzsoN607Ptb55w7ID096uD3Ty3qpwVjjbGm1bNuL8wh-gxniCxkoP4-Uk_DZjpqOs0IF0R1qlZBVX8M5e3qNw-o50FfZQg5lI2ojXQ-oNz9y_QKo8l5czQ0380gKbFveA2cwLKDo-c82Qy"/>
 </div>
-</button>
 </div>
 </div>
 </section>
-<!-- Methodology -->
-<section class="editorial-spacing bg-surface" id="metodologia">
-<div class="max-w-5xl mx-auto px-6">
-<h2 class="text-5xl md:text-6xl font-headline font-bold tracking-tighter text-center mb-28">Nuestra Metodología</h2>
-<div class="space-y-24 relative" id="proceso">
-<div class="absolute left-[24px] top-4 bottom-4 w-px bg-surface-container-high hidden md:block"></div>
-<div class="flex flex-col md:flex-row gap-12 relative">
-<div class="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 z-10 font-bold text-lg">1</div>
+<!-- Value Prop Section -->
+<section class="py-24 bg-surface">
+<div class="container mx-auto px-8">
+<div class="grid md:grid-cols-3 gap-8">
+<div class="p-10 border border-secondary/20 rounded-full bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block" data-icon="analytics">analytics</span>
+<h3 class="text-2xl font-headline font-bold text-secondary mb-4">Precisión Analítica</h3>
+<p class="text-on-surface-variant leading-relaxed">No operamos con suposiciones. Cada movimiento estratégico está respaldado por capas de datos curados y procesados.</p>
+</div>
+<div class="p-10 border border-secondary/20 rounded-full bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block" data-icon="bolt">bolt</span>
+<h3 class="text-2xl font-headline font-bold text-secondary mb-4">Ejecución Ágil</h3>
+<p class="text-on-surface-variant leading-relaxed">Ciclos de optimización rápidos diseñados para un mercado que no espera. Resultados visibles en semanas, no meses.</p>
+</div>
+<div class="p-10 border border-secondary/20 rounded-full bg-surface-container-low">
+<span class="material-symbols-outlined text-secondary text-5xl mb-6 block" data-icon="diamond">diamond</span>
+<h3 class="text-2xl font-headline font-bold text-secondary mb-4">Soluciones Bespoke</h3>
+<p class="text-on-surface-variant leading-relaxed">Arquitecturas digitales diseñadas exclusivamente para los desafíos específicos de tu industria y escala.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Services Section (Vertical Cards) -->
+<section class="py-24 bg-surface-container-low" id="services">
+<div class="container mx-auto px-8">
+<div class="max-w-3xl mb-16">
+<h2 class="text-4xl md:text-5xl font-headline font-extrabold text-primary mb-6 tracking-tight">Soluciones de Crecimiento Vertical</h2>
+<div class="h-1.5 w-24 bg-secondary"></div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Service Card 1 -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl cursor-pointer hover:bg-primary transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined text-secondary group-hover:text-white text-4xl mb-6 block transition-colors" data-icon="show_chart">show_chart</span>
+<h4 class="text-xl font-headline font-bold text-secondary group-hover:text-white mb-2 transition-colors">CRO</h4>
+<p class="text-on-surface-variant group-hover:text-white/70 text-sm leading-relaxed transition-colors">Optimización del ratio de conversión mediante experimentación rigurosa.</p>
+</div>
+<!-- Service Card 2 -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl cursor-pointer hover:bg-primary transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined text-secondary group-hover:text-white text-4xl mb-6 block transition-colors" data-icon="trending_up">trending_up</span>
+<h4 class="text-xl font-headline font-bold text-secondary group-hover:text-white mb-2 transition-colors">Growth</h4>
+<p class="text-on-surface-variant group-hover:text-white/70 text-sm leading-relaxed transition-colors">Estrategias de escalado acelerado para productos digitales nativos.</p>
+</div>
+<!-- Service Card 3 -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl cursor-pointer hover:bg-primary transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined text-secondary group-hover:text-white text-4xl mb-6 block transition-colors" data-icon="web">web</span>
+<h4 class="text-xl font-headline font-bold text-secondary group-hover:text-white mb-2 transition-colors">Webs/Landings</h4>
+<p class="text-on-surface-variant group-hover:text-white/70 text-sm leading-relaxed transition-colors">Desarrollo de interfaces de alto rendimiento enfocadas a la venta.</p>
+</div>
+<!-- Service Card 4 -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl cursor-pointer hover:bg-primary transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined text-secondary group-hover:text-white text-4xl mb-6 block transition-colors" data-icon="brush">brush</span>
+<h4 class="text-xl font-headline font-bold text-secondary group-hover:text-white mb-2 transition-colors">UX</h4>
+<p class="text-on-surface-variant group-hover:text-white/70 text-sm leading-relaxed transition-colors">Diseño centrado en el usuario para maximizar el LTV y la retención.</p>
+</div>
+<!-- Service Card 5 -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl cursor-pointer hover:bg-primary transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined text-secondary group-hover:text-white text-4xl mb-6 block transition-colors" data-icon="groups">groups</span>
+<h4 class="text-xl font-headline font-bold text-secondary group-hover:text-white mb-2 transition-colors">Lead Gen</h4>
+<p class="text-on-surface-variant group-hover:text-white/70 text-sm leading-relaxed transition-colors">Captación cualificada de clientes potenciales para B2B y servicios.</p>
+</div>
+<!-- Service Card 6 -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl cursor-pointer hover:bg-primary transition-all duration-300 shadow-sm">
+<span class="material-symbols-outlined text-secondary group-hover:text-white text-4xl mb-6 block transition-colors" data-icon="ads_click">ads_click</span>
+<h4 class="text-xl font-headline font-bold text-secondary group-hover:text-white mb-2 transition-colors">Paid Media</h4>
+<p class="text-on-surface-variant group-hover:text-white/70 text-sm leading-relaxed transition-colors">Gestión avanzada de presupuestos publicitarios en Google y Meta.</p>
+</div>
+<!-- Service Card 7 -->
+<div class="group bg-surface-container-lowest p-8 rounded-xl cursor-pointer hover:bg-primary transition-all duration-300 shadow-sm md:col-span-2">
+<span class="material-symbols-outlined text-secondary group-hover:text-white text-4xl mb-6 block transition-colors" data-icon="all_inclusive">all_inclusive</span>
+<h4 class="text-xl font-headline font-bold text-secondary group-hover:text-white mb-2 transition-colors">Marketing 360</h4>
+<p class="text-on-surface-variant group-hover:text-white/70 text-sm leading-relaxed transition-colors">Visión holística e integrada para marcas que dominan su ecosistema completo.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Methodology Section -->
+<section class="py-24 bg-primary text-white overflow-hidden" id="method">
+<div class="container mx-auto px-8 relative">
+<div class="mb-20 text-center">
+<h2 class="text-4xl md:text-5xl font-headline font-bold mb-4 tracking-tighter">Nuestra Metodología</h2>
+<p class="text-white/60 font-body max-w-2xl mx-auto">Un proceso iterativo de refinamiento constante basado en el rigor científico.</p>
+</div>
+<div class="grid md:grid-cols-4 gap-12 relative">
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full border-2 border-secondary flex items-center justify-center mb-6 bg-primary shadow-[0_0_30px_rgba(108,69,192,0.3)]">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="search">search</span>
+</div>
+<h4 class="text-lg font-headline font-bold mb-2">Auditoría</h4>
+<p class="text-white/50 text-sm">Deep dive en tus datos históricos.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full border-2 border-secondary flex items-center justify-center mb-6 bg-primary shadow-[0_0_30px_rgba(108,69,192,0.3)]">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="architecture">architecture</span>
+</div>
+<h4 class="text-lg font-headline font-bold mb-2">Estrategia</h4>
+<p class="text-white/50 text-sm">Diseño de la hoja de ruta bespoke.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full border-2 border-secondary flex items-center justify-center mb-6 bg-primary shadow-[0_0_30px_rgba(108,69,192,0.3)]">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="integration_instructions">integration_instructions</span>
+</div>
+<h4 class="text-lg font-headline font-bold mb-2">Ejecución</h4>
+<p class="text-white/50 text-sm">Implementación técnica sin fricción.</p>
+</div>
+<div class="flex flex-col items-center text-center">
+<div class="w-20 h-20 rounded-full border-2 border-secondary flex items-center justify-center mb-6 bg-primary shadow-[0_0_30px_rgba(108,69,192,0.3)]">
+<span class="material-symbols-outlined text-secondary text-3xl" data-icon="monitoring">monitoring</span>
+</div>
+<h4 class="text-lg font-headline font-bold mb-2">Optimización</h4>
+<p class="text-white/50 text-sm">Refinamiento basado en resultados.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-24 bg-surface-container-lowest">
+<div class="container mx-auto px-8 max-w-5xl">
+<div class="grid md:grid-cols-5 gap-16 items-start">
+<div class="md:col-span-2">
+<h2 class="text-4xl font-headline font-extrabold text-primary mb-6 leading-tight">Hablemos de tu próximo escalón.</h2>
+<p class="text-on-surface-variant mb-8 leading-relaxed">Analizamos tu situación actual y te proponemos una estrategia de crecimiento sin compromiso.</p>
+<div class="space-y-4">
+<div class="flex items-center gap-4 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Reporte detallado de oportunidades</span>
+</div>
+<div class="flex items-center gap-4 text-primary font-bold">
+<span class="material-symbols-outlined" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span>Benchmarking de competencia</span>
+</div>
+</div>
+</div>
+<div class="md:col-span-3 bg-white p-10 rounded-xl shadow-[0_32px_64px_-15px_rgba(0,0,0,0.08)] border border-outline-variant/20">
+<form class="space-y-6">
+<div class="grid md:grid-cols-2 gap-6">
 <div>
-<h4 class="text-2xl font-headline font-bold mb-4 text-primary">Auditoría &amp; Diagnóstico</h4>
-<p class="text-lg text-on-surface-variant leading-relaxed">Analizamos a fondo tus activos digitales, competencia y puntos de fuga en el funnel.</p>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-2">Nombre Completo</label>
+<input class="w-full bg-surface-container-low border-transparent focus:border-secondary focus:ring-0 rounded-lg p-3 text-sm" pattern="[A-Za-z\s]+" placeholder="Ej: Juan Pérez" required="" type="text"/>
 </div>
-</div>
-<div class="flex flex-col md:flex-row gap-12 relative">
-<div class="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 z-10 font-bold text-lg">2</div>
 <div>
-<h4 class="text-2xl font-headline font-bold mb-4 text-primary">Blueprint Estratégico</h4>
-<p class="text-lg text-on-surface-variant leading-relaxed">Definimos el roadmap de acciones priorizando aquellas con mayor impacto en el ROI inmediato.</p>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-2">Email Corporativo</label>
+<input class="w-full bg-surface-container-low border-transparent focus:border-secondary focus:ring-0 rounded-lg p-3 text-sm" pattern="^[^@]{2,}@[^@]{2,}\.[^@]{2,}$" placeholder="juan@empresa.com" required="" type="email"/>
 </div>
 </div>
-<div class="flex flex-col md:flex-row gap-12 relative">
-<div class="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 z-10 font-bold text-lg">3</div>
+<div class="grid md:grid-cols-2 gap-6">
 <div>
-<h4 class="text-2xl font-headline font-bold mb-4 text-primary">Implementación Táctica</h4>
-<p class="text-lg text-on-surface-variant leading-relaxed">Ejecutamos con precisión técnica las mejoras en UX, campañas y optimizaciones CRO.</p>
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-2">Teléfono</label>
+<input class="w-full bg-surface-container-low border-transparent focus:border-secondary focus:ring-0 rounded-lg p-3 text-sm" pattern="[0-9]+" placeholder="600000000" required="" type="tel"/>
 </div>
-</div>
-<div class="flex flex-col md:flex-row gap-12 relative">
-<div class="w-12 h-12 rounded-2xl bg-primary text-white flex items-center justify-center shrink-0 z-10 font-bold text-lg">4</div>
 <div>
-<h4 class="text-2xl font-headline font-bold mb-4 text-primary">Escalado Basado en Datos</h4>
-<p class="text-lg text-on-surface-variant leading-relaxed">Replicamos lo que funciona y descartamos lo que no, escalando la inversión de forma inteligente.</p>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- Contact Form -->
-<section class="editorial-spacing bg-primary text-white relative min-h-[700px] flex items-center" id="contacto">
-<div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-20 items-center w-full">
-<div class="space-y-16">
-<h2 class="text-5xl md:text-7xl font-headline font-bold tracking-tighter leading-[1.1]">¿Listo para dejar de <br/><span class="text-secondary-container">perder oportunidades?</span></h2>
-<p class="text-xl md:text-2xl text-slate-300 leading-relaxed max-w-xl">
-                    Solo aceptamos 3 nuevas auditorías al mes para garantizar la máxima profundidad analítica. Reserva tu plaza ahora.
-                </p>
-<div class="space-y-8">
-<div class="flex items-center gap-6">
-<span class="material-symbols-outlined text-secondary-container text-3xl">verified</span>
-<span class="text-lg font-medium">94% de clientes incrementan su facturación en 6 meses.</span>
-</div>
-<div class="flex items-center gap-6">
-<span class="material-symbols-outlined text-secondary-container text-3xl">schedule</span>
-<span class="text-lg font-medium">Próximo slot libre: 12 de Junio de 2024.</span>
-</div>
-</div>
-<div class="p-10 bg-white/5 rounded-2xl border border-white/10 italic text-slate-300 text-lg leading-relaxed relative">
-<span class="absolute top-4 left-4 text-4xl text-white/20 font-serif">“</span>
-                    "ARIPA no es solo consultoría, es una extensión de nuestro equipo que respira números y resultados."
-                    <div class="mt-6 not-italic font-bold text-white">— CMO, Cabify</div>
-</div>
-</div>
-<div class="bg-white p-12 rounded-3xl shadow-2xl text-on-surface">
-<form class="space-y-8" id="lead-form">
-<div class="space-y-3">
-<label class="text-[0.75rem] uppercase tracking-widest font-bold text-on-surface-variant">Nombre completo</label>
-<input class="w-full px-5 py-4 rounded-xl ghost-border focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all placeholder:text-slate-400 text-lg" id="form-name" placeholder="Ej. Alejandro Pérez" required="" type="text"/>
-</div>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
-<div class="space-y-3">
-<label class="text-[0.75rem] uppercase tracking-widest font-bold text-on-surface-variant">Email profesional</label>
-<input class="w-full px-5 py-4 rounded-xl ghost-border focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all placeholder:text-slate-400 text-lg" id="form-email" placeholder="ejemplo@empresa.com" required="" type="email"/>
-</div>
-<div class="space-y-3">
-<label class="text-[0.75rem] uppercase tracking-widest font-bold text-on-surface-variant">Teléfono</label>
-<input class="w-full px-5 py-4 rounded-xl ghost-border focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all placeholder:text-slate-400 text-lg" id="form-phone" placeholder="600 000 000" required="" type="tel"/>
-</div>
-</div>
-<div class="space-y-3">
-<label class="text-[0.75rem] uppercase tracking-widest font-bold text-on-surface-variant">Servicio de interés</label>
-<select class="w-full px-5 py-4 rounded-xl ghost-border focus:ring-2 focus:ring-secondary/20 focus:border-secondary outline-none transition-all bg-white appearance-none text-lg">
+<label class="block font-label text-[10px] uppercase tracking-widest text-on-surface-variant font-bold mb-2">Servicio de Interés</label>
+<select class="w-full bg-surface-container-low border-transparent focus:border-secondary focus:ring-0 rounded-lg p-3 text-sm">
 <option selected="">Auditoría general</option>
-<option>CRO &amp; Optimización</option>
-<option>Growth Marketing</option>
-<option>Web / Landing Page</option>
+<option>CRO &amp; Experimentación</option>
+<option>Growth Strategy</option>
+<option>Paid Media Scaling</option>
 </select>
 </div>
-<button class="w-full py-5 rounded-2xl font-bold transition-all bg-slate-200 text-slate-400 cursor-not-allowed text-lg shadow-lg" disabled="" id="submit-btn" type="submit">
-                        Enviar solicitud
-                    </button>
-<p class="hidden text-green-600 font-bold text-center text-lg" id="success-msg">¡Solicitud enviada con éxito! Te contactaremos pronto.</p>
+</div>
+<button class="w-full bg-primary text-white py-4 rounded-full font-headline font-bold text-lg opacity-50 cursor-not-allowed hover:bg-secondary transition-all" disabled="" type="submit">Enviar Solicitud</button>
+<p class="text-[10px] text-center text-on-surface-variant italic">Al enviar, aceptas nuestra Política de Privacidad y el tratamiento de tus datos para fines comerciales.</p>
 </form>
+</div>
 </div>
 </div>
 </section>
 </main>
-<!-- BottomNavBar (Visible on Mobile) -->
-<div class="fixed bottom-0 left-0 w-full flex justify-between items-stretch h-16 bg-[#061542] z-[60] shadow-2xl md:hidden">
-<button class="flex-1 flex flex-col items-center justify-center text-white/70 hover:bg-[#6c45c0]/80 transition-all active:scale-[0.98]" onclick="document.getElementById('contacto').scrollIntoView({behavior: 'smooth'})">
-<span class="material-symbols-outlined mb-1">mail</span>
-<span class="font-['Inter'] font-medium uppercase tracking-widest text-[0.6rem]">Contactar</span>
-</button>
-<a class="flex-1 flex flex-col items-center justify-center bg-[#6c45c0] text-white hover:bg-[#6c45c0]/80 transition-all active:scale-[0.98]" href="https://wa.me/34638162328">
-<span class="material-symbols-outlined mb-1">chat</span>
-<span class="font-['Inter'] font-medium uppercase tracking-widest text-[0.6rem]">WhatsApp</span>
-</a>
-</div>
 <!-- Footer -->
-<footer class="w-full bg-[#f6f3f2] mt-auto">
-<div class="flex flex-col md:flex-row justify-between items-start px-8 py-20 max-w-7xl mx-auto">
-<div class="mb-12 md:mb-0">
-<div class="text-2xl font-bold uppercase tracking-[0.05em] text-[#061542] mb-6">ARIPA</div>
-<p class="text-base text-[#1b1c1c]/70 max-w-xs font-body leading-relaxed">
-                Curaduría analítica para empresas que buscan liderar el mercado digital.
-            </p>
+<footer class="w-full border-t border-white/5 bg-[#061542] py-12 px-8">
+<div class="flex flex-col items-center gap-6 w-full max-w-6xl mx-auto">
+<div class="text-lg font-black text-white">ARIPA</div>
+<div class="flex flex-wrap justify-center gap-8">
+<a class="text-white/40 font-label text-sm hover:text-white transition-colors" href="#">Services</a>
+<a class="text-white/40 font-label text-sm hover:text-white transition-colors" href="#">Case Studies</a>
+<a class="text-white/40 font-label text-sm hover:text-white transition-colors" href="#">Privacy</a>
+<a class="text-white/40 font-label text-sm hover:text-white transition-colors" href="#">Terms</a>
 </div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-16">
-<div class="flex flex-col gap-5">
-<span class="uppercase tracking-widest text-[0.75rem] font-bold text-[#061542] font-headline">Services</span>
-<a class="text-sm text-[#1b1c1c]/70 hover:text-[#6c45c0]" href="#">CRO</a>
-<a class="text-sm text-[#1b1c1c]/70 hover:text-[#6c45c0]" href="#">Growth</a>
-</div>
-<div class="flex flex-col gap-5">
-<span class="uppercase tracking-widest text-[0.75rem] font-bold text-[#061542] font-headline">Methodology</span>
-<a class="text-sm text-[#1b1c1c]/70 hover:text-[#6c45c0]" href="#">Audit</a>
-<a class="text-sm text-[#1b1c1c]/70 hover:text-[#6c45c0]" href="#">Testing</a>
-</div>
-<div class="flex flex-col gap-5">
-<span class="uppercase tracking-widest text-[0.75rem] font-bold text-[#061542] font-headline">Case Studies</span>
-<a class="text-sm text-[#1b1c1c]/70 hover:text-[#6c45c0]" href="#">B2B SaaS</a>
-<a class="text-sm text-[#1b1c1c]/70 hover:text-[#6c45c0]" href="#">eCommerce</a>
-</div>
-<div class="flex flex-col gap-5">
-<span class="uppercase tracking-widest text-[0.75rem] font-bold text-[#061542] font-headline">Contact</span>
-<a class="text-sm text-[#1b1c1c]/70 hover:text-[#6c45c0]" href="#">Schedule Call</a>
-<a class="text-sm text-[#1b1c1c]/70 hover:text-[#6c45c0]" href="#">Office</a>
-</div>
-</div>
-</div>
-<div class="max-w-7xl mx-auto px-8 py-10 border-t border-black/5 flex justify-between items-center text-[0.75rem] font-medium text-[#1b1c1c]/50">
-<div>© 2024 ARIPA. The Analytical Curator.</div>
-<div class="flex gap-8">
-<a class="hover:text-[#6c45c0]" href="#">Privacidad</a>
-<a class="hover:text-[#6c45c0]" href="#">Legal</a>
-</div>
+<p class="text-white/40 font-body text-sm leading-relaxed text-center">© 2024 ARIPA Consulting. Analytical Curator Digital Solutions.</p>
 </div>
 </footer>
-<script>
-    // Mobile Menu Toggle
-    const openMenu = document.getElementById('open-menu');
-    const closeMenu = document.getElementById('close-menu');
-    const mobileMenu = document.getElementById('mobile-menu-overlay');
-
-    openMenu.addEventListener('click', () => {
-        mobileMenu.style.transform = 'translateX(0)';
-        document.body.classList.add('modal-active');
-    });
-
-    const hideMenu = () => {
-        mobileMenu.style.transform = 'translateX(100%)';
-        document.body.classList.remove('modal-active');
-    };
-
-    closeMenu.addEventListener('click', hideMenu);
-
-    document.querySelectorAll('.mobile-nav-link').forEach(link => {
-        link.addEventListener('click', hideMenu);
-    });
-
-    // Modal Interaction
-    const modal = document.getElementById('service-modal');
-    const closeModal = document.getElementById('close-modal');
-    const serviceCards = document.querySelectorAll('.service-card-v2');
-    const modalTitle = document.getElementById('modal-title');
-    const modalIcon = document.getElementById('modal-icon');
-    const modalDesc = document.getElementById('modal-description');
-    const modalCta = document.getElementById('modal-cta');
-
-    serviceCards.forEach(card => {
-        card.addEventListener('click', () => {
-            modalTitle.innerText = card.getAttribute('data-title');
-            modalIcon.innerText = card.getAttribute('data-icon');
-            modalDesc.innerText = card.getAttribute('data-desc');
-            modal.classList.remove('hidden');
-            modal.classList.add('flex');
-            document.body.classList.add('modal-active');
-        });
-    });
-
-    const hideModal = () => {
-        modal.classList.add('hidden');
-        modal.classList.remove('flex');
-        document.body.classList.remove('modal-active');
-    };
-
-    closeModal.addEventListener('click', hideModal);
-    modal.addEventListener('click', (e) => { if(e.target === modal) hideModal(); });
-    modalCta.addEventListener('click', () => {
-        hideModal();
-        document.getElementById('contacto').scrollIntoView({ behavior: 'smooth' });
-    });
-
-    // Form Validation and Submission
-    const form = document.getElementById('lead-form');
-    const submitBtn = document.getElementById('submit-btn');
-    const inputs = form.querySelectorAll('input[required]');
-    const successMsg = document.getElementById('success-msg');
-
-    const checkForm = () => {
-        let allValid = true;
-        inputs.forEach(input => {
-            if (!input.value || !input.checkValidity()) allValid = false;
-        });
-        
-        if (allValid) {
-            submitBtn.disabled = false;
-            submitBtn.classList.remove('bg-slate-200', 'text-slate-400', 'cursor-not-allowed');
-            submitBtn.classList.add('bg-secondary', 'text-white', 'cursor-pointer', 'hover:bg-opacity-90');
-        } else {
-            submitBtn.disabled = true;
-            submitBtn.classList.add('bg-slate-200', 'text-slate-400', 'cursor-not-allowed');
-            submitBtn.classList.remove('bg-secondary', 'text-white', 'cursor-pointer');
-        }
-    };
-
-    inputs.forEach(input => input.addEventListener('input', checkForm));
-
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        submitBtn.innerText = 'Enviando...';
-        setTimeout(() => {
-            submitBtn.classList.add('hidden');
-            successMsg.classList.remove('hidden');
-            form.reset();
-        }, 1500);
-    });
-</script>
+<!-- BottomNavBar (Sticky) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 py-4 pb-safe bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
+<a class="flex flex-col items-center justify-center text-white/60 px-6 py-2 hover:bg-[#6c45c0]/20 hover:text-white transition-all active:scale-95 duration-200" href="mailto:contact@aripa.com">
+<span class="material-symbols-outlined mb-1" data-icon="mail">mail</span>
+<span class="font-label uppercase tracking-widest text-[10px] font-semibold">Contactar</span>
+</a>
+<a class="flex flex-col items-center justify-center text-white bg-[#6c45c0] rounded-full px-6 py-2 active:scale-95 duration-200" href="https://wa.me/34638162328">
+<span class="material-symbols-outlined mb-1" data-icon="chat">chat</span>
+<span class="font-label uppercase tracking-widest text-[10px] font-semibold">WhatsApp</span>
+</a>
+</nav>
+<!-- Content padding for bottom nav -->
+<div class="h-20"></div>
 </body></html>
