@@ -134,13 +134,11 @@ body.modal-open { overflow: hidden; }
       <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="#metodologia" onclick="toggleDrawer()">
         <span class="material-symbols-outlined text-[#6c45c0]">psychology</span> Metodología
       </a>
-      <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline mb-4" href="#faq" onclick="toggleDrawer()">
-        <span class="material-symbols-outlined text-[#6c45c0]">help_outline</span> FAQ
-      </a>
-      <button class="flex items-center justify-center gap-2 text-white py-4 px-4 btn-after rounded-xl font-headline font-bold uppercase tracking-widest text-xs" onclick="toggleDrawer(); openContactModal();">
-        <span class="material-symbols-outlined text-sm">mail</span> Contacto
-      </button>
-    </div>
+  <button class="flex items-center justify-center gap-2 text-white py-4 px-4 btn-after rounded-xl font-headline font-bold uppercase tracking-widest text-xs" onclick="toggleDrawer(); openContactModal();">
+    <span class="material-symbols-outlined text-sm">mail</span> Contacto
+  </button>
+</div>
+
   </nav>
 </div>
 
@@ -251,30 +249,23 @@ href="https://wa.me/34638162328" id="floating-whatsapp-desktop" target="_blank">
   <section class="py-16 md:py-20 bg-surface-bright">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <h2 class="text-center text-[10px] font-bold tracking-widest text-secondary uppercase mb-10 md:mb-16">Empresas que confían en aripa</h2>
-      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 md:gap-8 items-center opacity-50 grayscale contrast-125">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
-          <img alt="Repsol" class="max-h-6 w-auto object-contain mb-2 md:mb-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZjWlXZXpYJtAXrS8niOSyc1WuLgwrvQ1lxuvkLjv9iVc7KTNyJywL-2yHVcoii6LpvKofZEblLZmaR4iOQ3DA4fW-NaGp4oHTcZsvyCnf6FsBqv0lt1D7H-OUlFhS_2iVT3TQgImdq5dCX97wIiTc9OtxSp0kdY7ca0oFEhTPGfpJVX1HAZhBqNULjSPwVjffVvqllOd-5NYNK9MTdxOcweWHOvMEs1W-O6CqBpG51-VRX2U6TOPlTG5VA20NudheFWMu6EPEjKF4"/>
-          <span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Repsol</span>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center opacity-50 grayscale contrast-125 max-w-4xl mx-auto">
+        <!-- SHIFTA by Elisava: texto estilizado (logo no disponible públicamente) -->
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+          <span class="text-[11px] md:text-xs font-black uppercase tracking-widest text-center leading-tight">SHIFTA<br/><span class="font-normal text-[9px]">by Elisava</span></span>
         </div>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
-          <img alt="Iberia" class="max-h-6 w-auto object-contain mb-2 md:mb-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe4iFh1zHu8nLsG3cj3oNcjB_UxXm5S3nSg8_5dKre0WpS6anmbY1tw70thwTOUWnPL5mAZ6glGE4WpO9BKdkdFPd3nX4rZ17r0wylNbBzAFmJB4YLiUzDJkavJddrHNqdu3qCAZw3UBHx5OgmPk44WCUHlfgpuKjPtUpGejhbI8ev38pSyiGl7c3Mby1fAbim3EgxdO28t0dmEObxChaYIBZizC4E5BUUFToCGerFqUGm0ZhK0QsLaJ6oqQz1HPhWHGiimHd9rylc"/>
-          <span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Iberia</span>
+        <!-- Auto Solutions -->
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+          <span class="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-center leading-tight">Auto<br/>Solutions</span>
         </div>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
-          <img alt="Cabify" class="max-h-6 w-auto object-contain mb-2 md:mb-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATF_dqq7tELUtmvfC0z1rSRqle-jJ-jtkiXctZ0Be87jHCS2X6kAgLHHv3vucGVyPniclH_-tSBTkRZ--l5GvdtFEF28a0ZG0bGx12cZ8bl51M6BhDokFhuH5oSzIx106ox8XRxbiJPmkW0WilKu7L0Vg2tJdOZMUi34fIWjLM_hM8vt6G-CavgJV2ccLazWcC7snoRb8QqTm0B48hbhGpW7dFNkgVG70EGQvo9D4__7VnuDNC3RopZBJ1iXVBafmfZBJpTNJcTV7Q"/>
-          <span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Cabify</span>
+        <!-- Hotel Majadahonda -->
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+          <img alt="Hotel Majadahonda" class="max-h-10 w-auto object-contain" src="https://www.hotelmajadahonda.com/templates/cadenas/air/images/hotels/SYN218/Logo%20Hotel%20Majadahonda.png"/>
         </div>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
-          <img alt="Telefonica" class="max-h-6 w-auto object-contain mb-2 md:mb-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_aXCILu-HKoi-jv-1UP-60CWJfJ7qJOqfmSwOaiJY5WFcZgpjAwPcfZewZlNY0kWY6zhYOSolbs1bLbRx_yrkpa2pIW7hNYuY7jOUqYuArcGT8nvRaNM17wsuxuvmL1PuVG4cobvHfTe1nuP_gOzIB83-fEWr-kfMtiZUcA451yc685IIaG4-E94Zkf2VFIXfK5ZELoZUpGAS2KP3RKEir0kgGLWcQQLiLS8nVz0linNAKl2YHm0cZp-r7dKzDECdhBer5dzCEXTt"/>
-          <span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Telefonica</span>
-        </div>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
-          <img alt="Inditex" class="max-h-6 w-auto object-contain mb-2 md:mb-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtJ822WmFhxjZorWZYNFzZU3Gj0iNzZClkMz3xcu9JghFVnApWPjMF0dnZZ8Ztv6Omst3wBztwbXul2xH-cqmWfQUsLec8CSPm0y5KiPnquQ4cZc4ewbIv9tDIMZyAOcLW81w_jcMnA-5_pLDYdkvWD3CYwCM2jb3dc7eZhfWggmpG5DVm4GYAAbMC0jt-AtteguCs30NBktEQ85QZ3yHeABNZsLLL3xzNikSh0nDRBnZeb-2VDNUZE3BOkzLHvpP7uEPL4BYkLkpa"/>
-          <span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Inditex</span>
-        </div>
-        <div class="flex flex-col md:flex-row items-center justify-center gap-1 md:gap-3 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
-          <img alt="Acciona" class="max-h-6 w-auto object-contain mb-2 md:mb-0" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv529BPSaHwflTEKNeaqUm3chlk6bX1nfzL-Za684sdBWBWgBidzbuCYYri1o0EFTptuouoj3jRJYtGdgvdGEUClKbxvOdN0uBRPRzPt1dH0n_4xMYlJTn0ndEpfs077djhYKb2X5VllRA_Rls5-RhdfmmUty-vpW-PWsVD8MLb2KaARcuo458peq4lV0nnmPJyJ6Tj429apP_107BBR79cBfhRu3mOQGfZjXM10ghB_F8v1OzD7EGLJOsz9FEvtR-w4nNv7rkQA57"/>
-          <span class="text-[8px] md:text-[10px] font-bold uppercase tracking-widest">Acciona</span>
+        <!-- Dime María: isotipo DM -->
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+          <span class="text-2xl font-black font-headline tracking-tighter">DM</span>
+          <span class="text-[8px] md:text-[9px] font-bold uppercase tracking-widest">Dime María</span>
         </div>
       </div>
     </div>
@@ -622,12 +613,14 @@ href="https://wa.me/34638162328" id="floating-whatsapp-desktop" target="_blank">
         <div>
           <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-name">Nombre *</label>
           <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
-                 id="c-name" placeholder="Tu nombre" required type="text"/>
+                 id="c-name" placeholder="Tu nombre" required type="text"
+                 oninput="this.value = this.value.replace(/[0-9]/g, '')"/>
         </div>
         <div>
           <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-phone">Teléfono *</label>
           <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
-                 id="c-phone" placeholder="+34 000 000 000" required type="tel"/>
+                 id="c-phone" placeholder="+34 000 000 000" required type="tel"
+                 oninput="this.value = this.value.replace(/[a-zA-ZáéíóúÁÉÍÓÚñÑ]/g, '')"/>
         </div>
       </div>
       <div>
@@ -747,10 +740,24 @@ href="https://wa.me/34638162328" id="floating-whatsapp-desktop" target="_blank">
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    alert('Solicitud enviada correctamente. Gracias por contactar con aripa.');
-    closeModal('contact-modal');
-    e.target.reset();
-    validate();
+    const name    = document.getElementById('c-name').value;
+    const phone   = document.getElementById('c-phone').value;
+    const email   = document.getElementById('c-email').value;
+    const service = document.getElementById('c-service').value;
+    const message = document.getElementById('c-message').value;
+
+    const subject = encodeURIComponent(`Nueva solicitud de contacto - ${name}`);
+    const body = encodeURIComponent(
+      `Nombre: ${name}\nTeléfono: ${phone}\nEmail: ${email}\nServicio: ${service}\n\nMensaje:\n${message}`
+    );
+    window.location.href = `mailto:rdrgzjavier@gmail.com?subject=${subject}&body=${body}`;
+
+    setTimeout(() => {
+      alert('Solicitud enviada correctamente. Gracias por contactar con aripa.');
+      closeModal('contact-modal');
+      e.target.reset();
+      validate();
+    }, 500);
   }
 
   /* ── Drawer (mobile) ── */
