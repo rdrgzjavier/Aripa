@@ -63,6 +63,11 @@
             box-shadow: 0 4px 12px rgba(18, 140, 126, 0.3);
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
+        .whatsapp-floating {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            box-shadow: 0 0 20px rgba(37, 211, 102, 0.4), inset 0 1px 1px rgba(255,255,255,0.3);
+            transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+        }
         body.modal-open { overflow: hidden; }
 
         #sticky-bottom-bar {
@@ -77,55 +82,63 @@
 <body class="bg-background text-on-background selection:bg-secondary/30">
 <header class="fixed top-0 w-full z-50 bg-[#061542]/80 backdrop-blur-md shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)]">
 <div class="flex justify-between items-center h-20 px-12 max-w-[1440px] mx-auto">
-<div class="flex items-center gap-3">
+<div class="flex items-center gap-3 w-1/4">
 <img alt="Isotype" class="w-8 h-8 object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDju3oXgCt8B36yvWw3kaiXZAHqc6XwXAZmZ9wAFqOfnfSnkNUvhGC3WEDc7iFL9mv9T4zxog7bRwqfclEJJVzvzEeCzPuRx1hcWz7MQtd95P17Vksvx22tv2gaT5ohM1WeccMu6_KNhruLupjmXikTdU7oOPgY04k_84DwmlIfcDmRfL2-aloeURbXwWUE5mTH177vaGf-a02pF1JAVNnJ-7ejLaPRV6RN6jjxaMVbVkNeRczfVv3IeysZNCvqrbIDrmBbk2EpXDy4"/>
 <span class="text-2xl font-bold lowercase text-white font-brand">aripa</span>
 </div>
-<nav class="hidden md:flex items-center gap-8">
+<nav class="hidden md:flex items-center justify-center gap-12 w-2/4">
 <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="#servicios">Servicios</a>
 <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="#metodologia">Metodología</a>
-<a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="#faq">FAQ</a>
 </nav>
-<div class="flex items-center gap-6">
-<a class="flex items-center gap-2 text-white font-semibold font-headline text-sm tracking-tight" href="tel:638162328">
+<div class="flex items-center justify-end gap-6 w-1/4">
+<a class="hidden lg:flex items-center gap-2 text-white font-semibold font-headline text-sm tracking-tight whitespace-nowrap" href="tel:638162328">
 <span class="material-symbols-outlined text-lg">call</span> 638 162 328
-                </a>
-<button class="btn-after text-white px-8 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform active:scale-95" onclick="openContactModal()">Comenzar Proyecto</button>
+            </a>
+<button class="btn-after text-white px-8 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 flex items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
+<span class="material-symbols-outlined text-base">mail</span>
+                Contactar
+            </button>
 </div>
 </div>
 </header>
 <main>
 <!-- Hero Section -->
-<section class="hero-gradient pt-48 pb-32 px-12 text-center text-white relative overflow-hidden" id="hero-section">
+<section class="hero-gradient pt-40 pb-20 px-12 text-center text-white relative overflow-hidden" id="hero-section">
 <div class="max-w-3xl mx-auto z-10 relative">
-<div class="flex flex-col items-center gap-2 mb-8">
+<div class="flex flex-col items-center gap-2 mb-12">
 <div class="flex items-center gap-1 text-yellow-400">
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
-<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">star</span>
 </div>
 <p class="text-[10px] font-bold uppercase tracking-[0.2em] text-on-primary-container/80">Más de 10 años impulsando negocios | Valoración 4.9/5</p>
 </div>
 <h1 class="text-6xl md:text-7xl font-black font-headline leading-[1.1] tracking-tighter mb-8">
-                    Estrategias de <br/><span class="text-white">Crecimiento Curadas</span>
+            Estrategias de <br/><span class="text-white">Crecimiento Curadas</span>
 </h1>
 <p class="text-xl text-on-primary-container font-medium max-w-xl mx-auto mb-12">
-                    Consultoría digital de alto rendimiento diseñada para marcas que buscan dominar buscadores IA y mercados globales.
-                </p>
-<div class="flex flex-col sm:flex-row justify-center gap-4">
-<button class="btn-after text-white px-10 py-5 rounded-xl font-bold text-xs uppercase tracking-widest hover:scale-[1.02] transition-transform active:scale-95" onclick="openContactModal()">
-                        Solicitar auditoría
-                    </button>
-<a class="btn-before-glossy text-white px-10 py-5 rounded-xl font-bold text-xs uppercase tracking-widest flex items-center justify-center hover:bg-white/10 transition-colors" href="#servicios">
-                        VER SERVICIOS
-                    </a>
+            Consultoría digital de alto rendimiento diseñada para marcas que buscan dominar buscadores IA y mercados globales.
+        </p>
+<div class="flex flex-col items-center gap-4">
+<button class="w-full sm:w-80 btn-after text-white px-10 py-5 rounded-xl font-bold text-xs uppercase tracking-widest hover:scale-[1.02] transition-transform active:scale-95" onclick="openContactModal()">
+                COMENZAR PROYECTO
+            </button>
+<a class="w-full sm:w-80 btn-before-glossy text-white px-10 py-5 rounded-xl font-bold text-xs uppercase tracking-widest flex items-center justify-center hover:bg-white/10 transition-colors" href="#servicios">
+                VER SERVICIOS
+            </a>
 </div>
 </div>
 <!-- Decorative blob -->
 <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
 </section>
+<!-- Floating WhatsApp Bubble (Visible Above the Fold) -->
+<a class="fixed right-8 bottom-8 z-[60] w-16 h-16 rounded-full flex items-center justify-center whatsapp-floating hover:scale-110 transition-transform active:scale-95" href="https://wa.me/34638162328" id="floating-whatsapp" target="_blank">
+<svg fill="white" height="32" viewbox="0 0 24 24" width="32">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
+</svg>
+</a>
 <!-- Client Logos -->
 <section class="py-20 bg-surface-bright">
 <div class="max-w-[1440px] mx-auto px-12">
@@ -173,11 +186,10 @@
 <div class="flex-grow">
 <div class="flex items-center justify-between mb-4">
 <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors">Captación</h3>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-white transition-colors">arrow_outward</span>
 </div>
 <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-6 max-w-md">Lead Gen especializado y SEO/GEO para visibilidad en buscadores de IA y Paid Media de alto ROI.</p>
 <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest">
-                            SABER MÁS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    SABER MÁS <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </div>
 </div>
 </div>
@@ -189,11 +201,10 @@
 <div class="flex-grow">
 <div class="flex items-center justify-between mb-4">
 <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors">Conversión</h3>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-white transition-colors">arrow_outward</span>
 </div>
 <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-6 max-w-md">Maximización de ROI mediante CRO, UX avanzada y experimentación continua basada en datos.</p>
 <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest">
-                            SABER MÁS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    SABER MÁS <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </div>
 </div>
 </div>
@@ -205,11 +216,10 @@
 <div class="flex-grow">
 <div class="flex items-center justify-between mb-4">
 <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors">Confianza</h3>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-white transition-colors">arrow_outward</span>
 </div>
 <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-6 max-w-md">Reputación digital estratégica, gestión de prueba social y visibilidad local optimizada.</p>
 <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest">
-                            SABER MÁS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    SABER MÁS <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </div>
 </div>
 </div>
@@ -221,11 +231,10 @@
 <div class="flex-grow">
 <div class="flex items-center justify-between mb-4">
 <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors">Escalado</h3>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-white transition-colors">arrow_outward</span>
 </div>
 <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-6 max-w-md">Growth estratégico, automatización de procesos operativos y desarrollo digital a medida.</p>
 <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest">
-                            SABER MÁS <span class="material-symbols-outlined text-sm">arrow_forward</span>
+                    SABER MÁS <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </div>
 </div>
 </div>
@@ -274,36 +283,36 @@
 <div>
 <h2 class="text-4xl font-extrabold font-headline text-primary tracking-tighter mb-8">Preguntas Frecuentes</h2>
 <p class="text-lg text-on-surface-variant leading-relaxed">
-                        Todo lo que necesitas saber sobre cómo trabajamos y cómo podemos ayudar a escalar tu presencia digital.
-                    </p>
+                Todo lo que necesitas saber sobre cómo trabajamos y cómo podemos ayudar a escalar tu presencia digital.
+            </p>
 </div>
 <div class="lg:col-span-2 space-y-4">
 <details class="group border border-outline-variant/30 rounded-2xl p-6">
 <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-xl text-primary font-headline">
-                            ¿Qué es la optimización para buscadores de IA (GEO)?
-                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
+                    ¿Qué es la optimización para buscadores de IA (GEO)?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
 </summary>
 <p class="text-on-surface-variant mt-4 leading-relaxed">
-                            Es el proceso de optimizar tus contenidos para que motores de respuesta como ChatGPT o Gemini citen tu marca como la autoridad en tu sector.
-                        </p>
+                    Es el proceso de optimizar tus contenidos para que motores de respuesta como ChatGPT o Gemini citen tu marca como la autoridad en tu sector.
+                </p>
 </details>
 <details class="group border border-outline-variant/30 rounded-2xl p-6">
 <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-xl text-primary font-headline">
-                            ¿En cuánto tiempo veré resultados en CRO?
-                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
+                    ¿En cuánto tiempo veré resultados en CRO?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
 </summary>
 <p class="text-on-surface-variant mt-4 leading-relaxed">
-                            Los cambios iniciales pueden mostrar impacto en 48-72h. Un ciclo completo de experimentación suele durar entre 2 y 4 semanas.
-                        </p>
+                    Los cambios iniciales pueden mostrar impacto en 48-72h. Un ciclo completo de experimentación suele durar entre 2 y 4 semanas.
+                </p>
 </details>
 <details class="group border border-outline-variant/30 rounded-2xl p-6">
 <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-xl text-primary font-headline">
-                            ¿Cómo garantizáis el ROI de la inversión?
-                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
+                    ¿Cómo garantizáis el ROI de la inversión?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
 </summary>
 <p class="text-on-surface-variant mt-4 leading-relaxed">
-                            Trabajamos con un modelo basado en datos donde cada euro invertido se traza hasta la conversión final, ajustando pujas en tiempo real.
-                        </p>
+                    Trabajamos con un modelo basado en datos donde cada euro invertido se traza hasta la conversión final, ajustando pujas en tiempo real.
+                </p>
 </details>
 </div>
 </div>
@@ -321,8 +330,8 @@
 <a class="text-white/40 hover:text-white transition-colors text-sm font-medium" href="#">Términos</a>
 </nav>
 <p class="text-white/40 text-[10px] font-body max-w-lg leading-relaxed uppercase tracking-widest">
-                © 2024 aripa Consulting. Analytical Curator Digital Solutions. Transformando datos en activos estratégicos de alto rendimiento.
-            </p>
+            © 2024 aripa Consulting. Analytical Curator Digital Solutions. Transformando datos en activos estratégicos de alto rendimiento.
+        </p>
 </div>
 </footer>
 <!-- Sticky Bottom Bar -->
@@ -330,18 +339,18 @@
 <div class="hidden md:flex items-center gap-4">
 <span class="text-primary font-bold font-headline text-sm tracking-tight flex items-center gap-2">
 <span class="material-symbols-outlined text-secondary text-lg">bolt</span> ¿Listo para escalar?
-            </span>
+        </span>
 </div>
 <div class="flex items-center gap-3 w-full md:w-auto pointer-events-auto">
 <button class="flex-1 md:flex-none btn-after text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest shadow-xl" onclick="openContactModal()">
-                Contactar
-            </button>
+            Contactar
+        </button>
 <a class="flex-1 md:flex-none whatsapp-bubble text-white px-8 py-4 rounded-xl font-bold text-xs uppercase tracking-widest flex items-center justify-center gap-2 shadow-xl" href="https://wa.me/34638162328" target="_blank">
 <svg fill="currentColor" height="18" viewbox="0 0 24 24" width="18">
 <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"></path>
 </svg>
-                WhatsApp
-            </a>
+            WhatsApp
+        </a>
 </div>
 </div>
 <!-- Service Modal -->
@@ -353,15 +362,15 @@
 <div class="mb-10">
 <h4 class="text-3xl font-extrabold font-headline text-primary mb-4" id="modal-title">Detalles del Servicio</h4>
 <p class="text-on-surface-variant text-lg leading-relaxed mb-8" id="modal-desc">
-                    Nuestra metodología curada permite una integración fluida de activos digitales con objetivos de negocio reales.
-                </p>
+                Nuestra metodología curada permite una integración fluida de activos digitales con objetivos de negocio reales.
+            </p>
 <div class="space-y-4" id="modal-list">
 <!-- Dynamic list -->
 </div>
 </div>
 <button class="w-full py-5 btn-after text-white font-bold rounded-2xl uppercase tracking-widest text-xs hover:scale-[1.02] transition-transform" onclick="closeModal('service-modal'); openContactModal();">
-                Solicitar información personalizada
-            </button>
+            Solicitar información personalizada
+        </button>
 </div>
 </div>
 <!-- Contact Form Modal -->
@@ -404,108 +413,110 @@
 <textarea class="w-full bg-surface-container-low border-none rounded-xl px-6 py-4 text-sm focus:ring-2 focus:ring-secondary/20 min-h-[120px] transition-all" id="message" placeholder="¿Cómo podemos ayudarte?"></textarea>
 </div>
 <button class="w-full py-5 btn-after text-white font-bold rounded-2xl active:scale-95 transition-all uppercase tracking-widest text-xs disabled:opacity-50 disabled:pointer-events-none" id="submit-btn" type="submit">
-                    Enviar Solicitud
-                </button>
+                Enviar Solicitud
+            </button>
 </form>
 </div>
 </div>
 <script>
-        const services = {
-            captacion: {
-                title: 'Captación Avanzada',
-                desc: 'Estrategias multicanal de generación de demanda para la nueva era digital impulsada por IA.',
-                list: ['SEO/GEO/AEO (Buscadores de IA)', 'Paid Media Omnicanal', 'Lead Generation B2B', 'Inbound Marketing']
-            },
-            conversion: {
-                title: 'Conversión & CRO',
-                desc: 'Transformamos cada visita en una oportunidad de negocio real mediante experimentación rigurosa.',
-                list: ['Análisis CRO & Tests A/B', 'UX/UI Design Avanzado', 'Optimización del Funnel', 'Personalización en Tiempo Real']
-            },
-            confianza: {
-                title: 'Confianza & Reputación',
-                desc: 'Construimos la autoridad necesaria para que el mercado te elija frente a la competencia.',
-                list: ['PR Digital & Gestión de Medios', 'SEO Local & Reviews', 'Social Proof Strategy', 'Brand Authority Audit']
-            },
-            escalado: {
-                title: 'Escalado & Growth',
-                desc: 'Infraestructura técnica y procesos optimizados diseñados para el crecimiento exponencial.',
-                list: ['Automatización de Marketing', 'Growth Hacking Strategy', 'Integración CRM/ERP', 'Arquitectura de Datos']
-            }
-        };
-
-        function openServiceModal(id) {
-            const service = services[id];
-            document.getElementById('modal-title').innerText = service.title;
-            document.getElementById('modal-desc').innerText = service.desc;
-            
-            const listContainer = document.getElementById('modal-list');
-            listContainer.innerHTML = '';
-            service.list.forEach(item => {
-                const el = document.createElement('div');
-                el.className = 'flex items-center gap-4 text-lg font-semibold text-primary';
-                el.innerHTML = `<span class="material-symbols-outlined text-secondary">check_circle</span> ${item}`;
-                listContainer.appendChild(el);
-            });
-
-            document.getElementById('service-modal').classList.remove('hidden');
-            document.body.classList.add('modal-open');
+    const services = {
+        captacion: {
+            title: 'Captación Avanzada',
+            desc: 'Estrategias multicanal de generación de demanda para la nueva era digital impulsada por IA.',
+            list: ['SEO/GEO/AEO (Buscadores de IA)', 'Paid Media Omnicanal', 'Lead Generation B2B', 'Inbound Marketing']
+        },
+        conversion: {
+            title: 'Conversión & CRO',
+            desc: 'Transformamos cada visita en una oportunidad de negocio real mediante experimentación rigurosa.',
+            list: ['Análisis CRO & Tests A/B', 'UX/UI Design Avanzado', 'Optimización del Funnel', 'Personalización en Tiempo Real']
+        },
+        confianza: {
+            title: 'Confianza & Reputación',
+            desc: 'Construimos la autoridad necesaria para que el mercado te elija frente a la competencia.',
+            list: ['PR Digital & Gestión de Medios', 'SEO Local & Reviews', 'Social Proof Strategy', 'Brand Authority Audit']
+        },
+        escalado: {
+            title: 'Escalado & Growth',
+            desc: 'Infraestructura técnica y procesos optimizados diseñados para el crecimiento exponencial.',
+            list: ['Automatización de Marketing', 'Growth Hacking Strategy', 'Integración CRM/ERP', 'Arquitectura de Datos']
         }
+    };
 
-        function openContactModal() {
-            document.getElementById('contact-modal').classList.remove('hidden');
-            document.body.classList.add('modal-open');
-        }
-
-        function closeModal(modalId) {
-            document.getElementById(modalId).classList.add('hidden');
-            document.body.classList.remove('modal-open');
-        }
-
-        function handleFormSubmit(event) {
-            event.preventDefault();
-            alert('Solicitud enviada correctamente. Gracias por contactar con aripa.');
-            closeModal('contact-modal');
-            event.target.reset();
-        }
-
-        // Modal background clicks
-        document.getElementById('service-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'service-modal') closeModal('service-modal');
-        });
-        document.getElementById('contact-modal').addEventListener('click', (e) => {
-            if (e.target.id === 'contact-modal') closeModal('contact-modal');
+    function openServiceModal(id) {
+        const service = services[id];
+        document.getElementById('modal-title').innerText = service.title;
+        document.getElementById('modal-desc').innerText = service.desc;
+        
+        const listContainer = document.getElementById('modal-list');
+        listContainer.innerHTML = '';
+        service.list.forEach(item => {
+            const el = document.createElement('div');
+            el.className = 'flex items-center gap-4 text-lg font-semibold text-primary';
+            el.innerHTML = `<span class="material-symbols-outlined text-secondary">check_circle</span> ${item}`;
+            listContainer.appendChild(el);
         });
 
-        // Form validation logic
-        const form = document.getElementById('contact-form');
-        const submitBtn = document.getElementById('submit-btn');
-        const inputs = form.querySelectorAll('input[required]');
+        document.getElementById('service-modal').classList.remove('hidden');
+        document.body.classList.add('modal-open');
+    }
 
-        const validateForm = () => {
-            let isValid = true;
-            inputs.forEach(input => {
-                if (!input.value || !input.checkValidity()) isValid = false;
-            });
-            submitBtn.disabled = !isValid;
-        };
+    function openContactModal() {
+        document.getElementById('contact-modal').classList.remove('hidden');
+        document.body.classList.add('modal-open');
+    }
 
+    function closeModal(modalId) {
+        document.getElementById(modalId).classList.add('hidden');
+        document.body.classList.remove('modal-open');
+    }
+
+    function handleFormSubmit(event) {
+        event.preventDefault();
+        alert('Solicitud enviada correctamente. Gracias por contactar con aripa.');
+        closeModal('contact-modal');
+        event.target.reset();
+    }
+
+    document.getElementById('service-modal').addEventListener('click', (e) => {
+        if (e.target.id === 'service-modal') closeModal('service-modal');
+    });
+    document.getElementById('contact-modal').addEventListener('click', (e) => {
+        if (e.target.id === 'contact-modal') closeModal('contact-modal');
+    });
+
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const inputs = form.querySelectorAll('input[required]');
+
+    const validateForm = () => {
+        let isValid = true;
         inputs.forEach(input => {
-            input.addEventListener('input', validateForm);
+            if (!input.value || !input.checkValidity()) isValid = false;
         });
+        submitBtn.disabled = !isValid;
+    };
 
-        validateForm(); // Initial state
+    inputs.forEach(input => {
+        input.addEventListener('input', validateForm);
+    });
 
-        // Sticky Bottom Bar logic
-        const heroSection = document.getElementById('hero-section');
-        const stickyBar = document.getElementById('sticky-bottom-bar');
+    validateForm();
 
-        window.addEventListener('scroll', () => {
-            const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-            if (window.scrollY > heroBottom - 100) {
-                stickyBar.classList.add('visible');
-            } else {
-                stickyBar.classList.remove('visible');
-            }
-        });
-    </script>
+    const heroSection = document.getElementById('hero-section');
+    const stickyBar = document.getElementById('sticky-bottom-bar');
+    const floatingWa = document.getElementById('floating-whatsapp');
+
+    window.addEventListener('scroll', () => {
+        const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+        if (window.scrollY > heroBottom - 200) {
+            stickyBar.classList.add('visible');
+            floatingWa.classList.add('opacity-0', 'pointer-events-none');
+            floatingWa.classList.remove('opacity-100');
+        } else {
+            stickyBar.classList.remove('visible');
+            floatingWa.classList.add('opacity-100');
+            floatingWa.classList.remove('opacity-0', 'pointer-events-none');
+        }
+    });
+</script>
 </body></html>
