@@ -89,178 +89,346 @@
         .lavender-stroke {
             border: 1px solid rgba(108, 69, 192, 0.2);
         }
-        .btn-primary-custom {
-            background: linear-gradient(180deg, #8156e0 0%, #6c45c0 100%);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.2), 0 10px 20px rgba(108,69,192,0.3);
-            border: 1px solid rgba(108,69,192,0.5);
+        /* Style 'After' - High saturation lavender gradient with inner glow */
+        .btn-after {
+            background: linear-gradient(180deg, #8b5cf6 0%, #6c45c0 100%);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 16px -4px rgba(108,69,192,0.5);
+            border: 1px solid rgba(139, 92, 246, 0.5);
         }
-        .btn-secondary-custom {
-            background-color: rgba(27, 28, 28, 0.6);
-            backdrop-filter: blur(4px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+        /* Style 'Before' Glossy - Transparent with lavender borders */
+        .btn-before-glossy {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(108, 69, 192, 0.4);
+            box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
         }
-    </style>
-<style>
-        body {
-            min-height: max(884px, 100dvh);
+        .whatsapp-bubble {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        .scrolled .whatsapp-bubble {
+            opacity: 0;
+            visibility: hidden;
+        }
+        .bottom-nav {
+            transform: translateY(100%);
+            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .scrolled .bottom-nav {
+            transform: translateY(0);
+        }
+        .drawer-transition {
+            transition: transform 0.3s ease-in-out;
         }
     </style>
 </head>
 <body class="bg-background text-on-background font-body selection:bg-secondary-container">
+<!-- Navigation Drawer -->
+<div class="fixed inset-0 z-[70] invisible" id="drawer">
+<div class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300" id="drawer-overlay"></div>
+<nav class="absolute left-0 top-0 h-full w-4/5 max-w-sm bg-[#061542] drawer-transition -translate-x-full p-8 flex flex-col gap-6 shadow-2xl" id="drawer-content">
+<div class="flex justify-between items-center mb-4">
+<span class="text-3xl font-black lowercase text-[#fcf9f8] font-headline">aripa</span>
+<button class="text-white/70" onclick="toggleDrawer()">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<a class="flex items-center gap-4 text-[#fcf9f8] py-3 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="#">
+<span class="material-symbols-outlined text-[#6c45c0]">insights</span> Servicios
+        </a>
+<a class="flex items-center gap-4 text-[#fcf9f8] py-3 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="#">
+<span class="material-symbols-outlined text-[#6c45c0]">psychology</span> Metodología
+        </a>
+<a class="flex items-center gap-4 text-[#fcf9f8] py-3 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="#">
+<span class="material-symbols-outlined text-[#6c45c0]">groups</span> Clientes
+        </a>
+<a class="flex items-center gap-4 text-[#fcf9f8] py-3 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="#">
+<span class="material-symbols-outlined text-[#6c45c0]">send</span> Contacto
+        </a>
+</nav>
+</div>
 <header class="fixed top-0 w-full z-50 glass-header shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)]">
-<nav class="flex justify-between items-center px-6 py-4 max-w-full mx-auto">
+<nav class="flex justify-between items-center px-6 h-16 w-full max-w-full mx-auto">
 <div class="flex items-center gap-3">
+<button class="flex items-center justify-center p-2 -ml-2" onclick="toggleDrawer()">
 <span class="material-symbols-outlined text-white text-2xl">menu</span>
-<span class="text-xl font-bold tracking-tighter text-white uppercase font-headline">aripa</span>
+</button>
+<span class="text-2xl font-bold lowercase text-[#fcf9f8] font-headline">aripa</span>
 </div>
-<div class="hidden md:flex gap-8 items-center">
-<a class="text-[#6c45c0] font-bold transition-colors duration-300 font-headline" href="#">Services</a>
-<a class="text-white/70 hover:text-[#6c45c0] transition-colors duration-300 font-headline" href="#">Case Studies</a>
-<a class="text-white/70 hover:text-[#6c45c0] transition-colors duration-300 font-headline" href="#">About Us</a>
-</div>
-<a class="text-[#6c45c0] font-bold tracking-tighter font-headline" href="tel:900000000">900 000 000</a>
+<a class="flex items-center gap-2 text-white font-semibold font-headline text-sm tracking-tight" href="tel:+34638162328">
+<span class="material-symbols-outlined text-lg">call</span>
+            +34 638 16 23 28
+        </a>
 </nav>
 </header>
 <main>
-<section class="hero-gradient pt-32 pb-20 px-6 text-center text-white">
+<section class="hero-gradient pt-36 pb-20 px-6 text-center text-white relative">
 <div class="max-w-xl mx-auto space-y-6">
-<h1 class="text-4xl md:text-5xl font-black font-headline leading-tight tracking-tighter uppercase">
-                    Estrategias de Crecimiento Curadas
-                </h1>
-<h2 class="text-lg md:text-xl text-on-primary-container font-medium max-w-md mx-auto">
-                    Consultoría digital de alto rendimiento para marcas que buscan dominar su mercado mediante datos y diseño editorial.
-                </h2>
-<div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-<button class="w-full sm:w-48 py-4 btn-primary-custom text-white font-bold rounded-xl active:scale-95 transition-transform uppercase tracking-widest text-xs">
-                        Comenzar Proyecto
-                    </button>
-<button class="w-full sm:w-48 py-4 btn-secondary-custom text-white font-medium rounded-xl active:scale-95 transition-transform uppercase tracking-widest text-xs">
-                        Ver Servicios
-                    </button>
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/10 text-[10px] font-bold uppercase tracking-widest text-on-primary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                Líderes en consultoría digital para +50 empresas
+            </div>
+<h1 class="text-4xl md:text-5xl font-black font-headline leading-tight tracking-tighter">
+                Estrategias de Crecimiento Curadas
+            </h1>
+<p class="text-lg text-on-primary-container font-medium max-w-md mx-auto">
+                Consultoría digital de alto rendimiento diseñada para marcas que buscan dominar buscadores IA y mercados globales.
+            </p>
+<div class="flex flex-col gap-4 pt-6">
+<button class="w-full py-4 btn-after text-white font-bold rounded-xl active:scale-95 transition-all uppercase tracking-widest text-xs">
+                    Comenzar Proyecto
+                </button>
+<button class="w-full py-4 btn-before-glossy text-white font-medium rounded-xl active:scale-95 transition-all uppercase tracking-widest text-xs">
+                    Ver Metodología
+                </button>
 </div>
-<div class="pt-12 relative flex justify-center">
-<div class="w-16 h-16 bg-[#25D366] rounded-full flex items-center justify-center shadow-lg active:scale-90 transition-transform cursor-pointer">
+<div class="pt-12 whatsapp-bubble">
+<a class="inline-flex w-16 h-16 bg-[#25D366] rounded-full items-center justify-center shadow-lg active:scale-90 transition-transform cursor-pointer" href="https://wa.me/34638162328">
 <span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">chat</span>
+</a>
 </div>
 </div>
+</section>
+<!-- Clientes Section -->
+<section class="py-16 px-6 bg-surface-bright">
+<h2 class="text-[10px] font-bold tracking-widest text-secondary uppercase text-center mb-8">Empresas que confían en aripa</h2>
+<div class="grid grid-cols-3 gap-8 items-center justify-items-center opacity-40 grayscale">
+<img alt="Repsol" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAZjWlXZXpYJtAXrS8niOSyc1WuLgwrvQ1lxuvkLjv9iVc7KTNyJywL-2yHVcoii6LpvKofZEblLZmaR4iOQ3DA4fW-NaGp4oHTcZsvyCnf6FsBqv0lt1D7H-OUlFhS_2iVT3TQgImdq5dCX97wIiTc9OtxSp0kdY7ca0oFEhTPGfpJVX1HAZhBqNULjSPwVjffVvqllOd-5NYNK9MTdxOcweWHOvMEs1W-O6CqBpG51-VRX2U6TOPlTG5VA20NudheFWMu6EPEjKF4"/>
+<img alt="Iberia" class="h-4 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAe4iFh1zHu8nLsG3cj3oNcjB_UxXm5S3nSg8_5dKre0WpS6anmbY1tw70thwTOUWnPL5mAZ6glGE4WpO9BKdkdFPd3nX4rZ17r0wylNbBzAFmJB4YLiUzDJkavJddrHNqdu3qCAZw3UBHx5OgmPk44WCUHlfgpuKjPtUpGejhbI8ev38pSyiGl7c3Mby1fAbim3EgxdO28t0dmEObxChaYIBZizC4E5BUUFToCGerFqUGm0ZhK0QsLaJ6oqQz1HPhWHGiimHd9rylc"/>
+<img alt="Cabify" class="h-5 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuATF_dqq7tELUtmvfC0z1rSRqle-jJ-jtkiXctZ0Be87jHCS2X6kAgLHHv3vucGVyPniclH_-tSBTkRZ--l5GvdtFEF28a0ZG0bGx12cZ8bl51M6BhDokFhuH5oSzIx106ox8XRxbiJPmkW0WilKu7L0Vg2tJdOZMUi34fIWjLM_hM8vt6G-CavgJV2ccLazWcC7snoRb8QqTm0B48hbhGpW7dFNkgVG70EGQvo9D4__7VnuDNC3RopZBJ1iXVBafmfZBJpTNJcTV7Q"/>
+<img alt="Telefonica" class="h-6 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_aXCILu-HKoi-jv-1UP-60CWJfJ7qJOqfmSwOaiJY5WFcZgpjAwPcfZewZlNY0kWY6zhYOSolbs1bLbRx_yrkpa2pIW7hNYuY7jOUqYuArcGT8nvRaNM17wsuxuvmL1PuVG4cobvHfTe1nuP_gOzIB83-fEWr-kfMtiZUcA451yc685IIaG4-E94Zkf2VFIXfK5ZELoZUpGAS2KP3RKEir0kgGLWcQQLiLS8nVz0linNAKl2YHm0cZp-r7dKzDECdhBer5dzCEXTt"/>
+<img alt="Inditex" class="h-3 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtJ822WmFhxjZorWZYNFzZU3Gj0iNzZClkMz3xcu9JghFVnApWPjMF0dnZZ8Ztv6Omst3wBztwbXul2xH-cqmWfQUsLec8CSPm0y5KiPnquQ4cZc4ewbIv9tDIMZyAOcLW81w_jcMnA-5_pLDYdkvWD3CYwCM2jb3dc7eZhfWggmpG5DVm4GYAAbMC0jt-AtteguCs30NBktEQ85QZ3yHeABNZsLLL3xzNikSh0nDRBnZeb-2VDNUZE3BOkzLHvpP7uEPL4BYkLkpa"/>
+<img alt="Acciona" class="h-5 w-auto" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAv529BPSaHwflTEKNeaqUm3chlk6bX1nfzL-Za684sdBWBWgBidzbuCYYri1o0EFTptuouoj3jRJYtGdgvdGEUClKbxvOdN0uBRPRzPt1dH0n_4xMYlJTn0ndEpfs077djhYKb2X5VllRA_Rls5-RhdfmmUty-vpW-PWsVD8MLb2KaARcuo458peq4lV0nnmPJyJ6Tj429apP_107BBR79cBfhRu3mOQGfZjXM10ghB_F8v1OzD7EGLJOsz9FEvtR-w4nNv7rkQA57"/>
 </div>
 </section>
 <section class="py-24 px-6 max-w-7xl mx-auto">
 <div class="mb-16">
-<p class="text-secondary font-bold tracking-widest text-xs uppercase mb-2">Portfolio de Soluciones</p>
-<h3 class="text-3xl font-extrabold font-headline text-primary tracking-tighter">Nuestros Ejes de Intervención</h3>
+<h2 class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Portfolio de Soluciones</h2>
+<p class="text-3xl font-extrabold font-headline text-primary tracking-tighter">Nuestros Ejes de Intervención</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="bg-surface-container-low p-8 rounded-xl lavender-stroke hover:bg-surface-container transition-colors group cursor-pointer">
+<div class="grid grid-cols-1 gap-6">
+<!-- Service Card 1 -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-secondary/10 hover:bg-[#061542] transition-all duration-300 group cursor-pointer" onclick="openModal('captacion')">
 <div class="flex items-start justify-between mb-6">
-<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">target</span>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">arrow_outward</span>
+<span class="material-symbols-outlined text-secondary text-4xl group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 1;">target</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-white transition-colors">arrow_outward</span>
 </div>
-<h4 class="text-xl font-bold font-headline text-secondary mb-3">Captación</h4>
-<p class="text-on-surface-variant leading-relaxed">Lead Gen especializado, estrategias SEO/GEO/AEO para visibilidad en buscadores de IA y Paid Media de alta rentabilidad.</p>
+<h3 class="text-xl font-bold font-headline text-secondary group-hover:text-white mb-3">Captación</h3>
+<p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm">Lead Gen especializado y SEO/GEO para visibilidad en buscadores de IA y Paid Media de alto ROI.</p>
 </div>
-<div class="bg-surface-container-low p-8 rounded-xl lavender-stroke hover:bg-surface-container transition-colors group cursor-pointer">
+<!-- Service Card 2 -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-secondary/10 hover:bg-[#061542] transition-all duration-300 group cursor-pointer" onclick="openModal('conversion')">
 <div class="flex items-start justify-between mb-6">
-<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">analytics</span>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">arrow_outward</span>
+<span class="material-symbols-outlined text-secondary text-4xl group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 1;">analytics</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-white transition-colors">arrow_outward</span>
 </div>
-<h4 class="text-xl font-bold font-headline text-secondary mb-3">Conversión</h4>
-<p class="text-on-surface-variant leading-relaxed">Maximización de ROI mediante CRO, UX avanzada y experimentación continua basada en analítica profunda.</p>
+<h3 class="text-xl font-bold font-headline text-secondary group-hover:text-white mb-3">Conversión</h3>
+<p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm">Maximización de ROI mediante CRO, UX avanzada y experimentación continua basada en datos.</p>
 </div>
-<div class="bg-surface-container-low p-8 rounded-xl lavender-stroke hover:bg-surface-container transition-colors group cursor-pointer">
+<!-- Service Card 3 -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-secondary/10 hover:bg-[#061542] transition-all duration-300 group cursor-pointer" onclick="openModal('confianza')">
 <div class="flex items-start justify-between mb-6">
-<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">verified</span>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">arrow_outward</span>
+<span class="material-symbols-outlined text-secondary text-4xl group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-white transition-colors">arrow_outward</span>
 </div>
-<h4 class="text-xl font-bold font-headline text-secondary mb-3">Confianza</h4>
-<p class="text-on-surface-variant leading-relaxed">Reputación digital estratégica, gestión de prueba social y visibilidad local optimizada para conversión presencial.</p>
+<h3 class="text-xl font-bold font-headline text-secondary group-hover:text-white mb-3">Confianza</h3>
+<p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm">Reputación digital estratégica, gestión de prueba social y visibilidad local optimizada.</p>
 </div>
-<div class="bg-surface-container-low p-8 rounded-xl lavender-stroke hover:bg-surface-container transition-colors group cursor-pointer">
+<!-- Service Card 4 -->
+<div class="bg-surface-container-low p-8 rounded-xl border border-secondary/10 hover:bg-[#061542] transition-all duration-300 group cursor-pointer" onclick="openModal('escalado')">
 <div class="flex items-start justify-between mb-6">
-<span class="material-symbols-outlined text-secondary text-4xl" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
-<span class="material-symbols-outlined text-outline-variant group-hover:text-secondary transition-colors">arrow_outward</span>
+<span class="material-symbols-outlined text-secondary text-4xl group-hover:text-white transition-colors" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<span class="material-symbols-outlined text-outline-variant group-hover:text-white transition-colors">arrow_outward</span>
 </div>
-<h4 class="text-xl font-bold font-headline text-secondary mb-3">Escalado</h4>
-<p class="text-on-surface-variant leading-relaxed">Growth estratégico, automatización de procesos operativos y desarrollo de proyectos digitales a medida.</p>
+<h3 class="text-xl font-bold font-headline text-secondary group-hover:text-white mb-3">Escalado</h3>
+<p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm">Growth estratégico, automatización de procesos operativos y desarrollo digital a medida.</p>
 </div>
 </div>
 </section>
+<!-- Metodología Section -->
 <section class="py-24 px-6 bg-surface-container-low">
-<div class="max-w-3xl mx-auto">
-<div class="text-center mb-12">
-<h3 class="text-3xl font-extrabold font-headline text-primary tracking-tighter uppercase">¿Empezamos la Auditoría?</h3>
-<p class="text-on-surface-variant mt-2">Déjanos tus datos y nos pondremos en contacto en menos de 24h.</p>
+<h2 class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Nuestro Método</h2>
+<p class="text-3xl font-extrabold font-headline text-primary tracking-tighter mb-12">Cómo transformamos tu negocio</p>
+<div class="space-y-8">
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">search</span>
 </div>
-<form class="space-y-6 bg-white p-8 rounded-2xl shadow-sm border border-outline-variant/20">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-<div class="space-y-2">
-<label class="block text-[10px] font-semibold uppercase tracking-widest text-on-surface-variant">Nombre Completo</label>
-<input class="w-full bg-surface px-4 py-3 border border-outline-variant/20 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all font-body text-sm" pattern="[A-Za-z\s]+" placeholder="Ej. Juan Pérez" required="" type="text"/>
-</div>
-<div class="space-y-2">
-<label class="block text-[10px] font-semibold uppercase tracking-widest text-on-surface-variant">Teléfono</label>
-<input class="w-full bg-surface px-4 py-3 border border-outline-variant/20 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all font-body text-sm" pattern="[0-9]+" placeholder="Ej. 600000000" required="" type="tel"/>
+<div>
+<h3 class="text-lg font-bold text-primary font-headline">01. Auditoría</h3>
+<p class="text-sm text-on-surface-variant mt-1">Análisis profundo de activos digitales, competencia y oportunidades no explotadas en buscadores generativos.</p>
 </div>
 </div>
-<div class="space-y-2">
-<label class="block text-[10px] font-semibold uppercase tracking-widest text-on-surface-variant">Email Corporativo</label>
-<input class="w-full bg-surface px-4 py-3 border border-outline-variant/20 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all font-body text-sm" placeholder="juan@empresa.com" required="" type="email"/>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">strategy</span>
 </div>
-<div class="space-y-2">
-<label class="block text-[10px] font-semibold uppercase tracking-widest text-on-surface-variant">Servicio de Interés</label>
-<select class="w-full bg-surface px-4 py-3 border border-outline-variant/20 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent outline-none transition-all font-body text-sm appearance-none">
-<option value="auditoria">Auditoría general</option>
-<option value="captacion">Captación &amp; Paid Media</option>
-<option value="conversion">Conversión &amp; CRO</option>
-<option value="confianza">Confianza &amp; Reputación</option>
-<option value="escalado">Escalado &amp; Growth</option>
-</select>
+<div>
+<h3 class="text-lg font-bold text-primary font-headline">02. Estrategia</h3>
+<p class="text-sm text-on-surface-variant mt-1">Definición de KPIs y hoja de ruta táctica centrada en la rentabilidad a corto y largo plazo.</p>
 </div>
-<button class="w-full py-4 btn-primary-custom text-white font-bold rounded-xl active:scale-95 transition-transform uppercase tracking-widest text-xs" type="submit">
-                        Solicitar información
-                    </button>
-</form>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">bolt</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-primary font-headline">03. Ejecución</h3>
+<p class="text-sm text-on-surface-variant mt-1">Implementación ágil de mejoras UX, campañas de captación y optimización técnica continua.</p>
+</div>
+</div>
+<div class="flex gap-6">
+<div class="flex-shrink-0 w-12 h-12 rounded-full bg-secondary/10 flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary">trending_up</span>
+</div>
+<div>
+<h3 class="text-lg font-bold text-primary font-headline">04. Optimización</h3>
+<p class="text-sm text-on-surface-variant mt-1">Escalado de resultados mediante experimentación constante y automatización de procesos.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-24 px-6 bg-white">
+<h2 class="text-3xl font-extrabold font-headline text-primary tracking-tighter mb-8">Preguntas Frecuentes</h2>
+<div class="space-y-4">
+<details class="group border border-outline-variant/30 rounded-xl p-4">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-primary">
+                    ¿Qué es la optimización para buscadores de IA (GEO)?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
+                    Es el proceso de optimizar tus contenidos para que motores de respuesta como ChatGPT o Gemini citen tu marca como la autoridad en tu sector.
+                </p>
+</details>
+<details class="group border border-outline-variant/30 rounded-xl p-4">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-primary">
+                    ¿En cuánto tiempo veré resultados en CRO?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
+                    Los cambios iniciales pueden mostrar impacto en 48-72h. Un ciclo completo de experimentación suele durar entre 2 y 4 semanas.
+                </p>
+</details>
+<details class="group border border-outline-variant/30 rounded-xl p-4">
+<summary class="flex justify-between items-center cursor-pointer list-none font-bold text-primary">
+                    ¿Cómo garantizáis el ROI de la inversión?
+                    <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+</summary>
+<p class="text-sm text-on-surface-variant mt-4 leading-relaxed">
+                    Trabajamos con un modelo basado en datos donde cada euro invertido se traza hasta la conversión final, ajustando pujas en tiempo real.
+                </p>
+</details>
 </div>
 </section>
 </main>
-<footer class="bg-primary text-white py-16 px-8 border-t border-white/5">
-<div class="max-w-7xl mx-auto flex flex-col items-center gap-8">
-<span class="text-2xl font-black font-headline tracking-tighter uppercase">aripa</span>
-<div class="flex flex-wrap justify-center gap-8">
-<a class="text-white/40 hover:text-white transition-colors text-sm font-medium" href="#">Services</a>
-<a class="text-white/40 hover:text-white transition-colors text-sm font-medium" href="#">Case Studies</a>
-<a class="text-white/40 hover:text-white transition-colors text-sm font-medium" href="#">Privacy</a>
-<a class="text-white/40 hover:text-white transition-colors text-sm font-medium" href="#">Terms</a>
+<footer class="bg-[#061542] text-[#fcf9f8] pt-12 pb-24 px-6 border-t border-white/5">
+<div class="max-w-7xl mx-auto flex flex-col items-center gap-8 text-center">
+<span class="text-2xl font-black font-headline tracking-tighter lowercase">aripa</span>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="text-white/40 hover:text-white transition-colors text-xs font-medium" href="#">Servicios</a>
+<a class="text-white/40 hover:text-white transition-colors text-xs font-medium" href="#">Privacidad</a>
+<a class="text-white/40 hover:text-white transition-colors text-xs font-medium" href="#">Términos</a>
 </div>
-<p class="text-white/40 text-xs font-body text-center leading-relaxed max-w-md">
-                © 2026 ARIPA Consulting. Analytical Curator Digital Solutions. Transformando datos en activos estratégicos de alto rendimiento.
-            </p>
+<p class="text-white/40 text-[10px] font-body max-w-xs leading-relaxed uppercase tracking-widest">
+            © 2024 aripa Consulting. Analytical Curator Digital Solutions. Transformando datos en activos estratégicos de alto rendimiento.
+        </p>
 </div>
 </footer>
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 py-4 pb-safe bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-10px_40px_rgba(0,0,0,0.4)]">
-<a class="flex flex-col items-center justify-center text-white/60 px-6 py-2 hover:bg-[#6c45c0]/20 hover:text-white transition-all rounded-full group" href="#">
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-3 pb-safe bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] bottom-nav rounded-t-3xl border-t border-white/5">
+<a class="flex flex-col items-center justify-center text-[#fcf9f8]/60 py-2 px-6 rounded-xl btn-before-glossy border-none shadow-none" href="#">
 <span class="material-symbols-outlined text-xl mb-1">mail</span>
-<span class="font-label uppercase tracking-widest text-[10px] font-semibold">Contactar</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold">Contactar</span>
 </a>
-<a class="flex flex-col items-center justify-center text-white btn-primary-custom rounded-xl px-6 py-2 active:scale-95 transition-all shadow-none" href="#">
+<a class="flex flex-col items-center justify-center bg-[#6c45c0] text-white rounded-xl py-2 px-6 btn-after shadow-none border-none" href="https://wa.me/34638162328">
 <span class="material-symbols-outlined text-xl mb-1">chat</span>
-<span class="font-label uppercase tracking-widest text-[10px] font-semibold">WhatsApp</span>
+<span class="font-['Inter'] text-[10px] uppercase tracking-widest font-bold">WhatsApp</span>
 </a>
 </nav>
-<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[60] flex items-center justify-center p-6 hidden">
-<div class="bg-white w-full max-w-md rounded-2xl p-8 relative overflow-hidden">
-<button class="absolute top-4 right-4 text-on-surface-variant hover:text-primary">
+<!-- Service Modal -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] flex items-center justify-center p-6 hidden" id="service-modal">
+<div class="bg-white w-full max-w-md rounded-2xl p-8 relative overflow-hidden shadow-2xl">
+<button class="absolute top-4 right-4 text-on-surface-variant hover:text-primary" onclick="closeModal()">
 <span class="material-symbols-outlined">close</span>
 </button>
 <div class="mb-6">
-<h5 class="text-xl font-bold font-headline text-primary mb-2">Detalles del Servicio</h5>
-<p class="text-on-surface-variant text-sm leading-relaxed">
-                    Nuestra metodología curada permite una integración fluida de activos digitales con objetivos de negocio reales. Analizamos, ejecutamos y optimizamos.
-                </p>
+<h4 class="text-2xl font-bold font-headline text-primary mb-3" id="modal-title">Detalles del Servicio</h4>
+<p class="text-on-surface-variant text-sm leading-relaxed" id="modal-desc">
+                Nuestra metodología curada permite una integración fluida de activos digitales con objetivos de negocio reales. Analizamos, ejecutamos y optimizamos para el máximo retorno.
+            </p>
 </div>
-<button class="w-full py-4 btn-primary-custom text-white font-bold rounded-xl uppercase tracking-widest text-[10px]">
-                Solicitar información
-            </button>
+<button class="w-full py-4 btn-after text-white font-bold rounded-xl uppercase tracking-widest text-[10px]">
+            Solicitar información personalizada
+        </button>
 </div>
 </div>
+<script>
+    // Scroll detection for WhatsApp bubble and BottomNav
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 200) {
+            document.body.classList.add('scrolled');
+        } else {
+            document.body.classList.remove('scrolled');
+        }
+    });
+
+    // Drawer functionality
+    function toggleDrawer() {
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('drawer-overlay');
+        const content = document.getElementById('drawer-content');
+        
+        if (drawer.classList.contains('invisible')) {
+            drawer.classList.remove('invisible');
+            setTimeout(() => {
+                overlay.classList.add('opacity-100');
+                content.classList.remove('-translate-x-full');
+            }, 10);
+        } else {
+            overlay.classList.remove('opacity-100');
+            content.classList.add('-translate-x-full');
+            setTimeout(() => {
+                drawer.classList.add('invisible');
+            }, 300);
+        }
+    }
+
+    document.getElementById('drawer-overlay').addEventListener('click', toggleDrawer);
+
+    // Modal functionality
+    const services = {
+        captacion: {
+            title: 'Captación Avanzada',
+            desc: 'Estrategias multicanal de generación de demanda. Especialistas en posicionamiento para la nueva era de búsqueda asistida por IA (GEO) y campañas de Paid Media con optimización actuarial.'
+        },
+        conversion: {
+            title: 'Conversión & CRO',
+            desc: 'Transformamos el tráfico existente en ingresos. Mediante tests A/B continuos, análisis de comportamiento del usuario y personalización dinámica, eliminamos la fricción en el funnel de ventas.'
+        },
+        confianza: {
+            title: 'Confianza & Reputación',
+            desc: 'Construimos la prueba social necesaria para cerrar ventas. Gestión estratégica de reseñas, SEO local y optimización de señales de confianza en todo el ecosistema digital.'
+        },
+        escalado: {
+            title: 'Escalado & Growth',
+            desc: 'Infraestructura tecnológica para el crecimiento. Automatización de procesos de marketing, desarrollo de dashboards personalizados y arquitectura de datos para decisiones de negocio.'
+        }
+    };
+
+    function openModal(id) {
+        const service = services[id];
+        document.getElementById('modal-title').innerText = service.title;
+        document.getElementById('modal-desc').innerText = service.desc;
+        document.getElementById('service-modal').classList.remove('hidden');
+    }
+
+    function closeModal() {
+        document.getElementById('service-modal').classList.add('hidden');
+    }
+
+    // Close modal on click outside
+    document.getElementById('service-modal').addEventListener('click', (e) => {
+        if (e.target.id === 'service-modal') closeModal();
+    });
+</script>
 </body></html>
