@@ -227,6 +227,31 @@ padding-bottom: env(safe-area-inset-bottom, 0px);
 .drawer-transition { transition: transform var(–duration-base) ease-in-out; }
 
 body.modal-open { overflow: hidden; }
+
+/* ══════════════════════════════════════════
+SCROLL REVEAL — patrón seguro
+Por defecto los elementos son VISIBLES.
+Solo cuando JS carga y el Observer funciona
+se animan. Si algo falla → siguen visibles.
+══════════════════════════════════════════ */
+.reveal-ready {
+transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1),
+transform 0.6s cubic-bezier(0.16,1,0.3,1);
+}
+.reveal-ready.reveal-hidden {
+opacity: 0;
+transform: translateY(24px);
+}
+.reveal-ready.reveal-visible {
+opacity: 1;
+transform: translateY(0);
+}
+/* Stagger delays */
+.reveal-ready[data-delay=“1”] { transition-delay: 80ms; }
+.reveal-ready[data-delay=“2”] { transition-delay: 160ms; }
+.reveal-ready[data-delay=“3”] { transition-delay: 240ms; }
+.reveal-ready[data-delay=“4”] { transition-delay: 320ms; }
+.reveal-ready[data-delay=“5”] { transition-delay: 400ms; }
 </style>
 
 </head>
@@ -254,7 +279,7 @@ body.modal-open { overflow: hidden; }
       <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="#metodologia" onclick="toggleDrawer()">
         <span class="material-symbols-outlined text-[#6c45c0]">psychology</span> Metodología
       </a>
-
+      
   <button class="flex items-center justify-center gap-2 text-white py-4 px-4 btn-after rounded-xl font-headline font-bold uppercase tracking-widest text-xs" onclick="toggleDrawer(); openContactModal();">
     <span class="material-symbols-outlined text-sm">mail</span> Contacto
   </button>
@@ -269,7 +294,7 @@ body.modal-open { overflow: hidden; }
 
 <header class="fixed top-0 w-full z-50 glass-header shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)]">
   <div class="flex justify-between items-center h-16 md:h-20 px-6 md:px-12 max-w-[1440px] mx-auto">
-    
+
 <!-- Logo -->
 <div class="flex items-center gap-3 md:w-1/4">
   <!-- Mobile: hamburger menu -->
@@ -311,7 +336,7 @@ body.modal-open { overflow: hidden; }
 
   <section class="hero-gradient pt-24 md:pt-32 pb-20 px-6 md:px-12 text-center text-white relative overflow-hidden" id="hero-section">
     <div class="max-w-xl md:max-w-3xl mx-auto z-10 relative">
-      
+
   <!-- Stars -->
   <div class="flex flex-col items-center gap-2 mb-8 hero-animate-1">
     <div class="flex items-center gap-1 text-yellow-400">
@@ -995,12 +1020,57 @@ href="https://wa.me/34638162328" id="floating-whatsapp-desktop" target="_blank">
   });
 
   /* ══════════════════════════════════════════
-     SCROLL REVEAL — CSS only, sin Intersection Observer
-     Las animaciones de entrada se disparan con :has y
-     scroll-driven animations donde el browser lo soporte.
-     Para máxima compatibilidad usamos solo las animaciones
-     del hero (hero-animate-*) que son inmediatas.
+     SCROLL REVEAL — Intersection Observer seguro
   ══════════════════════════════════════════ */
+  (function () {
+    // 1. Selecciona elementos a animar
+    const targets = [
+      // Cabeceras de sección
+      ...document.querySelectorAll('#servicios > div > h2, #servicios > div > p'),
+      ...document.querySelectorAll('#metodologia > div > h2, #metodologia > div > p'),
+      ...document.querySelectorAll('#faq h2, #faq p'),
+      // Cards de servicios
+      ...document.querySelectorAll('#servicios .group'),
+      // Pasos de metodología
+      ...document.querySelectorAll('#metodologia .flex.gap-6'),
+      // FAQs
+      ...document.querySelectorAll('#faq details'),
+      // Sección clientes
+      ...document.querySelectorAll('.py-16 h2, .py-16 .grid > div'),
+    ].filter(el => el && !el.closest('#hero-section')); // nunca el hero
+
+    if (!targets.length || !('IntersectionObserver' in window)) return;
+
+    // 2. Añade stagger por posición dentro de su padre
+    targets.forEach(el => {
+      el.classList.add('reveal-ready');
+      // Calcula índice entre hermanos para stagger
+      const siblings = el.parentElement
+        ? [...el.parentElement.children].filter(c => c.classList.contains('reveal-ready'))
+        : [];
+      const idx = siblings.indexOf(el);
+      if (idx > 0 && idx <= 5) el.setAttribute('data-delay', idx);
+    });
+
+    // 3. Marca como ocultos DESPUÉS de añadir las clases
+    //    (evita flash de contenido invisible si el script tarda)
+    requestAnimationFrame(() => {
+      targets.forEach(el => el.classList.add('reveal-hidden'));
+
+      // 4. Observa
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('reveal-hidden');
+            entry.target.classList.add('reveal-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+
+      targets.forEach(el => observer.observe(el));
+    });
+  }());
 </script>
 
 </body>
