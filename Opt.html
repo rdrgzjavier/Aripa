@@ -202,32 +202,7 @@ inset 0 1px 1px rgba(255,255,255,0.3);
 }
 .whatsapp-floating { animation: pulse-glow 2.5s ease-in-out infinite; }
 
-/* ── Scroll-reveal animations ── */
-@keyframes fade-in-up {
-from { opacity: 0; transform: translateY(28px); }
-to   { opacity: 1; transform: translateY(0); }
-}
-@keyframes fade-in {
-from { opacity: 0; }
-to   { opacity: 1; }
-}
-
-.reveal {
-opacity: 0;
-transform: translateY(28px);
-}
-.reveal.is-visible {
-animation: fade-in-up var(–duration-slow) var(–ease-out-expo) forwards;
-}
-/* Stagger delays for child elements */
-.reveal-stagger > *:nth-child(1) { animation-delay: 0ms; }
-.reveal-stagger > *:nth-child(2) { animation-delay: 80ms; }
-.reveal-stagger > *:nth-child(3) { animation-delay: 160ms; }
-.reveal-stagger > *:nth-child(4) { animation-delay: 240ms; }
-.reveal-stagger > *:nth-child(5) { animation-delay: 320ms; }
-.reveal-stagger > *:nth-child(6) { animation-delay: 400ms; }
-
-/* ── Hero entrance animation ── */
+/* ── Smooth transitions ── */
 @keyframes hero-fade-up {
 from { opacity: 0; transform: translateY(40px); }
 to   { opacity: 1; transform: translateY(0); }
@@ -333,7 +308,7 @@ body.modal-open { overflow: hidden; }
     <span class="material-symbols-outlined text-base">mail</span>
     Contactar
   </button>
-</div
+</div>
 
   </div>
 </header>
@@ -348,6 +323,7 @@ body.modal-open { overflow: hidden; }
 
   <section class="hero-gradient pt-24 md:pt-32 pb-20 px-6 md:px-12 text-center text-white relative overflow-hidden" id="hero-section">
     <div class="max-w-xl md:max-w-3xl mx-auto z-10 relative">
+
   <!-- Stars -->
   <div class="flex flex-col items-center gap-2 mb-8 hero-animate-1">
     <div class="flex items-center gap-1 text-yellow-400">
@@ -553,6 +529,7 @@ href="https://wa.me/34638162328" id="floating-whatsapp-desktop" target="_blank">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <h2 class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Nuestro Método</h2>
       <p class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-12 md:mb-20">Cómo transformamos tu negocio</p>
+
   <!-- Mobile: vertical stack | Desktop: 4-col grid -->
   <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-4 md:gap-12">
     <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6">
@@ -1030,33 +1007,12 @@ href="https://wa.me/34638162328" id="floating-whatsapp-desktop" target="_blank">
   });
 
   /* ══════════════════════════════════════════
-     INTERSECTION OBSERVER — scroll reveal
-     Adds .is-visible when element enters viewport
+     SCROLL REVEAL — CSS only, sin Intersection Observer
+     Las animaciones de entrada se disparan con :has y
+     scroll-driven animations donde el browser lo soporte.
+     Para máxima compatibilidad usamos solo las animaciones
+     del hero (hero-animate-*) que son inmediatas.
   ══════════════════════════════════════════ */
-  const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('is-visible');
-        revealObserver.unobserve(entry.target); // fire once
-      }
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-
-  /* Observe sections and cards */
-  document.querySelectorAll(
-    '#servicios .group, #metodologia .flex.gap-6, #faq details, .py-16.bg-surface-bright .reveal, #metodologia > div > div'
-  ).forEach((el, i) => {
-    el.classList.add('reveal');
-    /* Stagger within grid rows — delay based on index mod 3 */
-    el.style.animationDelay = `${(i % 6) * 80}ms`;
-    revealObserver.observe(el);
-  });
-
-  /* Also observe section headings */
-  document.querySelectorAll('section > div > h2, section > div > p.text-3xl, section > div > p.text-4xl').forEach(el => {
-    el.classList.add('reveal');
-    revealObserver.observe(el);
-  });
 </script>
 
 </body>
