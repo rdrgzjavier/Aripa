@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* Material Symbols base size — must be in @layer base so utility classes (text-base, text-lg, etc.)
+     can override it. Putting this in a <style> block after style.css breaks the cascade. */
+  .material-symbols-outlined {
+    font-size: 24px;    /* matches opsz:24 in font-variation-settings */
+    line-height: 1;
+    display: inline-flex;
+    vertical-align: middle;
+  }
+}
