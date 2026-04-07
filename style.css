@@ -1418,12 +1418,24 @@ input:where([type='file']):focus {
   line-height: 2.5rem;
 }
 
+.text-\[10px\] {
+  font-size: 10px;
+}
+
 .text-\[11px\] {
   font-size: 11px;
 }
 
 .text-\[20px\] {
   font-size: 20px;
+}
+
+.text-\[8px\] {
+  font-size: 8px;
+}
+
+.text-\[9px\] {
+  font-size: 9px;
 }
 
 .text-base {
@@ -2071,6 +2083,10 @@ input:where([type='file']):focus {
 
   .md\:text-\[11px\] {
     font-size: 11px;
+  }
+
+  .md\:text-\[9px\] {
+    font-size: 9px;
   }
 
   .md\:text-base {
