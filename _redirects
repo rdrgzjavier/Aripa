@@ -1,0 +1,11 @@
+# Cloudflare Pages — Redirects
+# https://developers.cloudflare.com/pages/platform/redirects/
+#
+# Formato: /origen    /destino    [código HTTP]
+# Máximo: 2.000 reglas estáticas + 100 dinámicas
+
+# Fuerza trailing-slash canónica (opcional — descomenta si lo necesitas)
+# /servicios     /servicios/    301
+
+# Página personalizada 404 (Cloudflare Pages la sirve automáticamente
+# si existe /404.html en la raíz — no hace falta regla aquí)
