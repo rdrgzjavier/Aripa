@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Servicios de Consultoría SEO, CRO y Crecimiento Digital | Aripa</title>
-<meta name="description" content="Descubre cómo Aripa ayuda a escalar tu negocio mediante SEO de nueva generación (GEO/AEO), optimización de conversión (CRO), Growth y automatización de procesos."/>
+<title>Servicios de Consultoría Digital | Aripa</title>
+<meta name="description" content="Soluciones de crecimiento digital: SEO/GEO, CRO, UX y automatización para escalar tu negocio con IA y datos."/>
 <link rel="canonical" href="https://aripa.es/servicios.html"/>
 <meta name="robots" content="index, follow">
 <meta name="author" content="Javier Rodriguez de la Orden">
@@ -24,17 +24,6 @@
     'wait_for_update': 500
   });
 </script>
-
-<!-- placeholders for GA4 and Clarity -->
-<!--
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-</script>
--->
 
 <!-- Same Header Assets -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -61,14 +50,13 @@
   body { font-family: 'Inter', sans-serif; }
   .font-brand    { font-family: 'Outfit', sans-serif; }
   .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+  
+  .hero-gradient { background: linear-gradient(135deg, #061542 0%, #1e2b58 100%); }
+  .glass-header { background-color: rgba(6,21,66,0.8); backdrop-filter: blur(12px); }
   .btn-after {
     background: linear-gradient(180deg, #8b5cf6 0%, #6c45c0 100%);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 16px -4px rgba(108,69,192,0.5);
     border: 1px solid rgba(139,92,246,0.5);
-  }
-  .glass-header {
-    background-color: rgba(6,21,66,0.8);
-    backdrop-filter: blur(12px);
   }
 </style>
 
@@ -76,37 +64,25 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "serviceType": "Consultoría de Crecimiento Digital",
+  "serviceType": "Digital Growth Consulting",
   "provider": {
     "@type": "Organization",
-    "name": "Aripa",
-    "url": "https://aripa.es"
+    "name": "Aripa"
   },
-  "areaServed": ["ES", "MX", "CO", "AR", "CL", "PE"],
+  "areaServed": "Global",
   "hasOfferCatalog": {
     "@type": "OfferCatalog",
-    "name": "Ejes de Crecimiento",
+    "name": "Servicios de Crecimiento Digital",
     "itemListElement": [
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "Captación Digital (SEO/GEO/AEO)"
-        }
-      },
-      {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "CRO & Experimentación"
-        }
-      }
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SEO/GEO & Captación" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "CRO & Optimización" } }
     ]
   }
 }
 </script>
 </head>
 <body class="bg-background text-on-background">
+
   <!-- Shared Header -->
   <header class="fixed top-0 w-full z-50 glass-header shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)]">
     <div class="relative flex justify-between items-center h-16 md:h-20 px-6 md:px-12 max-w-[1440px] mx-auto">
@@ -119,97 +95,101 @@
       </nav>
       <div class="flex items-center justify-end gap-6 md:w-1/4">
         <button class="hidden md:flex btn-after text-white px-8 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 items-center gap-2 whitespace-nowrap" onclick="location.href='index.html#contact-modal'">
-          <span class="material-symbols-outlined text-base">mail</span>
-          Tengo una duda
+          <span class="material-symbols-outlined text-base">mail</span> Tengo una duda
         </button>
       </div>
     </div>
   </header>
 
-  <main class="pt-32 pb-20 px-6 md:px-12 max-w-[1440px] mx-auto">
-    <section class="mb-20 text-center">
-      <h1 class="text-4xl md:text-6xl font-black font-headline text-primary tracking-tighter mb-6">¿Qué servicios ofrece Aripa para acelerar tu negocio?</h1>
-      <p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto leading-relaxed italic border-l-4 border-secondary/20 pl-8 text-left">
-        Nuestra metodología no se limita a atraer tráfico. Nos enfocamos en la <strong>rentabilidad</strong> mediante la ciencia del comportamiento, la optimización para motores generativos (GEO) y la automatización inteligente.
-      </p>
+  <main>
+    <!-- Section Hero -->
+    <section class="hero-gradient pt-40 pb-24 px-6 md:px-12 text-center text-white relative overflow-hidden">
+      <div class="max-w-4xl mx-auto z-10 relative">
+        <p class="text-secondary-container font-bold tracking-widest text-[10px] uppercase mb-4">Soluciones de Negocio</p>
+        <h1 class="text-4xl md:text-7xl font-black font-headline tracking-tighter mb-8 leading-tight">Servicios de<br/><span class="text-white">Crecimiento Digital</span></h1>
+        <p class="text-on-primary-container text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
+          Diseñamos y ejecutamos estrategias de captación, conversión y escalado utilizando las tecnologías más avanzadas del mercado.
+        </p>
+      </div>
+      <div class="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
     </section>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-      <!-- 1. Captación Digital -->
-      <article class="bg-white p-10 rounded-3xl border border-secondary/10 shadow-sm">
-        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-secondary text-3xl">ads_click</span>
-        </div>
-        <h2 class="text-2xl font-bold text-primary font-headline mb-4">Captación Digital: SEO/GEO/AEO</h2>
-        <p class="text-on-surface-variant mb-6 leading-relaxed">
-          Ya no basta con los buscadores tradicionales. Optimizamos tu marca para aparecer en las respuestas de <strong>ChatGPT, Claude y Perplexity</strong>.
-        </p>
-        <ul class="space-y-3 mb-8 text-sm text-on-surface-variant font-medium">
-          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span> Lead Generation B2B de alto valor</li>
-          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span> Transición de SEO clásico a GEO (Generative Engine Optimization)</li>
-          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span> Canales Paid Media (Google Ads, LinkedIn Ads) con foco en CPA</li>
-        </ul>
-      </article>
+    <!-- Services Grid -->
+    <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios-grid">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+        
+        <!-- 1. Captación Digital -->
+        <article class="group relative bg-white p-10 rounded-3xl border-2 border-secondary/10 hover:bg-[#061542] transition-all duration-500 cursor-default shadow-sm hover:shadow-2xl flex flex-col gap-8">
+          <div class="w-20 h-20 flex items-center justify-center bg-secondary/5 rounded-2xl group-hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined text-secondary text-4xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">ads_click</span>
+          </div>
+          <div>
+            <h2 class="text-2xl font-black font-headline text-primary group-hover:text-white transition-colors mb-4 tracking-tight">Captación Digital</h2>
+            <ul class="space-y-3 text-on-surface-variant group-hover:text-white/70 text-sm md:text-base leading-relaxed">
+              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Lead Generation B2B/B2C</li>
+              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Estrategia SEO/GEO/AEO</li>
+              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Paid Media (Meta, Google, LinkedIn)</li>
+            </ul>
+          </div>
+          <button class="mt-auto inline-flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest pt-6 border-t border-secondary/5 group-hover:border-white/10" onclick="location.href='index.html#contact-modal'">
+            ME INTERESA <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </article>
 
-      <!-- 2. CRO & Experimentación -->
-      <article class="bg-white p-10 rounded-3xl border border-secondary/10 shadow-sm">
-        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-secondary text-3xl">analytics</span>
-        </div>
-        <h2 class="text-2xl font-bold text-primary font-headline mb-4">CRO & Experimentación Científica</h2>
-        <p class="text-on-surface-variant mb-6 leading-relaxed">
-          Convertimos las visitas en clientes finales reduciendo la fricción y aplicando experimentos basados en datos reales.
-        </p>
-        <ul class="space-y-3 mb-8 text-sm text-on-surface-variant font-medium">
-          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span> Auditoría heurística y de datos (GA4, Clarity)</li>
-          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span> A/B Testing continuo para optimizar el funnel</li>
-          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span> Personalización dinámica según origen del tráfico</li>
-        </ul>
-      </article>
+        <!-- 2. CRO & Optimización -->
+        <article class="group relative bg-white p-10 rounded-3xl border-2 border-secondary/10 hover:bg-[#061542] transition-all duration-500 cursor-default shadow-sm hover:shadow-2xl flex flex-col gap-8">
+          <div class="w-20 h-20 flex items-center justify-center bg-secondary/5 rounded-2xl group-hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined text-secondary text-4xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">analytics</span>
+          </div>
+          <div>
+            <h2 class="text-2xl font-black font-headline text-primary group-hover:text-white transition-colors mb-4 tracking-tight">CRO & Optimización</h2>
+            <ul class="space-y-3 text-on-surface-variant group-hover:text-white/70 text-sm md:text-base leading-relaxed">
+              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Auditorías de Conversión</li>
+              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> A/B Testing & Experimentación</li>
+              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Personalización del User Journey</li>
+            </ul>
+          </div>
+          <button class="mt-auto inline-flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest pt-6 border-t border-secondary/5 group-hover:border-white/10" onclick="location.href='index.html#contact-modal'">
+            ME INTERESA <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </article>
 
-      <!-- 3. UX & Behavioral Economics -->
-      <article class="bg-white p-10 rounded-3xl border border-secondary/10 shadow-sm">
-        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-secondary text-3xl">psychology</span>
-        </div>
-        <h2 class="text-2xl font-bold text-primary font-headline mb-4">UX & Behavioral Economics</h2>
-        <p class="text-on-surface-variant mb-6 leading-relaxed">
-          Diseñamos experiencias que guían al usuario hacia la acción mediante sesgos cognitivos aplicados éticamente.
-        </p>
-        <ul class="space-y-3 mb-8 text-sm text-on-surface-variant font-medium">
-          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span> Arquitectura de persuasión y diseño de landing pages</li>
-          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span> Reducción de la carga cognitiva en el checkout/registro</li>
-          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span> Copywriting estratégico enfocado a beneficios reales</li>
-        </ul>
-      </article>
+        <!-- 3. UX & Landings -->
+        <article class="group relative bg-white p-10 rounded-3xl border-2 border-secondary/10 hover:bg-[#061542] transition-all duration-500 cursor-default shadow-sm hover:shadow-2xl flex flex-col gap-8">
+          <div class="w-20 h-20 flex items-center justify-center bg-secondary/5 rounded-2xl group-hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined text-secondary text-4xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">design_services</span>
+          </div>
+          <div>
+            <h2 class="text-2xl font-black font-headline text-primary group-hover:text-white transition-colors mb-4 tracking-tight">UX & Landings</h2>
+            <ul class="space-y-3 text-on-surface-variant group-hover:text-white/70 text-sm md:text-base leading-relaxed">
+              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Diseño de Interfaces (UI)</li>
+              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Landing Pages de Alta Conversión</li>
+              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Aplicación de Behavioral Economics</li>
+            </ul>
+          </div>
+          <button class="mt-auto inline-flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest pt-6 border-t border-secondary/5 group-hover:border-white/10" onclick="location.href='index.html#contact-modal'">
+            ME INTERESA <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          </button>
+        </article>
 
-      <!-- 4. Automatización & IA -->
-      <article class="bg-white p-10 rounded-3xl border border-secondary/10 shadow-sm">
-        <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mb-6">
-          <span class="material-symbols-outlined text-secondary text-3xl">rocket_launch</span>
-        </div>
-        <h2 class="text-2xl font-bold text-primary font-headline mb-4">Automatización & IA Ops</h2>
-        <p class="text-on-surface-variant mb-6 leading-relaxed">
-          Escalamos tus procesos de marketing y ventas sin aumentar el equipo, integrando flujos inteligentes de IA.
-        </p>
-        <ul class="space-y-3 mb-8 text-sm text-on-surface-variant font-medium">
-          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span> Integración de CRM y automatización de Lead Nurturing</li>
-          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span> Generación de contenido semiautomático asistido por IA</li>
-          <li class="flex items-center gap-3"><span class="material-symbols-outlined text-secondary text-lg">check_circle</span> Reporting dinámico y cuadrod de mando (Dashboards)</li>
-        </ul>
-      </article>
-    </div>
+      </div>
+    </section>
 
-    <!-- AEO Answer Box -->
-    <div class="mt-20 p-8 md:p-12 bg-primary rounded-3xl text-white">
-      <h3 class="text-xl md:text-2xl font-bold font-headline mb-6">¿Cómo elegir el servicio adecuado para mi empresa?</h3>
-      <p class="text-on-primary-container text-base md:text-lg leading-relaxed mb-8">
-        Si tu problema es la <strong>visibilidad</strong>, el foco debe ser SEO/GEO. Si tienes tráfico pero no vendes, necesitas <strong>CRO</strong>. Aripa analiza tu estado actual para proponerte la hoja de ruta con mayor impacto en menores tiempos.
-      </p>
-      <button class="btn-after px-10 py-5 rounded-2xl font-bold uppercase tracking-widest text-sm" onclick="location.href='index.html#contact-modal'">Solicitar Auditoría Inicial</button>
-    </div>
+    <!-- Methodology Accent Section -->
+    <section class="py-24 bg-primary text-white overflow-hidden relative">
+      <div class="max-w-4xl mx-auto px-6 text-center z-10 relative">
+        <h2 class="text-3xl md:text-5xl font-black font-headline tracking-tighter mb-8">¿Listo para trazar tu hoja de ruta?</h2>
+        <p class="text-white/70 text-lg mb-12 max-w-xl mx-auto font-medium">Agenda una reunión estratégica de 15 minutos para analizar tus activos digitales y detectar oportunidades inmediatas de mejora.</p>
+        <button class="btn-after text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform" data-cal-link="aripa/hoja-de-ruta">
+          AGENDAR MI SESIÓN
+        </button>
+      </div>
+      <div class="absolute -top-24 -left-24 w-96 h-96 bg-secondary/20 rounded-full blur-[120px]"></div>
+      <div class="absolute -bottom-24 -right-24 w-96 h-96 bg-secondary/10 rounded-full blur-[120px]"></div>
+    </section>
   </main>
 
+  <!-- Same Footer -->
   <footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-28 md:pb-32 px-6 md:px-12 border-t border-white/5">
     <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
       <div class="flex items-center gap-3">
@@ -220,17 +200,17 @@
         <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="privacidad.html">Privacidad</a>
         <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
       </nav>
-      <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4">
+      <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4 font-headline">
         Liderado por <span class="text-white/60 font-bold">Javier Rodriguez de la Orden</span>, docente en el Posgrado en Gestión de Producto Digital de <a href="https://weareshifta.com/formaciones/posgrado-gestion-producto-digital/" class="underline hover:text-white transition-colors">Shifta by Elisava</a>.
       </div>
-      <div class="flex items-center gap-4">
+      <div class="flex items-center gap-4 mt-2">
         <a href="https://www.linkedin.com/company/aripa/" target="_blank" rel="noopener noreferrer" class="group transition-transform hover:scale-110" aria-label="LinkedIn de aripa">
           <svg class="h-6 w-6 group-hover:opacity-80 transition-opacity" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
             <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
           </svg>
         </a>
       </div>
-      <p class="text-white/40 text-[10px] font-body max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest">
+      <p class="text-white/40 text-[10px] font-brand max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest mt-4">
         © 2024 aripa Consulting | Javier Rodriguez de la Orden. Transformando datos en activos estratégicos de alto rendimiento.
       </p>
     </div>
