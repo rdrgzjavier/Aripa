@@ -5,27 +5,22 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Aviso Legal | Aripa</title>
 <meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,1,0&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="./style.css">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
 
 <style>
   :root {
     --color-primary:               220 80% 14%;
-    --color-primary-container:     225 51% 23%;
     --color-secondary:             265 47% 51%;
-    --color-secondary-container:   264 97% 74%;
     --color-background:            20  33% 98%;
-    --color-surface:               20  33% 98%;
-    --color-on-background:         180  2% 11%;
-    --color-on-surface:            180  2% 11%;
-    --color-on-surface-variant:    234  5% 29%;
   }
   body { font-family: 'Inter', sans-serif; }
+  .font-brand    { font-family: 'Outfit', sans-serif; }
   .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
-  .glass-header {
-    background-color: rgba(6,21,66,0.8);
-    backdrop-filter: blur(12px);
-  }
+  .hero-gradient { background: linear-gradient(135deg, #061542 0%, #1e2b58 100%); }
+  .glass-header { background-color: rgba(6,21,66,0.8); backdrop-filter: blur(12px); }
   .btn-after {
     background: linear-gradient(180deg, #8b5cf6 0%, #6c45c0 100%);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 16px -4px rgba(108,69,192,0.5);
@@ -33,7 +28,9 @@
   }
 </style>
 </head>
-<body class="bg-background text-on-background font-body">
+<body class="bg-background text-on-background">
+
+  <!-- Shared Header -->
   <header class="fixed top-0 w-full z-50 glass-header shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)]">
     <div class="relative flex justify-between items-center h-16 md:h-20 px-6 md:px-12 max-w-[1440px] mx-auto">
       <div class="flex items-center justify-center w-full md:w-1/4 md:justify-start">
@@ -51,59 +48,41 @@
     </div>
   </header>
 
-  <div class="h-24 md:h-44"></div>
-  <div class="pb-20 px-6 md:px-12 max-w-4xl mx-auto">
-    <div class="bg-white p-8 md:p-16 rounded-3xl border border-secondary/10 shadow-sm leading-relaxed text-sm md:text-base">
-    <a href="index.html" class="inline-flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-widest mb-10 group">
-      <span class="material-symbols-outlined text-sm">home</span> Inicio
-    </a>
+  <main>
+    <div class="h-20 md:h-28"></div>
     
-    <h1 class="text-3xl md:text-5xl font-black font-headline text-primary tracking-tighter mb-8">Aviso Legal</h1>
-    
-    <h2 class="text-xl font-bold font-headline text-primary mt-10 mb-4">1. Datos Identificativos</h2>
-    <p class="mb-6">
-      En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación se reflejan los siguientes datos: Javier Rodriguez de la Orden, con domicilio a estos efectos en Madrid, España, y correo electrónico de contacto: hola@aripa.es.
-    </p>
-
-    <h2 class="text-xl font-bold font-headline text-primary mt-10 mb-4">2. Usuarios</h2>
-    <p class="mb-6">
-      El acceso y/o uso de este portal de Aripa atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas.
-    </p>
-
-    <h2 class="text-xl font-bold font-headline text-primary mt-10 mb-4">3. Uso del Portal</h2>
-    <p class="mb-6">
-      aripa.es proporciona el acceso a multitud de informaciones, servicios, programas o datos en Internet pertenecientes a Aripa o a sus licenciantes a los que el USUARIO pueda tener acceso. El USUARIO asume la responsabilidad del uso del portal.
-    </p>
-
-    <h2 class="text-xl font-bold font-headline text-primary mt-10 mb-4">4. Propiedad Intelectual e Industrial</h2>
-    <p class="mb-6">
-      Aripa por sí o como cesionaria, es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma (a título enunciativo, imágenes, sonido, audio, vídeo, software o textos; marcas o logotipos, combinaciones de colores, estructura y diseño, selección de materiales usados, programas de ordenador necesarios para su funcionamiento, acceso y uso, etc.), titularidad de Aripa o bien de sus licenciantes.
-    </p>
-  </div>
-  </div>
-
-  <footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-28 md:pb-32 px-6 md:px-12 border-t border-white/5">
-    <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
-      <div class="flex items-center gap-3">
-        <img alt="aripa" class="h-8 object-contain" src="./assets/aripa-logo.png" width="106" height="32"/>
+    <section class="hero-gradient py-16 px-6 md:px-12 text-center text-white relative overflow-hidden">
+      <div class="max-w-4xl mx-auto z-10 relative">
+        <h1 class="text-3xl md:text-5xl font-black font-headline tracking-tighter mb-4">Aviso Legal</h1>
+        <p class="text-white/70 text-sm md:text-base font-medium">Transparencia y marco jurídico de Aripa.</p>
       </div>
-      <nav class="flex flex-wrap justify-center gap-6 md:gap-10">
-        <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-cookies.html">Política de cookies</a>
-        <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="privacidad.html">Privacidad</a>
-        <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
-      </nav>
-      <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4">
-        Liderado por <span class="text-white/60 font-bold">Javier Rodriguez de la Orden</span>, docente en el Posgrado en Gestión de Producto Digital de <a href="https://weareshifta.com/formaciones/posgrado-gestion-producto-digital/" class="underline hover:text-white transition-colors">Shifta by Elisava</a>.
-      </div>
-      <div class="flex items-center gap-4">
-        <a href="https://www.linkedin.com/company/aripa/" target="_blank" rel="noopener noreferrer" class="group transition-transform hover:scale-110" aria-label="LinkedIn de aripa">
-          <svg class="h-6 w-6 group-hover:opacity-80 transition-opacity" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-          </svg>
+    </section>
+
+    <section class="py-20 px-6 md:px-12 max-w-4xl mx-auto">
+      <div class="bg-white p-8 md:p-16 rounded-[2rem] border border-secondary/10 shadow-sm leading-relaxed text-on-surface-variant">
+        <a href="index.html" class="inline-flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-widest mb-10 group">
+          <span class="material-symbols-outlined text-sm">home</span> Inicio
         </a>
+        
+        <div class="prose prose-blue max-w-none space-y-6">
+          <h2 class="text-xl font-bold text-primary">1. Datos Identificativos</h2>
+          <p>En cumplimiento con el deber de información recogido en artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y del Comercio Electrónico, a continuación se reflejan los siguientes datos: el titular de dominio web es <strong>Javier Rodriguez de la Orden</strong> (en adelante Aripa), con correo electrónico de contacto: hola@aripa.es.</p>
+
+          <h2 class="text-xl font-bold text-primary">2. Usuarios</h2>
+          <p>El acceso y/o uso de este portal de Aripa atribuye la condición de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquí reflejadas.</p>
+
+          <h2 class="text-xl font-bold text-primary">3. Propiedad Intelectual e Industrial</h2>
+          <p>Aripa es titular de todos los derechos de propiedad intelectual e industrial de su página web, así como de los elementos contenidos en la misma.</p>
+        </div>
       </div>
-      <p class="text-white/40 text-[10px] font-body max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest">
-        © 2024 aripa Consulting | Javier Rodriguez de la Orden. Transformando datos en activos estratégicos de alto rendimiento.
+    </section>
+  </main>
+
+  <!-- Same Footer -->
+  <footer class="bg-[#061542] text-[#fcf9f8] py-12 px-6 md:px-12 border-t border-white/5">
+    <div class="max-w-[1440px] mx-auto text-center">
+      <p class="text-white/40 text-[10px] font-brand uppercase tracking-widest">
+        © 2024 aripa Consulting | Javier Rodriguez de la Orden.
       </p>
     </div>
   </footer>
