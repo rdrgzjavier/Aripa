@@ -95,7 +95,11 @@
 
   <main>
     <!-- Section Hero -->
-    <section class="hero-gradient pt-48 md:pt-60 pb-20 px-6 md:px-12 text-center text-white relative overflow-hidden">
+    <!-- Spacer for fixed header -->
+    <div class="h-24 md:h-44"></div>
+
+    <!-- Section Hero -->
+    <section class="hero-gradient pt-16 pb-20 px-6 md:px-12 text-center text-white relative overflow-hidden">
       <div class="max-w-4xl mx-auto z-10 relative">
         <p class="text-secondary-container font-bold tracking-widest text-[10px] uppercase mb-4">Blog & Aprendizaje</p>
         <h1 class="text-4xl md:text-6xl font-black font-headline tracking-tighter mb-6">Recursos Estratégicos</h1>
@@ -161,23 +165,20 @@
       </div>
     </section>
 
-    <!-- Author Section (E-E-A-T) -->
-    <section class="py-16 px-6 md:px-12 bg-surface-container-low border-t border-outline-variant/10">
-      <div class="max-w-3xl mx-auto">
-        <div class="relative bg-white p-6 md:p-8 rounded-3xl border border-secondary/10 shadow-xl flex flex-col md:flex-row items-center gap-8 overflow-hidden">
-          <div class="w-20 h-20 md:w-24 md:h-24 flex-shrink-0 relative">
-            <div class="absolute inset-0 bg-secondary rounded-full opacity-10"></div>
-            <img alt="Javier Rodriguez de la Orden" class="relative z-10 w-full h-full object-cover rounded-full border-2 border-white shadow-md" src="./assets/javier-profile.png"/>
+    <!-- Author Section (E-E-A-T) - Compact Version -->
+    <section class="py-12 px-6 md:px-12 bg-surface-container-low border-t border-outline-variant/10">
+      <div class="max-w-2xl mx-auto">
+        <div class="bg-white p-5 rounded-2xl border border-secondary/10 shadow-lg flex items-center gap-5">
+          <div class="w-14 h-14 flex-shrink-0 relative">
+            <img alt="Javier Rodriguez de la Orden" class="w-full h-full object-cover rounded-full border border-secondary/10 shadow-sm" src="./assets/javier-profile.png"/>
           </div>
-
-          <div class="flex-1 text-center md:text-left z-10">
-            <p class="text-secondary font-bold text-[9px] uppercase tracking-[0.2em] mb-1">Fundador & Docente</p>
-            <h3 class="text-xl md:text-2xl font-black font-headline text-primary tracking-tight mb-2">Javier Rodriguez de la Orden</h3>
-            <p class="text-on-surface-variant leading-relaxed text-xs md:text-sm mb-4">
-              Consultor senior en crecimiento digital y docente en el <strong>Posgrado en Gestión de Producto Digital de Shifta by Elisava</strong>.
+          <div class="flex-1 min-w-0">
+            <h3 class="text-sm font-black font-headline text-primary mb-0.5">Javier Rodriguez de la Orden</h3>
+            <p class="text-[10px] text-on-surface-variant leading-relaxed line-clamp-2">
+              Growth Consultant & Docente en <strong>Shifta by Elisava</strong>. Especialista en escalado de activos digitales.
             </p>
-            <a href="https://www.linkedin.com/in/jro1" target="_blank" class="inline-flex items-center gap-1.5 text-secondary font-bold text-[10px] uppercase tracking-wider hover:text-primary transition-colors">
-              <span class="material-symbols-outlined text-sm">link</span> LinkedIn
+            <a href="https://www.linkedin.com/in/jro1" target="_blank" class="inline-flex items-center gap-1 text-secondary font-bold text-[9px] uppercase tracking-wider hover:opacity-70 transition-opacity mt-1">
+              LinkedIn
             </a>
           </div>
         </div>
