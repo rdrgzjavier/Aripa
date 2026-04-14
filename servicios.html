@@ -32,6 +32,10 @@
   body { font-family: 'Inter', sans-serif; }
   .font-brand    { font-family: 'Outfit', sans-serif; }
   .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+  
+  /* Fixing Material Symbols rendering */
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
   .hero-gradient { background: linear-gradient(135deg, #061542 0%, #1e2b58 100%); }
   .glass-header { background-color: rgba(6,21,66,0.8); backdrop-filter: blur(12px); }
   .btn-after {
@@ -50,7 +54,7 @@
         <a href="index.html"><img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/></a>
       </div>
       <nav class="hidden md:flex items-center justify-center gap-12 w-2/4">
-        <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="servicios.html">Servicios</a>
+        <a class="text-white hover:text-white transition-colors font-headline font-semibold text-sm" href="servicios.html">Servicios</a>
         <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="recursos.html">Recursos</a>
       </nav>
       <div class="flex items-center justify-end gap-6 md:w-1/4">
@@ -63,10 +67,10 @@
 
   <main>
     <!-- Spacer added to fix H1 overlapping header -->
-    <div class="h-20 md:h-40"></div>
+    <div class="h-24 md:h-40"></div>
 
-    <!-- Section Hero -->
-    <section class="hero-gradient py-24 px-6 md:px-12 text-center text-white relative overflow-hidden">
+    <!-- Section Hero (Taller to avoid overlap) -->
+    <section class="hero-gradient py-32 md:py-40 px-6 md:px-12 text-center text-white relative overflow-hidden">
       <div class="max-w-4xl mx-auto z-10 relative">
         <p class="text-secondary-container font-bold tracking-widest text-[10px] uppercase mb-4">Soluciones de Negocio</p>
         <h1 class="text-4xl md:text-7xl font-black font-headline tracking-tighter mb-8 leading-tight">Servicios de<br/><span class="text-white">Crecimiento Digital</span></h1>
@@ -77,85 +81,173 @@
       <div class="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
     </section>
 
-    <!-- Services Grid -->
+    <!-- Services Grid (Estética idéntica a Home, orden de mayor demanda) -->
     <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios-grid">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         
         <!-- 1. Captación Digital -->
-        <article class="group relative bg-white p-10 rounded-3xl border-2 border-secondary/10 hover:bg-[#061542] transition-all duration-500 cursor-default shadow-sm hover:shadow-2xl flex flex-col gap-8">
-          <div class="w-20 h-20 flex items-center justify-center bg-secondary/5 rounded-2xl group-hover:bg-white/10 transition-colors">
-            <span class="material-symbols-outlined text-secondary text-4xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">ads_click</span>
+        <button type="button"
+             class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] md:hover:bg-[#1E2B58] transition-all duration-300 md:duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-4 md:gap-6 text-left w-full"
+             onclick="location.href='index.html#contact-modal'">
+          <div class="md:block">
+            <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+              <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">ads_click</span>
+            </div>
           </div>
           <div>
-            <h2 class="text-2xl font-black font-headline text-primary group-hover:text-white transition-colors mb-4 tracking-tight">Captación Digital</h2>
-            <ul class="space-y-3 text-on-surface-variant group-hover:text-white/70 text-sm md:text-base leading-relaxed">
-              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Lead Generation B2B/B2C</li>
-              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Estrategia SEO/GEO/AEO</li>
-              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Paid Media (Meta, Google, LinkedIn)</li>
-            </ul>
+            <h3 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-2">Captación Digital</h3>
+            <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-4 md:mb-6">Lead Generation B2B/B2C, SEO/GEO/AEO para buscadores e IAs, y Paid Media de alto rendimiento.</p>
+            <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity md:hidden mb-4">
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Lead Gen</span>
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">SEO/GEO/AEO</span>
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Paid Media</span>
+            </div>
+            <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest mt-auto">
+              ME INTERESA <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+            </div>
           </div>
-          <button class="mt-auto pt-4 inline-flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest" onclick="location.href='index.html#contact-modal'">
-            ME INTERESA <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </article>
+        </button>
 
-        <!-- 2. CRO & Optimización -->
-        <article class="group relative bg-white p-10 rounded-3xl border-2 border-secondary/10 hover:bg-[#061542] transition-all duration-500 cursor-default shadow-sm hover:shadow-2xl flex flex-col gap-8">
-          <div class="w-20 h-20 flex items-center justify-center bg-secondary/5 rounded-2xl group-hover:bg-white/10 transition-colors">
-            <span class="material-symbols-outlined text-secondary text-4xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">analytics</span>
+        <!-- 2. CRO & Experimentación -->
+        <button type="button"
+             class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] md:hover:bg-[#1E2B58] transition-all duration-300 md:duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-4 md:gap-6 text-left w-full"
+             onclick="location.href='index.html#contact-modal'">
+          <div class="md:block">
+            <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+              <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">analytics</span>
+            </div>
           </div>
           <div>
-            <h2 class="text-2xl font-black font-headline text-primary group-hover:text-white transition-colors mb-4 tracking-tight">CRO & Optimización</h2>
-            <ul class="space-y-3 text-on-surface-variant group-hover:text-white/70 text-sm md:text-base leading-relaxed">
-              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Auditorías de Conversión</li>
-              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> A/B Testing & Experimentación</li>
-              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Personalización del User Journey</li>
-            </ul>
+            <h3 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-2">CRO & Experimentación</h3>
+            <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-4 md:mb-6">Optimización de la conversión, A/B testing y personalizaciones para maximizar el retorno de cada visita.</p>
+            <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity md:hidden mb-4">
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">CRO</span>
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">A/B Testing</span>
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Personalización</span>
+            </div>
+            <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest mt-auto">
+              ME INTERESA <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+            </div>
           </div>
-          <button class="mt-auto pt-4 inline-flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest" onclick="location.href='index.html#contact-modal'">
-            ME INTERESA <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </article>
+        </button>
 
         <!-- 3. UX & Landings -->
-        <article class="group relative bg-white p-10 rounded-3xl border-2 border-secondary/10 hover:bg-[#061542] transition-all duration-500 cursor-default shadow-sm hover:shadow-2xl flex flex-col gap-8">
-          <div class="w-20 h-20 flex items-center justify-center bg-secondary/5 rounded-2xl group-hover:bg-white/10 transition-colors">
-            <span class="material-symbols-outlined text-secondary text-4xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">design_services</span>
+        <button type="button"
+             class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] md:hover:bg-[#1E2B58] transition-all duration-300 md:duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-4 md:gap-6 text-left w-full"
+             onclick="location.href='index.html#contact-modal'">
+          <div class="md:block">
+            <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+              <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">design_services</span>
+            </div>
           </div>
           <div>
-            <h2 class="text-2xl font-black font-headline text-primary group-hover:text-white transition-colors mb-4 tracking-tight">UX & Landings</h2>
-            <ul class="space-y-3 text-on-surface-variant group-hover:text-white/70 text-sm md:text-base leading-relaxed">
-              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Diseño de Interfaces (UI)</li>
-              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Landing Pages de Alta Conversión</li>
-              <li class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-sm mt-1">check_circle</span> Aplicación de Behavioral Economics</li>
-            </ul>
+            <h3 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-2">UX & Landings</h3>
+            <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-4 md:mb-6">Diseño de experiencias de usuario, landing pages de alta conversión y aplicación de Behavioral Economics.</p>
+            <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity md:hidden mb-4">
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">UX Design</span>
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Landings</span>
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Behavioral Econ.</span>
+            </div>
+            <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest mt-auto">
+              ME INTERESA <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+            </div>
           </div>
-          <button class="mt-auto pt-4 inline-flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest" onclick="location.href='index.html#contact-modal'">
-            ME INTERESA <span class="material-symbols-outlined text-sm">arrow_forward</span>
-          </button>
-        </article>
+        </button>
+
+        <!-- 4. Reputación & Local -->
+        <button type="button"
+             class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] md:hover:bg-[#1E2B58] transition-all duration-300 md:duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-4 md:gap-6 text-left w-full"
+             onclick="location.href='index.html#contact-modal'">
+          <div class="md:block">
+            <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+              <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">verified</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-2">Reputación & Local</h3>
+            <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-4 md:mb-6">Gestión de reseñas, reputación digital estratégica y activaciones locales para dominar tu mercado de proximidad.</p>
+            <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity md:hidden mb-4">
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Reseñas</span>
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Reputación Digital</span>
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Local</span>
+            </div>
+            <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest mt-auto">
+              ME INTERESA <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 5. Growth & Automatización -->
+        <button type="button"
+             class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] md:hover:bg-[#1E2B58] transition-all duration-300 md:duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-4 md:gap-6 text-left w-full"
+             onclick="location.href='index.html#contact-modal'">
+          <div class="md:block">
+            <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+              <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">rocket_launch</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-2">Growth & Automatización</h3>
+            <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-4 md:mb-6">Estrategia de crecimiento acelerado, automatización de marketing y operaciones para escalar sin fricciones.</p>
+            <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity md:hidden mb-4">
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Growth Strategy</span>
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Automatización</span>
+            </div>
+            <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest mt-auto">
+              ME INTERESA <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+            </div>
+          </div>
+        </button>
+
+        <!-- 6. Proyectos Bespoke -->
+        <button type="button"
+             class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] md:hover:bg-[#1E2B58] transition-all duration-300 md:duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-4 md:gap-6 text-left w-full"
+             onclick="location.href='index.html#contact-modal'">
+          <div class="md:block">
+            <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+              <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">build</span>
+            </div>
+          </div>
+          <div>
+            <h3 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-2">Proyectos Bespoke</h3>
+            <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-4 md:mb-6">Desarrollos digitales a medida, integraciones y soluciones personalizadas para retos de negocio únicos.</p>
+            <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity md:hidden mb-4">
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">A Medida</span>
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Integraciones</span>
+              <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Bespoke</span>
+            </div>
+            <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest mt-auto">
+              ME INTERESA <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+            </div>
+          </div>
+        </button>
 
       </div>
     </section>
 
-    <!-- Methodology Accent Section -->
-    <section class="py-24 bg-primary text-white overflow-hidden relative">
+    <!-- Methodology Accent Section (Fixed color & CTA) -->
+    <section class="py-24 bg-[#061542] text-white overflow-hidden relative">
       <div class="max-w-4xl mx-auto px-6 text-center z-10 relative">
         <h2 class="text-3xl md:text-5xl font-black font-headline tracking-tighter mb-8">¿Listo para trazar tu hoja de ruta?</h2>
         <p class="text-white/70 text-lg mb-12 max-w-xl mx-auto font-medium">Agenda una reunión estratégica de 15 minutos para analizar tus activos digitales.</p>
-        <button class="btn-after text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform" data-cal-link="aripa/hoja-de-ruta">
+        <button class="btn-after text-white px-10 py-5 rounded-2xl font-black text-sm uppercase tracking-widest hover:scale-105 transition-transform active:scale-95" onclick="location.href='index.html#contact-modal'">
           AGENDAR MI SESIÓN
         </button>
       </div>
     </section>
   </main>
 
-  <!-- Same Footer -->
+  <!-- Extracted Full Footer with Legal Links to match Home/Recursos -->
   <footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-28 md:pb-32 px-6 md:px-12 border-t border-white/5">
     <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
       <div class="flex items-center gap-3">
         <img alt="aripa" class="h-8 object-contain" src="./assets/aripa-logo.png" width="106" height="32"/>
       </div>
+      <nav class="flex flex-wrap justify-center gap-6 md:gap-10">
+        <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-cookies.html">Política de cookies</a>
+        <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="privacidad.html">Privacidad</a>
+        <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
+      </nav>
       <p class="text-white/40 text-[10px] font-brand max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest mt-4">
         © 2024 aripa Consulting | Javier Rodriguez de la Orden.
       </p>
