@@ -76,7 +76,7 @@
         <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="recursos.html">
           <span class="material-symbols-outlined text-[#6c45c0]">article</span> Recursos
         </a>
-        <button class="flex items-center justify-center gap-2 text-white py-4 px-4 btn-after rounded-xl font-headline font-bold uppercase tracking-widest text-xs mt-4" data-cal-link="aripa/hoja-de-ruta">
+        <button class="flex items-center justify-center gap-2 text-white py-4 px-4 btn-after rounded-xl font-headline font-bold uppercase tracking-widest text-xs mt-4" onclick="openContactModal()">
           <span class="material-symbols-outlined text-sm">mail</span> Tengo una duda
         </button>
       </div>
@@ -107,7 +107,7 @@
 
       <!-- CTA Destkop -->
       <div class="flex items-center justify-end gap-6 md:w-1/4">
-        <button class="hidden md:flex btn-after text-white px-8 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 items-center gap-2 whitespace-nowrap" data-cal-link="aripa/hoja-de-ruta">
+        <button class="hidden md:flex btn-after text-white px-8 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
           <span class="material-symbols-outlined text-base">mail</span> Tengo una duda
         </button>
       </div>
@@ -116,19 +116,22 @@
 
   <main>
     <!-- Section Hero (Fluid height using dynamic padding) -->
-    <section class="hero-gradient hero-fluid px-6 md:px-12 text-center text-white relative overflow-hidden">
+    <section id="hero-section" class="hero-gradient hero-fluid px-6 md:px-12 text-center text-white relative overflow-hidden">
       <div class="max-w-4xl mx-auto z-10 relative">
         <p class="text-secondary-container font-bold tracking-widest text-[10px] uppercase mb-4">Soluciones de Negocio</p>
         <h1 class="text-4xl md:text-7xl font-black font-headline tracking-tighter mb-8 leading-tight">Servicios de<br/><span class="text-white">Crecimiento Digital</span></h1>
         <p class="text-on-primary-container text-lg md:text-xl font-medium max-w-2xl mx-auto leading-relaxed">
           Diseñamos y ejecutamos estrategias de captación, conversión y escalado utilizando las tecnologías más avanzadas del mercado.
         </p>
+        <button onclick="openContactModal()" class="mt-8 md:mt-10 btn-after text-white px-8 py-3 md:px-10 md:py-4 rounded-xl font-bold text-xs md:text-sm uppercase tracking-wider hover:scale-[1.02] transition-transform active:scale-95 inline-flex items-center gap-2">
+          <span class="material-symbols-outlined text-base">rocket_launch</span> Comencemos
+        </button>
       </div>
       <div class="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-secondary/10 rounded-full blur-[120px] pointer-events-none"></div>
     </section>
 
     <!-- Services Grid (Aesthetics from Home, links to Cal.com) -->
-    <section class="pt-24 pb-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios-grid">
+    <section class="pt-12 pb-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios-grid">
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         
         <!-- 1. Captación Digital -->
@@ -407,8 +410,154 @@
     });
   </script>
 
-  <!-- SCROLL REVEAL SCIPTS (imported from Home) -->
+  <!-- ═══════════════════════════════════════════
+       CONTACT MODAL
+  ═══════════════════════════════════════════ -->
+  <div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] flex items-center justify-center p-6 hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="mb-6 md:mb-8">
+        <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-2" id="contact-modal-title">Hablemos</h4>
+        <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
+      </div>
+      <form class="space-y-4 md:space-y-6" id="contact-form" onsubmit="handleFormSubmit(event)">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-name">Nombre *</label>
+            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
+                   id="c-name" placeholder="Tu nombre" required type="text"
+                   oninput="this.value = this.value.replace(/[0-9]/g, '')"/>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-phone">Teléfono *</label>
+            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
+                   id="c-phone" placeholder="+34 000 000 000" required type="tel"
+                   oninput="this.value = this.value.replace(/[a-zA-ZáéíóúÁÉÍÓÚñÑ]/g, '')"/>
+          </div>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-email">Email Corporativo *</label>
+          <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
+                 id="c-email" placeholder="email@empresa.com" required type="email"/>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-service">Servicio de interés</label>
+          <select class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 appearance-none" id="c-service">
+            <option value="general">Consulta general</option>
+            <option value="captacion">Captación &amp; SEO/GEO</option>
+            <option value="conversion">Conversión &amp; CRO</option>
+            <option value="confianza">Confianza &amp; PR Digital</option>
+            <option value="escalado">Escalado &amp; Growth</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-message">Mensaje</label>
+          <textarea class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 min-h-[100px] md:min-h-[120px] transition-all"
+                    id="c-message" placeholder="¿Cómo podemos ayudarte?"></textarea>
+        </div>
+        <button class="w-full py-4 md:py-5 btn-after text-white font-bold rounded-xl md:rounded-2xl active:scale-95 transition-all uppercase tracking-widest text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+                id="submit-btn" type="submit">
+          Enviar Solicitud
+        </button>
+      </form>
+      <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors"
+              onclick="closeModal('contact-modal')"
+              aria-label="Cerrar formulario de contacto">
+        <span class="material-symbols-outlined text-2xl md:text-3xl" aria-hidden="true">close</span>
+      </button>
+    </div>
+  </div>
+
   <script>
+    const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
+    let _lastFocusedEl = null;
+
+    function trapFocus(containerEl) {
+      const nodes = [...containerEl.querySelectorAll(FOCUSABLE)];
+      if (!nodes.length) return;
+      const first = nodes[0], last = nodes[nodes.length - 1];
+      containerEl._trapHandler = (e) => {
+        if (e.key !== 'Tab') return;
+        if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+        else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
+      };
+      containerEl.addEventListener('keydown', containerEl._trapHandler);
+      nodes[0].focus();
+    }
+
+    function releaseFocus(containerEl, returnEl) {
+      if (containerEl._trapHandler) {
+        containerEl.removeEventListener('keydown', containerEl._trapHandler);
+        delete containerEl._trapHandler;
+      }
+      if (returnEl) returnEl.focus();
+    }
+
+    function openContactModal() {
+      _lastFocusedEl = document.activeElement;
+      const modal = document.getElementById('contact-modal');
+      modal.classList.remove('hidden');
+      document.body.classList.add('modal-open');
+      trapFocus(modal);
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      releaseFocus(modal, _lastFocusedEl);
+      modal.classList.add('hidden');
+      document.body.classList.remove('modal-open');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      if (!document.getElementById('contact-modal').classList.contains('hidden')) closeModal('contact-modal');
+    });
+
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    if (form) {
+      const requiredInputs = form.querySelectorAll('input[required]');
+      const validate = () => { submitBtn.disabled = ![...requiredInputs].every(i => i.value && i.checkValidity()); };
+      requiredInputs.forEach(i => i.addEventListener('input', validate));
+      validate();
+      
+      document.getElementById('contact-modal').addEventListener('click', e => {
+        if (e.target.id === 'contact-modal') closeModal('contact-modal');
+      });
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('c-name').value;
+      const phone = document.getElementById('c-phone').value;
+      const email = document.getElementById('c-email').value;
+      const service = document.getElementById('c-service').value;
+      const message = document.getElementById('c-message').value;
+      const subject = encodeURIComponent(`Nueva solicitud de contacto - ${name}`);
+      const body = encodeURIComponent(`Nombre: ${name}\nTeléfono: ${phone}\nEmail: ${email}\nServicio: ${service}\n\nMensaje:\n${message}`);
+      window.location.href = `mailto:rdrgzjavier@gmail.com?subject=${subject}&body=${body}`;
+      setTimeout(() => {
+        alert('Solicitud enviada correctamente. Gracias por contactar con aripa.');
+        closeModal('contact-modal');
+        e.target.reset();
+      }, 500);
+    }
+
+    // Scroll Logic for Bottom Bars
+    window.addEventListener('scroll', () => {
+      const hero = document.getElementById('hero-section');
+      const stickyBar = document.getElementById('sticky-bottom-bar');
+      if (hero && stickyBar) {
+        const pastHero = window.scrollY > hero.offsetHeight;
+        if (pastHero) {
+          stickyBar.classList.add('visible');
+        } else {
+          stickyBar.classList.remove('visible');
+        }
+      }
+      document.body.classList.toggle('scrolled', window.scrollY > 150);
+    });
+
+    // SCROLL REVEAL (imported from Home)
     (function () {
       const targets = [
         ...document.querySelectorAll('#servicios-grid .group'),
