@@ -47,6 +47,12 @@
   /* Drawer transition */
   .drawer-transition { transition: transform 300ms ease-in-out; }
   body.modal-open { overflow: hidden; }
+
+  /* Hero Fixed Heights to avoid Tailwind JIT misses */
+  .hero-fixed { height: 500px; padding-top: 180px; }
+  @media (max-width: 767px) {
+    .hero-fixed { padding-top: 120px; }
+  }
 </style>
 </head>
 <body class="bg-background text-on-background">
@@ -109,8 +115,8 @@
   </header>
 
   <main>
-    <!-- Section Hero (Height 500px, Padding 180px Desktop / 120px Mobile) -->
-    <section class="hero-gradient h-[500px] pt-[120px] md:pt-[180px] px-6 md:px-12 text-center text-white relative overflow-hidden">
+    <!-- Section Hero (Explicit fixed height class) -->
+    <section class="hero-gradient hero-fixed px-6 md:px-12 text-center text-white relative overflow-hidden">
       <div class="max-w-4xl mx-auto z-10 relative">
         <p class="text-secondary-container font-bold tracking-widest text-[10px] uppercase mb-4">Soluciones de Negocio</p>
         <h1 class="text-4xl md:text-7xl font-black font-headline tracking-tighter mb-8 leading-tight">Servicios de<br/><span class="text-white">Crecimiento Digital</span></h1>
