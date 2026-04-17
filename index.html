@@ -1074,23 +1074,26 @@
   }());
 </script>
 
-<script src="https://app.cal.com/embed/embed.js" async></script>
-
 <script>
-  window.addEventListener("load", function () {
-    if (window.Cal) {
-      Cal("init", {
-        origin: "https://cal.com"
-      });
-
-      Cal("ui", {
-        styles: { branding: { brandColor: "#061542" } },
-        hideEventTypeDetails: false,
-        layout: "month_view"
-      });
+  function initCal() {
+    if (!window.Cal) {
+      console.error("Cal no está disponible.");
+      return;
     }
-  });
+
+    Cal("init", {
+      origin: "https://cal.com"
+    });
+
+    Cal("ui", {
+      styles: { branding: { brandColor: "#061542" } },
+      hideEventTypeDetails: false,
+      layout: "month_view"
+    });
+  }
 </script>
+
+<script src="https://app.cal.com/embed/embed.js" onload="initCal()"></script>
   
 </body>
 </html>
