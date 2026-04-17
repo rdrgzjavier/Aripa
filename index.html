@@ -369,7 +369,8 @@
       </p>
 
       <div class="flex flex-col items-center gap-4 hero-animate-4">
-        <button class="w-full sm:w-80 btn-after text-white px-10 py-4 md:py-5 rounded-xl font-bold text-xs md:text-sm uppercase tracking-wider hover:scale-[1.02] transition-transform active:scale-95" data-cal-link="aripa/hoja-de-ruta">
+        <button class="w-full sm:w-80 btn-after text-white px-10 py-4 md:py-5 rounded-xl font-bold text-xs md:text-sm uppercase tracking-wider hover:scale-[1.02] transition-transform active:scale-95" data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"
+  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
           HABLEMOS
         </button>
         <a class="w-full sm:w-80 btn-before-glossy text-white px-10 py-4 md:py-5 rounded-xl font-bold text-xs uppercase tracking-widest flex items-center justify-center hover:bg-white/10 transition-colors" href="#servicios">
@@ -1073,6 +1074,15 @@
     });
   }());
 </script>
-  
+
+<!-- Cal element-click embed code begins --> 
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
+
+  Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+<!-- Cal element-click embed code ends -->
+
 </body>
 </html>
