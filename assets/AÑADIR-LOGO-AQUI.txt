@@ -1,2 +1,0 @@
-Coloca aquí el archivo aripa-logo.png antes de desplegar a Cloudflare Pages.
-La página lo referencia en: ./assets/aripa-logo.png
