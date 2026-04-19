@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aripa | Consultoría de Crecimiento Digital · SEO, CRO y Crecimiento</title>
+<meta name="description" content="Consultoría de crecimiento digital liderada por Javier Rodriguez de la Orden. Especialistas en SEO/GEO/AEO, CRO y automatización para escalar negocios con IA."/>
+
+<script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
+  
+<link rel="canonical" href="https://aripa.es/"/>
+<link rel="preload" href="/style.css" as="style">
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/assets/favicon-64.png" sizes="64x64">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Javier Rodriguez de la Orden">
+<meta name="language" content="es">
+
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://aripa.es/"/>
+<meta property="og:title" content="Aripa | Consultoría de Crecimiento Digital"/>
+<meta property="og:description" content="SEO/GEO/AEO, CRO y Growth para marcas que quieren crecer con datos e IA."/>
+<meta property="og:image" content="https://aripa.es/assets/og-aripa.jpg"/>
+<meta property="og:locale" content="es_ES"/>
+<meta property="og:site_name" content="Aripa">
+
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Aripa | Consultoría de Crecimiento Digital"/>
+<meta name="twitter:description" content="Expertos en SEO/GEO/AEO y CRO liderados por Javier Rodriguez de la Orden."/>
+<meta name="twitter:image" content="https://aripa.es/assets/og-aripa.jpg"/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Aripa",
+  "url": "https://aripa.es",
+  "logo": "https://aripa.es/assets/aripa-logo.png",
+  "description": "Consultoría de crecimiento digital especializada en SEO de nueva generación (GEO/AEO), CRO y optimización de negocio con IA.",
+  "founder": {
+    "@type": "Person",
+    "name": "Javier Rodriguez de la Orden",
+    "jobTitle": "Fundador",
+    "sameAs": ["https://www.linkedin.com/in/jro1"]
+  },
+  "areaServed": ["ES", "MX", "CO", "AR", "CL", "PE"],
+  "knowsLanguage": "es"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Aripa",
+  "url": "https://aripa.es"
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "¿Qué es la optimización para buscadores de IA (GEO)?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Es el proceso de optimizar tus contenidos para que motores de respuesta como ChatGPT o Gemini citen tu marca como la autoridad en tu sector."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿En cuánto tiempo veré resultados en CRO?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Los cambios iniciales pueden mostrar impacto en 48-72h. Un ciclo completo de experimentación suele durar entre 2 y 4 semanas."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo garantizáis el ROI de la inversión?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Trabajamos con un modelo basado en datos donde cada euro invertido se traza hasta la conversión final, ajustando pujas en tiempo real."
+      }
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@400,0..1&display=swap"
+      rel="stylesheet"
+      media="print"
+      onload="this.media='all'">
+
+<link rel="stylesheet" href="./style.css">
+
+<style>
+  /* ══════════════════════════════════════════
+     DESIGN TOKENS — HSL CSS Custom Properties
+     Single source of truth for all colours
+  ══════════════════════════════════════════ */
+  :root {
+    /* Brand palette */
+    --color-primary:               220 80% 14%;   /* #061542 */
+    --color-primary-container:     225 51% 23%;   /* #1e2b58 */
+    --color-secondary:             265 47% 51%;   /* #6c45c0 */
+    --color-secondary-container:   264 97% 74%;   /* #a67ffd */
+    --color-on-primary-container:  224 34% 66%;   /* #8793c7 */
+    /* Surface palette */
+    --color-background:            20  33% 98%;   /* #fcf9f8 */
+    --color-surface:               20  33% 98%;   /* #fcf9f8 */
+    --color-surface-container-low: 24  20% 95%;   /* #f6f3f2 */
+    --color-on-background:         180  2% 11%;   /* #1b1c1c */
+    --color-on-surface:            180  2% 11%;   /* #1b1c1c */
+    --color-on-surface-variant:    234  5% 29%;   /* #45464f */
+    --color-outline-variant:       246  9% 80%;   /* #c6c5d0 */
+    /* WhatsApp green */
+    --color-wa-light:              145 63% 49%;   /* #25D366 */
+    --color-wa-dark:               170 79% 31%;   /* #128C7E */
+    /* Timing tokens */
+    --duration-fast:    150ms;
+    --duration-base:    300ms;
+    --duration-slow:    500ms;
+    --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+
+  /* ── Base ── */
+body { font-family: 'Inter', sans-serif; }
+.font-brand { font-family: 'Inter', sans-serif; }
+.font-headline { font-family: 'Inter', sans-serif; }
+  /* Material Symbols variation settings — size is now controlled via @layer base in compiled CSS */
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+
+  /* ── Focus visible (global WCAG 2.1 AA) ── */
+  :focus-visible {
+    outline: 2px solid #6c45c0;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
+  /* ── Skip navigation (accessibility) ── */
+  .skip-nav {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    z-index: 9999;
+    padding: 0.5rem 1rem;
+    background: #6c45c0;
+    color: #fff;
+    font-weight: 700;
+    border-radius: 0 0 8px 8px;
+    text-decoration: none;
+    transition: top 150ms;
+  }
+  .skip-nav:focus { top: 0; }
+
+  /* ── Gradients & Buttons ── */
+  .hero-gradient {
+    background: linear-gradient(135deg, #061542 0%, #1e2b58 100%);
+  }
+  .btn-after {
+    background: linear-gradient(180deg, #8b5cf6 0%, #6c45c0 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3),
+                0 8px 16px -4px rgba(108,69,192,0.5);
+    border: 1px solid rgba(139,92,246,0.5);
+  }
+  .btn-before-glossy {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(108,69,192,0.4);
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
+  }
+  .glass-header {
+    background-color: rgba(6,21,66,0.8);
+    backdrop-filter: blur(12px);
+  }
+
+  /* ── Header behavior (top -> sticky) ── */
+  #site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background-color: transparent;
+    backdrop-filter: blur(0px);
+    box-shadow: none;
+    border-bottom: 1px solid transparent;
+    transition:
+      background-color var(--duration-base) var(--ease-out-expo),
+      backdrop-filter var(--duration-base) var(--ease-out-expo),
+      box-shadow var(--duration-base) var(--ease-out-expo),
+      border-color var(--duration-base) var(--ease-out-expo);
+  }
+  #site-header .header-inner {
+    height: 4.25rem;
+    transition: height var(--duration-base) var(--ease-out-expo), padding var(--duration-base) var(--ease-out-expo);
+  }
+  #site-header.is-sticky {
+    background-color: rgba(6, 21, 66, 0.82);
+    backdrop-filter: blur(14px);
+    border-bottom-color: rgba(255,255,255,0.08);
+    box-shadow: 0 20px 48px -18px rgba(0,0,0,0.45);
+  }
+  #site-header.is-sticky .header-inner {
+    height: 3.9rem;
+  }
+  @media (min-width: 768px) {
+    #site-header .header-inner { height: 5rem; }
+    #site-header.is-sticky .header-inner { height: 4.35rem; }
+  }
+
+  /* ── WhatsApp ── */
+  .whatsapp-bubble {
+    background: linear-gradient(45deg, #25D366, #128C7E);
+    box-shadow: 0 4px 12px rgba(18,140,126,0.3);
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+  .whatsapp-floating {
+    background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+    box-shadow: 0 0 20px rgba(37,211,102,0.4),
+                inset 0 1px 1px rgba(255,255,255,0.3);
+    transition: opacity 300ms ease, transform 300ms ease, visibility 300ms ease;
+  }
+  .btn-whatsapp {
+    background: linear-gradient(180deg, #2ecc71 0%, #128C7E 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3),
+                0 8px 16px -4px rgba(18,140,126,0.5);
+    border: 1px solid rgba(46,204,113,0.5);
+  }
+
+  /* ── Pulse glow (WhatsApp floating) ── */
+  @keyframes pulse-glow {
+    0%, 100% {
+      box-shadow: 0 0 0 0 rgba(37,211,102,0.5),
+                  0 0 20px rgba(37,211,102,0.4),
+                  inset 0 1px 1px rgba(255,255,255,0.3);
+    }
+    50% {
+      box-shadow: 0 0 0 10px rgba(37,211,102,0),
+                  0 0 30px rgba(37,211,102,0.6),
+                  inset 0 1px 1px rgba(255,255,255,0.3);
+    }
+  }
+  .whatsapp-floating { animation: pulse-glow 2.5s ease-in-out infinite; }
+
+  /* ── Hero entrance animations ── */
+  @keyframes hero-fade-up {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .hero-animate-1 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s both; }
+  .hero-animate-2 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.25s both; }
+  .hero-animate-3 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.4s both; }
+  .hero-animate-4 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
+
+  /* ── Smooth transitions ── */
+  a, button { transition-property: color, background-color, border-color, box-shadow, opacity, transform;
+              transition-duration: 300ms;
+              transition-timing-function: cubic-bezier(0.16,1,0.3,1); }
+
+  /* ── Mobile WhatsApp hides on scroll ── */
+  .scrolled #floating-whatsapp-mobile { opacity: 0; visibility: hidden; transform: translateY(20px); }
+
+  /* ── Sticky bottom bar (desktop) ── */
+  #sticky-bottom-bar {
+    transform: translateY(100%);
+    transition: transform var(--duration-base) cubic-bezier(0.4,0,0.2,1);
+  }
+  #sticky-bottom-bar.visible { transform: translateY(0); }
+
+  /* ── Mobile bottom nav ── */
+  #mobile-bottom-nav {
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background:
+      linear-gradient(160deg, rgba(12, 26, 84, 0.88) 0%, rgba(43, 32, 105, 0.86) 52%, rgba(94, 54, 150, 0.78) 100%);
+    border-top: 1px solid rgba(255,255,255,0.14);
+    box-shadow: 0 -14px 38px rgba(5, 8, 24, 0.35);
+    backdrop-filter: blur(16px);
+  }
+  .scrolled #mobile-bottom-nav { transform: translateY(0); }
+  #mobile-bottom-nav .btn-after {
+    background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(238, 231, 255, 0.96) 100%);
+    color: #161341;
+    border: 1px solid rgba(255,255,255,0.7);
+    box-shadow:
+      0 1px 0 rgba(255,255,255,0.9) inset,
+      0 8px 22px rgba(17, 14, 58, 0.28);
+  }
+  #mobile-bottom-nav .btn-after .material-symbols-outlined {
+    color: #5e3ab3;
+  }
+
+  /* ── Drawer ── */
+  .drawer-transition { transition: transform var(--duration-base) ease-in-out; }
+  #drawer-overlay {
+    background: linear-gradient(180deg, rgba(2, 6, 25, 0.52) 0%, rgba(2, 6, 25, 0.72) 100%);
+    backdrop-filter: blur(4px);
+  }
+  #drawer-content {
+    background:
+      radial-gradient(circle at 0% 0%, rgba(111, 74, 194, 0.28) 0%, rgba(10, 20, 66, 0.96) 56%),
+      linear-gradient(165deg, rgba(7, 19, 64, 0.96) 0%, rgba(24, 28, 82, 0.94) 100%);
+    border-right: 1px solid rgba(255,255,255,0.12);
+    box-shadow: 10px 0 34px rgba(3, 6, 24, 0.45);
+  }
+  #drawer-content a {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid transparent;
+  }
+  #drawer-content a:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.12);
+  }
+  #drawer-content .btn-after {
+    background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(238, 231, 255, 0.95) 100%);
+    color: #171443;
+    border: 1px solid rgba(255,255,255,0.72);
+    box-shadow: 0 10px 26px rgba(11, 12, 43, 0.35);
+  }
+  #drawer-content .btn-after .material-symbols-outlined {
+    color: #5e3ab3;
+  }
+
+  body.modal-open { overflow: hidden; }
+
+  /* ══════════════════════════════════════════
+     SCROLL REVEAL — patrón seguro
+     Por defecto los elementos son VISIBLES.
+     Solo cuando JS carga y el Observer funciona
+     se animan. Si algo falla → siguen visibles.
+  ══════════════════════════════════════════ */
+  .reveal-ready {
+    transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1),
+                transform 0.6s cubic-bezier(0.16,1,0.3,1);
+  }
+  .reveal-ready.reveal-hidden {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  .reveal-ready.reveal-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Stagger delays */
+  .reveal-ready[data-delay="1"] { transition-delay: 80ms; }
+  .reveal-ready[data-delay="2"] { transition-delay: 160ms; }
+  .reveal-ready[data-delay="3"] { transition-delay: 240ms; }
+  .reveal-ready[data-delay="4"] { transition-delay: 320ms; }
+  .reveal-ready[data-delay="5"] { transition-delay: 400ms; }
+
+  /* ── Hero v6 style (scoped) ── */
+  #hero-section.hero-v6 {
+    position: relative;
+    min-height: 85svh;
+    padding: 7.5rem 1.5rem 5rem;
+    overflow: hidden;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  #hero-section .av6-canvas {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -3;
+  }
+  #hero-section .av6-grain {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    background-size: 220px;
+    mix-blend-mode: overlay;
+    opacity: 0.6;
+  }
+  #hero-section .av6-content {
+    max-width: 780px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  #hero-section .av6-social-proof {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 14px 8px 8px;
+    margin-bottom: 24px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.28);
+    background: rgba(255,255,255,0.12);
+    backdrop-filter: blur(12px);
+  }
+  #hero-section .av6-avatars {
+    display: flex;
+  }
+  #hero-section .av6-avatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 999px;
+    margin-left: -10px;
+    border: 2px solid rgba(255,255,255,0.75);
+    background: linear-gradient(140deg, #b58f76, #7b5f47);
+  }
+  #hero-section .av6-avatar:first-child {
+    margin-left: 0;
+  }
+  #hero-section .av6-proof-text {
+    font-size: 0.72rem;
+    letter-spacing: 0.02em;
+    color: rgba(255,255,255,0.9);
+    white-space: nowrap;
+  }
+  #hero-section .av6-title {
+    font-size: clamp(2.4rem, 7vw, 5.2rem);
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    font-weight: 800;
+    margin-bottom: 14px;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.2);
+  }
+  #hero-section .av6-sub {
+    max-width: 560px;
+    margin: 0 auto 30px;
+    font-size: clamp(0.92rem, 2vw, 1.08rem);
+    line-height: 1.6;
+    color: rgba(255,255,255,0.82);
+  }
+  #hero-section .av6-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+  #hero-section .av6-btn-primary {
+    min-width: 220px;
+    background: linear-gradient(180deg, #ffffff 0%, #f2effb 100%);
+    color: #12103a;
+    border-radius: 12px;
+    padding: 16px 28px;
+    font-weight: 700;
+    box-shadow: 0 8px 22px rgba(15, 8, 44, 0.25);
+  }
+  #hero-section .av6-btn-secondary {
+    min-width: 220px;
+    border: 1px solid rgba(255,255,255,0.3);
+    background: rgba(255,255,255,0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+    padding: 16px 28px;
+    font-weight: 700;
+    color: #fff;
+  }
+  @media (max-width: 767px) {
+    #hero-section.hero-v6 { padding-top: 6.5rem; min-height: 78svh; }
+    #hero-section .av6-proof-text { font-size: 0.66rem; }
+    #hero-section .av6-btn-primary,
+    #hero-section .av6-btn-secondary {
+      width: 100%;
+      min-width: 0;
+      max-width: 320px;
+    }
+    #hero-section .av6-social-proof {
+      max-width: min(272px, calc(100vw - 64px));
+      width: 100%;
+    }
+  }
+  @media (min-width: 1024px) {
+    #hero-section.hero-v6 {
+      height: 800px;
+      min-height: 800px;
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+    #hero-section .av6-content {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+</style>
+
+</head>
+<body class="bg-background text-on-background selection:bg-secondary/30">
+<!-- Skip navigation – accessibility -->
+<a class="skip-nav" href="#main-content">Saltar al contenido principal</a>
+
+<!-- ═══════════════════════════════════════════
+     MOBILE DRAWER (hidden on md+)
+═══════════════════════════════════════════ -->
+<div class="fixed inset-0 z-[70] invisible md:hidden" id="drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300" id="drawer-overlay"></div>
+  <nav class="absolute left-0 top-0 h-full w-4/5 max-w-sm bg-[#061542] drawer-transition -translate-x-full p-8 flex flex-col shadow-2xl" id="drawer-content">
+    <div class="flex justify-between items-center mb-10">
+      <img 
+  alt="aripa"
+  class="h-6 object-contain"
+  src="./assets/aripa-logo.png"
+  width="80"
+  height="24"
+  fetchpriority="high"
+/>
+      <button class="text-white/70" onclick="toggleDrawer()" aria-label="Cerrar menú">
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <div class="flex flex-col gap-2">
+      <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="servicios.html">
+        <span class="material-symbols-outlined text-[#6c45c0]">insights</span> Servicios
+      </a>
+      <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="recursos.html">
+        <span class="material-symbols-outlined text-[#6c45c0]">article</span> Recursos
+      </a>
+
+      <button class="flex items-center justify-center gap-2 text-white py-4 px-4 btn-after rounded-xl font-headline font-bold uppercase tracking-widest text-xs" onclick="toggleDrawer(); openContactModal();">
+        <span class="material-symbols-outlined text-sm">mail</span> Tengo una duda
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     HEADER
+═══════════════════════════════════════════ -->
+<header id="site-header" aria-label="Cabecera principal">
+  <div class="header-inner relative flex justify-between items-center px-6 md:px-12 max-w-[1440px] mx-auto">
+    <!-- Mobile Hamburger: Absolute position on mobile, hidden on md+ -->
+    <button class="absolute left-6 flex items-center justify-center p-2 -ml-2 md:hidden" onclick="toggleDrawer()" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="drawer" id="hamburger-btn">
+      <span class="material-symbols-outlined text-white text-2xl" aria-hidden="true">menu</span>
+    </button>
+
+    <!-- Logo: Centered on mobile, aligned on md+ -->
+    <div class="flex items-center justify-center w-full md:w-1/4 md:justify-start">
+      <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
+    </div>
+
+    <!-- Desktop nav (hidden on mobile) -->
+    <nav class="hidden md:flex items-center justify-center gap-12 w-2/4">
+      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="servicios.html">Servicios</a>
+      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="recursos.html">Recursos</a>
+    </nav>
+
+    <div class="flex items-center justify-end gap-6 md:w-1/4">
+      <!-- Desktop CTA button (hidden on mobile) -->
+      <button class="hidden md:flex btn-after text-white px-8 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
+        <span class="material-symbols-outlined text-base">mail</span>
+        Tengo una duda
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════
+     MAIN
+═══════════════════════════════════════════ -->
+<main id="main-content" tabindex="-1" class="focus:outline-none">
+
+  <!-- ── Hero (evolución v6) ── -->
+  <section class="hero-v6 text-white" id="hero-section">
+    <canvas class="av6-canvas" id="hero-gradient-canvas" aria-hidden="true"></canvas>
+    <div class="av6-grain" aria-hidden="true"></div>
+
+    <div class="av6-content">
+      <div class="av6-social-proof hero-animate-1">
+        <div class="av6-avatars" aria-hidden="true">
+          <span class="av6-avatar"></span>
+          <span class="av6-avatar"></span>
+          <span class="av6-avatar"></span>
+          <span class="av6-avatar"></span>
+        </div>
+        <p class="av6-proof-text">Valoración 4.9/5 | +50 empresas impulsadas</p>
+      </div>
+
+      <h1 class="av6-title hero-animate-2">
+        <span class="sr-only">Aripa | Consultoría de Crecimiento Digital</span>
+        Crece más.<br/>Convierte mejor.
+      </h1>
+
+      <p class="av6-sub hero-animate-3">
+        Consultoría estratégica de crecimiento digital para marcas que quieren captar más clientes, optimizar su conversión y escalar con datos, IA y estrategia.
+      </p>
+
+      <div class="av6-ctas hero-animate-4">
+        <button class="av6-btn-primary hover:scale-[1.02] transition-transform active:scale-95"
+                data-cal-link="aripa/hoja-de-ruta"
+                data-cal-namespace="hoja-de-ruta"
+                data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+          HABLEMOS
+        </button>
+        <a class="av6-btn-secondary hover:bg-white/15 transition-colors"
+           href="#servicios">
+          Ver servicios
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+
+
+  <!-- ── Services ── -->
+  <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios">
+    <div class="mb-16 md:mb-20">
+      <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Soluciones Estratégicas</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter">¿Qué servicios ofrece Aripa para acelerar tu negocio?</h2>
+    </div>
+
+    <!-- Mobile: full-width cards with hover tags | Desktop: 3-col grid with icon circle -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+
+      <!-- 1. Captación Digital -->
+      <button type="button"
+           class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] md:hover:bg-[#1E2B58] transition-all duration-300 md:duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-4 md:gap-6 text-left w-full"
+           onclick="openServiceModal('captacion')"
+           aria-haspopup="dialog"
+           aria-label="Ver detalles: 1. Captación Digital">
+        <div class="md:block">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">ads_click</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-2">Captación Digital</h3>
+          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-4 md:mb-6">Lead Generation B2B/B2C, SEO/GEO/AEO para buscadores e IAs, y Paid Media de alto rendimiento.</p>
+          <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity md:hidden mb-4">
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Lead Gen</span>
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">SEO/GEO/AEO</span>
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Paid Media</span>
+          </div>
+          <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest mt-auto">
+            VER DETALLES <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- 2. CRO & Experimentación -->
+      <button type="button"
+           class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] md:hover:bg-[#1E2B58] transition-all duration-300 md:duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-4 md:gap-6 text-left w-full"
+           onclick="openServiceModal('conversion')"
+           aria-haspopup="dialog"
+           aria-label="Ver detalles: 2. CRO & Experimentación">
+        <div class="md:block">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">analytics</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-2">CRO & Experimentación</h3>
+          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-4 md:mb-6">Optimización de la conversión, A/B testing y personalizaciones para maximizar el retorno de cada visita.</p>
+          <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity md:hidden mb-4">
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">CRO</span>
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">A/B Testing</span>
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Personalización</span>
+          </div>
+          <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest mt-auto">
+            SABER MÁS <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- 3. UX & Landings -->
+      <button type="button"
+           class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] md:hover:bg-[#1E2B58] transition-all duration-300 md:duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-4 md:gap-6 text-left w-full"
+           onclick="openServiceModal('ux')"
+           aria-haspopup="dialog"
+           aria-label="Ver detalles: 3. UX & Landings">
+        <div class="md:block">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">design_services</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-2">UX & Landings</h3>
+          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-4 md:mb-6">Diseño de experiencias de usuario, landing pages de alta conversión y aplicación de Behavioral Economics.</p>
+          <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity md:hidden mb-4">
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">UX Design</span>
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Landings</span>
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Behavioral Econ.</span>
+          </div>
+          <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest mt-auto">
+            SABER MÁS <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- 4. Reputación & Local -->
+      <button type="button"
+           class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] md:hover:bg-[#1E2B58] transition-all duration-300 md:duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-4 md:gap-6 text-left w-full"
+           onclick="openServiceModal('confianza')"
+           aria-haspopup="dialog"
+           aria-label="Ver detalles: 4. Reputación & Local">
+        <div class="md:block">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">verified</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-2">Reputación & Local</h3>
+          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-4 md:mb-6">Gestión de reseñas, reputación digital estratégica y activaciones locales para dominar tu mercado de proximidad.</p>
+          <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity md:hidden mb-4">
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Reseñas</span>
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Reputación Digital</span>
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Local</span>
+          </div>
+          <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest mt-auto">
+            SABER MÁS <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- 5. Growth & Automatización -->
+      <button type="button"
+           class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] md:hover:bg-[#1E2B58] transition-all duration-300 md:duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-4 md:gap-6 text-left w-full"
+           onclick="openServiceModal('escalado')"
+           aria-haspopup="dialog"
+           aria-label="Ver detalles: 5. Growth & Automatización">
+        <div class="md:block">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">rocket_launch</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-2">Growth & Automatización</h3>
+          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-4 md:mb-6">Estrategia de crecimiento acelerado, automatización de marketing y operaciones para escalar sin fricciones.</p>
+          <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity md:hidden mb-4">
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Growth Strategy</span>
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Automatización</span>
+          </div>
+          <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest mt-auto">
+            SABER MÁS <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+          </div>
+        </div>
+      </button>
+
+      <!-- 6. Proyectos Bespoke -->
+      <button type="button"
+           class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] md:hover:bg-[#1E2B58] transition-all duration-300 md:duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-4 md:gap-6 text-left w-full"
+           onclick="openServiceModal('bespoke')"
+           aria-haspopup="dialog"
+           aria-label="Ver detalles: 6. Proyectos Bespoke">
+        <div class="md:block">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+            <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">build</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-2">Proyectos Bespoke</h3>
+          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-4 md:mb-6">Desarrollos digitales a medida, integraciones y soluciones personalizadas para retos de negocio únicos.</p>
+          <div class="flex flex-wrap gap-2 opacity-0 group-hover:opacity-100 transition-opacity md:hidden mb-4">
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">A Medida</span>
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Integraciones</span>
+            <span class="text-[9px] px-2 py-1 bg-white/10 text-white rounded-full font-bold uppercase">Bespoke</span>
+          </div>
+          <div class="flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest mt-auto">
+            SABER MÁS <span class="material-symbols-outlined text-sm" aria-hidden="true">arrow_forward</span>
+          </div>
+        </div>
+      </button>
+
+    </div>
+  </section>
+
+  <!-- ── Methodology ── -->
+  <section class="py-24 md:py-32 bg-surface-container-low" id="metodologia">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+      <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">El Método Aripa</p>
+      <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-12 md:mb-20">¿Cómo transformamos tu presencia digital?</h2>
+
+      <!-- Mobile: vertical stack | Desktop: 4-col grid -->
+      <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-4 md:gap-12">
+        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="01. Auditoría">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
+            <span class="material-symbols-outlined text-secondary md:text-3xl">search</span>
+          </div>
+          <div>
+            <h3 class="text-lg md:text-xl font-bold text-primary font-headline">01. Auditoría</h3>
+            <p class="text-sm md:text-base text-on-surface-variant mt-1 leading-relaxed">Análisis profundo de activos digitales, competencia y oportunidades no explotadas en buscadores generativos.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="02. Estrategia">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
+            <span class="material-symbols-outlined text-secondary md:text-3xl">strategy</span>
+          </div>
+          <div>
+            <h3 class="text-lg md:text-xl font-bold text-primary font-headline">02. Estrategia</h3>
+            <p class="text-sm md:text-base text-on-surface-variant mt-1 leading-relaxed">Definición de KPIs y hoja de ruta táctica centrada en la rentabilidad a corto y largo plazo.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="03. Ejecución">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
+            <span class="material-symbols-outlined text-secondary md:text-3xl">bolt</span>
+          </div>
+          <div>
+            <h3 class="text-lg md:text-xl font-bold text-primary font-headline">03. Ejecución</h3>
+            <p class="text-sm md:text-base text-on-surface-variant mt-1 leading-relaxed">Implementación ágil de mejoras UX, campañas de captación y optimización técnica continua.</p>
+          </div>
+        </div>
+        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="04. Optimización">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
+            <span class="material-symbols-outlined text-secondary md:text-3xl">trending_up</span>
+          </div>
+          <div>
+            <h3 class="text-lg md:text-xl font-bold text-primary font-headline">04. Optimización</h3>
+            <p class="text-sm md:text-base text-on-surface-variant mt-1 leading-relaxed">Escalado de resultados mediante experimentación constante y automatización de procesos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Client Logos ── -->
+  <section class="py-16 md:py-20 bg-surface-bright" aria-label="Empresas clientes de aripa">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12">
+      <h2 class="text-center text-[10px] font-bold tracking-widest text-secondary uppercase mb-10 md:mb-16">Empresas que confían en aripa</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center opacity-50 grayscale contrast-125 max-w-4xl mx-auto">
+        <!-- SHIFTA by Elisava: texto estilizado (logo no disponible públicamente) -->
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+          <span class="text-[11px] md:text-xs font-black uppercase tracking-widest text-center leading-tight">SHIFTA<br/><span class="font-normal text-xs">by Elisava</span></span>
+        </div>
+        <!-- Auto Solutions -->
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+          <span class="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-center leading-tight">Auto<br/>Solutions</span>
+        </div>
+        <!-- Hotel Majadahonda -->
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+          <img alt="Hotel Majadahonda" class="max-h-10 w-auto object-contain" src="./assets/Logo Hotel Majadahonda.png" width="160" height="40"/>
+        </div>
+        <!-- Dime María: isotipo DM -->
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+          <span class="text-2xl font-black font-headline tracking-tighter">DM</span>
+          <span class="text-[8px] md:text-[9px] font-bold uppercase tracking-widest">Dime María</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FAQ ── -->
+  <section class="py-24 md:py-32 bg-white" id="faq">
+    <div class="max-w-[1440px] mx-auto px-6 md:px-12 md:grid md:grid-cols-3 md:gap-20">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-6 md:mb-8">Preguntas frecuentes sobre crecimiento digital</h2>
+        <p class="text-base md:text-lg text-on-surface-variant leading-relaxed hidden md:block">
+          Entiende cómo las nuevas tecnologías de búsqueda (GEO) y la optimización basada en datos pueden cambiar el rumbo de tu empresa.
+        </p>
+      </div>
+      <div class="md:col-span-2 space-y-4">
+        <details class="group border border-outline-variant/30 rounded-xl md:rounded-2xl p-4 md:p-6">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base md:text-xl text-primary font-headline">
+            ¿Qué es la optimización para buscadores de IA (GEO)?
+            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
+          </summary>
+          <p class="text-sm md:text-base text-on-surface-variant mt-4 leading-relaxed">
+            Es el proceso de optimizar tus contenidos para que motores de respuesta como ChatGPT o Gemini citen tu marca como la autoridad en tu sector.
+          </p>
+        </details>
+        <details class="group border border-outline-variant/30 rounded-xl md:rounded-2xl p-4 md:p-6">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base md:text-xl text-primary font-headline">
+            ¿En cuánto tiempo veré resultados en CRO?
+            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
+          </summary>
+          <p class="text-sm md:text-base text-on-surface-variant mt-4 leading-relaxed">
+            Los cambios iniciales pueden mostrar impacto en 48-72h. Un ciclo completo de experimentación suele durar entre 2 y 4 semanas.
+          </p>
+        </details>
+        <details class="group border border-outline-variant/30 rounded-xl md:rounded-2xl p-4 md:p-6">
+          <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base md:text-xl text-primary font-headline">
+            ¿Cómo garantizáis el ROI de la inversión?
+            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
+          </summary>
+          <p class="text-sm md:text-base text-on-surface-variant mt-4 leading-relaxed">
+            Trabajamos con un modelo basado en datos donde cada euro invertido se traza hasta la conversión final, ajustando pujas en tiempo real.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ═══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-28 md:pb-32 px-6 md:px-12 border-t border-white/5">
+  <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
+    <div class="flex items-center gap-3">
+      <img alt="aripa" class="h-8 object-contain" src="./assets/aripa-logo.png" width="106" height="32"/>
+    </div>
+    <nav class="flex flex-wrap justify-center gap-6 md:gap-10">
+      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-cookies.html">Política de cookies</a>
+      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="privacidad.html">Privacidad</a>
+      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
+    </nav>
+    <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4">
+      Liderado por <span class="text-white/60 font-bold">Javier Rodriguez de la Orden</span>, docente en el Posgrado en Gestión de Producto Digital de <a href="https://weareshifta.com/formaciones/posgrado-gestion-producto-digital/" class="underline hover:text-white transition-colors">Shifta by Elisava</a>.
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="https://www.linkedin.com/company/aripa/" target="_blank" rel="noopener noreferrer" class="group transition-transform hover:scale-110" aria-label="LinkedIn de aripa">
+        <svg class="h-6 w-6 group-hover:opacity-80 transition-opacity" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      </a>
+    </div>
+    <p class="text-white/40 text-[10px] font-body max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest">
+      © 2024 aripa Consulting | Javier Rodriguez de la Orden. Transformando datos en activos estratégicos de alto rendimiento.
+    </p>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════
+     MOBILE BOTTOM NAV (hidden on md+)
+═══════════════════════════════════════════ -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden"
+     id="mobile-bottom-nav"
+     style="padding-bottom: max(16px, env(safe-area-inset-bottom))">
+  <button class="w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3 font-bold text-[11px] uppercase tracking-wider" data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+    <span class="material-symbols-outlined text-lg">calendar_month</span>
+    HABLEMOS
+  </button>
+</nav>
+
+<!-- ═══════════════════════════════════════════
+     DESKTOP STICKY BOTTOM BAR (hidden on mobile)
+═══════════════════════════════════════════ -->
+<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between pointer-events-none"
+     id="sticky-bottom-bar">
+  <div class="flex flex-col">
+    <span class="text-primary font-bold font-headline text-sm tracking-tight flex items-center gap-2">
+      <span class="material-symbols-outlined text-secondary text-lg">bolt</span> ¿Listo para escalar?
+    </span>
+    <span class="text-[11px] font-normal text-on-surface-variant ml-7">Agendemos una sesión inicial para trazar tu plan.</span>
+  </div>
+  <div class="flex items-center gap-3 pointer-events-auto">
+    <button class="btn-after text-white px-8 py-3 rounded-xl font-bold text-[11px] uppercase tracking-wider shadow-xl flex items-center justify-center gap-2"
+            data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+      <span class="material-symbols-outlined text-base">calendar_month</span> HABLEMOS
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     SERVICE MODAL
+═══════════════════════════════════════════ -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] flex items-center justify-center p-6 hidden" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
+    <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors" onclick="closeModal('service-modal')" aria-label="Cerrar">
+      <span class="material-symbols-outlined text-2xl md:text-3xl" aria-hidden="true">close</span>
+    </button>
+    <div class="mb-8 md:mb-10">
+      <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-3 md:mb-4" id="modal-title">Detalles del Servicio</h4>
+      <p class="text-on-surface-variant text-sm md:text-lg leading-relaxed mb-6 md:mb-8" id="modal-desc"></p>
+      <div class="space-y-2 md:space-y-4" id="modal-list"></div>
+    </div>
+    <button class="w-full py-4 md:py-5 btn-after text-white font-bold rounded-xl md:rounded-2xl uppercase tracking-wider text-xs md:text-sm hover:scale-[1.02] transition-transform active:scale-95"
+            onclick="closeModal('service-modal')"
+            data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+      ME INTERESA
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     CONTACT MODAL
+═══════════════════════════════════════════ -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] flex items-center justify-center p-6 hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+  <div class="bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+    <!-- Título visible — el aspa se coloca DESPUÉS del form en el DOM para que Tab vaya:
+         Nombre → Teléfono → Email → Servicio → Mensaje → Enviar → Cerrar -->
+    <div class="mb-6 md:mb-8">
+      <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-2" id="contact-modal-title">Hablemos</h4>
+      <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
+    </div>
+    <form class="space-y-4 md:space-y-6" id="contact-form" onsubmit="handleFormSubmit(event)">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-name">Nombre *</label>
+          <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
+                 id="c-name" placeholder="Tu nombre" required type="text"
+                 oninput="this.value = this.value.replace(/[0-9]/g, '')"/>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-phone">Teléfono *</label>
+          <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
+                 id="c-phone" placeholder="+34 000 000 000" required type="tel"
+                 oninput="this.value = this.value.replace(/[a-zA-ZáéíóúÁÉÍÓÚñÑ]/g, '')"/>
+        </div>
+      </div>
+      <div>
+        <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-email">Email Corporativo *</label>
+        <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
+               id="c-email" placeholder="email@empresa.com" required type="email"/>
+      </div>
+      <div>
+        <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-service">Servicio de interés</label>
+        <select class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 appearance-none" id="c-service">
+          <option value="general">Consulta general</option>
+          <option value="captacion">Captación &amp; SEO/GEO</option>
+          <option value="conversion">Conversión &amp; CRO</option>
+          <option value="confianza">Confianza &amp; PR Digital</option>
+          <option value="escalado">Escalado &amp; Growth</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-message">Mensaje</label>
+        <textarea class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 min-h-[100px] md:min-h-[120px] transition-all"
+                  id="c-message" placeholder="¿Cómo podemos ayudarte?"></textarea>
+      </div>
+      <button class="w-full py-4 md:py-5 btn-after text-white font-bold rounded-xl md:rounded-2xl active:scale-95 transition-all uppercase tracking-widest text-xs disabled:opacity-50 disabled:cursor-not-allowed"
+              id="submit-btn" type="submit">
+        Enviar Solicitud
+      </button>
+    </form>
+    <!-- Aspa al final del DOM → Tab llega aquí después de "Enviar Solicitud" -->
+    <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors"
+            onclick="closeModal('contact-modal')"
+            aria-label="Cerrar formulario de contacto">
+      <span class="material-symbols-outlined text-2xl md:text-3xl" aria-hidden="true">close</span>
+    </button>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════
+     JAVASCRIPT
+═══════════════════════════════════════════ -->
+<script>
+  /* ══════════════════════════════════════════
+     FOCUS TRAP — reutilizable para modales y drawer
+  ══════════════════════════════════════════ */
+  const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
+
+  function trapFocus(containerEl) {
+    const nodes = [...containerEl.querySelectorAll(FOCUSABLE)];
+    if (!nodes.length) return;
+    const first = nodes[0], last = nodes[nodes.length - 1];
+    containerEl._trapHandler = (e) => {
+      if (e.key !== 'Tab') return;
+      if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+      else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
+    };
+    containerEl.addEventListener('keydown', containerEl._trapHandler);
+    nodes[0].focus();
+  }
+
+  function releaseFocus(containerEl, returnEl) {
+    if (containerEl._trapHandler) {
+      containerEl.removeEventListener('keydown', containerEl._trapHandler);
+      delete containerEl._trapHandler;
+    }
+    if (returnEl) returnEl.focus();
+  }
+
+  /* ══════════════════════════════════════════
+     ESCAPE KEY — cierra el modal/drawer activo
+  ══════════════════════════════════════════ */
+  let _lastFocusedEl = null;
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (!document.getElementById('contact-modal').classList.contains('hidden')) {
+      closeModal('contact-modal'); return;
+    }
+    if (!document.getElementById('service-modal').classList.contains('hidden')) {
+      closeModal('service-modal'); return;
+    }
+    if (!document.getElementById('drawer').classList.contains('invisible')) {
+      toggleDrawer();
+    }
+  });
+
+  /* ══════════════════════════════════════════
+     SERVICE DATA
+  ══════════════════════════════════════════ */
+  const services = {
+    captacion: {
+      title: 'Captación Digital',
+      desc: 'Generamos demanda cualificada combinando Lead Gen, visibilidad en buscadores tradicionales e IAs, y campañas de Paid Media orientadas a resultados.',
+      list: ['Lead Generation B2B/B2C', 'SEO / GEO / AEO (ChatGPT, Gemini, Perplexity)', 'Paid Media Omnicanal (Google, Meta, LinkedIn)', 'Inbound Marketing & Content Strategy']
+    },
+    conversion: {
+      title: 'CRO & Experimentación',
+      desc: 'Maximizamos el valor de tu tráfico existente mediante optimización de la conversión, tests rigurosos y personalizaciones basadas en datos conductuales.',
+      list: ['Auditoría CRO & Análisis del Funnel', 'A/B Testing & Tests Multivariante', 'Personalización Dinámica de Contenido', 'Optimización de Checkout & Formularios']
+    },
+    ux: {
+      title: 'UX & Landings',
+      desc: 'Diseñamos experiencias digitales que convierten aplicando principios de UX, Behavioral Economics y arquitecturas de persuasión.',
+      list: ['UX Research & User Testing', 'Diseño de Landing Pages de Alta Conversión', 'Behavioral Economics & Neuromarketing Digital', 'Arquitectura de Información & Wireframing']
+    },
+    confianza: {
+      title: 'Reputación & Local',
+      desc: 'Construimos y protegemos tu autoridad digital gestionando reseñas, posicionamiento local y activaciones que generan confianza en tu mercado de proximidad.',
+      list: ['Gestión de Reseñas (Google, Trustpilot)', 'Reputación Digital Estratégica', 'SEO Local & Google Business Profile', 'Activaciones Locales & Guerrilla Digital']
+    },
+    escalado: {
+      title: 'Growth & Automatización',
+      desc: 'Aceleramos el crecimiento de tu negocio combinando estrategia de growth con automatización de procesos de marketing, ventas y operaciones.',
+      list: ['Growth Strategy & Roadmap', 'Automatización de Marketing (HubSpot, Brevo)', 'Integración CRM/ERP & MarTech Stack', 'Growth Loops & Estrategias de Retención']
+    },
+    bespoke: {
+      title: 'Proyectos Bespoke',
+      desc: 'Desarrollamos soluciones digitales a medida para retos de negocio únicos: desde integraciones complejas hasta productos digitales propietarios.',
+      list: ['Desarrollo Digital a Medida', 'Integraciones API & Automatizaciones Custom', 'Consultoría Estratégica Intensiva', 'Proyectos de Innovación Digital']
+    }
+  };
+
+  /* ══════════════════════════════════════════
+     MODAL HELPERS
+  ══════════════════════════════════════════ */
+  function openServiceModal(id) {
+    _lastFocusedEl = document.activeElement;
+    const s = services[id];
+    document.getElementById('modal-title').innerText = s.title;
+    document.getElementById('modal-desc').innerText  = s.desc;
+    const list = document.getElementById('modal-list');
+    list.innerHTML = '';
+    s.list.forEach(item => {
+      const el = document.createElement('div');
+      el.className = 'flex items-center gap-3 text-sm md:text-lg font-semibold text-primary';
+      el.innerHTML = `<span class="material-symbols-outlined text-secondary text-sm md:text-base" aria-hidden="true">check_circle</span> ${item}`;
+      list.appendChild(el);
+    });
+    const modal = document.getElementById('service-modal');
+    modal.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+    trapFocus(modal);
+  }
+
+  function openContactModal() {
+    _lastFocusedEl = document.activeElement;
+    const modal = document.getElementById('contact-modal');
+    modal.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+    trapFocus(modal);
+  }
+
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    releaseFocus(modal, _lastFocusedEl);
+    modal.classList.add('hidden');
+    const anyVisible = ['service-modal','contact-modal','drawer'].some(mid => {
+      const el = document.getElementById(mid);
+      return el && !el.classList.contains('hidden') && !el.classList.contains('invisible');
+    });
+    if (!anyVisible) document.body.classList.remove('modal-open');
+  }
+
+  /* Click outside backdrop to close */
+  ['service-modal','contact-modal'].forEach(id => {
+    document.getElementById(id).addEventListener('click', e => {
+      if (e.target.id === id) closeModal(id);
+    });
+  });
+
+  /* ══════════════════════════════════════════
+     FORM VALIDATION
+  ══════════════════════════════════════════ */
+  const form          = document.getElementById('contact-form');
+  const submitBtn     = document.getElementById('submit-btn');
+  const requiredInputs = form.querySelectorAll('input[required]');
+  const validate = () => {
+    submitBtn.disabled = ![...requiredInputs].every(i => i.value && i.checkValidity());
+  };
+  requiredInputs.forEach(i => i.addEventListener('input', validate));
+  validate();
+
+  function handleFormSubmit(e) {
+    e.preventDefault();
+    const name    = document.getElementById('c-name').value;
+    const phone   = document.getElementById('c-phone').value;
+    const email   = document.getElementById('c-email').value;
+    const service = document.getElementById('c-service').value;
+    const message = document.getElementById('c-message').value;
+    const subject = encodeURIComponent(`Nueva solicitud de contacto - ${name}`);
+    const body    = encodeURIComponent(`Nombre: ${name}\nTeléfono: ${phone}\nEmail: ${email}\nServicio: ${service}\n\nMensaje:\n${message}`);
+    window.location.href = `mailto:rdrgzjavier@gmail.com?subject=${subject}&body=${body}`;
+    setTimeout(() => {
+      alert('Solicitud enviada correctamente. Gracias por contactar con aripa.');
+      closeModal('contact-modal');
+      e.target.reset();
+      validate();
+    }, 500);
+  }
+
+  /* ══════════════════════════════════════════
+     DRAWER — with aria-expanded
+  ══════════════════════════════════════════ */
+  const hamburgerBtn = document.getElementById('hamburger-btn');
+
+  function toggleDrawer() {
+    const drawer  = document.getElementById('drawer');
+    const overlay = document.getElementById('drawer-overlay');
+    const content = document.getElementById('drawer-content');
+    const isHidden = drawer.classList.contains('invisible');
+
+    if (isHidden) {
+      drawer.classList.remove('invisible');
+      document.body.classList.add('modal-open');
+      if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'true');
+      requestAnimationFrame(() => {
+        overlay.classList.add('opacity-100');
+        content.classList.remove('-translate-x-full');
+      });
+      trapFocus(content);
+    } else {
+      releaseFocus(content, hamburgerBtn);
+      overlay.classList.remove('opacity-100');
+      content.classList.add('-translate-x-full');
+      document.body.classList.remove('modal-open');
+      if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
+      setTimeout(() => drawer.classList.add('invisible'), 300);
+    }
+  }
+  document.getElementById('drawer-overlay').addEventListener('click', toggleDrawer);
+
+  /* ══════════════════════════════════════════
+     SCROLL BEHAVIOUR
+  ══════════════════════════════════════════ */
+  const heroSection = document.getElementById('hero-section');
+  const stickyBar   = document.getElementById('sticky-bottom-bar');
+  const siteHeader  = document.getElementById('site-header');
+
+  const updateScrollUI = () => {
+    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
+    const pastHero   = window.scrollY > heroBottom - 200;
+    const stickyHeader = window.scrollY > 20;
+
+    if (window.innerWidth >= 768) {
+      if (pastHero) {
+        stickyBar.classList.add('visible');
+      } else {
+        stickyBar.classList.remove('visible');
+      }
+    }
+    document.body.classList.toggle('scrolled', window.scrollY > 150);
+    if (siteHeader) siteHeader.classList.toggle('is-sticky', stickyHeader);
+  };
+
+  window.addEventListener('scroll', updateScrollUI, { passive: true });
+  window.addEventListener('resize', updateScrollUI);
+  updateScrollUI();
+
+  /* ══════════════════════════════════════════
+     SCROLL REVEAL — Intersection Observer seguro
+  ══════════════════════════════════════════ */
+  (function () {
+    // 1. Selecciona elementos a animar
+    const targets = [
+      // Cabeceras de sección
+      ...document.querySelectorAll('#servicios > div > h2, #servicios > div > p'),
+      ...document.querySelectorAll('#metodologia > div > h2, #metodologia > div > p'),
+      ...document.querySelectorAll('#faq h2, #faq p'),
+      // Cards de servicios
+      ...document.querySelectorAll('#servicios .group'),
+      // Pasos de metodología
+      ...document.querySelectorAll('#metodologia .flex.gap-6'),
+      // FAQs
+      ...document.querySelectorAll('#faq details'),
+      // Sección clientes
+      ...document.querySelectorAll('.py-16 h2, .py-16 .grid > div'),
+    ].filter(el => el && !el.closest('#hero-section')); // nunca el hero
+
+    if (!targets.length || !('IntersectionObserver' in window)) return;
+
+    // 2. Añade stagger por posición dentro de su padre
+    targets.forEach(el => {
+      el.classList.add('reveal-ready');
+      // Calcula índice entre hermanos para stagger
+      const siblings = el.parentElement
+        ? [...el.parentElement.children].filter(c => c.classList.contains('reveal-ready'))
+        : [];
+      const idx = siblings.indexOf(el);
+      if (idx > 0 && idx <= 5) el.setAttribute('data-delay', idx);
+    });
+
+    // 3. Marca como ocultos DESPUÉS de añadir las clases
+    //    (evita flash de contenido invisible si el script tarda)
+    requestAnimationFrame(() => {
+      targets.forEach(el => el.classList.add('reveal-hidden'));
+
+      // 4. Observa
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.remove('reveal-hidden');
+            entry.target.classList.add('reveal-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
+
+      targets.forEach(el => observer.observe(el));
+    });
+  }());
+
+  /* ══════════════════════════════════════════
+     HERO V6 BACKGROUND — canvas gradient animado
+  ══════════════════════════════════════════ */
+  (function () {
+    const canvas = document.getElementById('hero-gradient-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    const ORBS = [
+      { color: [26, 42, 108], r: 1.06, ax: 0.30, ay: 0.22, px: 0.12, py: 0.16, speed: 0.0000037 },
+      { color: [90, 50, 160], r: 1.00, ax: 0.27, ay: 0.34, px: 0.55, py: 0.22, speed: 0.0000028 },
+      { color: [160, 80, 180], r: 0.96, ax: 0.22, ay: 0.38, px: 0.79, py: 0.58, speed: 0.0000022 },
+      { color: [220, 95, 160], r: 0.90, ax: 0.35, ay: 0.24, px: 0.42, py: 0.76, speed: 0.0000031 }
+    ];
+
+    const resize = () => {
+      const hero = document.getElementById('hero-section');
+      canvas.width = hero ? hero.clientWidth : window.innerWidth;
+      canvas.height = hero ? hero.clientHeight : window.innerHeight;
+    };
+    resize();
+    window.addEventListener('resize', resize);
+
+    const orbPos = (orb, t) => ({
+      x: Math.max(0, Math.min(1, orb.px + orb.ax * Math.sin(t * orb.speed * 1000 + orb.color[0]))) * canvas.width,
+      y: Math.max(0, Math.min(1, orb.py + orb.ay * Math.cos(t * orb.speed * 700 + orb.color[2]))) * canvas.height
+    });
+
+    const draw = (ts) => {
+      const W = canvas.width;
+      const H = canvas.height;
+      ctx.fillStyle = '#0e1240';
+      ctx.fillRect(0, 0, W, H);
+      ctx.globalCompositeOperation = 'screen';
+
+      for (const orb of ORBS) {
+        const p = orbPos(orb, ts);
+        const r = orb.r * Math.max(W, H);
+        const [cr, cg, cb] = orb.color;
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r);
+        g.addColorStop(0, `rgba(${cr},${cg},${cb},0.40)`);
+        g.addColorStop(0.45, `rgba(${cr},${cg},${cb},0.14)`);
+        g.addColorStop(1, `rgba(${cr},${cg},${cb},0)`);
+        ctx.fillStyle = g;
+        ctx.fillRect(0, 0, W, H);
+      }
+
+      ctx.globalCompositeOperation = 'source-over';
+      requestAnimationFrame(draw);
+    };
+    requestAnimationFrame(draw);
+  }());
+</script>
+
+<!-- Cal element-click embed code begins --> 
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
+
+  Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+<!-- Cal element-click embed code ends -->
+
+<!-- Clarity -->
+<script
+  type="text/plain"
+  data-name="microsoft-clarity"
+>
+(function(c,l,a,r,i,t,y){
+   c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+   t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+   y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window, document, "clarity", "script", "wd9btxwafk");
+</script>
+  
+</body>
+</html>
