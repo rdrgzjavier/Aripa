@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Aripa | Únete a la lista</title>
+    <meta name="description" content="Recibe estrategias exclusivas de SEO, CRO y Crecimiento Digital aplicadas con IA."/>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-6104907020');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+    <link rel="stylesheet" href="./style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Material+Symbols+Outlined:wght,FILL@400,0..1&display=swap" rel="stylesheet">
+
+    <style>
+        /* ══════════════════════════════════════════
+           SISTEMA DE DISEÑO (Sincronizado con index)
+        ══════════════════════════════════════════ */
+        :root {
+            --color-primary: 220 80% 14%;
+            --color-secondary: 265 47% 51%;
+            --color-background: 220 80% 10%;
+        }
+
+        body {
+            background-color: hsl(var(--color-primary));
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Animated Canvas Background */
+        .av6-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; }
+        .av6-grain { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+        /* ── Header (Réplica exacta de Index) ── */
+        header { width: 100%; }
+        #site-header { position: fixed; top: 0; width: 100%; z-index: 50; transition: all 0.3s ease; }
+        #site-header.is-sticky {
+            background-color: rgba(6, 21, 66, 0.85);
+            backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        /* ── Componente Lead (Ajuste ATF) ── */
+        .main-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 60px 1.5rem;
+            height: 100vh;
+            position: relative;
+            z-index: 10;
+        }
+
+        .glass-card {
+            width: 100%;
+            max-width: 580px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 40px;
+            padding: 4.5rem 3rem;
+            text-align: center;
+            box-shadow: 0 40px 120px rgba(0,0,0,0.6);
+            transform: translateY(-8vh); /* Mayor elevación ATF */
+        }
+
+        h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2.8rem, 8vw, 4.2rem);
+            font-weight: 400;
+            line-height: 1.05;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.01em;
+            color: #fff;
+        }
+
+        p.subtle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 3.5rem;
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── Formulario & Input (Mejora Foco) ── */
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            margin-bottom: 3.5rem;
+        }
+
+        .input-group {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 18px;
+            height: 4.2rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            transition: all 0.3s ease;
+        }
+        /* Propuesta de foco sin borde azul: Brillo interno sutil */
+        .input-group:focus-within {
+            border-color: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+        }
+
+        input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            outline: none !important;
+            text-align: center;
+        }
+        input::placeholder { color: rgba(255, 255, 255, 0.25); }
+
+        /* CTA Unirme (Como el Hero de Index) */
+        .btn-unirme {
+            min-width: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%);
+            color: #171443;
+            border-radius: 12px;
+            padding: 0 28px;
+            height: 4.2rem;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.72);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 22px rgba(15, 8, 44, 0.3);
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .btn-unirme:hover { transform: scale(1.02); }
+
+        @media (min-width: 768px) {
+            .form-container { flex-direction: row; gap: 0.5rem; justify-content: center; }
+            .input-group { width: 320px; }
+            input { text-align: left; }
+            .btn-unirme { width: 140px; }
+        }
+
+        /* ── Social Proof ── */
+        .social-proof { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .avatars { display: flex; }
+        .avatar { width: 34px; height: 34px; border: 2px solid #060e2b; border-radius: 50%; margin-left: -12px; }
+        .avatar:first-child { margin-left: 0; }
+        .proof-text { font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
+    </style>
+</head>
+<body>
+    <canvas class="av6-canvas" id="hero-gradient-canvas" aria-hidden="true"></canvas>
+    <div class="av6-grain" aria-hidden="true"></div>
+
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-6104907020" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- DRAWER (Copia exacta de Index) -->
+    <div class="fixed inset-0 z-[70] invisible md:hidden" id="drawer" role="dialog" aria-modal="true" aria-label="Menú">
+      <div class="absolute inset-0 opacity-0 transition-opacity duration-300 bg-black/60" id="drawer-overlay"></div>
+      <nav class="absolute left-0 top-0 h-full w-4/5 max-w-sm transition-transform duration-300 -translate-x-full p-8 flex flex-col shadow-2xl bg-[#061542]" id="drawer-content">
+        <div class="flex justify-between items-center mb-10">
+          <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
+          <button class="text-white/70" onclick="toggleDrawer()"><span class="material-symbols-outlined">close</span></button>
+        </div>
+        <div class="flex flex-col gap-2">
+          <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="servicios.html"><span class="material-symbols-outlined text-[#6c45c0]">insights</span> Servicios</a>
+          <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="recursos.html"><span class="material-symbols-outlined text-[#6c45c0]">article</span> Recursos</a>
+          <button class="cta-core flex items-center justify-center gap-2 text-white py-4 px-4 btn-after rounded-xl text-xs font-bold uppercase tracking-widest" onclick="toggleDrawer();">Tengo una duda</button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- HEADER (Copia exacta de Index) -->
+    <header id="site-header">
+      <div class="header-inner relative flex justify-between items-center px-6 md:px-12 max-w-[1440px] mx-auto h-20">
+        <button class="absolute left-6 flex items-center justify-center p-2 -ml-2 md:hidden" onclick="toggleDrawer()"><span class="material-symbols-outlined text-white text-2xl">menu</span></button>
+        <div class="flex items-center justify-center w-full md:w-1/4 md:justify-start">
+          <a href="index.html"><img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/></a>
+        </div>
+        <nav class="hidden md:flex items-center justify-center gap-12 w-2/4">
+          <a class="text-white/80 hover:text-white transition-colors font-semibold text-sm" href="servicios.html">Servicios</a>
+          <a class="text-white/80 hover:text-white transition-colors font-semibold text-sm" href="recursos.html">Recursos</a>
+        </nav>
+        <div class="flex items-center justify-end gap-6 md:w-1/4">
+          <button class="cta-core hidden md:flex btn-after text-white px-8 py-3 rounded-xl hover:scale-105 transition-transform active:scale-95 items-center gap-2 whitespace-nowrap text-xs font-bold uppercase tracking-widest" onclick="window.location.href='index.html#contacto'">
+            <span class="material-symbols-outlined">mail</span> Tengo una duda
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-wrapper">
+        <section class="glass-card">
+            <h1>Únete a la lista</h1>
+            <p class="subtle">Recibe estrategias exclusivas de SEO, CRO y Crecimiento Digital directamente en tu bandeja.</p>
+            <form class="form-container" onsubmit="event.preventDefault(); alert('¡Bienvenido!');">
+                <div class="input-group">
+                    <input type="email" placeholder="tu@empresa.com" required>
+                </div>
+                <button type="submit" class="btn-unirme">Unirme</button>
+            </form>
+            <div class="social-proof">
+                <div class="avatars">
+                    <img src="https://i.pravatar.cc/100?u=a1" alt="u1" class="avatar">
+                    <img src="https://i.pravatar.cc/100?u=a2" alt="u2" class="avatar">
+                    <img src="https://i.pravatar.cc/100?u=a3" alt="u3" class="avatar">
+                </div>
+                <span class="proof-text">+2k personas impulsando sus negocios</span>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleDrawer() {
+            const dr = document.getElementById('drawer'), ov = document.getElementById('drawer-overlay'), co = document.getElementById('drawer-content');
+            if (dr.classList.contains('invisible')) {
+                dr.classList.remove('invisible');
+                requestAnimationFrame(() => { ov.classList.add('opacity-100'); co.classList.remove('-translate-x-full'); });
+            } else {
+                ov.classList.remove('opacity-100'); co.classList.add('-translate-x-full');
+                setTimeout(() => dr.classList.add('invisible'), 300);
+            }
+        }
+        window.addEventListener('scroll', () => {
+            const h = document.getElementById('site-header');
+            if (window.scrollY > 20) h.classList.add('is-sticky'); else h.classList.remove('is-sticky');
+        });
+        (function () {
+            const canvas = document.getElementById('hero-gradient-canvas');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d'), ORBS = [
+                { color: [26, 42, 108], r: 1.06, ax: 0.30, ay: 0.22, px: 0.12, py: 0.16, speed: 0.0000037 },
+                { color: [90, 50, 160], r: 1.00, ax: 0.27, ay: 0.34, px: 0.55, py: 0.22, speed: 0.0000028 },
+                { color: [160, 80, 180], r: 0.96, ax: 0.22, ay: 0.38, px: 0.79, py: 0.58, speed: 0.0000022 },
+                { color: [220, 95, 160], r: 0.90, ax: 0.35, ay: 0.24, px: 0.42, py: 0.76, speed: 0.0000031 }
+            ];
+            const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
+            resize(); window.addEventListener('resize', resize);
+            const orbPos = (orb, t) => ({
+                x: Math.max(0, Math.min(1, orb.px + orb.ax * Math.sin(t * orb.speed * 1000 + orb.color[0]))) * canvas.width,
+                y: Math.max(0, Math.min(1, orb.py + orb.ay * Math.cos(t * orb.speed * 700 + orb.color[2]))) * canvas.height
+            });
+            const draw = (ts) => {
+                const W = canvas.width, H = canvas.height; ctx.fillStyle = '#0e1240'; ctx.fillRect(0, 0, W, H); ctx.globalCompositeOperation = 'screen';
+                for (const orb of ORBS) {
+                    const p = orbPos(orb, ts), r = orb.r * Math.max(W, H), [cr, cg, cb] = orb.color;
+                    const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r);
+                    g.addColorStop(0, `rgba(${cr},${cg},${cb},0.40)`); g.addColorStop(0.45, `rgba(${cr},${cg},${cb},0.14)`); g.addColorStop(1, `rgba(${cr},${cg},${cb},0)`);
+                    ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+                }
+                ctx.globalCompositeOperation = 'source-over'; requestAnimationFrame(draw);
+            };
+            requestAnimationFrame(draw);
+        }());
+    </script>
+</body>
+</html>
