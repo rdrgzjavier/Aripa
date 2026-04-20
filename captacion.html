@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Aripa | Únete a la lista</title>
+    <meta name="description" content="Recibe estrategias exclusivas de SEO, CRO y Crecimiento Digital aplicadas con IA."/>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-6104907020');</script>
+    <!-- End Google Tag Manager -->
+
+    <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+    <link rel="stylesheet" href="./style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Material+Symbols+Outlined:wght,FILL@400,0..1&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --color-bg: #0a0b22;
+            --color-accent: #6c45c0;
+        }
+
+        body {
+            background-color: var(--color-bg);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── Aurora Background ── */
+        .aurora-container {
+            position: fixed;
+            top: 60%;
+            left: 50%;
+            transform: translate(-50%, -20%);
+            width: 150vw;
+            height: 90vh;
+            z-index: -1;
+            pointer-events: none;
+        }
+        .aurora-arc {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at bottom center, var(--color-accent) 0%, transparent 70%);
+            filter: blur(100px);
+            opacity: 0.4;
+            border-radius: 50% 50% 0 0;
+        }
+
+        /* ── Header Maquetación (Framer style on mobile) ── */
+        #site-header {
+            position: fixed;
+            top: 1.5rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            z-index: 100;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 100px;
+            transition: background 0.3s;
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 3.5rem;
+            padding: 0 1.5rem;
+        }
+
+        /* Desk Nav */
+        .nav-links { display: none; }
+        @media (min-width: 768px) {
+            .nav-links { display: flex; gap: 2rem; }
+            .nav-links a {
+                color: rgba(255, 255, 255, 0.6);
+                text-decoration: none;
+                font-size: 0.85rem;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+            .nav-links a:hover { color: #fff; }
+        }
+
+        /* ── Glass Card ── */
+        .main-wrapper {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 8rem 1.5rem 4rem;
+        }
+
+        .glass-card {
+            width: 100%;
+            max-width: 500px;
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(32px);
+            -webkit-backdrop-filter: blur(32px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 40px;
+            padding: 4rem 2rem;
+            text-align: center;
+            box-shadow: 0 40px 100px rgba(0,0,0,0.6);
+        }
+
+        h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: clamp(2.5rem, 10vw, 4rem);
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 1rem;
+            letter-spacing: -0.01em;
+        }
+
+        p.subtle {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            max-width: 320px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── Mobile-first Form Maquetación ── */
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .input-wrapper {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 0.8rem 1.2rem;
+            transition: border-color 0.3s;
+        }
+        .input-wrapper:focus-within { border-color: rgba(255, 255, 255, 0.3); }
+
+        input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            text-align: center;
+        }
+        input::placeholder { color: rgba(255, 255, 255, 0.25); }
+
+        .btn-unirme {
+            width: 100%;
+            height: 3.5rem;
+            border-radius: 16px;
+            font-weight: 700 !important;
+            text-transform: none !important;
+            letter-spacing: normal !important;
+            font-size: 1rem !important;
+        }
+
+        @media (min-width: 768px) {
+            .form-container {
+                flex-direction: row;
+                background: rgba(0,0,0,0.2);
+                padding: 0.4rem;
+                border-radius: 20px;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                gap: 0.5rem;
+            }
+            .input-wrapper { background: transparent; border: none; padding: 0; flex: 1; }
+            input { text-align: left; }
+            .btn-unirme { width: auto; height: auto; padding: 0.8rem 1.5rem; border-radius: 14px; }
+        }
+
+        /* ── Social Proof ── */
+        .social-proof {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+        }
+        .avatars { display: flex; }
+        .avatar {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #0a0b22;
+            border-radius: 50%;
+            margin-left: -10px;
+            background: #222;
+        }
+        .avatar:first-child { margin-left: 0; }
+        .proof-text { font-size: 0.8rem; color: rgba(255, 255, 255, 0.4); }
+
+        /* ── Drawer ── */
+        #drawer-content {
+            background: #061542;
+        }
+    </style>
+</head>
+<body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-6104907020"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="aurora-container">
+        <div class="aurora-arc"></div>
+    </div>
+
+    <!-- Header Floating Pill -->
+    <header id="site-header">
+        <div class="header-inner">
+            <a href="index.html"><img src="./assets/aripa-logo.png" alt="aripa" height="18"></a>
+            
+            <nav class="nav-links">
+                <a href="servicios.html">Servicios</a>
+                <a href="recursos.html">Clientes</a>
+                <a href="recursos.html">Recursos</a>
+                <a href="index.html">Contacto</a>
+            </nav>
+
+            <button onclick="toggleDrawer()" aria-label="Abrir menú">
+                <span class="material-symbols-outlined text-white">menu</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Drawer Mobile -->
+    <div class="fixed inset-0 z-[110] invisible" id="drawer">
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300" id="drawer-overlay"></div>
+        <nav class="absolute right-0 top-0 h-full w-4/5 max-w-sm bg-[#061542] transition-transform duration-300 translate-x-full p-8 flex flex-col" id="drawer-content">
+            <div class="flex justify-between items-center mb-10">
+                <img src="./assets/aripa-logo.png" alt="aripa" height="20">
+                <button onclick="toggleDrawer()"><span class="material-symbols-outlined text-white">close</span></button>
+            </div>
+            <div class="flex flex-col gap-6">
+                <a class="text-white text-lg font-medium" href="servicios.html">Servicios</a>
+                <a class="text-white text-lg font-medium" href="recursos.html">Recursos</a>
+                <button class="btn-after text-white py-4 rounded-xl font-bold" onclick="toggleDrawer()">Tengo una duda</button>
+            </div>
+        </nav>
+    </div>
+
+    <main class="main-wrapper">
+        <section class="glass-card">
+            <h1>Join the waitlist</h1>
+            <p class="subtle">Gain exclusive early access to our software and stay informed about launch updates</p>
+
+            <form class="form-container" onsubmit="event.preventDefault(); alert('¡Bienvenido!');">
+                <div class="input-wrapper">
+                    <input type="email" placeholder="your@email.com" required>
+                </div>
+                <button type="submit" class="btn-after btn-unirme">Unirme</button>
+            </form>
+
+            <div class="social-proof">
+                <div class="avatars">
+                    <img src="https://i.pravatar.cc/100?u=1" alt="u1" class="avatar">
+                    <img src="https://i.pravatar.cc/100?u=2" alt="u2" class="avatar">
+                    <img src="https://i.pravatar.cc/100?u=3" alt="u3" class="avatar">
+                </div>
+                <span class="proof-text">~ 2k+ Peoples already joined</span>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function toggleDrawer() {
+            const drawer = document.getElementById('drawer');
+            const overlay = document.getElementById('drawer-overlay');
+            const content = document.getElementById('drawer-content');
+            const isHidden = drawer.classList.contains('invisible');
+            if (isHidden) {
+                drawer.classList.remove('invisible');
+                setTimeout(() => {
+                    overlay.classList.add('opacity-100');
+                    content.classList.remove('translate-x-full');
+                }, 10);
+            } else {
+                overlay.classList.remove('opacity-100');
+                content.classList.add('translate-x-full');
+                setTimeout(() => drawer.classList.add('invisible'), 300);
+            }
+        }
+    </script>
+</body>
+</html>
