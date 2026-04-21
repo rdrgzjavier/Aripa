@@ -57,8 +57,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 60px 1.5rem;
-            height: 100vh;
+            padding: 80px 1.5rem 40px;
+            min-height: 100vh;
             position: relative;
             z-index: 10;
         }
@@ -73,7 +73,12 @@
             padding: 4.5rem 3rem;
             text-align: center;
             box-shadow: 0 40px 120px rgba(0,0,0,0.6);
-            transform: translateY(-8vh); /* Mayor elevación ATF */
+            /* Centrado perfecto sin desplazamiento negativo que choque con el header */
+            transform: translateY(0); 
+        }
+
+        @media (min-width: 768px) {
+            .glass-card { transform: translateY(-4vh); }
         }
 
         h1 {
@@ -116,8 +121,8 @@
         }
         /* Propuesta de foco sin borde azul: Brillo interno sutil */
         .input-group:focus-within {
-            border-color: rgba(255, 255, 255, 0.3);
-            box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+            border-color: #6c45c0;
+            box-shadow: 0 0 0 1px #6c45c0, 0 0 15px rgba(108, 69, 192, 0.2);
         }
 
         input {
@@ -136,7 +141,7 @@
             min-width: 0;
             background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%);
             color: #171443;
-            border-radius: 12px;
+            border-radius: 18px; /* Sincronizado con input-group */
             padding: 0 28px;
             height: 4.2rem;
             font-weight: 700;
@@ -170,37 +175,14 @@
 
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-6104907020" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-    <!-- DRAWER (Copia exacta de Index) -->
-    <div class="fixed inset-0 z-[70] invisible md:hidden" id="drawer" role="dialog" aria-modal="true" aria-label="Menú">
-      <div class="absolute inset-0 opacity-0 transition-opacity duration-300 bg-black/60" id="drawer-overlay"></div>
-      <nav class="absolute left-0 top-0 h-full w-4/5 max-w-sm transition-transform duration-300 -translate-x-full p-8 flex flex-col shadow-2xl bg-[#061542]" id="drawer-content">
-        <div class="flex justify-between items-center mb-10">
-          <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
-          <button class="text-white/70" onclick="toggleDrawer()"><span class="material-symbols-outlined">close</span></button>
-        </div>
-        <div class="flex flex-col gap-2">
-          <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="servicios.html"><span class="material-symbols-outlined text-[#6c45c0]">insights</span> Servicios</a>
-          <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="recursos.html"><span class="material-symbols-outlined text-[#6c45c0]">article</span> Recursos</a>
-          <button class="cta-core flex items-center justify-center gap-2 text-white py-4 px-4 btn-after rounded-xl text-xs font-bold uppercase tracking-widest" onclick="toggleDrawer();">Tengo una duda</button>
-        </div>
-      </nav>
-    </div>
 
-    <!-- HEADER (Copia exacta de Index) -->
+    <!-- HEADER (Simplificado para Captación) -->
     <header id="site-header">
-      <div class="header-inner relative flex justify-between items-center px-6 md:px-12 max-w-[1440px] mx-auto h-20">
-        <button class="absolute left-6 flex items-center justify-center p-2 -ml-2 md:hidden" onclick="toggleDrawer()"><span class="material-symbols-outlined text-white text-2xl">menu</span></button>
-        <div class="flex items-center justify-center w-full md:w-1/4 md:justify-start">
-          <a href="index.html"><img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/></a>
-        </div>
-        <nav class="hidden md:flex items-center justify-center gap-12 w-2/4">
-          <a class="text-white/80 hover:text-white transition-colors font-semibold text-sm" href="servicios.html">Servicios</a>
-          <a class="text-white/80 hover:text-white transition-colors font-semibold text-sm" href="recursos.html">Recursos</a>
-        </nav>
-        <div class="flex items-center justify-end gap-6 md:w-1/4">
-          <button class="cta-core hidden md:flex btn-after text-white px-8 py-3 rounded-xl hover:scale-105 transition-transform active:scale-95 items-center gap-2 whitespace-nowrap text-xs font-bold uppercase tracking-widest" onclick="window.location.href='index.html#contacto'">
-            <span class="material-symbols-outlined">mail</span> Tengo una duda
-          </button>
+      <div class="header-inner relative flex justify-center items-center px-6 md:px-12 max-w-[1440px] mx-auto h-[4.25rem] md:h-20">
+        <div class="flex items-center justify-center">
+          <a href="index.html">
+            <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
+          </a>
         </div>
       </div>
     </header>
@@ -227,16 +209,7 @@
     </main>
 
     <script>
-        function toggleDrawer() {
-            const dr = document.getElementById('drawer'), ov = document.getElementById('drawer-overlay'), co = document.getElementById('drawer-content');
-            if (dr.classList.contains('invisible')) {
-                dr.classList.remove('invisible');
-                requestAnimationFrame(() => { ov.classList.add('opacity-100'); co.classList.remove('-translate-x-full'); });
-            } else {
-                ov.classList.remove('opacity-100'); co.classList.add('-translate-x-full');
-                setTimeout(() => dr.classList.add('invisible'), 300);
-            }
-        }
+
         window.addEventListener('scroll', () => {
             const h = document.getElementById('site-header');
             if (window.scrollY > 20) h.classList.add('is-sticky'); else h.classList.remove('is-sticky');
