@@ -460,6 +460,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       val();
     }
 
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('c-name').value;
+      const phone = document.getElementById('c-phone').value;
+      const email = document.getElementById('c-email').value;
+      const service = document.getElementById('c-service').value;
+      const message = document.getElementById('c-message').value;
+      const subject = encodeURIComponent(`Nueva solicitud de contacto - ${name}`);
+      const body = encodeURIComponent(`Nombre: ${name}\nTeléfono: ${phone}\nEmail: ${email}\nServicio: ${service}\n\nMensaje:\n${message}`);
+      window.location.href = `mailto:hola@aripa.es?subject=${subject}&body=${body}`;
+      setTimeout(() => {
+        alert('Solicitud enviada correctamente. Gracias por contactar con aripa.');
+        closeModal('contact-modal');
+        e.target.reset();
+      }, 500);
+    }
+
     const heroSection = document.getElementById('hero-section');
     const stickyBar   = document.getElementById('sticky-bottom-bar');
 

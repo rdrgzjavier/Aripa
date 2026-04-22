@@ -14,12 +14,24 @@
     })(window,document,'script','dataLayer','GTM-6104907020');</script>
     <!-- End Google Tag Manager -->
 
+    <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
+
     <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
     <link rel="stylesheet" href="./style.css">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Material+Symbols+Outlined:wght,FILL@400,0..1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@400,0..1&display=swap" rel="stylesheet">
+
+    <!-- MailerLite Universal -->
+    <script>
+        (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+        .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+        n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+        (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+        ml('account', '1336043'); // Placeholder Account ID - please verify
+    </script>
+    <!-- End MailerLite Universal -->
 
     <style>
         /* ══════════════════════════════════════════
@@ -87,12 +99,12 @@
         }
 
         h1 {
-            font-family: 'Instrument Serif', serif;
-            font-size: clamp(2.8rem, 8vw, 4.2rem);
-            font-weight: 400;
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 4.2rem);
+            font-weight: 800;
             line-height: 1.05;
             margin-bottom: 1.2rem;
-            letter-spacing: -0.01em;
+            letter-spacing: -0.03em;
             color: #fff;
         }
 
@@ -220,7 +232,7 @@
             margin: 0 auto 1.5rem;
             color: white;
         }
-        .modal-title { font-family: 'Instrument Serif', serif; font-size: 2rem; margin-bottom: 0.5rem; }
+        .modal-title { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 2rem; margin-bottom: 0.5rem; letter-spacing: -0.02em; }
         .modal-desc { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; line-height: 1.5; margin-bottom: 2rem; }
     </style>
 </head>
@@ -244,9 +256,14 @@
         <section class="glass-card">
             <h1>Únete a la lista</h1>
             <p class="subtle">Recibe estrategias exclusivas de SEO, CRO y Crecimiento Digital directamente en tu bandeja.</p>
-            <form class="form-container" onsubmit="event.preventDefault(); showSuccess();">
+            <form 
+                class="form-container ml-block-form" 
+                action="https://assets.mailerlite.com/jsonp/1336043/forms/1532454563456/subscribe" 
+                data-code="" 
+                method="POST" 
+                onsubmit="handleMLSubmit(event)">
                 <div class="input-group">
-                    <input type="email" placeholder="tu@empresa.com" required>
+                    <input type="email" name="fields[email]" placeholder="tu@empresa.com" required>
                 </div>
                 <button type="submit" class="btn-unirme">Unirme</button>
             </form>
@@ -281,6 +298,17 @@
             document.getElementById('successModal').classList.remove('active');
         }
 
+        function handleMLSubmit(e) {
+            e.preventDefault();
+            const form = e.target;
+            const email = form.querySelector('input[name="fields[email]"]').value;
+            
+            // Simulación de envío exitoso para la demo, 
+            // En producción, MailerLite manejaría esto vía su script o API.
+            showSuccess();
+            form.reset();
+        }
+
         window.addEventListener('scroll', () => {
             const h = document.getElementById('site-header');
             if (window.scrollY > 20) h.classList.add('is-sticky'); else h.classList.remove('is-sticky');
@@ -313,5 +341,18 @@
             requestAnimationFrame(draw);
         }());
     </script>
+
+    <!-- Clarity -->
+    <script
+      type="text/plain"
+      data-name="microsoft-clarity"
+    >
+    (function(c,l,a,r,i,t,y){
+       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+    })(window, document, "clarity", "script", "wd9btxwafk");
+    </script>
+
 </body>
 </html>
