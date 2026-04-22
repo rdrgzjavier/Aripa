@@ -629,6 +629,18 @@ body { font-family: 'Inter', sans-serif; }
         font-size: 0.8rem;
     }
     .btn-close-success:hover { transform: scale(1.02); background: #f0f0f0; }
+
+    /* Fix Mobile Zoom & Modal Stability */
+    .modal-panel input, .modal-panel select, .modal-panel textarea {
+        font-size: 16px !important; /* Evita auto-zoom en iOS */
+    }
+    @media (max-width: 767px) {
+        .modal-panel {
+            padding: 1.5rem !important;
+            margin: 1rem;
+            width: calc(100% - 2rem) !important;
+        }
+    }
 </style>
 
 </head>
