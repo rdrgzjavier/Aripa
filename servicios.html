@@ -102,6 +102,68 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .reveal-ready[data-delay="3"] { transition-delay: 240ms; }
   .reveal-ready[data-delay="4"] { transition-delay: 320ms; }
   .reveal-ready[data-delay="5"] { transition-delay: 400ms; }
+
+    /* Success Modal (Standardized) */
+    .success-modal {
+        position: fixed;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.8);
+        backdrop-filter: blur(8px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1000;
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .success-modal.active {
+        opacity: 1;
+        pointer-events: auto;
+    }
+    .success-modal-content {
+        background: #1a1a2e;
+        padding: 3rem;
+        border-radius: 2rem;
+        max-width: 450px;
+        width: 90%;
+        text-align: center;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        transform: translateY(20px);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .success-modal.active .success-modal-content {
+        transform: translateY(0);
+    }
+    .success-icon {
+        width: 64px;
+        height: 64px;
+        background: #6c45c0;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1.5rem;
+        color: white;
+    }
+    .success-title { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 2rem; margin-bottom: 0.5rem; letter-spacing: -0.02em; color: white; }
+    .success-desc { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; line-height: 1.5; margin-bottom: 2rem; }
+    .btn-close-success {
+        background: white;
+        color: black;
+        border: none;
+        padding: 1rem 2rem;
+        border-radius: 1rem;
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s;
+        width: 100%;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.8rem;
+    }
+    .btn-close-success:hover { transform: scale(1.02); background: #f0f0f0; }
 </style>
   
 </head>
@@ -174,6 +236,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </header>
+
+  <!-- SUCCESS MODAL -->
+  <div id="success-feedback-modal" class="success-modal">
+    <div class="success-modal-content">
+        <div class="success-icon">
+            <span class="material-symbols-outlined" style="font-size: 32px;">check</span>
+        </div>
+        <h3 class="success-title">Gracias</h3>
+        <p class="success-desc">Vamos a revisar tu consulta y te diremos algo lo antes posible. Revisa tu bandeja (y spam por si acaso) en los próximos días para ver nuestra respuesta.</p>
+        <button class="btn-close-success" onclick="closeSuccessModal()">Cerrar</button>
+    </div>
+  </div>
 
   <main>
     <!-- Section Hero (Fluid height using dynamic padding) -->
@@ -599,14 +673,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const email = document.getElementById('c-email').value;
       const service = document.getElementById('c-service').value;
       const message = document.getElementById('c-message').value;
-      const subject = encodeURIComponent(`Nueva solicitud de contacto - ${name}`);
-      const body = encodeURIComponent(`Nombre: ${name}\nTeléfono: ${phone}\nEmail: ${email}\nServicio: ${service}\n\nMensaje:\n${message}`);
-      window.location.href = `mailto:hola@aripa.es?subject=${subject}&body=${body}`;
-      setTimeout(() => {
-        alert('Solicitud enviada correctamente. Gracias por contactar con aripa.');
+      
+      const submitBtn = document.getElementById('submit-btn');
+      const originalText = submitBtn.innerText;
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Enviando...';
+
+      const FORMSPREE_ENDPOINT = "https://formspree.io/f/maqalopa";
+
+      fetch(FORMSPREE_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, email, service, message })
+      }).finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalText;
         closeModal('contact-modal');
+        showSuccessModal();
         e.target.reset();
-      }, 500);
+        validate();
+      });
+    }
+
+    function showSuccessModal() {
+      document.getElementById('success-feedback-modal').classList.add('active');
+    }
+
+    function closeSuccessModal() {
+      document.getElementById('success-feedback-modal').classList.remove('active');
     }
 
     // Scroll Logic for Bottom Bars
