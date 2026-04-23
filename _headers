@@ -17,7 +17,7 @@
   Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
 
   # CSP ajustada a los recursos reales de la página
-  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://app.cal.com https://cal.com https://*.clarity.ms https://api.kiprotect.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; connect-src 'self' https://www.googletagmanager.com https://app.cal.com https://cal.com https://*.clarity.ms https://api.kiprotect.com; frame-src https://app.cal.com https://cal.com; frame-ancestors 'none'
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://app.cal.com https://cal.com https://*.clarity.ms https://api.kiprotect.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' https: data:; connect-src 'self' https://www.googletagmanager.com https://app.cal.com https://cal.com https://*.clarity.ms https://api.kiprotect.com https://formspree.io; frame-src https://app.cal.com https://cal.com; frame-ancestors 'none'
 
   # Cache control para HTML — nunca cachear el documento
   Cache-Control: no-cache, no-store, must-revalidate

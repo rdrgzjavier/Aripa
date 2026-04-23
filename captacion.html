@@ -48,7 +48,9 @@
             color: #ffffff;
             font-family: 'Inter', sans-serif;
             min-height: 100vh;
-            overflow: hidden;
+            min-height: 100dvh;
+            overflow-x: hidden;
+            overflow-y: auto;
         }
 
         /* Animated Canvas Background */
@@ -71,8 +73,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 40px 1.5rem 20px;
+            padding: 2rem 1.5rem 4rem;
             min-height: 100vh;
+            min-height: 100dvh;
             position: relative;
             z-index: 10;
         }
@@ -91,7 +94,13 @@
         }
 
         @media (max-width: 768px) {
-            .glass-card { transform: translateY(-5vh); }
+            .glass-card { 
+                transform: none; 
+                padding: 2.5rem 1.5rem;
+                margin-top: 1rem;
+            }
+            h1 { font-size: 2.2rem; }
+            p.subtle { margin-bottom: 2rem; }
         }
 
         @media (min-width: 768px) {

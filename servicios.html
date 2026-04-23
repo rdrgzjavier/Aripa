@@ -753,14 +753,38 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       fetch(FORMSPREE_ENDPOINT, {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, phone, email, service, message })
-      }).finally(() => {
+        body: JSON.stringify({
+          name,
+          phone,
+          email,
+          service,
+          message,
+          _replyto: email,
+          _subject: 'Nueva consulta desde aripa.es – ' + name
+        })
+      })
+      .then(response => {
+        console.log('[Formspree] Status:', response.status);
+        return response.json().then(data => ({ ok: response.ok, status: response.status, data }));
+      })
+      .then(({ ok, status, data }) => {
+        console.log('[Formspree] Response:', data);
         submitBtn.disabled = false;
         submitBtn.innerText = originalText;
-        closeModal('contact-modal');
-        showSuccessModal();
-        e.target.reset();
-        validate();
+        if (ok) {
+          closeModal('contact-modal');
+          showSuccessModal();
+          e.target.reset();
+          validate();
+        } else {
+          alert('Error al enviar (' + status + '): ' + (data.error || JSON.stringify(data)) + '. Inténtalo de nuevo o escríbenos a hola@aripa.es');
+        }
+      })
+      .catch(err => {
+        console.error('[Formspree] Error de red:', err);
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalText;
+        alert('Error de conexión. Comprueba tu internet e inténtalo de nuevo, o escríbenos directamente a hola@aripa.es');
       });
     }
 
