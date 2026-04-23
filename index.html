@@ -657,7 +657,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 ═══════════════════════════════════════════ -->
 <div class="fixed inset-0 z-[70] invisible md:hidden" id="drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
   <div class="absolute inset-0 opacity-0 transition-opacity duration-300" id="drawer-overlay"></div>
-  <nav class="absolute left-0 top-0 h-full w-4/5 max-w-sm drawer-transition -translate-x-full p-8 flex flex-col shadow-2xl" id="drawer-content">
+  <nav class="absolute left-0 top-0 h-full w-4/5 max-w-sm drawer-transition -translate-x-full p-8 flex flex-col shadow-2xl outline-none" id="drawer-content">
     <div class="flex justify-between items-center mb-10">
       <img 
   alt="aripa"
@@ -697,9 +697,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </button>
 
     <!-- Logo: Centered on mobile, aligned on md+ -->
-    <div class="flex items-center justify-center w-full md:w-1/4 md:justify-start">
+    <a href="index.html" class="flex items-center justify-center w-full md:w-1/4 md:justify-start outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
       <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
-    </div>
+    </a>
 
     <!-- Desktop nav (hidden on mobile) -->
     <nav class="hidden md:flex items-center justify-center gap-12 w-2/4">
@@ -1459,10 +1459,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const stickyHeader = window.scrollY > 20;
 
     if (window.innerWidth >= 768) {
+      const stickyBtn = stickyBar.querySelector('button');
       if (pastHero) {
         stickyBar.classList.add('visible');
+        if(stickyBtn) stickyBtn.removeAttribute('tabindex');
       } else {
         stickyBar.classList.remove('visible');
+        if(stickyBtn) stickyBtn.setAttribute('tabindex', '-1');
       }
     }
     document.body.classList.toggle('scrolled', window.scrollY > 150);

@@ -28,7 +28,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- Shared Assets -->
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;600;700;800&family=Inter:wght@400;500;600&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap&font-display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap&font-display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="./style.css">
 
 <style>
@@ -46,8 +46,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     --color-on-surface-variant:    234  5% 29%;
   }
   body { font-family: 'Inter', sans-serif; }
-  .font-brand    { font-family: 'Outfit', sans-serif; }
-  .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
+  .font-brand    { font-family: 'Inter', sans-serif; }
+  .font-headline { font-family: 'Inter', sans-serif; }
   
   /* Fixing Material Symbols rendering */
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
@@ -190,7 +190,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   =========================================== -->
   <div class="fixed inset-0 z-[70] invisible md:hidden" id="drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
     <div class="absolute inset-0 bg-black/60 backdrop-blur-sm opacity-0 transition-opacity duration-300" id="drawer-overlay"></div>
-    <nav class="absolute left-0 top-0 h-full w-4/5 max-w-sm bg-[#061542] drawer-transition -translate-x-full p-8 flex flex-col shadow-2xl" id="drawer-content">
+    <nav class="absolute left-0 top-0 h-full w-4/5 max-w-sm bg-[#061542] drawer-transition -translate-x-full p-8 flex flex-col shadow-2xl outline-none" id="drawer-content">
       <div class="flex justify-between items-center mb-10">
         <img 
   alt="aripa"
@@ -229,10 +229,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="material-symbols-outlined text-white text-2xl" aria-hidden="true">menu</span>
       </button>
 
-      <!-- Logo -->
-      <div class="flex items-center justify-center w-full md:w-1/4 md:justify-start">
-        <a href="index.html"><img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/></a>
-      </div>
+      <!-- Logo: Centered on mobile, aligned on md+ -->
+    <a href="index.html" class="flex items-center justify-center w-full md:w-1/4 md:justify-start outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
+      <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
+    </a>
       
       <!-- Desktop nav -->
       <nav class="hidden md:flex items-center justify-center gap-12 w-2/4">
@@ -270,6 +270,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Services Grid (Aesthetics from Home, links to Cal.com) -->
     <section class="pt-12 pb-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios-grid">
+      <h2 class="sr-only">Nuestros servicios</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
         
         <!-- 1. Captación Digital -->
@@ -526,7 +527,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
       </nav>
       <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4">
-        Liderado por <span class="text-white/60 font-bold">Javier Rodriguez de la Orden</span>, docente en el Posgrado en Gestión de Producto Digital de <a href="https://weareshifta.com/formaciones/posgrado-gestion-producto-digital/" class="underline hover:text-white transition-colors">Shifta by Elisava</a>.
+        Consultoría especializada en CRO, SEO/GEO/AEO y growth, con metodología basada en datos y ejecución orientada a resultados.
       </div>
       <div class="flex items-center gap-4">
         <a href="https://www.linkedin.com/company/aripa/" target="_blank" rel="noopener noreferrer" class="group transition-transform hover:scale-110" aria-label="LinkedIn de aripa">
