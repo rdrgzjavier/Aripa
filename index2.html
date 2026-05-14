@@ -762,7 +762,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="av6-ctas hero-animate-4">
         <button class="cta-core av6-btn-primary hover:scale-[1.02] transition-transform active:scale-95"
-                onclick="openContactModal()">
+                data-cal-link="aripa/hoja-de-ruta"
+                data-cal-namespace="hoja-de-ruta"
+                data-cal-config='{"layout":"month_view"}'>
           Solicitar análisis
         </button>
         <a class="cta-core av6-btn-secondary hover:bg-white/15 transition-colors"
@@ -984,10 +986,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
           <img alt="Hotel Majadahonda" class="max-h-10 w-auto object-contain" src="./assets/Logo Hotel Majadahonda.png" width="160" height="40"/>
         </div>
-        <!-- Tenlo (Nuevo) -->
-        <div class="flex flex-col items-center justify-center gap-1 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
-          <span class="text-2xl font-black font-headline tracking-tighter leading-none">TENLO</span>
-          <span class="text-[8px] md:text-[9px] font-bold uppercase tracking-widest">Digital App</span>
+        <!-- Tenlo -->
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+          <img alt="Tenlo" class="max-h-12 w-auto object-contain" src="./assets/tenlo.png" width="80" height="48"/>
         </div>
       </div>
     </div>
@@ -999,36 +1000,33 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Resolviendo dudas</p>
         <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-6 md:mb-8">Preguntas frecuentes sobre crecimiento digital</h2>
-        <p class="text-base md:text-lg text-on-surface-variant leading-relaxed hidden md:block">
-          Entiende cómo las nuevas tecnologías de búsqueda (GEO) y la optimización basada en datos pueden cambiar el rumbo de tu empresa.
-        </p>
       </div>
       <div class="md:col-span-2 space-y-4">
         <details class="group border border-outline-variant/30 rounded-xl md:rounded-2xl p-4 md:p-6">
           <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base md:text-xl text-primary font-headline">
-            ¿Qué es la optimización para buscadores de IA (GEO)?
+            ¿Qué es la estructura semántica y por qué es clave en la era de la IA?
             <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
           </summary>
           <p class="text-sm md:text-base text-on-surface-variant mt-4 leading-relaxed">
-            Es el proceso de optimizar tus contenidos para que motores de respuesta como ChatGPT o Gemini citen tu marca como la autoridad en tu sector.
+            Es la base de la autoridad temática. Optimizamos la arquitectura de tu contenido para que los sistemas conversacionales y motores de búsqueda entiendan tu propuesta de valor como la referencia técnica en tu sector.
           </p>
         </details>
         <details class="group border border-outline-variant/30 rounded-xl md:rounded-2xl p-4 md:p-6">
           <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base md:text-xl text-primary font-headline">
-            ¿En cuánto tiempo veré resultados en CRO?
+            ¿Cómo se construye la autoridad temática para mejorar la visibilidad digital?
             <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
           </summary>
           <p class="text-sm md:text-base text-on-surface-variant mt-4 leading-relaxed">
-            Los cambios iniciales pueden mostrar impacto en 48-72h. Un ciclo completo de experimentación suele durar entre 2 y 4 semanas.
+            Mediante una optimización basada en la intención del usuario. No se trata de palabras clave aisladas, sino de dominar los clústeres de conocimiento que posicionan a tu marca como líder indiscutible ante algoritmos complejos.
           </p>
         </details>
         <details class="group border border-outline-variant/30 rounded-xl md:rounded-2xl p-4 md:p-6">
           <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base md:text-xl text-primary font-headline">
-            ¿Cómo garantizáis el ROI de la inversión?
+            ¿Cuál es el impacto real de los sistemas conversacionales en el tráfico actual?
             <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
           </summary>
           <p class="text-sm md:text-base text-on-surface-variant mt-4 leading-relaxed">
-            Trabajamos con un modelo basado en datos donde cada euro invertido se traza hasta la conversión final, ajustando pujas en tiempo real.
+            La visibilidad digital está evolucionando hacia la citación directa. Nuestra estrategia GEO (Generative Engine Optimization) asegura que tu marca sea la respuesta recomendada en las interfaces de búsqueda asistida e IA.
           </p>
         </details>
       </div>
@@ -1072,7 +1070,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden"
      id="mobile-bottom-nav"
      style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
-  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" onclick="openContactModal()">
+  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3"
+          data-cal-link="aripa/hoja-de-ruta"
+          data-cal-namespace="hoja-de-ruta"
+          data-cal-config='{"layout":"month_view"}'>
     <span class="material-symbols-outlined">mail</span>
     Solicitar análisis
   </button>
@@ -1091,7 +1092,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="flex items-center gap-3 pointer-events-auto">
     <button class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2"
-            onclick="openContactModal()">
+            data-cal-link="aripa/hoja-de-ruta"
+            data-cal-namespace="hoja-de-ruta"
+            data-cal-config='{"layout":"month_view"}'>
       <span class="material-symbols-outlined">mail</span> Solicitar análisis
     </button>
   </div>
@@ -1110,9 +1113,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="text-on-surface-variant text-sm md:text-lg leading-relaxed mb-6 md:mb-8" id="modal-desc"></p>
       <div class="space-y-2 md:space-y-4" id="modal-list"></div>
     </div>
-    <button class="cta-core w-full py-4 md:py-5 text-white rounded-xl md:rounded-2xl font-bold uppercase tracking-widest text-sm shadow-xl active:scale-95 transition-all"
-            onclick="closeModal('service-modal'); openContactModal();">
-      Me interesa
+    <button class="cta-core w-full py-4 md:py-5 btn-after text-white rounded-xl md:rounded-2xl font-bold uppercase tracking-widest text-sm shadow-xl active:scale-95 transition-all flex items-center justify-center gap-2"
+            data-cal-link="aripa/hoja-de-ruta"
+            data-cal-namespace="hoja-de-ruta"
+            data-cal-config='{"layout":"month_view"}'>
+      <span class="material-symbols-outlined">event_available</span> Solicitar análisis
     </button>
   </div>
 </div>
@@ -1506,6 +1511,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     requestAnimationFrame(draw);
   }());
 </script>
+
+<!-- Cal element-click embed code begins --> 
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
+
+  Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+<!-- Cal element-click embed code ends -->
 
 <!-- Clarity -->
 <script type="text/javascript">
