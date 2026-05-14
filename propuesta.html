@@ -1,11 +1,11 @@
-<!-- v2.0.0 - Proposal Home Redesign -->
+<!-- v2.0.1 - Layout & Styles Fix -->
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="es">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>ARIPA | Consultoría Especializada en Comportamiento y Conversión Digital</title>
-<meta name="description" content="No somos una agencia más. Somos la consultoría que detecta por qué tu negocio digital no convierte. Análisis de comportamiento, fricción y rendimiento basado en datos."/>
+<meta name="description" content="No somos una agencia más. Somos la consultoría que detecta por qué tu negocio digital no convierte."/>
 
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
   
@@ -15,150 +15,185 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KBK55KW8');</script>
-<!-- End Google Tag Manager -->
 
 <link rel="canonical" href="https://aripa.es/propuesta.html"/>
-<link rel="preload" href="/style.css" as="style">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
-<link rel="icon" href="/assets/favicon-64.png" sizes="64x64">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
 
-<meta name="robots" content="noindex, nofollow"> <!-- Private proposal -->
-<meta name="author" content="Javier Rodriguez de la Orden">
+<meta name="robots" content="noindex, nofollow">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@400,0..1&display=swap" rel="stylesheet">
 
+<!-- Cargamos style.css pero definimos overrides para asegurar que el diseño sea robusto -->
 <link rel="stylesheet" href="./style.css">
 
 <style>
   :root {
     --color-primary:               220 80% 14%;   /* #061542 */
     --color-secondary:             265 47% 51%;   /* #6c45c0 */
-    --color-background:            0 0% 100%;     /* White for purity/clarity */
-    --color-surface:               210 20% 98%;   /* Very light gray */
-    --color-on-background:         220 40% 10%;   /* Deep Navy */
-    --duration-base:    400ms;
-    --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+    --color-text-main:             #061542;
+    --color-text-muted:            rgba(6, 21, 66, 0.6);
+    --color-bg:                    #ffffff;
+    --ease-out-expo:               cubic-bezier(0.16, 1, 0.3, 1);
   }
 
-  body { font-family: 'Inter', sans-serif; -webkit-font-smoothing: antialiased; }
-  
-  /* ── Hero Customization ── */
-  #hero-section.proposal-hero {
-    min-height: 95svh;
-    background: #fff;
-    color: var(--color-on-background);
+  body { 
+    font-family: 'Inter', sans-serif; 
+    background-color: var(--color-bg); 
+    color: var(--color-text-main);
+    margin: 0;
+    line-height: 1.5;
+  }
+
+  /* ── Robust Layout System (No depende de Tailwind externo) ── */
+  .container-aripa {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .grid-cols-3-fixed {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 1024px) {
+    .grid-cols-3-fixed { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .grid-cols-4-fixed {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 768px) {
+    .grid-cols-4-fixed { grid-template-columns: repeat(2, 1fr); }
+  }
+  @media (min-width: 1024px) {
+    .grid-cols-4-fixed { grid-template-columns: repeat(4, 1fr); }
+  }
+
+  /* ── Hero ── */
+  .proposal-hero {
+    min-height: 80svh;
     display: flex;
     align-items: center;
-    padding-top: 8rem;
+    padding: 10rem 0 6rem;
+    position: relative;
+    overflow: hidden;
   }
   
-  .hero-logo-bg {
+  .hero-logo-watermark {
     position: absolute;
-    right: -10%;
+    right: -5%;
     top: 50%;
     transform: translateY(-50%);
     opacity: 0.03;
+    width: 50%;
     pointer-events: none;
-    width: 60%;
   }
 
-  /* ── Typography & Refinement ── */
-  .text-balance { text-wrap: balance; }
-  .tracking-tightest { letter-spacing: -0.04em; }
-  
-  .consultancy-tag {
-    display: inline-block;
-    padding: 6px 12px;
-    background: rgba(108,69,192,0.08);
-    color: #6c45c0;
-    border-radius: 6px;
-    font-size: 11px;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
+  .hero-headline {
+    font-size: clamp(2.5rem, 8vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.04em;
     margin-bottom: 2rem;
   }
 
-  /* ── Blocks ── */
-  .section-padding { padding: 8rem 1.5rem; }
-  @media (min-width: 768px) { .section-padding { padding: 12rem 3rem; } }
-
-  .problem-card {
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.05);
-    padding: 2.5rem;
-    border-radius: 1.5rem;
-    transition: all 0.3s var(--ease-out-expo);
-  }
-  .problem-card:hover {
-    border-color: rgba(108,69,192,0.2);
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px rgba(0,0,0,0.03);
+  .hero-sub {
+    font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+    color: var(--color-text-muted);
+    max-width: 640px;
+    margin-bottom: 3rem;
   }
 
-  .service-card {
-    padding: 3rem;
-    border-radius: 2rem;
-    background: #fff;
-    border: 1px solid rgba(0,0,0,0.06);
-    transition: all 0.4s var(--ease-out-expo);
-  }
-  .service-card:hover {
-    box-shadow: 0 30px 60px -12px rgba(6,21,66,0.08);
-    border-color: rgba(108,69,192,0.3);
+  /* ── Components ── */
+  .consultancy-badge {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: rgba(108,69,192,0.08);
+    color: #6c45c0;
+    border-radius: 8px;
+    font-size: 11px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: 2rem;
   }
 
-  /* ── UI Components ── */
-  .btn-consultancy {
+  .btn-aripa-primary {
     background: #061542;
-    color: #fff;
+    color: white;
     padding: 1.25rem 2.5rem;
-    border-radius: 1rem;
+    border-radius: 12px;
     font-weight: 700;
-    font-size: 0.9rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+  }
+  .btn-aripa-primary:hover { transform: translateY(-2px); box-shadow: 0 15px 30px rgba(6,21,66,0.2); }
+
+  .btn-aripa-outline {
+    border: 1px solid rgba(6,21,66,0.15);
+    color: #061542;
+    padding: 1.25rem 2.5rem;
+    border-radius: 12px;
+    font-weight: 700;
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 0.75rem;
     transition: all 0.3s;
   }
-  .btn-consultancy:hover {
-    transform: scale(1.02);
-    background: #111e4d;
-    box-shadow: 0 20px 40px rgba(6,21,66,0.2);
+  .btn-aripa-outline:hover { background: rgba(0,0,0,0.02); }
+
+  .section-spacing { padding: 8rem 0; }
+  @media (min-width: 1024px) { .section-spacing { padding: 10rem 0; } }
+
+  .card-problem {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.05);
+    padding: 3rem;
+    border-radius: 24px;
+    transition: all 0.4s var(--ease-out-expo);
   }
-  
-  .btn-secondary-flat {
-    color: #061542;
-    padding: 1.25rem 2rem;
-    font-weight: 700;
-    font-size: 0.9rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    border: 1px solid rgba(6,21,66,0.1);
-    border-radius: 1rem;
-  }
-  .btn-secondary-flat:hover {
-    background: rgba(6,21,66,0.03);
+  .card-problem:hover { 
+    border-color: rgba(108,69,192,0.2); 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.04);
   }
 
-  /* ── FAQ ── */
-  details summary {
-    list-style: none;
-    outline: none;
+  .card-service {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.08);
+    padding: 3.5rem;
+    border-radius: 32px;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.4s var(--ease-out-expo);
   }
-  details summary::-webkit-details-marker {
-    display: none;
+  .card-service:hover {
+    border-color: rgba(108,69,192,0.3);
+    box-shadow: 0 30px 60px -12px rgba(6,21,66,0.1);
   }
 
-  /* Standardized Success Modal Styles from index.html */
+  /* ── Utils ── */
+  .text-muted { color: var(--color-text-muted); }
+  .text-secondary { color: #6c45c0; }
+  .bg-surface { background-color: #f9f9fb; }
+  .bg-dark { background-color: #061542; color: white; }
+
+  /* Success Modal */
   .success-modal {
     position: fixed;
     top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.85);
     backdrop-filter: blur(8px);
     display: flex;
     align-items: center;
@@ -166,420 +201,241 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     z-index: 1000;
     opacity: 0;
     pointer-events: none;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s;
   }
   .success-modal.active { opacity: 1; pointer-events: auto; }
   .success-modal-content {
-    background: #1a1a2e; padding: 3rem; border-radius: 2rem;
+    background: #1a1a2e; padding: 3.5rem; border-radius: 32px;
     max-width: 450px; width: 90%; text-align: center;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    transform: translateY(20px); transition: all 0.4s;
-  }
-  .success-modal.active .success-modal-content { transform: translateY(0); }
-  .success-icon {
-    width: 64px; height: 64px; background: #6c45c0; border-radius: 50%;
-    display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white;
-  }
-  .success-title { font-weight: 800; font-size: 2rem; color: white; }
-  .btn-close-success { background: white; color: black; padding: 1rem; border-radius: 1rem; width: 100%; margin-top: 2rem; font-weight: 700; }
-
-  /* Header transitions */
-  #site-header.is-sticky-light {
-    background: rgba(255,255,255,0.9);
-    backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(0,0,0,0.05);
   }
 </style>
 </head>
-<body class="bg-white text-on-background">
+<body>
 
-<!-- Skip nav -->
-<a class="skip-nav" href="#main-content">Saltar al contenido principal</a>
+<!-- GTM noscript -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBK55KW8" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
-<!-- HEADER (Light Version) -->
-<header id="site-header" class="fixed top-0 w-full z-50 transition-all duration-300">
-  <div class="max-w-[1440px] mx-auto px-6 md:px-12 h-20 md:h-24 flex justify-between items-center">
-    <a href="propuesta.html" class="flex items-center">
+<!-- HEADER -->
+<header id="site-header" class="fixed top-0 w-full z-50 transition-all duration-300" style="background: rgba(255,255,255,0.8); backdrop-filter: blur(16px);">
+  <div class="container-aripa h-20 flex justify-between items-center">
+    <a href="propuesta.html">
       <img alt="ARIPA" class="h-6" src="./assets/aripa-logo.png" style="filter: invert(1) brightness(0.2);"/>
     </a>
-    <nav class="hidden md:flex gap-12 text-sm font-semibold text-primary/80">
-      <a href="#problema" class="hover:text-primary transition-colors">Análisis</a>
-      <a href="#servicios" class="hover:text-primary transition-colors">Servicios</a>
-      <a href="#metodologia" class="hover:text-primary transition-colors">Metodología</a>
-    </nav>
-    <button class="text-[11px] font-bold tracking-widest uppercase border border-primary/10 px-6 py-2.5 rounded-lg hover:bg-primary hover:text-white transition-all" onclick="openContactModal()">
+    <button class="btn-aripa-primary" style="padding: 0.6rem 1.2rem; font-size: 12px;" onclick="openContactModal()">
       Solicitar Análisis
     </button>
   </div>
 </header>
 
 <main id="main-content">
-  <!-- 1. HERO PRINCIPAL -->
-  <section class="proposal-hero relative overflow-hidden" id="hero">
-    <img src="./assets/aripa-logo.png" class="hero-logo-bg" alt="" aria-hidden="true">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12 w-full grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-      <div class="lg:col-span-8">
-        <span class="consultancy-tag">Consultoría Estratégica Digital</span>
-        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tightest leading-[1.1] text-primary mb-8 text-balance">
-          Detectamos por qué tu negocio digital no convierte.
-        </h1>
-        <p class="text-xl md:text-2xl text-primary/60 leading-relaxed mb-12 max-w-2xl text-balance">
-          Analizamos comportamiento, fricción y experiencia digital para mejorar captación, conversión y rendimiento.
-        </p>
-        <div class="flex flex-wrap gap-4">
-          <button class="btn-consultancy" onclick="openContactModal()">
-            Solicitar análisis
-            <span class="material-symbols-outlined text-sm">trending_up</span>
-          </button>
-          <a href="#metodologia" class="btn-secondary-flat">
-            Ver metodología
-          </a>
-        </div>
+  <!-- HERO -->
+  <section class="proposal-hero">
+    <img src="./assets/aripa-logo.png" class="hero-logo-watermark" alt="" aria-hidden="true">
+    <div class="container-aripa">
+      <span class="consultancy-badge">Consultoría Estratégica Digital</span>
+      <h1 class="hero-headline">
+        Detectamos por qué tu negocio digital no convierte.
+      </h1>
+      <p class="hero-sub">
+        No somos una agencia más. Analizamos comportamiento, fricción y experiencia digital para mejorar captación y rendimiento basado en datos reales.
+      </p>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn-aripa-primary" onclick="openContactModal()">
+          Solicitar análisis <span class="material-symbols-outlined" style="font-size: 16px;">trending_up</span>
+        </button>
+        <a href="#servicios" class="btn-aripa-outline">Ver soluciones</a>
       </div>
     </div>
   </section>
 
-  <!-- 2. BLOQUE PROBLEMA -->
-  <section class="section-padding bg-surface" id="problema">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-      <div class="max-w-4xl mb-20">
-        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tightest text-primary mb-6 text-balance">
+  <!-- PROBLEMA -->
+  <section class="section-spacing bg-surface" id="analisis">
+    <div class="container-aripa">
+      <div style="max-width: 800px; margin-bottom: 5rem;">
+        <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800; line-height: 1.1; margin-bottom: 1.5rem;">
           La mayoría de negocios digitales no tienen un problema de tráfico.
         </h2>
-        <p class="text-xl md:text-2xl text-primary/60">
-          Tienen problemas de claridad, confianza, experiencia y conversión.
-        </p>
+        <p class="hero-sub">Tienen problemas de claridad, confianza, experiencia y conversión.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <div class="problem-card">
-          <span class="material-symbols-outlined text-secondary mb-4">person_cancel</span>
-          <h3 class="font-bold text-xl mb-3">Usuarios que abandonan</h3>
-          <p class="text-primary/60 text-sm leading-relaxed">Identificamos los puntos exactos de fricción donde tus visitantes deciden irse a la competencia.</p>
+      <div class="grid-cols-3-fixed">
+        <div class="card-problem">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 40px; margin-bottom: 1.5rem;">person_cancel</span>
+          <h3 style="font-weight: 800; font-size: 1.25rem; margin-bottom: 1rem;">Usuarios que abandonan</h3>
+          <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">Identificamos los puntos exactos de fricción donde tus visitantes deciden irse a la competencia.</p>
         </div>
-        <div class="problem-card">
-          <span class="material-symbols-outlined text-secondary mb-4">broken_image</span>
-          <h3 class="font-bold text-xl mb-3">Landings que no convencen</h3>
-          <p class="text-primary/60 text-sm leading-relaxed">Diseños estéticos que fallan en lo fundamental: comunicar valor y guiar hacia la acción.</p>
+        <div class="card-problem">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 40px; margin-bottom: 1.5rem;">broken_image</span>
+          <h3 style="font-weight: 800; font-size: 1.25rem; margin-bottom: 1rem;">Landings que no convencen</h3>
+          <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">Diseños estéticos que fallan en lo fundamental: comunicar valor y guiar hacia la acción de compra.</p>
         </div>
-        <div class="problem-card">
-          <span class="material-symbols-outlined text-secondary mb-4">filter_list_off</span>
-          <h3 class="font-bold text-xl mb-3">Funnels con fugas invisibles</h3>
-          <p class="text-primary/60 text-sm leading-relaxed">Pérdida de oportunidades por una arquitectura de persuasión débil o pasos innecesarios.</p>
-        </div>
-        <div class="problem-card">
-          <span class="material-symbols-outlined text-secondary mb-4">chat_error</span>
-          <h3 class="font-bold text-xl mb-3">Mensajes poco claros</h3>
-          <p class="text-primary/60 text-sm leading-relaxed">Propuestas de valor genéricas que no resuelven las dudas específicas del usuario.</p>
-        </div>
-        <div class="problem-card">
-          <span class="material-symbols-outlined text-secondary mb-4">psychology_alt</span>
-          <h3 class="font-bold text-xl mb-3">Decisiones por intuición</h3>
-          <p class="text-primary/60 text-sm leading-relaxed">Cambios basados en "opiniones" en lugar de datos reales de comportamiento y rendimiento.</p>
+        <div class="card-problem">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 40px; margin-bottom: 1.5rem;">filter_list_off</span>
+          <h3 style="font-weight: 800; font-size: 1.25rem; margin-bottom: 1rem;">Funnels con fugas invisibles</h3>
+          <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">Pérdida de oportunidades por una arquitectura de persuasión débil o pasos innecesarios en el proceso.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 3. BLOQUE SERVICIOS (SIMPLIFICADO) -->
-  <section class="section-padding" id="servicios">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-      <div class="text-center max-w-2xl mx-auto mb-20">
-        <p class="text-secondary font-bold text-[10px] uppercase tracking-widest mb-4">Servicios Especializados</p>
-        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tightest text-primary">Optimización con criterio.</h2>
+  <!-- SERVICIOS -->
+  <section class="section-spacing" id="servicios">
+    <div class="container-aripa">
+      <div style="text-align: center; margin-bottom: 6rem;">
+        <p class="text-secondary" style="font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">Especialización</p>
+        <h2 style="font-size: clamp(2rem, 5vw, 3rem); font-weight: 800;">Optimización basada en criterio.</h2>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <!-- A) Conversión & CRO -->
-        <div class="service-card flex flex-col group">
-          <div class="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center mb-8 group-hover:bg-secondary/10 transition-colors">
-            <span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors">analytics</span>
-          </div>
-          <h3 class="text-2xl font-extrabold mb-6">Conversión & CRO</h3>
-          <ul class="space-y-4 mb-10 flex-grow">
-            <li class="flex items-center gap-3 text-sm text-primary/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Auditorías de conversión</li>
-            <li class="flex items-center gap-3 text-sm text-primary/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Optimización de Funnels</li>
-            <li class="flex items-center gap-3 text-sm text-primary/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Landings de alto rendimiento</li>
-            <li class="flex items-center gap-3 text-sm text-primary/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Experimentación A/B</li>
+      <div class="grid-cols-3-fixed">
+        <!-- 1 -->
+        <div class="card-service">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 32px; margin-bottom: 2rem;">analytics</span>
+          <h3 style="font-weight: 800; font-size: 1.5rem; margin-bottom: 1.5rem;">Conversión & CRO</h3>
+          <ul style="padding: 0; margin-bottom: 3rem; flex-grow: 1;">
+            <li style="margin-bottom: 1rem; font-size: 0.9rem; color: #444; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 6px; height: 6px; background: #6c45c0; border-radius: 50%;"></span> Auditorías de conversión
+            </li>
+            <li style="margin-bottom: 1rem; font-size: 0.9rem; color: #444; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 6px; height: 6px; background: #6c45c0; border-radius: 50%;"></span> Optimización de Funnels
+            </li>
+            <li style="margin-bottom: 1rem; font-size: 0.9rem; color: #444; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 6px; height: 6px; background: #6c45c0; border-radius: 50%;"></span> Experimentación A/B
+            </li>
           </ul>
-          <button class="text-xs font-bold uppercase tracking-widest text-secondary flex items-center gap-2 group-hover:gap-4 transition-all" onclick="openContactModal()">
-            Consultar <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          <button style="background: none; border: none; color: #6c45c0; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;" onclick="openContactModal()">
+            CONSULTAR <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
           </button>
         </div>
-
-        <!-- B) UX & Behavioral Design -->
-        <div class="service-card flex flex-col group">
-          <div class="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center mb-8 group-hover:bg-secondary/10 transition-colors">
-            <span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors">psychology</span>
-          </div>
-          <h3 class="text-2xl font-extrabold mb-6">UX & Behavioral Design</h3>
-          <ul class="space-y-4 mb-10 flex-grow">
-            <li class="flex items-center gap-3 text-sm text-primary/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Experiencia de usuario (UX)</li>
-            <li class="flex items-center gap-3 text-sm text-primary/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Claridad y Jerarquía visual</li>
-            <li class="flex items-center gap-3 text-sm text-primary/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Arquitectura de persuasión</li>
-            <li class="flex items-center gap-3 text-sm text-primary/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Análisis de comportamiento</li>
+        <!-- 2 -->
+        <div class="card-service">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 32px; margin-bottom: 2rem;">psychology</span>
+          <h3 style="font-weight: 800; font-size: 1.5rem; margin-bottom: 1.5rem;">UX & Behavior</h3>
+          <ul style="padding: 0; margin-bottom: 3rem; flex-grow: 1;">
+            <li style="margin-bottom: 1rem; font-size: 0.9rem; color: #444; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 6px; height: 6px; background: #6c45c0; border-radius: 50%;"></span> Experiencia de usuario (UX)
+            </li>
+            <li style="margin-bottom: 1rem; font-size: 0.9rem; color: #444; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 6px; height: 6px; background: #6c45c0; border-radius: 50%;"></span> Arquitectura de persuasión
+            </li>
+            <li style="margin-bottom: 1rem; font-size: 0.9rem; color: #444; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 6px; height: 6px; background: #6c45c0; border-radius: 50%;"></span> Claridad de mensaje
+            </li>
           </ul>
-          <button class="text-xs font-bold uppercase tracking-widest text-secondary flex items-center gap-2 group-hover:gap-4 transition-all" onclick="openContactModal()">
-            Consultar <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          <button style="background: none; border: none; color: #6c45c0; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;" onclick="openContactModal()">
+            CONSULTAR <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
           </button>
         </div>
-
-        <!-- C) Growth Estratégico -->
-        <div class="service-card flex flex-col group">
-          <div class="w-12 h-12 bg-primary/5 rounded-xl flex items-center justify-center mb-8 group-hover:bg-secondary/10 transition-colors">
-            <span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors">rocket_launch</span>
-          </div>
-          <h3 class="text-2xl font-extrabold mb-6">Growth Estratégico</h3>
-          <ul class="space-y-4 mb-10 flex-grow">
-            <li class="flex items-center gap-3 text-sm text-primary/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Adquisición cualificada</li>
-            <li class="flex items-center gap-3 text-sm text-primary/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> SEO Semántico / GEO</li>
-            <li class="flex items-center gap-3 text-sm text-primary/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Optimización de negocio</li>
-            <li class="flex items-center gap-3 text-sm text-primary/70"><span class="w-1.5 h-1.5 rounded-full bg-secondary"></span> Automatización útil</li>
+        <!-- 3 -->
+        <div class="card-service">
+          <span class="material-symbols-outlined text-secondary" style="font-size: 32px; margin-bottom: 2rem;">rocket_launch</span>
+          <h3 style="font-weight: 800; font-size: 1.5rem; margin-bottom: 1.5rem;">Growth Estratégico</h3>
+          <ul style="padding: 0; margin-bottom: 3rem; flex-grow: 1;">
+            <li style="margin-bottom: 1rem; font-size: 0.9rem; color: #444; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 6px; height: 6px; background: #6c45c0; border-radius: 50%;"></span> Adquisición cualificada
+            </li>
+            <li style="margin-bottom: 1rem; font-size: 0.9rem; color: #444; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 6px; height: 6px; background: #6c45c0; border-radius: 50%;"></span> SEO Semántico / GEO
+            </li>
+            <li style="margin-bottom: 1rem; font-size: 0.9rem; color: #444; display: flex; align-items: center; gap: 0.5rem;">
+              <span style="width: 6px; height: 6px; background: #6c45c0; border-radius: 50%;"></span> Automatización útil
+            </li>
           </ul>
-          <button class="text-xs font-bold uppercase tracking-widest text-secondary flex items-center gap-2 group-hover:gap-4 transition-all" onclick="openContactModal()">
-            Consultar <span class="material-symbols-outlined text-sm">arrow_forward</span>
+          <button style="background: none; border: none; color: #6c45c0; font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; cursor: pointer; display: flex; align-items: center; gap: 0.5rem;" onclick="openContactModal()">
+            CONSULTAR <span class="material-symbols-outlined" style="font-size: 14px;">arrow_forward</span>
           </button>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 4. METODOLOGÍA (EXISTING REFINED) -->
-  <section class="section-padding bg-primary text-white" id="metodologia">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-      <div class="max-w-3xl mb-24">
-        <p class="text-secondary font-bold text-[10px] uppercase tracking-widest mb-4">El Método ARIPA</p>
-        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tightest">Un proceso claro para resultados medibles.</h2>
+  <!-- MÉTODO -->
+  <section class="section-spacing bg-dark" id="metodo">
+    <div class="container-aripa">
+      <div style="max-width: 700px; margin-bottom: 6rem;">
+        <p class="text-secondary" style="font-weight: 800; font-size: 11px; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1rem;">Metodología</p>
+        <h2 style="font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 800;">Un proceso claro para resultados medibles.</h2>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-4 gap-12">
-        <div class="space-y-6">
-          <div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-2xl font-bold text-secondary">01</div>
-          <h3 class="text-xl font-bold">Auditoría</h3>
-          <p class="text-white/60 text-sm leading-relaxed">Inmersión profunda en datos de comportamiento para encontrar fricciones invisibles.</p>
+      <div class="grid-cols-4-fixed">
+        <div>
+          <div style="font-size: 2rem; font-weight: 800; color: #6c45c0; margin-bottom: 1rem;">01</div>
+          <h4 style="font-weight: 800; margin-bottom: 1rem;">Auditoría</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.6;">Inmersión profunda en datos de comportamiento para encontrar fricciones.</p>
         </div>
-        <div class="space-y-6">
-          <div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-2xl font-bold text-secondary">02</div>
-          <h3 class="text-xl font-bold">Estrategia</h3>
-          <p class="text-white/60 text-sm leading-relaxed">Hoja de ruta táctica priorizando los cambios con mayor impacto en conversión.</p>
+        <div>
+          <div style="font-size: 2rem; font-weight: 800; color: #6c45c0; margin-bottom: 1rem;">02</div>
+          <h4 style="font-weight: 800; margin-bottom: 1rem;">Estrategia</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.6;">Hoja de ruta táctica priorizando cambios con mayor impacto en conversión.</p>
         </div>
-        <div class="space-y-6">
-          <div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-2xl font-bold text-secondary">03</div>
-          <h3 class="text-xl font-bold">Ejecución</h3>
-          <p class="text-white/60 text-sm leading-relaxed">Implementación ágil de mejoras en UX, copy y arquitectura técnica.</p>
+        <div>
+          <div style="font-size: 2rem; font-weight: 800; color: #6c45c0; margin-bottom: 1rem;">03</div>
+          <h4 style="font-weight: 800; margin-bottom: 1rem;">Ejecución</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.6;">Implementación ágil de mejoras en UX, copy y arquitectura técnica.</p>
         </div>
-        <div class="space-y-6">
-          <div class="w-16 h-16 rounded-full border border-white/10 flex items-center justify-center text-2xl font-bold text-secondary">04</div>
-          <h3 class="text-xl font-bold">Optimización</h3>
-          <p class="text-white/60 text-sm leading-relaxed">Análisis de resultados y ciclos de experimentación para el escalado final.</p>
+        <div>
+          <div style="font-size: 2rem; font-weight: 800; color: #6c45c0; margin-bottom: 1rem;">04</div>
+          <h4 style="font-weight: 800; margin-bottom: 1rem;">Optimización</h4>
+          <p style="color: rgba(255,255,255,0.6); font-size: 0.85rem; line-height: 1.6;">Análisis de resultados y ciclos de experimentación constante.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5. DIFERENCIAL -->
-  <section class="section-padding bg-surface">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-      <div>
-        <h2 class="text-4xl md:text-6xl font-extrabold tracking-tightest text-primary mb-8">No optimizamos por intuición.</h2>
-        <p class="text-xl text-primary/60 leading-relaxed mb-10">
-          No se trata solo de diseñar mejor. Se trata de entender qué impide convertir. Combinamos psicología del comportamiento, analítica avanzada y visión de negocio.
-        </p>
-        <div class="flex flex-wrap gap-3">
-          <span class="px-4 py-2 bg-white border border-primary/5 rounded-full text-xs font-bold text-primary/70">Psicología UX</span>
-          <span class="px-4 py-2 bg-white border border-primary/5 rounded-full text-xs font-bold text-primary/70">Analítica de Datos</span>
-          <span class="px-4 py-2 bg-white border border-primary/5 rounded-full text-xs font-bold text-primary/70">CRO Avanzado</span>
-          <span class="px-4 py-2 bg-white border border-primary/5 rounded-full text-xs font-bold text-primary/70">Estrategia de Negocio</span>
-        </div>
-      </div>
-      <div class="relative">
-         <div class="aspect-square bg-primary rounded-[3rem] overflow-hidden flex items-center justify-center">
-            <span class="material-symbols-outlined text-white text-9xl opacity-20">insights</span>
-         </div>
-         <div class="absolute -bottom-8 -left-8 bg-white p-8 rounded-2xl shadow-2xl border border-primary/5">
-            <p class="text-3xl font-black text-secondary">+150%</p>
-            <p class="text-[10px] font-bold uppercase tracking-widest text-primary/40">Mejora promedio en conversión</p>
-         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- 6. FAQ (STRATEGIC) -->
-  <section class="section-padding" id="faq">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24">
-      <div class="lg:col-span-5">
-        <h2 class="text-4xl md:text-5xl font-extrabold tracking-tightest text-primary mb-6">Claridad estratégica.</h2>
-        <p class="text-lg text-primary/60 leading-relaxed">
-          Resolvemos las dudas fundamentales sobre cómo la optimización basada en datos y comportamiento impacta en tu cuenta de resultados.
-        </p>
-      </div>
-      <div class="lg:col-span-7 space-y-6">
-        <details class="group border-b border-primary/10 pb-6">
-          <summary class="flex justify-between items-center cursor-pointer text-xl font-bold text-primary">
-            ¿Cómo mejora ARIPA la visibilidad digital?
-            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
-          </summary>
-          <p class="mt-4 text-primary/60 leading-relaxed text-sm">
-            Trabajamos en la estructura semántica y la autoridad temática de tus activos para asegurar relevancia tanto en buscadores tradicionales como en los nuevos sistemas conversacionales e IAs (GEO/AEO).
-          </p>
-        </details>
-        <details class="group border-b border-primary/10 pb-6">
-          <summary class="flex justify-between items-center cursor-pointer text-xl font-bold text-primary">
-            ¿Por qué centrarse en el comportamiento y no solo en el diseño?
-            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
-          </summary>
-          <p class="mt-4 text-primary/60 leading-relaxed text-sm">
-            El diseño es el medio, no el fin. Entender la intención del usuario y eliminar sus barreras cognitivas (fricción) es lo que realmente mueve la aguja de la conversión.
-          </p>
-        </details>
-        <details class="group border-b border-primary/10 pb-6">
-          <summary class="flex justify-between items-center cursor-pointer text-xl font-bold text-primary">
-            ¿Qué resultados reales puedo esperar de una auditoría?
-            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
-          </summary>
-          <p class="mt-4 text-primary/60 leading-relaxed text-sm">
-            Un mapa claro de fugas de conversión, priorización de cambios tácticos basados en impacto esperado y una estrategia de optimización continua libre de suposiciones.
-          </p>
-        </details>
-      </div>
-    </div>
-  </section>
 </main>
 
-<!-- FOOTER -->
-<footer class="bg-primary text-white pt-24 pb-12 px-6 md:px-12 border-t border-white/5">
-  <div class="max-w-[1440px] mx-auto">
-    <div class="flex flex-col md:flex-row justify-between items-start gap-12 mb-20">
-      <div class="max-w-xs">
-        <img alt="ARIPA" class="h-8 mb-8" src="./assets/aripa-logo.png" style="filter: brightness(10);"/>
-        <p class="text-white/40 text-xs leading-relaxed uppercase tracking-widest">
-          Consultoría especializada en optimización digital, comportamiento de usuario y conversión de alto rendimiento.
-        </p>
-      </div>
-      <div class="grid grid-cols-2 md:grid-cols-3 gap-12 md:gap-24">
-        <div>
-          <h4 class="text-[10px] font-bold uppercase tracking-widest text-secondary mb-6">Explorar</h4>
-          <nav class="flex flex-col gap-4 text-sm font-medium text-white/60">
-            <a href="#hero" class="hover:text-white transition-colors">Análisis</a>
-            <a href="#servicios" class="hover:text-white transition-colors">Servicios</a>
-            <a href="#metodologia" class="hover:text-white transition-colors">Método</a>
-          </nav>
-        </div>
-        <div>
-          <h4 class="text-[10px] font-bold uppercase tracking-widest text-secondary mb-6">Legal</h4>
-          <nav class="flex flex-col gap-4 text-sm font-medium text-white/60">
-            <a href="politica-cookies.html" class="hover:text-white transition-colors">Cookies</a>
-            <a href="privacidad.html" class="hover:text-white transition-colors">Privacidad</a>
-            <a href="aviso-legal.html" class="hover:text-white transition-colors">Legal</a>
-          </nav>
-        </div>
-        <div>
-          <h4 class="text-[10px] font-bold uppercase tracking-widest text-secondary mb-6">Contacto</h4>
-          <nav class="flex flex-col gap-4 text-sm font-medium text-white/60">
-            <a href="mailto:hola@aripa.es" class="hover:text-white transition-colors">hola@aripa.es</a>
-            <a href="https://www.linkedin.com/company/aripa/" class="hover:text-white transition-colors">LinkedIn</a>
-          </nav>
-        </div>
-      </div>
-    </div>
-    <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between gap-4">
-      <p class="text-white/20 text-[10px] font-bold uppercase tracking-widest">© 2024 ARIPA Consulting | Javier Rodriguez de la Orden.</p>
-      <p class="text-white/20 text-[10px] font-bold uppercase tracking-widest">Optimización basada en datos.</p>
+<footer class="section-spacing" style="border-top: 1px solid #eee;">
+  <div class="container-aripa">
+    <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 2rem;">
+      <img alt="ARIPA" class="h-6" src="./assets/aripa-logo.png" style="filter: invert(1) brightness(0.2);"/>
+      <p style="font-size: 10px; font-weight: 800; letter-spacing: 0.2em; color: #aaa; text-transform: uppercase;">© 2024 ARIPA Consulting | Optimización basada en datos</p>
     </div>
   </div>
 </footer>
 
-<!-- CONTACT MODAL -->
-<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-6 hidden" id="contact-modal" role="dialog" aria-modal="true">
-  <div class="modal-panel bg-white w-full max-w-xl rounded-3xl p-8 md:p-12 relative shadow-2xl max-h-[90vh] overflow-y-auto">
-    <button class="absolute top-6 right-6 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('contact-modal')">
-      <span class="material-symbols-outlined text-3xl">close</span>
+<!-- MODAL CONTACTO -->
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100] flex items-center justify-center p-6 hidden" id="contact-modal">
+  <div style="background: white; width: 100%; max-width: 600px; padding: 4rem; border-radius: 32px; position: relative;">
+    <button style="position: absolute; top: 1.5rem; right: 1.5rem; background: none; border: none; cursor: pointer;" onclick="closeModal('contact-modal')">
+      <span class="material-symbols-outlined">close</span>
     </button>
-    <div class="mb-10">
-      <h4 class="text-3xl font-extrabold text-primary mb-3">Solicitar análisis estratégico</h4>
-      <p class="text-primary/60">Cuéntanos tu reto y un consultor senior se pondrá en contacto contigo en menos de 24h.</p>
-    </div>
-    <form class="space-y-6" id="contact-form" onsubmit="handleFormSubmit(event)">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <div>
-          <label class="block text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2" for="c-name">Nombre</label>
-          <input class="w-full bg-surface border-none rounded-xl px-6 py-4 text-sm focus:ring-2 focus:ring-secondary/20" id="c-name" required type="text"/>
-        </div>
-        <div>
-          <label class="block text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2" for="c-email">Email Corporativo</label>
-          <input class="w-full bg-surface border-none rounded-xl px-6 py-4 text-sm focus:ring-2 focus:ring-secondary/20" id="c-email" required type="email"/>
-        </div>
-      </div>
-      <div>
-        <label class="block text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2" for="c-service">Interés</label>
-        <select class="w-full bg-surface border-none rounded-xl px-6 py-4 text-sm focus:ring-2 focus:ring-secondary/20" id="c-service">
-          <option value="cro">Conversión & CRO</option>
-          <option value="ux">UX & Behavioral</option>
-          <option value="growth">Growth Estratégico</option>
-        </select>
-      </div>
-      <div>
-        <label class="block text-[10px] font-bold uppercase tracking-widest text-primary/40 mb-2" for="c-message">Mensaje</label>
-        <textarea class="w-full bg-surface border-none rounded-xl px-6 py-4 text-sm focus:ring-2 focus:ring-secondary/20 min-h-[120px]" id="c-message"></textarea>
-      </div>
-      <button class="w-full py-5 bg-primary text-white rounded-2xl font-bold uppercase tracking-widest text-xs hover:scale-[1.02] active:scale-95 transition-all shadow-xl shadow-primary/20" id="submit-btn" type="submit">
-        Enviar Solicitud
-      </button>
+    <h3 style="font-size: 2rem; font-weight: 800; margin-bottom: 1rem;">Solicitar análisis</h3>
+    <p style="margin-bottom: 3rem; color: #666;">Cuéntanos tu reto y un consultor te contactará en menos de 24h.</p>
+    <form onsubmit="handleFormSubmit(event)" style="display: flex; flex-direction: column; gap: 1.5rem;">
+      <input type="text" placeholder="Tu nombre" style="padding: 1rem; border-radius: 12px; border: 1px solid #ddd;" required>
+      <input type="email" placeholder="Email corporativo" style="padding: 1rem; border-radius: 12px; border: 1px solid #ddd;" required>
+      <textarea placeholder="¿Cómo podemos ayudarte?" style="padding: 1rem; border-radius: 12px; border: 1px solid #ddd; min-height: 100px;"></textarea>
+      <button type="submit" class="btn-aripa-primary" style="justify-content: center; width: 100%;">Enviar solicitud</button>
     </form>
   </div>
 </div>
 
-<!-- SUCCESS MODAL -->
+<!-- MODAL ÉXITO -->
 <div id="success-feedback-modal" class="success-modal">
   <div class="success-modal-content">
-      <div class="success-icon">
-          <span class="material-symbols-outlined" style="font-size: 32px;">check</span>
-      </div>
-      <h3 class="success-title">Gracias</h3>
-      <p class="success-desc">Hemos recibido tu solicitud. Un consultor revisará tu caso y te contactará en menos de 24h.</p>
-      <button class="btn-close-success" onclick="closeSuccessModal()">Cerrar</button>
+      <h3 style="color: white; font-weight: 800; font-size: 1.5rem; margin-bottom: 1rem;">¡Recibido!</h3>
+      <p style="color: rgba(255,255,255,0.6); margin-bottom: 2rem;">Te contactaremos pronto.</p>
+      <button class="btn-aripa-primary" style="width: 100%; background: white; color: black;" onclick="closeSuccessModal()">Cerrar</button>
   </div>
 </div>
 
 <script>
-  // Simple Modal & Scroll Logic for Proposal
-  let _lastFocusedEl = null;
-
   function openContactModal() {
-    _lastFocusedEl = document.activeElement;
     document.getElementById('contact-modal').classList.remove('hidden');
     document.body.style.overflow = 'hidden';
   }
-
   function closeModal(id) {
     document.getElementById(id).classList.add('hidden');
     document.body.style.overflow = 'auto';
-    if (_lastFocusedEl) _lastFocusedEl.focus();
   }
-
   function showSuccessModal() { document.getElementById('success-feedback-modal').classList.add('active'); }
   function closeSuccessModal() { document.getElementById('success-feedback-modal').classList.remove('active'); }
 
   function handleFormSubmit(e) {
     e.preventDefault();
-    const btn = document.getElementById('submit-btn');
-    btn.disabled = true;
-    btn.innerText = 'ENVIANDO...';
-
-    // Mock send (reuse Formspree from index if needed, here just mock for proposal)
-    setTimeout(() => {
-      closeModal('contact-modal');
-      showSuccessModal();
-      btn.disabled = false;
-      btn.innerText = 'ENVIAR SOLICITUD';
-    }, 1000);
+    closeModal('contact-modal');
+    showSuccessModal();
   }
-
-  window.addEventListener('scroll', () => {
-    const header = document.getElementById('site-header');
-    if (window.scrollY > 50) header.classList.add('is-sticky-light');
-    else header.classList.remove('is-sticky-light');
-  });
 </script>
 
 </body>
