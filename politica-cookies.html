@@ -35,25 +35,56 @@
 </head>
 <body class="bg-background text-on-background">
 
-  <!-- Shared Header -->
-  <header class="fixed top-0 w-full z-50 glass-header shadow-[0_32px_64px_-15px_rgba(0,0,0,0.3)]">
-    <div class="relative flex justify-between items-center h-16 md:h-20 px-6 md:px-12 max-w-[1440px] mx-auto">
-      <div class="flex items-center justify-center w-full md:w-1/4 md:justify-start">
-        <a href="index.html"><img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/></a>
+  <!-- Skip navigation – accessibility -->
+  <a class="skip-nav" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- ═══════════════════════════════════════════
+       MOBILE DRAWER (hidden on md+)
+  ═══════════════════════════════════════════ -->
+  <div class="fixed inset-0 z-[70] invisible md:hidden" id="drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+    <div class="absolute inset-0 opacity-0 transition-opacity duration-300" id="drawer-overlay"></div>
+    <nav class="absolute right-0 top-0 h-full w-4/5 max-w-sm drawer-transition translate-x-full p-8 flex flex-col shadow-2xl outline-none" id="drawer-content">
+      <div class="flex justify-between items-center mb-10">
+        <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
+        <button class="text-white/70" onclick="toggleDrawer()" aria-label="Cerrar menú">
+          <span class="material-symbols-outlined" aria-hidden="true">close</span>
+        </button>
       </div>
+      <div class="flex flex-col gap-2">
+        <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="servicios.html">
+          <span class="material-symbols-outlined text-[#6c45c0]">insights</span> Servicios
+        </a>
+        <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="recursos.html">
+          <span class="material-symbols-outlined text-[#6c45c0]">article</span> Recursos
+        </a>
+        <button class="cta-core flex items-center justify-center gap-3 text-white w-full py-5 px-6 btn-lavender rounded-xl mt-6 !text-[13px]" onclick="toggleDrawer(); openContactModal();">
+          <span class="material-symbols-outlined text-lg">mail</span> Tengo una duda
+        </button>
+      </div>
+    </nav>
+  </div>
+
+  <header id="site-header" aria-label="Cabecera principal">
+    <div class="header-inner relative flex justify-between items-center px-6 md:px-12 max-w-[1440px] mx-auto">
+      <a href="index.html" class="flex items-center justify-start w-1/4 outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
+        <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
+      </a>
       <nav class="hidden md:flex items-center justify-center gap-12 w-2/4">
         <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="servicios.html">Servicios</a>
         <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="recursos.html">Recursos</a>
       </nav>
-      <div class="flex items-center justify-end gap-6 md:w-1/4">
-        <button class="hidden md:flex btn-after text-white px-8 py-3 rounded-xl font-bold text-xs uppercase tracking-widest hover:scale-105 transition-transform active:scale-95 items-center gap-2 whitespace-nowrap" onclick="location.href='index.html#contact-modal'">
-          <span class="material-symbols-outlined text-base">mail</span> Tengo una duda
+      <div class="flex items-center justify-end gap-6 w-1/4">
+        <button class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl hover:scale-105 transition-transform active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
+          <span class="material-symbols-outlined">mail</span> Tengo una duda
+        </button>
+        <button class="flex items-center justify-center p-2 -mr-2 md:hidden" onclick="toggleDrawer()" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="drawer" id="hamburger-btn">
+          <span class="material-symbols-outlined text-white text-2xl" aria-hidden="true">menu</span>
         </button>
       </div>
     </div>
   </header>
 
-  <main>
+  <main id="main-content" tabindex="-1" class="focus:outline-none">
     <div class="h-20 md:h-28"></div>
     
     <section class="hero-gradient py-16 px-6 md:px-12 text-center text-white relative overflow-hidden">
@@ -87,8 +118,130 @@
     </section>
   </main>
 
-  <footer class="bg-[#061542] text-[#fcf9f8] py-12 px-6 md:px-12 border-t border-white/5 font-brand text-center">
-    <p class="text-white/40 text-[10px] uppercase tracking-widest">© 2024 aripa | Cookies</p>
+  <footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-64 md:pb-80 px-6 md:px-12 border-t border-white/5">
+    <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
+      <div class="flex items-center gap-3">
+        <img alt="aripa" class="h-8 object-contain" src="./assets/aripa-logo.png" width="106" height="32"/>
+      </div>
+      <nav class="flex flex-wrap justify-center gap-6 md:gap-10">
+        <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-cookies.html">Política de cookies</a>
+        <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="privacidad.html">Privacidad</a>
+        <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
+      </nav>
+      <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4">
+        Consultoría estratégica enfocada en optimización basada en datos y sistemas conversacionales (GEO). Transformamos activos digitales en autoridad temática y crecimiento de alto rendimiento.
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="https://www.linkedin.com/company/aripa/" target="_blank" rel="noopener noreferrer" class="group transition-transform hover:scale-110" aria-label="LinkedIn de aripa">
+          <svg class="h-6 w-6 group-hover:opacity-80 transition-opacity" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+          </svg>
+        </a>
+      </div>
+      <p class="text-white/40 text-[10px] font-body max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest">
+        © 2026 aripa Consulting | Javier Rodriguez de la Orden. Transformando datos en activos estratégicos de alto rendimiento.
+      </p>
+    </div>
   </footer>
+
+  <!-- MODALS & SCRIPTS -->
+  <div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] flex items-center justify-center p-6 hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="modal-panel bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="mb-6 md:mb-8">
+        <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-2" id="contact-modal-title">Hablemos</h4>
+        <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
+      </div>
+      <form class="space-y-4 md:space-y-6" id="contact-form" onsubmit="handleFormSubmit(event)">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-name">Nombre *</label>
+            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all" id="c-name" placeholder="Tu nombre" required type="text"/>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-phone">Teléfono *</label>
+            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all" id="c-phone" placeholder="+34 000 000 000" required type="tel"/>
+          </div>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-email">Email Corporativo *</label>
+          <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all" id="c-email" placeholder="email@empresa.com" required type="email"/>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-service">Servicio de interés</label>
+          <select class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 appearance-none" id="c-service">
+            <option value="conversion">Conversión &amp; CRO</option>
+            <option value="ux">UX &amp; Behavioral Design</option>
+            <option value="growth">Growth Estratégico</option>
+            <option value="general">Otros / Consulta general</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-message">Mensaje</label>
+          <textarea class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 min-h-[100px] transition-all" id="c-message" placeholder="¿Cómo podemos ayudarte?"></textarea>
+        </div>
+        <button class="cta-core w-full py-4 md:py-5 btn-after text-white rounded-xl md:rounded-2xl active:scale-95 transition-all" id="submit-btn" type="submit">Enviar Solicitud</button>
+      </form>
+      <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors" onclick="closeModal('contact-modal')" aria-label="Cerrar formulario de contacto">
+        <span class="material-symbols-outlined text-2xl md:text-3xl" aria-hidden="true">close</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div id="success-feedback-modal" class="success-modal">
+    <div class="success-modal-content">
+        <div class="success-icon"><span class="material-symbols-outlined" style="font-size: 32px;">check</span></div>
+        <h3 class="success-title">Gracias</h3>
+        <p class="success-desc">Hemos recibido tu mensaje correctamente.</p>
+        <button class="btn-close-success" onclick="closeSuccessModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    function toggleDrawer() {
+      const drawer = document.getElementById('drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      const content = document.getElementById('drawer-content');
+      const isHidden = drawer.classList.contains('invisible');
+      if (isHidden) {
+        drawer.classList.remove('invisible');
+        requestAnimationFrame(() => {
+          overlay.classList.add('opacity-100');
+          content.classList.remove('translate-x-full');
+        });
+      } else {
+        overlay.classList.remove('opacity-100');
+        content.classList.add('translate-x-full');
+        setTimeout(() => drawer.classList.add('invisible'), 300);
+      }
+    }
+    function openContactModal() {
+      document.getElementById('contact-modal').classList.remove('hidden');
+      document.body.classList.add('modal-open');
+    }
+    function closeModal(id) {
+      document.getElementById(id).classList.add('hidden');
+      document.body.classList.remove('modal-open');
+    }
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const submitBtn = document.getElementById('submit-btn');
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Enviando...';
+      setTimeout(() => {
+        closeModal('contact-modal');
+        document.getElementById('success-feedback-modal').classList.add('active');
+        submitBtn.disabled = false;
+        submitBtn.innerText = 'Enviar Solicitud';
+      }, 1000);
+    }
+    function closeSuccessModal() {
+      document.getElementById('success-feedback-modal').classList.remove('active');
+    }
+    window.addEventListener('scroll', () => {
+      document.getElementById('site-header').classList.toggle('is-sticky', window.scrollY > 20);
+    });
+  </script>
+</body>
 </body>
 </html>
