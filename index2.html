@@ -776,9 +776,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- ── Problem Module (New) ── -->
   <section class="py-24 md:py-32 bg-white border-b border-secondary/5" id="problema">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-      <div class="max-w-4xl mb-16 md:mb-20">
+      <div class="max-w-5xl mb-16 md:mb-20">
         <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">La realidad del mercado</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-6">
+        <h2 class="text-3xl md:text-5xl font-extrabold font-headline text-primary tracking-tighter mb-6">
           La mayoría de negocios digitales no tienen un problema de tráfico.
         </h2>
         <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
@@ -965,12 +965,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- ── Client Logos ── -->
-  <section class="py-16 md:py-20 bg-surface-bright" aria-label="Empresas clientes de aripa">
+  <section class="py-16 md:py-24 bg-surface-bright" aria-label="Empresas clientes de aripa">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-      <h2 class="text-center text-[10px] font-bold tracking-widest text-secondary uppercase mb-10 md:mb-16">Empresas que confían en aripa</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center opacity-50 grayscale contrast-125 max-w-4xl mx-auto">
-        <!-- SHIFTA by Elisava: texto estilizado (logo no disponible públicamente) -->
+      <div class="max-w-4xl mb-12 md:mb-16">
+        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Casos de Éxito</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter">Marcas que han impulsado su rendimiento con nosotros</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center opacity-50 grayscale contrast-125">
+        <!-- SHIFTA by Elisava -->
         <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
           <span class="text-[11px] md:text-xs font-black uppercase tracking-widest text-center leading-tight">SHIFTA<br/><span class="font-normal text-xs">by Elisava</span></span>
         </div>
@@ -982,10 +984,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
           <img alt="Hotel Majadahonda" class="max-h-10 w-auto object-contain" src="./assets/Logo Hotel Majadahonda.png" width="160" height="40"/>
         </div>
-        <!-- Dime María: isotipo DM -->
-        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
-          <span class="text-2xl font-black font-headline tracking-tighter">DM</span>
-          <span class="text-[8px] md:text-[9px] font-bold uppercase tracking-widest">Dime María</span>
+        <!-- Tenlo (Nuevo) -->
+        <div class="flex flex-col items-center justify-center gap-1 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+          <span class="text-2xl font-black font-headline tracking-tighter leading-none">TENLO</span>
+          <span class="text-[8px] md:text-[9px] font-bold uppercase tracking-widest">Digital App</span>
         </div>
       </div>
     </div>
@@ -995,6 +997,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="py-24 md:py-32 bg-white" id="faq">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12 md:grid md:grid-cols-3 md:gap-20">
       <div>
+        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Resolviendo dudas</p>
         <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-6 md:mb-8">Preguntas frecuentes sobre crecimiento digital</h2>
         <p class="text-base md:text-lg text-on-surface-variant leading-relaxed hidden md:block">
           Entiende cómo las nuevas tecnologías de búsqueda (GEO) y la optimización basada en datos pueden cambiar el rumbo de tu empresa.
@@ -1107,9 +1110,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p class="text-on-surface-variant text-sm md:text-lg leading-relaxed mb-6 md:mb-8" id="modal-desc"></p>
       <div class="space-y-2 md:space-y-4" id="modal-list"></div>
     </div>
-    <button class="cta-core w-full py-4 md:py-5 btn-after text-white rounded-xl md:rounded-2xl hover:scale-[1.02] transition-transform active:scale-95"
+    <button class="cta-core w-full py-4 md:py-5 text-white rounded-xl md:rounded-2xl font-bold uppercase tracking-widest text-sm shadow-xl active:scale-95 transition-all"
             onclick="closeModal('service-modal'); openContactModal();">
-      ME INTERESA
+      Me interesa
     </button>
   </div>
 </div>
@@ -1245,18 +1248,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const services = {
     conversion: {
       title: 'Conversión & CRO',
-      desc: 'En ARIPA no dejamos nada al azar. Realizamos auditorías exhaustivas para detectar fugas de conversión, rediseñamos tus funnels de venta y optimizamos cada landing page mediante tests A/B. Nuestro enfoque de experimentación constante garantiza un crecimiento sostenido del ROI.',
-      list: ['Auditorías de conversión profundas', 'Optimización de Funnels de venta', 'Diseño de Landing Pages de alto impacto', 'Experimentación continua & A/B Testing']
+      desc: 'Analizamos profundamente tus activos digitales para detectar fugas de conversión y rediseñar tus funnels de venta. Optimizamos cada etapa mediante experimentación constante y tests A/B para garantizar que cada visita se traduzca en un resultado medible para tu negocio.'
     },
     ux: {
       title: 'UX & Behavioral Design',
-      desc: 'Combinamos el diseño de experiencia de usuario (UX) con principios de economía del comportamiento. Eliminamos la fricción digital y mejoramos la claridad de tu propuesta para que el usuario navegue sin dudas. La arquitectura de información robusta es la base de un producto digital exitoso.',
-      list: ['Diseño de Experiencia de Usuario (UX)', 'Análisis de Comportamiento Digital', 'Arquitectura de Información & Claridad', 'Behavioral Economics aplicado']
+      desc: 'Eliminamos la fricción digital aplicando principios de economía del comportamiento y diseño centrado en el usuario. Creamos arquitecturas de información claras que guían al usuario hacia la conversión, mejorando la experiencia global y la confianza en tu marca.'
     },
     growth: {
       title: 'Growth Estratégico',
-      desc: 'Impulsamos tu visibilidad donde tus clientes realmente buscan. Desde estrategias SEO/GEO (Search Engine & Generative Engine Optimization) hasta sistemas de adquisición escalables. Implementamos automatizaciones que realmente ahorran tiempo y mejoran la conversión sin perder el toque humano.',
-      list: ['Estrategias de Adquisición multicanal', 'SEO / GEO de nueva generación', 'Optimización Digital continua', 'Automatización útil de operaciones']
+      desc: 'Impulsamos tu visibilidad en buscadores de nueva generación (GEO) y optimizamos tus canales de adquisición. Implementamos automatizaciones inteligentes que escalan tus operaciones y mejoran el rendimiento digital de forma sostenible y rentable.'
     }
   };
 
@@ -1265,14 +1265,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const s = services[id];
     document.getElementById('modal-title').innerText = s.title;
     document.getElementById('modal-desc').innerText  = s.desc;
-    const list = document.getElementById('modal-list');
-    list.innerHTML = '';
-    s.list.forEach(item => {
-      const el = document.createElement('div');
-      el.className = 'flex items-center gap-3 text-sm md:text-lg font-semibold text-primary';
-      el.innerHTML = `<span class="material-symbols-outlined text-secondary text-sm md:text-base" aria-hidden="true">check_circle</span> ${item}`;
-      list.appendChild(el);
-    });
+    document.getElementById('modal-list').innerHTML = '';
     const modal = document.getElementById('service-modal');
     modal.classList.remove('hidden');
     document.body.classList.add('modal-open');
