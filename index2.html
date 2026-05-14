@@ -200,8 +200,10 @@ body { font-family: 'Inter', sans-serif; }
     box-shadow: 0 8px 20px -4px rgba(167, 139, 250, 0.2);
   }
   .btn-lavender .material-symbols-outlined {
-    color: #a78bfa;
+    color: inherit;
     font-size: 1.1rem;
+    vertical-align: middle;
+    margin-bottom: 1px;
   }
   .btn-before-glossy {
     background: rgba(255,255,255,0.05);
@@ -692,8 +694,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="material-symbols-outlined text-[#6c45c0]">article</span> Recursos
       </a>
 
-      <button class="cta-core flex items-center justify-center gap-2 text-white py-4 px-4 btn-lavender rounded-xl mt-4" onclick="toggleDrawer(); openContactModal();">
-        <span class="material-symbols-outlined text-sm">mail</span> Tengo una duda
+      <button class="cta-core flex items-center justify-center gap-3 text-white w-full py-5 px-6 btn-lavender rounded-xl mt-6 !text-[13px]" onclick="toggleDrawer(); openContactModal();">
+        <span class="material-symbols-outlined text-lg">mail</span> Tengo una duda
       </button>
     </div>
   </nav>
