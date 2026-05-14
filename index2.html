@@ -154,6 +154,13 @@ body { font-family: 'Inter', sans-serif; }
     outline-offset: 3px;
     border-radius: 4px;
   }
+  
+  /* Force visibility on focus for any hidden/animated element */
+  :focus-within {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
 
   /* ── Skip navigation (accessibility) ── */
   .skip-nav {
@@ -780,7 +787,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="max-w-5xl mb-16 md:mb-20">
         <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">La realidad del mercado</p>
-        <h2 class="text-3xl md:text-5xl font-extrabold font-headline text-primary tracking-tighter mb-6">
+        <h2 class="text-3xl md:text-5xl font-extrabold font-headline text-primary tracking-tighter mb-6 outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg p-1" tabindex="0">
           La mayoría de negocios digitales no tienen un problema de tráfico.
         </h2>
         <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
@@ -790,8 +797,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-12">
         <!-- Fricción 1 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="1">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors">
+        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="1" tabindex="0" role="article" aria-label="Fricción 1: Usuarios que abandonan">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">person_remove</span>
           </div>
           <div>
@@ -801,8 +808,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <!-- Fricción 2 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="2">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors">
+        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="2" tabindex="0" role="article" aria-label="Fricción 2: Landings que no convierten">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">trending_down</span>
           </div>
           <div>
@@ -812,8 +819,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <!-- Fricción 3 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="3">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors">
+        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="3" tabindex="0" role="article" aria-label="Fricción 3: Funnels con pérdidas">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">filter_alt_off</span>
           </div>
           <div>
@@ -823,8 +830,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <!-- Fricción 4 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="4">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors">
+        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="4" tabindex="0" role="article" aria-label="Fricción 4: Mensajes poco claros">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">visibility_off</span>
           </div>
           <div>
@@ -834,13 +841,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
 
         <!-- Fricción 5 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="5">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors">
+        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="5" tabindex="0" role="article" aria-label="Fricción 5: Decisiones por intuición">
+          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">psychology</span>
           </div>
           <div>
             <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Decisiones por intuición</h3>
-            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed md:mt-1">Cambios basados en "me gusta" en lugar de datos de comportamiento.</p>
+            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed md:mt-1">Cambios basados en \"me gusta\" en lugar de datos de comportamiento.</p>
           </div>
         </div>
       </div>
@@ -967,27 +974,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- ── Casos de Éxito ── -->
   <section class="py-16 md:py-24 bg-surface-bright" aria-label="Empresas clientes de aripa">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="max-w-4xl mb-12 md:mb-16">
         <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Casos de Éxito</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter">Marcas que han impulsado su rendimiento con nosotros</h2>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg p-1" tabindex="0">
+          Marcas que han impulsado su rendimiento con nosotros
+        </h2>
       </div>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center opacity-50 grayscale contrast-125">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center opacity-50 grayscale contrast-125 reveal-ready" data-delay="1">
         <!-- SHIFTA by Elisava -->
-        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50 focus-within:ring-2 focus-within:ring-secondary/40 outline-none focus-within:opacity-100 focus-within:grayscale-0 transition-all" tabindex="0" role="img" aria-label="Cliente: SHIFTA by Elisava">
           <span class="text-[11px] md:text-xs font-black uppercase tracking-widest text-center leading-tight">SHIFTA<br/><span class="font-normal text-xs">by Elisava</span></span>
         </div>
         <!-- Auto Solutions -->
-        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50 focus-within:ring-2 focus-within:ring-secondary/40 outline-none focus-within:opacity-100 focus-within:grayscale-0 transition-all" tabindex="0" role="img" aria-label="Cliente: Auto Solutions">
           <span class="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-center leading-tight">Auto<br/>Solutions</span>
         </div>
         <!-- Hotel Majadahonda -->
-        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50 focus-within:ring-2 focus-within:ring-secondary/40 outline-none focus-within:opacity-100 focus-within:grayscale-0 transition-all" tabindex="0" role="img" aria-label="Cliente: Hotel Majadahonda">
           <img alt="Hotel Majadahonda" class="max-h-10 w-auto object-contain" src="./assets/Logo Hotel Majadahonda.png" width="160" height="40"/>
         </div>
         <!-- Tenlo -->
-        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50">
+        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50 focus-within:ring-2 focus-within:ring-secondary/40 outline-none focus-within:opacity-100 focus-within:grayscale-0 transition-all" tabindex="0" role="img" aria-label="Cliente: Tenlo">
           <img alt="Tenlo" style="max-height: 36px; width: auto; object-fit: contain;" src="./assets/tenlo.png" width="80" height="48"/>
           <span class="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-center leading-tight">TENLO</span>
         </div>
@@ -999,9 +1009,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="py-24 md:py-32 bg-surface-container-low" id="diferencial">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
-        <div class="hero-animate-1">
+        <div class="reveal-ready" data-delay="1">
           <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-4">Por qué ARIPA</p>
-          <h2 class="text-4xl md:text-5xl font-extrabold font-headline text-primary tracking-tighter mb-8 leading-tight">No optimizamos por intuición.</h2>
+          <h2 class="text-4xl md:text-5xl font-extrabold font-headline text-primary tracking-tighter mb-8 leading-tight outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg p-1" tabindex="0">
+            No optimizamos por intuición.
+          </h2>
           <p class="text-lg md:text-xl text-primary font-medium leading-relaxed mb-6">
             No se trata solo de diseñar mejor. Se trata de entender qué impide convertir.
           </p>
@@ -1009,25 +1021,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             Combinamos comportamiento de usuario, UX avanzada y analítica profunda para crear ecosistemas digitales que no solo atraen tráfico especializado (SEO/GEO), sino que dominan la intención de búsqueda y maximizan la rentabilidad real de tu negocio.
           </p>
         </div>
-        <div class="grid grid-cols-2 gap-4 md:gap-6 hero-animate-3">
-          <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300">
-            <span class="material-symbols-outlined text-secondary mb-4 text-3xl">psychology</span>
-            <h4 class="font-extrabold text-primary mb-2 font-headline">Comportamiento</h4>
+        <div class="grid grid-cols-2 gap-4 md:gap-6 reveal-ready" data-delay="2">
+          <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300 focus-within:ring-2 focus-within:ring-secondary/30 outline-none" tabindex="0" role="article" aria-label="Diferencial: Comportamiento">
+            <span class="material-symbols-outlined text-secondary mb-4 text-3xl" aria-hidden="true">psychology</span>
+            <h3 class="font-extrabold text-primary mb-2 font-headline">Comportamiento</h3>
             <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Analizamos el "porqué" de cada interacción del usuario.</p>
           </div>
-          <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300">
-            <span class="material-symbols-outlined text-secondary mb-4 text-3xl">analytics</span>
-            <h4 class="font-extrabold text-primary mb-2 font-headline">Analítica</h4>
+          <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300 focus-within:ring-2 focus-within:ring-secondary/30 outline-none" tabindex="0" role="article" aria-label="Diferencial: Analítica">
+            <span class="material-symbols-outlined text-secondary mb-4 text-3xl" aria-hidden="true">analytics</span>
+            <h3 class="font-extrabold text-primary mb-2 font-headline">Analítica</h3>
             <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Datos accionables que sustentan cada decisión técnica.</p>
           </div>
-          <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300">
-            <span class="material-symbols-outlined text-secondary mb-4 text-3xl">shopping_cart</span>
-            <h4 class="font-extrabold text-primary mb-2 font-headline">CRO</h4>
+          <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300 focus-within:ring-2 focus-within:ring-secondary/30 outline-none" tabindex="0" role="article" aria-label="Diferencial: CRO">
+            <span class="material-symbols-outlined text-secondary mb-4 text-3xl" aria-hidden="true">shopping_cart</span>
+            <h3 class="font-extrabold text-primary mb-2 font-headline">CRO</h3>
             <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Optimización constante del embudo de conversión.</p>
           </div>
-          <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300">
-            <span class="material-symbols-outlined text-secondary mb-4 text-3xl">business_center</span>
-            <h4 class="font-extrabold text-primary mb-2 font-headline">Negocio</h4>
+          <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300 focus-within:ring-2 focus-within:ring-secondary/30 outline-none" tabindex="0" role="article" aria-label="Diferencial: Negocio">
+            <span class="material-symbols-outlined text-secondary mb-4 text-3xl" aria-hidden="true">business_center</span>
+            <h3 class="font-extrabold text-primary mb-2 font-headline">Negocio</h3>
             <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Estrategia alineada con tus objetivos financieros.</p>
           </div>
         </div>
@@ -1107,10 +1119,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══════════════════════════════════════════
      MOBILE BOTTOM NAV (hidden on md+)
 ═══════════════════════════════════════════ -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden"
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden invisible"
      id="mobile-bottom-nav"
+     aria-hidden="true"
      style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
-  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' tabindex="-1">
     <span class="material-symbols-outlined">calendar_month</span>
     HABLEMOS
   </button>
@@ -1119,8 +1132,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══════════════════════════════════════════
      DESKTOP STICKY BOTTOM BAR (hidden on mobile)
 ═══════════════════════════════════════════ -->
-<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between pointer-events-none"
-     id="sticky-bottom-bar">
+<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between pointer-events-none invisible"
+     id="sticky-bottom-bar"
+     aria-hidden="true">
   <div class="flex flex-col">
     <span class="text-primary font-bold font-headline text-sm tracking-tight flex items-center gap-2">
       <span class="material-symbols-outlined text-secondary text-lg">insights</span> ¿Hablamos de tu próxima fase de crecimiento?
@@ -1129,7 +1143,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="flex items-center gap-3 pointer-events-auto">
     <button class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2"
-            data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+            data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' tabindex="-1">
       <span class="material-symbols-outlined text-lg">calendar_month</span> HABLEMOS
     </button>
   </div>
@@ -1442,16 +1456,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const pastHero   = window.scrollY > heroBottom - 200;
     const stickyHeader = window.scrollY > 20;
 
-    if (window.innerWidth >= 768) {
-      const stickyBtn = stickyBar.querySelector('button');
-      if (pastHero) {
+    // Desktop Sticky Bar logic
+    if (stickyBar) {
+      if (window.innerWidth >= 768 && pastHero) {
         stickyBar.classList.add('visible');
-        if(stickyBtn) stickyBtn.removeAttribute('tabindex');
+        stickyBar.classList.remove('invisible');
+        stickyBar.setAttribute('aria-hidden', 'false');
+        stickyBar.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', '0'));
       } else {
         stickyBar.classList.remove('visible');
-        if(stickyBtn) stickyBtn.setAttribute('tabindex', '-1');
+        stickyBar.classList.add('invisible');
+        stickyBar.setAttribute('aria-hidden', 'true');
+        stickyBar.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', '-1'));
       }
     }
+
+    // Mobile Nav logic (scrolled class)
+    const mobileNav = document.getElementById('mobile-bottom-nav');
+    if (mobileNav) {
+      if (window.innerWidth < 768 && window.scrollY > 150) {
+        mobileNav.classList.remove('invisible');
+        mobileNav.setAttribute('aria-hidden', 'false');
+        mobileNav.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', '0'));
+      } else {
+        mobileNav.classList.add('invisible');
+        mobileNav.setAttribute('aria-hidden', 'true');
+        mobileNav.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', '-1'));
+      }
+    }
+
     document.body.classList.toggle('scrolled', window.scrollY > 150);
     if (siteHeader) siteHeader.classList.toggle('is-sticky', stickyHeader);
   };
@@ -1494,6 +1527,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
       }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
       targets.forEach(el => observer.observe(el));
+
+      // Accessibility: Force visibility on focus
+      document.addEventListener('focusin', (e) => {
+        const revealEl = e.target.closest('.reveal-ready');
+        if (revealEl && revealEl.classList.contains('reveal-hidden')) {
+          revealEl.classList.remove('reveal-hidden');
+          revealEl.classList.add('reveal-visible');
+        }
+      }, true);
     });
   }());
 
