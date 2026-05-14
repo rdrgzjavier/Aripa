@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARIPA | Consultoría de Comportamiento y Conversión</title>
+<meta name="description" content="Rediseñamos cómo deciden tus clientes y cómo te recomienda la IA. Consultoría experta en CRO, UX y Growth."/>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* ARIPA Colors */
+    --color-navy: #061542;
+    --color-purple: #6c45c0;
+    --color-purple-light: #f4f0fd;
+    --color-bg: #fcfcfc;
+    --color-surface: #ffffff;
+    --color-border: rgba(6, 21, 66, 0.1);
+    --color-text-main: #061542;
+    --color-text-muted: rgba(6, 21, 66, 0.65);
+    
+    /* Layout */
+    --grid-gap: 2rem;
+    --section-pad: 8rem 0;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { text-decoration: none; color: inherit; }
+  ul { list-style: none; }
+
+  /* Typography */
+  h1, h2, h3, h4 { line-height: 1.1; font-weight: 800; letter-spacing: -0.03em; }
+  h1 { font-size: clamp(3rem, 6vw, 5rem); }
+  h2 { font-size: clamp(2rem, 4vw, 3.5rem); margin-bottom: 2rem; }
+  h3 { font-size: clamp(1.25rem, 2vw, 1.75rem); }
+  p { font-size: 1.125rem; }
+  
+  .text-muted { color: var(--color-text-muted); }
+  .text-small { font-size: 0.95rem; }
+  .label { 
+    font-size: 0.8rem; 
+    font-weight: 700; 
+    text-transform: uppercase; 
+    letter-spacing: 0.1em; 
+    color: var(--color-purple);
+    display: block;
+    margin-bottom: 1rem;
+  }
+
+  /* Layout */
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .grid {
+    display: grid;
+    gap: var(--grid-gap);
+  }
+
+  .grid-2 { grid-template-columns: 1fr; }
+  @media (min-width: 768px) { .grid-2 { grid-template-columns: 1fr 1fr; } }
+
+  .grid-3 { grid-template-columns: 1fr; }
+  @media (min-width: 768px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1024px) { .grid-3 { grid-template-columns: repeat(3, 1fr); } }
+
+  .grid-asym { grid-template-columns: 1fr; }
+  @media (min-width: 1024px) { .grid-asym { grid-template-columns: 4fr 8fr; gap: 4rem; } }
+
+  /* Sections & Borders (Editorial Style) */
+  section { padding: var(--section-pad); border-bottom: 1px solid var(--color-border); }
+  .section-no-border { border-bottom: none; }
+  
+  /* Buttons */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem 2rem;
+    font-weight: 600;
+    border-radius: 4px; /* Sharper corners for a "lab" feel */
+    transition: all 0.2s;
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+  }
+  .btn-primary {
+    background-color: var(--color-navy);
+    color: white;
+  }
+  .btn-primary:hover { background-color: var(--color-purple); }
+  
+  .btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-navy);
+  }
+  .btn-outline:hover { border-color: var(--color-purple); color: var(--color-purple); }
+
+  /* Custom Geometric Icons */
+  .icon-custom {
+    width: 48px;
+    height: 48px;
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+  /* Icon 1: Search/Audit */
+  .ic-audit::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 24px; height: 24px;
+    border: 3px solid var(--color-purple); border-radius: 50%;
+  }
+  .ic-audit::after {
+    content: ''; position: absolute; top: 20px; left: 20px; width: 16px; height: 3px;
+    background: var(--color-purple); transform: rotate(45deg);
+  }
+  /* Icon 2: Strategy/Nodes */
+  .ic-strat::before {
+    content: ''; position: absolute; top: 8px; left: 8px; width: 12px; height: 12px;
+    background: var(--color-navy);
+  }
+  .ic-strat::after {
+    content: ''; position: absolute; bottom: 8px; right: 8px; width: 12px; height: 12px;
+    border: 3px solid var(--color-purple);
+  }
+  /* Icon 3: Execution/Blocks */
+  .ic-exec::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 20px; height: 48px;
+    background: var(--color-purple-light);
+  }
+  .ic-exec::after {
+    content: ''; position: absolute; bottom: 0; right: 0; width: 20px; height: 32px;
+    background: var(--color-navy);
+  }
+  /* Icon 4: Optimization/Arrow */
+  .ic-opt::before {
+    content: ''; position: absolute; bottom: 0; left: 0; width: 48px; height: 3px;
+    background: var(--color-purple);
+  }
+  .ic-opt::after {
+    content: ''; position: absolute; top: 0; right: 0; width: 0; height: 0;
+    border-left: 12px solid transparent; border-bottom: 12px solid var(--color-navy); border-right: 12px solid transparent;
+    transform: rotate(45deg) translate(-8px, 8px);
+  }
+
+  /* Blocks */
+  .card-minimal {
+    padding: 2.5rem;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    transition: transform 0.3s;
+  }
+  .card-minimal:hover {
+    transform: translateY(-4px);
+    border-color: var(--color-purple);
+  }
+
+  /* Header */
+  header {
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--color-border);
+    position: sticky;
+    top: 0;
+    background: rgba(252, 252, 252, 0.9);
+    backdrop-filter: blur(10px);
+    z-index: 100;
+  }
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .nav-links { display: none; gap: 2rem; font-weight: 500; font-size: 0.95rem;}
+  @media (min-width: 768px) { .nav-links { display: flex; } }
+  .nav-links a:hover { color: var(--color-purple); }
+
+  /* Accordion (FAQ) */
+  details {
+    border-top: 1px solid var(--color-border);
+    padding: 1.5rem 0;
+  }
+  details:last-child { border-bottom: 1px solid var(--color-border); }
+  summary {
+    font-weight: 700;
+    font-size: 1.25rem;
+    cursor: pointer;
+    list-style: none;
+    position: relative;
+    padding-right: 2rem;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: '+';
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-purple);
+  }
+  details[open] summary::after { content: '−'; }
+  .details-content {
+    margin-top: 1rem;
+    color: var(--color-text-muted);
+    font-size: 1.05rem;
+  }
+
+  /* List styled */
+  .list-styled li {
+    padding-left: 1.5rem;
+    position: relative;
+    margin-bottom: 0.75rem;
+  }
+  .list-styled li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 6px;
+    height: 6px;
+    background-color: var(--color-purple);
+    border-radius: 50%;
+  }
+
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container header-content">
+    <a href="/" style="font-weight: 800; font-size: 1.5rem; letter-spacing: -0.05em;">ARIPA.</a>
+    <nav class="nav-links">
+      <a href="#diagnostico">Diagnóstico</a>
+      <a href="#metodologia">Metodología</a>
+      <a href="#areas">Áreas</a>
+    </nav>
+    <button class="btn btn-outline" style="padding: 0.5rem 1.25rem; font-size: 0.9rem;" onclick="location.href='#contacto'">Contactar →</button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section style="padding-top: 6rem; padding-bottom: 6rem;">
+  <div class="container grid-asym">
+    <div>
+      <span class="label">Consultoría de Decisión</span>
+      <p class="text-muted" style="font-size: 1.25rem;">Usamos datos, análisis de comportamiento y arquitectura de persuasión para explicar y predecir cómo tus usuarios actúan.</p>
+      <div style="margin-top: 3rem; display: flex; gap: 1rem; flex-wrap: wrap;">
+        <button class="btn btn-primary" onclick="location.href='#contacto'">Diagnóstico inicial →</button>
+        <button class="btn btn-outline" onclick="location.href='#metodologia'">Cómo trabajamos ↓</button>
+      </div>
+    </div>
+    <div>
+      <h1 style="margin-bottom: 2rem;">Detectamos por qué tu negocio digital no convierte.</h1>
+      <p class="text-muted" style="font-size: 1.25rem; max-width: 600px;">Y lo sabemos porque medimos y optimizamos cómo deciden tanto las personas como los algoritmos (IAs). Cuando entiendes la fricción, dejas de optimizar a ciegas y empiezas a rediseñar la decisión.</p>
+    </div>
+  </div>
+</section>
+
+<!-- EL PROBLEMA / LO QUE VEMOS -->
+<section id="diagnostico" style="background-color: var(--color-navy); color: white;">
+  <div class="container">
+    <div style="max-width: 800px; margin-bottom: 4rem;">
+      <h2 style="color: white;">La mayoría de negocios no tienen un problema de tráfico.</h2>
+      <p style="color: rgba(255,255,255,0.7); font-size: 1.5rem;">Tienen problemas de claridad, confianza, experiencia y conversión. Ahí es donde el A/B testing convencional ya no encuentra crecimiento.</p>
+    </div>
+    
+    <div class="grid grid-3">
+      <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 2rem;">
+        <h3 style="margin-bottom: 1rem;">Vemos lo que no se ve</h3>
+        <p style="color: rgba(255,255,255,0.6); font-size: 1rem;">Identificamos los puntos de fricción cognitiva, emocional y contextual que ningún heatmap estándar detecta. Usuarios que abandonan o landings que no convencen.</p>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 2rem;">
+        <h3 style="margin-bottom: 1rem;">Cuantificamos la decisión</h3>
+        <p style="color: rgba(255,255,255,0.6); font-size: 1rem;">Aplicamos marcos de experimentación para predecir cómo cambian las conversiones cuando se modifica la arquitectura de un funnel con fugas invisibles.</p>
+      </div>
+      <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 2rem;">
+        <h3 style="margin-bottom: 1rem;">Movemos negocio</h3>
+        <p style="color: rgba(255,255,255,0.6); font-size: 1rem;">No optimizamos por intuición ni por "best practices". Trabajamos directamente sobre la captación, la conversión, la retención y la recomendación de IAs.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARA QUIEN -->
+<section>
+  <div class="container grid-asym">
+    <div>
+      <h2 style="font-size: 2.5rem;">Trabajamos con quienes ya han tocado techo con la optimización tradicional.</h2>
+    </div>
+    <div class="grid grid-2">
+      <div>
+        <h3 style="margin-bottom: 1rem;">Directores de Marketing</h3>
+        <p class="text-muted text-small">Que necesitan desbloquear curvas de captación y conversión donde las campañas habituales ya no dan más de sí, enfrentándose a un coste de adquisición (CPA) disparado.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 1rem;">Product & CX Leaders</h3>
+        <p class="text-muted text-small">Que ven adopción baja en funcionalidades clave o caídas drásticas en los checkouts, y no encuentran la causa en los datos puramente cuantitativos.</p>
+      </div>
+      <div>
+        <h3 style="margin-bottom: 1rem;">CEOs y Fundadores</h3>
+        <p class="text-muted text-small">Que sospechan que la propuesta de valor, la estructura de la oferta o la experiencia digital están dejando dinero sobre la mesa frente a la competencia.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- METODOLOGÍA -->
+<section id="metodologia" style="background-color: var(--color-purple-light);">
+  <div class="container">
+    <div style="max-width: 700px; margin-bottom: 5rem;">
+      <span class="label">Método ARIPA</span>
+      <h2>Cuatro fases. Sin presentaciones eternas que se quedan en el cajón.</h2>
+      <p class="text-muted text-small">Trabajamos pegados al equipo que va a ejecutar. Si tu equipo ejecuta, les damos el plan. Si necesitas brazo operativo, también lo hacemos.</p>
+    </div>
+
+    <div class="grid grid-2" style="gap: 4rem;">
+      <!-- Fase 1 -->
+      <div>
+        <div class="icon-custom ic-audit"></div>
+        <h3 style="margin-bottom: 1rem;">1. Diagnóstico y Auditoría</h3>
+        <p class="text-muted text-small">Mapeamos las decisiones críticas en tu funnel e identificamos los puntos exactos donde el cliente se bloquea o duda. Combinamos análisis cuantitativo, heurístico y de comportamiento.</p>
+      </div>
+      <!-- Fase 2 -->
+      <div>
+        <div class="icon-custom ic-strat"></div>
+        <h3 style="margin-bottom: 1rem;">2. Estrategia e Hipótesis</h3>
+        <p class="text-muted text-small">Construimos hipótesis cuantificadas: qué cambiar, dónde, y qué impacto de negocio esperar. Priorizamos tácticas centradas en la rentabilidad.</p>
+      </div>
+      <!-- Fase 3 -->
+      <div>
+        <div class="icon-custom ic-exec"></div>
+        <h3 style="margin-bottom: 1rem;">3. Ejecución y Rediseño</h3>
+        <p class="text-muted text-small">Traducimos las hipótesis en intervenciones concretas: arquitectura, copy, secuencias, framing. Sobre tráfico, landings, checkouts o visibilidad (GEO).</p>
+      </div>
+      <!-- Fase 4 -->
+      <div>
+        <div class="icon-custom ic-opt"></div>
+        <h3 style="margin-bottom: 1rem;">4. Validación y Optimización</h3>
+        <p class="text-muted text-small">Implementamos, medimos contra la hipótesis inicial y escalamos los resultados mediante experimentación constante para asegurar crecimiento sostenido.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPACIDADES / AREAS -->
+<section id="areas">
+  <div class="container grid-asym">
+    <div>
+      <span class="label">Áreas de actuación</span>
+      <h2>Las capacidades sirven a la estrategia. Nunca al revés.</h2>
+      <p class="text-muted">Si necesitas que ejecutemos el plan, cubrimos las palancas que más mueven la aguja del negocio.</p>
+    </div>
+    <div class="grid grid-2">
+      <div class="card-minimal">
+        <h3 style="margin-bottom: 1.5rem; color: var(--color-purple);">Conversión & CRO</h3>
+        <ul class="list-styled text-muted text-small">
+          <li>Auditorías de conversión</li>
+          <li>Optimización de Funnels complejos</li>
+          <li>Landings de alto rendimiento</li>
+          <li>Experimentación A/B y multivariante</li>
+        </ul>
+      </div>
+      <div class="card-minimal">
+        <h3 style="margin-bottom: 1.5rem; color: var(--color-purple);">UX & Behavior</h3>
+        <ul class="list-styled text-muted text-small">
+          <li>Experiencia de usuario (UX)</li>
+          <li>Claridad y Jerarquía visual</li>
+          <li>Arquitectura de persuasión</li>
+          <li>Análisis de comportamiento del usuario</li>
+        </ul>
+      </div>
+      <div class="card-minimal" style="grid-column: 1 / -1;">
+        <h3 style="margin-bottom: 1.5rem; color: var(--color-purple);">Growth Estratégico (SEO, Paid, AI)</h3>
+        <div class="grid grid-2" style="gap: 1rem;">
+          <ul class="list-styled text-muted text-small">
+            <li>Adquisición cualificada (Paid Media)</li>
+            <li>SEO Semántico y optimización para IAs (GEO)</li>
+          </ul>
+          <ul class="list-styled text-muted text-small">
+            <li>Optimización de pricing y modelos de negocio</li>
+            <li>Automatización inteligente de procesos</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="container grid-asym">
+    <div>
+      <h2>Antes de trabajar juntos, podrías tener estas dudas.</h2>
+      <p class="text-muted">Resolvemos de frente las preguntas habituales sobre cómo impactamos en tu cuenta de resultados.</p>
+    </div>
+    <div>
+      <details>
+        <summary>¿Cómo mejora ARIPA la visibilidad digital (GEO)?</summary>
+        <div class="details-content">
+          Trabajamos en la estructura semántica y la autoridad temática de tus activos para asegurar relevancia tanto en buscadores tradicionales como en los nuevos sistemas conversacionales e IAs, logrando que recomienden tu marca.
+        </div>
+      </details>
+      <details>
+        <summary>¿Por qué centrarse en el comportamiento y no solo en diseño?</summary>
+        <div class="details-content">
+          El diseño es el medio, no el fin. Entender la intención del usuario y eliminar sus barreras cognitivas (fricción) es lo que realmente mueve la aguja de la conversión. Un diseño bonito que no convierte, no sirve.
+        </div>
+      </details>
+      <details>
+        <summary>¿Qué resultados reales puedo esperar de una auditoría?</summary>
+        <div class="details-content">
+          Un mapa claro de fugas de conversión, priorización de cambios tácticos basados en el impacto esperado y una estrategia de optimización continua, libre de suposiciones y respaldada por datos.
+        </div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section id="contacto" class="section-no-border" style="background-color: var(--color-navy); color: white; text-align: center; padding: 10rem 1.5rem;">
+  <div class="container" style="max-width: 800px;">
+    <h2 style="color: white; font-size: clamp(2.5rem, 5vw, 4rem);">¿Tienes una decisión bloqueada en tu negocio?</h2>
+    <p style="color: rgba(255,255,255,0.7); font-size: 1.25rem; margin-bottom: 3rem;">El primer paso es un diagnóstico inicial. En una breve conversación identificamos los cuellos de botella y vemos si tiene sentido colaborar.</p>
+    <button class="btn btn-primary" style="background-color: white; color: var(--color-navy); font-size: 1.1rem; padding: 1.25rem 2.5rem;">
+      Agendar diagnóstico sin compromiso
+    </button>
+    <p style="margin-top: 1.5rem; font-size: 0.9rem; color: rgba(255,255,255,0.5);">60 min · Sin coste · Conclusiones útiles aunque no trabajemos juntos.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="padding: 4rem 0; background-color: #030a21; color: white;">
+  <div class="container grid grid-3">
+    <div>
+      <h3 style="margin-bottom: 1rem; font-weight: 800;">ARIPA.</h3>
+      <p style="color: rgba(255,255,255,0.5); font-size: 0.9rem;">Rediseñamos las decisiones que están bloqueando el crecimiento de tu negocio.</p>
+    </div>
+    <div>
+      <span class="label" style="color: white; opacity: 0.5;">Contacto</span>
+      <ul style="color: rgba(255,255,255,0.8); line-height: 2;">
+        <li><a href="mailto:hola@aripa.es">hola@aripa.es</a></li>
+        <li><a href="https://linkedin.com/company/aripa">LinkedIn</a></li>
+      </ul>
+    </div>
+    <div>
+      <span class="label" style="color: white; opacity: 0.5;">Legal</span>
+      <ul style="color: rgba(255,255,255,0.8); line-height: 2;">
+        <li><a href="aviso-legal.html">Aviso Legal</a></li>
+        <li><a href="privacidad.html">Privacidad</a></li>
+        <li><a href="politica-cookies.html">Cookies</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="container" style="border-top: 1px solid rgba(255,255,255,0.1); margin-top: 4rem; padding-top: 2rem; color: rgba(255,255,255,0.4); font-size: 0.8rem; text-align: center;">
+    © 2024 ARIPA Consulting. Optimización basada en datos.
+  </div>
+</footer>
+
+</body>
+</html>
