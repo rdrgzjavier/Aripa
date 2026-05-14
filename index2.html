@@ -1078,7 +1078,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══════════════════════════════════════════
      FOOTER
 ═══════════════════════════════════════════ -->
-<footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-28 md:pb-32 px-6 md:px-12 border-t border-white/5">
+<footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-64 md:pb-80 px-6 md:px-12 border-t border-white/5">
   <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
     <div class="flex items-center gap-3">
       <img alt="aripa" class="h-8 object-contain" src="./assets/aripa-logo.png" width="106" height="32"/>
@@ -1107,9 +1107,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══════════════════════════════════════════
      MOBILE BOTTOM NAV (hidden on md+)
 ═══════════════════════════════════════════ -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden"
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-4 md:hidden"
      id="mobile-bottom-nav"
-     style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
+     style="background-color: rgba(6, 21, 66, 0.95); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); border-top: 1px solid rgba(255,255,255,0.1); padding-bottom: max(16px, env(safe-area-inset-bottom)); shadow: 0 -10px 40px rgba(0,0,0,0.3);">
   <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3"
           data-cal-link="aripa/hoja-de-ruta"
           data-cal-namespace="hoja-de-ruta"
@@ -1122,8 +1122,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ═══════════════════════════════════════════
      DESKTOP STICKY BOTTOM BAR (hidden on mobile)
 ═══════════════════════════════════════════ -->
-<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/90 backdrop-blur-2xl border-t border-secondary/10 shadow-[0_-15px_40px_rgba(0,0,0,0.08)] px-6 md:px-12 py-5 items-center justify-between pointer-events-none"
-     id="sticky-bottom-bar">
+<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex px-6 md:px-12 py-5 items-center justify-between pointer-events-none"
+     id="sticky-bottom-bar"
+     style="background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border-top: 1px solid rgba(6, 21, 66, 0.05); box-shadow: 0 -15px 50px rgba(0,0,0,0.1);">
   <div class="flex flex-col gap-1">
     <span class="text-primary font-black font-headline text-base tracking-tight flex items-center gap-2">
       <span class="material-symbols-outlined text-secondary text-xl">insights</span> ¿Hablamos de tu próxima fase de crecimiento?
