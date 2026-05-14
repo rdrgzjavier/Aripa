@@ -1,0 +1,578 @@
+﻿<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+<link rel="preconnect" href="https://app.cal.com"/>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Aviso Legal | Aripa</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@400,0..1&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="./style.css">
+
+<style>
+  :root {
+    --color-primary:               220 80% 14%;
+    --color-primary-container:     225 51% 23%;
+    --color-secondary:             265 47% 51%;
+    --color-secondary-container:   264 97% 74%;
+    --color-on-primary-container:  224 34% 66%;
+    --color-background:            20  33% 98%;
+    --color-surface:               20  33% 98%;
+    --color-surface-container-low: 24  20% 95%;
+    --color-on-background:         180  2% 11%;
+    --color-on-surface:            180  2% 11%;
+    --color-on-surface-variant:    234  5% 29%;
+    --duration-base: 300ms;
+    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  body { font-family: 'Inter', sans-serif; }
+  .font-brand    { font-family: 'Inter', sans-serif; }
+  .font-headline { font-family: 'Inter', sans-serif; }
+  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+  .hero-gradient { background: linear-gradient(135deg, #061542 0%, #1e2b58 100%); }
+  .glass-header { background-color: rgba(6,21,66,0.8); backdrop-filter: blur(12px); }
+  .btn-after {
+    background: linear-gradient(180deg, #8b5cf6 0%, #6c45c0 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 16px -4px rgba(108,69,192,0.5);
+    border: 1px solid rgba(139,92,246,0.5);
+  }
+  .btn-lavender {
+    background: rgba(167, 139, 250, 0.05);
+    border: 1px solid rgba(167, 139, 250, 0.3);
+    color: #cbd5e1 !important;
+    text-transform: none !important;
+    letter-spacing: 0.01em !important;
+    border-radius: 12px !important;
+    font-weight: 600 !important;
+    padding: 10px 22px !important;
+    backdrop-filter: blur(4px);
+  }
+  .btn-lavender:hover {
+    transform: scale(1.05);
+    background: rgba(167, 139, 250, 0.15);
+    border-color: rgba(167, 139, 250, 0.6);
+    color: white !important;
+  }
+  .btn-lavender .material-symbols-outlined { color: inherit; font-size: 1.1rem; }
+  .cta-core {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    line-height: 1;
+  }
+  .drawer-transition { transition: transform var(--duration-base) ease-in-out; }
+  #drawer-overlay {
+    background: linear-gradient(180deg, rgba(2,6,25,0.48) 0%, rgba(2,6,25,0.74) 100%);
+    backdrop-filter: blur(6px);
+  }
+  #drawer-content {
+    background: radial-gradient(circle at 100% 0%, rgba(111,74,194,0.2) 0%, rgba(10,20,66,0.94) 56%), linear-gradient(165deg, rgba(8,20,70,0.94) 0%, rgba(20,28,86,0.92) 100%);
+    border-left: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(14px);
+  }
+  #site-header {
+    position: fixed; top: 0; width: 100%; z-index: 50;
+    background-color: transparent; backdrop-filter: blur(0px);
+    box-shadow: none; border-bottom: 1px solid transparent;
+    transition: background-color var(--duration-base) var(--ease-out-expo), backdrop-filter var(--duration-base) var(--ease-out-expo), box-shadow var(--duration-base) var(--ease-out-expo);
+  }
+  #site-header .header-inner { height: 4.25rem; transition: height var(--duration-base) var(--ease-out-expo); }
+  #site-header.is-sticky {
+    background-color: rgba(6,21,66,0.82); backdrop-filter: blur(14px);
+    border-bottom-color: rgba(255,255,255,0.08); box-shadow: 0 20px 48px -18px rgba(0,0,0,0.45);
+  }
+  #site-header.is-sticky .header-inner { height: 3.9rem; }
+  @media (min-width: 768px) {
+    #site-header .header-inner { height: 5rem; }
+    #site-header.is-sticky .header-inner { height: 4.35rem; }
+  }
+  body.modal-open { overflow: hidden; }
+  .skip-nav {
+    position: absolute; top: -100%; left: 1rem; z-index: 9999;
+    padding: 0.5rem 1rem; background: #6c45c0; color: #fff;
+    font-weight: 700; border-radius: 0 0 8px 8px; text-decoration: none;
+    transition: top 150ms;
+  }
+  .skip-nav:focus { top: 0; }
+  .success-modal { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); backdrop-filter: blur(8px); display: flex; align-items: center; justify-content: center; z-index: 1000; opacity: 0; pointer-events: none; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+  .success-modal.active { opacity: 1; pointer-events: auto; }
+  .success-modal-content { background: #1a1a2e; padding: 3rem; border-radius: 2rem; max-width: 450px; width: 90%; text-align: center; border: 1px solid rgba(255,255,255,0.1); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); transform: translateY(20px); transition: all 0.4s cubic-bezier(0.4,0,0.2,1); }
+  .success-modal.active .success-modal-content { transform: translateY(0); }
+  .success-icon { width: 64px; height: 64px; background: #6c45c0; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; color: white; }
+  .success-title { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 2rem; margin-bottom: 0.5rem; letter-spacing: -0.02em; color: white; }
+  .success-desc { color: rgba(255,255,255,0.6); font-size: 0.95rem; line-height: 1.5; margin-bottom: 2rem; }
+  .btn-close-success { background: white; color: black; border: none; padding: 1rem 2rem; border-radius: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; width: 100%; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.8rem; }
+  .btn-close-success:hover { transform: scale(1.02); background: #f0f0f0; }
+  #contact-modal .modal-panel { width: min(100%, 40rem); max-width: 100%; box-sizing: border-box; }
+  @media (max-width: 767px) {
+    #contact-modal { padding: 1rem; align-items: flex-start; }
+    #contact-modal .modal-panel { width: 100%; max-width: 100%; margin-top: 1rem; padding: 1.25rem; border-radius: 1rem; max-height: calc(100dvh - 2rem); overflow-y: auto; }
+    #contact-modal input, #contact-modal select, #contact-modal textarea { font-size: 16px; max-width: 100%; }
+  }
+</style>
+</head>
+<body class="bg-background text-on-background">
+
+  <!-- Skip navigation â€“ accessibility -->
+  <a class="skip-nav" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+       MOBILE DRAWER (hidden on md+)
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+  <div class="fixed inset-0 z-[70] invisible md:hidden" id="drawer" role="dialog" aria-modal="true" aria-label="MenÃº de navegaciÃ³n">
+  <div class="absolute inset-0 opacity-0 transition-opacity duration-300" id="drawer-overlay"></div>
+  <nav class="absolute right-0 top-0 h-full w-4/5 max-w-sm drawer-transition translate-x-full p-8 flex flex-col shadow-2xl outline-none" id="drawer-content">
+    <div class="flex justify-between items-center mb-10">
+      <img 
+  alt="aripa"
+  class="h-6 object-contain"
+  src="./assets/aripa-logo.png"
+  width="80"
+  height="24"
+  fetchpriority="high"
+/>
+      <button class="text-white/70" onclick="toggleDrawer()" aria-label="Cerrar menÃº">
+        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+      </button>
+    </div>
+    <div class="flex flex-col gap-2">
+      <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="servicios.html">
+        <span class="material-symbols-outlined text-[#6c45c0]">insights</span> Servicios
+      </a>
+      <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="recursos.html">
+        <span class="material-symbols-outlined text-[#6c45c0]">article</span> Recursos
+      </a>
+
+      <button class="cta-core flex items-center justify-center gap-3 text-white w-full py-5 px-6 btn-lavender rounded-xl mt-6 !text-[13px]" onclick="toggleDrawer(); openContactModal();">
+        <span class="material-symbols-outlined text-lg">mail</span> Tengo una duda
+      </button>
+    </div>
+  </nav>
+</div>
+
+<header id="site-header" aria-label="Cabecera principal">
+  <div class="header-inner relative flex justify-between items-center px-6 md:px-12 max-w-[1440px] mx-auto">
+    <!-- Logo: Centered on mobile, aligned on md+ -->
+    <a href="index.html" class="flex items-center justify-start w-[18%] outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
+      <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
+    </a>
+
+    <!-- Desktop nav (hidden on mobile) -->
+    <nav class="hidden md:flex items-center justify-center gap-12 w-2/4">
+      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="servicios.html">Servicios</a>
+      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="recursos.html">Recursos</a>
+    </nav>
+
+    <div class="flex items-center justify-end gap-6 w-[32%]">
+      <!-- Desktop CTA button (hidden on mobile) -->
+      <button class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl hover:scale-105 transition-transform active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
+        <span class="material-symbols-outlined">mail</span>
+        Tengo una duda
+      </button>
+
+      <!-- Mobile Hamburger: Aligned to the right on mobile, hidden on md+ -->
+      <button class="flex items-center justify-center p-2 -mr-2 md:hidden" onclick="toggleDrawer()" aria-label="Abrir menÃº de navegaciÃ³n" aria-expanded="false" aria-controls="drawer" id="hamburger-btn">
+        <span class="material-symbols-outlined text-white text-2xl" aria-hidden="true">menu</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+  <main id="main-content" tabindex="-1" class="focus:outline-none">
+    <div class="h-20 md:h-28"></div>
+    
+    <section class="hero-gradient py-16 px-6 md:px-12 text-center text-white relative overflow-hidden">
+      <div class="max-w-4xl mx-auto z-10 relative">
+        <h1 class="text-3xl md:text-5xl font-black font-headline tracking-tighter mb-4">Aviso Legal</h1>
+        <p class="text-white/70 text-sm md:text-base font-medium">Transparencia y marco jurÃ­dico de Aripa.</p>
+      </div>
+    </section>
+
+    <section class="py-20 px-6 md:px-12 max-w-4xl mx-auto">
+      <div class="bg-white p-8 md:p-16 rounded-[2rem] border border-secondary/10 shadow-sm leading-relaxed text-on-surface-variant">
+        <a href="index.html" class="inline-flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-widest mb-10 group">
+          <span class="material-symbols-outlined text-sm">home</span> Inicio
+        </a>
+        
+        <div class="prose prose-blue max-w-none space-y-6">
+          <h2 class="text-xl font-bold text-primary">1. Datos Identificativos</h2>
+          <p>En cumplimiento con el deber de informaciÃ³n recogido en artÃ­culo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la InformaciÃ³n y del Comercio ElectrÃ³nico, a continuaciÃ³n se reflejan los siguientes datos: el titular de dominio web es <strong>Javier Rodriguez de la Orden</strong> (en adelante Aripa), con correo electrÃ³nico de contacto: hola@aripa.es.</p>
+
+          <h2 class="text-xl font-bold text-primary">2. Usuarios</h2>
+          <p>El acceso y/o uso de este portal de Aripa atribuye la condiciÃ³n de USUARIO, que acepta, desde dicho acceso y/o uso, las Condiciones Generales de Uso aquÃ­ reflejadas.</p>
+
+          <h2 class="text-xl font-bold text-primary">3. Propiedad Intelectual e Industrial</h2>
+          <p>Aripa es titular de todos los derechos de propiedad intelectual e industrial de su pÃ¡gina web, asÃ­ como de los elementos contenidos en la misma.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-64 md:pb-80 px-6 md:px-12 border-t border-white/5">
+  <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
+    <div class="flex items-center gap-3">
+      <img alt="aripa" class="h-8 object-contain" src="./assets/aripa-logo.png" width="106" height="32"/>
+    </div>
+    <nav class="flex flex-wrap justify-center gap-6 md:gap-10">
+      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-cookies.html">PolÃ­tica de cookies</a>
+      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="privacidad.html">Privacidad</a>
+      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
+    </nav>
+    <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4">
+      ConsultorÃ­a estratÃ©gica enfocada en optimizaciÃ³n basada en datos y sistemas conversacionales (GEO). Transformamos activos digitales en autoridad temÃ¡tica y crecimiento de alto rendimiento.
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="https://www.linkedin.com/company/aripa/" target="_blank" rel="noopener noreferrer" class="group transition-transform hover:scale-110" aria-label="LinkedIn de aripa">
+        <svg class="h-6 w-6 group-hover:opacity-80 transition-opacity" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      </a>
+    </div>
+    <p class="text-white/40 text-[10px] font-body max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest">
+      Â© 2026 aripa Consulting | Javier Rodriguez de la Orden. Transformando datos en activos estratÃ©gicos de alto rendimiento.
+    </p>
+  </div>
+</footer>
+
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden invisible"
+     id="mobile-bottom-nav"
+     aria-hidden="true"
+     style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
+  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">
+    <span class="material-symbols-outlined">calendar_month</span>
+    HABLEMOS
+  </button>
+</nav>
+
+<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between pointer-events-none invisible"
+     id="sticky-bottom-bar"
+     aria-hidden="true">
+  <div class="flex flex-col">
+    <span class="text-primary font-bold font-headline text-sm tracking-tight flex items-center gap-2">
+      <span class="material-symbols-outlined text-secondary text-lg">insights</span> Â¿Hablamos de tu prÃ³xima fase de crecimiento?
+    </span>
+    <span class="text-[11px] font-normal text-on-surface-variant ml-7">SesiÃ³n estratÃ©gica de 45 min. Sin coste. Sin compromiso.</span>
+  </div>
+  <div class="flex items-center gap-3 pointer-events-auto">
+    <button class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2"
+            data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">
+      <span class="material-symbols-outlined text-lg">calendar_month</span> HABLEMOS
+    </button>
+  </div>
+</div>
+  <div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] flex items-center justify-center p-6 hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="modal-panel bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="mb-6 md:mb-8">
+        <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-2" id="contact-modal-title">Hablemos</h4>
+        <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">CuÃ©ntanos tu proyecto y un consultor senior te contactarÃ¡ en menos de 24h.</p>
+      </div>
+      <form class="space-y-4 md:space-y-6" id="contact-form" onsubmit="handleFormSubmit(event)">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-name">Nombre *</label>
+            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all" id="c-name" placeholder="Tu nombre" required type="text"/>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-phone">TelÃ©fono *</label>
+            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all" id="c-phone" placeholder="+34 000 000 000" required type="tel"/>
+          </div>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-email">Email Corporativo *</label>
+          <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all" id="c-email" placeholder="email@empresa.com" required type="email"/>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-service">Servicio de interÃ©s</label>
+          <select class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 appearance-none" id="c-service">
+            <option value="conversion">ConversiÃ³n &amp; CRO</option>
+            <option value="ux">UX &amp; Behavioral Design</option>
+            <option value="growth">Growth EstratÃ©gico</option>
+            <option value="general">Otros / Consulta general</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-message">Mensaje</label>
+          <textarea class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 min-h-[100px] transition-all" id="c-message" placeholder="Â¿CÃ³mo podemos ayudarte?"></textarea>
+        </div>
+        <button class="cta-core w-full py-4 md:py-5 btn-after text-white rounded-xl md:rounded-2xl active:scale-95 transition-all" id="submit-btn" type="submit">Enviar Solicitud</button>
+      </form>
+      <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors" onclick="closeModal('contact-modal')" aria-label="Cerrar formulario de contacto">
+        <span class="material-symbols-outlined text-2xl md:text-3xl" aria-hidden="true">close</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- SUCCESS MODAL -->
+  <div id="success-feedback-modal" class="success-modal">
+    <div class="success-modal-content">
+        <div class="success-icon"><span class="material-symbols-outlined" style="font-size: 32px;">check</span></div>
+        <h3 class="success-title">Gracias</h3>
+        <p class="success-desc">Hemos recibido tu mensaje correctamente.</p>
+        <button class="btn-close-success" onclick="closeSuccessModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
+    let _lastFocusedEl = null;
+
+    function trapFocus(containerEl) {
+      const nodes = [...containerEl.querySelectorAll(FOCUSABLE)];
+      if (!nodes.length) return;
+      const first = nodes[0], last = nodes[nodes.length - 1];
+      containerEl._trapHandler = (e) => {
+        if (e.key !== 'Tab') return;
+        if (e.shiftKey) { if (document.activeElement === first) { e.preventDefault(); last.focus(); } }
+        else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
+      };
+      containerEl.addEventListener('keydown', containerEl._trapHandler);
+      nodes[0].focus();
+    }
+
+    function releaseFocus(containerEl, returnEl) {
+      if (containerEl._trapHandler) {
+        containerEl.removeEventListener('keydown', containerEl._trapHandler);
+        delete containerEl._trapHandler;
+      }
+      if (returnEl) returnEl.focus();
+    }
+
+    function openContactModal() {
+      _lastFocusedEl = document.activeElement;
+      const modal = document.getElementById('contact-modal');
+      modal.classList.remove('hidden');
+      document.body.classList.add('modal-open');
+      trapFocus(modal);
+    }
+
+    function closeModal(id) {
+      const modal = document.getElementById(id);
+      releaseFocus(modal, _lastFocusedEl);
+      modal.classList.add('hidden');
+      const anyVisible = ['contact-modal','drawer'].some(mid => {
+        const el = document.getElementById(mid);
+        return el && !el.classList.contains('hidden') && !el.classList.contains('invisible');
+      });
+      if (!anyVisible) document.body.classList.remove('modal-open');
+    }
+
+    document.getElementById('contact-modal').addEventListener('click', e => {
+      if (e.target.id === 'contact-modal') closeModal('contact-modal');
+    });
+
+    const hamburgerBtn = document.getElementById('hamburger-btn');
+
+    function toggleDrawer() {
+      const drawer = document.getElementById('drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      const content = document.getElementById('drawer-content');
+      const isHidden = drawer.classList.contains('invisible');
+      if (isHidden) {
+        drawer.classList.remove('invisible');
+        document.body.classList.add('modal-open');
+        if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'true');
+        requestAnimationFrame(() => {
+          overlay.classList.add('opacity-100');
+          content.classList.remove('translate-x-full');
+        });
+        trapFocus(content);
+      } else {
+        releaseFocus(content, hamburgerBtn);
+        overlay.classList.remove('opacity-100');
+        content.classList.add('translate-x-full');
+        document.body.classList.remove('modal-open');
+        if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
+        setTimeout(() => drawer.classList.add('invisible'), 300);
+      }
+    }
+
+    document.getElementById('drawer-overlay').addEventListener('click', toggleDrawer);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      if (!document.getElementById('contact-modal').classList.contains('hidden')) {
+        closeModal('contact-modal'); return;
+      }
+      if (!document.getElementById('drawer').classList.contains('invisible')) {
+        toggleDrawer();
+      }
+    });
+
+    const form = document.getElementById('contact-form');
+    const submitBtn = document.getElementById('submit-btn');
+    const requiredInputs = form.querySelectorAll('input[required]');
+    const validate = () => {
+      submitBtn.disabled = ![...requiredInputs].every(i => i.value && i.checkValidity());
+    };
+    requiredInputs.forEach(i => i.addEventListener('input', validate));
+    validate();
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('c-name').value;
+      const phone = document.getElementById('c-phone').value;
+      const email = document.getElementById('c-email').value;
+      const service = document.getElementById('c-service').value;
+      const message = document.getElementById('c-message').value;
+      const originalText = submitBtn.innerText;
+      submitBtn.disabled = true;
+      submitBtn.innerText = 'Enviando...';
+      fetch('https://formspree.io/f/maqalopa', {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, email, service, message, _replyto: email, _subject: 'Nueva consulta desde aripa.es â€“ ' + name })
+      })
+      .then(response => response.json().then(data => ({ ok: response.ok, status: response.status, data })))
+      .then(({ ok, status, data }) => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalText;
+        if (ok) {
+          closeModal('contact-modal');
+          showSuccessModal();
+          e.target.reset();
+          validate();
+        } else {
+          alert('Error al enviar (' + status + '): ' + (data.error || JSON.stringify(data)) + '. IntÃ©ntalo de nuevo o escrÃ­benos a hola@aripa.es');
+        }
+      })
+      .catch(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerText = originalText;
+        alert('Error de conexiÃ³n. Comprueba tu internet e intÃ©ntalo de nuevo, o escrÃ­benos directamente a hola@aripa.es');
+      });
+    }
+
+    function showSuccessModal() {
+      document.getElementById('success-feedback-modal').classList.add('active');
+    }
+    function closeSuccessModal() {
+      document.getElementById('success-feedback-modal').classList.remove('active');
+    }
+
+    window.addEventListener('scroll', () => {
+      document.getElementById('site-header').classList.toggle('is-sticky', window.scrollY > 20);
+    });
+  </script>
+<script>
+(function () {
+  const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
+  const setInteractive = (root, active) => {
+    if (!root) return;
+    root.classList.toggle('invisible', !active);
+    root.setAttribute('aria-hidden', active ? 'false' : 'true');
+    root.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', active ? '0' : '-1'));
+  };
+
+  if (!window.toggleDrawer) {
+    window.toggleDrawer = function () {
+      const drawer = document.getElementById('drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      const content = document.getElementById('drawer-content');
+      const hamburger = document.getElementById('hamburger-btn');
+      if (!drawer || !overlay || !content) return;
+      const isHidden = drawer.classList.contains('invisible');
+      if (isHidden) {
+        drawer.classList.remove('invisible');
+        document.body.classList.add('modal-open');
+        hamburger?.setAttribute('aria-expanded', 'true');
+        requestAnimationFrame(() => {
+          overlay.classList.add('opacity-100');
+          content.classList.remove('translate-x-full');
+        });
+      } else {
+        overlay.classList.remove('opacity-100');
+        content.classList.add('translate-x-full');
+        document.body.classList.remove('modal-open');
+        hamburger?.setAttribute('aria-expanded', 'false');
+        setTimeout(() => drawer.classList.add('invisible'), 300);
+      }
+    };
+    document.getElementById('drawer-overlay')?.addEventListener('click', window.toggleDrawer);
+  }
+
+  if (!window.openContactModal) {
+    window.openContactModal = function () {
+      const modal = document.getElementById('contact-modal');
+      if (!modal) {
+        window.location.href = 'index.html#contact-modal';
+        return;
+      }
+      modal.classList.remove('hidden');
+      document.body.classList.add('modal-open');
+      const first = modal.querySelector(FOCUSABLE);
+      first?.focus();
+    };
+  }
+
+  const updateShellUI = () => {
+    const header = document.getElementById('site-header');
+    const stickyBar = document.getElementById('sticky-bottom-bar');
+    const mobileNav = document.getElementById('mobile-bottom-nav');
+    const hero = document.getElementById('hero-section') || document.querySelector('main section');
+    const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 220;
+    const pastHero = window.scrollY > heroBottom - 200;
+    header?.classList.toggle('is-sticky', window.scrollY > 20);
+    document.body.classList.toggle('scrolled', window.scrollY > 150);
+    setInteractive(stickyBar, window.innerWidth >= 768 && pastHero);
+    setInteractive(mobileNav, window.innerWidth < 768 && window.scrollY > 150);
+  };
+  window.addEventListener('scroll', updateShellUI, { passive: true });
+  window.addEventListener('resize', updateShellUI);
+  updateShellUI();
+
+  if (window.location.hash === '#contact-modal' && document.getElementById('contact-modal')) {
+    setTimeout(() => window.openContactModal(), 100);
+  }
+}());
+</script>
+<script>
+(function () {
+  const CAL_FALLBACK_URL = 'https://cal.com/aripa/hoja-de-ruta?duration=45';
+  const CAL_TRIGGER_SELECTOR = '[data-cal-link="aripa/hoja-de-ruta"]';
+  let fallbackTimer = null;
+
+  document.addEventListener('click', (event) => {
+    const trigger = event.target.closest(CAL_TRIGGER_SELECTOR);
+    if (!trigger) return;
+    window.clearTimeout(fallbackTimer);
+    fallbackTimer = window.setTimeout(() => {
+      const frame = document.querySelector('iframe[src*="app.cal.com"][src*="aripa/hoja-de-ruta"]');
+      if (!frame || frame.dataset.loaded !== 'true') {
+        window.open(CAL_FALLBACK_URL, '_blank', 'noopener,noreferrer');
+      }
+    }, 4500);
+  }, true);
+
+  const observer = new MutationObserver(() => {
+    document.querySelectorAll('iframe[src*="app.cal.com"][src*="aripa/hoja-de-ruta"]').forEach((frame) => {
+      if (frame.dataset.aripaWatched === 'true') return;
+      frame.dataset.aripaWatched = 'true';
+      frame.addEventListener('load', () => {
+        frame.dataset.loaded = 'true';
+        window.clearTimeout(fallbackTimer);
+      }, { once: true });
+    });
+  });
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+}());
+</script>
+<!-- Cal element-click embed code begins -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
+  Cal.ns["hoja-de-ruta"]("preload", {calLink:"aripa/hoja-de-ruta"});
+
+  Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view","useSlotsViewOnSmallScreen":true});
+</script>
+<!-- Cal element-click embed code ends -->
+</body>
+</html>
+
+
+
+
+
