@@ -706,23 +706,25 @@ body { font-family: 'Inter', sans-serif; }
   @media (max-width: 767px) {
     #klaro .klaro .cm-modal .cm-panel .cm-footer,
     #klaro .klaro .cm-footer,
-    #klaro .klaro .cm-footer .cm-buttons {
+    #klaro .klaro .cm-footer .cm-buttons,
+    #klaro .klaro .cm-footer-buttons {
       display: flex !important;
       flex-direction: column !important;
-      gap: 4px !important;
+      flex-flow: column nowrap !important;
+      gap: 6px !important;
       padding: 10px 4px !important;
       height: auto !important;
       width: 100% !important;
     }
     #klaro .klaro .cm-modal .cm-panel .cm-footer .cm-btn,
     #klaro .klaro .cm-footer .cm-btn,
-    #klaro .klaro .cm-footer .cm-buttons .cm-btn {
+    #klaro .klaro .cm-footer .cm-buttons .cm-btn,
+    #klaro .klaro .cm-btn {
       width: 100% !important;
       max-width: 100% !important;
       margin: 2px 0 !important;
       display: block !important;
-      padding: 12px !important;
-      font-size: 15.2px !important;
+      flex: 1 1 100% !important;
     }
   }
 
@@ -1572,13 +1574,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (window.innerWidth < 768) {
           const footer = document.querySelector('#klaro .cm-footer');
           if (footer) {
-            footer.style.setProperty('display', 'flex', 'important');
-            footer.style.setProperty('flex-direction', 'column', 'important');
-            footer.style.setProperty('gap', '4px', 'important');
+            // Target the footer AND any internal button containers
+            const containers = footer.querySelectorAll('.cm-buttons, .cm-footer-buttons, .cm-buttons-container');
+            const targets = containers.length ? Array.from(containers) : [footer];
+            
+            targets.forEach(c => {
+              c.style.setProperty('display', 'flex', 'important');
+              c.style.setProperty('flex-direction', 'column', 'important');
+              c.style.setProperty('flex-flow', 'column', 'important');
+              c.style.setProperty('gap', '4px', 'important');
+              c.style.setProperty('width', '100%', 'important');
+            });
             
             footer.querySelectorAll('.cm-btn').forEach(btn => {
               btn.style.setProperty('width', '100%', 'important');
+              btn.style.setProperty('max-width', '100%', 'important');
               btn.style.setProperty('margin', '2px 0', 'important');
+              btn.style.setProperty('display', 'block', 'important');
               btn.style.setProperty('padding', '12px', 'important');
               btn.style.setProperty('font-size', '15px', 'important');
               
