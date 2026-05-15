@@ -662,9 +662,13 @@ body { font-family: 'Inter', sans-serif; }
       justify-content: flex-end !important;
       display: flex !important;
     }
-    /* This makes the internal div 'transparent' so the gap applies to its children too */
+    /* Targeted fix for the internal button group */
     #klaro .klaro .cookie-notice .cn-buttons {
-      display: contents !important;
+      display: flex !important;
+      flex-direction: row !important;
+      gap: 16px !important;
+      margin: 0 !important;
+      padding: 0 !important;
     }
     #klaro .klaro .cookie-notice .cn-ok > *,
     #klaro .klaro .cookie-notice .cn-ok .cm-btn,
