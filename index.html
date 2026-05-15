@@ -1558,56 +1558,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     })(window, document, "clarity", "script", "wd9btxwafk");
 </script>
   
-  <!-- Final High-Priority Intervention for Klaro (Optimized) -->
-  <script type="text/javascript">
-    (function() {
-      const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
-      
-      const enforceKlaro = () => {
-        // 1. Capa 1: Force Corporate Text
-        const p = document.querySelector('#id-cookie-notice, #klaro p');
-        if (p && p.innerText !== targetText) {
-          p.innerText = targetText;
-        }
-
-        // 2. Capa 2: Vertical Layout & Compact Buttons
-        if (window.innerWidth < 768) {
-          const footer = document.querySelector('#klaro .cm-footer');
-          if (footer) {
-            // Target the footer AND any internal button containers
-            const containers = footer.querySelectorAll('.cm-buttons, .cm-footer-buttons, .cm-buttons-container');
-            const targets = containers.length ? Array.from(containers) : [footer];
-            
-            targets.forEach(c => {
-              c.style.setProperty('display', 'flex', 'important');
-              c.style.setProperty('flex-direction', 'column', 'important');
-              c.style.setProperty('flex-flow', 'column', 'important');
-              c.style.setProperty('gap', '4px', 'important');
-              c.style.setProperty('width', '100%', 'important');
-            });
-            
-            footer.querySelectorAll('.cm-btn').forEach(btn => {
-              btn.style.setProperty('width', '100%', 'important');
-              btn.style.setProperty('max-width', '100%', 'important');
-              btn.style.setProperty('margin', '2px 0', 'important');
-              btn.style.setProperty('display', 'block', 'important');
-              btn.style.setProperty('padding', '12px', 'important');
-              btn.style.setProperty('font-size', '15px', 'important');
-              
-              const txt = btn.innerText;
-              if (txt.includes('Descartar') || txt.includes('Rechazar')) btn.innerText = 'Rechazar';
-              if (txt.includes('seleccionadas') || txt.includes('Guardar')) btn.innerText = 'Guardar';
-              if (txt.includes('Aceptar todas') || txt.includes('Aceptar')) btn.innerText = 'Aceptar';
-            });
-          }
-        }
-      };
-
-      const observer = new MutationObserver(enforceKlaro);
-      observer.observe(document.documentElement, { childList: true, subtree: true });
-      setInterval(enforceKlaro, 500); // 500ms for zero lag
-    })();
-  </script>
 </body>
 </html>
 
