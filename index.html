@@ -707,30 +707,31 @@ body { font-family: 'Inter', sans-serif; }
     }
   }
 
-  /* Capa 2 - Modal Robustness Refinements */
-  #klaro .klaro .cm-modal .cm-panel .cm-header {
+  /* Capa 2 - Modal Robustness Refinements (FORCE) */
+  #klaro .klaro .cm-modal .cm-panel .cm-header,
+  #klaro .klaro .cm-header {
     background-color: #ffffff !important;
-    color: #061542 !important;
-    border-bottom: 1px solid #f3f4f6 !important;
-  }
-  #klaro .klaro .cm-modal .cm-header h1 {
+    background: #ffffff !important;
     color: #061542 !important;
   }
-  #klaro .klaro .cm-modal .cm-header .cm-close svg {
+  #klaro .klaro .cm-modal .cm-panel .cm-header * {
     color: #061542 !important;
-    stroke: #061542 !important;
   }
   
-  @media (max-width: 768px) {
-    #klaro .klaro .cm-modal .cm-footer {
+  @media (max-width: 767px) {
+    #klaro .klaro .cm-modal .cm-panel .cm-footer,
+    #klaro .klaro .cm-footer {
       display: flex !important;
       flex-direction: column !important;
-      gap: 12px !important;
-      padding: 20px !important;
+      gap: 10px !important;
+      padding: 15px !important;
+      height: auto !important;
     }
-    #klaro .klaro .cm-modal .cm-footer .cm-btn {
+    #klaro .klaro .cm-modal .cm-panel .cm-footer .cm-btn,
+    #klaro .klaro .cm-footer .cm-btn {
       width: 100% !important;
       margin: 0 !important;
+      display: block !important;
     }
   }
 
