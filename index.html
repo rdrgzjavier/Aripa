@@ -612,7 +612,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="material-symbols-outlined" aria-hidden="true">close</span>
       </button>
     </div>
-    <div class="flex flex-col gap-2">
+    <!-- Hidden for MVP as requested -->
+    <div class="hidden">
       <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="servicios.html">
         <span class="material-symbols-outlined text-[#6c45c0]">insights</span> Servicios
       </a>
@@ -637,8 +638,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
     </div>
 
-    <!-- Center Column: Nav -->
-    <nav class="hidden md:flex flex-none items-center justify-center gap-10 lg:gap-14">
+    <!-- Center Column: Nav (Hidden for MVP) -->
+    <nav class="hidden items-center justify-center gap-10 lg:gap-14">
       <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="servicios.html">Servicios</a>
       <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="recursos.html">Recursos</a>
     </nav>
@@ -649,8 +650,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="material-symbols-outlined">mail</span>
         Tengo una duda
       </button>
-      <button class="flex items-center justify-center p-2 -mr-2 md:hidden" onclick="toggleDrawer()" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="drawer" id="hamburger-btn">
-        <span class="material-symbols-outlined text-white text-2xl" aria-hidden="true">menu</span>
+      <button class="flex items-center justify-center p-2 -mr-2 md:hidden" onclick="openContactModal()" aria-label="Abrir formulario de contacto" id="mobile-mail-btn">
+        <span class="material-symbols-outlined text-white text-2xl" aria-hidden="true">mail</span>
       </button>
     </div>
   </div>
@@ -684,7 +685,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="av6-ctas hero-animate-4">
         <button class="cta-core av6-btn-primary hover:scale-[1.02] transition-transform active:scale-95"
-                data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view"}'>
+                onclick="openContactModal()">
           Solicitar análisis
         </button>
         <a class="cta-core av6-btn-secondary hover:bg-white/15 transition-colors"
@@ -1022,8 +1023,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      id="mobile-bottom-nav"
      aria-hidden="true"
      style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
-  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view"}' tabindex="-1">
-    <span class="material-symbols-outlined">calendar_month</span>
+  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" onclick="openContactModal()" tabindex="-1">
+    <span class="material-symbols-outlined">mail</span>
     HABLEMOS
   </button>
 </nav>
@@ -1040,8 +1041,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="flex items-center gap-3 pointer-events-auto">
     <button class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2"
-            data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view"}' tabindex="-1">
-      <span class="material-symbols-outlined text-lg">calendar_month</span> HABLEMOS
+            onclick="openContactModal()" tabindex="-1">
+      <span class="material-symbols-outlined text-lg">mail</span> HABLEMOS
     </button>
   </div>
 </div>
@@ -1067,7 +1068,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="space-y-2 md:space-y-4" id="modal-list"></div>
     </div>
     <button class="cta-core w-full py-4 md:py-5 btn-after text-white rounded-xl md:rounded-2xl font-bold uppercase tracking-widest text-sm shadow-xl active:scale-95 transition-all flex items-center justify-center"
-            onclick="openCalFromModal('service-modal')">
+            onclick="openContactModal()">
       Solicitar análisis
     </button>
   </div>
@@ -1233,25 +1234,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     trapFocus(modal, { autoFocusFirst: true });
   };
 
-  // Cal.com trigger: closes any open modal first, then clicks the hidden
-  // data-cal-link button — the only reliable way to open Cal.com embed.
-  window.openCalFromModal = function(modalId) {
-    if (modalId) {
-      const modal = document.getElementById(modalId);
-      if (modal) {
-        releaseFocus(modal, null);
-        modal.classList.add('hidden');
-        document.body.classList.remove('modal-open');
-      }
-    }
-    // Wait for repaint before triggering Cal.com
-    requestAnimationFrame(() => {
-      setTimeout(() => {
-        const trigger = document.getElementById('cal-hidden-trigger');
-        if (trigger) trigger.click();
-      }, 50);
-    });
-  };
+
 
   const setInteractive = (root, active) => {
     if (!root) return;
@@ -1388,14 +1371,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }());
 </script>
 
-<!-- Cal element-click embed code begins --> 
-<script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
-  Cal.ns["hoja-de-ruta"]("preload", {calLink:"aripa/hoja-de-ruta"});
-  Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view","useSlotsViewOnSmallScreen":true});
-</script>
-<!-- Cal element-click embed code ends -->
+<!-- Cal integration removed for MVP -->
 
 <!-- Clarity -->
 <script type="text/javascript">
