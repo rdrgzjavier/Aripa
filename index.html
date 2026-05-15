@@ -1589,8 +1589,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             btnContainer.querySelectorAll('.cm-btn').forEach(btn => {
               btn.style.setProperty('width', '100%', 'important');
               btn.style.setProperty('margin', '2px 0', 'important');
-              btn.style.setProperty('padding', '8px', 'important');
-              btn.style.setProperty('font-size', '14px', 'important');
+              btn.style.setProperty('padding', '14px 20px', 'important');
+              btn.style.setProperty('font-size', '16px', 'important');
+              btn.style.setProperty('font-weight', '600', 'important');
               
               const txt = btn.innerText;
               if (txt.includes('Descartar')) btn.innerText = 'Rechazar';
