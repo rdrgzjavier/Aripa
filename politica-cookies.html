@@ -61,8 +61,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "logo": "https://aripa.es/assets/aripa-logo.png",
   "founder": {
     "@type": "Person",
-    "name": "Javier Rodriguez de la Orden"
-  }
+    "name": "Javier Rodriguez de la Orden",
+    "jobTitle": "Fundador",
+    "url": "https://aripa.es/",
+    "sameAs": ["https://www.linkedin.com/in/jro1"]
+  },
+  "sameAs": ["https://www.linkedin.com/company/aripa/"]
 }
 </script>
 
@@ -161,6 +165,45 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     font-weight: 800;
     margin-bottom: 1rem;
     text-shadow: 0 2px 24px rgba(0,0,0,0.2);
+  }
+
+  /* Legal Prose Styling */
+  .legal-prose h2 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 1.5rem;
+    color: #061542;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+  }
+  .legal-prose p {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(6, 21, 66, 0.8);
+    margin-bottom: 1.25rem;
+  }
+  .legal-prose ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+  }
+  .legal-prose li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.75rem;
+    color: rgba(6, 21, 66, 0.8);
+  }
+  .legal-prose li::before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: #6b38fb;
+    font-weight: bold;
+  }
+  .legal-prose strong {
+    color: #061542;
+    font-weight: 700;
   }
 
   /* --- Modal System (From Index) --- */
