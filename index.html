@@ -638,7 +638,7 @@ body { font-family: 'Inter', sans-serif; }
   #klaro .klaro .cookie-notice .cn-ok {
     display: flex !important;
     flex-direction: column !important;
-    gap: 16px !important;
+    gap: 12px !important;
     width: 100% !important;
     align-items: center !important;
   }
@@ -654,9 +654,9 @@ body { font-family: 'Inter', sans-serif; }
       text-align: left !important;
     }
     #klaro .klaro .cookie-notice .cn-ok {
-      flex-direction: row !important; /* Fixed order */
+      flex-direction: row !important;
       width: auto !important;
-      gap: 24px !important;
+      gap: 20px !important;
     }
   }
   #klaro .klaro .cookie-notice p {
@@ -668,7 +668,7 @@ body { font-family: 'Inter', sans-serif; }
   }
   /* Buttons Styling */
   #klaro .klaro .cm-btn {
-    border-radius: 12px !important;
+    border-radius: 16px !important;
     font-weight: 700 !important;
     padding: 14px 32px !important;
     border: none !important;
@@ -683,7 +683,7 @@ body { font-family: 'Inter', sans-serif; }
   #klaro .klaro .cm-btn-success {
     background-color: #6b38fb !important;
     color: #ffffff !important;
-    order: 3 !important; /* Far right in desktop */
+    order: 3 !important;
   }
   #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-second, #klaro .klaro .cm-btn-decline {
     background-color: #f3f4f6 !important;
@@ -696,13 +696,14 @@ body { font-family: 'Inter', sans-serif; }
     font-weight: 700 !important;
     text-decoration: none !important;
     font-size: 0.95rem !important;
-    padding: 14px 0 !important;
+    padding: 12px 0 !important;
     background: none !important;
     width: 100% !important;
     display: inline-block !important;
     text-align: center !important;
     order: 1 !important;
     border: none !important;
+    margin: 0 !important;
   }
   @media (min-width: 1024px) {
     #klaro .klaro .cm-link { 
@@ -710,21 +711,20 @@ body { font-family: 'Inter', sans-serif; }
       padding: 0 !important;
     }
   }
-  #klaro .klaro .cm-link:hover {
-    text-decoration: none !important;
-    color: #6b38fb !important;
-  }
 
   /* Capa 2 - Modal Styling (Forced Light Mode) */
   #klaro .klaro .cm-modal {
     z-index: 999999999 !important;
   }
   #klaro .klaro .cm-modal .cm-panel {
-    border-radius: 20px !important;
+    border-radius: 16px !important;
     background-color: #ffffff !important;
     color: #061542 !important;
     max-height: 85vh !important;
     overflow-y: auto !important;
+    width: 92% !important;
+    max-width: 550px !important;
+    margin: 0 auto !important;
   }
   #klaro .klaro .cm-modal .cm-header {
     border-bottom: 1px solid #f3f4f6 !important;
@@ -742,6 +742,14 @@ body { font-family: 'Inter', sans-serif; }
   #klaro .klaro .cm-modal .cm-body {
     padding: 24px !important;
     background: #fff !important;
+  }
+  /* Force text colors in Modal */
+  #klaro .klaro .cm-modal p, 
+  #klaro .klaro .cm-modal .cm-app-description, 
+  #klaro .klaro .cm-modal .cm-app-title,
+  #klaro .klaro .cm-modal .cm-list-description {
+    color: #061542 !important;
+    opacity: 1 !important;
   }
   #klaro .klaro .cm-modal .cm-list-label .cm-switch .slider {
     background-color: #6b38fb !important;
