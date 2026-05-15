@@ -1089,12 +1089,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- SUCCESS MODAL -->
 <div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true">
   <div class="modal-panel p-10 md:p-16 text-center">
-    <div class="w-20 h-20 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-8">
-      <span class="material-symbols-outlined text-secondary text-5xl">check_circle</span>
+    <div class="h-[56px] md:h-[64px] bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 w-full max-w-[200px]">
+      <span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
     </div>
     <h2 class="text-3xl font-extrabold font-headline text-primary mb-4">¡Recibido!</h2>
-    <p class="text-on-surface-variant text-lg leading-relaxed mb-10">
-      Hemos recibido tu solicitud. Un consultor senior revisará tu caso y te contactará en menos de 24 horas.
+    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
+      Hemos recibido tu solicitud. Un consultor senior revisará tu caso y te contactará en menos de 24 horas. <br class="hidden md:block"> 
+      <span class="font-bold text-secondary">Revisa tu bandeja de entrada (y la carpeta de spam por si acaso).</span>
     </p>
     <button type="button" class="btn-submit !w-auto px-12" onclick="closeModal('success-modal')">
       ENTENDIDO
