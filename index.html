@@ -618,7 +618,21 @@ body { font-family: 'Inter', sans-serif; }
       flex-direction: row !important;
       align-items: center !important;
       justify-content: space-between !important;
+      gap: 40px !important;
     }
+    #klaro .klaro .cookie-notice .cn-ok {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      gap: 16px !important;
+      width: auto !important;
+      padding: 0 !important;
+    }
+    #klaro .klaro .cookie-notice .cm-link {
+      margin: 0 !important;
+      white-space: nowrap !important;
+    }
+  }
     #klaro .klaro .cookie-notice .cn-body p {
       margin-bottom: 0 !important;
       max-width: 55% !important;
@@ -1558,19 +1572,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     })(window, document, "clarity", "script", "wd9btxwafk");
 </script>
   
-  <!-- Secure Capa 1 Text Enforcement (Single Pass) -->
+  <!-- High-Priority Universal Text Enforcement -->
   <script type="text/javascript">
     (function() {
       const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
-      const updateText = () => {
-        const p = document.querySelector('#id-cookie-notice p');
-        if (p && p.innerText !== targetText) {
-          p.innerText = targetText;
-          // After a few attempts or successful change, we could stop, 
-          // but a simple 1s check is safer and zero-cost.
-        }
+      const enforceText = () => {
+        const paragraphs = document.querySelectorAll('#klaro p, #id-cookie-notice p');
+        paragraphs.forEach(p => {
+          if (p.innerText.includes('¿Podríamos habilitar') || p.innerText.includes('Hola!')) {
+            p.innerText = targetText;
+          }
+        });
       };
-      setInterval(updateText, 1000);
+      const observer = new MutationObserver(enforceText);
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      setInterval(enforceText, 500);
     })();
   </script>
 </body>
