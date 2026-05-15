@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html class="scroll-smooth" lang="es">
 <head>
 <link rel="preconnect" href="https://app.cal.com"/>
@@ -17,25 +17,25 @@
 <link rel="stylesheet" href="./style.css">
 
 <style>
-  :root {
-    --color-primary:               220 80% 14%;
-    --color-primary-container:     225 51% 23%;
-    --color-secondary:             265 47% 51%;
-    --color-secondary-container:   264 97% 74%;
-    --color-on-primary-container:  224 34% 66%;
-    --color-background:            20  33% 98%;
-    --color-surface:               20  33% 98%;
-  }
-  body { font-family: 'Inter', sans-serif; }
-  .font-brand    { font-family: 'Outfit', sans-serif; }
-  .font-headline { font-family: 'Plus Jakarta Sans', sans-serif; }
-  .hero-gradient { background: linear-gradient(135deg, #061542 0%, #1e2b58 100%); }
   .glass-header { background-color: rgba(6,21,66,0.8); backdrop-filter: blur(12px); }
   .btn-after {
     background: linear-gradient(180deg, #8b5cf6 0%, #6c45c0 100%);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 16px -4px rgba(108,69,192,0.5);
     border: 1px solid rgba(139,92,246,0.5);
   }
+
+  #sticky-bottom-bar {
+    transform: translateY(100%);
+    transition: transform 300ms cubic-bezier(0.4,0,0.2,1);
+  }
+  #sticky-bottom-bar.visible { transform: translateY(0); }
+
+  #mobile-bottom-nav {
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .scrolled #mobile-bottom-nav { transform: translateY(0); }
 </style>
 </head>
 <body class="bg-background text-on-background">
@@ -87,7 +87,7 @@
 
     <div class="flex items-center justify-end gap-6 w-[32%]">
       <!-- Desktop CTA button (hidden on mobile) -->
-      <button class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl hover:scale-105 transition-transform active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
+      <button class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
         <span class="material-symbols-outlined">mail</span>
         Tengo una duda
       </button>
@@ -211,118 +211,178 @@
     </button>
   </div>
 </div>
-<script>
-(function () {
-  const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
-  const setInteractive = (root, active) => {
-    if (!root) return;
-    root.classList.toggle('invisible', !active);
-    root.setAttribute('aria-hidden', active ? 'false' : 'true');
-    root.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', active ? '0' : '-1'));
-  };
+  <script>
+    (function () {
+      const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
+      const setInteractive = (root, active) => {
+        if (!root) return;
+        root.classList.toggle('invisible', !active);
+        root.setAttribute('aria-hidden', active ? 'false' : 'true');
+        root.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', active ? '0' : '-1'));
+      };
 
-  if (!window.toggleDrawer) {
-    window.toggleDrawer = function () {
-      const drawer = document.getElementById('drawer');
-      const overlay = document.getElementById('drawer-overlay');
-      const content = document.getElementById('drawer-content');
-      const hamburger = document.getElementById('hamburger-btn');
-      if (!drawer || !overlay || !content) return;
-      const isHidden = drawer.classList.contains('invisible');
-      if (isHidden) {
-        drawer.classList.remove('invisible');
+      window.toggleDrawer = function () {
+        const drawer = document.getElementById('drawer');
+        const overlay = document.getElementById('drawer-overlay');
+        const content = document.getElementById('drawer-content');
+        const hamburger = document.getElementById('hamburger-btn');
+        if (!drawer || !overlay || !content) return;
+        const isHidden = drawer.classList.contains('invisible');
+        if (isHidden) {
+          drawer.classList.remove('invisible');
+          document.body.classList.add('modal-open');
+          hamburger?.setAttribute('aria-expanded', 'true');
+          requestAnimationFrame(() => {
+            overlay.classList.add('opacity-100');
+            content.classList.remove('translate-x-full');
+          });
+        } else {
+          overlay.classList.remove('opacity-100');
+          content.classList.add('translate-x-full');
+          document.body.classList.remove('modal-open');
+          hamburger?.setAttribute('aria-expanded', 'false');
+          setTimeout(() => drawer.classList.add('invisible'), 300);
+        }
+      };
+
+      window.openContactModal = function () {
+        const modal = document.getElementById('contact-modal');
+        if (!modal) return;
+        modal.classList.remove('hidden');
         document.body.classList.add('modal-open');
-        hamburger?.setAttribute('aria-expanded', 'true');
-        requestAnimationFrame(() => {
-          overlay.classList.add('opacity-100');
-          content.classList.remove('translate-x-full');
-        });
-      } else {
-        overlay.classList.remove('opacity-100');
-        content.classList.add('translate-x-full');
+      };
+
+      window.closeModal = function(id) {
+        const modal = document.getElementById(id);
+        if (!modal) return;
+        modal.classList.add('hidden');
         document.body.classList.remove('modal-open');
-        hamburger?.setAttribute('aria-expanded', 'false');
-        setTimeout(() => drawer.classList.add('invisible'), 300);
-      }
-    };
-    document.getElementById('drawer-overlay')?.addEventListener('click', window.toggleDrawer);
-  }
+      };
 
-  if (!window.openContactModal) {
-    window.openContactModal = function () {
-      const modal = document.getElementById('contact-modal');
-      if (!modal) {
-        window.location.href = 'index.html#contact-modal';
-        return;
-      }
-      modal.classList.remove('hidden');
-      document.body.classList.add('modal-open');
-      const first = modal.querySelector(FOCUSABLE);
-      first?.focus();
-    };
-  }
+      const updateShellUI = () => {
+        const header = document.getElementById('site-header');
+        const stickyBar = document.getElementById('sticky-bottom-bar');
+        const mobileNav = document.getElementById('mobile-bottom-nav');
+        const hero = document.getElementById('hero-section');
+        const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 220;
+        header?.classList.toggle('is-sticky', window.scrollY > 20);
+        document.body.classList.toggle('scrolled', window.scrollY > 150);
+        setInteractive(stickyBar, window.innerWidth >= 768 && window.scrollY > heroBottom - 200);
+        setInteractive(mobileNav, window.innerWidth < 768 && window.scrollY > 150);
+      };
+      window.addEventListener('scroll', updateShellUI, { passive: true });
+      window.addEventListener('resize', updateShellUI);
+      updateShellUI();
 
-  const updateShellUI = () => {
-    const header = document.getElementById('site-header');
-    const stickyBar = document.getElementById('sticky-bottom-bar');
-    const mobileNav = document.getElementById('mobile-bottom-nav');
-    const hero = document.getElementById('hero-section') || document.querySelector('main section');
-    const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 220;
-    const pastHero = window.scrollY > heroBottom - 200;
-    header?.classList.toggle('is-sticky', window.scrollY > 20);
-    document.body.classList.toggle('scrolled', window.scrollY > 150);
-    setInteractive(stickyBar, window.innerWidth >= 768 && pastHero);
-    setInteractive(mobileNav, window.innerWidth < 768 && window.scrollY > 150);
-  };
-  window.addEventListener('scroll', updateShellUI, { passive: true });
-  window.addEventListener('resize', updateShellUI);
-  updateShellUI();
+      // Form Handling
+      window.handleFormSubmit = async (e) => {
+        e.preventDefault();
+        const form = e.target;
+        const submitBtn = form.querySelector('#submit-btn');
+        const originalText = submitBtn.innerText;
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Enviando...';
 
-  if (window.location.hash === '#contact-modal' && document.getElementById('contact-modal')) {
-    setTimeout(() => window.openContactModal(), 100);
-  }
-}());
-</script>
-<script>
-(function () {
-  const CAL_FALLBACK_URL = 'https://cal.com/aripa/hoja-de-ruta?duration=45';
-  const CAL_TRIGGER_SELECTOR = '[data-cal-link="aripa/hoja-de-ruta"]';
-  let fallbackTimer = null;
+        try {
+          const response = await fetch("https://formspree.io/f/maqalopa", {
+            method: 'POST',
+            headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              name: form.querySelector('#c-name').value,
+              phone: form.querySelector('#c-phone').value,
+              email: form.querySelector('#c-email').value,
+              service: form.querySelector('#c-service').value,
+              message: form.querySelector('#c-message').value
+            })
+          });
 
-  document.addEventListener('click', (event) => {
-    const trigger = event.target.closest(CAL_TRIGGER_SELECTOR);
-    if (!trigger) return;
-    window.clearTimeout(fallbackTimer);
-    fallbackTimer = window.setTimeout(() => {
-      const frame = document.querySelector('iframe[src*="app.cal.com"][src*="aripa/hoja-de-ruta"]');
-      if (!frame || frame.dataset.loaded !== 'true') {
-        window.open(CAL_FALLBACK_URL, '_blank', 'noopener,noreferrer');
-      }
-    }, 4500);
-  }, true);
+          if (response.ok) {
+            closeModal('contact-modal');
+            document.getElementById('success-feedback-modal').classList.add('active');
+            form.reset();
+          } else {
+            alert('Error al enviar. Inténtalo de nuevo.');
+          }
+        } catch (err) {
+          alert('Error de conexión.');
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.innerText = originalText;
+        }
+      };
 
-  const observer = new MutationObserver(() => {
-    document.querySelectorAll('iframe[src*="app.cal.com"][src*="aripa/hoja-de-ruta"]').forEach((frame) => {
-      if (frame.dataset.aripaWatched === 'true') return;
-      frame.dataset.aripaWatched = 'true';
-      frame.addEventListener('load', () => {
-        frame.dataset.loaded = 'true';
-        window.clearTimeout(fallbackTimer);
-      }, { once: true });
-    });
-  });
-  observer.observe(document.documentElement, { childList: true, subtree: true });
-}());
-</script>
-<!-- Cal element-click embed code begins -->
-<script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
-  Cal.ns["hoja-de-ruta"]("preload", {calLink:"aripa/hoja-de-ruta"});
+      window.closeSuccessModal = () => {
+        document.getElementById('success-feedback-modal').classList.remove('active');
+      };
+    }());
+  </script>
 
-  Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view","useSlotsViewOnSmallScreen":true});
-</script>
-<!-- Cal element-click embed code ends -->
+  <!-- Cal element-click embed code begins -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
+    Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view","useSlotsViewOnSmallScreen":true});
+  </script>
+
+  <!-- Success Modal -->
+  <div id="success-feedback-modal" class="success-modal">
+    <div class="success-modal-content">
+        <div class="success-icon">
+            <span class="material-symbols-outlined" style="font-size: 32px;">check</span>
+        </div>
+        <h3 class="success-title">Gracias</h3>
+        <p class="success-desc">Hemos recibido tu mensaje. Te contactaremos pronto.</p>
+        <button class="btn-close-success" onclick="closeSuccessModal()">Cerrar</button>
+    </div>
+  </div>
+
+  <!-- Contact Modal -->
+  <div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] flex items-center justify-center p-6 hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="modal-panel bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+      <div class="mb-6 md:mb-8">
+        <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-2" id="contact-modal-title">Hablemos</h4>
+        <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
+      </div>
+      <form class="space-y-4 md:space-y-6" id="contact-form" onsubmit="handleFormSubmit(event)">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-name">Nombre *</label>
+            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
+                   id="c-name" placeholder="Tu nombre" required type="text"/>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-phone">Teléfono *</label>
+            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
+                   id="c-phone" placeholder="+34 000 000 000" required type="tel"/>
+          </div>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-email">Email Corporativo *</label>
+          <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
+                 id="c-email" placeholder="email@empresa.com" required type="email"/>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-service">Servicio de interés</label>
+          <select class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 appearance-none" id="c-service">
+            <option value="general">Consulta general</option>
+          </select>
+        </div>
+        <div>
+          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-message">Mensaje</label>
+          <textarea class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 min-h-[100px] transition-all"
+                    id="c-message" placeholder="¿Cómo podemos ayudarte?"></textarea>
+        </div>
+        <button class="w-full py-4 btn-after text-white font-bold rounded-xl active:scale-95 transition-all" id="submit-btn" type="submit">
+          Enviar Solicitud
+        </button>
+      </form>
+      <button class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors"
+              onclick="closeModal('contact-modal')">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </div>
+  </div>
+
 </body>
 </html>
 

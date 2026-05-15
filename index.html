@@ -1,4 +1,3 @@
-<!-- v1.0.2 - Form Fix -->
 <!DOCTYPE html>
 <html class="scroll-smooth" lang="es">
 <head>
@@ -115,58 +114,41 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="./style.css">
 
 <style>
-  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     DESIGN TOKENS â€” HSL CSS Custom Properties
-     Single source of truth for all colours
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   :root {
-    /* Brand palette */
-    --color-primary:               220 80% 14%;   /* #061542 */
-    --color-primary-container:     225 51% 23%;   /* #1e2b58 */
-    --color-secondary:             265 47% 51%;   /* #6c45c0 */
-    --color-secondary-container:   264 97% 74%;   /* #a67ffd */
-    --color-on-primary-container:  224 34% 66%;   /* #8793c7 */
-    /* Surface palette */
-    --color-background:            20  33% 98%;   /* #fcf9f8 */
-    --color-surface:               20  33% 98%;   /* #fcf9f8 */
-    --color-surface-container-low: 24  20% 95%;   /* #f6f3f2 */
-    --color-on-background:         180  2% 11%;   /* #1b1c1c */
-    --color-on-surface:            180  2% 11%;   /* #1b1c1c */
-    --color-on-surface-variant:    234  5% 29%;   /* #45464f */
-    --color-outline-variant:       246  9% 80%;   /* #c6c5d0 */
-    /* WhatsApp green */
-    --color-wa-light:              145 63% 49%;   /* #25D366 */
-    --color-wa-dark:               170 79% 31%;   /* #128C7E */
-    /* Timing tokens */
+    --color-primary:               220 80% 14%;
+    --color-primary-container:     225 51% 23%;
+    --color-secondary:             265 47% 51%;
+    --color-secondary-container:   264 97% 74%;
+    --color-on-primary-container:  224 34% 66%;
+    --color-background:            20  33% 98%;
+    --color-surface:               20  33% 98%;
+    --color-surface-container-low: 24  20% 95%;
+    --color-on-background:         180  2% 11%;
+    --color-on-surface:            180  2% 11%;
+    --color-on-surface-variant:    234  5% 29%;
+    --color-outline-variant:       246  9% 80%;
+    --color-wa-light:              145 63% 49%;
+    --color-wa-dark:               170 79% 31%;
     --duration-fast:    150ms;
     --duration-base:    300ms;
     --duration-slow:    500ms;
     --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
     --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
   }
-
-  /* â”€â”€ Base â”€â”€ */
 body { font-family: 'Inter', sans-serif; }
 .font-brand { font-family: 'Inter', sans-serif; }
 .font-headline { font-family: 'Inter', sans-serif; }
-  /* Material Symbols variation settings â€” size is now controlled via @layer base in compiled CSS */
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
-
-  /* â”€â”€ Focus visible (global WCAG 2.1 AA) â”€â”€ */
   :focus-visible {
     outline: 2px solid #6c45c0;
     outline-offset: 3px;
     border-radius: 4px;
   }
-  
-  /* Force visibility on focus for any hidden/animated element */
   :focus-within {
     opacity: 1 !important;
     visibility: visible !important;
     transform: translateY(0) !important;
   }
-
-  /* â”€â”€ Skip navigation (accessibility) â”€â”€ */
   .skip-nav {
     position: absolute;
     top: -100%;
@@ -181,8 +163,6 @@ body { font-family: 'Inter', sans-serif; }
     transition: top 150ms;
   }
   .skip-nav:focus { top: 0; }
-
-  /* â”€â”€ Gradients & Buttons â”€â”€ */
   .hero-gradient {
     background: linear-gradient(135deg, #061542 0%, #1e2b58 100%);
   }
@@ -192,42 +172,12 @@ body { font-family: 'Inter', sans-serif; }
                 0 8px 16px -4px rgba(108,69,192,0.5);
     border: 1px solid rgba(139,92,246,0.5);
   }
-  .btn-lavender {
-    background: rgba(167, 139, 250, 0.05);
-    border: 1px solid rgba(167, 139, 250, 0.3);
-    color: #cbd5e1 !important; /* Muted text to start */
-    text-transform: none !important;
-    letter-spacing: 0.01em !important;
-    border-radius: 12px !important;
-    font-weight: 600 !important;
-    padding: 10px 22px !important;
-    backdrop-filter: blur(4px);
-  }
-  .btn-lavender:hover {
-    transform: scale(1.05);
-    background: rgba(167, 139, 250, 0.15);
-    border-color: rgba(167, 139, 250, 0.6);
-    color: white !important;
-    box-shadow: 0 8px 20px -4px rgba(167, 139, 250, 0.2);
-  }
-  .btn-lavender .material-symbols-outlined {
-    color: inherit;
-    font-size: 1.1rem;
-    vertical-align: middle;
-    margin-bottom: 1px;
-  }
   .btn-before-glossy {
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(108,69,192,0.4);
     box-shadow: inset 0 1px 1px rgba(255,255,255,0.1);
   }
-  .glass-header {
-    background-color: rgba(6,21,66,0.8);
-    backdrop-filter: blur(12px);
-  }
-
-  /* â”€â”€ Header behavior (top -> sticky) â”€â”€ */
   #site-header {
     position: fixed;
     top: 0;
@@ -256,8 +206,6 @@ body { font-family: 'Inter', sans-serif; }
   #site-header.is-sticky .header-inner {
     height: 3.9rem;
   }
-
-  /* â”€â”€ CTA system (typography + icon consistency) â”€â”€ */
   .cta-core {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -275,8 +223,6 @@ body { font-family: 'Inter', sans-serif; }
     #site-header .header-inner { height: 5rem; }
     #site-header.is-sticky .header-inner { height: 4.35rem; }
   }
-
-  /* â”€â”€ WhatsApp â”€â”€ */
   .whatsapp-bubble {
     background: linear-gradient(45deg, #25D366, #128C7E);
     box-shadow: 0 4px 12px rgba(18,140,126,0.3);
@@ -294,8 +240,6 @@ body { font-family: 'Inter', sans-serif; }
                 0 8px 16px -4px rgba(18,140,126,0.5);
     border: 1px solid rgba(46,204,113,0.5);
   }
-
-  /* â”€â”€ Pulse glow (WhatsApp floating) â”€â”€ */
   @keyframes pulse-glow {
     0%, 100% {
       box-shadow: 0 0 0 0 rgba(37,211,102,0.5),
@@ -309,8 +253,6 @@ body { font-family: 'Inter', sans-serif; }
     }
   }
   .whatsapp-floating { animation: pulse-glow 2.5s ease-in-out infinite; }
-
-  /* â”€â”€ Hero entrance animations â”€â”€ */
   @keyframes hero-fade-up {
     from { opacity: 0; transform: translateY(40px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -319,23 +261,15 @@ body { font-family: 'Inter', sans-serif; }
   .hero-animate-2 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.25s both; }
   .hero-animate-3 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.4s both; }
   .hero-animate-4 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
-
-  /* â”€â”€ Smooth transitions â”€â”€ */
   a, button { transition-property: color, background-color, border-color, box-shadow, opacity, transform;
               transition-duration: 300ms;
               transition-timing-function: cubic-bezier(0.16,1,0.3,1); }
-
-  /* â”€â”€ Mobile WhatsApp hides on scroll â”€â”€ */
   .scrolled #floating-whatsapp-mobile { opacity: 0; visibility: hidden; transform: translateY(20px); }
-
-  /* â”€â”€ Sticky bottom bar (desktop) â”€â”€ */
   #sticky-bottom-bar {
     transform: translateY(100%);
     transition: transform var(--duration-base) cubic-bezier(0.4,0,0.2,1);
   }
   #sticky-bottom-bar.visible { transform: translateY(0); }
-
-  /* â”€â”€ Mobile bottom nav â”€â”€ */
   #mobile-bottom-nav {
     position: fixed;
     left: 0;
@@ -374,8 +308,6 @@ body { font-family: 'Inter', sans-serif; }
   #mobile-bottom-nav .btn-after .material-symbols-outlined {
     color: #5e3ab3;
   }
-
-  /* â”€â”€ Drawer â”€â”€ */
   .drawer-transition { transition: transform var(--duration-base) ease-in-out; }
   #drawer-overlay {
     background: linear-gradient(180deg, rgba(2, 6, 25, 0.48) 0%, rgba(2, 6, 25, 0.74) 100%);
@@ -398,10 +330,7 @@ body { font-family: 'Inter', sans-serif; }
     background: rgba(255,255,255,0.06);
     border-color: rgba(255,255,255,0.1);
   }
-
   body.modal-open { overflow: hidden; }
-
-  /* â”€â”€ Mobile contact modal stability â”€â”€ */
   #contact-modal .modal-panel {
     width: min(100%, 40rem);
     max-width: 100%;
@@ -426,7 +355,6 @@ body { font-family: 'Inter', sans-serif; }
       overflow-y: auto;
       overflow-x: hidden;
     }
-    /* Evita zoom automático en iOS/Chrome móvil al enfocar campos */
     #contact-modal input,
     #contact-modal select,
     #contact-modal textarea {
@@ -434,13 +362,6 @@ body { font-family: 'Inter', sans-serif; }
       max-width: 100%;
     }
   }
-
-  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     SCROLL REVEAL â€” patrón seguro
-     Por defecto los elementos son VISIBLES.
-     Solo cuando JS carga y el Observer funciona
-     se animan. Si algo falla â†’ siguen visibles.
-  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   .reveal-ready {
     transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1),
                 transform 0.6s cubic-bezier(0.16,1,0.3,1);
@@ -453,14 +374,11 @@ body { font-family: 'Inter', sans-serif; }
     opacity: 1;
     transform: translateY(0);
   }
-  /* Stagger delays */
   .reveal-ready[data-delay="1"] { transition-delay: 80ms; }
   .reveal-ready[data-delay="2"] { transition-delay: 160ms; }
   .reveal-ready[data-delay="3"] { transition-delay: 240ms; }
   .reveal-ready[data-delay="4"] { transition-delay: 320ms; }
   .reveal-ready[data-delay="5"] { transition-delay: 400ms; }
-
-  /* â”€â”€ Hero v6 style (scoped) â”€â”€ */
   #hero-section.hero-v6 {
     position: relative;
     min-height: 85svh;
@@ -521,7 +439,7 @@ body { font-family: 'Inter', sans-serif; }
     white-space: nowrap;
   }
   #hero-section .av6-title {
-    font-size: clamp(2rem, 5vw, 3.5rem); /* 56px approx at max */
+    font-size: clamp(2rem, 5vw, 3.5rem);
     line-height: 1.15;
     letter-spacing: -0.02em;
     font-weight: 800;
@@ -601,7 +519,6 @@ body { font-family: 'Inter', sans-serif; }
       justify-content: center;
     }
   }
-    /* Success Modal (Standardized) */
     .success-modal {
         position: fixed;
         top: 0; left: 0; width: 100%; height: 100%;
@@ -663,9 +580,8 @@ body { font-family: 'Inter', sans-serif; }
     }
     .btn-close-success:hover { transform: scale(1.02); background: #f0f0f0; }
 
-    /* Fix Mobile Zoom & Modal Stability */
     .modal-panel input, .modal-panel select, .modal-panel textarea {
-        font-size: 16px !important; /* Evita auto-zoom en iOS */
+        font-size: 16px !important;
     }
 </style>
 
@@ -678,9 +594,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Skip navigation â€“ accessibility -->
 <a class="skip-nav" href="#main-content">Saltar al contenido principal</a>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     MOBILE DRAWER (hidden on md+)
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- MOBILE DRAWER (hidden on md+) -->
 <div class="fixed inset-0 z-[70] invisible md:hidden" id="drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
   <div class="absolute inset-0 opacity-0 transition-opacity duration-300" id="drawer-overlay"></div>
   <nav class="absolute right-0 top-0 h-full w-4/5 max-w-sm drawer-transition translate-x-full p-8 flex flex-col shadow-2xl outline-none" id="drawer-content">
@@ -712,9 +626,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </nav>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     HEADER
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- HEADER -->
 <header id="site-header" aria-label="Cabecera principal">
   <div class="header-inner relative flex justify-between items-center px-6 md:px-12 max-w-[1440px] mx-auto">
     <!-- Logo: Centered on mobile, aligned on md+ -->
@@ -730,7 +642,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="flex items-center justify-end gap-6 w-[32%]">
       <!-- Desktop CTA button (hidden on mobile) -->
-      <button class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl hover:scale-105 transition-transform active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
+      <button class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
         <span class="material-symbols-outlined">mail</span>
         Tengo una duda
       </button>
@@ -743,12 +655,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </header>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     MAIN
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- MAIN -->
 <main id="main-content" tabindex="-1" class="focus:outline-none">
 
-  <!-- â”€â”€ Hero (evolución v6) â”€â”€ -->
+  <!-- Hero (evolución v6) -->
   <section class="hero-v6 text-white" id="hero-section">
     <canvas class="av6-canvas" id="hero-gradient-canvas" aria-hidden="true"></canvas>
     <div class="av6-grain" aria-hidden="true"></div>
@@ -763,7 +673,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <h1 class="av6-title hero-animate-2">
-        <span class="sr-only">Aripa | Consultoría de Crecimiento Digital</span>
+        <span class="sr-only">Aripa | ConsultorÃ­a de Crecimiento Digital</span>
         Detectamos por qué tu negocio digital no convierte.
       </h1>
 
@@ -786,7 +696,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- â”€â”€ Problem Module (New) â”€â”€ -->
+  <!-- Problem Module (New) -->
   <section class="py-24 md:py-32 bg-white border-b border-secondary/5" id="problema">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="max-w-5xl mb-16 md:mb-20">
@@ -800,8 +710,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-12">
-        <!-- Fricción 1 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="1" tabindex="0" role="article" aria-label="Fricción 1: Usuarios que abandonan">
+        <!-- FricciÃ³n 1 -->
+        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="1" tabindex="0" role="article" aria-label="FricciÃ³n 1: Usuarios que abandonan">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">person_remove</span>
           </div>
@@ -811,8 +721,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
-        <!-- Fricción 2 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="2" tabindex="0" role="article" aria-label="Fricción 2: Landings que no convierten">
+        <!-- FricciÃ³n 2 -->
+        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="2" tabindex="0" role="article" aria-label="FricciÃ³n 2: Landings que no convierten">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">trending_down</span>
           </div>
@@ -822,19 +732,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
-        <!-- Fricción 3 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="3" tabindex="0" role="article" aria-label="Fricción 3: Funnels con pérdidas">
+        <!-- FricciÃ³n 3 -->
+        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="3" tabindex="0" role="article" aria-label="FricciÃ³n 3: Funnels con pÃ©rdidas">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">filter_alt_off</span>
           </div>
           <div>
-            <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Funnels con pérdidas</h3>
+            <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Funnels con pÃ©rdidas</h3>
             <p class="text-sm md:text-base text-on-surface-variant leading-relaxed md:mt-1">Fugas invisibles de dinero en cada paso de la navegación.</p>
           </div>
         </div>
 
-        <!-- Fricción 4 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="4" tabindex="0" role="article" aria-label="Fricción 4: Mensajes poco claros">
+        <!-- FricciÃ³n 4 -->
+        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="4" tabindex="0" role="article" aria-label="FricciÃ³n 4: Mensajes poco claros">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">visibility_off</span>
           </div>
@@ -844,21 +754,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </div>
         </div>
 
-        <!-- Fricción 5 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="5" tabindex="0" role="article" aria-label="Fricción 5: Decisiones por intuición">
+        <!-- FricciÃ³n 5 -->
+        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="5" tabindex="0" role="article" aria-label="FricciÃ³n 5: Decisiones por intuiciÃ³n">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">psychology</span>
           </div>
           <div>
-            <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Decisiones por intuición</h3>
-            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed md:mt-1">Cambios basados en \"me gusta\" en lugar de datos de comportamiento.</p>
+            <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Decisiones por intuiciÃ³n</h3>
+            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed md:mt-1">Cambios basados en "me gusta" en lugar de datos de comportamiento.</p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- â”€â”€ Services â”€â”€ -->
+  <!-- Services -->
   <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios">
     <div class="mb-16 md:mb-20">
       <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Soluciones Estratégicas</p>
@@ -867,7 +777,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
 
-      <!-- 1. Conversión & CRO -->
+      <!-- 1. ConversiÃ³n & CRO -->
       <button type="button"
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
            onclick="openServiceModal('conversion')"
@@ -876,7 +786,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">query_stats</span>
         </div>
         <div class="flex flex-col h-full">
-          <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">Conversión & CRO</h3>
+          <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">ConversiÃ³n & CRO</h3>
           <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base mb-8">Auditorías profundas de conversión, optimización de funnels y landing pages de alto impacto mediante experimentación continua.</p>
           
           <div class="mt-auto">
@@ -907,7 +817,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </button>
 
-      <!-- 3. Growth Estratégico -->
+      <!-- 3. Growth EstratÃ©gico -->
       <button type="button"
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
            onclick="openServiceModal('growth')"
@@ -916,7 +826,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">rocket_launch</span>
         </div>
         <div class="flex flex-col h-full">
-          <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">Growth Estratégico</h3>
+          <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">Growth EstratÃ©gico</h3>
           <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base mb-8">Adquisición multicanal y SEO/GEO de nueva generación. Optimizamos tu presencia digital con automatizaciones realmente útiles.</p>
           
           <div class="mt-auto">
@@ -930,15 +840,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- â”€â”€ Methodology â”€â”€ -->
+  <!-- Methodology -->
   <section class="py-24 md:py-32 bg-surface-container-low" id="metodologia">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">El Método Aripa</p>
       <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-12 md:mb-20">¿Cómo transformamos tu presencia digital?</h2>
 
-      <!-- Mobile: vertical stack | Desktop: 4-col grid -->
       <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-4 md:gap-12">
-        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="01. Auditoría">
+        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="01. AuditorÃ­a">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary md:text-3xl">search</span>
           </div>
@@ -956,7 +865,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="text-sm md:text-base text-on-surface-variant mt-1 leading-relaxed">Definición de KPIs y hoja de ruta táctica centrada en la rentabilidad a corto y largo plazo.</p>
           </div>
         </div>
-        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="03. Ejecución">
+        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="03. EjecuciÃ³n">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary md:text-3xl">bolt</span>
           </div>
@@ -965,7 +874,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="text-sm md:text-base text-on-surface-variant mt-1 leading-relaxed">Implementación ágil de mejoras UX, campañas de captación y optimización técnica continua.</p>
           </div>
         </div>
-        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="04. Optimización">
+        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="04. OptimizaciÃ³n">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
             <span class="material-symbols-outlined text-secondary md:text-3xl">trending_up</span>
           </div>
@@ -978,7 +887,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- —— Casos de Éxito —— -->
+  <!-- Casos de Ã‰xito -->
   <section class="py-16 md:py-24 bg-surface-bright" aria-label="Empresas clientes de aripa">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="max-w-4xl mb-12 md:mb-16">
@@ -988,19 +897,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </h2>
       </div>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center opacity-50 grayscale contrast-125 reveal-ready" data-delay="1">
-        <!-- SHIFTA by Elisava -->
         <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50 focus-within:ring-2 focus-within:ring-secondary/40 outline-none focus-within:opacity-100 focus-within:grayscale-0 transition-all" tabindex="0" role="img" aria-label="Cliente: SHIFTA by Elisava">
           <span class="text-[11px] md:text-xs font-black uppercase tracking-widest text-center leading-tight">SHIFTA<br/><span class="font-normal text-xs">by Elisava</span></span>
         </div>
-        <!-- Auto Solutions -->
         <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50 focus-within:ring-2 focus-within:ring-secondary/40 outline-none focus-within:opacity-100 focus-within:grayscale-0 transition-all" tabindex="0" role="img" aria-label="Cliente: Auto Solutions">
           <span class="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-center leading-tight">Auto<br/>Solutions</span>
         </div>
-        <!-- Hotel Majadahonda -->
         <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50 focus-within:ring-2 focus-within:ring-secondary/40 outline-none focus-within:opacity-100 focus-within:grayscale-0 transition-all" tabindex="0" role="img" aria-label="Cliente: Hotel Majadahonda">
           <img alt="Hotel Majadahonda" class="max-h-10 w-auto object-contain" src="./assets/Logo Hotel Majadahonda.png" width="160" height="40"/>
         </div>
-        <!-- Tenlo -->
         <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white/50 focus-within:ring-2 focus-within:ring-secondary/40 outline-none focus-within:opacity-100 focus-within:grayscale-0 transition-all" tabindex="0" role="img" aria-label="Cliente: Tenlo">
           <img alt="Tenlo" style="max-height: 36px; width: auto; object-fit: contain;" src="./assets/tenlo.png" width="80" height="48"/>
           <span class="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-center leading-tight">TENLO</span>
@@ -1009,7 +914,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- â”€â”€ Diferencial â”€â”€ -->
+  <!-- Diferencial -->
   <section class="py-24 md:py-32 bg-surface-container-low" id="diferencial">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -1031,7 +936,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h3 class="font-extrabold text-primary mb-2 font-headline">Comportamiento</h3>
             <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Analizamos el "porqué" de cada interacción del usuario.</p>
           </div>
-          <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300 focus-within:ring-2 focus-within:ring-secondary/30 outline-none" tabindex="0" role="article" aria-label="Diferencial: Analítica">
+          <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300 focus-within:ring-2 focus-within:ring-secondary/30 outline-none" tabindex="0" role="article" aria-label="Diferencial: AnalÃ­tica">
             <span class="material-symbols-outlined text-secondary mb-4 text-3xl" aria-hidden="true">analytics</span>
             <h3 class="font-extrabold text-primary mb-2 font-headline">Analítica</h3>
             <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Datos accionables que sustentan cada decisión técnica.</p>
@@ -1091,9 +996,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </main>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     FOOTER
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- FOOTER -->
 <footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-64 md:pb-80 px-6 md:px-12 border-t border-white/5">
   <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
     <div class="flex items-center gap-3">
@@ -1120,9 +1023,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     MOBILE BOTTOM NAV (hidden on md+)
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- MOBILE BOTTOM NAV (hidden on md+) -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden invisible"
      id="mobile-bottom-nav"
      aria-hidden="true"
@@ -1133,9 +1034,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </button>
 </nav>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     DESKTOP STICKY BOTTOM BAR (hidden on mobile)
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- DESKTOP STICKY BOTTOM BAR (hidden on mobile) -->
 <div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between pointer-events-none invisible"
      id="sticky-bottom-bar"
      aria-hidden="true">
@@ -1153,9 +1052,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     SERVICE MODAL
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- SERVICE MODAL -->
 <div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] flex items-center justify-center p-6 hidden" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
     <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors" onclick="closeModal('service-modal')" aria-label="Cerrar">
@@ -1175,9 +1072,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
-     CONTACT MODAL
-â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
+<!-- CONTACT MODAL -->
 <div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] flex items-center justify-center p-6 hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
   <div class="modal-panel bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
     <div class="mb-6 md:mb-8">
@@ -1244,10 +1139,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <script>
+(function () {
   const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
 
   function trapFocus(containerEl, opts = {}) {
-    const { autoFocusFirst = true } = opts;
     const nodes = [...containerEl.querySelectorAll(FOCUSABLE)];
     if (!nodes.length) return;
     const first = nodes[0], last = nodes[nodes.length - 1];
@@ -1257,12 +1152,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
     };
     containerEl.addEventListener('keydown', containerEl._trapHandler);
-    if (autoFocusFirst) {
-      nodes[0].focus();
-    } else {
-      containerEl.setAttribute('tabindex', '-1');
-      containerEl.focus({ preventScroll: true });
-    }
+    if (opts.autoFocusFirst) nodes[0].focus();
   }
 
   function releaseFocus(containerEl, returnEl) {
@@ -1270,379 +1160,82 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       containerEl.removeEventListener('keydown', containerEl._trapHandler);
       delete containerEl._trapHandler;
     }
-    if (containerEl.hasAttribute('tabindex')) {
-      containerEl.removeAttribute('tabindex');
-    }
-    if (returnEl) returnEl.focus();
+    returnEl?.focus();
   }
 
   let _lastFocusedEl = null;
-  let _lastInputModality = 'keyboard';
-  let _drawerOpenedWithKeyboard = false;
 
-  window.addEventListener('pointerdown', () => {
-    _lastInputModality = 'pointer';
-  }, { passive: true });
-
-  window.addEventListener('keydown', (e) => {
-    if (e.key === 'Tab' || e.key === 'Enter' || e.key === ' ') {
-      _lastInputModality = 'keyboard';
-    }
-  });
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key !== 'Escape') return;
-    if (!document.getElementById('contact-modal').classList.contains('hidden')) {
-      closeModal('contact-modal'); return;
-    }
-    if (!document.getElementById('service-modal').classList.contains('hidden')) {
-      closeModal('service-modal'); return;
-    }
-    if (!document.getElementById('drawer').classList.contains('invisible')) {
-      toggleDrawer();
-    }
-  });
-
-  const services = {
-    conversion: {
-      title: 'Conversión & CRO',
-      desc: 'Analizamos profundamente tus activos digitales para detectar fugas de conversión y rediseñar tus funnels de venta. Optimizamos cada etapa mediante experimentación constante y tests A/B para garantizar que cada visita se traduzca en un resultado medible para tu negocio.'
-    },
-    ux: {
-      title: 'UX & Behavioral Design',
-      desc: 'Eliminamos la fricción digital aplicando principios de economía del comportamiento y diseño centrado en el usuario. Creamos arquitecturas de información claras que guían al usuario hacia la conversión, mejorando la experiencia global y la confianza en tu marca.'
-    },
-    growth: {
-      title: 'Growth Estratégico',
-      desc: 'Impulsamos tu visibilidad en buscadores de nueva generación (GEO) y optimizamos tus canales de adquisición. Implementamos automatizaciones inteligentes que escalan tus operaciones y mejoran el rendimiento digital de forma sostenible y rentable.'
-    }
-  };
-
-  function openServiceModal(id) {
-    _lastFocusedEl = document.activeElement;
-    const s = services[id];
-    document.getElementById('modal-title').innerText = s.title;
-    document.getElementById('modal-desc').innerText  = s.desc;
-    document.getElementById('modal-list').innerHTML = '';
-    const modal = document.getElementById('service-modal');
-    modal.classList.remove('hidden');
-    document.body.classList.add('modal-open');
-    trapFocus(modal);
-  }
-
-  function openContactModal() {
-    _lastFocusedEl = document.activeElement;
-    const modal = document.getElementById('contact-modal');
-    modal.classList.remove('hidden');
-    document.body.classList.add('modal-open');
-    trapFocus(modal);
-  }
-
-  function closeModal(id) {
-    const modal = document.getElementById(id);
-    releaseFocus(modal, _lastFocusedEl);
-    modal.classList.add('hidden');
-    const anyVisible = ['service-modal','contact-modal','drawer'].some(mid => {
-      const el = document.getElementById(mid);
-      return el && !el.classList.contains('hidden') && !el.classList.contains('invisible');
-    });
-    if (!anyVisible) document.body.classList.remove('modal-open');
-  }
-
-  ['service-modal','contact-modal'].forEach(id => {
-    document.getElementById(id).addEventListener('click', e => {
-      if (e.target.id === id) closeModal(id);
-    });
-  });
-
-  const form          = document.getElementById('contact-form');
-  const submitBtn     = document.getElementById('submit-btn');
-  const requiredInputs = form.querySelectorAll('input[required]');
-  const validate = () => {
-    submitBtn.disabled = ![...requiredInputs].every(i => i.value && i.checkValidity());
-  };
-  requiredInputs.forEach(i => i.addEventListener('input', validate));
-  validate();
-
-  function handleFormSubmit(e) {
-    e.preventDefault();
-    const name    = document.getElementById('c-name').value;
-    const phone   = document.getElementById('c-phone').value;
-    const email   = document.getElementById('c-email').value;
-    const service = document.getElementById('c-service').value;
-    const message = document.getElementById('c-message').value;
-    
-    const submitBtn = document.getElementById('submit-btn');
-    const originalText = submitBtn.innerText;
-    submitBtn.disabled = true;
-    submitBtn.innerText = 'Enviando...';
-
-    const FORMSPREE_ENDPOINT = "https://formspree.io/f/maqalopa";
-
-    fetch(FORMSPREE_ENDPOINT, {
-      method: 'POST',
-      headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        name,
-        phone,
-        email,
-        service,
-        message,
-        _replyto: email,
-        _subject: 'Nueva consulta desde aripa.es â€“ ' + name
-      })
-    })
-    .then(response => {
-      return response.json().then(data => ({ ok: response.ok, status: response.status, data }));
-    })
-    .then(({ ok, status, data }) => {
-      submitBtn.disabled = false;
-      submitBtn.innerText = originalText;
-      if (ok) {
-        closeModal('contact-modal');
-        showSuccessModal();
-        e.target.reset();
-        validate();
-      } else {
-        alert('Error al enviar (' + status + '): ' + (data.error || JSON.stringify(data)) + '. Inténtalo de nuevo o escríbenos a hola@aripa.es');
-      }
-    })
-    .catch(err => {
-      submitBtn.disabled = false;
-      submitBtn.innerText = originalText;
-      alert('Error de conexión. Comprueba tu internet e inténtalo de nuevo, o escríbenos directamente a hola@aripa.es');
-    });
-  }
-
-  function showSuccessModal() {
-    document.getElementById('success-feedback-modal').classList.add('active');
-  }
-
-  function closeSuccessModal() {
-    document.getElementById('success-feedback-modal').classList.remove('active');
-  }
-
-  const hamburgerBtn = document.getElementById('hamburger-btn');
-
-  function toggleDrawer() {
-    const drawer  = document.getElementById('drawer');
+  window.toggleDrawer = function () {
+    const drawer = document.getElementById('drawer');
     const overlay = document.getElementById('drawer-overlay');
     const content = document.getElementById('drawer-content');
+    const hamburger = document.getElementById('hamburger-btn');
     const isHidden = drawer.classList.contains('invisible');
-
     if (isHidden) {
-      _drawerOpenedWithKeyboard = _lastInputModality === 'keyboard';
+      _lastFocusedEl = document.activeElement;
       drawer.classList.remove('invisible');
       document.body.classList.add('modal-open');
-      if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'true');
+      hamburger?.setAttribute('aria-expanded', 'true');
       requestAnimationFrame(() => {
         overlay.classList.add('opacity-100');
         content.classList.remove('translate-x-full');
       });
-      trapFocus(content, { autoFocusFirst: _drawerOpenedWithKeyboard });
+      trapFocus(content, { autoFocusFirst: true });
     } else {
-      releaseFocus(content, _drawerOpenedWithKeyboard ? hamburgerBtn : null);
+      releaseFocus(content, _lastFocusedEl);
       overlay.classList.remove('opacity-100');
       content.classList.add('translate-x-full');
       document.body.classList.remove('modal-open');
-      if (hamburgerBtn) hamburgerBtn.setAttribute('aria-expanded', 'false');
+      hamburger?.setAttribute('aria-expanded', 'false');
       setTimeout(() => drawer.classList.add('invisible'), 300);
     }
-  }
-  document.getElementById('drawer-overlay').addEventListener('click', toggleDrawer);
-
-  const heroSection = document.getElementById('hero-section');
-  const stickyBar   = document.getElementById('sticky-bottom-bar');
-  const siteHeader  = document.getElementById('site-header');
-
-  const updateScrollUI = () => {
-    const heroBottom = heroSection.offsetTop + heroSection.offsetHeight;
-    const pastHero   = window.scrollY > heroBottom - 200;
-    const stickyHeader = window.scrollY > 20;
-
-    // Desktop Sticky Bar logic
-    if (stickyBar) {
-      if (window.innerWidth >= 768 && pastHero) {
-        stickyBar.classList.add('visible');
-        stickyBar.classList.remove('invisible');
-        stickyBar.setAttribute('aria-hidden', 'false');
-        stickyBar.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', '0'));
-      } else {
-        stickyBar.classList.remove('visible');
-        stickyBar.classList.add('invisible');
-        stickyBar.setAttribute('aria-hidden', 'true');
-        stickyBar.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', '-1'));
-      }
-    }
-
-    // Mobile Nav logic (scrolled class)
-    const mobileNav = document.getElementById('mobile-bottom-nav');
-    if (mobileNav) {
-      if (window.innerWidth < 768 && window.scrollY > 150) {
-        mobileNav.classList.remove('invisible');
-        mobileNav.setAttribute('aria-hidden', 'false');
-        mobileNav.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', '0'));
-      } else {
-        mobileNav.classList.add('invisible');
-        mobileNav.setAttribute('aria-hidden', 'true');
-        mobileNav.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', '-1'));
-      }
-    }
-
-    document.body.classList.toggle('scrolled', window.scrollY > 150);
-    if (siteHeader) siteHeader.classList.toggle('is-sticky', stickyHeader);
   };
 
-  window.addEventListener('scroll', updateScrollUI, { passive: true });
-  window.addEventListener('resize', updateScrollUI);
-  updateScrollUI();
+  window.openContactModal = function () {
+    _lastFocusedEl = document.activeElement;
+    const modal = document.getElementById('contact-modal');
+    if (!modal) return;
+    modal.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+    trapFocus(modal, { autoFocusFirst: true });
+  };
 
-  (function () {
-    const targets = [
-      ...document.querySelectorAll('#servicios > div > h2, #servicios > div > p, #problema h2, #problema p, #diferencial h2, #diferencial p'),
-      ...document.querySelectorAll('#metodologia > div > h2, #metodologia > div > p'),
-      ...document.querySelectorAll('#faq h2, #faq p'),
-      ...document.querySelectorAll('#servicios .group, #problema .group, #diferencial .rounded-2xl'),
-      ...document.querySelectorAll('#metodologia .flex.gap-6'),
-      ...document.querySelectorAll('#faq details'),
-      ...document.querySelectorAll('.py-16 h2, .py-16 .grid > div'),
-    ].filter(el => el && !el.closest('#hero-section'));
+  window.closeModal = function(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    releaseFocus(modal, _lastFocusedEl);
+    modal.classList.add('hidden');
+    document.body.classList.remove('modal-open');
+  };
 
-    if (!targets.length || !('IntersectionObserver' in window)) return;
+  window.showSuccessModal = () => document.getElementById('success-feedback-modal')?.classList.add('active');
+  window.closeSuccessModal = () => document.getElementById('success-feedback-modal')?.classList.remove('active');
 
-    targets.forEach(el => {
-      el.classList.add('reveal-ready');
-      const siblings = el.parentElement
-        ? [...el.parentElement.children].filter(c => c.classList.contains('reveal-ready'))
-        : [];
-      const idx = siblings.indexOf(el);
-      if (idx > 0 && idx <= 5) el.setAttribute('data-delay', idx);
-    });
+  const services = {
+    conversion: { title: 'Conversión & CRO', desc: 'Analizamos profundamente tus activos digitales para detectar fugas de conversión.' },
+    ux: { title: 'UX & Behavioral Design', desc: 'Eliminamos la fricción digital aplicando principios de economía del comportamiento.' },
+    growth: { title: 'Growth Estratégico', desc: 'Impulsamos tu visibilidad en buscadores de nueva generación (GEO).' }
+  };
 
-    requestAnimationFrame(() => {
-      targets.forEach(el => el.classList.add('reveal-hidden'));
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.remove('reveal-hidden');
-            entry.target.classList.add('reveal-visible');
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.1, rootMargin: '0px 0px -32px 0px' });
-      targets.forEach(el => observer.observe(el));
+  window.openServiceModal = function(id) {
+    _lastFocusedEl = document.activeElement;
+    const s = services[id];
+    if (!s) return;
+    const modal = document.getElementById('service-modal');
+    if (!modal) return;
+    document.getElementById('modal-title').innerText = s.title;
+    document.getElementById('modal-desc').innerText = s.desc;
+    modal.classList.remove('hidden');
+    document.body.classList.add('modal-open');
+    trapFocus(modal, { autoFocusFirst: true });
+  };
 
-      // Accessibility: Force visibility on focus
-      document.addEventListener('focusin', (e) => {
-        const revealEl = e.target.closest('.reveal-ready');
-        if (revealEl && revealEl.classList.contains('reveal-hidden')) {
-          revealEl.classList.remove('reveal-hidden');
-          revealEl.classList.add('reveal-visible');
-        }
-      }, true);
-    });
-  }());
-
-  (function () {
-    const canvas = document.getElementById('hero-gradient-canvas');
-    if (!canvas) return;
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const ORBS = [
-      { color: [26, 42, 108], r: 1.06, ax: 0.30, ay: 0.22, px: 0.12, py: 0.16, speed: 0.0000037 },
-      { color: [90, 50, 160], r: 1.00, ax: 0.27, ay: 0.34, px: 0.55, py: 0.22, speed: 0.0000028 },
-      { color: [160, 80, 180], r: 0.96, ax: 0.22, ay: 0.38, px: 0.79, py: 0.58, speed: 0.0000022 },
-      { color: [220, 95, 160], r: 0.90, ax: 0.35, ay: 0.24, px: 0.42, py: 0.76, speed: 0.0000031 }
-    ];
-
-    const resize = () => {
-      const hero = document.getElementById('hero-section');
-      canvas.width = hero ? hero.clientWidth : window.innerWidth;
-      canvas.height = hero ? hero.clientHeight : window.innerHeight;
-    };
-    resize();
-    window.addEventListener('resize', resize);
-
-    const orbPos = (orb, t) => ({
-      x: Math.max(0, Math.min(1, orb.px + orb.ax * Math.sin(t * orb.speed * 1000 + orb.color[0]))) * canvas.width,
-      y: Math.max(0, Math.min(1, orb.py + orb.ay * Math.cos(t * orb.speed * 700 + orb.color[2]))) * canvas.height
-    });
-
-    const draw = (ts) => {
-      const W = canvas.width;
-      const H = canvas.height;
-      ctx.fillStyle = '#0e1240';
-      ctx.fillRect(0, 0, W, H);
-      ctx.globalCompositeOperation = 'screen';
-      for (const orb of ORBS) {
-        const p = orbPos(orb, ts);
-        const r = orb.r * Math.max(W, H);
-        const [cr, cg, cb] = orb.color;
-        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r);
-        g.addColorStop(0, `rgba(${cr},${cg},${cb},0.40)`);
-        g.addColorStop(0.45, `rgba(${cr},${cg},${cb},0.14)`);
-        g.addColorStop(1, `rgba(${cr},${cg},${cb},0)`);
-        ctx.fillStyle = g;
-        ctx.fillRect(0, 0, W, H);
-      }
-      ctx.globalCompositeOperation = 'source-over';
-      requestAnimationFrame(draw);
-    };
-    requestAnimationFrame(draw);
-  }());
-</script>
-
-<script>
-(function () {
-  const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
   const setInteractive = (root, active) => {
     if (!root) return;
     root.classList.toggle('invisible', !active);
     root.setAttribute('aria-hidden', active ? 'false' : 'true');
     root.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', active ? '0' : '-1'));
   };
-
-  if (!window.toggleDrawer) {
-    window.toggleDrawer = function () {
-      const drawer = document.getElementById('drawer');
-      const overlay = document.getElementById('drawer-overlay');
-      const content = document.getElementById('drawer-content');
-      const hamburger = document.getElementById('hamburger-btn');
-      if (!drawer || !overlay || !content) return;
-      const isHidden = drawer.classList.contains('invisible');
-      if (isHidden) {
-        drawer.classList.remove('invisible');
-        document.body.classList.add('modal-open');
-        hamburger?.setAttribute('aria-expanded', 'true');
-        requestAnimationFrame(() => {
-          overlay.classList.add('opacity-100');
-          content.classList.remove('translate-x-full');
-        });
-      } else {
-        overlay.classList.remove('opacity-100');
-        content.classList.add('translate-x-full');
-        document.body.classList.remove('modal-open');
-        hamburger?.setAttribute('aria-expanded', 'false');
-        setTimeout(() => drawer.classList.add('invisible'), 300);
-      }
-    };
-    document.getElementById('drawer-overlay')?.addEventListener('click', window.toggleDrawer);
-  }
-
-  if (!window.openContactModal) {
-    window.openContactModal = function () {
-      const modal = document.getElementById('contact-modal');
-      if (!modal) {
-        window.location.href = 'index.html#contact-modal';
-        return;
-      }
-      modal.classList.remove('hidden');
-      document.body.classList.add('modal-open');
-      const first = modal.querySelector(FOCUSABLE);
-      first?.focus();
-    };
-  }
 
   const updateShellUI = () => {
     const header = document.getElementById('site-header');
@@ -1656,51 +1249,64 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     setInteractive(stickyBar, window.innerWidth >= 768 && pastHero);
     setInteractive(mobileNav, window.innerWidth < 768 && window.scrollY > 150);
   };
+
   window.addEventListener('scroll', updateShellUI, { passive: true });
   window.addEventListener('resize', updateShellUI);
   updateShellUI();
 
-  if (window.location.hash === '#contact-modal' && document.getElementById('contact-modal')) {
+  window.handleFormSubmit = async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const originalText = btn.innerText;
+    btn.disabled = true;
+    btn.innerText = 'Enviando...';
+    
+    try {
+      const response = await fetch("https://formspree.io/f/maqalopa", {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: document.getElementById('c-name').value,
+          phone: document.getElementById('c-phone').value,
+          email: document.getElementById('c-email').value,
+          service: document.getElementById('c-service').value,
+          message: document.getElementById('c-message').value
+        })
+      });
+
+      if (response.ok) {
+        closeModal('contact-modal');
+        showSuccessModal();
+        e.target.reset();
+      } else {
+        alert('Error al enviar. Por favor, inténtalo de nuevo.');
+      }
+    } catch (error) {
+      alert('Error de conexión.');
+    } finally {
+      btn.disabled = false;
+      btn.innerText = originalText;
+    }
+  };
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (!document.getElementById('contact-modal')?.classList.contains('hidden')) closeModal('contact-modal');
+      else if (!document.getElementById('service-modal')?.classList.contains('hidden')) closeModal('service-modal');
+      else if (!document.getElementById('drawer')?.classList.contains('invisible')) toggleDrawer();
+    }
+  });
+
+  if (window.location.hash === '#contact-modal') {
     setTimeout(() => window.openContactModal(), 100);
   }
 }());
 </script>
-<script>
-(function () {
-  const CAL_FALLBACK_URL = 'https://cal.com/aripa/hoja-de-ruta?duration=45';
-  const CAL_TRIGGER_SELECTOR = '[data-cal-link="aripa/hoja-de-ruta"]';
-  let fallbackTimer = null;
 
-  document.addEventListener('click', (event) => {
-    const trigger = event.target.closest(CAL_TRIGGER_SELECTOR);
-    if (!trigger) return;
-    window.clearTimeout(fallbackTimer);
-    fallbackTimer = window.setTimeout(() => {
-      const frame = document.querySelector('iframe[src*="app.cal.com"][src*="aripa/hoja-de-ruta"]');
-      if (!frame || frame.dataset.loaded !== 'true') {
-        window.open(CAL_FALLBACK_URL, '_blank', 'noopener,noreferrer');
-      }
-    }, 4500);
-  }, true);
-
-  const observer = new MutationObserver(() => {
-    document.querySelectorAll('iframe[src*="app.cal.com"][src*="aripa/hoja-de-ruta"]').forEach((frame) => {
-      if (frame.dataset.aripaWatched === 'true') return;
-      frame.dataset.aripaWatched = 'true';
-      frame.addEventListener('load', () => {
-        frame.dataset.loaded = 'true';
-        window.clearTimeout(fallbackTimer);
-      }, { once: true });
-    });
-  });
-  observer.observe(document.documentElement, { childList: true, subtree: true });
-}());
-</script>
 <!-- Cal element-click embed code begins --> 
 <script type="text/javascript">
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
-
+  Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
   Cal.ns["hoja-de-ruta"]("preload", {calLink:"aripa/hoja-de-ruta"});
   Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view","useSlotsViewOnSmallScreen":true});
 </script>
