@@ -1050,7 +1050,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors" onclick="closeModal('service-modal')" aria-label="Cerrar">
       <span class="material-symbols-outlined text-2xl md:text-3xl" aria-hidden="true">close</span>
     </button>
-    <div class="mb-8 md:mb-10">
+        <div class="mb-8 md:mb-10">
       <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-3 md:mb-4" id="modal-title">Detalles del Servicio</h4>
       <p class="text-on-surface-variant text-sm md:text-lg leading-relaxed mb-6 md:mb-8" id="modal-desc"></p>
       <div class="space-y-2 md:space-y-4" id="modal-list"></div>
@@ -1062,54 +1062,54 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- CONTACT MODAL -->
-<div class="modal-overlay hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
-  <div class="modal-panel p-8 md:p-12">
-    <div class="mb-6 md:mb-8">
-      <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-2" id="contact-modal-title">Hablemos</h4>
-      <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
+<!-- STANDALONE CONTACT MODAL (Bypassing CSS conflicts) -->
+<div id="contact-modal" class="hidden" 
+     style="position:fixed; inset:0; z-index:999999; background:rgba(0,0,0,0.85); display:flex; align-items:center; justify-content:center; padding:20px; font-family: sans-serif;">
+  <div style="background:white; width:100%; max-width:540px; padding:32px; border-radius:24px; position:relative; max-height:90vh; overflow-y:auto; box-shadow:0 25px 50px -12px rgba(0,0,0,0.5);">
+    <button style="position:absolute; top:20px; right:20px; border:none; background:none; cursor:pointer; color:#666;" 
+            onclick="closeModal('contact-modal')" aria-label="Cerrar">
+      <span class="material-symbols-outlined" style="font-size:28px;">close</span>
+    </button>
+    
+    <div style="margin-bottom:24px;">
+      <h4 style="font-size:24px; font-weight:800; color:#061542; margin:0 0 8px 0;">Hablemos</h4>
+      <p style="font-size:14px; color:#666; margin:0; line-height:1.5;">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
     </div>
-    <form class="space-y-4 md:space-y-6" id="contact-form" onsubmit="handleFormSubmit(event)">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-        <div>
-          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-name">Nombre *</label>
-          <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
-                 id="c-name" placeholder="Tu nombre" required type="text"
-                 oninput="this.value = this.value.replace(/[0-9]/g, '')"/>
+
+    <form style="display:flex; flex-direction:column; gap:16px;" id="contact-form" onsubmit="handleFormSubmit(event)">
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:16px;">
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <label style="font-size:10px; font-weight:700; text-transform:uppercase; color:#999;" for="c-name">Nombre *</label>
+          <input style="padding:12px; border-radius:12px; border:1px solid #eee; background:#f9f9f9; font-size:14px;" 
+                 id="c-name" placeholder="Tu nombre" required type="text"/>
         </div>
-        <div>
-          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-phone">Teléfono *</label>
-          <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
-                 id="c-phone" placeholder="+34 000 000 000" required type="tel"
-                 oninput="this.value = this.value.replace(/[a-zA-ZáéíóúÁÉÍÓÚñÑ]/g, '')"/>
+        <div style="display:flex; flex-direction:column; gap:4px;">
+          <label style="font-size:10px; font-weight:700; text-transform:uppercase; color:#999;" for="c-phone">Teléfono *</label>
+          <input style="padding:12px; border-radius:12px; border:1px solid #eee; background:#f9f9f9; font-size:14px;" 
+                 id="c-phone" placeholder="+34 000" required type="tel"/>
         </div>
       </div>
-      <div>
-        <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-email">Email Corporativo *</label>
-        <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <label style="font-size:10px; font-weight:700; text-transform:uppercase; color:#999;" for="c-email">Email Corporativo *</label>
+        <input style="padding:12px; border-radius:12px; border:1px solid #eee; background:#f9f9f9; font-size:14px;" 
                id="c-email" placeholder="email@empresa.com" required type="email"/>
       </div>
-      <div>
-        <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-service">Servicio de interés</label>
-        <select class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 appearance-none" id="c-service">
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <label style="font-size:10px; font-weight:700; text-transform:uppercase; color:#999;" for="c-service">Servicio de interés</label>
+        <select style="padding:12px; border-radius:12px; border:1px solid #eee; background:#f9f9f9; font-size:14px;" id="c-service">
           <option value="general" selected>Consulta general</option>
         </select>
       </div>
-      <div>
-        <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-message">Mensaje</label>
-        <textarea class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 min-h-[100px] md:min-h-[120px] transition-all"
+      <div style="display:flex; flex-direction:column; gap:4px;">
+        <label style="font-size:10px; font-weight:700; text-transform:uppercase; color:#999;" for="c-message">Mensaje</label>
+        <textarea style="padding:12px; border-radius:12px; border:1px solid #eee; background:#f9f9f9; font-size:14px; min-height:100px;" 
                   id="c-message" placeholder="¿Cómo podemos ayudarte?"></textarea>
       </div>
-      <button class="cta-core w-full py-4 md:py-5 btn-after text-white rounded-xl md:rounded-2xl active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+      <button style="padding:16px; border-radius:12px; border:none; background:#061542; color:white; font-weight:700; cursor:pointer; margin-top:8px;" 
               id="submit-btn" type="submit">
         Enviar Solicitud
       </button>
     </form>
-    <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors"
-            onclick="closeModal('contact-modal')"
-            aria-label="Cerrar formulario de contacto">
-      <span class="material-symbols-outlined text-2xl md:text-3xl" aria-hidden="true">close</span>
-    </button>
   </div>
 </div>
 
@@ -1181,20 +1181,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   let _preModalScrollY = 0;
 
   window.openContactModal = function () {
+    console.log('Opening contact modal...');
     _lastFocusedEl = document.activeElement;
     const modal = document.getElementById('contact-modal');
-    if (!modal) return;
+    if (!modal) {
+      console.error('Modal not found!');
+      return;
+    }
     
     document.body.classList.add('modal-open');
     modal.classList.remove('hidden');
+    // Ensure display is flex for the standalone version
+    modal.style.display = 'flex';
     trapFocus(modal, { autoFocusFirst: true });
   };
 
   window.closeModal = function(id) {
+    console.log('Closing modal:', id);
     const modal = document.getElementById(id);
     if (!modal) return;
     releaseFocus(modal, _lastFocusedEl);
     modal.classList.add('hidden');
+    modal.style.display = 'none';
     document.body.classList.remove('modal-open');
     
     // Re-evaluate shell UI now that modal is gone
