@@ -1588,15 +1588,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             
             btnContainer.querySelectorAll('.cm-btn').forEach(btn => {
               btn.style.setProperty('width', '100%', 'important');
-              btn.style.setProperty('margin', '2px 0', 'important');
-              btn.style.setProperty('padding', '14px 20px', 'important');
-              btn.style.setProperty('font-size', '16px', 'important');
+              btn.style.setProperty('margin', '8px 0', 'important');
+              btn.style.setProperty('padding', '14px 32px', 'important');
+              btn.style.setProperty('font-size', '15.2px', 'important');
               btn.style.setProperty('font-weight', '600', 'important');
               
               const txt = btn.innerText;
-              if (txt.includes('Descartar')) btn.innerText = 'Rechazar';
-              if (txt.includes('seleccionadas')) btn.innerText = 'Guardar';
-              if (txt.includes('Aceptar todas')) btn.innerText = 'Aceptar';
+              if (txt.includes('Descartar') || txt.includes('Rechazar')) btn.innerText = 'Rechazar';
+              if (txt.includes('seleccionadas') || txt.includes('Guardar')) btn.innerText = 'Guardar';
+              if (txt.includes('Aceptar todas') || txt.includes('Aceptar')) btn.innerText = 'Aceptar';
             });
           }
         }
