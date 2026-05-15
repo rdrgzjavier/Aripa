@@ -48,7 +48,7 @@
   }
   #site-header .header-inner {
     height: 4.25rem;
-    transition: height var(--duration-base) var(--ease-out-expo);
+    transition: height var(--duration-base) var(--ease-out-expo), padding var(--duration-base) var(--ease-out-expo);
   }
   #site-header.is-sticky {
     background-color: rgba(6, 21, 66, 0.82);
@@ -56,10 +56,18 @@
     border-bottom: 1px solid rgba(255,255,255,0.08);
     box-shadow: 0 20px 48px -18px rgba(0,0,0,0.45);
   }
+  #site-header.is-sticky .header-inner {
+    height: 3.9rem;
+  }
   .btn-lavender {
     background: linear-gradient(180deg, #8b5cf6 0%, #6c45c0 100%);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 16px -4px rgba(108,69,192,0.5);
     border: 1px solid rgba(139,92,246,0.5);
+    color: white;
+    font-weight: 700;
+    font-size: 0.75rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
   }
   @media (min-width: 768px) {
     #site-header .header-inner { height: 5rem; }
@@ -175,9 +183,9 @@
     </div>
   </section>
 
-  <!-- CONTENIDO LEGAL (Padding Simétrico) -->
-  <section class="my-24 md:my-32 px-6 md:px-12 py-6 md:py-12 max-w-4xl mx-auto">
-    <div class="p-8 md:p-16 bg-white rounded-[32px] border border-secondary/10 shadow-sm">
+  <!-- CONTENIDO LEGAL (Padding Simétrico Interno) -->
+  <section class="my-24 md:my-32 px-6 md:px-12 max-w-4xl mx-auto">
+    <div class="p-6 md:p-12 bg-white rounded-[32px] border border-secondary/10 shadow-sm">
       <div class="legal-prose">
         <p>En <strong>Aripa</strong>, nos tomamos muy en serio la privacidad y la transparencia. De acuerdo con la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), te informamos sobre el uso de cookies en nuestro sitio web.</p>
 
