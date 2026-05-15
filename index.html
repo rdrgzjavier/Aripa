@@ -611,6 +611,9 @@ body { font-family: 'Inter', sans-serif; }
   }
   /* Success modal styles removed */
   /* Klaro Consent Manager Customization - FINAL VERSION */
+  #klaro, #klaro .klaro {
+    position: static !important;
+  }
   body:has(#klaro .klaro .cm-modal.cm-shown) {
     overflow: hidden !important;
   }
@@ -727,31 +730,32 @@ body { font-family: 'Inter', sans-serif; }
   /* Capa 2 - Modal Styling (Forced Light Mode) */
   #klaro .klaro .cm-modal {
     z-index: 999999999 !important;
-    background: transparent !important;
+    background: rgba(6, 21, 66, 0.5) !important;
+    backdrop-filter: blur(8px) !important;
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
+    width: 100vw !important;
+    height: 100vh !important;
     display: block !important;
   }
   #klaro .klaro .cm-modal .cm-panel {
     position: fixed !important;
-    top: 50% !important;
-    left: 50% !important;
-    transform: translate(-50%, -50%) !important;
+    inset: 0 !important;
+    margin: auto !important;
     border-radius: 16px !important;
     background-color: #ffffff !important;
     color: #061542 !important;
+    height: fit-content !important;
     max-height: 85vh !important;
     overflow-y: auto !important;
     width: 90% !important;
     max-width: 500px !important;
-    margin: 0 !important;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
     display: block !important;
     visibility: visible !important;
     opacity: 1 !important;
+    border: 1px solid #f3f4f6 !important;
   }
   @media (max-width: 768px) {
     #klaro .klaro .cm-modal .cm-panel {
@@ -759,15 +763,22 @@ body { font-family: 'Inter', sans-serif; }
       max-width: 380px !important;
     }
   }
+  #klaro .klaro .cm-modal .cm-header,
+  #klaro .klaro .cm-modal .cm-body,
+  #klaro .klaro .cm-modal .cm-footer {
+    background-color: #ffffff !important;
+    color: #061542 !important;
+  }
   #klaro .klaro .cm-modal .cm-header {
     border-bottom: 1px solid #f3f4f6 !important;
     padding: 24px !important;
-    background: #fff !important;
   }
   #klaro .klaro .cm-modal .cm-header h1 {
     font-size: 1.3rem !important;
     color: #061542 !important;
     font-weight: 800 !important;
+    margin: 0 !important;
+  }
     margin: 0 !important;
   }
   #klaro .klaro .cm-modal .cm-header .cm-close {
