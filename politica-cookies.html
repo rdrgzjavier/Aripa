@@ -266,7 +266,7 @@
   </div>
 </footer>
 
-<!-- CONTACT MODAL (Original de Index) -->
+<!-- MODALS -->
 <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal-panel p-8 md:p-12">
     <div class="flex justify-between items-start gap-4 mb-8">
@@ -275,7 +275,13 @@
         <span class="material-symbols-outlined text-3xl">close</span>
       </button>
     </div>
-    <p class="text-on-surface-variant text-base leading-relaxed mb-10">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
+    
+    <div class="mb-10">
+      <p class="text-on-surface-variant text-base leading-relaxed">
+        Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.
+      </p>
+    </div>
+
     <form class="space-y-8" id="contact-form" onsubmit="handleFormSubmit(event)">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <div class="space-y-3">
@@ -287,10 +293,12 @@
           <input type="tel" id="phone" name="phone" class="form-input" placeholder="+34 600 000 000" required>
         </div>
       </div>
+
       <div class="space-y-3">
         <label class="form-label" for="email">Email Corporativo *</label>
         <input type="email" id="email" name="email" class="form-input" placeholder="email@empresa.com" required>
       </div>
+
       <div class="space-y-3">
         <label class="form-label" for="service">Servicio de interés</label>
         <div class="relative">
@@ -303,24 +311,32 @@
           <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40">expand_more</span>
         </div>
       </div>
+
       <div class="space-y-3">
         <label class="form-label" for="message">Mensaje</label>
         <textarea id="message" name="message" class="form-input min-h-[120px] resize-none" placeholder="¿Cómo podemos ayudarte?"></textarea>
       </div>
-      <button type="submit" class="btn-submit mt-4" id="submit-btn">ENVIAR SOLICITUD</button>
+
+      <button type="submit" class="btn-submit mt-4" id="submit-btn">
+        ENVIAR SOLICITUD
+      </button>
     </form>
   </div>
 </div>
 
-<!-- SUCCESS MODAL (Original de Index) -->
 <div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true">
   <div class="modal-panel p-10 md:p-16 text-center">
     <div class="bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 w-full max-w-[200px]" style="height: 56px; min-height: 56px;">
       <span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
     </div>
     <h2 class="text-3xl font-extrabold font-headline text-primary mb-4">¡Solicitud recibida!</h2>
-    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">Tu mensaje ha sido entregado correctamente. Un consultor senior revisará tu caso personalmente y recibirás una respuesta en menos de 24 horas.</p>
-    <button type="button" class="btn-submit !w-auto px-12" onclick="closeModal('success-modal')">ENTENDIDO</button>
+    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
+      Tu mensaje ha sido entregado correctamente. Un consultor senior revisará tu caso personalmente y recibirás una respuesta en menos de 24 horas.
+      <span class="block mt-4 text-sm opacity-70">Nota: Si no recibes noticias nuestras, por favor revisa tu bandeja de <strong>correo no deseado (spam)</strong>.</span>
+    </p>
+    <button type="button" class="btn-submit !w-auto px-12" onclick="closeModal('success-modal')">
+      ENTENDIDO
+    </button>
   </div>
 </div>
 
