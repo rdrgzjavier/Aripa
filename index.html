@@ -333,17 +333,19 @@ body { font-family: 'Inter', sans-serif; }
     border-color: rgba(255,255,255,0.1);
   }
   /* Prevent body scroll when a modal is open */
-  body.modal-open { overflow: hidden; }
-  /* Modal overlay: always covers full viewport */
+  body.modal-open { 
+    overflow: hidden;
+    overscroll-behavior: contain;
+  }
+  /* Modal overlay: absolutely centered in viewport */
   .modal-overlay {
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1.5rem;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
     z-index: 100;
   }
   .modal-overlay.hidden { display: none !important; }
@@ -356,8 +358,7 @@ body { font-family: 'Inter', sans-serif; }
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    /* Extra guarantee for centering */
-    margin: auto;
+    margin: auto; /* Grid centering backup */
   }
   @media (min-width: 768px) {
     .modal-panel { max-width: 36rem; }
@@ -1236,21 +1237,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     trapFocus(modal, { autoFocusFirst: true });
   };
 
-  // Close the modal first so body.modal-open doesn't block Cal.com's
-  // iframe from rendering on first click (the 'veil' bug).
-  // Then click a hidden button with data-cal-link to trigger the embed normally.
+  // Optimized Cal.com trigger to avoid 'veil' bug and use preloaded resources.
   window.openCalFromModal = function(modalId) {
-    const modal = document.getElementById(modalId);
-    if (modal) {
-      releaseFocus(modal, null);
-      modal.classList.add('hidden');
-      document.body.classList.remove('modal-open');
+    if (modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        releaseFocus(modal, null);
+        modal.classList.add('hidden');
+        document.body.classList.remove('modal-open');
+      }
     }
-    // Small delay ensures the browser has repainted and the modal-open lock is gone
+    // Small delay ensures the browser has repainted and shell UI is stable
     setTimeout(() => {
-      const trigger = document.getElementById('cal-hidden-trigger');
-      if (trigger) trigger.click();
-    }, 100);
+      const cal = window.Cal;
+      if (cal) {
+        const ns = cal.ns && cal.ns['hoja-de-ruta'];
+        const api = ns || cal;
+        api('modal', { calLink: 'aripa/hoja-de-ruta', config: { layout: 'month_view' } });
+      }
+    }, 150);
   };
 
   const setInteractive = (root, active) => {
@@ -1262,6 +1267,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   };
 
   const updateShellUI = () => {
+    // DO NOT update shell UI while a modal is open to prevent bars from disappearing
+    // due to scroll position resets/shifts caused by body overflow-hidden.
+    if (document.body.classList.contains('modal-open')) return;
+
     const header = document.getElementById('site-header');
     const stickyBar = document.getElementById('sticky-bottom-bar');
     const mobileNav = document.getElementById('mobile-bottom-nav');
