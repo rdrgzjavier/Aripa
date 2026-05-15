@@ -141,11 +141,7 @@ body { font-family: 'Inter', sans-serif; }
     outline-offset: 3px;
     border-radius: 4px;
   }
-  :focus-within {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) !important;
-  }
+  /* Removed global focus-within rule */
   .skip-nav {
     position: absolute;
     top: -100%;
@@ -550,7 +546,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Right Column: CTA & Burger -->
     <div class="flex-1 flex items-center justify-end gap-6">
-      <button class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap">
+      <button type="button" class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap">
         <span class="material-symbols-outlined">mail</span>
         Tengo una duda
       </button>
@@ -588,7 +584,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
       <div class="av6-ctas hero-animate-4">
-        <button class="cta-core av6-btn-primary hover:scale-[1.02] transition-transform active:scale-95">
+        <button type="button" class="cta-core av6-btn-primary hover:scale-[1.02] transition-transform active:scale-95">
           Solicitar análisis
         </button>
         <a class="cta-core av6-btn-secondary hover:bg-white/15 transition-colors"
@@ -920,7 +916,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      id="mobile-bottom-nav"
      aria-hidden="true"
      style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
-  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" tabindex="-1">
+  <button type="button" class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3">
     <span class="material-symbols-outlined">mail</span>
     HABLEMOS
   </button>
@@ -937,7 +933,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="text-[11px] font-normal text-on-surface-variant ml-7">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
   </div>
   <div class="flex items-center gap-3 pointer-events-auto">
-    <button class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2" tabindex="-1">
+    <button type="button" class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2">
       <span class="material-symbols-outlined text-lg">mail</span> HABLEMOS
     </button>
   </div>
