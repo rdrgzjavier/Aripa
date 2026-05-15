@@ -18,6 +18,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 <link rel="canonical" href="https://aripa.es/"/>
+<link rel="preconnect" href="https://app.cal.com">
+<link rel="dns-prefetch" href="https://app.cal.com">
+<link rel="preload" href="https://app.cal.com/embed/embed.js" as="script">
 <link rel="preload" href="/style.css" as="style">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="icon" href="/assets/favicon-64.png" sizes="64x64">
@@ -100,6 +103,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   ]
 }
 </script>
+<link rel="preconnect" href="https://app.cal.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -111,10 +115,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link rel="stylesheet" href="./style.css">
 
 <style>
-  /* ══════════════════════════════════════════
-     DESIGN TOKENS — HSL CSS Custom Properties
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     DESIGN TOKENS â€” HSL CSS Custom Properties
      Single source of truth for all colours
-  ══════════════════════════════════════════ */
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   :root {
     /* Brand palette */
     --color-primary:               220 80% 14%;   /* #061542 */
@@ -141,14 +145,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
   }
 
-  /* ── Base ── */
+  /* â”€â”€ Base â”€â”€ */
 body { font-family: 'Inter', sans-serif; }
 .font-brand { font-family: 'Inter', sans-serif; }
 .font-headline { font-family: 'Inter', sans-serif; }
-  /* Material Symbols variation settings — size is now controlled via @layer base in compiled CSS */
+  /* Material Symbols variation settings â€” size is now controlled via @layer base in compiled CSS */
   .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
 
-  /* ── Focus visible (global WCAG 2.1 AA) ── */
+  /* â”€â”€ Focus visible (global WCAG 2.1 AA) â”€â”€ */
   :focus-visible {
     outline: 2px solid #6c45c0;
     outline-offset: 3px;
@@ -162,7 +166,7 @@ body { font-family: 'Inter', sans-serif; }
     transform: translateY(0) !important;
   }
 
-  /* ── Skip navigation (accessibility) ── */
+  /* â”€â”€ Skip navigation (accessibility) â”€â”€ */
   .skip-nav {
     position: absolute;
     top: -100%;
@@ -178,7 +182,7 @@ body { font-family: 'Inter', sans-serif; }
   }
   .skip-nav:focus { top: 0; }
 
-  /* ── Gradients & Buttons ── */
+  /* â”€â”€ Gradients & Buttons â”€â”€ */
   .hero-gradient {
     background: linear-gradient(135deg, #061542 0%, #1e2b58 100%);
   }
@@ -223,7 +227,7 @@ body { font-family: 'Inter', sans-serif; }
     backdrop-filter: blur(12px);
   }
 
-  /* ── Header behavior (top -> sticky) ── */
+  /* â”€â”€ Header behavior (top -> sticky) â”€â”€ */
   #site-header {
     position: fixed;
     top: 0;
@@ -253,7 +257,7 @@ body { font-family: 'Inter', sans-serif; }
     height: 3.9rem;
   }
 
-  /* ── CTA system (typography + icon consistency) ── */
+  /* â”€â”€ CTA system (typography + icon consistency) â”€â”€ */
   .cta-core {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
@@ -272,7 +276,7 @@ body { font-family: 'Inter', sans-serif; }
     #site-header.is-sticky .header-inner { height: 4.35rem; }
   }
 
-  /* ── WhatsApp ── */
+  /* â”€â”€ WhatsApp â”€â”€ */
   .whatsapp-bubble {
     background: linear-gradient(45deg, #25D366, #128C7E);
     box-shadow: 0 4px 12px rgba(18,140,126,0.3);
@@ -291,7 +295,7 @@ body { font-family: 'Inter', sans-serif; }
     border: 1px solid rgba(46,204,113,0.5);
   }
 
-  /* ── Pulse glow (WhatsApp floating) ── */
+  /* â”€â”€ Pulse glow (WhatsApp floating) â”€â”€ */
   @keyframes pulse-glow {
     0%, 100% {
       box-shadow: 0 0 0 0 rgba(37,211,102,0.5),
@@ -306,7 +310,7 @@ body { font-family: 'Inter', sans-serif; }
   }
   .whatsapp-floating { animation: pulse-glow 2.5s ease-in-out infinite; }
 
-  /* ── Hero entrance animations ── */
+  /* â”€â”€ Hero entrance animations â”€â”€ */
   @keyframes hero-fade-up {
     from { opacity: 0; transform: translateY(40px); }
     to   { opacity: 1; transform: translateY(0); }
@@ -316,22 +320,22 @@ body { font-family: 'Inter', sans-serif; }
   .hero-animate-3 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.4s both; }
   .hero-animate-4 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
 
-  /* ── Smooth transitions ── */
+  /* â”€â”€ Smooth transitions â”€â”€ */
   a, button { transition-property: color, background-color, border-color, box-shadow, opacity, transform;
               transition-duration: 300ms;
               transition-timing-function: cubic-bezier(0.16,1,0.3,1); }
 
-  /* ── Mobile WhatsApp hides on scroll ── */
+  /* â”€â”€ Mobile WhatsApp hides on scroll â”€â”€ */
   .scrolled #floating-whatsapp-mobile { opacity: 0; visibility: hidden; transform: translateY(20px); }
 
-  /* ── Sticky bottom bar (desktop) ── */
+  /* â”€â”€ Sticky bottom bar (desktop) â”€â”€ */
   #sticky-bottom-bar {
     transform: translateY(100%);
     transition: transform var(--duration-base) cubic-bezier(0.4,0,0.2,1);
   }
   #sticky-bottom-bar.visible { transform: translateY(0); }
 
-  /* ── Mobile bottom nav ── */
+  /* â”€â”€ Mobile bottom nav â”€â”€ */
   #mobile-bottom-nav {
     position: fixed;
     left: 0;
@@ -371,7 +375,7 @@ body { font-family: 'Inter', sans-serif; }
     color: #5e3ab3;
   }
 
-  /* ── Drawer ── */
+  /* â”€â”€ Drawer â”€â”€ */
   .drawer-transition { transition: transform var(--duration-base) ease-in-out; }
   #drawer-overlay {
     background: linear-gradient(180deg, rgba(2, 6, 25, 0.48) 0%, rgba(2, 6, 25, 0.74) 100%);
@@ -397,7 +401,7 @@ body { font-family: 'Inter', sans-serif; }
 
   body.modal-open { overflow: hidden; }
 
-  /* ── Mobile contact modal stability ── */
+  /* â”€â”€ Mobile contact modal stability â”€â”€ */
   #contact-modal .modal-panel {
     width: min(100%, 40rem);
     max-width: 100%;
@@ -431,12 +435,12 @@ body { font-family: 'Inter', sans-serif; }
     }
   }
 
-  /* ══════════════════════════════════════════
-     SCROLL REVEAL — patrón seguro
+  /* â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
+     SCROLL REVEAL â€” patrón seguro
      Por defecto los elementos son VISIBLES.
      Solo cuando JS carga y el Observer funciona
-     se animan. Si algo falla → siguen visibles.
-  ══════════════════════════════════════════ */
+     se animan. Si algo falla â†’ siguen visibles.
+  â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• */
   .reveal-ready {
     transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1),
                 transform 0.6s cubic-bezier(0.16,1,0.3,1);
@@ -456,7 +460,7 @@ body { font-family: 'Inter', sans-serif; }
   .reveal-ready[data-delay="4"] { transition-delay: 320ms; }
   .reveal-ready[data-delay="5"] { transition-delay: 400ms; }
 
-  /* ── Hero v6 style (scoped) ── */
+  /* â”€â”€ Hero v6 style (scoped) â”€â”€ */
   #hero-section.hero-v6 {
     position: relative;
     min-height: 85svh;
@@ -671,12 +675,12 @@ body { font-family: 'Inter', sans-serif; }
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBK55KW8"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<!-- Skip navigation – accessibility -->
+<!-- Skip navigation â€“ accessibility -->
 <a class="skip-nav" href="#main-content">Saltar al contenido principal</a>
 
-<!-- ═══════════════════════════════════════════
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      MOBILE DRAWER (hidden on md+)
-═══════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <div class="fixed inset-0 z-[70] invisible md:hidden" id="drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
   <div class="absolute inset-0 opacity-0 transition-opacity duration-300" id="drawer-overlay"></div>
   <nav class="absolute right-0 top-0 h-full w-4/5 max-w-sm drawer-transition translate-x-full p-8 flex flex-col shadow-2xl outline-none" id="drawer-content">
@@ -708,9 +712,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </nav>
 </div>
 
-<!-- ═══════════════════════════════════════════
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      HEADER
-═══════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <header id="site-header" aria-label="Cabecera principal">
   <div class="header-inner relative flex justify-between items-center px-6 md:px-12 max-w-[1440px] mx-auto">
     <!-- Logo: Centered on mobile, aligned on md+ -->
@@ -739,12 +743,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </header>
 
-<!-- ═══════════════════════════════════════════
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      MAIN
-═══════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <main id="main-content" tabindex="-1" class="focus:outline-none">
 
-  <!-- ── Hero (evolución v6) ── -->
+  <!-- â”€â”€ Hero (evolución v6) â”€â”€ -->
   <section class="hero-v6 text-white" id="hero-section">
     <canvas class="av6-canvas" id="hero-gradient-canvas" aria-hidden="true"></canvas>
     <div class="av6-grain" aria-hidden="true"></div>
@@ -782,7 +786,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- ── Problem Module (New) ── -->
+  <!-- â”€â”€ Problem Module (New) â”€â”€ -->
   <section class="py-24 md:py-32 bg-white border-b border-secondary/5" id="problema">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="max-w-5xl mb-16 md:mb-20">
@@ -854,7 +858,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- ── Services ── -->
+  <!-- â”€â”€ Services â”€â”€ -->
   <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios">
     <div class="mb-16 md:mb-20">
       <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Soluciones Estratégicas</p>
@@ -926,7 +930,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- ── Methodology ── -->
+  <!-- â”€â”€ Methodology â”€â”€ -->
   <section class="py-24 md:py-32 bg-surface-container-low" id="metodologia">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">El Método Aripa</p>
@@ -974,7 +978,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- ── Casos de Éxito ── -->
+  <!-- —— Casos de Éxito —— -->
   <section class="py-16 md:py-24 bg-surface-bright" aria-label="Empresas clientes de aripa">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="max-w-4xl mb-12 md:mb-16">
@@ -1005,7 +1009,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- ── Diferencial ── -->
+  <!-- â”€â”€ Diferencial â”€â”€ -->
   <section class="py-24 md:py-32 bg-surface-container-low" id="diferencial">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
@@ -1087,9 +1091,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 </main>
 
-<!-- ═══════════════════════════════════════════
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      FOOTER
-═══════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-64 md:pb-80 px-6 md:px-12 border-t border-white/5">
   <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
     <div class="flex items-center gap-3">
@@ -1116,22 +1120,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </footer>
 
-<!-- ═══════════════════════════════════════════
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      MOBILE BOTTOM NAV (hidden on md+)
-═══════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden invisible"
      id="mobile-bottom-nav"
      aria-hidden="true"
      style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
-  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' tabindex="-1">
+  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">
     <span class="material-symbols-outlined">calendar_month</span>
     HABLEMOS
   </button>
 </nav>
 
-<!-- ═══════════════════════════════════════════
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      DESKTOP STICKY BOTTOM BAR (hidden on mobile)
-═══════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between pointer-events-none invisible"
      id="sticky-bottom-bar"
      aria-hidden="true">
@@ -1143,15 +1147,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="flex items-center gap-3 pointer-events-auto">
     <button class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2"
-            data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' tabindex="-1">
+            data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">
       <span class="material-symbols-outlined text-lg">calendar_month</span> HABLEMOS
     </button>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      SERVICE MODAL
-═══════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] flex items-center justify-center p-6 hidden" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl">
     <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors" onclick="closeModal('service-modal')" aria-label="Cerrar">
@@ -1171,9 +1175,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- ═══════════════════════════════════════════
+<!-- â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•
      CONTACT MODAL
-═══════════════════════════════════════════ -->
+â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â•â• -->
 <div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] flex items-center justify-center p-6 hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
   <div class="modal-panel bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
     <div class="mb-6 md:mb-8">
@@ -1385,7 +1389,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         service,
         message,
         _replyto: email,
-        _subject: 'Nueva consulta desde aripa.es – ' + name
+        _subject: 'Nueva consulta desde aripa.es â€“ ' + name
       })
     })
     .then(response => {
@@ -1589,12 +1593,116 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   }());
 </script>
 
+<script>
+(function () {
+  const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
+  const setInteractive = (root, active) => {
+    if (!root) return;
+    root.classList.toggle('invisible', !active);
+    root.setAttribute('aria-hidden', active ? 'false' : 'true');
+    root.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', active ? '0' : '-1'));
+  };
+
+  if (!window.toggleDrawer) {
+    window.toggleDrawer = function () {
+      const drawer = document.getElementById('drawer');
+      const overlay = document.getElementById('drawer-overlay');
+      const content = document.getElementById('drawer-content');
+      const hamburger = document.getElementById('hamburger-btn');
+      if (!drawer || !overlay || !content) return;
+      const isHidden = drawer.classList.contains('invisible');
+      if (isHidden) {
+        drawer.classList.remove('invisible');
+        document.body.classList.add('modal-open');
+        hamburger?.setAttribute('aria-expanded', 'true');
+        requestAnimationFrame(() => {
+          overlay.classList.add('opacity-100');
+          content.classList.remove('translate-x-full');
+        });
+      } else {
+        overlay.classList.remove('opacity-100');
+        content.classList.add('translate-x-full');
+        document.body.classList.remove('modal-open');
+        hamburger?.setAttribute('aria-expanded', 'false');
+        setTimeout(() => drawer.classList.add('invisible'), 300);
+      }
+    };
+    document.getElementById('drawer-overlay')?.addEventListener('click', window.toggleDrawer);
+  }
+
+  if (!window.openContactModal) {
+    window.openContactModal = function () {
+      const modal = document.getElementById('contact-modal');
+      if (!modal) {
+        window.location.href = 'index.html#contact-modal';
+        return;
+      }
+      modal.classList.remove('hidden');
+      document.body.classList.add('modal-open');
+      const first = modal.querySelector(FOCUSABLE);
+      first?.focus();
+    };
+  }
+
+  const updateShellUI = () => {
+    const header = document.getElementById('site-header');
+    const stickyBar = document.getElementById('sticky-bottom-bar');
+    const mobileNav = document.getElementById('mobile-bottom-nav');
+    const hero = document.getElementById('hero-section') || document.querySelector('main section');
+    const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 220;
+    const pastHero = window.scrollY > heroBottom - 200;
+    header?.classList.toggle('is-sticky', window.scrollY > 20);
+    document.body.classList.toggle('scrolled', window.scrollY > 150);
+    setInteractive(stickyBar, window.innerWidth >= 768 && pastHero);
+    setInteractive(mobileNav, window.innerWidth < 768 && window.scrollY > 150);
+  };
+  window.addEventListener('scroll', updateShellUI, { passive: true });
+  window.addEventListener('resize', updateShellUI);
+  updateShellUI();
+
+  if (window.location.hash === '#contact-modal' && document.getElementById('contact-modal')) {
+    setTimeout(() => window.openContactModal(), 100);
+  }
+}());
+</script>
+<script>
+(function () {
+  const CAL_FALLBACK_URL = 'https://cal.com/aripa/hoja-de-ruta?duration=45';
+  const CAL_TRIGGER_SELECTOR = '[data-cal-link="aripa/hoja-de-ruta"]';
+  let fallbackTimer = null;
+
+  document.addEventListener('click', (event) => {
+    const trigger = event.target.closest(CAL_TRIGGER_SELECTOR);
+    if (!trigger) return;
+    window.clearTimeout(fallbackTimer);
+    fallbackTimer = window.setTimeout(() => {
+      const frame = document.querySelector('iframe[src*="app.cal.com"][src*="aripa/hoja-de-ruta"]');
+      if (!frame || frame.dataset.loaded !== 'true') {
+        window.open(CAL_FALLBACK_URL, '_blank', 'noopener,noreferrer');
+      }
+    }, 4500);
+  }, true);
+
+  const observer = new MutationObserver(() => {
+    document.querySelectorAll('iframe[src*="app.cal.com"][src*="aripa/hoja-de-ruta"]').forEach((frame) => {
+      if (frame.dataset.aripaWatched === 'true') return;
+      frame.dataset.aripaWatched = 'true';
+      frame.addEventListener('load', () => {
+        frame.dataset.loaded = 'true';
+        window.clearTimeout(fallbackTimer);
+      }, { once: true });
+    });
+  });
+  observer.observe(document.documentElement, { childList: true, subtree: true });
+}());
+</script>
 <!-- Cal element-click embed code begins --> 
 <script type="text/javascript">
   (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
 
-  Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
+  Cal.ns["hoja-de-ruta"]("preload", {calLink:"aripa/hoja-de-ruta"});
+  Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view","useSlotsViewOnSmallScreen":true});
 </script>
 <!-- Cal element-click embed code ends -->
 
@@ -1609,3 +1717,13 @@ Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
   
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
