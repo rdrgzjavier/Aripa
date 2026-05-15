@@ -611,7 +611,9 @@ body { font-family: 'Inter', sans-serif; }
   }
   /* Success modal styles removed */
   /* Klaro Consent Manager Customization - FINAL VERSION */
-  #klaro {
+  #klaro, #klaro .klaro {
+    margin: 0 !important;
+    padding: 0 !important;
     z-index: 999999999 !important;
   }
   body:has(#klaro .klaro .cm-modal.cm-shown) {
@@ -732,26 +734,29 @@ body { font-family: 'Inter', sans-serif; }
     z-index: 999999999 !important;
     background: rgba(6, 21, 66, 0.6) !important;
     backdrop-filter: blur(8px) !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
+    display: block !important;
     position: fixed !important;
     inset: 0 !important;
+    margin: 0 !important;
     width: 100vw !important;
     height: 100vh !important;
   }
   #klaro .klaro .cm-modal .cm-panel {
+    position: fixed !important;
+    inset: 0 !important;
+    margin: auto !important;
     border-radius: 16px !important;
     background-color: #ffffff !important;
     color: #061542 !important;
+    height: fit-content !important;
     max-height: 85vh !important;
-    overflow-y: auto !important;
     width: 90% !important;
     max-width: 500px !important;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
-    border: 1px solid #f3f4f6 !important;
     display: flex !important;
     flex-direction: column !important;
+    z-index: 9999999999 !important;
+    border: 1px solid #f3f4f6 !important;
   }
   @media (max-width: 768px) {
     #klaro .klaro .cm-modal .cm-panel {
