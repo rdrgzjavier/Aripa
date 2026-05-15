@@ -41,9 +41,39 @@
         if (configLink) configLink.innerText = 'Configurar';
       }
     };
-    const observer = new MutationObserver(updateKlaro);
+    const updateModal = () => {
+      const panel = document.querySelector('#klaro .klaro .cm-modal .cm-panel');
+      if (panel) {
+        panel.style.setProperty('position', 'fixed', 'important');
+        panel.style.setProperty('top', '50%', 'important');
+        panel.style.setProperty('left', '50%', 'important');
+        panel.style.setProperty('transform', 'translate(-50%, -50%)', 'important');
+        panel.style.setProperty('margin', '0', 'important');
+        panel.style.setProperty('background-color', '#ffffff', 'important');
+        panel.style.setProperty('color', '#061542', 'important');
+        panel.style.setProperty('z-index', '9999999999', 'important');
+        panel.style.setProperty('display', 'block', 'important');
+        panel.style.setProperty('visibility', 'visible', 'important');
+        panel.style.setProperty('opacity', '1', 'important');
+        
+        const children = panel.querySelectorAll('*');
+        children.forEach(child => {
+          child.style.setProperty('color', '#061542', 'important');
+          if (child.classList.contains('cm-header') || child.classList.contains('cm-body') || child.classList.contains('cm-footer')) {
+            child.style.setProperty('background-color', '#ffffff', 'important');
+          }
+        });
+      }
+    };
+    const observer = new MutationObserver(() => {
+      updateKlaro();
+      updateModal();
+    });
     observer.observe(document.documentElement, { childList: true, subtree: true });
-    setInterval(updateKlaro, 500); // Fallback safe check
+    setInterval(() => {
+      updateKlaro();
+      updateModal();
+    }, 400); 
   })();
 </script>
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
@@ -732,57 +762,36 @@ body { font-family: 'Inter', sans-serif; }
   /* Capa 2 - Modal Styling (Forced Light Mode) */
   #klaro .klaro .cm-modal {
     z-index: 999999999 !important;
-    background: rgba(6, 21, 66, 0.6) !important;
+    background: rgba(6, 21, 66, 0.7) !important;
     backdrop-filter: blur(8px) !important;
-    display: block !important;
     position: fixed !important;
     inset: 0 !important;
-    margin: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
+    display: block !important;
   }
   #klaro .klaro .cm-modal .cm-panel {
-    position: fixed !important;
-    inset: 0 !important;
-    margin: auto !important;
     border-radius: 16px !important;
     background-color: #ffffff !important;
     color: #061542 !important;
-    height: fit-content !important;
     max-height: 85vh !important;
     width: 90% !important;
     max-width: 500px !important;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    z-index: 9999999999 !important;
     border: 1px solid #f3f4f6 !important;
+    overflow-y: auto !important;
   }
   @media (max-width: 768px) {
     #klaro .klaro .cm-modal .cm-panel {
-      width: 92% !important;
+      width: 88% !important;
       max-width: 380px !important;
     }
   }
-  /* Ensure all sub-containers are white and visible */
-  #klaro .klaro .cm-modal .cm-panel .cm-header,
-  #klaro .klaro .cm-modal .cm-panel .cm-body,
-  #klaro .klaro .cm-modal .cm-panel .cm-footer,
-  #klaro .klaro .cm-modal .cm-panel .cm-list,
-  #klaro .klaro .cm-modal .cm-panel .cm-service,
-  #klaro .klaro .cm-modal .cm-panel .cm-section {
-    background-color: #ffffff !important;
+  #klaro .klaro .cm-modal .cm-panel * {
+    background-color: transparent !important;
     color: #061542 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  #klaro .klaro .cm-modal .cm-panel .cm-body {
-    padding: 0 24px !important;
   }
   #klaro .klaro .cm-modal .cm-header {
     border-bottom: 1px solid #f3f4f6 !important;
     padding: 24px !important;
-    flex-shrink: 0 !important;
   }
   #klaro .klaro .cm-modal .cm-header h1 {
     font-size: 1.3rem !important;
@@ -793,15 +802,8 @@ body { font-family: 'Inter', sans-serif; }
   #klaro .klaro .cm-modal .cm-footer {
     border-top: 1px solid #f3f4f6 !important;
     padding: 24px !important;
-    flex-shrink: 0 !important;
   }
   #klaro .klaro .cm-modal .cm-header .cm-close {
-    color: #061542 !important;
-  }
-  /* Fix text opacity in services */
-  #klaro .klaro .cm-modal .cm-panel p, 
-  #klaro .klaro .cm-modal .cm-panel span,
-  #klaro .klaro .cm-modal .cm-panel div {
     color: #061542 !important;
   }
   #klaro .klaro .cm-modal .cm-body {
