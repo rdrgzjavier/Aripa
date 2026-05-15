@@ -813,8 +813,17 @@ body { font-family: 'Inter', sans-serif; }
     opacity: 1 !important;
     visibility: visible !important;
   }
+  /* Toggle Switch - OFF state (gray) */
   #klaro .klaro .cm-modal .cm-list-label .cm-switch .slider {
-    background-color: #6b38fb !important;
+    background-color: #d1d5db !important;
+    transition: background-color 0.3s ease !important;
+  }
+  /* Toggle Switch - ON state (green) */
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch input:checked + .slider,
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch.is-checked .slider,
+  #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .slider,
+  #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .cm-switch .slider {
+    background-color: #22c55e !important;
   }
   #klaro .klaro .cm-modal .cm-footer {
     border-top: 1px solid #f3f4f6 !important;
