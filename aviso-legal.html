@@ -142,6 +142,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   #klaro, #klaro .klaro { z-index: 999999999 !important; }
   #klaro .klaro .cookie-notice { background-color: #ffffff !important; color: #061542 !important; box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important; border-top: 1px solid #f3f4f6 !important; }
   #klaro .klaro .cm-btn-success { background-color: #6b38fb !important; color: #ffffff !important; border-radius: 16px !important; }
+  #klaro .klaro .cm-btn-info { background-color: #f3f4f6 !important; color: #061542 !important; border-radius: 16px !important; }
+  #klaro .klaro .cm-link { color: #6b38fb !important; text-decoration: none !important; font-weight: 600 !important; }
   #klaro .klaro .cm-switch input:checked + .slider { background-color: #22c55e !important; }
   #klaro .klaro .cm-switch .slider { background-color: #d1d5db !important; transition: 0.3s !important; }
 
@@ -410,7 +412,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     requestAnimationFrame(draw);
   }());
 
-  // KLARO ENFORCEMENT
+  // KLARO ENFORCEMENT (Full sync with index.html)
   (function() {
     const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
     const enforceText = () => {
@@ -425,8 +427,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const txt = btn.innerText;
         if (txt.includes('Descartar todas') || txt.includes('Rechazar todas') || txt === 'Descartar') {
           if (btn.innerText !== 'Rechazar') btn.innerText = 'Rechazar';
+        } else if (txt.includes('Aceptar seleccionadas') || txt.includes('Aceptar seleccionados') || txt.includes('Guardar')) {
+          if (btn.innerText !== 'Guardar') btn.innerText = 'Guardar';
         } else if (txt.includes('Aceptar todas') || txt.includes('De acuerdo') || txt === 'Aceptar') {
           if (btn.innerText !== 'Aceptar') btn.innerText = 'Aceptar';
+        } else if (txt.includes('Quiero elegir') || txt.includes('Configurar')) {
+          if (btn.innerText !== 'Configurar') btn.innerText = 'Configurar';
         }
       });
     };
