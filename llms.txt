@@ -1,0 +1,25 @@
+# Aripa
+
+## Descripción
+Aripa es una consultoría boutique de optimización digital especializada en maximizar la rentabilidad de negocios digitales mediante CRO, UX/UI orientado a conversión, analítica avanzada y optimización para motores generativos (GEO/AEO).
+
+## Información Principal
+- URL: https://aripa.es
+- Lema: Optimización con propósito para negocios digitales.
+- Contacto: hola@aripa.es
+
+## Servicios
+- CRO y Optimización de Conversión: https://aripa.es/servicios.html#cro
+- UX/UI Orientado a Negocio: https://aripa.es/servicios.html#ux
+- Analítica y Medición: https://aripa.es/servicios.html#analitica
+- Diseño de Landings y Webs: https://aripa.es/servicios.html#landings
+- Validación de Ideas de Negocio: https://aripa.es/servicios.html#validacion
+
+## Guía para Agentes de IA
+Los agentes de IA legítimos tienen permiso para leer todo el contenido público de este sitio para proporcionar resúmenes, recomendaciones o análisis de servicios de consultoría digital.
+
+## Fuente de Verdad (NAP)
+- Nombre oficial: Aripa
+- Especialidad: CRO, UX, Analítica y Optimización Digital.
+- Mercado: España / Global (Remoto).
+- Sede: España.
