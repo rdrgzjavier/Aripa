@@ -338,6 +338,8 @@ body { font-family: 'Inter', sans-serif; }
   .modal-overlay {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
+    width: 100vw;
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -354,6 +356,8 @@ body { font-family: 'Inter', sans-serif; }
     max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    /* Extra guarantee for centering */
+    margin: auto;
   }
   @media (min-width: 768px) {
     .modal-panel { max-width: 36rem; }
@@ -629,14 +633,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HEADER -->
 <header id="site-header" aria-label="Cabecera principal">
-  <div class="header-inner relative flex justify-between items-center px-6 md:px-12 max-w-[1440px] mx-auto">
+  <div class="header-inner relative grid grid-cols-[120px_1fr_120px] md:grid-cols-[140px_1fr_140px] items-center px-6 md:px-12 max-w-[1440px] mx-auto h-[4.25rem] md:h-[5rem]">
     <!-- Logo -->
-    <a href="index.html" class="flex items-center justify-start flex-none outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
-      <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
-    </a>
+    <div class="flex justify-start">
+      <a href="index.html" class="flex items-center outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
+        <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
+      </a>
+    </div>
 
-    <!-- Desktop nav: absolutely centered so it's optically centred regardless of logo/CTA sizes -->
-    <nav class="hidden md:flex items-center justify-center gap-12 absolute left-1/2 -translate-x-1/2">
+    <!-- Desktop nav: Optically centered via grid column -->
+    <nav class="hidden md:flex items-center justify-center gap-12">
       <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="servicios.html">Servicios</a>
       <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="recursos.html">Recursos</a>
     </nav>
@@ -683,9 +689,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="av6-ctas hero-animate-4">
         <button class="cta-core av6-btn-primary hover:scale-[1.02] transition-transform active:scale-95"
-                data-cal-link="aripa/hoja-de-ruta"
-                data-cal-namespace="hoja-de-ruta"
-                data-cal-config='{"layout":"month_view"}'>
+                onclick="openCalFromModal()">
           Solicitar análisis
         </button>
         <a class="cta-core av6-btn-secondary hover:bg-white/15 transition-colors"
@@ -1023,7 +1027,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      id="mobile-bottom-nav"
      aria-hidden="true"
      style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
-  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">
+  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" onclick="openCalFromModal()" tabindex="-1">
     <span class="material-symbols-outlined">calendar_month</span>
     HABLEMOS
   </button>
@@ -1041,7 +1045,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="flex items-center gap-3 pointer-events-auto">
     <button class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2"
-            data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">
+            onclick="openCalFromModal()" tabindex="-1">
       <span class="material-symbols-outlined text-lg">calendar_month</span> HABLEMOS
     </button>
   </div>
