@@ -1636,15 +1636,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           }
         });
 
-        // Update Button Copys for all devices
+        // Update Button Copys for all devices and both layers
         const allBtns = document.querySelectorAll('#klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
         allBtns.forEach(btn => {
           const txt = btn.innerText;
-          if (txt.includes('Descartar') || txt.includes('Rechazar')) {
+          
+          // RECHAZAR (Covers Layer 1 and 2)
+          if (txt.includes('Descartar todas') || txt.includes('Rechazar todas') || txt === 'Descartar') {
             if (btn.innerText !== 'Rechazar') btn.innerText = 'Rechazar';
-          } else if (txt.includes('De acuerdo') || txt.includes('Aceptar')) {
+          } 
+          // GUARDAR (Specific for Layer 2 selections)
+          else if (txt.includes('Aceptar seleccionadas') || txt.includes('Aceptar seleccionados') || txt.includes('Guardar')) {
+            if (btn.innerText !== 'Guardar') btn.innerText = 'Guardar';
+          }
+          // ACEPTAR (Covers Layer 1 and 2)
+          else if (txt.includes('Aceptar todas') || txt.includes('De acuerdo') || txt === 'Aceptar') {
             if (btn.innerText !== 'Aceptar') btn.innerText = 'Aceptar';
-          } else if (txt.includes('Quiero elegir') || txt.includes('Configurar')) {
+          }
+          // CONFIGURAR (Layer 1 link)
+          else if (txt.includes('Quiero elegir') || txt.includes('Configurar')) {
             if (btn.innerText !== 'Configurar') btn.innerText = 'Configurar';
           }
         });
