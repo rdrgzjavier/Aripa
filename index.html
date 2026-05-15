@@ -1573,6 +1573,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     })(window, document, "clarity", "script", "wd9btxwafk");
 </script>
   
+  <!-- Forced Overrides for Klaro Capa 2 -->
+  <style>
+    @media (max-width: 767px) {
+      #klaro .klaro .cm-modal .cm-footer,
+      #klaro .klaro .cm-footer,
+      .cm-footer {
+        display: flex !important;
+        flex-direction: column !important;
+        flex-flow: column nowrap !important;
+        gap: 12px !important;
+        padding: 20px !important;
+        height: auto !important;
+      }
+      #klaro .klaro .cm-footer .cm-btn,
+      .cm-footer .cm-btn {
+        width: 100% !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+    }
+  </style>
 </body>
 </html>
 
