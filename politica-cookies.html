@@ -397,7 +397,7 @@
     requestAnimationFrame(draw);
   }());
 
-  // KLARO ENFORCEMENT
+  // KLARO ENFORCEMENT (Loop-safe from index.html)
   (function() {
     const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
     const enforceText = () => {
@@ -410,10 +410,23 @@
       const allBtns = document.querySelectorAll('#klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
       allBtns.forEach(btn => {
         const txt = btn.innerText;
-        if (txt.includes('Descartar') || txt.includes('Rechazar')) btn.innerText = 'Rechazar';
-        else if (txt.includes('De acuerdo') || txt.includes('Aceptar')) btn.innerText = 'Aceptar';
-        else if (txt.includes('Configurar')) btn.innerText = 'Configurar';
-        else if (txt.includes('Guardar')) btn.innerText = 'Guardar';
+        
+        // RECHAZAR
+        if (txt.includes('Descartar todas') || txt.includes('Rechazar todas') || txt === 'Descartar') {
+          if (btn.innerText !== 'Rechazar') btn.innerText = 'Rechazar';
+        } 
+        // GUARDAR
+        else if (txt.includes('Aceptar seleccionadas') || txt.includes('Aceptar seleccionados') || txt.includes('Guardar')) {
+          if (btn.innerText !== 'Guardar') btn.innerText = 'Guardar';
+        }
+        // ACEPTAR
+        else if (txt.includes('Aceptar todas') || txt.includes('De acuerdo') || txt === 'Aceptar') {
+          if (btn.innerText !== 'Aceptar') btn.innerText = 'Aceptar';
+        }
+        // CONFIGURAR
+        else if (txt.includes('Quiero elegir') || txt.includes('Configurar')) {
+          if (btn.innerText !== 'Configurar') btn.innerText = 'Configurar';
+        }
       });
     };
     const observer = new MutationObserver(enforceText);
