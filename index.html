@@ -22,26 +22,29 @@
     },
   };
 
-  // Optimized text change to avoid performance loops
-  document.addEventListener('DOMContentLoaded', () => {
+  // Ultra-optimized text change
+  (function() {
     const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
-    const observer = new MutationObserver((mutations) => {
+    const updateKlaro = () => {
       const p = document.querySelector('#klaro .cookie-notice p');
-      if (p && !p.innerText.includes('Utilizamos herramientas')) {
+      if (p && !p.dataset.updated) {
         p.innerText = targetText;
+        p.dataset.updated = "true";
         
         const okBtn = document.querySelector('#klaro .cm-btn-success');
         if (okBtn) okBtn.innerText = 'Aceptar todas';
         
-        const declineBtn = document.querySelector('#klaro .cm-btn-danger, #klaro .cm-btn-info, #klaro .cn-decline');
+        const declineBtn = document.querySelector('#klaro .cm-btn-danger, #klaro .cm-btn-info, #klaro .cn-decline, #klaro .cm-btn-decline');
         if (declineBtn) declineBtn.innerText = 'Solo esenciales';
         
         const configLink = document.querySelector('#klaro .cm-link');
         if (configLink) configLink.innerText = 'Configurar';
       }
-    });
+    };
+    const observer = new MutationObserver(updateKlaro);
     observer.observe(document.documentElement, { childList: true, subtree: true });
-  });
+    setInterval(updateKlaro, 500); // Fallback safe check
+  })();
 </script>
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
   
@@ -607,7 +610,7 @@ body { font-family: 'Inter', sans-serif; }
     }
   }
   /* Success modal styles removed */
-  /* Klaro Consent Manager Customization - Final Polish & Performance Fix */
+  /* Klaro Consent Manager Customization - FINAL VERSION */
   #klaro .klaro .cookie-notice {
     background-color: #ffffff !important;
     color: #061542 !important;
@@ -630,7 +633,7 @@ body { font-family: 'Inter', sans-serif; }
     margin: 0 auto !important;
     display: flex !important;
     flex-direction: column !important;
-    gap: 20px !important;
+    gap: 24px !important;
   }
   #klaro .klaro .cookie-notice .cn-ok {
     display: flex !important;
@@ -651,7 +654,7 @@ body { font-family: 'Inter', sans-serif; }
       text-align: left !important;
     }
     #klaro .klaro .cookie-notice .cn-ok {
-      flex-direction: row-reverse !important;
+      flex-direction: row !important; /* Fixed order */
       width: auto !important;
       gap: 24px !important;
     }
@@ -663,7 +666,7 @@ body { font-family: 'Inter', sans-serif; }
     font-weight: 500 !important;
     margin: 0 !important;
   }
-  /* Main Buttons */
+  /* Buttons Styling */
   #klaro .klaro .cm-btn {
     border-radius: 12px !important;
     font-weight: 700 !important;
@@ -671,6 +674,8 @@ body { font-family: 'Inter', sans-serif; }
     border: none !important;
     width: 100% !important;
     text-align: center !important;
+    font-size: 0.95rem !important;
+    box-shadow: none !important;
   }
   @media (min-width: 1024px) {
     #klaro .klaro .cm-btn { width: auto !important; }
@@ -678,50 +683,79 @@ body { font-family: 'Inter', sans-serif; }
   #klaro .klaro .cm-btn-success {
     background-color: #6b38fb !important;
     color: #ffffff !important;
+    order: 3 !important; /* Far right in desktop */
   }
   #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-second, #klaro .klaro .cm-btn-decline {
     background-color: #f3f4f6 !important;
     color: #4b5563 !important;
+    order: 2 !important;
   }
-  /* Ghost Button for Configurar */
+  /* Ghost Button Link */
   #klaro .klaro .cm-link {
     color: #6b38fb !important;
     font-weight: 700 !important;
     text-decoration: none !important;
     font-size: 0.95rem !important;
-    padding: 8px 0 !important;
-    border-bottom: 2px solid transparent !important;
-    transition: border-color 0.2s !important;
+    padding: 14px 0 !important;
     background: none !important;
-    width: auto !important;
+    width: 100% !important;
     display: inline-block !important;
+    text-align: center !important;
+    order: 1 !important;
+    border: none !important;
+  }
+  @media (min-width: 1024px) {
+    #klaro .klaro .cm-link { 
+      width: auto !important; 
+      padding: 0 !important;
+    }
   }
   #klaro .klaro .cm-link:hover {
-    border-bottom-color: #6b38fb !important;
+    text-decoration: none !important;
+    color: #6b38fb !important;
   }
 
-  /* Capa 2 - Modal Styling */
+  /* Capa 2 - Modal Styling (Forced Light Mode) */
+  #klaro .klaro .cm-modal {
+    z-index: 999999999 !important;
+  }
   #klaro .klaro .cm-modal .cm-panel {
     border-radius: 20px !important;
     background-color: #ffffff !important;
     color: #061542 !important;
+    max-height: 85vh !important;
+    overflow-y: auto !important;
   }
   #klaro .klaro .cm-modal .cm-header {
     border-bottom: 1px solid #f3f4f6 !important;
     padding: 24px !important;
+    background: #fff !important;
   }
   #klaro .klaro .cm-modal .cm-header h1 {
-    font-size: 1.5rem !important;
+    font-size: 1.4rem !important;
+    color: #061542 !important;
+    font-weight: 800 !important;
+  }
+  #klaro .klaro .cm-modal .cm-header .cm-close {
     color: #061542 !important;
   }
   #klaro .klaro .cm-modal .cm-body {
     padding: 24px !important;
+    background: #fff !important;
   }
   #klaro .klaro .cm-modal .cm-list-label .cm-switch .slider {
     background-color: #6b38fb !important;
   }
+  #klaro .klaro .cm-modal .cm-footer {
+    border-top: 1px solid #f3f4f6 !important;
+    background: #fff !important;
+    padding: 20px !important;
+  }
+  #klaro .klaro .cm-powered-by {
+    display: none !important;
+  }
 
-  /* Heavy Velado Fix */
+  /* Overlay */
   body:has(#klaro .cookie-notice) {
     overflow: hidden !important;
   }
@@ -732,7 +766,7 @@ body { font-family: 'Inter', sans-serif; }
     background: rgba(6, 21, 66, 0.8) !important;
     backdrop-filter: blur(10px) !important;
     -webkit-backdrop-filter: blur(10px) !important;
-    z-index: 99999998 !important; /* One level below the notice */
+    z-index: 99999997 !important;
     pointer-events: auto !important;
   }
 </style>
