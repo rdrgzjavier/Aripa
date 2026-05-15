@@ -7,21 +7,42 @@
 <meta name="description" content="Consultoría de crecimiento digital liderada por Javier Rodriguez de la Orden. Especialistas en SEO/GEO/AEO, CRO y automatización para escalar negocios con IA."/>
 
 <script type="text/javascript">
-    // Safe Klaro Configuration
-    window.klaroConfig = {
-      mustConsent: true,
-      acceptAll: true,
-      translations: {
-        es: {
-          consentNotice: {
-            description: 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?',
-          },
-          ok: 'Aceptar todas',
-          decline: 'Solo esenciales',
-          learnMore: 'Configurar',
-        },
-      },
+    // Ultra-light text and layout enforcement
+    const enforceKlaro = () => {
+      // 1. Text Fixes (Capa 1)
+      const notice = document.querySelector('#klaro .cookie-notice');
+      if (notice) {
+        const p = notice.querySelector('p');
+        if (p && !p.dataset.fixed) {
+          p.innerText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
+          p.dataset.fixed = "true";
+        }
+        const ok = notice.querySelector('.cm-btn-success');
+        if (ok) ok.innerText = 'Aceptar todas';
+        const decline = notice.querySelector('.cm-btn-danger, .cm-btn-info, .cn-decline, .cm-btn-decline');
+        if (decline) decline.innerText = 'Solo esenciales';
+        const config = notice.querySelector('.cm-link');
+        if (config) config.innerText = 'Configurar';
+      }
+
+      // 2. Mobile Layout Fix (Capa 2)
+      if (window.innerWidth < 768) {
+        const footer = document.querySelector('#klaro .cm-footer');
+        if (footer) {
+          footer.style.setProperty('display', 'flex', 'important');
+          footer.style.setProperty('flex-direction', 'column', 'important');
+          footer.style.setProperty('gap', '10px', 'important');
+          footer.style.setProperty('height', 'auto', 'important');
+          footer.querySelectorAll('.cm-btn').forEach(btn => {
+            btn.style.setProperty('width', '100%', 'important');
+            btn.style.setProperty('margin', '0', 'important');
+          });
+        }
+      }
     };
+    const observer = new MutationObserver(enforceKlaro);
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+    setInterval(enforceKlaro, 500);
   })();
 </script>
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
