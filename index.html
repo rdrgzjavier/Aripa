@@ -662,11 +662,13 @@ body { font-family: 'Inter', sans-serif; }
       justify-content: flex-end !important;
       display: flex !important;
     }
-    /* Targeted fix for the internal button group */
+    /* Force margin on the first button of the group to ensure separation */
+    #klaro .klaro .cookie-notice .cn-buttons .cm-btn:first-child {
+      margin-right: 16px !important;
+    }
     #klaro .klaro .cookie-notice .cn-buttons {
       display: flex !important;
       flex-direction: row !important;
-      gap: 16px !important;
       margin: 0 !important;
       padding: 0 !important;
     }
@@ -1630,7 +1632,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         const paragraphs = document.querySelectorAll('#klaro p, #id-cookie-notice p');
         paragraphs.forEach(p => {
           if (p.innerText.includes('¿Podríamos habilitar') || p.innerText.includes('Hola!')) {
-            p.innerText = targetText;
+            if (p.innerText !== targetText) p.innerText = targetText;
+          }
+        });
+
+        // Update Button Copys for all devices
+        const allBtns = document.querySelectorAll('#klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
+        allBtns.forEach(btn => {
+          const txt = btn.innerText;
+          if (txt.includes('Descartar') || txt.includes('Rechazar')) {
+            if (btn.innerText !== 'Rechazar') btn.innerText = 'Rechazar';
+          } else if (txt.includes('De acuerdo') || txt.includes('Aceptar')) {
+            if (btn.innerText !== 'Aceptar') btn.innerText = 'Aceptar';
+          } else if (txt.includes('Quiero elegir') || txt.includes('Configurar')) {
+            if (btn.innerText !== 'Configurar') btn.innerText = 'Configurar';
           }
         });
       };
