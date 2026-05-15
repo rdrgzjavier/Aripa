@@ -720,18 +720,23 @@ body { font-family: 'Inter', sans-serif; }
   
   @media (max-width: 767px) {
     #klaro .klaro .cm-modal .cm-panel .cm-footer,
-    #klaro .klaro .cm-footer {
+    #klaro .klaro .cm-footer,
+    #klaro .klaro .cm-footer .cm-buttons {
       display: flex !important;
       flex-direction: column !important;
-      gap: 10px !important;
+      gap: 12px !important;
       padding: 15px !important;
       height: auto !important;
+      width: 100% !important;
     }
     #klaro .klaro .cm-modal .cm-panel .cm-footer .cm-btn,
-    #klaro .klaro .cm-footer .cm-btn {
+    #klaro .klaro .cm-footer .cm-btn,
+    #klaro .klaro .cm-footer .cm-buttons .cm-btn {
       width: 100% !important;
+      max-width: 100% !important;
       margin: 0 !important;
       display: block !important;
+      flex: 1 1 auto !important;
     }
   }
 
