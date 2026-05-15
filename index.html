@@ -1207,6 +1207,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     releaseFocus(modal, _lastFocusedEl);
     modal.classList.add('hidden');
     document.body.classList.remove('modal-open');
+    // Re-evaluate shell UI now that modal is gone
+    requestAnimationFrame(() => updateShellUI());
   };
 
   window.showSuccessModal = () => document.getElementById('success-feedback-modal')?.classList.add('active');
@@ -1259,9 +1261,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     root.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', active ? '0' : '-1'));
   };
 
+  // Block shell UI updates briefly after any click to prevent
+  // Cal.com / overflow:hidden side-effects from hiding the bars.
+  let _blockShellUpdates = false;
+  let _blockTimer = null;
+  document.addEventListener('click', () => {
+    _blockShellUpdates = true;
+    clearTimeout(_blockTimer);
+    _blockTimer = setTimeout(() => {
+      _blockShellUpdates = false;
+      updateShellUI();
+    }, 500);
+  }, { passive: true });
+
   const updateShellUI = () => {
-    // DO NOT update shell UI while a modal is open to prevent bars from disappearing
-    // due to scroll position resets/shifts caused by body overflow-hidden.
+    if (_blockShellUpdates) return;
     if (document.body.classList.contains('modal-open')) return;
 
     const header = document.getElementById('site-header');
