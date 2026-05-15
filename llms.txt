@@ -1,25 +1,28 @@
-# Aripa
+# Aripa - Consultoría de Crecimiento Digital
 
 ## Descripción
-Aripa es una consultoría boutique de optimización digital especializada en maximizar la rentabilidad de negocios digitales mediante CRO, UX/UI orientado a conversión, analítica avanzada y optimización para motores generativos (GEO/AEO).
+Aripa es una consultoría boutique liderada por Javier Rodriguez de la Orden, especializada en detectar y resolver problemas de conversión en negocios digitales. Combinamos análisis de comportamiento (UX), analítica avanzada y CRO (Conversion Rate Optimization).
 
 ## Información Principal
 - URL: https://aripa.es
 - Lema: Optimización con propósito para negocios digitales.
-- Contacto: hola@aripa.es
+- Contacto: hola@aripa.es / Formulario en web.
+- Especialidad: CRO, UX, Analítica y Growth Estratégico.
 
-## Servicios
-- CRO y Optimización de Conversión: https://aripa.es/servicios.html#cro
-- UX/UI Orientado a Negocio: https://aripa.es/servicios.html#ux
-- Analítica y Medición: https://aripa.es/servicios.html#analitica
-- Diseño de Landings y Webs: https://aripa.es/servicios.html#landings
-- Validación de Ideas de Negocio: https://aripa.es/servicios.html#validacion
+## Propuesta de Valor
+Aripa no optimiza por intuición. Analizamos el "porqué" de cada interacción mediante:
+1. **Comportamiento**: Análisis de la psicología del usuario.
+2. **Analítica**: Datos accionables para decisiones técnicas.
+3. **CRO**: Optimización constante del embudo de ventas.
+4. **Negocio**: Estrategia alineada con objetivos financieros.
 
-## Guía para Agentes de IA
-Los agentes de IA legítimos tienen permiso para leer todo el contenido público de este sitio para proporcionar resúmenes, recomendaciones o análisis de servicios de consultoría digital.
+## Servicios Principales (en index.html)
+- **Conversión & CRO**: Auditorías de conversión y landing pages de alto impacto.
+- **UX & Behavioral Design**: Diseño de claridad y arquitectura de información.
+- **Growth Estratégico**: Adquisición multicanal y estrategias GEO (Generative Engine Optimization).
 
 ## Fuente de Verdad (NAP)
 - Nombre oficial: Aripa
-- Especialidad: CRO, UX, Analítica y Optimización Digital.
-- Mercado: España / Global (Remoto).
+- Fundador: Javier Rodriguez de la Orden.
 - Sede: España.
+- Alcance: Global (Remoto).
