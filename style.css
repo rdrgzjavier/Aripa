@@ -21,6 +21,24 @@
 }
 @font-face {
   font-family: 'Material Symbols Outlined';
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-feature-settings: 'liga';
+}
+
   font-style: normal;
   font-weight: 400;
   font-display: swap;
@@ -2270,5 +2288,6 @@ input:where([type='file']):focus {
 #mobile-bottom-nav .btn-after { background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(238,231,255,0.96) 100%); color: #161341; border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 8px 22px rgba(17,14,58,0.28); }
 #mobile-bottom-nav .btn-after .material-symbols-outlined { color: #6c45c0; }
 body.modal-open { overflow: hidden; }
+
 
 
