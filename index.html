@@ -1576,13 +1576,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         if (window.innerWidth < 768) {
           const footer = document.querySelector('#klaro .cm-footer');
           if (footer) {
-            footer.style.setProperty('display', 'flex', 'important');
-            footer.style.setProperty('flex-direction', 'column', 'important');
-            footer.style.setProperty('gap', '8px', 'important');
+            // Force column layout on the footer and any button container
+            const btnContainer = footer.querySelector('.cm-buttons, .cm-footer-buttons') || footer;
             
-            footer.querySelectorAll('.cm-btn').forEach(btn => {
+            footer.style.setProperty('padding', '8px 4px', 'important');
+            
+            btnContainer.style.setProperty('display', 'flex', 'important');
+            btnContainer.style.setProperty('flex-direction', 'column', 'important');
+            btnContainer.style.setProperty('gap', '2px', 'important');
+            btnContainer.style.setProperty('width', '100%', 'important');
+            
+            btnContainer.querySelectorAll('.cm-btn').forEach(btn => {
               btn.style.setProperty('width', '100%', 'important');
-              btn.style.setProperty('padding', '10px', 'important');
+              btn.style.setProperty('margin', '2px 0', 'important');
+              btn.style.setProperty('padding', '8px', 'important');
               btn.style.setProperty('font-size', '14px', 'important');
               
               const txt = btn.innerText;
