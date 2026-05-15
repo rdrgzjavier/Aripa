@@ -267,9 +267,10 @@ body { font-family: 'Inter', sans-serif; }
   .scrolled #floating-whatsapp-mobile { opacity: 0; visibility: hidden; transform: translateY(20px); }
   #sticky-bottom-bar {
     transform: translateY(100%);
-    transition: transform var(--duration-base) cubic-bezier(0.4,0,0.2,1);
+    transition: transform var(--duration-base) cubic-bezier(0.4,0,0.2,1), visibility var(--duration-base);
+    visibility: hidden;
   }
-  #sticky-bottom-bar.visible { transform: translateY(0); }
+  #sticky-bottom-bar.visible { transform: translateY(0); visibility: visible; }
   #mobile-bottom-nav {
     position: fixed;
     left: 0;
@@ -285,6 +286,7 @@ body { font-family: 'Inter', sans-serif; }
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     will-change: transform;
+    visibility: hidden;
   }
   @supports (padding: max(0px)) {
     #mobile-bottom-nav {
@@ -296,7 +298,7 @@ body { font-family: 'Inter', sans-serif; }
       padding-bottom: max(12px, constant(safe-area-inset-bottom));
     }
   }
-  .scrolled #mobile-bottom-nav { transform: translateY(0); }
+  .scrolled #mobile-bottom-nav { transform: translateY(0); visibility: visible; }
   #mobile-bottom-nav .btn-after {
     background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(238, 231, 255, 0.96) 100%);
     color: #161341;
@@ -333,14 +335,27 @@ body { font-family: 'Inter', sans-serif; }
   /* Prevent body scroll when a modal is open */
   body.modal-open { overflow: hidden; }
   /* Modal overlay: always covers full viewport */
-  #service-modal,
-  #contact-modal {
-    align-items: center !important;
-    justify-content: center !important;
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    z-index: 100;
   }
   .modal-panel {
+    width: 100%;
+    max-width: 32rem;
+    background: white;
+    border-radius: 1.5rem;
+    position: relative;
     max-height: 90vh;
     overflow-y: auto;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  }
+  @media (min-width: 768px) {
+    .modal-panel { max-width: 36rem; }
   }
   @media (max-width: 767px) {
     .modal-panel {
@@ -512,7 +527,7 @@ body { font-family: 'Inter', sans-serif; }
         display: flex;
         align-items: center;
         justify-content: center;
-        z-index: 1000;
+        z-index: 110;
         opacity: 0;
         pointer-events: none;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -604,8 +619,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="material-symbols-outlined text-[#6c45c0]">article</span> Recursos
       </a>
 
-      <button class="cta-core flex items-center justify-center gap-3 text-white w-full py-5 px-6 btn-lavender rounded-xl mt-6 !text-[13px]" onclick="toggleDrawer(); openContactModal();">
-        <span class="material-symbols-outlined text-lg">mail</span> Tengo una duda
+      <button class="cta-core flex items-center justify-center gap-3 text-white w-full py-6 px-8 btn-lavender rounded-xl mt-8 !text-[14px] shadow-lg active:scale-95 transition-all" onclick="toggleDrawer(); openContactModal();">
+        <span class="material-symbols-outlined text-xl">mail</span> Tengo una duda
       </button>
     </div>
   </nav>
@@ -1003,7 +1018,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <!-- MOBILE BOTTOM NAV (hidden on md+) -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden invisible"
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden"
      id="mobile-bottom-nav"
      aria-hidden="true"
      style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
@@ -1014,7 +1029,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </nav>
 
 <!-- DESKTOP STICKY BOTTOM BAR (hidden on mobile) -->
-<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between pointer-events-none invisible"
+<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between pointer-events-none"
      id="sticky-bottom-bar"
      aria-hidden="true">
   <div class="flex flex-col">
@@ -1041,7 +1056,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}'></button>
 
 <!-- SERVICE MODAL -->
-<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] flex items-center justify-center p-6 hidden" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="top:0;left:0;right:0;bottom:0;">
+<div class="modal-overlay z-[80] hidden" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);">
   <div class="modal-panel bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative shadow-2xl max-h-[90vh] overflow-y-auto">
     <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors" onclick="closeModal('service-modal')" aria-label="Cerrar">
       <span class="material-symbols-outlined text-2xl md:text-3xl" aria-hidden="true">close</span>
@@ -1059,7 +1074,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- CONTACT MODAL -->
-<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] flex items-center justify-center p-6 hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+<div class="modal-overlay z-[90] hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);">
   <div class="modal-panel bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
     <div class="mb-6 md:mb-8">
       <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-2" id="contact-modal-title">Hablemos</h4>
@@ -1226,9 +1241,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       modal.classList.add('hidden');
       document.body.classList.remove('modal-open');
     }
-    // Trigger Cal.com via its standard element-click mechanism
-    const trigger = document.getElementById('cal-hidden-trigger');
-    if (trigger) trigger.click();
+    // Small delay ensures the browser has repainted and the modal-open lock is gone
+    setTimeout(() => {
+      const trigger = document.getElementById('cal-hidden-trigger');
+      if (trigger) trigger.click();
+    }, 100);
   };
 
   const setInteractive = (root, active) => {
@@ -1244,12 +1261,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const stickyBar = document.getElementById('sticky-bottom-bar');
     const mobileNav = document.getElementById('mobile-bottom-nav');
     const hero = document.getElementById('hero-section') || document.querySelector('main section');
+    
+    const scrollY = window.scrollY;
     const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 220;
-    const pastHero = window.scrollY > heroBottom - 200;
-    header?.classList.toggle('is-sticky', window.scrollY > 20);
-    document.body.classList.toggle('scrolled', window.scrollY > 150);
-    setInteractive(stickyBar, window.innerWidth >= 768 && pastHero);
-    setInteractive(mobileNav, window.innerWidth < 768 && window.scrollY > 150);
+    const pastHero = scrollY > heroBottom - 200;
+
+    header?.classList.toggle('is-sticky', scrollY > 20);
+    document.body.classList.toggle('scrolled', scrollY > 150);
+    
+    // Desktop sticky bar
+    if (stickyBar) {
+      const isVisible = window.innerWidth >= 768 && pastHero;
+      stickyBar.classList.toggle('visible', isVisible);
+      stickyBar.classList.toggle('invisible', !isVisible);
+      stickyBar.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
+      stickyBar.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', isVisible ? '0' : '-1'));
+    }
+
+    // Mobile bottom nav: Visibility handled primarily via .scrolled class in CSS
+    if (mobileNav) {
+      const isVisible = window.innerWidth < 768 && scrollY > 150;
+      mobileNav.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
+      mobileNav.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', isVisible ? '0' : '-1'));
+    }
   };
 
   window.addEventListener('scroll', updateShellUI, { passive: true });
