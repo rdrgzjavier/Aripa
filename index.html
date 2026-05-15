@@ -330,7 +330,22 @@ body { font-family: 'Inter', sans-serif; }
     background: rgba(255,255,255,0.06);
     border-color: rgba(255,255,255,0.1);
   }
-  body.modal-open { overflow: hidden; }
+  /* Modal scroll-lock: prevents body scroll while keeping fixed modals at viewport center */
+  body.modal-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    /* top is set dynamically by JS */
+  }
+  .modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1.5rem;
+    z-index: 80;
+  }
   .modal-panel {
     max-height: 90vh;
     overflow-y: auto;
@@ -606,19 +621,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HEADER -->
 <header id="site-header" aria-label="Cabecera principal">
-  <div class="header-inner relative flex justify-between items-center px-6 md:px-12 max-w-[1440px] mx-auto">
-    <!-- Logo: Centered on mobile, aligned on md+ -->
-    <a href="index.html" class="flex items-center justify-start w-[18%] outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
+  <div class="header-inner relative flex items-center px-6 md:px-12 max-w-[1440px] mx-auto">
+    <!-- Logo -->
+    <a href="index.html" class="flex items-center justify-start flex-none w-[120px] md:w-[140px] outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
       <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
     </a>
 
-    <!-- Desktop nav (hidden on mobile) -->
-    <nav class="hidden md:flex items-center justify-center gap-12 w-2/4">
+    <!-- Desktop nav: absolutely centered in header so it's optically centred regardless of logo/CTA widths -->
+    <nav class="hidden md:flex items-center justify-center gap-12 absolute left-1/2 -translate-x-1/2">
       <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="servicios.html">Servicios</a>
       <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="recursos.html">Recursos</a>
     </nav>
 
-    <div class="flex items-center justify-end gap-6 w-[32%]">
+    <div class="flex items-center justify-end gap-6 ml-auto">
       <!-- Desktop CTA button (hidden on mobile) -->
       <button class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
         <span class="material-symbols-outlined">mail</span>
@@ -1026,8 +1041,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- SERVICE MODAL -->
-<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] flex items-center justify-center p-6 hidden" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-  <div class="modal-panel bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[80] flex items-center justify-center p-6 hidden" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="top:0;left:0;right:0;bottom:0;">
+  <div class="modal-panel bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative shadow-2xl max-h-[90vh] overflow-y-auto">
     <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors" onclick="closeModal('service-modal')" aria-label="Cerrar">
       <span class="material-symbols-outlined text-2xl md:text-3xl" aria-hidden="true">close</span>
     </button>
@@ -1037,10 +1052,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="space-y-2 md:space-y-4" id="modal-list"></div>
     </div>
     <button class="cta-core w-full py-4 md:py-5 btn-after text-white rounded-xl md:rounded-2xl font-bold uppercase tracking-widest text-sm shadow-xl active:scale-95 transition-all flex items-center justify-center"
-            data-cal-link="aripa/hoja-de-ruta"
-            data-cal-namespace="hoja-de-ruta"
-            data-cal-config='{"layout":"month_view"}'
-            onclick="closeModal('service-modal')">
+            onclick="openCalFromModal('service-modal')">
       Solicitar análisis
     </button>
   </div>
@@ -1148,7 +1160,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (isHidden) {
       _lastFocusedEl = document.activeElement;
       drawer.classList.remove('invisible');
-      document.body.classList.add('modal-open');
+      lockScroll();
       hamburger?.setAttribute('aria-expanded', 'true');
       requestAnimationFrame(() => {
         overlay.classList.add('opacity-100');
@@ -1159,18 +1171,34 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       releaseFocus(content, _lastFocusedEl);
       overlay.classList.remove('opacity-100');
       content.classList.add('translate-x-full');
-      document.body.classList.remove('modal-open');
+      unlockScroll();
       hamburger?.setAttribute('aria-expanded', 'false');
       setTimeout(() => drawer.classList.add('invisible'), 300);
     }
   };
 
+  // Scroll-lock helpers: save scroll position before locking body
+  // so position:fixed elements always render at viewport center.
+  let _scrollLockY = 0;
+
+  function lockScroll() {
+    _scrollLockY = window.scrollY;
+    document.body.style.top = `-${_scrollLockY}px`;
+    document.body.classList.add('modal-open');
+  }
+
+  function unlockScroll() {
+    document.body.classList.remove('modal-open');
+    document.body.style.top = '';
+    window.scrollTo(0, _scrollLockY);
+  }
+
   window.openContactModal = function () {
     _lastFocusedEl = document.activeElement;
     const modal = document.getElementById('contact-modal');
     if (!modal) return;
+    lockScroll();
     modal.classList.remove('hidden');
-    document.body.classList.add('modal-open');
     trapFocus(modal, { autoFocusFirst: true });
   };
 
@@ -1179,7 +1207,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (!modal) return;
     releaseFocus(modal, _lastFocusedEl);
     modal.classList.add('hidden');
-    document.body.classList.remove('modal-open');
+    unlockScroll();
   };
 
   window.showSuccessModal = () => document.getElementById('success-feedback-modal')?.classList.add('active');
@@ -1199,9 +1227,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (!modal) return;
     document.getElementById('modal-title').innerText = s.title;
     document.getElementById('modal-desc').innerText = s.desc;
+    lockScroll();
     modal.classList.remove('hidden');
-    document.body.classList.add('modal-open');
     trapFocus(modal, { autoFocusFirst: true });
+  };
+
+  // Opens Cal.com after properly releasing any modal lock so body.modal-open
+  // doesn't block the Cal widget from rendering on first click.
+  window.openCalFromModal = function(modalId) {
+    const modal = document.getElementById(modalId);
+    if (modal) {
+      releaseFocus(modal, null);
+      modal.classList.add('hidden');
+    }
+    unlockScroll();
+    // Small delay ensures browser has repainted before Cal.com renders
+    setTimeout(() => {
+      const ns = window.Cal && window.Cal.ns && window.Cal.ns['hoja-de-ruta'];
+      if (ns) {
+        ns('modal', { calLink: 'aripa/hoja-de-ruta', config: { layout: 'month_view' } });
+      } else if (window.Cal) {
+        window.Cal('modal', { calLink: 'aripa/hoja-de-ruta', config: { layout: 'month_view' } });
+      }
+    }, 80);
   };
 
   const setInteractive = (root, active) => {
