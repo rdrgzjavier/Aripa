@@ -17,9 +17,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 <link rel="canonical" href="https://aripa.es/"/>
-<link rel="preconnect" href="https://app.cal.com">
-<link rel="dns-prefetch" href="https://app.cal.com">
-<link rel="preload" href="https://app.cal.com/embed/embed.js" as="script">
 <link rel="preload" href="/style.css" as="style">
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="icon" href="/assets/favicon-64.png" sizes="64x64">
@@ -102,7 +99,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   ]
 }
 </script>
-<link rel="preconnect" href="https://app.cal.com">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -1097,10 +1094,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div>
         <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-service">Servicio de interés</label>
         <select class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 appearance-none" id="c-service">
-          <option value="conversion">Conversión &amp; CRO</option>
-          <option value="ux">UX &amp; Behavioral Design</option>
-          <option value="growth">Growth Estratégico</option>
-          <option value="general">Otros / Consulta general</option>
+          <option value="general" selected>Consulta general</option>
         </select>
       </div>
       <div>
@@ -1147,7 +1141,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       else            { if (document.activeElement === last)  { e.preventDefault(); first.focus(); } }
     };
     containerEl.addEventListener('keydown', containerEl._trapHandler);
-    if (opts.autoFocusFirst) nodes[0].focus();
+    if (opts.autoFocusFirst) nodes[0].focus({ preventScroll: true });
   }
 
   function releaseFocus(containerEl, returnEl) {
@@ -1186,11 +1180,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     }
   };
 
+  let _preModalScrollY = 0;
+
   window.openContactModal = function () {
     _lastFocusedEl = document.activeElement;
     const modal = document.getElementById('contact-modal');
     if (!modal) return;
+    
+    _preModalScrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${_preModalScrollY}px`;
+    document.body.style.width = '100%';
     document.body.classList.add('modal-open');
+    
     modal.classList.remove('hidden');
     trapFocus(modal, { autoFocusFirst: true });
   };
@@ -1200,7 +1202,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (!modal) return;
     releaseFocus(modal, _lastFocusedEl);
     modal.classList.add('hidden');
+    
     document.body.classList.remove('modal-open');
+    document.body.style.position = '';
+    document.body.style.top = '';
+    document.body.style.width = '';
+    window.scrollTo(0, _preModalScrollY);
+
     // Re-evaluate shell UI now that modal is gone
     requestAnimationFrame(() => updateShellUI());
   };
@@ -1222,7 +1230,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (!modal) return;
     document.getElementById('modal-title').innerText = s.title;
     document.getElementById('modal-desc').innerText = s.desc;
+    
+    _preModalScrollY = window.scrollY;
+    document.body.style.position = 'fixed';
+    document.body.style.top = `-${_preModalScrollY}px`;
+    document.body.style.width = '100%';
     document.body.classList.add('modal-open');
+    
     modal.classList.remove('hidden');
     trapFocus(modal, { autoFocusFirst: true });
   };
@@ -1238,7 +1252,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   };
 
   // Block shell UI updates briefly after any click to prevent
-  // Cal.com / overflow:hidden side-effects from hiding the bars.
+  // layout side-effects from hiding the bars.
   let _blockShellUpdates = false;
   let _blockTimer = null;
   document.addEventListener('click', () => {
@@ -1247,7 +1261,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     _blockTimer = setTimeout(() => {
       _blockShellUpdates = false;
       updateShellUI();
-    }, 500);
+    }, 800);
   }, { passive: true });
 
   const updateShellUI = () => {
