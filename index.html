@@ -618,15 +618,10 @@ body { font-family: 'Inter', sans-serif; }
     gap: 8px !important;
     width: 100% !important;
   }
-  #klaro .klaro .cookie-notice .cn-ok > * {
-    width: 100% !important;
-    margin: 0 !important;
-  }
   #klaro .klaro .cookie-notice .cn-ok .cm-btn {
     width: 100% !important;
     margin: 0 !important;
     padding: 12px !important;
-    display: block !important;
   }
 
   /* DESKTOP CAPA 1 */
@@ -645,17 +640,12 @@ body { font-family: 'Inter', sans-serif; }
       flex-direction: row !important;
       flex-wrap: nowrap !important;
       width: auto !important;
-      gap: 16px !important;
+      gap: 12px !important;
       align-items: center !important;
-    }
-    #klaro .klaro .cookie-notice .cn-ok > * {
-      width: auto !important;
-      margin: 0 !important;
     }
     #klaro .klaro .cookie-notice .cn-ok .cm-btn {
       width: auto !important;
       white-space: nowrap !important;
-      margin: 0 !important;
     }
   }
   
@@ -1609,15 +1599,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           if (p.innerText.includes('¿Podríamos habilitar') || p.innerText.includes('Hola!')) {
             p.innerText = targetText;
           }
-        });
-        
-        // Force button text on Layer 1 to match Layer 2 for consistency
-        const layer1Buttons = document.querySelectorAll('#id-cookie-notice .cm-btn, .cookie-notice .cm-btn');
-        layer1Buttons.forEach(btn => {
-          const txt = btn.innerText;
-          if (txt.includes('Descartar') || txt.includes('Rechazar')) btn.innerText = 'Rechazar';
-          if (txt.includes('De acuerdo') || txt.includes('Aceptar')) btn.innerText = 'Aceptar';
-          if (txt.includes('Quiero elegir') || txt.includes('Configurar')) btn.innerText = 'Quiero elegir';
         });
       };
       const observer = new MutationObserver(enforceText);
