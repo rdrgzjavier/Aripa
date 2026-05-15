@@ -1,3 +1,31 @@
+﻿@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/inter-400.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/assets/fonts/inter-500.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/inter-600.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Material Symbols Outlined';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/material-symbols.woff2') format('woff2');
+}
 *, ::before, ::after {
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -2242,4 +2270,5 @@ input:where([type='file']):focus {
 #mobile-bottom-nav .btn-after { background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(238,231,255,0.96) 100%); color: #161341; border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 8px 22px rgba(17,14,58,0.28); }
 #mobile-bottom-nav .btn-after .material-symbols-outlined { color: #6c45c0; }
 body.modal-open { overflow: hidden; }
+
 
