@@ -19,34 +19,75 @@
 
 <style>
   :root {
-    --color-primary: 220 80% 14%;
-    --color-secondary: 265 47% 51%;
-    --color-background: 20 33% 98%;
-    --duration-base: 300ms;
-    --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+    --color-primary:               220 80% 14%;
+    --color-primary-container:     225 51% 23%;
+    --color-secondary:             265 47% 51%;
+    --color-secondary-container:   264 97% 74%;
+    --color-on-primary-container:  224 34% 66%;
+    --color-background:            20  33% 98%;
+    --color-surface:               20  33% 98%;
+    --color-surface-container-low: 24  20% 95%;
+    --color-on-background:         180  2% 11%;
+    --color-on-surface:            180  2% 11%;
+    --color-on-surface-variant:    234  5% 29%;
+    --color-outline-variant:       246  9% 80%;
+    --duration-base:    300ms;
+    --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
   }
   body { font-family: 'Inter', sans-serif; background-color: #fcf9f8; color: #061542; }
-  .font-headline { font-weight: 800; letter-spacing: -0.02em; }
+  .font-headline { font-family: 'Inter', sans-serif; font-weight: 800; }
   
-  /* Hero Styles */
-  #hero-section { position: relative; min-height: 40vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #061542; padding-top: 80px; }
+  /* Header Logic from Index */
+  #site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background-color: transparent;
+    transition: background-color var(--duration-base) var(--ease-out-expo);
+  }
+  #site-header .header-inner {
+    height: 4.25rem;
+    transition: height var(--duration-base) var(--ease-out-expo);
+  }
+  #site-header.is-sticky {
+    background-color: rgba(6, 21, 66, 0.82);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    box-shadow: 0 20px 48px -18px rgba(0,0,0,0.45);
+  }
+  @media (min-width: 768px) {
+    #site-header .header-inner { height: 5rem; }
+    #site-header.is-sticky .header-inner { height: 4.35rem; }
+  }
+
+  /* Hero Styles & Typography */
+  #hero-section { position: relative; min-height: 45vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #061542; }
   .av6-canvas { position: absolute; inset: 0; z-index: 1; }
   .av6-content { position: relative; z-index: 10; max-width: 900px; padding: 0 1.5rem; text-align: center; color: white; }
+  .av6-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.2);
+  }
   
-  /* Header Logic */
-  #site-header.is-sticky { background: rgba(255,255,255,0.8); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(0,0,0,0.05); }
+  /* Legal Content Container Spacing */
+  .legal-container { 
+    background: white; 
+    border-radius: 32px; 
+    border: 1px solid rgba(107, 56, 251, 0.1); 
+    box-shadow: 0 4px 24px rgba(0,0,0,0.02); 
+  }
   
-  /* Legal Content Styles */
-  .legal-container { background: white; border-radius: 32px; border: 1px solid rgba(107, 56, 251, 0.1); box-shadow: 0 4px 24px rgba(0,0,0,0.02); }
-  .legal-prose h2 { color: #061542; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.02em; }
-  .legal-prose h3 { color: #6b38fb; font-weight: 700; font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.75rem; }
-  .legal-prose p { margin-bottom: 1.25rem; line-height: 1.7; color: rgba(6, 21, 66, 0.7); }
-  .legal-prose ul { margin-bottom: 1.5rem; list-style-type: disc; padding-left: 1.5rem; color: rgba(6, 21, 66, 0.7); }
-  .legal-prose li { margin-bottom: 0.5rem; }
-
-  /* Klaro Integration */
-  .klaro-manager-btn { display: inline-flex; items-center: center; gap: 8px; background: #6b38fb; color: white; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 700; font-size: 0.875rem; transition: all 0.3s; margin-top: 1rem; }
-  .klaro-manager-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(107, 56, 251, 0.2); }
+  /* Klaro Custom Styles from Index */
+  #klaro, #klaro .klaro { z-index: 999999999 !important; }
+  #klaro .klaro .cookie-notice { background-color: #ffffff !important; color: #061542 !important; box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important; border-top: 1px solid #f3f4f6 !important; }
+  #klaro .klaro .cm-btn-success { background-color: #6b38fb !important; color: #ffffff !important; border-radius: 16px !important; }
+  #klaro .klaro .cm-switch input:checked + .slider { background-color: #22c55e !important; }
+  #klaro .klaro .cm-switch .slider { background-color: #d1d5db !important; transition: 0.3s !important; }
 </style>
 
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
@@ -54,18 +95,27 @@
 
 <body>
 
-<!-- HEADER (Sincronizado con index.html) -->
-<header id="site-header" class="fixed top-0 w-full z-50 transition-all duration-300">
-  <div class="max-w-[1440px] mx-auto h-20 px-6 md:px-12 flex items-center justify-between">
-    <a href="index.html" class="flex items-center">
-      <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
-    </a>
-    <nav class="hidden md:flex gap-10">
-      <a href="index.html#servicios" class="text-sm font-bold uppercase tracking-widest text-primary/70 hover:text-primary transition-colors">Servicios</a>
-      <a href="index.html#faq" class="text-sm font-bold uppercase tracking-widest text-primary/70 hover:text-primary transition-colors">Dudas</a>
-      <a href="index.html#diferencial" class="text-sm font-bold uppercase tracking-widest text-primary/70 hover:text-primary transition-colors">Aripa</a>
+<!-- HEADER (Replica Exacta de Index) -->
+<header id="site-header" aria-label="Cabecera principal">
+  <div class="header-inner flex items-center justify-between px-6 md:px-12 max-w-[1440px] mx-auto">
+    <div class="flex-1 flex justify-start">
+      <a href="index.html" class="flex items-center outline-none">
+        <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
+      </a>
+    </div>
+    <nav class="hidden md:flex items-center justify-center gap-10 lg:gap-14">
+      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="index.html#servicios">Servicios</a>
+      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="index.html#faq">Dudas</a>
     </nav>
-    <button class="hidden md:block bg-primary text-white px-8 py-3 rounded-xl text-xs font-black tracking-widest uppercase hover:scale-105 transition-transform" onclick="openContactModal()">Hablemos</button>
+    <div class="flex-1 flex items-center justify-end gap-6">
+      <button type="button" class="hidden md:flex bg-primary text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 font-bold text-xs uppercase tracking-widest" onclick="openContactModal()">
+        <span class="material-symbols-outlined text-sm">mail</span>
+        Tengo una duda
+      </button>
+      <button type="button" class="flex items-center justify-center p-2 md:hidden" aria-label="Contacto" onclick="openContactModal()">
+        <span class="material-symbols-outlined text-white text-2xl">mail</span>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -75,13 +125,13 @@
   <section id="hero-section">
     <canvas class="av6-canvas" id="hero-gradient-canvas"></canvas>
     <div class="av6-content">
-      <h1 class="text-4xl md:text-5xl font-headline mb-4">Política de Cookies</h1>
+      <h1 class="av6-title">Política de Cookies</h1>
       <p class="text-lg opacity-70 max-w-2xl mx-auto">Transparencia sobre el uso de tecnologías de seguimiento en Aripa.</p>
     </div>
   </section>
 
   <!-- CONTENIDO LEGAL -->
-  <section class="py-20 px-6 md:px-12 max-w-4xl mx-auto">
+  <section class="my-24 md:my-32 px-6 md:px-12 max-w-4xl mx-auto">
     <div class="legal-container p-8 md:p-16">
       
       <div class="legal-prose">
