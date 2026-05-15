@@ -735,16 +735,23 @@ body { font-family: 'Inter', sans-serif; }
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
   }
   #klaro .klaro .cm-modal .cm-panel {
     border-radius: 16px !important;
     background-color: #ffffff !important;
     color: #061542 !important;
     max-height: 85vh !important;
+    overflow-y: auto !important;
     width: 90% !important;
     max-width: 500px !important;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
     border: 1px solid #f3f4f6 !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
   @media (max-width: 768px) {
     #klaro .klaro .cm-modal .cm-panel {
@@ -755,16 +762,22 @@ body { font-family: 'Inter', sans-serif; }
   /* Ensure all sub-containers are white and visible */
   #klaro .klaro .cm-modal .cm-panel .cm-header,
   #klaro .klaro .cm-modal .cm-panel .cm-body,
-  #klaro .klaro .cm-modal .cm-panel .cm-footer {
+  #klaro .klaro .cm-modal .cm-panel .cm-footer,
+  #klaro .klaro .cm-modal .cm-panel .cm-list,
+  #klaro .klaro .cm-modal .cm-panel .cm-service,
+  #klaro .klaro .cm-modal .cm-panel .cm-section {
     background-color: #ffffff !important;
     color: #061542 !important;
     opacity: 1 !important;
     visibility: visible !important;
-    display: block !important;
+  }
+  #klaro .klaro .cm-modal .cm-panel .cm-body {
+    padding: 0 24px !important;
   }
   #klaro .klaro .cm-modal .cm-header {
     border-bottom: 1px solid #f3f4f6 !important;
     padding: 24px !important;
+    flex-shrink: 0 !important;
   }
   #klaro .klaro .cm-modal .cm-header h1 {
     font-size: 1.3rem !important;
@@ -772,7 +785,18 @@ body { font-family: 'Inter', sans-serif; }
     font-weight: 800 !important;
     margin: 0 !important;
   }
+  #klaro .klaro .cm-modal .cm-footer {
+    border-top: 1px solid #f3f4f6 !important;
+    padding: 24px !important;
+    flex-shrink: 0 !important;
+  }
   #klaro .klaro .cm-modal .cm-header .cm-close {
+    color: #061542 !important;
+  }
+  /* Fix text opacity in services */
+  #klaro .klaro .cm-modal .cm-panel p, 
+  #klaro .klaro .cm-modal .cm-panel span,
+  #klaro .klaro .cm-modal .cm-panel div {
     color: #061542 !important;
   }
   #klaro .klaro .cm-modal .cm-body {
