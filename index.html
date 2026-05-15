@@ -350,23 +350,18 @@ body { font-family: 'Inter', sans-serif; }
   }
   .modal-overlay.hidden { display: none !important; }
   .modal-panel {
+    position: relative;
     width: 100%;
     max-width: 32rem;
     background: white;
     border-radius: 1.5rem;
-    position: relative;
-    max-height: 90vh;
+    max-height: calc(100dvh - 2rem);
     overflow-y: auto;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    margin: auto; /* Grid centering backup */
+    margin: auto;
   }
   @media (min-width: 768px) {
-    .modal-panel { max-width: 36rem; }
-  }
-  @media (max-width: 767px) {
-    .modal-panel {
-      max-height: calc(100dvh - 2rem);
-    }
+    .modal-panel { max-width: 36rem; max-height: 90vh; border-radius: 1.75rem; }
   }
   .reveal-ready {
     transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1),
@@ -625,7 +620,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span class="material-symbols-outlined text-[#6c45c0]">article</span> Recursos
       </a>
 
-      <button class="cta-core flex items-center justify-center gap-3 text-white w-full py-6 px-8 btn-lavender rounded-xl mt-8 !text-[14px] shadow-lg active:scale-95 transition-all" onclick="toggleDrawer(); openContactModal();">
+      <button class="cta-core flex items-center justify-center gap-3 text-white w-full py-5 px-6 btn-lavender rounded-xl mt-8 !text-[13px] shadow-lg active:scale-95 transition-all min-h-[56px]" onclick="toggleDrawer(); openContactModal();">
         <span class="material-symbols-outlined text-xl">mail</span> Tengo una duda
       </button>
     </div>
@@ -634,27 +629,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- HEADER -->
 <header id="site-header" aria-label="Cabecera principal">
-  <div class="header-inner relative grid grid-cols-[120px_1fr_120px] md:grid-cols-[140px_1fr_140px] items-center px-6 md:px-12 max-w-[1440px] mx-auto h-[4.25rem] md:h-[5rem]">
-    <!-- Logo -->
-    <div class="flex justify-start">
+  <div class="header-inner flex items-center justify-between px-6 md:px-12 max-w-[1440px] mx-auto">
+    <!-- Left Column: Logo -->
+    <div class="flex-1 flex justify-start">
       <a href="index.html" class="flex items-center outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
         <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
       </a>
     </div>
 
-    <!-- Desktop nav: Optically centered via grid column -->
-    <nav class="hidden md:flex items-center justify-center gap-12">
+    <!-- Center Column: Nav -->
+    <nav class="hidden md:flex flex-none items-center justify-center gap-10 lg:gap-14">
       <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="servicios.html">Servicios</a>
       <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="recursos.html">Recursos</a>
     </nav>
 
-    <div class="flex items-center justify-end gap-6">
-      <!-- Desktop CTA (hidden on mobile) -->
+    <!-- Right Column: CTA & Burger -->
+    <div class="flex-1 flex items-center justify-end gap-6">
       <button class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
         <span class="material-symbols-outlined">mail</span>
         Tengo una duda
       </button>
-      <!-- Mobile Hamburger -->
       <button class="flex items-center justify-center p-2 -mr-2 md:hidden" onclick="toggleDrawer()" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="drawer" id="hamburger-btn">
         <span class="material-symbols-outlined text-white text-2xl" aria-hidden="true">menu</span>
       </button>
@@ -690,7 +684,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="av6-ctas hero-animate-4">
         <button class="cta-core av6-btn-primary hover:scale-[1.02] transition-transform active:scale-95"
-                onclick="openCalFromModal()">
+                data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view"}'>
           Solicitar análisis
         </button>
         <a class="cta-core av6-btn-secondary hover:bg-white/15 transition-colors"
@@ -1028,7 +1022,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      id="mobile-bottom-nav"
      aria-hidden="true"
      style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
-  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" onclick="openCalFromModal()" tabindex="-1">
+  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view"}' tabindex="-1">
     <span class="material-symbols-outlined">calendar_month</span>
     HABLEMOS
   </button>
@@ -1046,7 +1040,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
   <div class="flex items-center gap-3 pointer-events-auto">
     <button class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2"
-            onclick="openCalFromModal()" tabindex="-1">
+            data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view"}' tabindex="-1">
       <span class="material-symbols-outlined text-lg">calendar_month</span> HABLEMOS
     </button>
   </div>
@@ -1063,7 +1057,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- SERVICE MODAL -->
 <div class="modal-overlay z-[80] hidden" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);">
-  <div class="modal-panel bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative shadow-2xl max-h-[90vh] overflow-y-auto">
+  <div class="modal-panel p-8 md:p-12">
     <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors" onclick="closeModal('service-modal')" aria-label="Cerrar">
       <span class="material-symbols-outlined text-2xl md:text-3xl" aria-hidden="true">close</span>
     </button>
@@ -1081,7 +1075,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- CONTACT MODAL -->
 <div class="modal-overlay z-[90] hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);">
-  <div class="modal-panel bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
+  <div class="modal-panel p-8 md:p-12">
     <div class="mb-6 md:mb-8">
       <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-2" id="contact-modal-title">Hablemos</h4>
       <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
@@ -1237,7 +1231,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     trapFocus(modal, { autoFocusFirst: true });
   };
 
-  // Optimized Cal.com trigger to avoid 'veil' bug and use preloaded resources.
+  // Cal.com trigger: closes any open modal first, then clicks the hidden
+  // data-cal-link button — the only reliable way to open Cal.com embed.
   window.openCalFromModal = function(modalId) {
     if (modalId) {
       const modal = document.getElementById(modalId);
@@ -1247,20 +1242,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         document.body.classList.remove('modal-open');
       }
     }
-    // Small delay ensures the browser has repainted and shell UI is stable
-    setTimeout(() => {
-      const cal = window.Cal;
-      if (cal) {
-        const ns = cal.ns && cal.ns['hoja-de-ruta'];
-        const api = ns || cal;
-        api('modal', { calLink: 'aripa/hoja-de-ruta', config: { layout: 'month_view' } });
-      }
-    }, 150);
+    // Wait for repaint before triggering Cal.com
+    requestAnimationFrame(() => {
+      setTimeout(() => {
+        const trigger = document.getElementById('cal-hidden-trigger');
+        if (trigger) trigger.click();
+      }, 50);
+    });
   };
 
   const setInteractive = (root, active) => {
     if (!root) return;
-    root.classList.toggle('invisible', !active);
+    // Only toggle 'visible' — CSS handles visibility:hidden by default
     root.classList.toggle('visible', active);
     root.setAttribute('aria-hidden', active ? 'false' : 'true');
     root.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', active ? '0' : '-1'));
@@ -1292,11 +1285,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       stickyBar.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', isVisible ? '0' : '-1'));
     }
 
-    // Mobile bottom nav: Visibility handled primarily via .scrolled class in CSS
+    // Mobile bottom nav: visibility driven purely by CSS (.scrolled class)
     if (mobileNav) {
       const isVisible = window.innerWidth < 768 && scrollY > 150;
       mobileNav.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
-      mobileNav.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', isVisible ? '0' : '-1'));
+      mobileNav.querySelectorAll('[data-cal-link]').forEach(el => el.setAttribute('tabindex', isVisible ? '0' : '-1'));
     }
   };
 
