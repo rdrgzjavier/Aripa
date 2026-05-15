@@ -1064,7 +1064,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- 1. Conversión & CRO -->
       <button type="button"
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
-           onclick="openServiceModal('conversion')">
+           onclick="openModal('service-modal-conversion')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">query_stats</span>
         </div>
@@ -1082,7 +1082,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- 2. UX & Behavioral Design -->
       <button type="button"
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
-           onclick="openServiceModal('ux')">
+           onclick="openModal('service-modal-ux')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">psychology</span>
         </div>
@@ -1100,7 +1100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- 3. Growth Estratégico -->
       <button type="button"
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
-           onclick="openServiceModal('growth')">
+           onclick="openModal('service-modal-growth')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">rocket_launch</span>
         </div>
@@ -1328,26 +1328,62 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </div>
 
-<!-- Hidden triggers removed for MVP -->
-
-<!-- SERVICE MODAL -->
-<div class="modal-overlay" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="service-modal-title">
+<!-- 1. MODAL CONVERSIÓN -->
+<div class="modal-overlay" id="service-modal-conversion" role="dialog" aria-modal="true" aria-labelledby="title-conversion">
   <div class="modal-panel p-8 md:p-12">
-    <div class="flex justify-between items-start gap-4 mb-8">
-      <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="service-modal-title">Servicio</h2>
-      <button class="flex-shrink-0 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('service-modal')" aria-label="Cerrar">
+    <div class="flex justify-between items-start mb-8 gap-6">
+      <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="title-conversion">Conversión & CRO</h2>
+      <button class="flex-shrink-0 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('service-modal-conversion')" aria-label="Cerrar">
         <span class="material-symbols-outlined text-3xl">close</span>
       </button>
     </div>
-    
-    <div class="mb-10">
-      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed" id="service-modal-desc">
-        Descripción del servicio.
+    <div class="space-y-6 mb-10">
+      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
+        Realizamos un análisis exhaustivo de tu funnel de ventas para identificar puntos de fricción y abandono. Aplicamos experimentación A/B y análisis de datos avanzado para maximizar el retorno de cada visita, transformando tu tráfico actual en ingresos reales y recurrentes mediante una optimización científica de la tasa de conversión.
       </p>
     </div>
+    <button type="button" class="btn-submit" onclick="requestService('conversion', 'service-modal-conversion')">
+      SOLICITAR ANÁLISIS DE CONVERSIÓN
+    </button>
+  </div>
+</div>
 
-    <button type="button" class="btn-submit" id="service-modal-cta" onclick="requestSpecificService()">
-      SOLICITAR ANÁLISIS
+<!-- 2. MODAL UX -->
+<div class="modal-overlay" id="service-modal-ux" role="dialog" aria-modal="true" aria-labelledby="title-ux">
+  <div class="modal-panel p-8 md:p-12">
+    <div class="flex justify-between items-start mb-8 gap-6">
+      <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="title-ux">UX & Behavioral Design</h2>
+      <button class="flex-shrink-0 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('service-modal-ux')" aria-label="Cerrar">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+    <div class="space-y-6 mb-10">
+      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
+        Combinamos el diseño centrado en el usuario con la psicología del comportamiento para crear interfaces intuitivas que eliminan la carga cognitiva. Optimizamos la arquitectura de información y eliminamos fricciones invisibles, guiando al usuario hacia la acción deseada de forma natural y fluida mediante principios de Behavioral Economics.
+      </p>
+    </div>
+    <button type="button" class="btn-submit" onclick="requestService('ux', 'service-modal-ux')">
+      SOLICITAR DISEÑO DE EXPERIENCIA
+    </button>
+  </div>
+</div>
+
+<!-- 3. MODAL GROWTH -->
+<div class="modal-overlay" id="service-modal-growth" role="dialog" aria-modal="true" aria-labelledby="title-growth">
+  <div class="modal-panel p-8 md:p-12">
+    <div class="flex justify-between items-start mb-8 gap-6">
+      <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="title-growth">Growth Estratégico</h2>
+      <button class="flex-shrink-0 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('service-modal-growth')" aria-label="Cerrar">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+    <div class="space-y-6 mb-10">
+      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed">
+        Escalamos tu negocio mediante adquisición inteligente y SEO de nueva generación (GEO). Utilizamos automatización avanzada y análisis predictivo para encontrar los canales más rentables, posicionando tu marca como la autoridad líder en motores generativos e IA para dominar la visibilidad en la nueva era de la búsqueda conversacional.
+      </p>
+    </div>
+    <button type="button" class="btn-submit" onclick="requestService('growth', 'service-modal-growth')">
+      SOLICITAR PLAN DE GROWTH
     </button>
   </div>
 </div>
@@ -1483,13 +1519,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   let _currentServiceId = 'general';
 
-  window.openServiceModal = function(id) {
-    const data = SERVICE_DATA[id];
-    if (!data) return;
-    _currentServiceId = id;
-    document.getElementById('service-modal-title').innerText = data.title;
-    document.getElementById('service-modal-desc').innerText = data.desc;
-    openModal('service-modal');
+  window.requestService = function(serviceId, modalId) {
+    closeModal(modalId);
+    setTimeout(() => {
+      const select = document.getElementById('service');
+      if (select) select.value = serviceId;
+      openModal('contact-modal');
+    }, 350);
   };
 
   window.requestSpecificService = function() {
