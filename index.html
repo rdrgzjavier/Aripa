@@ -764,7 +764,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- 1. Conversión & CRO -->
       <button type="button"
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
-           onclick="openContactModal()">
+           onclick="openServiceModal('conversion')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">query_stats</span>
         </div>
@@ -782,7 +782,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- 2. UX & Behavioral Design -->
       <button type="button"
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
-           onclick="openContactModal()">
+           onclick="openServiceModal('ux')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">psychology</span>
         </div>
@@ -800,7 +800,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- 3. Growth Estratégico -->
       <button type="button"
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
-           onclick="openContactModal()">
+           onclick="openServiceModal('growth')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">rocket_launch</span>
         </div>
@@ -1030,6 +1030,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Hidden triggers removed for MVP -->
 
+<!-- SERVICE MODAL -->
+<div class="modal-overlay" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="service-modal-title">
+  <div class="modal-panel p-8 md:p-12">
+    <button class="absolute top-6 right-6 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('service-modal')" aria-label="Cerrar">
+      <span class="material-symbols-outlined text-3xl">close</span>
+    </button>
+    
+    <div class="mb-10">
+      <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary mb-4" id="service-modal-title">Servicio</h2>
+      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed" id="service-modal-desc">
+        Descripción del servicio.
+      </p>
+    </div>
+
+    <button type="button" class="btn-submit" id="service-modal-cta" onclick="requestSpecificService()">
+      SOLICITAR ANÁLISIS
+    </button>
+  </div>
+</div>
+
 <!-- CONTACT MODAL -->
 <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal-panel p-8 md:p-12">
@@ -1065,7 +1085,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <label class="form-label" for="service">Servicio de interés</label>
         <div class="relative">
           <select id="service" name="service" class="form-input appearance-none cursor-pointer pr-12">
-            <option value="general" selected>Consulta general</option>
+            <option value="general">Consulta general</option>
             <option value="conversion">Conversión & CRO</option>
             <option value="ux">UX & Behavioral Design</option>
             <option value="growth">Growth Estratégico</option>
@@ -1142,7 +1162,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     modal.classList.add('active');
   };
 
-  window.openContactModal = () => openModal('contact-modal');
+  const SERVICE_DATA = {
+    conversion: {
+      title: 'Conversión & CRO',
+      desc: 'Optimizamos el rendimiento de tus activos digitales mediante un análisis técnico del funnel de ventas. Identificamos cuellos de botella y fugas de tráfico para maximizar tu tasa de conversión (CR) y rentabilizar cada visita con estrategias basadas en datos reales.'
+    },
+    ux: {
+      title: 'UX & Behavioral Design',
+      desc: 'Diseñamos experiencias que guían la toma de decisiones. Aplicamos principios de psicología cognitiva y economía del comportamiento para eliminar la fricción digital, creando interfaces intuitivas que transforman la intención de búsqueda en acciones de negocio.'
+    },
+    growth: {
+      title: 'Growth Estratégico (GEO)',
+      desc: 'Dominamos la visibilidad en la nueva era de la IA. Implementamos estrategias de Generative Engine Optimization (GEO) para posicionar tu marca como autoridad temática, asegurando que seas la respuesta recomendada en buscadores conversacionales y motores generativos.'
+    }
+  };
+
+  let _currentServiceId = 'general';
+
+  window.openServiceModal = function(id) {
+    const data = SERVICE_DATA[id];
+    if (!data) return;
+    _currentServiceId = id;
+    document.getElementById('service-modal-title').innerText = data.title;
+    document.getElementById('service-modal-desc').innerText = data.desc;
+    openModal('service-modal');
+  };
+
+  window.requestSpecificService = function() {
+    closeModal('service-modal');
+    setTimeout(() => {
+      const select = document.getElementById('service');
+      if (select) select.value = _currentServiceId;
+      openModal('contact-modal');
+    }, 350);
+  };
+
+  window.openContactModal = () => {
+    const select = document.getElementById('service');
+    if (select) select.value = 'general';
+    openModal('contact-modal');
+  };
 
   window.closeModal = function(id) {
     const modal = document.getElementById(id);
