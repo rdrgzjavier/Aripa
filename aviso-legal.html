@@ -17,6 +17,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Material+Symbols+Outlined:wght,FILL@400,0..1&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="./style.css">
 
+<!-- GTM Consent Mode Default State (AEPD 2023 Compliance) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -24,6 +37,37 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KBK55KW8');</script>
 <!-- End Google Tag Manager -->
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [{
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Inicio",
+    "item": "https://aripa.es"
+  },{
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Aviso Legal"
+  }]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Aripa",
+  "url": "https://aripa.es",
+  "logo": "https://aripa.es/assets/aripa-logo.png",
+  "founder": {
+    "@type": "Person",
+    "name": "Javier Rodriguez de la Orden"
+  }
+}
+</script>
 
 <style>
   :root {
@@ -711,6 +755,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const observer = new MutationObserver(enforceText);
     observer.observe(document.documentElement, { childList: true, subtree: true });
     setInterval(enforceText, 500);
+  })();
+
+  // Bridge Klaro to GTM Consent Mode v2
+  (function() {
+    window.addEventListener('load', function() {
+      if (typeof klaro !== 'undefined') {
+        const checkConsent = () => {
+          const manager = klaro.getManager();
+          const consent = manager.getConsent('google-analytics') || manager.getConsent('google-tag-manager');
+          if (consent) {
+            gtag('consent', 'update', {
+              'analytics_storage': 'granted',
+              'ad_storage': 'granted',
+              'ad_user_data': 'granted',
+              'ad_personalization': 'granted'
+            });
+          }
+        };
+        setTimeout(checkConsent, 1000);
+        const manager = klaro.getManager();
+        manager.watch({
+          update: function(manager, name, value) {
+            if (name === 'google-analytics' || name === 'google-tag-manager') {
+              if (value) {
+                gtag('consent', 'update', {
+                  'analytics_storage': 'granted',
+                  'ad_storage': 'granted',
+                  'ad_user_data': 'granted',
+                  'ad_personalization': 'granted'
+                });
+              }
+            }
+          }
+        });
+      }
+    });
   })();
 }());
 </script>

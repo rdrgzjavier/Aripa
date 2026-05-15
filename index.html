@@ -11,6 +11,19 @@
 </script>
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
   
+<!-- GTM Consent Mode Default State (AEPD 2023 Compliance) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+</script>
+
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1669,16 +1682,50 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         });
       };
       const observer = new MutationObserver(enforceText);
-      observer.observe(document.documentElement, { childList: true, subtree: true });
-      setInterval(enforceText, 500);
-    })();
-  </script>
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+    setInterval(enforceText, 500);
+  })();
+
+  // Bridge Klaro to GTM Consent Mode v2
+  (function() {
+    window.addEventListener('load', function() {
+      if (typeof klaro !== 'undefined') {
+        const checkConsent = () => {
+          const manager = klaro.getManager();
+          const consent = manager.getConsent('google-analytics') || manager.getConsent('google-tag-manager');
+          if (consent) {
+            gtag('consent', 'update', {
+              'analytics_storage': 'granted',
+              'ad_storage': 'granted',
+              'ad_user_data': 'granted',
+              'ad_personalization': 'granted'
+            });
+          }
+        };
+        // Initial check
+        setTimeout(checkConsent, 1000);
+        // Observe changes in Klaro manager
+        const manager = klaro.getManager();
+        manager.watch({
+          update: function(manager, name, value) {
+            if (name === 'google-analytics' || name === 'google-tag-manager') {
+              if (value) {
+                gtag('consent', 'update', {
+                  'analytics_storage': 'granted',
+                  'ad_storage': 'granted',
+                  'ad_user_data': 'granted',
+                  'ad_personalization': 'granted'
+                });
+              }
+            }
+          }
+        });
+      }
+    });
+  })();
+}());
+</script>
 </body>
-</html>
-
-
-
-
 
 
 
