@@ -681,6 +681,7 @@ body { font-family: 'Inter', sans-serif; }
     font-size: 0.95rem !important;
     box-shadow: none !important;
     cursor: pointer !important;
+    margin: 0 !important; /* Reset Klaro default margins */
   }
   @media (min-width: 1024px) {
     #klaro .klaro .cm-btn { width: auto !important; }
@@ -723,6 +724,7 @@ body { font-family: 'Inter', sans-serif; }
   /* Capa 2 - Modal Styling (Forced Light Mode) */
   #klaro .klaro .cm-modal {
     z-index: 999999999 !important;
+    background: transparent !important; /* Remove dark background from container */
   }
   #klaro .klaro .cm-modal .cm-panel {
     border-radius: 16px !important;
