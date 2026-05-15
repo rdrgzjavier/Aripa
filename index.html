@@ -645,9 +645,11 @@ body { font-family: 'Inter', sans-serif; }
       flex-wrap: nowrap !important;
       align-items: center !important;
       gap: 40px !important;
+      display: flex !important;
     }
     #klaro .klaro .cookie-notice .cn-body p {
-      max-width: 50% !important;
+      max-width: 55% !important;
+      margin: 0 !important;
     }
     #klaro .klaro .cookie-notice .cn-ok {
       flex-direction: row !important;
@@ -658,6 +660,11 @@ body { font-family: 'Inter', sans-serif; }
       gap: 16px !important;
       align-items: center !important;
       justify-content: flex-end !important;
+      display: flex !important;
+    }
+    /* This makes the internal div 'transparent' so the gap applies to its children too */
+    #klaro .klaro .cookie-notice .cn-buttons {
+      display: contents !important;
     }
     #klaro .klaro .cookie-notice .cn-ok > *,
     #klaro .klaro .cookie-notice .cn-ok .cm-btn,
