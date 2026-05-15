@@ -7,35 +7,7 @@
 <meta name="description" content="Consultoría de crecimiento digital liderada por Javier Rodriguez de la Orden. Especialistas en SEO/GEO/AEO, CRO y automatización para escalar negocios con IA."/>
 
 <script type="text/javascript">
-  (function() {
-    window.klaroConfig = {
-      mustConsent: true,
-      acceptAll: true,
-      translations: {
-        es: {
-          consentNotice: {
-            description: 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?',
-          },
-          consentModal: {
-            title: 'Servicios que nos gustaría utilizar',
-            description: 'Aquí puede evaluar y personalizar los servicios que nos gustaría utilizar en este sitio web. ¡Usted decide!',
-          },
-          ok: 'Aceptar',
-          decline: 'Rechazar',
-          save: 'Guardar',
-        },
-      },
-      services: [
-        {
-          name: 'performance',
-          title: 'Optimización del rendimiento',
-          description: 'Estos servicios procesan información personal para optimizar el servicio que ofrece este sitio.',
-          purposes: ['performance'],
-          required: false,
-        }
-      ]
-    };
-  })();
+  // Text will be managed by the footer script for maximum priority and stability
 </script>
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
   
@@ -1584,6 +1556,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     })(window, document, "clarity", "script", "wd9btxwafk");
 </script>
   
+  <!-- Final High-Priority Intervention for Klaro (Optimized) -->
+  <script type="text/javascript">
+    (function() {
+      const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
+      
+      const enforceKlaro = () => {
+        // 1. Capa 1: Force Corporate Text
+        const p = document.querySelector('#id-cookie-notice, #klaro p');
+        if (p && p.innerText !== targetText) {
+          p.innerText = targetText;
+        }
+
+        // 2. Capa 2: Vertical Layout & Compact Buttons
+        if (window.innerWidth < 768) {
+          const footer = document.querySelector('#klaro .cm-footer');
+          if (footer) {
+            footer.style.setProperty('display', 'flex', 'important');
+            footer.style.setProperty('flex-direction', 'column', 'important');
+            footer.style.setProperty('gap', '4px', 'important');
+            
+            footer.querySelectorAll('.cm-btn').forEach(btn => {
+              btn.style.setProperty('width', '100%', 'important');
+              btn.style.setProperty('margin', '2px 0', 'important');
+              btn.style.setProperty('padding', '12px', 'important');
+              btn.style.setProperty('font-size', '15px', 'important');
+              
+              const txt = btn.innerText;
+              if (txt.includes('Descartar') || txt.includes('Rechazar')) btn.innerText = 'Rechazar';
+              if (txt.includes('seleccionadas') || txt.includes('Guardar')) btn.innerText = 'Guardar';
+              if (txt.includes('Aceptar todas') || txt.includes('Aceptar')) btn.innerText = 'Aceptar';
+            });
+          }
+        }
+      };
+
+      const observer = new MutationObserver(enforceKlaro);
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      setInterval(enforceKlaro, 500); // 500ms for zero lag
+    })();
+  </script>
 </body>
 </html>
 
