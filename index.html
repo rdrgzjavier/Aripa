@@ -613,6 +613,26 @@ body { font-family: 'Inter', sans-serif; }
     align-items: center !important;
     padding: 10px 4px !important;
   }
+  #klaro .klaro .cookie-notice .cn-body p {
+    margin-bottom: 0 !important;
+    color: #061542 !important;
+  }
+  @media (max-width: 768px) {
+    #klaro .klaro .cookie-notice .cn-ok {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 6px !important;
+      width: 100% !important;
+      padding: 10px 4px !important;
+    }
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn {
+      width: 100% !important;
+      margin: 2px 0 !important;
+      display: block !important;
+      padding: 12px !important;
+      font-size: 15.2px !important;
+    }
+  }
   @media (min-width: 1024px) {
     #klaro .klaro .cookie-notice .cn-body {
       flex-direction: row !important;
@@ -623,24 +643,19 @@ body { font-family: 'Inter', sans-serif; }
     #klaro .klaro .cookie-notice .cn-ok {
       display: flex !important;
       flex-direction: row !important;
+      flex-wrap: nowrap !important;
       align-items: center !important;
-      gap: 16px !important;
+      gap: 20px !important;
       width: auto !important;
       padding: 0 !important;
     }
-    #klaro .klaro .cookie-notice .cm-link {
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn,
+    #klaro .klaro .cookie-notice .cn-ok .cm-link {
       margin: 0 !important;
       white-space: nowrap !important;
+      display: inline-block !important;
     }
-  }
     #klaro .klaro .cookie-notice .cn-body p {
-      margin-bottom: 0 !important;
-      max-width: 55% !important;
-      text-align: left !important;
-    }
-    #klaro .klaro .cookie-notice .cn-ok {
-      flex-direction: row !important;
-      width: auto !important;
       align-items: center !important;
     }
   }
