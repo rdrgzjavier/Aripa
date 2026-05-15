@@ -611,7 +611,7 @@ body { font-family: 'Inter', sans-serif; }
     flex-direction: column !important;
     width: 100% !important;
     align-items: center !important;
-    padding: 10px 0 !important;
+    padding: 10px 4px !important;
   }
   @media (min-width: 1024px) {
     #klaro .klaro .cookie-notice .cn-body {
@@ -1558,6 +1558,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     })(window, document, "clarity", "script", "wd9btxwafk");
 </script>
   
+  <!-- Secure Capa 1 Text Enforcement (Single Pass) -->
+  <script type="text/javascript">
+    (function() {
+      const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
+      const updateText = () => {
+        const p = document.querySelector('#id-cookie-notice p');
+        if (p && p.innerText !== targetText) {
+          p.innerText = targetText;
+          // After a few attempts or successful change, we could stop, 
+          // but a simple 1s check is safer and zero-cost.
+        }
+      };
+      setInterval(updateText, 1000);
+    })();
+  </script>
 </body>
 </html>
 
