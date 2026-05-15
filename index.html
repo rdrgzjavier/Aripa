@@ -7,89 +7,21 @@
 <meta name="description" content="Consultoría de crecimiento digital liderada por Javier Rodriguez de la Orden. Especialistas en SEO/GEO/AEO, CRO y automatización para escalar negocios con IA."/>
 
 <script type="text/javascript">
-  window.klaroConfig = {
-    mustConsent: true,
-    acceptAll: true,
-    translations: {
-      es: {
-        consentNotice: {
-          description: 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?',
+    // Safe Klaro Configuration
+    window.klaroConfig = {
+      mustConsent: true,
+      acceptAll: true,
+      translations: {
+        es: {
+          consentNotice: {
+            description: 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?',
+          },
+          ok: 'Aceptar todas',
+          decline: 'Solo esenciales',
+          learnMore: 'Configurar',
         },
-        ok: 'Aceptar todas',
-        decline: 'Solo esenciales',
-        learnMore: 'Configurar',
       },
-    },
-  };
-
-  // Ultra-optimized text change
-  (function() {
-    const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
-    // Ultra-robust dynamic intervention
-    const forceKlaroFix = () => {
-      // 1. Fix Capa 1 (Banner)
-      const notice = document.querySelector('#klaro .cookie-notice');
-      if (notice) {
-        notice.style.setProperty('background-color', '#ffffff', 'important');
-        notice.style.setProperty('color', '#061542', 'important');
-        const p = notice.querySelector('p');
-        if (p) {
-          p.innerText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
-          p.style.setProperty('color', '#061542', 'important');
-        }
-        const okBtn = notice.querySelector('.cm-btn-success');
-        if (okBtn) okBtn.innerText = 'Aceptar todas';
-        const declineBtn = notice.querySelector('.cm-btn-danger, .cm-btn-info, .cn-decline, .cm-btn-decline');
-        if (declineBtn) declineBtn.innerText = 'Solo esenciales';
-        const configLink = notice.querySelector('.cm-link');
-        if (configLink) configLink.innerText = 'Configurar';
-      }
-
-      // 2. Fix Capa 2 (Modal)
-      const modal = document.querySelector('#klaro .klaro .cm-modal');
-      const panel = document.querySelector('#klaro .klaro .cm-modal .cm-panel');
-      
-      if (modal) {
-        modal.style.setProperty('position', 'fixed', 'important');
-        modal.style.setProperty('inset', '0', 'important');
-        modal.style.setProperty('background', 'rgba(6, 21, 66, 0.8)', 'important');
-        modal.style.setProperty('z-index', '999999999', 'important');
-        modal.style.setProperty('margin', '0', 'important');
-        modal.style.setProperty('display', 'block', 'important');
-      }
-
-      if (panel) {
-        panel.style.setProperty('position', 'fixed', 'important');
-        panel.style.setProperty('top', '50%', 'important');
-        panel.style.setProperty('left', '50%', 'important');
-        panel.style.setProperty('transform', 'translate(-50%, -50%)', 'important');
-        panel.style.setProperty('margin', '0', 'important');
-        panel.style.setProperty('background-color', '#ffffff', 'important');
-        panel.style.setProperty('color', '#061542', 'important');
-        panel.style.setProperty('border-radius', '16px', 'important');
-        panel.style.setProperty('width', '90%', 'important');
-        panel.style.setProperty('max-width', '480px', 'important');
-        panel.style.setProperty('max-height', '85vh', 'important');
-        panel.style.setProperty('overflow-y', 'auto', 'important');
-        panel.style.setProperty('box-shadow', '0 25px 50px rgba(0,0,0,0.6)', 'important');
-        panel.style.setProperty('z-index', '1000000000', 'important');
-        panel.style.setProperty('display', 'block', 'important');
-        panel.style.setProperty('visibility', 'visible', 'important');
-        panel.style.setProperty('opacity', '1', 'important');
-        
-        panel.querySelectorAll('*').forEach(child => {
-          child.style.setProperty('color', '#061542', 'important');
-          if (child.classList.contains('cm-header') || child.classList.contains('cm-body') || child.classList.contains('cm-footer')) {
-            child.style.setProperty('background-color', '#ffffff', 'important');
-          }
-        });
-      }
     };
-
-    // Run immediately and persistently
-    const observer = new MutationObserver(forceKlaroFix);
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-    setInterval(forceKlaroFix, 200); 
   })();
 </script>
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
