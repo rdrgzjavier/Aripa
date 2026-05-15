@@ -670,7 +670,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
       <div class="av6-ctas hero-animate-4">
-        <button type="button" class="cta-core av6-btn-primary hover:scale-[1.02] transition-transform active:scale-95" onclick="openContactModal()">
+        <button type="button" class="cta-core av6-btn-primary hover:scale-[1.02] transition-transform active:scale-95" data-cal-link="aripa/analisis" data-cal-config='{"layout":"month_view"}'>
           Solicitar análisis
         </button>
         <a class="cta-core av6-btn-secondary hover:bg-white/15 transition-colors"
@@ -1022,7 +1022,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="text-[11px] font-normal text-on-surface-variant ml-7">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
   </div>
   <div class="flex items-center gap-3 pointer-events-auto">
-    <button type="button" class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2" onclick="openContactModal()">
+    <button type="button" class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2" data-cal-link="aripa/analisis" data-cal-config='{"layout":"month_view"}'>
       <span class="material-symbols-outlined text-lg">mail</span> HABLEMOS
     </button>
   </div>
@@ -1331,7 +1331,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 }());
 </script>
 
-<!-- Cal integration removed for MVP -->
+<!-- Cal element-click embed code begins -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.q = cal.q || []; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const res = d.createElement("script"); res.setAttribute("src", "https://embed.cal.com/embed/embed.js"); res.setAttribute("async", "true"); d.head.appendChild(res); return api; } p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "analisis", {origin:"https://cal.com"});
+  Cal("ui", {"theme":"light","styles":{"branding":{"brandColor":"#061542"}},"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+<!-- Cal element-click embed code ends -->
 
 <!-- Clarity -->
 <script type="text/javascript">
