@@ -56,14 +56,38 @@
     border-bottom: 1px solid rgba(255,255,255,0.08);
     box-shadow: 0 20px 48px -18px rgba(0,0,0,0.45);
   }
+  .btn-lavender {
+    background: linear-gradient(180deg, #8b5cf6 0%, #6c45c0 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 16px -4px rgba(108,69,192,0.5);
+    border: 1px solid rgba(139,92,246,0.5);
+  }
   @media (min-width: 768px) {
     #site-header .header-inner { height: 5rem; }
     #site-header.is-sticky .header-inner { height: 4.35rem; }
   }
 
   /* Hero Styles & Typography */
-  #hero-section { position: relative; min-height: 45vh; display: flex; align-items: center; justify-content: center; overflow: hidden; background: #061542; }
-  .av6-canvas { position: absolute; inset: 0; z-index: 1; }
+  #hero-section.hero-v6 { 
+    position: relative; 
+    min-height: 45vh; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: hidden; 
+    background: #061542; 
+    isolation: isolate;
+  }
+  .av6-canvas { position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; }
+  .av6-grain {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    background-size: 220px;
+    mix-blend-mode: overlay;
+    opacity: 0.6;
+  }
   .av6-content { position: relative; z-index: 10; max-width: 900px; padding: 0 1.5rem; text-align: center; color: white; }
   .av6-title {
     font-size: clamp(2rem, 5vw, 3.5rem);
@@ -98,22 +122,27 @@
 <!-- HEADER (Replica Exacta de Index) -->
 <header id="site-header" aria-label="Cabecera principal">
   <div class="header-inner flex items-center justify-between px-6 md:px-12 max-w-[1440px] mx-auto">
+    <!-- Left Column: Logo -->
     <div class="flex-1 flex justify-start">
-      <a href="index.html" class="flex items-center outline-none">
+      <a href="index.html" class="flex items-center outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
         <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
       </a>
     </div>
-    <nav class="hidden md:flex items-center justify-center gap-10 lg:gap-14">
-      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="index.html#servicios">Servicios</a>
-      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="index.html#faq">Dudas</a>
+
+    <!-- Center Column: Nav (Hidden for MVP as in Index) -->
+    <nav class="hidden items-center justify-center gap-10 lg:gap-14">
+      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="servicios.html">Servicios</a>
+      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="recursos.html">Recursos</a>
     </nav>
+
+    <!-- Right Column: CTA & Burger -->
     <div class="flex-1 flex items-center justify-end gap-6">
-      <button type="button" class="hidden md:flex bg-primary text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 font-bold text-xs uppercase tracking-widest" onclick="openContactModal()">
-        <span class="material-symbols-outlined text-sm">mail</span>
+      <button type="button" class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
+        <span class="material-symbols-outlined">mail</span>
         Tengo una duda
       </button>
-      <button type="button" class="flex items-center justify-center p-2 md:hidden" aria-label="Contacto" onclick="openContactModal()">
-        <span class="material-symbols-outlined text-white text-2xl">mail</span>
+      <button type="button" class="flex items-center justify-center p-2 -mr-2 md:hidden" aria-label="Abrir formulario de contacto" id="mobile-mail-btn" onclick="openContactModal()">
+        <span class="material-symbols-outlined text-white text-2xl" aria-hidden="true">mail</span>
       </button>
     </div>
   </div>
@@ -121,17 +150,18 @@
 
 <main>
 
-  <!-- HERO SECTION (Animated Canvas) -->
-  <section id="hero-section">
+  <!-- HERO SECTION (Animated Canvas v6) -->
+  <section id="hero-section" class="hero-v6">
     <canvas class="av6-canvas" id="hero-gradient-canvas"></canvas>
+    <div class="av6-grain" aria-hidden="true"></div>
     <div class="av6-content">
       <h1 class="av6-title">Política de Cookies</h1>
       <p class="text-lg opacity-70 max-w-2xl mx-auto">Transparencia sobre el uso de tecnologías de seguimiento en Aripa.</p>
     </div>
   </section>
 
-  <!-- CONTENIDO LEGAL -->
-  <section class="my-24 md:my-32 px-6 md:px-12 max-w-4xl mx-auto">
+  <!-- CONTENIDO LEGAL (Padding Simétrico) -->
+  <section class="my-24 md:my-32 px-6 md:px-12 py-6 md:py-12 max-w-4xl mx-auto">
     <div class="legal-container p-8 md:p-16">
       
       <div class="legal-prose">
@@ -264,16 +294,20 @@
     } catch (e) { alert('Error.'); } finally { btn.disabled = false; btn.innerText = 'ENVIAR SOLICITUD'; }
   };
 
-  // CANVAS HERO ANIMATION
+  // CANVAS HERO ANIMATION (Matching Hero Section size)
   (function () {
+    const heroSection = document.getElementById('hero-section');
     const canvas = document.getElementById('hero-gradient-canvas');
-    if (!canvas) return;
+    if (!canvas || !heroSection) return;
     const ctx = canvas.getContext('2d'), ORBS = [
       { color: [26, 42, 108], r: 1.06, ax: 0.30, ay: 0.22, px: 0.12, py: 0.16, speed: 0.0000037 },
       { color: [90, 50, 160], r: 1.00, ax: 0.27, ay: 0.34, px: 0.55, py: 0.22, speed: 0.0000028 },
       { color: [160, 80, 180], r: 0.96, ax: 0.22, ay: 0.38, px: 0.79, py: 0.58, speed: 0.0000022 }
     ];
-    const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
+    const resize = () => { 
+      canvas.width = heroSection.clientWidth; 
+      canvas.height = heroSection.clientHeight; 
+    };
     resize(); window.addEventListener('resize', resize);
     const draw = (ts) => {
       const W = canvas.width, H = canvas.height; ctx.fillStyle = '#0e1240'; ctx.fillRect(0, 0, W, H); ctx.globalCompositeOperation = 'screen';
