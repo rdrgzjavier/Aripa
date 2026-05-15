@@ -6,53 +6,7 @@
 <title>Aripa | Consultoría de Crecimiento Digital · SEO, CRO y Crecimiento</title>
 <meta name="description" content="Consultoría de crecimiento digital liderada por Javier Rodriguez de la Orden. Especialistas en SEO/GEO/AEO, CRO y automatización para escalar negocios con IA."/>
 
-<script type="text/javascript">
-    // Ultra-light text and layout enforcement (Precision Version)
-    const enforceKlaro = () => {
-      // 1. Text Fixes (Capa 1)
-      const notice = document.querySelector('#klaro .cookie-notice');
-      if (notice) {
-        const p = notice.querySelector('.cn-body p, p');
-        if (p && !p.dataset.fixed) {
-          p.innerText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
-          p.dataset.fixed = "true";
-        }
-        const ok = notice.querySelector('.cm-btn-success');
-        if (ok) ok.innerText = 'Aceptar todas';
-        const decline = notice.querySelector('.cm-btn-danger, .cm-btn-info, .cn-decline, .cm-btn-decline');
-        if (decline) decline.innerText = 'Solo esenciales';
-        const config = notice.querySelector('.cm-link');
-        if (config) config.innerText = 'Configurar';
-      }
-
-      // 2. Mobile Layout & Copy Reduction (Capa 2)
-      if (window.innerWidth < 768) {
-        const footer = document.querySelector('#klaro .cm-footer');
-        if (footer) {
-          footer.style.setProperty('display', 'flex', 'important');
-          footer.style.setProperty('flex-direction', 'column', 'important');
-          footer.style.setProperty('gap', '8px', 'important');
-          footer.style.setProperty('padding', '12px', 'important');
-          
-          const btns = footer.querySelectorAll('.cm-btn');
-          btns.forEach(btn => {
-            btn.style.setProperty('width', '100%', 'important');
-            btn.style.setProperty('margin', '0', 'important');
-            btn.style.setProperty('padding', '8px 12px', 'important');
-            btn.style.setProperty('font-size', '14px', 'important');
-            
-            // Reduced copies for space
-            if (btn.classList.contains('cm-btn-success')) btn.innerText = 'Aceptar';
-            if (btn.classList.contains('cm-btn-danger') || btn.innerText.includes('Descartar')) btn.innerText = 'Rechazar';
-            if (btn.classList.contains('cm-btn-info') || btn.innerText.includes('seleccionadas')) btn.innerText = 'Guardar';
-          });
-        }
-      }
-    };
-    const observer = new MutationObserver(enforceKlaro);
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-    setInterval(enforceKlaro, 400);
-  })();
+  // Text will be managed by the footer script for maximum priority
 </script>
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
   
@@ -1603,27 +1557,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     })(window, document, "clarity", "script", "wd9btxwafk");
 </script>
   
-  <!-- Forced Overrides for Klaro Capa 2 -->
-  <style>
-    @media (max-width: 767px) {
-      #klaro .klaro .cm-modal .cm-footer,
-      #klaro .klaro .cm-footer,
-      .cm-footer {
-        display: flex !important;
-        flex-direction: column !important;
-        flex-flow: column nowrap !important;
-        gap: 12px !important;
-        padding: 20px !important;
-        height: auto !important;
-      }
-      #klaro .klaro .cm-footer .cm-btn,
-      .cm-footer .cm-btn {
-        width: 100% !important;
-        margin: 0 !important;
-        display: block !important;
-      }
-    }
-  </style>
+  <!-- Final High-Priority Intervention for Klaro -->
+  <script type="text/javascript">
+    (function() {
+      const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
+      
+      const enforceKlaro = () => {
+        // 1. Capa 1: Text Fixes
+        const p = document.querySelector('#id-cookie-notice, #klaro p');
+        if (p && p.innerText !== targetText) {
+          p.innerText = targetText;
+        }
+        
+        const okC1 = document.querySelector('#klaro .cm-btn-success');
+        if (okC1 && okC1.innerText.includes('Aceptar todas')) okC1.innerText = 'Aceptar todas';
+
+        // 2. Capa 2: Reduced Copies & Layout
+        if (window.innerWidth < 768) {
+          const footer = document.querySelector('#klaro .cm-footer');
+          if (footer) {
+            footer.style.setProperty('display', 'flex', 'important');
+            footer.style.setProperty('flex-direction', 'column', 'important');
+            footer.style.setProperty('gap', '8px', 'important');
+            
+            footer.querySelectorAll('.cm-btn').forEach(btn => {
+              btn.style.setProperty('width', '100%', 'important');
+              btn.style.setProperty('padding', '10px', 'important');
+              btn.style.setProperty('font-size', '14px', 'important');
+              
+              const txt = btn.innerText;
+              if (txt.includes('Descartar')) btn.innerText = 'Rechazar';
+              if (txt.includes('seleccionadas')) btn.innerText = 'Guardar';
+              if (txt.includes('Aceptar todas')) btn.innerText = 'Aceptar';
+            });
+          }
+        }
+      };
+
+      const observer = new MutationObserver(enforceKlaro);
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      setInterval(enforceKlaro, 200);
+    })();
+  </script>
 </body>
 </html>
 
