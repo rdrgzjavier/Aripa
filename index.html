@@ -641,9 +641,9 @@ body { font-family: 'Inter', sans-serif; }
   #klaro .klaro .cookie-notice .cn-ok {
     display: flex !important;
     flex-direction: column !important;
-    gap: 20px !important; /* Generous vertical gap for mobile */
     width: 100% !important;
     align-items: center !important;
+    padding: 10px 0 !important;
   }
   @media (min-width: 1024px) {
     #klaro .klaro .cookie-notice .cn-body {
@@ -659,7 +659,6 @@ body { font-family: 'Inter', sans-serif; }
     #klaro .klaro .cookie-notice .cn-ok {
       flex-direction: row !important;
       width: auto !important;
-      gap: 32px !important; /* Generous horizontal gap for desktop */
       align-items: center !important;
     }
   }
@@ -681,10 +680,13 @@ body { font-family: 'Inter', sans-serif; }
     font-size: 0.95rem !important;
     box-shadow: none !important;
     cursor: pointer !important;
-    margin: 0 !important; /* Reset Klaro default margins */
+    margin: 8px 0 !important; /* Hard vertical margin for mobile */
   }
   @media (min-width: 1024px) {
-    #klaro .klaro .cm-btn { width: auto !important; }
+    #klaro .klaro .cm-btn { 
+      width: auto !important; 
+      margin: 0 12px !important; /* Hard horizontal margin for desktop */
+    }
   }
   #klaro .klaro .cm-btn-success {
     background-color: #6b38fb !important;
@@ -710,7 +712,7 @@ body { font-family: 'Inter', sans-serif; }
     justify-content: center !important;
     order: 1 !important;
     border: none !important;
-    margin: 0 !important;
+    margin: 12px 0 !important; /* Vertical margin for mobile */
   }
   @media (min-width: 1024px) {
     #klaro .klaro .cm-link { 
@@ -718,6 +720,7 @@ body { font-family: 'Inter', sans-serif; }
       padding: 14px 0 !important; /* Match vertical padding of buttons */
       display: inline-flex !important;
       line-height: 1 !important;
+      margin: 0 12px !important; /* Horizontal margin for desktop */
     }
   }
 
@@ -730,11 +733,13 @@ body { font-family: 'Inter', sans-serif; }
     left: 0 !important;
     width: 100% !important;
     height: 100% !important;
+    display: block !important;
   }
   #klaro .klaro .cm-modal .cm-panel {
-    position: relative !important;
+    position: fixed !important;
     top: 50% !important;
-    transform: translateY(-50%) !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
     border-radius: 16px !important;
     background-color: #ffffff !important;
     color: #061542 !important;
@@ -742,8 +747,11 @@ body { font-family: 'Inter', sans-serif; }
     overflow-y: auto !important;
     width: 90% !important;
     max-width: 500px !important;
-    margin: 0 auto !important;
+    margin: 0 !important;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5) !important;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   @media (max-width: 768px) {
     #klaro .klaro .cm-modal .cm-panel {
