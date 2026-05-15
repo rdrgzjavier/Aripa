@@ -97,21 +97,36 @@
     margin-bottom: 1rem;
     text-shadow: 0 2px 24px rgba(0,0,0,0.2);
   }
-  
-  /* Legal Content Container Spacing */
-  .legal-container { 
-    background: white; 
-    border-radius: 32px; 
-    border: 1px solid rgba(107, 56, 251, 0.1); 
-    box-shadow: 0 4px 24px rgba(0,0,0,0.02); 
+
+  /* --- Modal System (From Index) --- */
+  body.modal-open { overflow: hidden; overscroll-behavior: contain; }
+  .modal-overlay {
+    position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(6, 21, 66, 0.85); backdrop-filter: blur(12px); z-index: 100; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.3s ease;
   }
+  .modal-overlay.active { opacity: 1; pointer-events: auto; }
+  .modal-panel { background: white; width: 100%; max-width: 36rem; border-radius: 2rem; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.4); transform: scale(0.95); transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+  .modal-overlay.active .modal-panel { transform: scale(1); }
+  .form-input { width: 100%; background: #f7f3f2; border: 2px solid transparent; border-radius: 1rem; padding: 1rem 1.5rem; font-size: 1rem; transition: all 0.2s ease; color: var(--primary); }
+  .form-input:focus { outline: none; background: white; border-color: var(--secondary-container); box-shadow: 0 0 0 4px rgba(108, 69, 192, 0.1); }
+  .form-label { display: block; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(6, 21, 66, 0.4); margin-bottom: 0.75rem; margin-left: 0.25rem; }
+  .btn-submit { width: 100%; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: white; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 1.25rem; border-radius: 1.25rem; box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.4); transition: all 0.3s ease; }
+  .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(109, 40, 217, 0.5); }
   
-  /* Klaro Custom Styles from Index */
+  /* Klaro Consent Manager Customization */
   #klaro, #klaro .klaro { z-index: 999999999 !important; }
   #klaro .klaro .cookie-notice { background-color: #ffffff !important; color: #061542 !important; box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important; border-top: 1px solid #f3f4f6 !important; }
   #klaro .klaro .cm-btn-success { background-color: #6b38fb !important; color: #ffffff !important; border-radius: 16px !important; }
   #klaro .klaro .cm-switch input:checked + .slider { background-color: #22c55e !important; }
   #klaro .klaro .cm-switch .slider { background-color: #d1d5db !important; transition: 0.3s !important; }
+
+  /* Legal Content Prose */
+  .legal-prose h2 { color: #061542; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.02em; }
+  .legal-prose h3 { color: #6b38fb; font-weight: 700; font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.75rem; }
+  .legal-prose p { margin-bottom: 1.25rem; line-height: 1.7; color: rgba(6, 21, 66, 0.7); }
+  .legal-prose ul { margin-bottom: 1.5rem; list-style-type: disc; padding-left: 1.5rem; color: rgba(6, 21, 66, 0.7); }
+  .legal-prose li { margin-bottom: 0.5rem; }
+  .klaro-manager-btn { display: inline-flex; align-items: center; gap: 8px; background: #6b38fb; color: white; padding: 0.75rem 1.5rem; border-radius: 12px; font-weight: 700; font-size: 0.875rem; transition: all 0.3s; margin-top: 1rem; }
+  .klaro-manager-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 16px rgba(107, 56, 251, 0.2); }
 </style>
 
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
@@ -148,7 +163,7 @@
   </div>
 </header>
 
-<main>
+<main id="main-content">
 
   <!-- HERO SECTION (Animated Canvas v6) -->
   <section id="hero-section" class="hero-v6">
@@ -162,8 +177,7 @@
 
   <!-- CONTENIDO LEGAL (Padding Simétrico) -->
   <section class="my-24 md:my-32 px-6 md:px-12 py-6 md:py-12 max-w-4xl mx-auto">
-    <div class="legal-container p-8 md:p-16">
-      
+    <div class="p-8 md:p-16 bg-white rounded-[32px] border border-secondary/10 shadow-sm">
       <div class="legal-prose">
         <p>En <strong>Aripa</strong>, nos tomamos muy en serio la privacidad y la transparencia. De acuerdo con la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y de Comercio Electrónico (LSSI-CE), te informamos sobre el uso de cookies en nuestro sitio web.</p>
 
@@ -211,7 +225,6 @@
 
         <p class="mt-10 pt-10 border-t border-gray-100 text-xs opacity-50 uppercase tracking-widest">Última actualización: Mayo 2026</p>
       </div>
-
     </div>
   </section>
 
@@ -231,70 +244,133 @@
     <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4">
       Consultoría estratégica enfocada en optimización basada en datos y sistemas conversacionales (GEO). Transformamos activos digitales en autoridad temática y crecimiento de alto rendimiento.
     </div>
-    <div class="flex items-center gap-4">
-      <a href="https://www.linkedin.com/company/aripa/" target="_blank" rel="noopener noreferrer" class="group transition-transform hover:scale-110" aria-label="LinkedIn de aripa">
-        <svg class="h-6 w-6 group-hover:opacity-80 transition-opacity" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-        </svg>
-      </a>
-    </div>
     <p class="text-white/40 text-[10px] font-body max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest">
       © 2026 aripa Consulting | Javier Rodriguez de la Orden. Transformando datos en activos estratégicos de alto rendimiento.
     </p>
   </div>
 </footer>
 
-<!-- MODALS & LOGIC -->
-<div class="fixed inset-0 z-[100] flex items-center justify-center p-6 bg-primary/90 backdrop-blur-xl opacity-0 pointer-events-none transition-opacity duration-300" id="contact-modal" role="dialog" aria-modal="true">
-  <div class="bg-white w-full max-w-xl rounded-3xl p-8 md:p-12 shadow-2xl relative transform scale-95 transition-transform duration-300">
-    <button class="absolute top-6 right-6 text-primary/40 hover:text-primary" onclick="closeContactModal()" aria-label="Cerrar">
-      <span class="material-symbols-outlined text-3xl">close</span>
-    </button>
-    <h2 class="text-3xl font-headline text-primary mb-4">Hablemos</h2>
-    <p class="text-on-surface-variant mb-8">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
-    <form class="space-y-6" onsubmit="handleFormSubmit(event)">
-      <div class="grid md:grid-cols-2 gap-6">
-        <div><label class="block text-[10px] font-black uppercase tracking-widest text-primary/40 mb-2">Nombre *</label><input type="text" name="name" class="w-full bg-gray-50 border-2 border-transparent focus:border-secondary/20 focus:bg-white rounded-xl p-4 outline-none transition-all" required></div>
-        <div><label class="block text-[10px] font-black uppercase tracking-widest text-primary/40 mb-2">Teléfono *</label><input type="tel" name="phone" class="w-full bg-gray-50 border-2 border-transparent focus:border-secondary/20 focus:bg-white rounded-xl p-4 outline-none transition-all" required></div>
+<!-- CONTACT MODAL (Original de Index) -->
+<div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-panel p-8 md:p-12">
+    <div class="flex justify-between items-start gap-4 mb-8">
+      <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="modal-title">Hablemos</h2>
+      <button class="flex-shrink-0 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('contact-modal')" aria-label="Cerrar">
+        <span class="material-symbols-outlined text-3xl">close</span>
+      </button>
+    </div>
+    <p class="text-on-surface-variant text-base leading-relaxed mb-10">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
+    <form class="space-y-8" id="contact-form" onsubmit="handleFormSubmit(event)">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-3">
+          <label class="form-label" for="name">Nombre *</label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre" required>
+        </div>
+        <div class="space-y-3">
+          <label class="form-label" for="phone">Teléfono *</label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="+34 600 000 000" required>
+        </div>
       </div>
-      <div><label class="block text-[10px] font-black uppercase tracking-widest text-primary/40 mb-2">Email *</label><input type="email" name="email" class="w-full bg-gray-50 border-2 border-transparent focus:border-secondary/20 focus:bg-white rounded-xl p-4 outline-none transition-all" required></div>
-      <div><label class="block text-[10px] font-black uppercase tracking-widest text-primary/40 mb-2">Mensaje</label><textarea name="message" class="w-full bg-gray-50 border-2 border-transparent focus:border-secondary/20 focus:bg-white rounded-xl p-4 outline-none transition-all min-h-[100px]"></textarea></div>
-      <button type="submit" class="w-full bg-secondary text-white font-bold py-5 rounded-xl shadow-lg active:scale-95 transition-all" id="submit-btn">ENVIAR SOLICITUD</button>
+      <div class="space-y-3">
+        <label class="form-label" for="email">Email Corporativo *</label>
+        <input type="email" id="email" name="email" class="form-input" placeholder="email@empresa.com" required>
+      </div>
+      <div class="space-y-3">
+        <label class="form-label" for="service">Servicio de interés</label>
+        <div class="relative">
+          <select id="service" name="service" class="form-input appearance-none cursor-pointer pr-12">
+            <option value="general">Consulta general</option>
+            <option value="conversion">Conversión & CRO</option>
+            <option value="ux">UX & Behavioral Design</option>
+            <option value="growth">Growth Estratégico</option>
+          </select>
+          <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40">expand_more</span>
+        </div>
+      </div>
+      <div class="space-y-3">
+        <label class="form-label" for="message">Mensaje</label>
+        <textarea id="message" name="message" class="form-input min-h-[120px] resize-none" placeholder="¿Cómo podemos ayudarte?"></textarea>
+      </div>
+      <button type="submit" class="btn-submit mt-4" id="submit-btn">ENVIAR SOLICITUD</button>
     </form>
   </div>
 </div>
 
+<!-- SUCCESS MODAL (Original de Index) -->
+<div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true">
+  <div class="modal-panel p-10 md:p-16 text-center">
+    <div class="bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 w-full max-w-[200px]" style="height: 56px; min-height: 56px;">
+      <span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
+    </div>
+    <h2 class="text-3xl font-extrabold font-headline text-primary mb-4">¡Solicitud recibida!</h2>
+    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">Tu mensaje ha sido entregado correctamente. Un consultor senior revisará tu caso personalmente y recibirás una respuesta en menos de 24 horas.</p>
+    <button type="button" class="btn-submit !w-auto px-12" onclick="closeModal('success-modal')">ENTENDIDO</button>
+  </div>
+</div>
+
 <script>
-  // UI LOGIC
-  window.addEventListener('scroll', () => {
-    document.getElementById('site-header').classList.toggle('is-sticky', window.scrollY > 50);
-  });
+(function () {
+  const FOCUSABLE = 'a[href],button:not([disabled]),input,select,textarea,[tabindex]:not([tabindex="-1"])';
+  let _lastFocusedEl = null;
+
+  window.openModal = function (id) {
+    _lastFocusedEl = document.activeElement;
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    document.body.classList.add('modal-open');
+    modal.classList.add('active');
+  };
 
   window.openContactModal = () => {
-    const m = document.getElementById('contact-modal');
-    m.classList.remove('opacity-0', 'pointer-events-none');
-    m.querySelector('div').classList.remove('scale-95');
+    const select = document.getElementById('service');
+    if (select) select.value = 'general';
+    openModal('contact-modal');
   };
-  window.closeContactModal = () => {
-    const m = document.getElementById('contact-modal');
-    m.classList.add('opacity-0', 'pointer-events-none');
-    m.querySelector('div').classList.add('scale-95');
+
+  window.closeModal = function(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.classList.remove('active');
+    document.body.classList.remove('modal-open');
+    _lastFocusedEl?.focus();
   };
 
   window.handleFormSubmit = async (e) => {
     e.preventDefault();
     const btn = document.getElementById('submit-btn');
-    btn.disabled = true; btn.innerText = 'ENVIANDO...';
+    const originalText = btn.innerText;
+    btn.disabled = true;
+    btn.innerText = 'ENVIANDO...';
     try {
-      const r = await fetch("https://formspree.io/f/maqalopa", {
-        method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+      const response = await fetch("https://formspree.io/f/maqalopa", {
+        method: 'POST',
+        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
         body: JSON.stringify(Object.fromEntries(new FormData(e.target).entries()))
       });
-      if (r.ok) { closeContactModal(); alert('¡Gracias! Hemos recibido tu mensaje.'); e.target.reset(); }
-    } catch (e) { alert('Error.'); } finally { btn.disabled = false; btn.innerText = 'ENVIAR SOLICITUD'; }
+      if (response.ok) {
+        closeModal('contact-modal');
+        openModal('success-modal');
+        e.target.reset();
+      } else {
+        alert('Error al enviar. Por favor, contacta directamente en hola@aripa.es');
+      }
+    } catch (error) {
+      alert('Error de conexión.');
+    } finally {
+      btn.disabled = false;
+      btn.innerText = originalText;
+    }
   };
 
-  // CANVAS HERO ANIMATION (Matching Hero Section size)
+  const updateShellUI = () => {
+    const header = document.getElementById('site-header');
+    const scrollY = window.scrollY;
+    header?.classList.toggle('is-sticky', scrollY > 20);
+  };
+  window.addEventListener('scroll', updateShellUI, { passive: true });
+  updateShellUI();
+
+  // CANVAS HERO ANIMATION
   (function () {
     const heroSection = document.getElementById('hero-section');
     const canvas = document.getElementById('hero-gradient-canvas');
@@ -304,10 +380,7 @@
       { color: [90, 50, 160], r: 1.00, ax: 0.27, ay: 0.34, px: 0.55, py: 0.22, speed: 0.0000028 },
       { color: [160, 80, 180], r: 0.96, ax: 0.22, ay: 0.38, px: 0.79, py: 0.58, speed: 0.0000022 }
     ];
-    const resize = () => { 
-      canvas.width = heroSection.clientWidth; 
-      canvas.height = heroSection.clientHeight; 
-    };
+    const resize = () => { canvas.width = heroSection.clientWidth; canvas.height = heroSection.clientHeight; };
     resize(); window.addEventListener('resize', resize);
     const draw = (ts) => {
       const W = canvas.width, H = canvas.height; ctx.fillStyle = '#0e1240'; ctx.fillRect(0, 0, W, H); ctx.globalCompositeOperation = 'screen';
@@ -323,6 +396,31 @@
     };
     requestAnimationFrame(draw);
   }());
+
+  // KLARO ENFORCEMENT
+  (function() {
+    const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
+    const enforceText = () => {
+      const paragraphs = document.querySelectorAll('#klaro p, #id-cookie-notice p');
+      paragraphs.forEach(p => {
+        if (p.innerText.includes('¿Podríamos habilitar') || p.innerText.includes('Hola!')) {
+          if (p.innerText !== targetText) p.innerText = targetText;
+        }
+      });
+      const allBtns = document.querySelectorAll('#klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
+      allBtns.forEach(btn => {
+        const txt = btn.innerText;
+        if (txt.includes('Descartar') || txt.includes('Rechazar')) btn.innerText = 'Rechazar';
+        else if (txt.includes('De acuerdo') || txt.includes('Aceptar')) btn.innerText = 'Aceptar';
+        else if (txt.includes('Configurar')) btn.innerText = 'Configurar';
+        else if (txt.includes('Guardar')) btn.innerText = 'Guardar';
+      });
+    };
+    const observer = new MutationObserver(enforceText);
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+    setInterval(enforceText, 500);
+  })();
+}());
 </script>
 
 </body>
