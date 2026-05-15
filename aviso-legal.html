@@ -138,21 +138,283 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn-submit { width: 100%; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: white; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 1.25rem; border-radius: 1.25rem; box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.4); transition: all 0.3s ease; }
   .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(109, 40, 217, 0.5); }
   
-  /* Klaro Consent Manager Customization */
-  #klaro, #klaro .klaro { z-index: 999999999 !important; }
-  #klaro .klaro .cookie-notice { background-color: #ffffff !important; color: #061542 !important; box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important; border-top: 1px solid #f3f4f6 !important; }
-  #klaro .klaro .cm-btn-success { background-color: #6b38fb !important; color: #ffffff !important; border-radius: 16px !important; }
-  #klaro .klaro .cm-btn-info { background-color: #f3f4f6 !important; color: #061542 !important; border-radius: 16px !important; }
-  #klaro .klaro .cm-link { color: #6b38fb !important; text-decoration: none !important; font-weight: 600 !important; }
-  #klaro .klaro .cm-switch input:checked + .slider { background-color: #22c55e !important; }
-  #klaro .klaro .cm-switch .slider { background-color: #d1d5db !important; transition: 0.3s !important; }
+  /* Klaro Consent Manager Customization - FINAL VERSION */
+  #klaro, #klaro .klaro {
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 999999999 !important;
+  }
+  body:has(#klaro .klaro .cm-modal.cm-shown) {
+    overflow: hidden !important;
+  }
+  #klaro .klaro .cookie-notice {
+    background-color: #ffffff !important;
+    color: #061542 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important;
+    border-top: 1px solid rgba(107, 56, 251, 0.2) !important;
+    border-top: 1px solid #f3f4f6 !important;
+    padding: 0 !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    z-index: 999999999 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+  #klaro .klaro .cookie-notice .cn-body {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  #klaro .klaro .cookie-notice .cn-body p {
+    color: #061542 !important;
+    margin: 0 !important;
+  }
+  #klaro .klaro .cookie-notice .cn-ok {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 10px 4px !important;
+  }
+  #klaro .klaro .cookie-notice .cn-ok > * {
+    width: 100% !important;
+    margin: 0 !important;
+    flex: 1 1 100% !important;
+    display: block !important;
+    text-align: center !important;
+  }
+  #klaro .klaro .cookie-notice .cn-ok .cm-btn,
+  #klaro .klaro .cookie-notice .cn-ok .cm-link,
+  #klaro .klaro .cookie-notice .cn-ok a {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 12px !important;
+    display: block !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
 
-  /* Legal Content Prose */
-  .legal-prose h2 { color: #061542; font-family: 'Inter', sans-serif; font-weight: 800; font-size: 1.5rem; margin-top: 2.5rem; margin-bottom: 1rem; letter-spacing: -0.02em; }
-  .legal-prose h3 { color: #6b38fb; font-weight: 700; font-size: 1.1rem; margin-top: 2rem; margin-bottom: 0.75rem; }
-  .legal-prose p { margin-bottom: 1.25rem; line-height: 1.7; color: rgba(6, 21, 66, 0.7); }
-  .legal-prose ul { margin-bottom: 1.5rem; list-style-type: disc; padding-left: 1.5rem; color: rgba(6, 21, 66, 0.7); }
-  .legal-prose li { margin-bottom: 0.5rem; }
+  /* DESKTOP CAPA 1 */
+  @media (min-width: 1024px) {
+    #klaro .klaro .cookie-notice .cn-body {
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      gap: 40px !important;
+      display: flex !important;
+    }
+    #klaro .klaro .cookie-notice .cn-body p {
+      max-width: 55% !important;
+      margin: 0 !important;
+    }
+    #klaro .klaro .cookie-notice .cn-ok {
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      width: auto !important;
+      min-width: max-content !important;
+      max-width: none !important;
+      gap: 16px !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      display: flex !important;
+    }
+    #klaro .klaro .cookie-notice .cn-buttons .cm-btn:first-child {
+      margin-right: 16px !important;
+    }
+    #klaro .klaro .cookie-notice .cn-buttons {
+      display: flex !important;
+      flex-direction: row !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    #klaro .klaro .cookie-notice .cn-ok > *,
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn,
+    #klaro .klaro .cookie-notice .cn-ok .cm-link,
+    #klaro .klaro .cookie-notice .cn-ok a {
+      width: auto !important;
+      margin: 0 !important;
+      flex: 0 0 auto !important;
+      display: inline-block !important;
+      white-space: nowrap !important;
+    }
+  }
+  
+  /* MOBILE CAPA 1 REPLICA CAPA 2 */
+  @media (max-width: 767px) {
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn {
+      width: 100% !important;
+      display: block !important;
+      margin-bottom: 8px !important;
+    }
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  #klaro .klaro .cookie-notice p {
+    color: #061542 !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+  }
+  /* Buttons Styling */
+  #klaro .klaro .cm-btn {
+    border-radius: 16px !important;
+    font-weight: 700 !important;
+    padding: 14px 32px !important;
+    border: none !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 0.95rem !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    margin: 8px 0 !important;
+  }
+  @media (min-width: 1024px) {
+    #klaro .klaro .cm-btn { 
+      width: auto !important; 
+      margin: 0 12px !important;
+    }
+  }
+  #klaro .klaro .cm-btn-success {
+    background-color: #6b38fb !important;
+    color: #ffffff !important;
+    order: 3 !important;
+  }
+  #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-second, #klaro .klaro .cm-btn-decline {
+    background-color: #f3f4f6 !important;
+    color: #4b5563 !important;
+    order: 2 !important;
+  }
+  /* Ghost Button Link */
+  #klaro .klaro .cm-link {
+    color: #6b38fb !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    font-size: 0.95rem !important;
+    padding: 0 !important;
+    background: none !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    order: 1 !important;
+    border: none !important;
+    margin: 12px 0 !important;
+  }
+  @media (min-width: 1024px) {
+    #klaro .klaro .cm-link { 
+      width: auto !important; 
+      padding: 14px 0 !important;
+      display: inline-flex !important;
+      line-height: 1 !important;
+      margin: 0 12px !important;
+    }
+  }
+
+  /* Capa 2 - Modal Robustness Refinements (FORCE) */
+  #klaro .klaro .cm-modal .cm-panel .cm-header,
+  #klaro .klaro .cm-header {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #061542 !important;
+  }
+  #klaro .klaro .cm-modal .cm-panel .cm-header * {
+    color: #061542 !important;
+  }
+  
+  @media (max-width: 767px) {
+    #klaro .klaro .cm-modal .cm-panel .cm-footer,
+    #klaro .klaro .cm-footer,
+    #klaro .klaro .cm-footer .cm-buttons,
+    #klaro .klaro .cm-footer-buttons {
+      display: flex !important;
+      flex-direction: column !important;
+      flex-flow: column nowrap !important;
+      gap: 6px !important;
+      padding: 10px 4px !important;
+      height: auto !important;
+      width: 100% !important;
+    }
+    #klaro .klaro .cm-modal .cm-panel .cm-footer .cm-btn,
+    #klaro .klaro .cm-footer .cm-btn,
+    #klaro .klaro .cm-footer .cm-buttons .cm-btn,
+    #klaro .klaro .cm-btn {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 2px 0 !important;
+      display: block !important;
+      flex: 1 1 100% !important;
+    }
+  }
+
+  #klaro .klaro .cm-modal .cm-header .cm-close {
+    color: #061542 !important;
+  }
+  #klaro .klaro .cm-modal .cm-body {
+    padding: 20px !important;
+    background: #fff !important;
+  }
+  #klaro .klaro .cm-modal p, 
+  #klaro .klaro .cm-modal span,
+  #klaro .klaro .cm-modal div,
+  #klaro .klaro .cm-modal .cm-app-description, 
+  #klaro .klaro .cm-modal .cm-app-title,
+  #klaro .klaro .cm-modal .cm-list-description,
+  #klaro .klaro .cm-modal .cm-purpose-description {
+    color: #061542 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch .slider {
+    background-color: #d1d5db !important;
+    transition: background-color 0.3s ease !important;
+  }
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch input:checked + .slider,
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch.is-checked .slider,
+  #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .slider,
+  #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .cm-switch .slider {
+    background-color: #22c55e !important;
+  }
+  #klaro .klaro .cm-modal .cm-footer {
+    border-top: 1px solid #f3f4f6 !important;
+    background: #fff !important;
+    padding: 20px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  #klaro .klaro .cm-modal .cm-footer .cm-btn {
+    flex: 1 1 auto !important;
+    min-width: 120px !important;
+  }
+  #klaro .klaro .cm-powered-by {
+    display: none !important;
+  }
+
+  /* Overlay */
+  body:has(#klaro .cookie-notice) {
+    overflow: hidden !important;
+  }
+  body:has(#klaro .cookie-notice)::before {
+    content: '' !important;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(6, 21, 66, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    z-index: 99999997 !important;
+  }
 </style>
 
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
@@ -412,7 +674,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     requestAnimationFrame(draw);
   }());
 
-  // KLARO ENFORCEMENT (Full sync with index.html)
+  // High-Priority Universal Text Enforcement (Sync with index.html)
   (function() {
     const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
     const enforceText = () => {
@@ -422,16 +684,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           if (p.innerText !== targetText) p.innerText = targetText;
         }
       });
+
+      // Update Button Copys for all devices and both layers
       const allBtns = document.querySelectorAll('#klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
       allBtns.forEach(btn => {
         const txt = btn.innerText;
+        
+        // RECHAZAR (Covers Layer 1 and 2)
         if (txt.includes('Descartar todas') || txt.includes('Rechazar todas') || txt === 'Descartar') {
           if (btn.innerText !== 'Rechazar') btn.innerText = 'Rechazar';
-        } else if (txt.includes('Aceptar seleccionadas') || txt.includes('Aceptar seleccionados') || txt.includes('Guardar')) {
+        } 
+        // GUARDAR (Specific for Layer 2 selections)
+        else if (txt.includes('Aceptar seleccionadas') || txt.includes('Aceptar seleccionados') || txt.includes('Guardar')) {
           if (btn.innerText !== 'Guardar') btn.innerText = 'Guardar';
-        } else if (txt.includes('Aceptar todas') || txt.includes('De acuerdo') || txt === 'Aceptar') {
+        }
+        // ACEPTAR (Covers Layer 1 and 2)
+        else if (txt.includes('Aceptar todas') || txt.includes('De acuerdo') || txt === 'Aceptar') {
           if (btn.innerText !== 'Aceptar') btn.innerText = 'Aceptar';
-        } else if (txt.includes('Quiero elegir') || txt.includes('Configurar')) {
+        }
+        // CONFIGURAR (Layer 1 link)
+        else if (txt.includes('Quiero elegir') || txt.includes('Configurar')) {
           if (btn.innerText !== 'Configurar') btn.innerText = 'Configurar';
         }
       });
