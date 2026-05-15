@@ -334,31 +334,29 @@ body { font-family: 'Inter', sans-serif; }
     overflow: hidden;
     overscroll-behavior: contain;
   }
-  /* Modal overlay: absolutely centered in viewport */
   .modal-overlay {
     position: fixed;
     inset: 0;
     width: 100%;
     height: 100%;
-    display: grid;
-    place-items: center;
-    padding: 1rem;
-    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.75);
+    z-index: 9999;
+    padding: 1.25rem;
   }
   .modal-overlay.hidden { display: none !important; }
   .modal-panel {
-    position: relative;
-    width: 100%;
-    max-width: 32rem;
     background: white;
+    width: 100%;
+    max-width: 34rem;
     border-radius: 1.5rem;
-    max-height: calc(100dvh - 2rem);
+    position: relative;
+    max-height: 90vh;
     overflow-y: auto;
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    margin: auto;
-  }
-  @media (min-width: 768px) {
-    .modal-panel { max-width: 36rem; max-height: 90vh; border-radius: 1.75rem; }
+    z-index: 10000;
   }
   .reveal-ready {
     transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1),
@@ -1047,7 +1045,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Hidden triggers removed for MVP -->
 
 <!-- SERVICE MODAL -->
-<div class="modal-overlay z-[80] hidden" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);">
+<div class="modal-overlay hidden" id="service-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal-panel p-8 md:p-12">
     <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors" onclick="closeModal('service-modal')" aria-label="Cerrar">
       <span class="material-symbols-outlined text-2xl md:text-3xl" aria-hidden="true">close</span>
@@ -1065,7 +1063,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- CONTACT MODAL -->
-<div class="modal-overlay z-[90] hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" style="background: rgba(0,0,0,0.6); backdrop-filter: blur(4px);">
+<div class="modal-overlay hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
   <div class="modal-panel p-8 md:p-12">
     <div class="mb-6 md:mb-8">
       <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-2" id="contact-modal-title">Hablemos</h4>
@@ -1187,16 +1185,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const modal = document.getElementById('contact-modal');
     if (!modal) return;
     
-    _preModalScrollY = window.scrollY;
-    Object.assign(document.body.style, {
-      position: 'fixed',
-      top: `-${_preModalScrollY}px`,
-      left: '0',
-      right: '0',
-      overflow: 'hidden'
-    });
     document.body.classList.add('modal-open');
-    
     modal.classList.remove('hidden');
     trapFocus(modal, { autoFocusFirst: true });
   };
@@ -1206,17 +1195,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (!modal) return;
     releaseFocus(modal, _lastFocusedEl);
     modal.classList.add('hidden');
-    
     document.body.classList.remove('modal-open');
-    Object.assign(document.body.style, {
-      position: '',
-      top: '',
-      left: '',
-      right: '',
-      overflow: ''
-    });
-    window.scrollTo(0, _preModalScrollY);
-
+    
     // Re-evaluate shell UI now that modal is gone
     requestAnimationFrame(() => updateShellUI());
   };
@@ -1239,16 +1219,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.getElementById('modal-title').innerText = s.title;
     document.getElementById('modal-desc').innerText = s.desc;
     
-    _preModalScrollY = window.scrollY;
-    Object.assign(document.body.style, {
-      position: 'fixed',
-      top: `-${_preModalScrollY}px`,
-      left: '0',
-      right: '0',
-      overflow: 'hidden'
-    });
     document.body.classList.add('modal-open');
-    
     modal.classList.remove('hidden');
     trapFocus(modal, { autoFocusFirst: true });
   };
