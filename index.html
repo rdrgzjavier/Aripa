@@ -989,7 +989,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </main>
 
 <!-- FOOTER -->
-<footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-64 md:pb-80 px-6 md:px-12 border-t border-white/5">
+<footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-20 px-6 md:px-12 border-t border-white/5">
   <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
     <div class="flex items-center gap-3">
       <img alt="aripa" class="h-8 object-contain" src="./assets/aripa-logo.png" width="106" height="32"/>
@@ -1188,9 +1188,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if (!modal) return;
     
     _preModalScrollY = window.scrollY;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${_preModalScrollY}px`;
-    document.body.style.width = '100%';
+    Object.assign(document.body.style, {
+      position: 'fixed',
+      top: `-${_preModalScrollY}px`,
+      left: '0',
+      right: '0',
+      overflow: 'hidden'
+    });
     document.body.classList.add('modal-open');
     
     modal.classList.remove('hidden');
@@ -1204,9 +1208,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     modal.classList.add('hidden');
     
     document.body.classList.remove('modal-open');
-    document.body.style.position = '';
-    document.body.style.top = '';
-    document.body.style.width = '';
+    Object.assign(document.body.style, {
+      position: '',
+      top: '',
+      left: '',
+      right: '',
+      overflow: ''
+    });
     window.scrollTo(0, _preModalScrollY);
 
     // Re-evaluate shell UI now that modal is gone
@@ -1232,9 +1240,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     document.getElementById('modal-desc').innerText = s.desc;
     
     _preModalScrollY = window.scrollY;
-    document.body.style.position = 'fixed';
-    document.body.style.top = `-${_preModalScrollY}px`;
-    document.body.style.width = '100%';
+    Object.assign(document.body.style, {
+      position: 'fixed',
+      top: `-${_preModalScrollY}px`,
+      left: '0',
+      right: '0',
+      overflow: 'hidden'
+    });
     document.body.classList.add('modal-open');
     
     modal.classList.remove('hidden');
