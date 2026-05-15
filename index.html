@@ -992,22 +992,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     root.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', active ? '0' : '-1'));
   };
 
-  // Block shell UI updates briefly after any click to prevent
-  // layout side-effects from hiding the bars.
-  let _blockShellUpdates = false;
-  let _blockTimer = null;
-  document.addEventListener('click', () => {
-    _blockShellUpdates = true;
-    clearTimeout(_blockTimer);
-    _blockTimer = setTimeout(() => {
-      _blockShellUpdates = false;
-      updateShellUI();
-    }, 800);
-  }, { passive: true });
-
+  // Shell UI updates logic
   const updateShellUI = () => {
-    if (_blockShellUpdates) return;
-
     const header = document.getElementById('site-header');
     const stickyBar = document.getElementById('sticky-bottom-bar');
     const mobileNav = document.getElementById('mobile-bottom-nav');
@@ -1017,7 +1003,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 220;
     const pastHero = scrollY > heroBottom - 200;
 
+    // Sticky Header
     header?.classList.toggle('is-sticky', scrollY > 20);
+    
+    // Scrolled state for body
     document.body.classList.toggle('scrolled', scrollY > 150);
     
     // Desktop sticky bar
@@ -1029,7 +1018,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       stickyBar.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', isVisible ? '0' : '-1'));
     }
 
-    // Mobile bottom nav: visibility driven purely by CSS (.scrolled class)
+    // Mobile bottom nav
     if (mobileNav) {
       const isVisible = window.innerWidth < 768 && scrollY > 150;
       mobileNav.setAttribute('aria-hidden', isVisible ? 'false' : 'true');
