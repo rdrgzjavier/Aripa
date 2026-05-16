@@ -4,7 +4,7 @@
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>Servicios de Consultoría Digital | Aripa</title>
-<meta name="description" content="Soluciones de crecimiento digital: SEO/GEO, CRO, UX y automatización para escalar tu negocio con IA y datos."/>
+<meta name="description" content="Soluciones de crecimiento digital: SEO/GEO de nueva generación, CRO estratégico y optimización de negocio con IA para escalar tu visibilidad."/>
 
 <script type="application/ld+json">
 {
@@ -27,18 +27,9 @@
 }
 </script>
 
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "name": "Aripa",
-  "url": "https://aripa.es"
-}
-</script>
-
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
 
-<!-- GTM Consent Mode Default State (AEPD 2023 Compliance) -->
+<!-- GTM Consent Mode Default State -->
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -57,171 +48,36 @@ new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 })(window,document,'script','dataLayer','GTM-KBK55KW8');</script>
-<!-- End Google Tag Manager -->
 
 <link rel="canonical" href="https://aripa.es/servicios.html"/>
-<link rel="preload" href="./style.css" as="style">
-<link rel="preload" href="/assets/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/aripa-logo.png" as="image" fetchpriority="high">
-
-<link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
-<link rel="icon" href="/assets/favicon-64.png" sizes="64x64">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
-
-<meta name="robots" content="index, follow">
-<meta name="author" content="Javier Rodriguez de la Orden">
-
 <link rel="stylesheet" href="./style.css">
 <style>
   :root {
     --color-primary:               220 80% 14%;
-    --color-primary-container:     225 51% 23%;
-    --color-secondary:             261 84% 63%; /* #7c3aed for WCAG AA contrast */
-    --color-secondary-container:   264 97% 74%;
-    --color-on-primary-container:  224 34% 66%;
+    --color-secondary:             261 84% 63%;
     --color-background:            20  33% 98%;
-    --color-surface:               20  33% 98%;
-    --color-surface-container-low: 24  20% 95%;
-    --color-on-background:         180  2% 11%;
-    --color-on-surface:            180  2% 11%;
-    --color-on-surface-variant:    234  5% 29%;
-    --color-outline-variant:       246  9% 80%;
-    --color-wa-light:              145 63% 49%;
-    --color-wa-dark:               170 79% 31%;
-    --duration-fast:    150ms;
     --duration-base:    300ms;
-    --duration-slow:    500ms;
     --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
-    --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
   }
   body { font-family: 'Inter', sans-serif; }
   .icon-svg { width: 24px; height: 24px; fill: currentColor; display: inline-block; vertical-align: middle; }
-  
-  :focus-visible {
-    outline: 2px solid #6c45c0;
-    outline-offset: 3px;
-    border-radius: 4px;
-  }
-
-  .btn-after {
-    background: linear-gradient(180deg, #7c3aed 0%, #6d28d9 100%);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 16px -4px rgba(108,69,192,0.5);
-    border: 1px solid rgba(124,58,237,0.5);
-  }
 
   /* Header Sync */
   #site-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 50;
+    position: fixed; top: 0; width: 100%; z-index: 50;
     background-color: transparent;
     transition: background-color var(--duration-base) var(--ease-out-expo), backdrop-filter var(--duration-base) var(--ease-out-expo);
   }
-  #site-header .header-inner { height: 4.25rem; }
   #site-header.is-sticky {
     background-color: rgba(6, 21, 66, 0.82);
     backdrop-filter: blur(14px);
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
-  @media (min-width: 768px) {
-    #site-header .header-inner { height: 5rem; }
-  }
 
-  /* Hero Fluid Heights */
-  .hero-fluid { padding-top: 180px; padding-bottom: 80px; }
-  @media (max-width: 767px) {
-    .hero-fluid { padding-top: 120px; padding-bottom: 64px; }
-  }
-
-  #sticky-bottom-bar {
-    transform: translateY(100%);
-    transition: transform var(--duration-base) cubic-bezier(0.4,0,0.2,1), visibility var(--duration-base);
-    visibility: hidden;
-  }
-  #sticky-bottom-bar.visible { transform: translateY(0); visibility: visible; }
-
-  #mobile-bottom-nav {
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    transform: translateY(100%);
-    transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
-    background: linear-gradient(160deg, rgba(12, 26, 84, 0.88) 0%, rgba(43, 32, 105, 0.86) 52%, rgba(94, 54, 150, 0.78) 100%);
-    backdrop-filter: blur(16px);
-    visibility: hidden;
-  }
-  .scrolled #mobile-bottom-nav.visible { transform: translateY(0); visibility: visible; }
-
-  /* --- Klaro Customization Block --- */
-  #klaro, #klaro .klaro { margin: 0 !important; padding: 0 !important; z-index: 999999999 !important; }
-  body:has(#klaro .klaro .cm-modal.cm-shown) { overflow: hidden !important; }
-  #klaro .klaro .cookie-notice {
-    background-color: #ffffff !important; color: #061542 !important; border-radius: 0 !important;
-    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important; border-top: 1px solid #f3f4f6 !important;
-    padding: 0 !important; position: fixed !important; bottom: 0 !important; left: 0 !important;
-    right: 0 !important; width: 100% !important; max-width: 100% !important; z-index: 999999999 !important;
-    margin: 0 !important; transform: none !important;
-  }
-  #klaro .klaro .cookie-notice .cn-body {
-    max-width: 1200px !important; margin: 0 auto !important; padding: 20px !important;
-    display: flex !important; flex-direction: column !important; gap: 20px !important;
-  }
-  #klaro .klaro .cookie-notice .cn-body p { color: #061542 !important; margin: 0 !important; }
-  #klaro .klaro .cookie-notice .cn-ok {
-    display: flex !important; flex-direction: column !important; gap: 8px !important;
-    width: 100% !important; padding: 10px 4px !important;
-  }
-  #klaro .klaro .cookie-notice .cn-ok > * { width: 100% !important; margin: 0 !important; flex: 1 1 100% !important; display: block !important; text-align: center !important; }
-  #klaro .klaro .cookie-notice .cn-ok .cm-btn, #klaro .klaro .cookie-notice .cn-ok .cm-link, #klaro .klaro .cookie-notice .cn-ok a {
-    width: 100% !important; margin: 0 !important; padding: 12px !important; display: block !important; text-align: center !important; box-sizing: border-box !important;
-  }
-  @media (min-width: 1024px) {
-    #klaro .klaro .cookie-notice .cn-body { flex-direction: row !important; justify-content: space-between !important; flex-wrap: nowrap !important; align-items: center !important; gap: 40px !important; display: flex !important; }
-    #klaro .klaro .cookie-notice .cn-body p { max-width: 55% !important; margin: 0 !important; }
-    #klaro .klaro .cookie-notice .cn-ok { flex-direction: row !important; flex-wrap: nowrap !important; width: auto !important; min-width: max-content !important; max-width: none !important; gap: 16px !important; align-items: center !important; justify-content: flex-end !important; display: flex !important; }
-    #klaro .klaro .cookie-notice .cn-buttons .cm-btn:first-child { margin-right: 16px !important; }
-    #klaro .klaro .cookie-notice .cn-buttons { display: flex !important; flex-direction: row !important; margin: 0 !important; padding: 0 !important; }
-    #klaro .klaro .cookie-notice .cn-ok > *, #klaro .klaro .cookie-notice .cn-ok .cm-btn, #klaro .klaro .cookie-notice .cn-ok .cm-link, #klaro .klaro .cookie-notice .cn-ok a { width: auto !important; margin: 0 !important; flex: 0 0 auto !important; display: inline-block !important; white-space: nowrap !important; }
-  }
-  @media (max-width: 767px) {
-    #klaro .klaro .cookie-notice .cn-ok .cm-btn { width: 100% !important; display: block !important; margin-bottom: 8px !important; }
-    #klaro .klaro .cookie-notice .cn-ok .cm-btn:last-child { margin-bottom: 0 !important; }
-  }
-  #klaro .klaro .cookie-notice p { color: #061542 !important; font-size: 1rem !important; line-height: 1.5 !important; font-weight: 500 !important; margin: 0 !important; }
-  #klaro .klaro .cm-btn { border-radius: 16px !important; font-weight: 700 !important; padding: 14px 32px !important; border: none !important; width: 100% !important; text-align: center !important; font-size: 0.95rem !important; box-shadow: none !important; cursor: pointer !important; margin: 8px 0 !important; }
-  @media (min-width: 1024px) { #klaro .klaro .cm-btn { width: auto !important; margin: 0 12px !important; } }
-  #klaro .klaro .cm-btn-success { background-color: #6b38fb !important; color: #ffffff !important; order: 3 !important; }
-  #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-second, #klaro .klaro .cm-btn-decline { background-color: #f3f4f6 !important; color: #4b5563 !important; order: 2 !important; }
-  #klaro .klaro .cm-link { color: #6b38fb !important; font-weight: 700 !important; text-decoration: none !important; font-size: 0.95rem !important; padding: 0 !important; background: none !important; width: 100% !important; display: flex !important; align-items: center !important; justify-content: center !important; order: 1 !important; border: none !important; margin: 12px 0 !important; }
-  @media (min-width: 1024px) { #klaro .klaro .cm-link { width: auto !important; padding: 14px 0 !important; display: inline-flex !important; line-height: 1 !important; margin: 0 12px !important; } }
-  #klaro .klaro .cm-modal .cm-panel .cm-header, #klaro .klaro .cm-header { background-color: #ffffff !important; background: #ffffff !important; color: #061542 !important; }
-  #klaro .klaro .cm-modal .cm-panel .cm-header * { color: #061542 !important; }
-  @media (max-width: 767px) {
-    #klaro .klaro .cm-modal .cm-panel .cm-footer, #klaro .klaro .cm-footer, #klaro .klaro .cm-footer .cm-buttons, #klaro .klaro .cm-footer-buttons { display: flex !important; flex-direction: column !important; flex-flow: column nowrap !important; gap: 6px !important; padding: 10px 4px !important; height: auto !important; width: 100% !important; }
-    #klaro .klaro .cm-modal .cm-panel .cm-footer .cm-btn, #klaro .klaro .cm-footer .cm-btn, #klaro .klaro .cm-footer .cm-buttons .cm-btn, #klaro .klaro .cm-btn { width: 100% !important; max-width: 100% !important; margin: 2px 0 !important; display: block !important; flex: 1 1 100% !important; }
-  }
-  #klaro .klaro .cm-modal .cm-header .cm-close { color: #061542 !important; }
-  #klaro .klaro .cm-modal .cm-body { padding: 20px !important; background: #fff !important; }
-  #klaro .klaro .cm-modal p, #klaro .klaro .cm-modal span, #klaro .klaro .cm-modal div, #klaro .klaro .cm-modal .cm-app-description, #klaro .klaro .cm-modal .cm-app-title, #klaro .klaro .cm-modal .cm-list-description, #klaro .klaro .cm-modal .cm-purpose-description { color: #061542 !important; opacity: 1 !important; visibility: visible !important; }
-  #klaro .klaro .cm-modal .cm-list-label .cm-switch .slider { background-color: #d1d5db !important; transition: background-color 0.3s ease !important; }
-  #klaro .klaro .cm-modal .cm-list-label .cm-switch input:checked + .slider, #klaro .klaro .cm-modal .cm-list-label .cm-switch.is-checked .slider, #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .slider, #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .cm-switch .slider { background-color: #22c55e !important; }
-  #klaro .klaro .cm-modal .cm-footer { border-top: 1px solid #f3f4f6 !important; background: #fff !important; padding: 20px !important; display: flex !important; flex-wrap: wrap !important; gap: 10px !important; }
-  #klaro .klaro .cm-modal .cm-footer .cm-btn { flex: 1 1 auto !important; min-width: 120px !important; }
-  #klaro .klaro .cm-powered-by { display: none !important; }
-  body:has(#klaro .cookie-notice) { overflow: hidden !important; }
-  body:has(#klaro .cookie-notice)::before { content: '' !important; position: fixed !important; inset: 0 !important; background: rgba(6, 21, 66, 0.8) !important; backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important; z-index: 99999997 !important; pointer-events: auto !important; }
   /* Hero v6 Styles */
   #hero-section.hero-v6 {
-    position: relative;
-    min-height: 75svh;
-    padding: 7.5rem 1.5rem 5rem;
-    overflow: hidden;
-    isolation: isolate;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    position: relative; min-height: 80svh; padding: 120px 1.5rem 80px;
+    overflow: hidden; isolation: isolate; display: flex; align-items: center; justify-content: center;
     background: #061542;
   }
   #hero-section .av6-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -3; }
@@ -232,264 +88,225 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   #hero-section .av6-content { max-width: 920px; margin: 0 auto; text-align: center; }
   #hero-section .av6-title {
-    font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 800; margin-bottom: 24px;
-    text-shadow: 0 2px 24px rgba(0,0,0,0.2); color: white;
+    font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -0.04em; font-weight: 800; margin-bottom: 24px; color: white;
   }
-  #hero-section .av6-sub { max-width: 640px; margin: 0 auto 40px; font-size: clamp(1rem, 2vw, 1.15rem); line-height: 1.6; color: rgba(255,255,255,0.85); }
-  
-  @keyframes hero-fade-up { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
-  .hero-animate-1 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s both; }
-  .hero-animate-2 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.25s both; }
-  .hero-animate-3 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.4s both; }
-  .hero-animate-4 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
+  #hero-section .av6-sub { max-width: 680px; margin: 0 auto 40px; font-size: clamp(1.1rem, 2vw, 1.25rem); line-height: 1.6; color: rgba(255,255,255,0.85); }
+
+  /* Premium Buttons */
+  .btn-after {
+    background: linear-gradient(180deg, #7c3aed 0%, #6d28d9 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 16px -4px rgba(108,69,192,0.5);
+    border: 1px solid rgba(124,58,237,0.5);
+  }
 
   /* Cards Premium Style */
   .service-card {
-    background: white;
-    padding: 2.5rem;
-    border-radius: 2rem;
+    background: white; padding: 3rem; border-radius: 2.5rem;
     border: 1px solid rgba(6, 21, 66, 0.05);
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 2px 4px -1px rgba(0,0,0,0.01);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   }
   .service-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px -12px rgba(6, 21, 66, 0.12);
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px -12px rgba(6, 21, 66, 0.15);
     border-color: rgba(108, 69, 192, 0.2);
   }
 
-  /* Reveal Animations */
-  .reveal-ready { transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1); }
-  .reveal-hidden { opacity: 0; transform: translateY(24px); }
+  /* Bottom Bars */
+  #mobile-bottom-nav {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
+    background: #061542; border-top: 1px solid rgba(255,255,255,0.1);
+    transform: translateY(100%); transition: transform 0.4s var(--ease-out-expo);
+  }
+  #sticky-bottom-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
+    background: rgba(255,255,255,0.9); backdrop-filter: blur(20px);
+    border-top: 1px solid rgba(6,21,66,0.05);
+    transform: translateY(100%); transition: transform 0.4s var(--ease-out-expo);
+  }
+  .visible { transform: translateY(0) !important; }
+
+  /* Modals Master Style (Sync with Index) */
+  .modal-overlay {
+    position: fixed; inset: 0; background: rgba(6, 14, 43, 0.85); backdrop-filter: blur(12px);
+    z-index: 100; display: flex; align-items: center; justify-content: center; p: 1.5rem;
+    opacity: 0; visibility: hidden; transition: all 0.4s var(--ease-out-expo);
+  }
+  .modal-overlay.active { opacity: 1; visibility: visible; }
+  .modal-panel {
+    background: white; width: 100%; max-width: 640px; border-radius: 2.5rem;
+    transform: scale(0.9) translateY(20px); transition: all 0.4s var(--ease-out-expo);
+  }
+  .modal-overlay.active .modal-panel { transform: scale(1) translateY(0); }
+
+  .form-input {
+    width: 100%; background: #f3f4f6; padding: 1.25rem; border-radius: 1.25rem;
+    border: none; outline: none; transition: all 0.3s ease;
+  }
+  .form-input:focus { ring: 2px solid rgba(108, 69, 192, 0.2); }
+  .btn-submit {
+    width: 100%; padding: 1.25rem; border-radius: 1.25rem; background: linear-gradient(180deg, #7c3aed 0%, #6d28d9 100%);
+    color: white; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
+  }
+
+  /* Klaro Customization */
+  #klaro .klaro .cookie-notice { background: #fff !important; color: #061542 !important; border-radius: 24px !important; box-shadow: 0 20px 50px rgba(0,0,0,0.2) !important; }
+  #klaro .klaro .cm-btn-success { background: #6c45c0 !important; color: #fff !important; }
+  body.modal-open { overflow: hidden !important; }
+
+  .reveal-ready { transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo); }
+  .reveal-hidden { opacity: 0; transform: translateY(30px); }
   .reveal-visible { opacity: 1; transform: translateY(0); }
 </style>
-  
 </head>
 <body class="bg-background text-on-background">
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBK55KW8"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
-
-  <!-- ==========================================
-       MOBILE DRAWER
-  =========================================== -->
-  <div class="fixed inset-0 z-[70] invisible md:hidden" id="drawer" role="dialog" aria-modal="true" aria-label="Menú de navegación">
-  <div class="absolute inset-0 opacity-0 transition-opacity duration-300" id="drawer-overlay"></div>
-  <nav class="absolute right-0 top-0 h-full w-4/5 max-w-sm drawer-transition translate-x-full p-8 flex flex-col shadow-2xl outline-none" id="drawer-content">
-    <div class="flex justify-between items-center mb-10">
-      <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24" fetchpriority="high"/>
-      <button class="text-white/70" onclick="toggleDrawer()" aria-label="Cerrar menú"><svg class="icon-svg" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
-    </div>
-    <div class="flex flex-col gap-2">
-      <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="servicios.html">
-        <svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M120-120v-533l200-200 160 160 214-214 46 46-260 260-160-160-154 154v487h-46Zm400 0v-240h46v240h-46Zm160 0v-400h46v400h-46Zm160 0v-160h46v160h-46Z"/></svg> Servicios
-      </a>
-      <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="recursos.html">
-        <svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v640q0 33-23.5 56.5T800-80H160Zm0-80h640v-640H160v640Zm80-80h480v-80H240v80Zm0-160h480v-80H240v80Zm0-160h480v-80H240v80Zm-80 400v-640 640Z"/></svg> Recursos
-      </a>
-      <button class="cta-core flex items-center justify-center gap-3 text-white w-full py-5 px-6 btn-lavender rounded-xl mt-6 !text-[13px]" onclick="toggleDrawer(); openContactModal();">
-        <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> Tengo una duda
-      </button>
-    </div>
-  </nav>
-</div>
 
 <!-- HEADER -->
-<header id="site-header" aria-label="Cabecera principal">
-  <div class="header-inner flex items-center justify-between px-6 md:px-12 max-w-[1440px] mx-auto">
-    <div class="flex-1 flex justify-start">
-      <a href="index.html" class="flex items-center outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
-        <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
-      </a>
-    </div>
-    <nav class="hidden lg:flex items-center justify-center gap-10 lg:gap-14">
-      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="servicios.html">Servicios</a>
-      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="recursos.html">Recursos</a>
+<header id="site-header">
+  <div class="max-w-[1440px] mx-auto h-20 md:h-24 flex items-center justify-between px-6 md:px-12">
+    <a href="index.html" class="outline-none"><img alt="aripa" class="h-6 md:h-7" src="./assets/aripa-logo.png"/></a>
+    <nav class="hidden lg:flex items-center gap-12">
+      <a class="text-white font-bold text-sm" href="servicios.html">Servicios</a>
+      <a class="text-white/70 hover:text-white transition-colors font-bold text-sm" href="recursos.html">Recursos</a>
     </nav>
-    <div class="flex-1 flex items-center justify-end gap-6">
-      <button type="button" class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
-        <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> Tengo una duda
-      </button>
-      <button type="button" class="flex items-center justify-center p-2 -mr-2 md:hidden" aria-label="Abrir formulario de contacto" id="mobile-mail-btn" onclick="openContactModal()">
-        <svg class="icon-svg text-white text-2xl" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
-      </button>
-    </div>
+    <button class="btn-after text-white px-8 py-3 rounded-xl font-bold text-sm hidden md:block" onclick="openContactModal()">HABLEMOS</button>
+    <button class="md:hidden text-white" onclick="toggleDrawer()"><svg class="icon-svg" viewBox="0 -960 960 960"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></button>
   </div>
 </header>
 
-<main id="main-content" tabindex="-1" class="focus:outline-none">
+<main id="main-content">
     <section id="hero-section" class="hero-v6 text-white">
-      <canvas class="av6-canvas" id="hero-gradient-canvas" aria-hidden="true"></canvas>
-      <div class="av6-grain" aria-hidden="true"></div>
+      <canvas class="av6-canvas" id="hero-gradient-canvas"></canvas>
+      <div class="av6-grain"></div>
       <div class="av6-content">
-        <h1 class="av6-title hero-animate-2">Servicios de<br/><span class="text-white">Crecimiento Digital</span></h1>
-        <p class="av6-sub hero-animate-3">Optimización estratégica basada en datos, psicología del comportamiento y tecnología de última generación para escalar tu negocio.</p>
-        <div class="av6-ctas hero-animate-4">
-          <button onclick="openContactModal()" class="cta-core av6-btn-primary hover:scale-105 transition-transform active:scale-95 shadow-2xl uppercase tracking-widest text-xs font-bold">Solicitar presupuesto</button>
-          <a class="cta-core av6-btn-secondary hover:bg-white/15 transition-colors" href="#servicios-grid">Ver detalles</a>
-        </div>
+        <h1 class="av6-title">Optimización para la<br/><span class="text-secondary">Era de la Inteligencia</span></h1>
+        <p class="av6-sub">Combinamos arquitectura semántica avanzada, diseño del comportamiento y SEO de nueva generación para dominar la visibilidad en motores generativos y maximizar tu rentabilidad.</p>
+        <button data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" class="btn-after px-10 py-4 rounded-2xl font-bold uppercase tracking-widest text-sm shadow-2xl hover:scale-105 transition-transform">Solicitar presupuesto</button>
       </div>
     </section>
 
-    <!-- Services Grid Master Style -->
     <section class="py-24 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios-grid">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- GEO / SEO -->
+        <div class="service-card reveal-ready">
+          <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8">
+            <svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M440-80v-367L216-447l24-53 264-380v367l224 0-24 53-264 380Z"/></svg>
+          </div>
+          <h3 class="text-2xl font-extrabold font-headline text-primary mb-5">GEO & SEO Estratégico</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-6">Dominamos el <strong>Generative Engine Optimization (GEO)</strong>. No solo optimizamos para Google; preparamos tu marca para ser la respuesta recomendada por LLMs (ChatGPT, Perplexity, Gemini). Construimos autoridad temática mediante clústeres semánticos que garantizan visibilidad en la nueva era de la búsqueda conversacional.</p>
+          <ul class="space-y-3 text-sm text-on-surface-variant font-medium">
+            <li class="flex items-center gap-3">✓ Citación en Motores Generativos</li>
+            <li class="flex items-center gap-3">✓ Arquitectura de Datos Estructurados</li>
+            <li class="flex items-center gap-3">✓ Dominio de Intención de Búsqueda</li>
+          </ul>
+        </div>
         <!-- CRO -->
-        <div class="service-card reveal-ready" data-delay="1">
+        <div class="service-card reveal-ready">
           <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8">
-            <svg class="icon-svg text-secondary text-3xl" viewBox="0 -960 960 960"><path d="M280-280h80v-280h-80v280Zm160 0h80v-440h-80v440Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm0-80h640v-560H160v560Zm0 0v-560 560Z"/></svg>
+            <svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M280-280h80v-280h-80v280Zm160 0h80v-440h-80v440Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Z"/></svg>
           </div>
-          <h3 class="text-2xl font-extrabold font-headline text-primary mb-4">Conversión & CRO</h3>
-          <p class="text-on-surface-variant leading-relaxed mb-6">Analizamos cada etapa de tu funnel para eliminar fricción y maximizar el rendimiento de tu inversión publicitaria.</p>
-          <ul class="space-y-3">
-            <li class="flex items-center gap-3 text-sm text-on-surface-variant"><svg class="icon-svg text-secondary w-4 h-4" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Auditoría de Experiencia Digital</li>
-            <li class="flex items-center gap-3 text-sm text-on-surface-variant"><svg class="icon-svg text-secondary w-4 h-4" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> A/B Testing & Experimentación</li>
+          <h3 class="text-2xl font-extrabold font-headline text-primary mb-5">CRO & Rentabilidad</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-6">Analizamos científicamente el comportamiento del usuario para eliminar cada punto de fricción en tu funnel. Utilizamos <strong>analítica avanzada y experimentación continua</strong> para transformar el tráfico existente en ingresos, optimizando el ROAS y reduciendo el coste de adquisición mediante mejoras técnicas basadas en datos reales.</p>
+          <ul class="space-y-3 text-sm text-on-surface-variant font-medium">
+            <li class="flex items-center gap-3">✓ Auditoría de Fugas de Conversión</li>
+            <li class="flex items-center gap-3">✓ Testeo A/B Basado en Hipótesis</li>
+            <li class="flex items-center gap-3">✓ Optimización de LTV y Retención</li>
           </ul>
         </div>
-        <!-- Card 2 -->
-        <div class="service-card reveal-ready" data-delay="2">
+        <!-- UX / Behavioral -->
+        <div class="service-card reveal-ready">
           <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8">
-            <svg class="icon-svg text-secondary text-3xl" viewBox="0 -960 960 960"><path d="M426-120 154-392l57-56 215 215 423-423 57 56-480 480Z"/></svg>
+            <svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Z"/></svg>
           </div>
-          <h3 class="text-2xl font-extrabold font-headline text-primary mb-4">SEO & GEO</h3>
-          <p class="text-on-surface-variant leading-relaxed mb-6">Más allá del ranking tradicional: optimizamos tu marca para ser citada por motores de respuesta (ChatGPT, Gemini).</p>
-          <ul class="space-y-3">
-            <li class="flex items-center gap-3 text-sm text-on-surface-variant"><svg class="icon-svg text-secondary w-4 h-4" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Generative Engine Optimization</li>
-            <li class="flex items-center gap-3 text-sm text-on-surface-variant"><svg class="icon-svg text-secondary w-4 h-4" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> SEO Estratégico de Autoridad</li>
-          </ul>
-        </div>
-        <!-- Card 3 -->
-        <div class="service-card reveal-ready" data-delay="3">
-          <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8">
-            <svg class="icon-svg text-secondary text-3xl" viewBox="0 -960 960 960"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q67 0 113.5-46.5T640-400q0-67-46.5-113.5T480-560q-67 0-113.5 46.5T320-400q0 67 46.5 113.5T480-240Z"/></svg>
-          </div>
-          <h3 class="text-2xl font-extrabold font-headline text-primary mb-4">UX & Behavioral</h3>
-          <p class="text-on-surface-variant leading-relaxed mb-6">Diseñamos interfaces que guían la decisión de compra mediante principios de psicología cognitiva y diseño conductual.</p>
-          <ul class="space-y-3">
-            <li class="flex items-center gap-3 text-sm text-on-surface-variant"><svg class="icon-svg text-secondary w-4 h-4" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Behavioral Design Audit</li>
-            <li class="flex items-center gap-3 text-sm text-on-surface-variant"><svg class="icon-svg text-secondary w-4 h-4" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Customer Journey Optimization</li>
+          <h3 class="text-2xl font-extrabold font-headline text-primary mb-5">UX & Behavioral Design</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-6">Diseñamos ecosistemas digitales utilizando principios de <strong>Economía del Comportamiento y Psicología Cognitiva</strong>. No solo creamos interfaces estéticas; construimos experiencias que reducen la carga cognitiva y guían de forma natural al usuario hacia la conversión, eliminando barreras psicológicas invisibles.</p>
+          <ul class="space-y-3 text-sm text-on-surface-variant font-medium">
+            <li class="flex items-center gap-3">✓ Diseño Conductual (Nudging)</li>
+            <li class="flex items-center gap-3">✓ Optimización de Carga Cognitiva</li>
+            <li class="flex items-center gap-3">✓ Prototipado Basado en Evidencia</li>
           </ul>
         </div>
       </div>
     </section>
 </main>
 
-<!-- FOOTER Master Sync -->
-<footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-64 md:pb-80 px-6 md:px-12 border-t border-white/5">
-  <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
-    <div class="flex items-center gap-3"><img alt="aripa" class="h-8 object-contain" src="./assets/aripa-logo.png" width="106" height="32"/></div>
-    <nav class="flex flex-wrap justify-center gap-6 md:gap-10">
-      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-cookies.html">Política de cookies</a>
-      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="privacidad.html">Privacidad</a>
-      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
+<!-- FOOTER -->
+<footer class="bg-[#061542] text-[#fcf9f8] pt-24 pb-48 md:pb-64 px-6 md:px-12 border-t border-white/5">
+  <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-12 text-center">
+    <a href="index.html" class="flex items-center gap-3"><img alt="aripa" class="h-10" src="./assets/aripa-logo.png"/></a>
+    <nav class="flex flex-wrap justify-center gap-10">
+      <a class="text-white/40 hover:text-white transition-colors text-sm font-medium" href="politica-cookies.html">Política de cookies</a>
+      <a class="text-white/40 hover:text-white transition-colors text-sm font-medium" href="politica-privacidad.html">Privacidad</a>
+      <a class="text-white/40 hover:text-white transition-colors text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
     </nav>
-    <p class="text-white/40 text-[10px] font-body max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest">© 2026 aripa Consulting | Javier Rodriguez de la Orden.</p>
+    <div class="max-w-xl text-white/40 text-[10px] uppercase tracking-[0.2em] leading-relaxed">
+      Consultoría estratégica enfocada en optimización basada en datos y sistemas conversacionales (GEO). Transformamos activos digitales en autoridad temática y crecimiento de alto rendimiento.
+    </div>
+    <a href="https://www.linkedin.com/company/aripa/" target="_blank" class="hover:opacity-80 transition-opacity"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="white"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+    <p class="text-white/40 text-[10px] uppercase tracking-widest">© 2026 aripa Consulting | Javier Rodriguez de la Orden.</p>
   </div>
 </footer>
 
-<!-- Bottom Bars Sync -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden invisible" id="mobile-bottom-nav" aria-hidden="true" style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
-  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">
-    HABLEMOS
-  </button>
+<!-- BOTTOM BARS -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-4 bg-[#061542]/95 backdrop-blur-2xl md:hidden" id="mobile-bottom-nav">
+  <button class="btn-after w-full text-white py-4 rounded-xl font-bold tracking-widest uppercase text-xs" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta">HABLEMOS</button>
 </nav>
 
-<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between pointer-events-none invisible" id="sticky-bottom-bar" aria-hidden="true">
+<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/90 backdrop-blur-xl border-t border-black/5 px-12 py-5 items-center justify-between" id="sticky-bottom-bar">
   <div class="flex flex-col">
-    <span class="text-primary font-bold font-headline text-sm tracking-tight flex items-center gap-2">¿Hablamos de tu próxima fase de crecimiento?</span>
-    <span class="text-[11px] font-normal text-on-surface-variant ml-0">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
+    <span class="text-primary font-extrabold text-sm tracking-tight flex items-center gap-2"><svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M120-120v-542l200-200 160 160 260-260 56 56-316 316-160-160-144 144v486h-56Z"/></svg> ¿Hablamos de tu próxima fase de crecimiento?</span>
+    <span class="text-[11px] text-on-surface-variant font-medium ml-8">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
   </div>
-  <div class="flex items-center gap-3 pointer-events-auto">
-    <button class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">HABLEMOS</button>
-  </div>
+  <button class="btn-after text-white px-10 py-3 rounded-xl font-bold text-xs uppercase tracking-widest" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta">HABLEMOS</button>
 </div>
 
-<div id="success-feedback-modal" class="success-modal">
-  <div class="success-modal-content">
-      <div class="success-icon"><svg class="icon-svg" style="width:32px;height:32px;" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg></div>
-      <h3 class="success-title">Gracias</h3>
-      <p class="success-desc">Hemos recibido tu mensaje correctamente. Te contactaremos pronto.</p>
-      <button class="btn-close-success" onclick="closeSuccessModal()">Cerrar</button>
-  </div>
-</div>
-
-<div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] flex items-center justify-center p-6 hidden" id="contact-modal" role="dialog" aria-modal="true">
-  <div class="bg-white w-full max-w-xl rounded-3xl p-12 relative shadow-2xl">
-    <h4 class="text-3xl font-extrabold font-headline text-primary mb-6">Hablemos</h4>
-    <form class="space-y-6" id="contact-form" onsubmit="handleFormSubmit(event)">
-      <input type="text" id="c-name" placeholder="Nombre" required class="w-full bg-surface-container-low p-4 rounded-xl border-none"/>
-      <input type="tel" id="c-phone" placeholder="Teléfono" required class="w-full bg-surface-container-low p-4 rounded-xl border-none"/>
-      <input type="email" id="c-email" placeholder="Email" required class="w-full bg-surface-container-low p-4 rounded-xl border-none"/>
-      <select id="c-service" class="w-full bg-surface-container-low p-4 rounded-xl border-none">
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contact-modal">
+  <div class="modal-panel p-8 md:p-12 relative">
+    <h4 class="text-3xl md:text-4xl font-extrabold text-primary mb-2">Hablemos</h4>
+    <p class="text-on-surface-variant mb-10 font-medium">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
+    <form class="space-y-6" onsubmit="handleFormSubmit(event)">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <input type="text" name="name" placeholder="Nombre" required class="form-input"/>
+        <input type="tel" name="phone" placeholder="Teléfono" required class="form-input"/>
+      </div>
+      <input type="email" name="email" placeholder="Email Corporativo" required class="form-input"/>
+      <select name="service" class="form-input">
         <option value="conversion">Conversión & CRO</option>
         <option value="seo-geo">SEO & GEO</option>
         <option value="ux">UX & Behavioral</option>
         <option value="general">Consulta general</option>
       </select>
-      <textarea id="c-message" placeholder="Mensaje" class="w-full bg-surface-container-low p-4 rounded-xl border-none"></textarea>
-      <button id="submit-btn" type="submit" class="w-full py-4 btn-after text-white rounded-xl font-bold uppercase tracking-widest">Enviar</button>
+      <textarea name="message" placeholder="¿Cómo podemos ayudarte?" class="form-input min-h-[120px] resize-none"></textarea>
+      <button type="submit" id="submit-btn" class="btn-submit">Enviar Solicitud</button>
     </form>
-    <button class="absolute top-8 right-8 text-primary" onclick="closeModal('contact-modal')"><svg class="icon-svg" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
+    <button class="absolute top-8 right-8 text-primary/30 hover:text-primary transition-colors" onclick="closeModal('contact-modal')"><svg class="icon-svg text-2xl" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
   </div>
 </div>
 
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden invisible"
-     id="mobile-bottom-nav"
-     aria-hidden="true"
-     style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
-  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">
-    <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-840h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T800-80H200Zm0-80h600v-400H200v400Zm0-480h600v-80H200v80Zm0 0v-80 80Z"/></svg>
-    HABLEMOS
-  </button>
-</nav>
-
-<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between pointer-events-none invisible"
-     id="sticky-bottom-bar"
-     aria-hidden="true">
-  <div class="flex flex-col">
-    <span class="text-primary font-bold font-headline text-sm tracking-tight flex items-center gap-2">
-      <svg class="icon-svg text-secondary text-lg" viewBox="0 -960 960 960"><path d="M120-120v-542l200-200 160 160 260-260 56 56-316 316-160-160-144 144v486h-56Zm400 0v-240h56v240h-56Zm160 0v-400h56v400h-56Zm160 0v-160h56v160h-56Z"/></svg> ¿Hablamos de tu próxima fase de crecimiento?
-    </span>
-    <span class="text-[11px] font-normal text-on-surface-variant ml-7">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
-  </div>
-  <div class="flex items-center gap-3 pointer-events-auto">
-    <button class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2"
-            data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">
-      <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-840h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T800-80H200Zm0-80h600v-400H200v400Zm0-480h600v-80H200v80Zm0 0v-80 80Z"/></svg> HABLEMOS
-    </button>
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="success-modal">
+  <div class="modal-panel p-10 md:p-16 text-center">
+    <div class="bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 w-full max-w-[200px]" style="height: 56px; min-height: 56px;">
+      <svg class="icon-svg text-secondary text-3xl" viewBox="0 -960 960 960"><path d="M160-120v-560q0-33 23.5-56.5T240-760h160v-80q0-33 23.5-56.5T480-960h160q33 0 56.5 23.5T752-840v80h160q33 0 56.5 23.5T1024-680v560H160Zm80-80h704v-480H240v480Zm240-560h160v-80H480v80Z"/></svg>
+    </div>
+    <h2 class="text-3xl font-extrabold font-headline text-primary mb-4">¡Solicitud recibida!</h2>
+    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
+      Tu mensaje ha sido entregado correctamente. Un consultor senior revisará tu caso personalmente y recibirás una respuesta en menos de 24 horas.
+    </p>
+    <button type="button" class="btn-submit !w-auto px-12" onclick="closeModal('success-modal')">ENTENDIDO</button>
   </div>
 </div>
 
 <script>
 (function () {
-  const setInteractive = (root, active) => {
-    if (!root) return;
-    root.classList.toggle('invisible', !active);
-    root.classList.toggle('visible', active);
-    root.setAttribute('aria-hidden', active ? 'false' : 'true');
-    root.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', active ? '0' : '-1'));
-  };
-
   window.toggleDrawer = function () {
     const d = document.getElementById('drawer');
-    const o = document.getElementById('drawer-overlay');
-    const c = document.getElementById('drawer-content');
-    if (!d || !o || !c) return;
-    if (d.classList.contains('invisible')) {
-      d.classList.remove('invisible');
-      document.body.classList.add('modal-open');
-      requestAnimationFrame(() => { o.classList.add('opacity-100'); c.classList.remove('translate-x-full'); });
-    } else {
-      o.classList.remove('opacity-100'); c.classList.add('translate-x-full');
-      document.body.classList.remove('modal-open');
-      setTimeout(() => d.classList.add('invisible'), 300);
-    }
+    if (d) d.classList.toggle('invisible');
   };
 
-  window.openContactModal = () => { document.getElementById('contact-modal').classList.remove('hidden'); document.body.classList.add('modal-open'); };
-  window.closeModal = (id) => { document.getElementById(id).classList.add('hidden'); document.body.classList.remove('modal-open'); };
-  window.closeSuccessModal = () => document.getElementById('success-feedback-modal').classList.remove('active');
+  window.openContactModal = () => { document.getElementById('contact-modal').classList.add('active'); document.body.classList.add('modal-open'); };
+  window.closeModal = (id) => { document.getElementById(id).classList.remove('active'); document.body.classList.remove('modal-open'); };
 
   const updateShellUI = () => {
     const h = document.getElementById('site-header');
@@ -497,20 +314,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     const m = document.getElementById('mobile-bottom-nav');
     const scrollY = window.scrollY;
     h?.classList.toggle('is-sticky', scrollY > 20);
-    setInteractive(s, window.innerWidth >= 768 && scrollY > 600);
-    setInteractive(m, window.innerWidth < 768 && scrollY > 150);
+    s?.classList.toggle('visible', window.innerWidth >= 768 && scrollY > 600);
+    m?.classList.toggle('visible', window.innerWidth < 768 && scrollY > 150);
   };
   window.addEventListener('scroll', updateShellUI, { passive: true });
   window.addEventListener('resize', updateShellUI);
   updateShellUI();
 
-  // Reveal Observer
   const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('reveal-visible'); });
   }, { threshold: 0.1 });
   document.querySelectorAll('.reveal-ready').forEach(el => { el.classList.add('reveal-hidden'); revealObserver.observe(el); });
 
-  // Canvas Engine
   (function () {
     const canvas = document.getElementById('hero-gradient-canvas');
     if (!canvas) return;
@@ -539,80 +354,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     requestAnimationFrame(draw);
   })();
 
-  // Klaro Translation & Accessibility
-  (function() {
-    const enforce = () => {
-      const n = document.querySelector('#klaro .cookie-notice');
-      if (n && !n.hasAttribute('aria-label')) { n.setAttribute('aria-label', 'Aviso de cookies'); n.setAttribute('role', 'dialog'); }
-      const allBtns = document.querySelectorAll('#klaro .cm-btn, #klaro .cm-link');
-      allBtns.forEach(btn => {
-        const txt = btn.innerText;
-        if (txt.includes('Rechazar') || txt.includes('Descartar')) btn.innerText = 'Rechazar';
-        else if (txt.includes('Aceptar') || txt.includes('De acuerdo')) btn.innerText = 'Aceptar';
-        else if (txt.includes('Guardar')) btn.innerText = 'Guardar';
-        else if (txt.includes('Configurar')) btn.innerText = 'Configurar';
-      });
-    };
-    new MutationObserver(enforce).observe(document.documentElement, { childList: true, subtree: true });
-  })();
-
   window.handleFormSubmit = async (e) => {
     e.preventDefault();
     const btn = document.getElementById('submit-btn');
     const originalText = btn.innerText;
-    btn.disabled = true;
-    btn.innerText = 'Enviando...';
+    btn.disabled = true; btn.innerText = 'ENVIANDO...';
     try {
       const response = await fetch("https://formspree.io/f/maqalopa", {
         method: 'POST',
         headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: document.getElementById('c-name').value,
-          phone: document.getElementById('c-phone').value,
-          email: document.getElementById('c-email').value,
-          service: document.getElementById('c-service').value,
-          message: document.getElementById('c-message').value
-        })
+        body: JSON.stringify(Object.fromEntries(new FormData(e.target).entries()))
       });
-      if (response.ok) {
-        closeModal('contact-modal');
-        document.getElementById('success-feedback-modal').classList.add('active');
-        e.target.reset();
+      if (response.ok) { 
+        document.getElementById('contact-modal').classList.remove('active');
+        document.getElementById('success-modal').classList.add('active');
+        e.target.reset(); 
       }
-    } catch (error) {
-      alert('Error de conexión.');
-    } finally {
-      btn.disabled = false;
-      btn.innerText = originalText;
-    }
+    } catch (error) { alert('Error de conexión.'); } finally { btn.disabled = false; btn.innerText = originalText; }
   };
 })();
 
-// Cal.com
 (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
-Cal.ns["hoja-de-ruta"]("preload", {calLink:"aripa/hoja-de-ruta"});
-Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view","useSlotsViewOnSmallScreen":true});
-
-// Consent Mode Bridge
-window.addEventListener('load', function() {
-  if (typeof klaro !== 'undefined') {
-    const manager = klaro.getManager();
-    const updateConsent = () => {
-      const gConsent = manager.getConsent('google-analytics') || manager.getConsent('google-tag-manager');
-      if (gConsent) {
-        gtag('consent', 'update', {
-          'analytics_storage': 'granted',
-          'ad_storage': 'granted',
-          'ad_user_data': 'granted',
-          'ad_personalization': 'granted'
-        });
-      }
-    };
-    updateConsent();
-    manager.watch({ update: updateConsent });
-  }
-});
+Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
 </script>
+
 </body>
 </html>
