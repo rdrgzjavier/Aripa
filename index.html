@@ -97,6 +97,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <link rel="canonical" href="https://aripa.es/"/>
 <link rel="preload" href="/style.css" as="style">
+<link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/aripa-logo.png" as="image">
+
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="icon" href="/assets/favicon-64.png" sizes="64x64">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
@@ -147,7 +151,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 body { font-family: 'Inter', sans-serif; }
 .font-brand { font-family: 'Inter', sans-serif; }
 .font-headline { font-family: 'Inter', sans-serif; }
-  .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+.icon-svg { width: 24px; height: 24px; fill: currentColor; display: inline-block; vertical-align: middle; }
+
   :focus-visible {
     outline: 2px solid #6c45c0;
     outline-offset: 3px;
@@ -219,10 +224,10 @@ body { font-family: 'Inter', sans-serif; }
     text-transform: uppercase;
     line-height: 1;
   }
-  .cta-core .material-symbols-outlined,
+  .cta-core .icon-svg,
   .cta-icon {
-    font-size: 1rem;
-    line-height: 1;
+    width: 1rem;
+    height: 1rem;
   }
   @media (min-width: 768px) {
     #site-header .header-inner { height: 5rem; }
@@ -312,7 +317,7 @@ body { font-family: 'Inter', sans-serif; }
       0 1px 0 rgba(255,255,255,0.9) inset,
       0 8px 22px rgba(17, 14, 58, 0.28);
   }
-  #mobile-bottom-nav .btn-after .material-symbols-outlined {
+  #mobile-bottom-nav .btn-after .icon-svg {
     color: #5e3ab3;
   }
   .drawer-transition { transition: transform var(--duration-base) ease-in-out; }
@@ -490,9 +495,9 @@ body { font-family: 'Inter', sans-serif; }
     justify-content: center;
     color: #fbbf24;
   }
-  #hero-section .av6-proof-star .material-symbols-outlined {
-    font-size: 1.05rem;
-    font-variation-settings: 'FILL' 1;
+  #hero-section .av6-proof-star .icon-svg {
+    width: 1.05rem;
+    height: 1.05rem;
   }
   #hero-section .av6-proof-text {
     font-size: 0.72rem;
@@ -889,20 +894,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   fetchpriority="high"
 />
       <button class="text-white/70" onclick="toggleDrawer()" aria-label="Cerrar menú">
-        <span class="material-symbols-outlined" aria-hidden="true">close</span>
+        <svg class="icon-svg" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
       </button>
     </div>
     <!-- Hidden for MVP as requested -->
     <div class="hidden">
       <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="servicios.html">
-        <span class="material-symbols-outlined text-[#6c45c0]">insights</span> Servicios
+        <svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M120-120v-533l200-200 160 160 214-214 46 46-260 260-160-160-154 154v487h-46Zm400 0v-240h46v240h-46Zm160 0v-400h46v400h-46Zm160 0v-160h46v160h-46Z"/></svg> Servicios
       </a>
       <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="recursos.html">
-        <span class="material-symbols-outlined text-[#6c45c0]">article</span> Recursos
+        <svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M160-80q-33 0-56.5-23.5T80-160v-640q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v640q0 33-23.5 56.5T800-80H160Zm0-80h640v-640H160v640Zm80-80h480v-80H240v80Zm0-160h480v-80H240v80Zm0-160h480v-80H240v80Zm-80 400v-640 640Z"/></svg> Recursos
       </a>
 
       <button type="button" class="cta-core flex items-center justify-center gap-3 text-white w-full py-5 px-6 btn-lavender rounded-xl mt-8 !text-[13px] shadow-lg active:scale-95 transition-all min-h-[56px]" onclick="toggleDrawer(); openContactModal();">
-        <span class="material-symbols-outlined text-xl">mail</span> Tengo una duda
+        <svg class="icon-svg text-xl" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> Tengo una duda
       </button>
     </div>
   </nav>
@@ -927,11 +932,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- Right Column: CTA & Burger -->
     <div class="flex-1 flex items-center justify-end gap-6">
       <button type="button" class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
-        <span class="material-symbols-outlined">mail</span>
+        <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
         Tengo una duda
       </button>
       <button type="button" class="flex items-center justify-center p-2 -mr-2 md:hidden" aria-label="Abrir formulario de contacto" id="mobile-mail-btn" onclick="openContactModal()">
-        <span class="material-symbols-outlined text-white text-2xl" aria-hidden="true">mail</span>
+        <svg class="icon-svg text-white text-2xl" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
       </button>
     </div>
   </div>
@@ -949,7 +954,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Social Proof Hidden as requested -->
       <div class="av6-social-proof hero-animate-1" style="display: none;">
         <span class="av6-proof-star" aria-hidden="true">
-          <span class="material-symbols-outlined">star</span>
+          <svg class="icon-svg" viewBox="0 -960 960 960"><path d="m233-120 65-281L80-590l288-25 112-265 112 265 288 25-218 189 65 281-247-149-247 149Z"/></svg>
         </span>
         <p class="av6-proof-text">Valoración 4.9/5 | +50 empresas impulsadas</p>
       </div>
@@ -992,7 +997,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Fricción 1 -->
         <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="1" tabindex="0" role="article" aria-label="Fricción 1: Usuarios que abandonan">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
-            <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">person_remove</span>
+            <svg class="icon-svg text-secondary text-2xl md:text-3xl" viewBox="0 -960 960 960"><path d="M520-400q-58 0-99-41t-41-99q0-58 41-99t99-41q58 0 99 41t41 99q0 58-41 99t-99 41Zm0-80q25 0 42.5-17.5T580-540q0-25-17.5-42.5T520-600q-25 0-42.5 17.5T460-540q0 25 17.5 42.5T520-480Zm0 320q-74 0-139.5-28.5T266-266q-49-49-77.5-114.5T160-520q0-150 105-255t255-105q150 0 255 105t105 255q0 74-28.5 139.5T774-320l50 50-56 56-50-50q-49 49-114.5 77.5T520-160Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm0-280Z"/></svg>
           </div>
           <div>
             <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Usuarios que abandonan</h3>
@@ -1003,7 +1008,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Fricción 2 -->
         <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="2" tabindex="0" role="article" aria-label="Fricción 2: Landings que no convierten">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
-            <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">trending_down</span>
+            <svg class="icon-svg text-secondary text-2xl md:text-3xl" viewBox="0 -960 960 960"><path d="m120-120 154-154 160 160 260-260-46-46-214 214-160-160L120-173v-487h-46v540h46Zm400 0h46v-240h-46v240Zm160 0h46v-400h-46v400Zm160 0h46v-160h-46v160Z"/></svg>
           </div>
           <div>
             <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Landings que no convierten</h3>
@@ -1014,7 +1019,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Fricción 3 -->
         <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="3" tabindex="0" role="article" aria-label="Fricción 3: Funnels con pérdidas">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
-            <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">filter_alt_off</span>
+            <svg class="icon-svg text-secondary text-2xl md:text-3xl" viewBox="0 -960 960 960"><path d="M480-120q-150 0-255-105T120-480q0-150 105-255t255-105q150 0 255 105t105 255q0 150-105 255T480-120Zm0-80q116 0 198-82t82-198q0-116-82-198t-198-82q-116 0-198 82t-82 198q0 116 82 198t198 82Zm-240-80 480-480-56-56-480 480 56 56Z"/></svg>
           </div>
           <div>
             <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Funnels con pérdidas</h3>
@@ -1025,7 +1030,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Fricción 4 -->
         <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="4" tabindex="0" role="article" aria-label="Fricción 4: Mensajes poco claros">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
-            <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">visibility_off</span>
+            <svg class="icon-svg text-secondary text-2xl md:text-3xl" viewBox="0 -960 960 960"><path d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-80q-42 0-71-29t-29-71q0-42 29-71t71-29q42 0 71 29t29 71q0 42-29 71t-71 29Zm0 160q-154 0-281.5-80.5T40-500q32-81 81.5-147T230-752l58 58q-44 33-82.5 77.5T144-500q51 98 147 159t209 61q57 0 111-13.5T712-334l58 58q-68 44-142.5 68T480-240Zm320-80-58-58q34-26 62.5-59.5T848-500q-51-98-147-159t-209-61q-57 0-111 13.5T271-666l-58-58q68-44 142.5-68t144.5-24q154 0 281.5 80.5T920-500q-32 81-81.5 147T680-262l120 120-56 56-624-624 56-56 120 120L800-320Z"/></svg>
           </div>
           <div>
             <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Mensajes poco claros</h3>
@@ -1036,7 +1041,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Fricción 5 -->
         <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="5" tabindex="0" role="article" aria-label="Fricción 5: Decisiones por intuición">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
-            <span class="material-symbols-outlined text-secondary text-2xl md:text-3xl">psychology</span>
+            <svg class="icon-svg text-secondary text-2xl md:text-3xl" viewBox="0 -960 960 960"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q67 0 113.5-46.5T640-400q0-67-46.5-113.5T480-560q-67 0-113.5 46.5T320-400q0 67 46.5 113.5T480-240Z"/></svg>
           </div>
           <div>
             <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Decisiones por intuición</h3>
@@ -1060,14 +1065,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
            onclick="openModal('service-modal-conversion')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
-          <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">query_stats</span>
+          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M120-120v-533l200-200 160 160 214-214 46 46-260 260-160-160-154 154v487h-46Zm400 0v-240h46v240h-46Zm160 0v-400h46v400h-46Zm160 0v-160h46v160h-46Z"/></svg>
         </div>
         <div class="flex flex-col h-full">
           <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">Conversión & CRO</h3>
           <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base mb-8">Auditorías profundas de conversión, optimización de funnels y landing pages de alto impacto mediante experimentación continua.</p>
           <div class="mt-auto">
             <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
-              Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              Saber más <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
             </span>
           </div>
         </div>
@@ -1078,14 +1083,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
            onclick="openModal('service-modal-ux')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
-          <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">psychology</span>
+          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q67 0 113.5-46.5T640-400q0-67-46.5-113.5T480-560q-67 0-113.5 46.5T320-400q0 67 46.5 113.5T480-240Z"/></svg>
         </div>
         <div class="flex flex-col h-full">
           <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">UX & Behavioral Design</h3>
           <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base mb-8">Diseñamos claridad y arquitectura de información analizando el comportamiento digital para eliminar fricciones en la experiencia.</p>
           <div class="mt-auto">
             <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
-              Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              Saber más <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
             </span>
           </div>
         </div>
@@ -1096,14 +1101,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
            onclick="openModal('service-modal-growth')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
-          <span class="material-symbols-outlined text-secondary text-3xl group-hover:text-white transition-colors" style="font-variation-settings:'FILL' 1;">rocket_launch</span>
+          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M480-120q-33 0-56.5-23.5T400-200q0-33 23.5-56.5T480-280q33 0 56.5 23.5T560-200q0 33-23.5 56.5T480-120ZM280-400v-320q0-33 23.5-56.5T360-800h240q33 0 56.5 23.5T680-720v320H280Z"/></svg>
         </div>
         <div class="flex flex-col h-full">
           <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">Growth Estratégico</h3>
           <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base mb-8">Adquisición multicanal y SEO/GEO de nueva generación. Optimizamos tu presencia digital con automatizaciones realmente útiles.</p>
           <div class="mt-auto">
             <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
-              Saber más <span class="material-symbols-outlined text-sm">arrow_forward</span>
+              Saber más <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
             </span>
           </div>
         </div>
@@ -1120,7 +1125,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-4 md:gap-12">
         <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="01. Auditoría">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
-            <span class="material-symbols-outlined text-secondary md:text-3xl">search</span>
+            <svg class="icon-svg text-secondary md:text-3xl" viewBox="0 -960 960 960"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-200q75 0 127.5-52.5T560-380q0-75-52.5-127.5T380-560q-75 0-127.5 52.5T200-380q0 75 52.5 127.5T380-200Z"/></svg>
           </div>
           <div>
             <h3 class="text-lg md:text-xl font-bold text-primary font-headline">01. Auditoría</h3>
@@ -1129,7 +1134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="02. Estrategia">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
-            <span class="material-symbols-outlined text-secondary md:text-3xl">strategy</span>
+            <svg class="icon-svg text-secondary md:text-3xl" viewBox="0 -960 960 960"><path d="M480-80 310-250l57-57 73 73v-246h80v246l73-73 57 57L480-80Zm-300-320v-80h600v80h-600Zm120-160v-80h360v80h-360Zm100-160v-80h160v80h-160Z"/></svg>
           </div>
           <div>
             <h3 class="text-lg md:text-xl font-bold text-primary font-headline">02. Estrategia</h3>
@@ -1138,7 +1143,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="03. Ejecución">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
-            <span class="material-symbols-outlined text-secondary md:text-3xl">bolt</span>
+            <svg class="icon-svg text-secondary md:text-3xl" viewBox="0 -960 960 960"><path d="M340-80v-400l-140 0 400-400v400l140 0-400 400Z"/></svg>
           </div>
           <div>
             <h3 class="text-lg md:text-xl font-bold text-primary font-headline">03. Ejecución</h3>
@@ -1147,7 +1152,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="04. Optimización">
           <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
-            <span class="material-symbols-outlined text-secondary md:text-3xl">trending_up</span>
+            <svg class="icon-svg text-secondary md:text-3xl" viewBox="0 -960 960 960"><path d="M120-120v-542l200-200 160 160 260-260 56 56-316 316-160-160-144 144v486h-56Zm400 0v-240h56v240h-56Zm160 0v-400h56v400h-56Zm160 0v-160h56v160h-56Z"/></svg>
           </div>
           <div>
             <h3 class="text-lg md:text-xl font-bold text-primary font-headline">04. Optimización</h3>
@@ -1203,22 +1208,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
         <div class="grid grid-cols-2 gap-4 md:gap-6 reveal-ready" data-delay="2">
           <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300 focus-within:ring-2 focus-within:ring-secondary/30 outline-none" tabindex="0" role="article" aria-label="Diferencial: Comportamiento">
-            <span class="material-symbols-outlined text-secondary mb-4 text-3xl" aria-hidden="true">psychology</span>
+            <svg class="icon-svg text-secondary mb-4 text-3xl" style="fill: currentColor;" viewBox="0 -960 960 960"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q67 0 113.5-46.5T640-400q0-67-46.5-113.5T480-560q-67 0-113.5 46.5T320-400q0 67 46.5 113.5T480-240Z"/></svg>
             <h3 class="font-extrabold text-primary mb-2 font-headline">Comportamiento</h3>
             <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Analizamos el "porqué" de cada interacción del usuario.</p>
           </div>
           <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300 focus-within:ring-2 focus-within:ring-secondary/30 outline-none" tabindex="0" role="article" aria-label="Diferencial: Analítica">
-            <span class="material-symbols-outlined text-secondary mb-4 text-3xl" aria-hidden="true">analytics</span>
+            <svg class="icon-svg text-secondary mb-4 text-3xl" style="fill: currentColor;" viewBox="0 -960 960 960"><path d="M280-280h80v-280h-80v280Zm160 0h80v-440h-80v440Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm0-80h640v-560H160v560Zm0 0v-560 560Z"/></svg>
             <h3 class="font-extrabold text-primary mb-2 font-headline">Analítica</h3>
             <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Datos accionables que sustentan cada decisión técnica.</p>
           </div>
           <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300 focus-within:ring-2 focus-within:ring-secondary/30 outline-none" tabindex="0" role="article" aria-label="Diferencial: CRO">
-            <span class="material-symbols-outlined text-secondary mb-4 text-3xl" aria-hidden="true">shopping_cart</span>
+            <svg class="icon-svg text-secondary mb-4 text-3xl" style="fill: currentColor;" viewBox="0 -960 960 960"><path d="M280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM246-720l66 140h294l110-200H246Zm-38-80h590q42 0 63 31t2 69L722-482q-11 20-28.5 31T654-440H306l-44 80h518v80H280q-58 0-87-44t-3-88l54-96-164-344h-80v-80h124l20 40Zm104 220h294-294Z"/></svg>
             <h3 class="font-extrabold text-primary mb-2 font-headline">CRO</h3>
             <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Optimización constante del embudo de conversión.</p>
           </div>
           <div class="p-6 md:p-8 bg-white/50 border border-outline-variant/10 rounded-2xl hover:shadow-xl transition-all duration-300 focus-within:ring-2 focus-within:ring-secondary/30 outline-none" tabindex="0" role="article" aria-label="Diferencial: Negocio">
-            <span class="material-symbols-outlined text-secondary mb-4 text-3xl" aria-hidden="true">business_center</span>
+            <svg class="icon-svg text-secondary mb-4 text-3xl" style="fill: currentColor;" viewBox="0 -960 960 960"><path d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm0-80h640v-440H160v440Zm240-520h160v-80H400v80ZM160-200v-440 440Z"/></svg>
             <h3 class="font-extrabold text-primary mb-2 font-headline">Negocio</h3>
             <p class="text-xs md:text-sm text-on-surface-variant leading-relaxed">Estrategia alineada con tus objetivos financieros.</p>
           </div>
@@ -1237,7 +1242,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <details class="group border border-outline-variant/30 rounded-xl md:rounded-2xl p-4 md:p-6">
           <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base md:text-xl text-primary font-headline">
             ¿Qué es la estructura semántica y por qué es clave en la era de la IA?
-            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
+            <svg class="icon-svg group-open:rotate-180 transition-transform text-secondary" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
           </summary>
           <p class="text-sm md:text-base text-on-surface-variant mt-4 leading-relaxed">
             Es la base de la autoridad temática. Optimizamos la arquitectura de tu contenido para que los sistemas conversacionales y motores de búsqueda entiendan tu propuesta de valor como la referencia técnica en tu sector.
@@ -1246,7 +1251,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <details class="group border border-outline-variant/30 rounded-xl md:rounded-2xl p-4 md:p-6">
           <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base md:text-xl text-primary font-headline">
             ¿Cómo se construye la autoridad temática para mejorar la visibilidad digital?
-            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
+            <svg class="icon-svg group-open:rotate-180 transition-transform text-secondary" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
           </summary>
           <p class="text-sm md:text-base text-on-surface-variant mt-4 leading-relaxed">
             Mediante una optimización basada en la intención del usuario. No se trata de palabras clave aisladas, sino de dominar los clústeres de conocimiento que posicionan a tu marca como líder indiscutible ante algoritmos complejos.
@@ -1255,7 +1260,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <details class="group border border-outline-variant/30 rounded-xl md:rounded-2xl p-4 md:p-6">
           <summary class="flex justify-between items-center cursor-pointer list-none font-bold text-base md:text-xl text-primary font-headline">
             ¿Cuál es el impacto real de los sistemas conversacionales en el tráfico actual?
-            <span class="material-symbols-outlined group-open:rotate-180 transition-transform text-secondary">expand_more</span>
+            <svg class="icon-svg group-open:rotate-180 transition-transform text-secondary" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
           </summary>
           <p class="text-sm md:text-base text-on-surface-variant mt-4 leading-relaxed">
             La visibilidad digital está evolucionando hacia la citación directa. Nuestra estrategia GEO (Generative Engine Optimization) asegura que tu marca sea la respuesta recomendada en las interfaces de búsqueda asistida e IA.
@@ -1300,7 +1305,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      aria-hidden="true"
      style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
   <button type="button" class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
-    <span class="material-symbols-outlined">calendar_month</span>
+    <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-160 0q-17 0-28.5-11.5T280-440q0-17 11.5-28.5T320-480q17 0 28.5 11.5T360-440q0 17-11.5 28.5T320-400Zm320 0q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-160 0q-17 0-28.5-11.5T280-280q0-17 11.5-28.5T320-320q17 0 28.5 11.5T360-280q0 17-11.5 28.5T320-240Zm320 0q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>
     HABLEMOS
   </button>
 </nav>
@@ -1311,13 +1316,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
      aria-hidden="true">
   <div class="flex flex-col">
     <span class="text-primary font-bold font-headline text-sm tracking-tight flex items-center gap-2">
-      <span class="material-symbols-outlined text-secondary text-lg">insights</span> ¿Hablamos de tu próxima fase de crecimiento?
+    <svg class="icon-svg text-secondary text-lg" viewBox="0 -960 960 960"><path d="M120-120v-533l200-200 160 160 214-214 46 46-260 260-160-160-154 154v487h-46Zm400 0v-240h46v240h-46Zm160 0v-400h46v400h-46Zm160 0v-160h46v160h-46Z"/></svg> ¿Hablamos de tu próxima fase de crecimiento?
     </span>
     <span class="text-[11px] font-normal text-on-surface-variant ml-7">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
   </div>
   <div class="flex items-center gap-3 pointer-events-auto">
     <button type="button" class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
-      <span class="material-symbols-outlined text-lg">mail</span> HABLEMOS
+      <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> HABLEMOS
     </button>
   </div>
 </div>
@@ -1328,7 +1333,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="flex justify-between items-start mb-8 gap-6">
       <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="title-conversion">Conversión & CRO</h2>
       <button class="flex-shrink-0 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('service-modal-conversion')" aria-label="Cerrar">
-        <span class="material-symbols-outlined text-3xl">close</span>
+        <svg class="icon-svg text-3xl" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
       </button>
     </div>
     <div class="space-y-6 mb-10">
@@ -1348,7 +1353,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="flex justify-between items-start mb-8 gap-6">
       <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="title-ux">UX & Behavioral Design</h2>
       <button class="flex-shrink-0 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('service-modal-ux')" aria-label="Cerrar">
-        <span class="material-symbols-outlined text-3xl">close</span>
+        <svg class="icon-svg text-3xl" style="width:1.875rem;height:1.875rem;" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
       </button>
     </div>
     <div class="space-y-6 mb-10">
@@ -1368,7 +1373,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="flex justify-between items-start mb-8 gap-6">
       <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="title-growth">Growth Estratégico</h2>
       <button class="flex-shrink-0 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('service-modal-growth')" aria-label="Cerrar">
-        <span class="material-symbols-outlined text-3xl">close</span>
+        <svg class="icon-svg text-3xl" style="width:1.875rem;height:1.875rem;" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
       </button>
     </div>
     <div class="space-y-6 mb-10">
@@ -1388,7 +1393,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="flex justify-between items-start gap-4 mb-8">
       <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="modal-title">Hablemos</h2>
       <button class="flex-shrink-0 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('contact-modal')" aria-label="Cerrar">
-        <span class="material-symbols-outlined text-3xl">close</span>
+        <svg class="icon-svg text-3xl" style="width:1.875rem;height:1.875rem;" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
       </button>
     </div>
     
@@ -1424,7 +1429,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <option value="ux">UX & Behavioral Design</option>
             <option value="growth">Growth Estratégico</option>
           </select>
-          <span class="material-symbols-outlined absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40">expand_more</span>
+          <svg class="icon-svg absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
         </div>
       </div>
 
@@ -1444,7 +1449,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true">
   <div class="modal-panel p-10 md:p-16 text-center">
     <div class="bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 w-full max-w-[200px]" style="height: 56px; min-height: 56px;">
-      <span class="material-symbols-outlined text-secondary text-3xl">check_circle</span>
+      <svg class="icon-svg text-secondary text-3xl" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg>
     </div>
     <h2 class="text-3xl font-extrabold font-headline text-primary mb-4">¡Solicitud recibida!</h2>
     <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
@@ -1585,15 +1590,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     root.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', active ? '0' : '-1'));
   };
 
+  let heroBottom = 0;
+  const updateMetrics = () => {
+    const hero = document.getElementById('hero-section') || document.querySelector('main section');
+    heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 220;
+  };
+  window.addEventListener('resize', updateMetrics);
+  updateMetrics();
+
   // Shell UI updates logic
   const updateShellUI = () => {
     const header = document.getElementById('site-header');
     const stickyBar = document.getElementById('sticky-bottom-bar');
     const mobileNav = document.getElementById('mobile-bottom-nav');
-    const hero = document.getElementById('hero-section') || document.querySelector('main section');
     
     const scrollY = window.scrollY;
-    const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 220;
     const pastHero = scrollY > heroBottom - 200;
 
     // Sticky Header
