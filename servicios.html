@@ -100,7 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (min-width: 768px) { #site-header .header-inner { height: 5rem; } #site-header.is-sticky .header-inner { height: 4.35rem; } }
 
   .btn-lavender {
-    background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241,236,255,0.95) 100%);
+    background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%);
     color: #171443;
     border: 1px solid rgba(255,255,255,0.72);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 22px rgba(15,8,44,0.3);
@@ -123,35 +123,44 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .modal-overlay.active .modal-panel { transform: scale(1); }
   .form-input { width: 100%; background: #f7f3f2; border: 2px solid transparent; border-radius: 1rem; padding: 1rem 1.5rem; font-size: 1rem; transition: all 0.2s ease; color: var(--color-on-background); }
   .form-input:focus { outline: none; background: white; border-color: var(--color-secondary); box-shadow: 0 0 0 4px rgba(108, 69, 192, 0.1); }
+  .form-label { display: block; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(6, 21, 66, 0.4); margin-bottom: 0.75rem; margin-left: 0.25rem; }
   .btn-submit { width: 100%; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: white; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 1.25rem; border-radius: 1.25rem; box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.4); transition: all 0.3s ease; }
 
-  /* Hero Adjustments to match Index */
+  /* Hero Adjustments */
   #hero-section.hero-v6 { position: relative; min-height: 85svh; padding: 7.5rem 1.5rem 5rem; overflow: hidden; isolation: isolate; display: flex; align-items: center; justify-content: center; }
   #hero-section .av6-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -3; }
   #hero-section .av6-grain { position: absolute; inset: 0; z-index: -2; pointer-events: none; background-size: 220px; mix-blend-mode: overlay; opacity: 0.6; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E"); }
   #hero-section .av6-content { max-width: 920px; margin: 0 auto; text-align: center; }
-  #hero-section .av6-title { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 800; margin-bottom: 24px; text-shadow: 0 2px 24px rgba(0,0,0,0.2); color: white; }
-  #hero-section .av6-sub { max-width: 640px; margin: 0 auto 40px; font-size: clamp(0.95rem, 2vw, 1.15rem); line-height: 1.6; color: rgba(255,255,255,0.85); }
-  #hero-section .av6-btn-primary { min-width: 240px; background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%); color: #171443; border-radius: 12px; padding: 18px 32px; font-weight: 700; border: 1px solid rgba(255,255,255,0.72); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 22px rgba(15, 8, 44, 0.3); }
+  #hero-section .av6-title { font-size: clamp(2.25rem, 6vw, 3.75rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 800; margin-bottom: 24px; text-shadow: 0 2px 24px rgba(0,0,0,0.2); color: white; }
+  #hero-section .av6-sub { max-width: 640px; margin: 0 auto 40px; font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.6; color: rgba(255,255,255,0.9); }
+  #hero-section .av6-btn-primary { min-width: 260px; background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%); color: #171443; border-radius: 12px; padding: 20px 36px; font-weight: 700; border: 1px solid rgba(255,255,255,0.72); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 12px 28px rgba(15, 8, 44, 0.3); }
   @media (min-width: 1024px) { #hero-section.hero-v6 { height: 800px; min-height: 800px; padding: 0; } }
 
-  /* Bento Cards */
-  .services-bento { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem; }
-  @media (min-width: 1024px) { .services-bento { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
-  .bento-card { background: white; border-radius: 2rem; padding: 3rem; border: 1px solid rgba(6, 21, 66, 0.06); transition: all 0.5s var(--ease-out-expo); display: flex; flex-direction: column; }
-  .bento-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px -12px rgba(6, 21, 66, 0.12); border-color: rgba(108, 69, 192, 0.15); }
-  .check-icon { color: #6b38fb; }
+  /* New Expertise Blocks Component */
+  .expertise-block { padding: 6rem 0; border-bottom: 1px solid rgba(6, 21, 66, 0.04); }
+  .expertise-block:last-child { border-bottom: none; }
+  .expertise-inner { display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center; }
+  @media (min-width: 1024px) { .expertise-inner { grid-template-columns: 1fr 1fr; gap: 8rem; } .expertise-inner.reversed { direction: rtl; } .expertise-inner.reversed > * { direction: ltr; } }
+  .expertise-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; color: #6b38fb; margin-bottom: 1.5rem; display: block; }
+  .expertise-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; color: #061542; margin-bottom: 2rem; }
+  .expertise-text { font-size: 1.125rem; line-height: 1.7; color: #4b5563; margin-bottom: 2.5rem; }
+  .expertise-list { list-style: none; padding: 0; margin: 0 0 3rem 0; display: grid; grid-template-columns: 1fr; gap: 1rem; }
+  @media (min-width: 640px) { .expertise-list { grid-template-columns: 1fr 1fr; } }
+  .expertise-item { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; color: #061542; font-size: 0.95rem; }
+  .expertise-item svg { color: #6b38fb; width: 1.25rem; height: 1.25rem; }
+  .btn-expertise { display: inline-flex; align-items: center; gap: 0.75rem; background: #061542; color: white; padding: 1rem 2rem; border-radius: 1rem; font-weight: 700; transition: all 0.3s ease; }
+  .btn-expertise:hover { background: #6b38fb; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(107, 56, 251, 0.25); }
 
   /* Klaro Sync (Master) */
   #klaro, #klaro .klaro { margin: 0 !important; padding: 0 !important; z-index: 999999999 !important; }
   #klaro .klaro .cookie-notice { background-color: #ffffff !important; color: #061542 !important; border-radius: 0 !important; box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important; border-top: 1px solid #f3f4f6 !important; position: fixed !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: 100% !important; margin: 0 !important; z-index: 999999999 !important; }
   #klaro .klaro .cm-btn-success { background-color: #6b38fb !important; color: #ffffff !important; border-radius: 16px !important; font-weight: 700 !important; padding: 14px 32px !important; }
   #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-decline { background-color: #f3f4f6 !important; color: #4b5563 !important; border-radius: 16px !important; }
-  #klaro .klaro .cm-link { color: #6b38fb !important; font-weight: 700 !important; }
+  #klaro .klaro .cm-link { color: #6b38fb !important; font-weight: 700 !important; text-decoration: none !important; }
   body:has(#klaro .cookie-notice)::before { content: '' !important; position: fixed !important; inset: 0 !important; background: rgba(6, 21, 66, 0.8) !important; backdrop-filter: blur(10px) !important; z-index: 99999997 !important; pointer-events: auto !important; }
 
-  .reveal-ready { transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo); }
-  .reveal-hidden { opacity: 0; transform: translateY(30px); }
+  .reveal-ready { transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo); }
+  .reveal-hidden { opacity: 0; transform: translateY(40px); }
   .reveal-visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
@@ -175,49 +184,73 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </header>
 
 <main id="main-content">
-  <!-- HERO (Sync with Index) -->
+  <!-- HERO -->
   <section class="hero-v6 text-white" id="hero-section">
     <canvas class="av6-canvas" id="hero-gradient-canvas"></canvas>
     <div class="av6-grain"></div>
     <div class="av6-content">
       <h1 class="av6-title">Optimización para la<br/><span class="text-white">Era de la Inteligencia</span></h1>
-      <p class="av6-sub">Combinamos arquitectura semántica avanzada, diseño del comportamiento y SEO de nueva generación para dominar la visibilidad en motores generativos y maximizar tu rentabilidad.</p>
+      <p class="av6-sub">Soluciones estratégicas para dominar el crecimiento en entornos de búsqueda generativa e IA.</p>
       <button data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" class="cta-core av6-btn-primary">Solicitar presupuesto</button>
     </div>
   </section>
 
-  <!-- SERVICES BENTO GRID -->
-  <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios">
-    <div class="services-bento">
-      <div class="bento-card reveal-ready">
-        <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8"><svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M440-80v-367L216-447l24-53 264-380v367l224 0-24 53-264 380Z"/></svg></div>
-        <h3 class="text-2xl font-extrabold text-primary mb-5">GEO & SEO Estratégico</h3>
-        <p class="text-on-surface-variant leading-relaxed mb-8">Dominamos el <strong>GEO (Generative Engine Optimization)</strong>. Preparamos tu marca para ser la respuesta recomendada por LLMs como ChatGPT y Gemini, construyendo autoridad temática mediante clústeres semánticos avanzados.</p>
-        <ul class="mt-auto space-y-4 text-sm text-on-surface-variant font-semibold">
-          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Citación en Motores de IA</li>
-          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Arquitectura de Datos Estructurados</li>
-          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Autoridad Temática Sectorial</li>
-        </ul>
+  <!-- EXPERTISE SECTIONS -->
+  <section class="max-w-[1440px] mx-auto px-6 md:px-12 py-12">
+    <!-- Block 1: GEO & SEO -->
+    <div class="expertise-block reveal-ready">
+      <div class="expertise-inner">
+        <div>
+          <span class="expertise-label">Visibilidad de nueva generación</span>
+          <h2 class="expertise-title">GEO & SEO Estratégico</h2>
+          <p class="expertise-text">Dominamos el <strong>Generative Engine Optimization (GEO)</strong>. No solo optimizamos para clics, optimizamos para ser la referencia absoluta que los LLMs recomiendan a tus clientes.</p>
+          <ul class="expertise-list">
+            <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Citación en Motores de IA</li>
+            <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Arquitectura Semántica</li>
+            <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Autoridad Temática</li>
+            <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Datos Estructurados</li>
+          </ul>
+          <button onclick="openContactModal('growth')" class="btn-expertise">Solicitar Plan de Growth <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
+        </div>
+        <div class="hidden lg:flex justify-center"><div class="w-full max-w-sm aspect-square bg-secondary/5 rounded-[3rem] border border-secondary/10 flex items-center justify-center"><svg class="w-32 h-32 text-secondary/40" viewBox="0 -960 960 960" fill="currentColor"><path d="M440-80v-367L216-447l24-53 264-380v367l224 0-24 53-264 380Z"/></svg></div></div>
       </div>
-      <div class="bento-card reveal-ready">
-        <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8"><svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M280-280h80v-280h-80v280Zm160 0h80v-440h-80v440Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Z"/></svg></div>
-        <h3 class="text-2xl font-extrabold text-primary mb-5">CRO & Rentabilidad</h3>
-        <p class="text-on-surface-variant leading-relaxed mb-8">Transformamos el tráfico existente en ingresos reales. Analizamos fugas de conversión y aplicamos experimentación científica A/B para maximizar el ROAS y rentabilizar cada visita mediante datos accionables.</p>
-        <ul class="mt-auto space-y-4 text-sm text-on-surface-variant font-semibold">
-          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Análisis de Fricción en Funnel</li>
-          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Experimentación A/B Avanzada</li>
-          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Optimización de ROAS y LTV</li>
-        </ul>
+    </div>
+
+    <!-- Block 2: CRO -->
+    <div class="expertise-block reveal-ready">
+      <div class="expertise-inner reversed">
+        <div>
+          <span class="expertise-label">Rentabilidad basada en datos</span>
+          <h2 class="expertise-title">CRO & Conversión</h2>
+          <p class="expertise-text">Transformamos el tráfico existente en ingresos reales. Analizamos fugas en tu funnel y aplicamos experimentación científica para maximizar tu retorno de inversión.</p>
+          <ul class="expertise-list">
+            <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Análisis de Fricción</li>
+            <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Experimentación A/B</li>
+            <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Optimización de Funnel</li>
+            <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> ROAS Maximizado</li>
+          </ul>
+          <button onclick="openContactModal('conversion')" class="btn-expertise">Solicitar Análisis de Conversión <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
+        </div>
+        <div class="hidden lg:flex justify-center"><div class="w-full max-w-sm aspect-square bg-secondary/5 rounded-[3rem] border border-secondary/10 flex items-center justify-center"><svg class="w-32 h-32 text-secondary/40" viewBox="0 -960 960 960" fill="currentColor"><path d="M280-280h80v-280h-80v280Zm160 0h80v-440h-80v440Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Z"/></svg></div></div>
       </div>
-      <div class="bento-card reveal-ready">
-        <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8"><svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Z"/></svg></div>
-        <h3 class="text-2xl font-extrabold text-primary mb-5">UX & Behavioral Design</h3>
-        <p class="text-on-surface-variant leading-relaxed mb-8">Diseñamos ecosistemas digitales basados en Psicología Cognitiva. Reducimos la carga cognitiva del usuario y aplicamos principios de Behavioral Economics para guiar de forma fluida hacia la acción deseada.</p>
-        <ul class="mt-auto space-y-4 text-sm text-on-surface-variant font-semibold">
-          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Diseño de Carga Cognitiva Mínima</li>
-          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Economía del Comportamiento (Nudges)</li>
-          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Prototipado Basado en Evidencia</li>
-        </ul>
+    </div>
+
+    <!-- Block 3: UX -->
+    <div class="expertise-block reveal-ready">
+      <div class="expertise-inner">
+        <div>
+          <span class="expertise-label">Psicología aplicada</span>
+          <h2 class="expertise-title">UX & Behavioral Design</h2>
+          <p class="expertise-text">Diseñamos interfaces que guían al usuario de forma natural. Utilizamos principios de economía del comportamiento para reducir la carga cognitiva y facilitar la toma de decisiones.</p>
+          <ul class="expertise-list">
+            <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Behavioral Economics</li>
+            <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Diseño Cognitivo</li>
+            <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Prototipado UX</li>
+            <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Auditoría de Usabilidad</li>
+          </ul>
+          <button onclick="openContactModal('ux')" class="btn-expertise">Solicitar Diseño UX <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
+        </div>
+        <div class="hidden lg:flex justify-center"><div class="w-full max-w-sm aspect-square bg-secondary/5 rounded-[3rem] border border-secondary/10 flex items-center justify-center"><svg class="w-32 h-32 text-secondary/40" viewBox="0 -960 960 960" fill="currentColor"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Z"/></svg></div></div>
       </div>
     </div>
   </section>
@@ -236,36 +269,71 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </footer>
 
-<!-- BOTTOM BARS (Sync) -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl md:hidden" id="mobile-bottom-nav">
-  <button type="button" class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta">HABLEMOS</button>
+<!-- BOTTOM BARS (Sync with Index) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden" id="mobile-bottom-nav" style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
+  <button type="button" class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta">
+    <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg> HABLEMOS
+  </button>
 </nav>
 
-<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 px-6 md:px-12 py-4 items-center justify-between" id="sticky-bottom-bar">
-  <div class="flex flex-col"><span class="text-primary font-bold text-sm tracking-tight flex items-center gap-2"><svg class="icon-svg text-secondary text-lg" viewBox="0 -960 960 960"><path d="M120-160q-33 0-56.5-23.5T40-240q0-33 23.5-56.5T120-320h10.5q4.5 0 9.5 2l182-182q-2-5-2-9.5V-520q0-33 23.5-56.5T400-600q33 0 56.5 23.5T480-520q0 2-2 20l102 102q5-2 9.5-2h21q4.5 0 9.5 2l142-142q-2-5-2-9.5V-560q0-33 23.5-56.5T840-640q33 0 56.5 23.5T920-560q0 33-23.5 56.5T840-480h-10.5q-4.5 0-9.5-2L678-340q2 5 2 9.5v10.5q0 33-23.5 56.5T600-240q-33 0-56.5-23.5T520-320v-10.5q0-4.5 2-9.5L420-442q-5 2-9.5 2H400q-2 0-20-2L198-260q2 5 2 9.5v10.5q0 33-23.5 56.5T120-160Z"/></svg> ¿Hablamos de tu próxima fase de crecimiento?</span></div>
-  <button type="button" class="cta-core btn-after text-white px-8 py-3 rounded-xl flex items-center justify-center gap-2" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta">HABLEMOS</button>
+<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between" id="sticky-bottom-bar">
+  <div class="flex flex-col">
+    <span class="text-primary font-bold font-headline text-sm tracking-tight flex items-center gap-2"><svg class="icon-svg text-secondary text-lg" viewBox="0 -960 960 960"><path d="M120-160q-33 0-56.5-23.5T40-240q0-33 23.5-56.5T120-320h10.5q4.5 0 9.5 2l182-182q-2-5-2-9.5V-520q0-33 23.5-56.5T400-600q33 0 56.5 23.5T480-520q0 2-2 20l102 102q5-2 9.5-2h21q4.5 0 9.5 2l142-142q-2-5-2-9.5V-560q0-33 23.5-56.5T840-640q33 0 56.5 23.5T920-560q0 33-23.5 56.5T840-480h-10.5q-4.5 0-9.5-2L678-340q2 5 2 9.5v10.5q0 33-23.5 56.5T600-240q-33 0-56.5-23.5T520-320v-10.5q0-4.5 2-9.5L420-442q-5 2-9.5 2H400q-2 0-20-2L198-260q2 5 2 9.5v10.5q0 33-23.5 56.5T120-160Zm40-401-25-54-54-25 54-25 25-54 25 54 54 25-54 25-25 54Zm440-39-38-82-82-38 82-38 38-82 38 82 82 38-82 38-38 82Z"/></svg> ¿Hablamos de tu próxima fase de crecimiento?</span>
+    <span class="text-[11px] font-normal text-on-surface-variant ml-7">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
+  </div>
+  <button type="button" class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta">
+    <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg> HABLEMOS
+  </button>
 </div>
 
-<!-- MODALS -->
-<div class="modal-overlay" id="contact-modal">
+<!-- MODALS (Exact sync from Index) -->
+<div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal-panel p-8 md:p-12">
-    <div class="flex justify-between items-start mb-8"><h2 class="text-2xl md:text-4xl font-extrabold text-primary">Hablemos</h2><button onclick="closeModal('contact-modal')"><svg class="icon-svg" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button></div>
-    <form onsubmit="handleFormSubmit(event)" class="space-y-6"><div class="grid grid-cols-1 md:grid-cols-2 gap-6"><input type="text" name="name" placeholder="Nombre" required class="form-input"/><input type="tel" name="phone" placeholder="Teléfono" required class="form-input"/></div><input type="email" name="email" placeholder="Email Corporativo" required class="form-input"/><select name="service" class="form-input"><option value="conversion">Conversión & CRO</option><option value="seo-geo">SEO & GEO</option><option value="ux">UX & Behavioral</option></select><textarea name="message" placeholder="¿Cómo podemos ayudarte?" class="form-input min-h-[120px]"></textarea><button type="submit" id="submit-btn" class="btn-submit">Enviar Solicitud</button></form>
+    <div class="flex justify-between items-start gap-4 mb-8">
+      <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="modal-title">Hablemos</h2>
+      <button class="flex-shrink-0 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('contact-modal')" aria-label="Cerrar"><svg class="icon-svg text-3xl" style="width:1.875rem;height:1.875rem;" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
+    </div>
+    <div class="mb-10"><p class="text-on-surface-variant text-base leading-relaxed">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p></div>
+    <form class="space-y-8" id="contact-form" onsubmit="handleFormSubmit(event)">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-3"><label class="form-label" for="name">Nombre *</label><input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre" required></div>
+        <div class="space-y-3"><label class="form-label" for="phone">Teléfono *</label><input type="tel" id="phone" name="phone" class="form-input" placeholder="+34 600 000 000" required></div>
+      </div>
+      <div class="space-y-3"><label class="form-label" for="email">Email Corporativo *</label><input type="email" id="email" name="email" class="form-input" placeholder="email@empresa.com" required></div>
+      <div class="space-y-3">
+        <label class="form-label" for="service">Servicio de interés</label>
+        <div class="relative">
+          <select id="service" name="service" class="form-input appearance-none cursor-pointer pr-12">
+            <option value="general">Consulta general</option>
+            <option value="conversion">Conversión & CRO</option>
+            <option value="ux">UX & Behavioral Design</option>
+            <option value="growth">Growth Estratégico</option>
+          </select>
+          <svg class="icon-svg absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+        </div>
+      </div>
+      <div class="space-y-3"><label class="form-label" for="message">Mensaje</label><textarea id="message" name="message" class="form-input min-h-[120px] resize-none" placeholder="¿Cómo podemos ayudarte?"></textarea></div>
+      <button type="submit" class="btn-submit mt-4" id="submit-btn">ENVIAR SOLICITUD</button>
+    </form>
   </div>
 </div>
 
-<div class="modal-overlay" id="success-modal">
+<div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true">
   <div class="modal-panel p-10 md:p-16 text-center">
-    <div class="bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 w-14 h-14"><svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg></div>
-    <h2 class="text-3xl font-extrabold text-primary mb-4">¡Solicitud recibida!</h2>
-    <p class="text-on-surface-variant mb-10">Revisaremos tu caso personalmente y recibirás una respuesta en menos de 24 horas.</p>
-    <button onclick="closeModal('success-modal')" class="cta-core btn-lavender px-12 py-4 rounded-xl">ENTENDIDO</button>
+    <div class="bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 w-full max-w-[200px]" style="height: 56px; min-height: 56px;"><svg class="icon-svg text-secondary mb-4 text-3xl" style="fill: currentColor;" viewBox="0 -960 960 960"><path d="M160-120v-560q0-33 23.5-56.5T240-760h160v-80q0-33 23.5-56.5T480-960h160q33 0 56.5 23.5T752-840v80h160q33 0 56.5 23.5T1024-680v560H160Zm80-80h704v-480H240v480Zm240-560h160v-80H480v80Z"/></svg></div>
+    <h2 class="text-3xl font-extrabold font-headline text-primary mb-4">¡Solicitud recibida!</h2>
+    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">Tu mensaje ha sido entregado correctamente. Un consultor senior revisará tu caso personalmente y recibirás una respuesta en menos de 24 horas.<span class="block mt-4 text-sm opacity-70">Nota: Si no recibes noticias nuestras, por favor revisa tu bandeja de <strong>correo no deseado (spam)</strong>.</span></p>
+    <button type="button" class="btn-submit !w-auto px-12" onclick="closeModal('success-modal')">ENTENDIDO</button>
   </div>
 </div>
 
 <script>
 (function () {
-  window.openContactModal = () => { document.getElementById('contact-modal').classList.add('active'); document.body.classList.add('modal-open'); };
+  window.openContactModal = (serviceValue) => { 
+    const modal = document.getElementById('contact-modal');
+    if (serviceValue) { const select = modal.querySelector('select[name="service"]'); if (select) select.value = serviceValue; }
+    modal.classList.add('active'); document.body.classList.add('modal-open'); 
+  };
   window.closeModal = (id) => { document.getElementById(id).classList.remove('active'); document.body.classList.remove('modal-open'); };
 
   const updateShellUI = () => {
