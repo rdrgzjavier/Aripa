@@ -154,67 +154,114 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   .scrolled #mobile-bottom-nav.visible { transform: translateY(0); visibility: visible; }
 
-  .success-modal {
-      position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      backdrop-filter: blur(8px);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1000;
-      opacity: 0;
-      pointer-events: none;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* --- Klaro Customization Block --- */
+  #klaro, #klaro .klaro { margin: 0 !important; padding: 0 !important; z-index: 999999999 !important; }
+  body:has(#klaro .klaro .cm-modal.cm-shown) { overflow: hidden !important; }
+  #klaro .klaro .cookie-notice {
+    background-color: #ffffff !important; color: #061542 !important; border-radius: 0 !important;
+    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important; border-top: 1px solid #f3f4f6 !important;
+    padding: 0 !important; position: fixed !important; bottom: 0 !important; left: 0 !important;
+    right: 0 !important; width: 100% !important; max-width: 100% !important; z-index: 999999999 !important;
+    margin: 0 !important; transform: none !important;
   }
-  .success-modal.active {
-      opacity: 1;
-      pointer-events: auto;
+  #klaro .klaro .cookie-notice .cn-body {
+    max-width: 1200px !important; margin: 0 auto !important; padding: 20px !important;
+    display: flex !important; flex-direction: column !important; gap: 20px !important;
   }
-  .success-modal-content {
-      background: #1a1a2e;
-      padding: 3rem;
-      border-radius: 2rem;
-      max-width: 450px;
-      width: 90%;
-      text-align: center;
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-      transform: translateY(20px);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  #klaro .klaro .cookie-notice .cn-body p { color: #061542 !important; margin: 0 !important; }
+  #klaro .klaro .cookie-notice .cn-ok {
+    display: flex !important; flex-direction: column !important; gap: 8px !important;
+    width: 100% !important; padding: 10px 4px !important;
   }
-  .success-modal.active .success-modal-content {
-      transform: translateY(0);
+  #klaro .klaro .cookie-notice .cn-ok > * { width: 100% !important; margin: 0 !important; flex: 1 1 100% !important; display: block !important; text-align: center !important; }
+  #klaro .klaro .cookie-notice .cn-ok .cm-btn, #klaro .klaro .cookie-notice .cn-ok .cm-link, #klaro .klaro .cookie-notice .cn-ok a {
+    width: 100% !important; margin: 0 !important; padding: 12px !important; display: block !important; text-align: center !important; box-sizing: border-box !important;
   }
-  .success-icon {
-      width: 64px;
-      height: 64px;
-      background: #6c45c0;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 1.5rem;
-      color: white;
+  @media (min-width: 1024px) {
+    #klaro .klaro .cookie-notice .cn-body { flex-direction: row !important; justify-content: space-between !important; flex-wrap: nowrap !important; align-items: center !important; gap: 40px !important; display: flex !important; }
+    #klaro .klaro .cookie-notice .cn-body p { max-width: 55% !important; margin: 0 !important; }
+    #klaro .klaro .cookie-notice .cn-ok { flex-direction: row !important; flex-wrap: nowrap !important; width: auto !important; min-width: max-content !important; max-width: none !important; gap: 16px !important; align-items: center !important; justify-content: flex-end !important; display: flex !important; }
+    #klaro .klaro .cookie-notice .cn-buttons .cm-btn:first-child { margin-right: 16px !important; }
+    #klaro .klaro .cookie-notice .cn-buttons { display: flex !important; flex-direction: row !important; margin: 0 !important; padding: 0 !important; }
+    #klaro .klaro .cookie-notice .cn-ok > *, #klaro .klaro .cookie-notice .cn-ok .cm-btn, #klaro .klaro .cookie-notice .cn-ok .cm-link, #klaro .klaro .cookie-notice .cn-ok a { width: auto !important; margin: 0 !important; flex: 0 0 auto !important; display: inline-block !important; white-space: nowrap !important; }
   }
-  .success-title { font-family: 'Inter', sans-serif; font-weight: 800; font-size: 2rem; margin-bottom: 0.5rem; letter-spacing: -0.02em; color: white; }
-  .success-desc { color: rgba(255, 255, 255, 0.6); font-size: 0.95rem; line-height: 1.5; margin-bottom: 2rem; }
-  .btn-close-success {
-      background: white;
-      color: black;
-      border: none;
-      padding: 1rem 2rem;
-      border-radius: 1rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all 0.3s;
-      width: 100%;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      font-size: 0.8rem;
+  @media (max-width: 767px) {
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn { width: 100% !important; display: block !important; margin-bottom: 8px !important; }
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn:last-child { margin-bottom: 0 !important; }
   }
-  .btn-close-success:hover { transform: scale(1.02); background: #f0f0f0; }
+  #klaro .klaro .cookie-notice p { color: #061542 !important; font-size: 1rem !important; line-height: 1.5 !important; font-weight: 500 !important; margin: 0 !important; }
+  #klaro .klaro .cm-btn { border-radius: 16px !important; font-weight: 700 !important; padding: 14px 32px !important; border: none !important; width: 100% !important; text-align: center !important; font-size: 0.95rem !important; box-shadow: none !important; cursor: pointer !important; margin: 8px 0 !important; }
+  @media (min-width: 1024px) { #klaro .klaro .cm-btn { width: auto !important; margin: 0 12px !important; } }
+  #klaro .klaro .cm-btn-success { background-color: #6b38fb !important; color: #ffffff !important; order: 3 !important; }
+  #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-second, #klaro .klaro .cm-btn-decline { background-color: #f3f4f6 !important; color: #4b5563 !important; order: 2 !important; }
+  #klaro .klaro .cm-link { color: #6b38fb !important; font-weight: 700 !important; text-decoration: none !important; font-size: 0.95rem !important; padding: 0 !important; background: none !important; width: 100% !important; display: flex !important; align-items: center !important; justify-content: center !important; order: 1 !important; border: none !important; margin: 12px 0 !important; }
+  @media (min-width: 1024px) { #klaro .klaro .cm-link { width: auto !important; padding: 14px 0 !important; display: inline-flex !important; line-height: 1 !important; margin: 0 12px !important; } }
+  #klaro .klaro .cm-modal .cm-panel .cm-header, #klaro .klaro .cm-header { background-color: #ffffff !important; background: #ffffff !important; color: #061542 !important; }
+  #klaro .klaro .cm-modal .cm-panel .cm-header * { color: #061542 !important; }
+  @media (max-width: 767px) {
+    #klaro .klaro .cm-modal .cm-panel .cm-footer, #klaro .klaro .cm-footer, #klaro .klaro .cm-footer .cm-buttons, #klaro .klaro .cm-footer-buttons { display: flex !important; flex-direction: column !important; flex-flow: column nowrap !important; gap: 6px !important; padding: 10px 4px !important; height: auto !important; width: 100% !important; }
+    #klaro .klaro .cm-modal .cm-panel .cm-footer .cm-btn, #klaro .klaro .cm-footer .cm-btn, #klaro .klaro .cm-footer .cm-buttons .cm-btn, #klaro .klaro .cm-btn { width: 100% !important; max-width: 100% !important; margin: 2px 0 !important; display: block !important; flex: 1 1 100% !important; }
+  }
+  #klaro .klaro .cm-modal .cm-header .cm-close { color: #061542 !important; }
+  #klaro .klaro .cm-modal .cm-body { padding: 20px !important; background: #fff !important; }
+  #klaro .klaro .cm-modal p, #klaro .klaro .cm-modal span, #klaro .klaro .cm-modal div, #klaro .klaro .cm-modal .cm-app-description, #klaro .klaro .cm-modal .cm-app-title, #klaro .klaro .cm-modal .cm-list-description, #klaro .klaro .cm-modal .cm-purpose-description { color: #061542 !important; opacity: 1 !important; visibility: visible !important; }
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch .slider { background-color: #d1d5db !important; transition: background-color 0.3s ease !important; }
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch input:checked + .slider, #klaro .klaro .cm-modal .cm-list-label .cm-switch.is-checked .slider, #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .slider, #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .cm-switch .slider { background-color: #22c55e !important; }
+  #klaro .klaro .cm-modal .cm-footer { border-top: 1px solid #f3f4f6 !important; background: #fff !important; padding: 20px !important; display: flex !important; flex-wrap: wrap !important; gap: 10px !important; }
+  #klaro .klaro .cm-modal .cm-footer .cm-btn { flex: 1 1 auto !important; min-width: 120px !important; }
+  #klaro .klaro .cm-powered-by { display: none !important; }
+  body:has(#klaro .cookie-notice) { overflow: hidden !important; }
+  body:has(#klaro .cookie-notice)::before { content: '' !important; position: fixed !important; inset: 0 !important; background: rgba(6, 21, 66, 0.8) !important; backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important; z-index: 99999997 !important; pointer-events: auto !important; }
+  /* Hero v6 Styles */
+  #hero-section.hero-v6 {
+    position: relative;
+    min-height: 75svh;
+    padding: 7.5rem 1.5rem 5rem;
+    overflow: hidden;
+    isolation: isolate;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #061542;
+  }
+  #hero-section .av6-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -3; }
+  #hero-section .av6-grain {
+    position: absolute; inset: 0; z-index: -2; pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+    background-size: 220px; mix-blend-mode: overlay; opacity: 0.6;
+  }
+  #hero-section .av6-content { max-width: 920px; margin: 0 auto; text-align: center; }
+  #hero-section .av6-title {
+    font-size: clamp(2.2rem, 6vw, 4rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 800; margin-bottom: 24px;
+    text-shadow: 0 2px 24px rgba(0,0,0,0.2); color: white;
+  }
+  #hero-section .av6-sub { max-width: 640px; margin: 0 auto 40px; font-size: clamp(1rem, 2vw, 1.15rem); line-height: 1.6; color: rgba(255,255,255,0.85); }
+  
+  @keyframes hero-fade-up { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+  .hero-animate-1 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.1s both; }
+  .hero-animate-2 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.25s both; }
+  .hero-animate-3 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.4s both; }
+  .hero-animate-4 { animation: hero-fade-up 0.7s cubic-bezier(0.16,1,0.3,1) 0.55s both; }
 
+  /* Cards Premium Style */
+  .service-card {
+    background: white;
+    padding: 2.5rem;
+    border-radius: 2rem;
+    border: 1px solid rgba(6, 21, 66, 0.05);
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02), 0 2px 4px -1px rgba(0,0,0,0.01);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px -12px rgba(6, 21, 66, 0.12);
+    border-color: rgba(108, 69, 192, 0.2);
+  }
+
+  /* Reveal Animations */
+  .reveal-ready { transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1); }
+  .reveal-hidden { opacity: 0; transform: translateY(24px); }
+  .reveal-visible { opacity: 1; transform: translateY(0); }
 </style>
   
 </head>
@@ -248,93 +295,115 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </nav>
 </div>
 
-<!-- ==========================================
-       HEADER
-  =========================================== -->
+<!-- HEADER -->
 <header id="site-header" aria-label="Cabecera principal">
-  <div class="header-inner relative flex justify-between items-center px-6 md:px-12 max-w-[1440px] mx-auto">
-    <a href="index.html" class="flex items-center justify-start w-[18%] outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
-      <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
-    </a>
-    <nav class="hidden md:flex items-center justify-center gap-12 w-2/4">
+  <div class="header-inner flex items-center justify-between px-6 md:px-12 max-w-[1440px] mx-auto">
+    <div class="flex-1 flex justify-start">
+      <a href="index.html" class="flex items-center outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
+        <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
+      </a>
+    </div>
+    <nav class="hidden lg:flex items-center justify-center gap-10 lg:gap-14">
       <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="servicios.html">Servicios</a>
       <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="recursos.html">Recursos</a>
     </nav>
-    <div class="flex items-center justify-end gap-6 w-[32%]">
-      <button class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
+    <div class="flex-1 flex items-center justify-end gap-6">
+      <button type="button" class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
         <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> Tengo una duda
       </button>
-      <button class="flex items-center justify-center p-2 -mr-2 md:hidden" onclick="toggleDrawer()" aria-label="Abrir menú de navegación" aria-expanded="false" aria-controls="drawer" id="hamburger-btn">
-        <svg class="icon-svg text-white text-2xl" aria-hidden="true" viewBox="0 -960 960 960"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+      <button type="button" class="flex items-center justify-center p-2 -mr-2 md:hidden" aria-label="Abrir formulario de contacto" id="mobile-mail-btn" onclick="openContactModal()">
+        <svg class="icon-svg text-white text-2xl" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
       </button>
     </div>
   </div>
 </header>
 
-<main>
-    <section id="hero-section" class="hero-gradient hero-fluid px-6 md:px-12 text-center text-white relative overflow-hidden">
-      <div class="max-w-4xl mx-auto z-10 relative">
-        <h1 class="text-4xl md:text-7xl font-black font-headline tracking-tighter mb-8 leading-tight">Servicios de<br/><span class="text-white">Crecimiento Digital</span></h1>
-        <p class="text-white/80 text-lg md:text-xl max-w-2xl mx-auto mb-10">Optimización estratégica basada en datos, psicología del comportamiento y tecnología de última generación.</p>
-        <button onclick="openContactModal()" class="cta-core btn-after text-white px-10 py-5 rounded-2xl hover:scale-105 transition-transform active:scale-95 shadow-2xl uppercase tracking-widest text-xs font-bold">Comencemos</button>
+<main id="main-content" tabindex="-1" class="focus:outline-none">
+    <section id="hero-section" class="hero-v6 text-white">
+      <canvas class="av6-canvas" id="hero-gradient-canvas" aria-hidden="true"></canvas>
+      <div class="av6-grain" aria-hidden="true"></div>
+      <div class="av6-content">
+        <h1 class="av6-title hero-animate-2">Servicios de<br/><span class="text-white">Crecimiento Digital</span></h1>
+        <p class="av6-sub hero-animate-3">Optimización estratégica basada en datos, psicología del comportamiento y tecnología de última generación para escalar tu negocio.</p>
+        <div class="av6-ctas hero-animate-4">
+          <button onclick="openContactModal()" class="cta-core av6-btn-primary hover:scale-105 transition-transform active:scale-95 shadow-2xl uppercase tracking-widest text-xs font-bold">Solicitar presupuesto</button>
+          <a class="cta-core av6-btn-secondary hover:bg-white/15 transition-colors" href="#servicios-grid">Ver detalles</a>
+        </div>
       </div>
     </section>
 
-    <!-- Services Grid -->
-    <section class="py-24 px-6 md:px-12 max-w-[1440px] mx-auto">
+    <!-- Services Grid Master Style -->
+    <section class="py-24 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios-grid">
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <!-- CRO -->
-        <div class="bg-white p-10 rounded-3xl border border-secondary/10 shadow-sm hover:shadow-xl transition-all">
-          <svg class="icon-svg text-secondary text-4xl mb-6" style="width:48px;height:48px;" viewBox="0 -960 960 960"><path d="M280-280h80v-280h-80v280Zm160 0h80v-440h-80v440Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm0-80h640v-560H160v560Zm0 0v-560 560Z"/></svg>
-          <h3 class="text-2xl font-black font-headline text-primary mb-4">Conversión & CRO</h3>
-          <p class="text-on-surface-variant leading-relaxed mb-6">Auditorías profundas y experimentación continua para maximizar el ROI de cada visita.</p>
-          <ul class="space-y-3 text-sm text-on-surface-variant">
-            <li class="flex items-center gap-2"><svg class="icon-svg text-secondary text-sm" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Auditoría de Funnels</li>
-            <li class="flex items-center gap-2"><svg class="icon-svg text-secondary text-sm" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> A/B Testing</li>
-            <li class="flex items-center gap-2"><svg class="icon-svg text-secondary text-sm" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Heatmaps & Grabaciones</li>
+        <div class="service-card reveal-ready" data-delay="1">
+          <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8">
+            <svg class="icon-svg text-secondary text-3xl" viewBox="0 -960 960 960"><path d="M280-280h80v-280h-80v280Zm160 0h80v-440h-80v440Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm0-80h640v-560H160v560Zm0 0v-560 560Z"/></svg>
+          </div>
+          <h3 class="text-2xl font-extrabold font-headline text-primary mb-4">Conversión & CRO</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-6">Analizamos cada etapa de tu funnel para eliminar fricción y maximizar el rendimiento de tu inversión publicitaria.</p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-sm text-on-surface-variant"><svg class="icon-svg text-secondary w-4 h-4" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Auditoría de Experiencia Digital</li>
+            <li class="flex items-center gap-3 text-sm text-on-surface-variant"><svg class="icon-svg text-secondary w-4 h-4" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> A/B Testing & Experimentación</li>
           </ul>
         </div>
-        <!-- SEO/GEO -->
-        <div class="bg-white p-10 rounded-3xl border border-secondary/10 shadow-sm hover:shadow-xl transition-all">
-          <svg class="icon-svg text-secondary text-4xl mb-6" style="width:48px;height:48px;" viewBox="0 -960 960 960"><path d="M426-120 154-392l57-56 215 215 423-423 57 56-480 480Z"/></svg>
-          <h3 class="text-2xl font-black font-headline text-primary mb-4">SEO & GEO</h3>
-          <p class="text-on-surface-variant leading-relaxed mb-6">Posicionamiento en buscadores tradicionales y optimización para sistemas de IA (ChatGPT, Gemini).</p>
-          <ul class="space-y-3 text-sm text-on-surface-variant">
-            <li class="flex items-center gap-2"><svg class="icon-svg text-secondary text-sm" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Autoridad Temática</li>
-            <li class="flex items-center gap-2"><svg class="icon-svg text-secondary text-sm" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Generative Engine Opt.</li>
-            <li class="flex items-center gap-2"><svg class="icon-svg text-secondary text-sm" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> SEO Técnico Avanzado</li>
+        <!-- Card 2 -->
+        <div class="service-card reveal-ready" data-delay="2">
+          <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8">
+            <svg class="icon-svg text-secondary text-3xl" viewBox="0 -960 960 960"><path d="M426-120 154-392l57-56 215 215 423-423 57 56-480 480Z"/></svg>
+          </div>
+          <h3 class="text-2xl font-extrabold font-headline text-primary mb-4">SEO & GEO</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-6">Más allá del ranking tradicional: optimizamos tu marca para ser citada por motores de respuesta (ChatGPT, Gemini).</p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-sm text-on-surface-variant"><svg class="icon-svg text-secondary w-4 h-4" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Generative Engine Optimization</li>
+            <li class="flex items-center gap-3 text-sm text-on-surface-variant"><svg class="icon-svg text-secondary w-4 h-4" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> SEO Estratégico de Autoridad</li>
           </ul>
         </div>
-        <!-- UX -->
-        <div class="bg-white p-10 rounded-3xl border border-secondary/10 shadow-sm hover:shadow-xl transition-all">
-          <svg class="icon-svg text-secondary text-4xl mb-6" style="width:48px;height:48px;" viewBox="0 -960 960 960"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q67 0 113.5-46.5T640-400q0-67-46.5-113.5T480-560q-67 0-113.5 46.5T320-400q0 67 46.5 113.5T480-240Z"/></svg>
-          <h3 class="text-2xl font-black font-headline text-primary mb-4">UX & Behavioral</h3>
-          <p class="text-on-surface-variant leading-relaxed mb-6">Diseño de experiencias digitales basadas en la ciencia del comportamiento humano.</p>
-          <ul class="space-y-3 text-sm text-on-surface-variant">
-            <li class="flex items-center gap-2"><svg class="icon-svg text-secondary text-sm" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Arquitectura de Información</li>
-            <li class="flex items-center gap-2"><svg class="icon-svg text-secondary text-sm" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Reducción de Fricción</li>
-            <li class="flex items-center gap-2"><svg class="icon-svg text-secondary text-sm" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> User Research</li>
+        <!-- Card 3 -->
+        <div class="service-card reveal-ready" data-delay="3">
+          <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8">
+            <svg class="icon-svg text-secondary text-3xl" viewBox="0 -960 960 960"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q67 0 113.5-46.5T640-400q0-67-46.5-113.5T480-560q-67 0-113.5 46.5T320-400q0 67 46.5 113.5T480-240Z"/></svg>
+          </div>
+          <h3 class="text-2xl font-extrabold font-headline text-primary mb-4">UX & Behavioral</h3>
+          <p class="text-on-surface-variant leading-relaxed mb-6">Diseñamos interfaces que guían la decisión de compra mediante principios de psicología cognitiva y diseño conductual.</p>
+          <ul class="space-y-3">
+            <li class="flex items-center gap-3 text-sm text-on-surface-variant"><svg class="icon-svg text-secondary w-4 h-4" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Behavioral Design Audit</li>
+            <li class="flex items-center gap-3 text-sm text-on-surface-variant"><svg class="icon-svg text-secondary w-4 h-4" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg> Customer Journey Optimization</li>
           </ul>
         </div>
       </div>
     </section>
 </main>
 
+<!-- FOOTER Master Sync -->
 <footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-64 md:pb-80 px-6 md:px-12 border-t border-white/5">
   <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
-    <div class="flex items-center gap-3">
-      <img alt="aripa" class="h-8 object-contain" src="./assets/aripa-logo.png" width="106" height="32"/>
-    </div>
+    <div class="flex items-center gap-3"><img alt="aripa" class="h-8 object-contain" src="./assets/aripa-logo.png" width="106" height="32"/></div>
     <nav class="flex flex-wrap justify-center gap-6 md:gap-10">
       <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-cookies.html">Política de cookies</a>
       <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="privacidad.html">Privacidad</a>
       <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
     </nav>
-    <p class="text-white/40 text-[10px] font-body max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest">
-      © 2026 aripa Consulting | Javier Rodriguez de la Orden.
-    </p>
+    <p class="text-white/40 text-[10px] font-body max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest">© 2026 aripa Consulting | Javier Rodriguez de la Orden.</p>
   </div>
 </footer>
+
+<!-- Bottom Bars Sync -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden invisible" id="mobile-bottom-nav" aria-hidden="true" style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
+  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">
+    HABLEMOS
+  </button>
+</nav>
+
+<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between pointer-events-none invisible" id="sticky-bottom-bar" aria-hidden="true">
+  <div class="flex flex-col">
+    <span class="text-primary font-bold font-headline text-sm tracking-tight flex items-center gap-2">¿Hablamos de tu próxima fase de crecimiento?</span>
+    <span class="text-[11px] font-normal text-on-surface-variant ml-0">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
+  </div>
+  <div class="flex items-center gap-3 pointer-events-auto">
+    <button class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">HABLEMOS</button>
+  </div>
+</div>
 
 <div id="success-feedback-modal" class="success-modal">
   <div class="success-modal-content">
@@ -403,63 +472,89 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   };
 
   window.toggleDrawer = function () {
-    const drawer = document.getElementById('drawer');
-    const overlay = document.getElementById('drawer-overlay');
-    const content = document.getElementById('drawer-content');
-    if (!drawer || !overlay || !content) return;
-    const isHidden = drawer.classList.contains('invisible');
-    if (isHidden) {
-      drawer.classList.remove('invisible');
+    const d = document.getElementById('drawer');
+    const o = document.getElementById('drawer-overlay');
+    const c = document.getElementById('drawer-content');
+    if (!d || !o || !c) return;
+    if (d.classList.contains('invisible')) {
+      d.classList.remove('invisible');
       document.body.classList.add('modal-open');
-      requestAnimationFrame(() => {
-        overlay.classList.add('opacity-100');
-        content.classList.remove('translate-x-full');
-      });
+      requestAnimationFrame(() => { o.classList.add('opacity-100'); c.classList.remove('translate-x-full'); });
     } else {
-      overlay.classList.remove('opacity-100');
-      content.classList.add('translate-x-full');
+      o.classList.remove('opacity-100'); c.classList.add('translate-x-full');
       document.body.classList.remove('modal-open');
-      setTimeout(() => drawer.classList.add('invisible'), 300);
+      setTimeout(() => d.classList.add('invisible'), 300);
     }
   };
 
-  window.openContactModal = function () {
-    const modal = document.getElementById('contact-modal');
-    modal.classList.remove('hidden');
-    document.body.classList.add('modal-open');
-  };
-
-  window.closeModal = function(id) {
-    const modal = document.getElementById(id);
-    modal.classList.add('hidden');
-    document.body.classList.remove('modal-open');
-  };
-
+  window.openContactModal = () => { document.getElementById('contact-modal').classList.remove('hidden'); document.body.classList.add('modal-open'); };
+  window.closeModal = (id) => { document.getElementById(id).classList.add('hidden'); document.body.classList.remove('modal-open'); };
   window.closeSuccessModal = () => document.getElementById('success-feedback-modal').classList.remove('active');
 
-  let heroBottom = 0;
-  const updateMetrics = () => {
-    const hero = document.getElementById('hero-section');
-    heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 220;
-  };
-  window.addEventListener('resize', updateMetrics);
-  updateMetrics();
-
   const updateShellUI = () => {
-    const header = document.getElementById('site-header');
-    const stickyBar = document.getElementById('sticky-bottom-bar');
-    const mobileNav = document.getElementById('mobile-bottom-nav');
-    
+    const h = document.getElementById('site-header');
+    const s = document.getElementById('sticky-bottom-bar');
+    const m = document.getElementById('mobile-bottom-nav');
     const scrollY = window.scrollY;
-    header?.classList.toggle('is-sticky', scrollY > 20);
-    document.body.classList.toggle('scrolled', scrollY > 150);
-    
-    setInteractive(stickyBar, window.innerWidth >= 768 && scrollY > heroBottom - 200);
-    setInteractive(mobileNav, window.innerWidth < 768 && scrollY > 150);
+    h?.classList.toggle('is-sticky', scrollY > 20);
+    setInteractive(s, window.innerWidth >= 768 && scrollY > 600);
+    setInteractive(m, window.innerWidth < 768 && scrollY > 150);
   };
   window.addEventListener('scroll', updateShellUI, { passive: true });
   window.addEventListener('resize', updateShellUI);
   updateShellUI();
+
+  // Reveal Observer
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('reveal-visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal-ready').forEach(el => { el.classList.add('reveal-hidden'); revealObserver.observe(el); });
+
+  // Canvas Engine
+  (function () {
+    const canvas = document.getElementById('hero-gradient-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d'), ORBS = [
+      { color: [26, 42, 108], r: 1.06, ax: 0.30, ay: 0.22, px: 0.12, py: 0.16, speed: 0.0000037 },
+      { color: [90, 50, 160], r: 1.00, ax: 0.27, ay: 0.34, px: 0.55, py: 0.22, speed: 0.0000028 },
+      { color: [160, 80, 180], r: 0.96, ax: 0.22, ay: 0.38, px: 0.79, py: 0.58, speed: 0.0000022 },
+      { color: [220, 95, 160], r: 0.90, ax: 0.35, ay: 0.24, px: 0.42, py: 0.76, speed: 0.0000031 }
+    ];
+    const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
+    resize(); window.addEventListener('resize', resize);
+    const orbPos = (orb, t) => ({
+      x: Math.max(0, Math.min(1, orb.px + orb.ax * Math.sin(t * orb.speed * 1000 + orb.color[0]))) * canvas.width,
+      y: Math.max(0, Math.min(1, orb.py + orb.ay * Math.cos(t * orb.speed * 700 + orb.color[2]))) * canvas.height
+    });
+    const draw = (ts) => {
+      const W = canvas.width, H = canvas.height; ctx.fillStyle = '#0e1240'; ctx.fillRect(0, 0, W, H); ctx.globalCompositeOperation = 'screen';
+      for (const orb of ORBS) {
+        const p = orbPos(orb, ts), r = orb.r * Math.max(W, H), [cr, cg, cb] = orb.color;
+        const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r);
+        g.addColorStop(0, `rgba(${cr},${cg},${cb},0.40)`); g.addColorStop(0.45, `rgba(${cr},${cg},${cb},0.14)`); g.addColorStop(1, `rgba(${cr},${cg},${cb},0)`);
+        ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+      }
+      ctx.globalCompositeOperation = 'source-over'; requestAnimationFrame(draw);
+    };
+    requestAnimationFrame(draw);
+  })();
+
+  // Klaro Translation & Accessibility
+  (function() {
+    const enforce = () => {
+      const n = document.querySelector('#klaro .cookie-notice');
+      if (n && !n.hasAttribute('aria-label')) { n.setAttribute('aria-label', 'Aviso de cookies'); n.setAttribute('role', 'dialog'); }
+      const allBtns = document.querySelectorAll('#klaro .cm-btn, #klaro .cm-link');
+      allBtns.forEach(btn => {
+        const txt = btn.innerText;
+        if (txt.includes('Rechazar') || txt.includes('Descartar')) btn.innerText = 'Rechazar';
+        else if (txt.includes('Aceptar') || txt.includes('De acuerdo')) btn.innerText = 'Aceptar';
+        else if (txt.includes('Guardar')) btn.innerText = 'Guardar';
+        else if (txt.includes('Configurar')) btn.innerText = 'Configurar';
+      });
+    };
+    new MutationObserver(enforce).observe(document.documentElement, { childList: true, subtree: true });
+  })();
 
   window.handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -491,57 +586,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       btn.innerText = originalText;
     }
   };
+})();
 
-  // Klaro Customization & Accessibility Fix
-  (function() {
-    const enforceText = () => {
-      const notice = document.querySelector('#id-cookie-notice .cookie-notice, #klaro .cookie-notice');
-      if (notice && !notice.hasAttribute('aria-label')) {
-        notice.setAttribute('aria-label', 'Aviso de cookies y privacidad');
-        notice.setAttribute('role', 'dialog');
-      }
-      
-      const paragraphs = document.querySelectorAll('#klaro p, #id-cookie-notice p');
-      paragraphs.forEach(p => {
-        if (p.innerText.includes('We use cookies')) {
-          const targetText = 'Usamos cookies propias y de terceros para analizar nuestros servicios y mostrarte publicidad relacionada con tus preferencias mediante el análisis de tus hábitos de navegación.';
-          if (p.innerText !== targetText) p.innerText = targetText;
-        }
-      });
-
-      const allBtns = document.querySelectorAll('#klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
-      allBtns.forEach(btn => {
-        const txt = btn.innerText;
-        if (txt.includes('Descartar todas') || txt.includes('Rechazar todas') || txt === 'Descartar') {
-          if (btn.innerText !== 'Rechazar') btn.innerText = 'Rechazar';
-        } else if (txt.includes('Aceptar seleccionadas') || txt.includes('Guardar')) {
-          if (btn.innerText !== 'Guardar') btn.innerText = 'Guardar';
-        } else if (txt.includes('Aceptar todas') || txt.includes('De acuerdo') || txt === 'Aceptar') {
-          if (btn.innerText !== 'Aceptar') btn.innerText = 'Aceptar';
-        } else if (txt.includes('Quiero elegir') || txt.includes('Configurar')) {
-          if (btn.innerText !== 'Configurar') btn.innerText = 'Configurar';
-        }
-      });
-    };
-    const observer = new MutationObserver(enforceText);
-    observer.observe(document.documentElement, { childList: true, subtree: true });
-    setTimeout(enforceText, 200);
-    setTimeout(enforceText, 1000);
-  })();
-}());
-
+// Cal.com
 (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
 Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
 Cal.ns["hoja-de-ruta"]("preload", {calLink:"aripa/hoja-de-ruta"});
 Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view","useSlotsViewOnSmallScreen":true});
 
-// Bridge Klaro to GTM Consent Mode v2
+// Consent Mode Bridge
 window.addEventListener('load', function() {
   if (typeof klaro !== 'undefined') {
-    const checkConsent = () => {
-      const manager = klaro.getManager();
-      const consent = manager.getConsent('google-analytics') || manager.getConsent('google-tag-manager');
-      if (consent) {
+    const manager = klaro.getManager();
+    const updateConsent = () => {
+      const gConsent = manager.getConsent('google-analytics') || manager.getConsent('google-tag-manager');
+      if (gConsent) {
         gtag('consent', 'update', {
           'analytics_storage': 'granted',
           'ad_storage': 'granted',
@@ -550,20 +609,8 @@ window.addEventListener('load', function() {
         });
       }
     };
-    setTimeout(checkConsent, 1000);
-    const manager = klaro.getManager();
-    manager.watch({
-      update: function(m, name, value) {
-        if ((name === 'google-analytics' || name === 'google-tag-manager') && value) {
-          gtag('consent', 'update', {
-            'analytics_storage': 'granted',
-            'ad_storage': 'granted',
-            'ad_user_data': 'granted',
-            'ad_personalization': 'granted'
-          });
-        }
-      }
-    });
+    updateConsent();
+    manager.watch({ update: updateConsent });
   }
 });
 </script>
