@@ -6,7 +6,50 @@
 <title>Servicios de Consultoría Digital | Aripa</title>
 <meta name="description" content="Soluciones de crecimiento digital: SEO/GEO, CRO, UX y automatización para escalar tu negocio con IA y datos."/>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "Aripa",
+  "url": "https://aripa.es",
+  "logo": "https://aripa.es/assets/aripa-logo.png",
+  "description": "Consultoría de crecimiento digital especializada en SEO de nueva generación (GEO/AEO), CRO y optimización de negocio con IA.",
+  "founder": {
+    "@type": "Person",
+    "name": "Javier Rodriguez de la Orden",
+    "jobTitle": "Fundador",
+    "url": "https://aripa.es/",
+    "sameAs": ["https://www.linkedin.com/in/jro1"]
+  },
+  "areaServed": ["ES", "MX", "CO", "AR", "CL", "PE"],
+  "knowsLanguage": "es",
+  "sameAs": ["https://www.linkedin.com/company/aripa/"]
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Aripa",
+  "url": "https://aripa.es"
+}
+</script>
+
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
+
+<!-- GTM Consent Mode Default State (AEPD 2023 Compliance) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+</script>
     
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -18,9 +61,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <link rel="canonical" href="https://aripa.es/servicios.html"/>
 <link rel="preload" href="./style.css" as="style">
-<link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/assets/aripa-logo.png" as="image">
+<link rel="preload" href="/assets/aripa-logo.png" as="image" fetchpriority="high">
 
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="icon" href="/assets/favicon-64.png" sizes="64x64">
@@ -31,12 +73,59 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <link rel="stylesheet" href="./style.css">
 <style>
+  :root {
+    --color-primary:               220 80% 14%;
+    --color-primary-container:     225 51% 23%;
+    --color-secondary:             261 84% 63%; /* #7c3aed for WCAG AA contrast */
+    --color-secondary-container:   264 97% 74%;
+    --color-on-primary-container:  224 34% 66%;
+    --color-background:            20  33% 98%;
+    --color-surface:               20  33% 98%;
+    --color-surface-container-low: 24  20% 95%;
+    --color-on-background:         180  2% 11%;
+    --color-on-surface:            180  2% 11%;
+    --color-on-surface-variant:    234  5% 29%;
+    --color-outline-variant:       246  9% 80%;
+    --color-wa-light:              145 63% 49%;
+    --color-wa-dark:               170 79% 31%;
+    --duration-fast:    150ms;
+    --duration-base:    300ms;
+    --duration-slow:    500ms;
+    --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  body { font-family: 'Inter', sans-serif; }
   .icon-svg { width: 24px; height: 24px; fill: currentColor; display: inline-block; vertical-align: middle; }
-  .glass-header { background-color: rgba(6,21,66,0.8); backdrop-filter: blur(12px); }
+  
+  :focus-visible {
+    outline: 2px solid #6c45c0;
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+
   .btn-after {
-    background: linear-gradient(180deg, #8b5cf6 0%, #6c45c0 100%);
+    background: linear-gradient(180deg, #7c3aed 0%, #6d28d9 100%);
     box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 16px -4px rgba(108,69,192,0.5);
-    border: 1px solid rgba(139,92,246,0.5);
+    border: 1px solid rgba(124,58,237,0.5);
+  }
+
+  /* Header Sync */
+  #site-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 50;
+    background-color: transparent;
+    transition: background-color var(--duration-base) var(--ease-out-expo), backdrop-filter var(--duration-base) var(--ease-out-expo);
+  }
+  #site-header .header-inner { height: 4.25rem; }
+  #site-header.is-sticky {
+    background-color: rgba(6, 21, 66, 0.82);
+    backdrop-filter: blur(14px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  @media (min-width: 768px) {
+    #site-header .header-inner { height: 5rem; }
   }
 
   /* Hero Fluid Heights */
@@ -47,16 +136,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   #sticky-bottom-bar {
     transform: translateY(100%);
-    transition: transform 300ms cubic-bezier(0.4,0,0.2,1);
+    transition: transform var(--duration-base) cubic-bezier(0.4,0,0.2,1), visibility var(--duration-base);
+    visibility: hidden;
   }
-  #sticky-bottom-bar.visible { transform: translateY(0); }
+  #sticky-bottom-bar.visible { transform: translateY(0); visibility: visible; }
 
   #mobile-bottom-nav {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
     transform: translateY(100%);
     transition: transform 0.4s cubic-bezier(0.4,0,0.2,1);
-    padding-bottom: env(safe-area-inset-bottom, 0px);
+    background: linear-gradient(160deg, rgba(12, 26, 84, 0.88) 0%, rgba(43, 32, 105, 0.86) 52%, rgba(94, 54, 150, 0.78) 100%);
+    backdrop-filter: blur(16px);
+    visibility: hidden;
   }
-  .scrolled #mobile-bottom-nav { transform: translateY(0); }
+  .scrolled #mobile-bottom-nav.visible { transform: translateY(0); visibility: visible; }
 
   .success-modal {
       position: fixed;
@@ -301,6 +397,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   const setInteractive = (root, active) => {
     if (!root) return;
     root.classList.toggle('invisible', !active);
+    root.classList.toggle('visible', active);
     root.setAttribute('aria-hidden', active ? 'false' : 'true');
     root.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', active ? '0' : '-1'));
   };
@@ -394,15 +491,81 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       btn.innerText = originalText;
     }
   };
+
+  // Klaro Customization & Accessibility Fix
+  (function() {
+    const enforceText = () => {
+      const notice = document.querySelector('#id-cookie-notice .cookie-notice, #klaro .cookie-notice');
+      if (notice && !notice.hasAttribute('aria-label')) {
+        notice.setAttribute('aria-label', 'Aviso de cookies y privacidad');
+        notice.setAttribute('role', 'dialog');
+      }
+      
+      const paragraphs = document.querySelectorAll('#klaro p, #id-cookie-notice p');
+      paragraphs.forEach(p => {
+        if (p.innerText.includes('We use cookies')) {
+          const targetText = 'Usamos cookies propias y de terceros para analizar nuestros servicios y mostrarte publicidad relacionada con tus preferencias mediante el análisis de tus hábitos de navegación.';
+          if (p.innerText !== targetText) p.innerText = targetText;
+        }
+      });
+
+      const allBtns = document.querySelectorAll('#klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
+      allBtns.forEach(btn => {
+        const txt = btn.innerText;
+        if (txt.includes('Descartar todas') || txt.includes('Rechazar todas') || txt === 'Descartar') {
+          if (btn.innerText !== 'Rechazar') btn.innerText = 'Rechazar';
+        } else if (txt.includes('Aceptar seleccionadas') || txt.includes('Guardar')) {
+          if (btn.innerText !== 'Guardar') btn.innerText = 'Guardar';
+        } else if (txt.includes('Aceptar todas') || txt.includes('De acuerdo') || txt === 'Aceptar') {
+          if (btn.innerText !== 'Aceptar') btn.innerText = 'Aceptar';
+        } else if (txt.includes('Quiero elegir') || txt.includes('Configurar')) {
+          if (btn.innerText !== 'Configurar') btn.innerText = 'Configurar';
+        }
+      });
+    };
+    const observer = new MutationObserver(enforceText);
+    observer.observe(document.documentElement, { childList: true, subtree: true });
+    setTimeout(enforceText, 200);
+    setTimeout(enforceText, 1000);
+  })();
 }());
-</script>
 
-<script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
-  Cal.ns["hoja-de-ruta"]("preload", {calLink:"aripa/hoja-de-ruta"});
-  Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view","useSlotsViewOnSmallScreen":true});
-</script>
+(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
+Cal.ns["hoja-de-ruta"]("preload", {calLink:"aripa/hoja-de-ruta"});
+Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view","useSlotsViewOnSmallScreen":true});
 
+// Bridge Klaro to GTM Consent Mode v2
+window.addEventListener('load', function() {
+  if (typeof klaro !== 'undefined') {
+    const checkConsent = () => {
+      const manager = klaro.getManager();
+      const consent = manager.getConsent('google-analytics') || manager.getConsent('google-tag-manager');
+      if (consent) {
+        gtag('consent', 'update', {
+          'analytics_storage': 'granted',
+          'ad_storage': 'granted',
+          'ad_user_data': 'granted',
+          'ad_personalization': 'granted'
+        });
+      }
+    };
+    setTimeout(checkConsent, 1000);
+    const manager = klaro.getManager();
+    manager.watch({
+      update: function(m, name, value) {
+        if ((name === 'google-analytics' || name === 'google-tag-manager') && value) {
+          gtag('consent', 'update', {
+            'analytics_storage': 'granted',
+            'ad_storage': 'granted',
+            'ad_user_data': 'granted',
+            'ad_personalization': 'granted'
+          });
+        }
+      }
+    });
+  }
+});
+</script>
 </body>
 </html>
