@@ -153,7 +153,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .expertise-image-container { display: flex; justify-content: center; }
   .expertise-img { width: 100%; max-width: 480px; height: auto; border-radius: 2.5rem; box-shadow: 0 20px 40px rgba(6, 21, 66, 0.08); border: 1px solid rgba(6, 21, 66, 0.05); }
 
-  /* Klaro Consent Manager Customization - FINAL VERSION */
+  /* Klaro Consent Manager Customization - FINAL VERSION (LAYER 2 REFINED) */
   #klaro, #klaro .klaro { margin: 0 !important; padding: 0 !important; z-index: 999999999 !important; }
   body:has(#klaro .klaro .cm-modal.cm-shown) { overflow: hidden !important; }
   #klaro .klaro .cookie-notice { background-color: #ffffff !important; color: #061542 !important; border-radius: 0 !important; box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important; border-top: 1px solid #f3f4f6 !important; padding: 0 !important; position: fixed !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: 100% !important; z-index: 999999999 !important; margin: 0 !important; transform: none !important; }
@@ -164,6 +164,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   #klaro .klaro .cookie-notice .cn-ok .cm-btn, #klaro .klaro .cookie-notice .cn-ok .cm-link, #klaro .klaro .cookie-notice .cn-ok a { width: 100% !important; margin: 0 !important; padding: 12px !important; display: block !important; text-align: center !important; box-sizing: border-box !important; }
   @media (min-width: 1024px) { #klaro .klaro .cookie-notice .cn-body { flex-direction: row !important; justify-content: space-between !important; flex-wrap: nowrap !important; align-items: center !important; gap: 40px !important; display: flex !important; } #klaro .klaro .cookie-notice .cn-body p { max-width: 55% !important; margin: 0 !important; } #klaro .klaro .cookie-notice .cn-ok { flex-direction: row !important; flex-wrap: nowrap !important; width: auto !important; min-width: max-content !important; max-width: none !important; gap: 16px !important; align-items: center !important; justify-content: flex-end !important; display: flex !important; } #klaro .klaro .cookie-notice .cn-buttons .cm-btn:first-child { margin-right: 16px !important; } #klaro .klaro .cookie-notice .cn-buttons { display: flex !important; flex-direction: row !important; margin: 0 !important; padding: 0 !important; } #klaro .klaro .cookie-notice .cn-ok > *, #klaro .klaro .cookie-notice .cn-ok .cm-btn, #klaro .klaro .cookie-notice .cn-ok .cm-link, #klaro .klaro .cookie-notice .cn-ok a { width: auto !important; margin: 0 !important; flex: 0 0 auto !important; display: inline-block !important; white-space: nowrap !important; } }
   @media (max-width: 767px) { #klaro .klaro .cookie-notice .cn-ok .cm-btn { width: 100% !important; display: block !important; margin-bottom: 8px !important; } #klaro .klaro .cookie-notice .cn-ok .cm-btn:last-child { margin-bottom: 0 !important; } }
+  
+  /* Layer 2 (Modal) Styling - Exact sync with Index */
+  #klaro .klaro .cm-modal .cm-panel .cm-header, #klaro .klaro .cm-header { background-color: #ffffff !important; background: #ffffff !important; color: #061542 !important; }
+  #klaro .klaro .cm-modal .cm-panel .cm-header * { color: #061542 !important; }
+  #klaro .klaro .cm-modal .cm-header .cm-close { color: #061542 !important; }
+  #klaro .klaro .cm-modal .cm-body { padding: 20px !important; background: #fff !important; }
+  #klaro .klaro .cm-modal p, #klaro .klaro .cm-modal span, #klaro .klaro .cm-modal div, #klaro .klaro .cm-modal .cm-app-description, #klaro .klaro .cm-modal .cm-app-title, #klaro .klaro .cm-modal .cm-list-description, #klaro .klaro .cm-modal .cm-purpose-description { color: #061542 !important; opacity: 1 !important; visibility: visible !important; }
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch .slider { background-color: #d1d5db !important; transition: background-color 0.3s ease !important; }
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch input:checked + .slider, #klaro .klaro .cm-modal .cm-list-label .cm-switch.is-checked .slider, #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .slider, #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .cm-switch .slider { background-color: #22c55e !important; }
+  #klaro .klaro .cm-modal .cm-footer { border-top: 1px solid #f3f4f6 !important; background: #fff !important; padding: 20px !important; display: flex !important; flex-wrap: wrap !important; gap: 10px !important; }
+  #klaro .klaro .cm-modal .cm-footer .cm-btn { flex: 1 1 auto !important; min-width: 120px !important; }
+  #klaro .klaro .cm-powered-by { display: none !important; }
+  @media (max-width: 767px) { #klaro .klaro .cm-modal .cm-panel .cm-footer, #klaro .klaro .cm-footer, #klaro .klaro .cm-footer .cm-buttons, #klaro .klaro .cm-footer-buttons { display: flex !important; flex-direction: column !important; flex-flow: column nowrap !important; gap: 6px !important; padding: 10px 4px !important; height: auto !important; width: 100% !important; } #klaro .klaro .cm-modal .cm-panel .cm-footer .cm-btn, #klaro .klaro .cm-footer .cm-btn, #klaro .klaro .cm-footer .cm-buttons .cm-btn, #klaro .klaro .cm-btn { width: 100% !important; max-width: 100% !important; margin: 2px 0 !important; display: block !important; flex: 1 1 100% !important; } }
+  
   #klaro .klaro .cm-btn { border-radius: 16px !important; font-weight: 700 !important; padding: 14px 32px !important; border: none !important; width: 100% !important; text-align: center !important; font-size: 0.95rem !important; box-shadow: none !important; cursor: pointer !important; margin: 8px 0 !important; }
   @media (min-width: 1024px) { #klaro .klaro .cm-btn { width: auto !important; margin: 0 12px !important; } }
   #klaro .klaro .cm-btn-success { background-color: #6b38fb !important; color: #ffffff !important; order: 3 !important; }
@@ -204,7 +218,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <div class="av6-content">
       <h1 class="av6-title">Optimización para la<br/><span class="text-white">Era de la Inteligencia</span></h1>
       <p class="av6-sub">Soluciones estratégicas para dominar el crecimiento en entornos de búsqueda generativa e IA.</p>
-      <button data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" class="cta-core av6-btn-primary">Solicitar presupuesto</button>
+      <button type="button" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="cta-core av6-btn-primary">Solicitar presupuesto</button>
     </div>
   </section>
 
@@ -223,10 +237,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Autoridad Temática</li>
             <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Datos Estructurados</li>
           </ul>
-          <button onclick="openContactModal('growth')" class="btn-expertise">Solicitar Plan de Growth <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
+          <button type="button" onclick="openContactModal('growth')" class="btn-expertise">Solicitar análisis <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
         </div>
         <div class="expertise-image-container">
-          <img src="./assets/geo-seo.png" alt="Visualización abstracta de redes semánticas y clusters de datos para SEO y GEO" class="expertise-img" width="500" height="500" loading="lazy">
+          <img src="./assets/geo-seo.png" alt="Visualización 3D minimalista de redes semánticas" class="expertise-img" width="500" height="500" loading="lazy">
         </div>
       </div>
     </div>
@@ -244,10 +258,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Optimización de Funnel</li>
             <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> ROAS Maximizado</li>
           </ul>
-          <button onclick="openContactModal('conversion')" class="btn-expertise">Analizar Conversión <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
+          <button type="button" onclick="openContactModal('conversion')" class="btn-expertise">Solicitar análisis <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
         </div>
         <div class="expertise-image-container">
-          <img src="./assets/cro-growth.png" alt="Visualización 3D moderna de gráficos de crecimiento y embudos de conversión" class="expertise-img" width="500" height="500" loading="lazy">
+          <img src="./assets/cro-growth.png" alt="Visualización 3D minimalista de gráficos de crecimiento" class="expertise-img" width="500" height="500" loading="lazy">
         </div>
       </div>
     </div>
@@ -265,10 +279,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Prototipado UX</li>
             <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Auditoría de Usabilidad</li>
           </ul>
-          <button onclick="openContactModal('ux')" class="btn-expertise">Solicitar Diseño UX <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
+          <button type="button" onclick="openContactModal('ux')" class="btn-expertise">Solicitar análisis <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
         </div>
         <div class="expertise-image-container">
-          <img src="./assets/ux-design.png" alt="Representación abstracta de una interfaz digital intuitiva basada en psicología del comportamiento" class="expertise-img" width="500" height="500" loading="lazy">
+          <img src="./assets/ux-design.png" alt="Representación 3D minimalista de capas de interfaz" class="expertise-img" width="500" height="500" loading="lazy">
         </div>
       </div>
     </div>
@@ -288,9 +302,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </div>
 </footer>
 
-<!-- BOTTOM BARS (Sync with Index) -->
+<!-- BOTTOM BARS -->
 <nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden" id="mobile-bottom-nav" style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
-  <button type="button" class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta">
+  <button type="button" class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
     <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg> HABLEMOS
   </button>
 </nav>
@@ -300,7 +314,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <span class="text-primary font-bold font-headline text-sm tracking-tight flex items-center gap-2"><svg class="icon-svg text-secondary text-lg" viewBox="0 -960 960 960"><path d="M120-160q-33 0-56.5-23.5T40-240q0-33 23.5-56.5T120-320h10.5q4.5 0 9.5 2l182-182q-2-5-2-9.5V-520q0-33 23.5-56.5T400-600q33 0 56.5 23.5T480-520q0 2-2 20l102 102q5-2 9.5-2h21q4.5 0 9.5 2l142-142q-2-5-2-9.5V-560q0-33 23.5-56.5T840-640q33 0 56.5 23.5T920-560q0 33-23.5 56.5T840-480h-10.5q-4.5 0-9.5-2L678-340q2 5 2 9.5v10.5q0 33-23.5 56.5T600-240q-33 0-56.5-23.5T520-320v-10.5q0-4.5 2-9.5L420-442q-5 2-9.5 2H400q-2 0-20-2L198-260q2 5 2 9.5v10.5q0 33-23.5 56.5T120-160Zm40-401-25-54-54-25 54-25 25-54 25 54 54 25-54 25-25 54Zm440-39-38-82-82-38 82-38 38-82 38 82 82 38-82 38-38 82Z"/></svg> ¿Hablamos de tu próxima fase de crecimiento?</span>
     <span class="text-[11px] font-normal text-on-surface-variant ml-7">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
   </div>
-  <button type="button" class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta">
+  <button type="button" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2">
     <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg> HABLEMOS
   </button>
 </div>
@@ -353,7 +367,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     if (serviceValue) { const select = modal.querySelector('select[name="service"]'); if (select) select.value = serviceValue; }
     modal.classList.add('active'); document.body.classList.add('modal-open'); 
   };
-  window.closeModal = (id) => { document.getElementById(id).classList.remove('active'); document.body.classList.remove('modal-open'); };
+  window.closeModal = (id) => { 
+    const m = document.getElementById(id); if (m) m.classList.remove('active'); 
+    document.body.classList.remove('modal-open'); 
+  };
 
   const updateShellUI = () => {
     const h = document.getElementById('site-header');
@@ -426,7 +443,16 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     setTimeout(enforceText, 200);
   })();
 })();
+
 </script>
+
+<!-- Cal element-click embed code begins -->
+<script type="text/javascript">
+  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+  Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
+  Cal.ns["hoja-de-ruta"]("ui", {"theme":"light","styles":{"branding":{"brandColor":"#061542"}},"hideEventTypeDetails":false,"layout":"month_view"});
+</script>
+<!-- Cal element-click embed code ends -->
 
 </body>
 </html>
