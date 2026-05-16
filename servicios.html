@@ -103,10 +103,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%);
     color: #171443;
     border: 1px solid rgba(255,255,255,0.72);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 22px rgba(15,8,44,0.3);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 22px rgba(15, 8, 44, 0.3);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
-  .btn-lavender:hover { transform: scale(1.02); box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 14px 28px rgba(15,8,44,0.34); }
+  .btn-lavender:hover { transform: scale(1.02); box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 14px 28px rgba(15, 8, 44, 0.34); }
 
   #sticky-bottom-bar { transform: translateY(100%); transition: transform var(--duration-base) cubic-bezier(0.4,0,0.2,1), visibility var(--duration-base); visibility: hidden; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid rgba(6,21,66,0.05); z-index: 40; }
   #sticky-bottom-bar.visible { transform: translateY(0); visibility: visible; }
@@ -115,7 +115,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .scrolled #mobile-bottom-nav { transform: translateY(0); visibility: visible; }
   #mobile-bottom-nav .btn-after { background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(238, 231, 255, 0.96) 100%); color: #161341; border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 8px 22px rgba(17, 14, 58, 0.28); }
 
-  /* --- Modal System (Sync) --- */
+  /* --- Modal System --- */
   body.modal-open { overflow: hidden; overscroll-behavior: contain; }
   .modal-overlay { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(6, 21, 66, 0.85); backdrop-filter: blur(12px); z-index: 100; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
   .modal-overlay.active { opacity: 1; pointer-events: auto; }
@@ -137,36 +137,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   @media (min-width: 1024px) { #hero-section.hero-v6 { height: 800px; min-height: 800px; padding: 0; } }
 
   /* New Expertise Blocks Component */
-  .expertise-block { padding: 6rem 0; border-bottom: 1px solid rgba(6, 21, 66, 0.04); }
+  .expertise-block { padding: 4rem 0; border-bottom: 1px solid rgba(6, 21, 66, 0.04); }
   .expertise-block:last-child { border-bottom: none; }
-  .expertise-inner { display: grid; grid-template-columns: 1fr; gap: 4rem; align-items: center; }
-  @media (min-width: 1024px) { .expertise-inner { grid-template-columns: 1fr 1fr; gap: 8rem; } .expertise-inner.reversed { direction: rtl; } .expertise-inner.reversed > * { direction: ltr; } }
+  .expertise-inner { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+  @media (min-width: 1024px) { .expertise-inner { grid-template-columns: 1fr 1fr; gap: 6rem; } .expertise-inner.reversed { direction: rtl; } .expertise-inner.reversed > * { direction: ltr; } }
   .expertise-label { font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.2em; color: #6b38fb; margin-bottom: 1.5rem; display: block; }
-  .expertise-title { font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; color: #061542; margin-bottom: 2rem; }
-  .expertise-text { font-size: 1.125rem; line-height: 1.7; color: #4b5563; margin-bottom: 2.5rem; }
-  .expertise-list { list-style: none; padding: 0; margin: 0 0 3rem 0; display: grid; grid-template-columns: 1fr; gap: 1rem; }
+  .expertise-title { font-size: clamp(2rem, 4vw, 2.75rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.02em; color: #061542; margin-bottom: 1.5rem; }
+  .expertise-text { font-size: 1.1rem; line-height: 1.7; color: #4b5563; margin-bottom: 2rem; }
+  .expertise-list { list-style: none; padding: 0; margin: 0 0 2.5rem 0; display: grid; grid-template-columns: 1fr; gap: 0.75rem; }
   @media (min-width: 640px) { .expertise-list { grid-template-columns: 1fr 1fr; } }
-  .expertise-item { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; color: #061542; font-size: 0.95rem; }
-  .expertise-item svg { color: #6b38fb; width: 1.25rem; height: 1.25rem; }
-  .btn-expertise { display: inline-flex; align-items: center; gap: 0.75rem; background: #061542; color: white; padding: 1rem 2rem; border-radius: 1rem; font-weight: 700; transition: all 0.3s ease; }
+  .expertise-item { display: flex; align-items: center; gap: 0.75rem; font-weight: 600; color: #061542; font-size: 0.9rem; }
+  .expertise-item svg { color: #6b38fb; width: 1.15rem; height: 1.15rem; }
+  .btn-expertise { display: inline-flex; align-items: center; gap: 0.75rem; background: #061542; color: white; padding: 0.85rem 1.75rem; border-radius: 1rem; font-weight: 700; transition: all 0.3s ease; font-size: 0.9rem; }
   .btn-expertise:hover { background: #6b38fb; transform: translateY(-2px); box-shadow: 0 10px 25px rgba(107, 56, 251, 0.25); }
+  .expertise-image-container { display: flex; justify-content: center; }
+  .expertise-img { width: 100%; max-width: 480px; height: auto; border-radius: 2.5rem; box-shadow: 0 20px 40px rgba(6, 21, 66, 0.08); border: 1px solid rgba(6, 21, 66, 0.05); }
 
-  /* Klaro Sync (Master) */
+  /* Klaro Consent Manager Customization - FINAL VERSION */
   #klaro, #klaro .klaro { margin: 0 !important; padding: 0 !important; z-index: 999999999 !important; }
-  #klaro .klaro .cookie-notice { background-color: #ffffff !important; color: #061542 !important; border-radius: 0 !important; box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important; border-top: 1px solid #f3f4f6 !important; position: fixed !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: 100% !important; margin: 0 !important; z-index: 999999999 !important; }
-  #klaro .klaro .cm-btn-success { background-color: #6b38fb !important; color: #ffffff !important; border-radius: 16px !important; font-weight: 700 !important; padding: 14px 32px !important; }
-  #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-decline { background-color: #f3f4f6 !important; color: #4b5563 !important; border-radius: 16px !important; }
-  #klaro .klaro .cm-link { color: #6b38fb !important; font-weight: 700 !important; text-decoration: none !important; }
+  body:has(#klaro .klaro .cm-modal.cm-shown) { overflow: hidden !important; }
+  #klaro .klaro .cookie-notice { background-color: #ffffff !important; color: #061542 !important; border-radius: 0 !important; box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important; border-top: 1px solid #f3f4f6 !important; padding: 0 !important; position: fixed !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: 100% !important; z-index: 999999999 !important; margin: 0 !important; transform: none !important; }
+  #klaro .klaro .cookie-notice .cn-body { max-width: 1200px !important; margin: 0 auto !important; padding: 20px !important; display: flex !important; flex-direction: column !important; gap: 20px !important; }
+  #klaro .klaro .cookie-notice .cn-body p { color: #061542 !important; margin: 0 !important; }
+  #klaro .klaro .cookie-notice .cn-ok { display: flex !important; flex-direction: column !important; gap: 8px !important; width: 100% !important; padding: 10px 4px !important; }
+  #klaro .klaro .cookie-notice .cn-ok > * { width: 100% !important; margin: 0 !important; flex: 1 1 100% !important; display: block !important; text-align: center !important; }
+  #klaro .klaro .cookie-notice .cn-ok .cm-btn, #klaro .klaro .cookie-notice .cn-ok .cm-link, #klaro .klaro .cookie-notice .cn-ok a { width: 100% !important; margin: 0 !important; padding: 12px !important; display: block !important; text-align: center !important; box-sizing: border-box !important; }
+  @media (min-width: 1024px) { #klaro .klaro .cookie-notice .cn-body { flex-direction: row !important; justify-content: space-between !important; flex-wrap: nowrap !important; align-items: center !important; gap: 40px !important; display: flex !important; } #klaro .klaro .cookie-notice .cn-body p { max-width: 55% !important; margin: 0 !important; } #klaro .klaro .cookie-notice .cn-ok { flex-direction: row !important; flex-wrap: nowrap !important; width: auto !important; min-width: max-content !important; max-width: none !important; gap: 16px !important; align-items: center !important; justify-content: flex-end !important; display: flex !important; } #klaro .klaro .cookie-notice .cn-buttons .cm-btn:first-child { margin-right: 16px !important; } #klaro .klaro .cookie-notice .cn-buttons { display: flex !important; flex-direction: row !important; margin: 0 !important; padding: 0 !important; } #klaro .klaro .cookie-notice .cn-ok > *, #klaro .klaro .cookie-notice .cn-ok .cm-btn, #klaro .klaro .cookie-notice .cn-ok .cm-link, #klaro .klaro .cookie-notice .cn-ok a { width: auto !important; margin: 0 !important; flex: 0 0 auto !important; display: inline-block !important; white-space: nowrap !important; } }
+  @media (max-width: 767px) { #klaro .klaro .cookie-notice .cn-ok .cm-btn { width: 100% !important; display: block !important; margin-bottom: 8px !important; } #klaro .klaro .cookie-notice .cn-ok .cm-btn:last-child { margin-bottom: 0 !important; } }
+  #klaro .klaro .cm-btn { border-radius: 16px !important; font-weight: 700 !important; padding: 14px 32px !important; border: none !important; width: 100% !important; text-align: center !important; font-size: 0.95rem !important; box-shadow: none !important; cursor: pointer !important; margin: 8px 0 !important; }
+  @media (min-width: 1024px) { #klaro .klaro .cm-btn { width: auto !important; margin: 0 12px !important; } }
+  #klaro .klaro .cm-btn-success { background-color: #6b38fb !important; color: #ffffff !important; order: 3 !important; }
+  #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-second, #klaro .klaro .cm-btn-decline { background-color: #f3f4f6 !important; color: #4b5563 !important; order: 2 !important; }
+  #klaro .klaro .cm-link { color: #6b38fb !important; font-weight: 700 !important; text-decoration: none !important; font-size: 0.95rem !important; padding: 0 !important; background: none !important; width: 100% !important; display: flex !important; align-items: center !important; justify-content: center !important; order: 1 !important; border: none !important; margin: 12px 0 !important; }
+  @media (min-width: 1024px) { #klaro .klaro .cm-link { width: auto !important; padding: 14px 0 !important; display: inline-flex !important; line-height: 1 !important; margin: 0 12px !important; } }
   body:has(#klaro .cookie-notice)::before { content: '' !important; position: fixed !important; inset: 0 !important; background: rgba(6, 21, 66, 0.8) !important; backdrop-filter: blur(10px) !important; z-index: 99999997 !important; pointer-events: auto !important; }
 
   .reveal-ready { transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo); }
-  .reveal-hidden { opacity: 0; transform: translateY(40px); }
+  .reveal-hidden { opacity: 0; transform: translateY(30px); }
   .reveal-visible { opacity: 1; transform: translateY(0); }
 </style>
 </head>
 <body class="bg-background text-on-background">
 
-<!-- HEADER (Sync with Index) -->
+<!-- HEADER -->
 <header id="site-header" aria-label="Cabecera principal">
   <div class="header-inner flex items-center justify-between px-6 md:px-12 max-w-[1440px] mx-auto">
     <div class="flex-1 flex justify-start">
@@ -212,7 +225,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </ul>
           <button onclick="openContactModal('growth')" class="btn-expertise">Solicitar Plan de Growth <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
         </div>
-        <div class="hidden lg:flex justify-center"><div class="w-full max-w-sm aspect-square bg-secondary/5 rounded-[3rem] border border-secondary/10 flex items-center justify-center"><svg class="w-32 h-32 text-secondary/40" viewBox="0 -960 960 960" fill="currentColor"><path d="M440-80v-367L216-447l24-53 264-380v367l224 0-24 53-264 380Z"/></svg></div></div>
+        <div class="expertise-image-container">
+          <img src="./assets/geo-seo.png" alt="Visualización abstracta de redes semánticas y clusters de datos para SEO y GEO" class="expertise-img" width="500" height="500" loading="lazy">
+        </div>
       </div>
     </div>
 
@@ -229,9 +244,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Optimización de Funnel</li>
             <li class="expertise-item"><svg class="icon-svg" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> ROAS Maximizado</li>
           </ul>
-          <button onclick="openContactModal('conversion')" class="btn-expertise">Solicitar Análisis de Conversión <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
+          <button onclick="openContactModal('conversion')" class="btn-expertise">Analizar Conversión <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
         </div>
-        <div class="hidden lg:flex justify-center"><div class="w-full max-w-sm aspect-square bg-secondary/5 rounded-[3rem] border border-secondary/10 flex items-center justify-center"><svg class="w-32 h-32 text-secondary/40" viewBox="0 -960 960 960" fill="currentColor"><path d="M280-280h80v-280h-80v280Zm160 0h80v-440h-80v440Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Z"/></svg></div></div>
+        <div class="expertise-image-container">
+          <img src="./assets/cro-growth.png" alt="Visualización 3D moderna de gráficos de crecimiento y embudos de conversión" class="expertise-img" width="500" height="500" loading="lazy">
+        </div>
       </div>
     </div>
 
@@ -250,7 +267,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           </ul>
           <button onclick="openContactModal('ux')" class="btn-expertise">Solicitar Diseño UX <svg class="icon-svg w-4 h-4" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg></button>
         </div>
-        <div class="hidden lg:flex justify-center"><div class="w-full max-w-sm aspect-square bg-secondary/5 rounded-[3rem] border border-secondary/10 flex items-center justify-center"><svg class="w-32 h-32 text-secondary/40" viewBox="0 -960 960 960" fill="currentColor"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Z"/></svg></div></div>
+        <div class="expertise-image-container">
+          <img src="./assets/ux-design.png" alt="Representación abstracta de una interfaz digital intuitiva basada en psicología del comportamiento" class="expertise-img" width="500" height="500" loading="lazy">
+        </div>
       </div>
     </div>
   </section>
@@ -286,7 +305,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   </button>
 </div>
 
-<!-- MODALS (Exact sync from Index) -->
+<!-- MODALS -->
 <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal-panel p-8 md:p-12">
     <div class="flex justify-between items-start gap-4 mb-8">
@@ -407,10 +426,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     setTimeout(enforceText, 200);
   })();
 })();
-
-(function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
-Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view"});
 </script>
 
 </body>
