@@ -62,21 +62,36 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   body { font-family: 'Inter', sans-serif; }
   .icon-svg { width: 24px; height: 24px; fill: currentColor; display: inline-block; vertical-align: middle; }
 
-  /* Header Sync */
+  /* Header Sync with Index */
   #site-header {
     position: fixed; top: 0; width: 100%; z-index: 50;
     background-color: transparent;
-    transition: background-color var(--duration-base) var(--ease-out-expo), backdrop-filter var(--duration-base) var(--ease-out-expo);
+    transition: background-color var(--duration-base) var(--ease-out-expo), backdrop-filter var(--duration-base) var(--ease-out-expo), border-color var(--duration-base) var(--ease-out-expo);
+    border-bottom: 1px solid transparent;
   }
+  #site-header .header-inner { height: 4.25rem; transition: height var(--duration-base) var(--ease-out-expo); }
+  @media (min-width: 768px) { #site-header .header-inner { height: 5rem; } }
   #site-header.is-sticky {
     background-color: rgba(6, 21, 66, 0.82);
     backdrop-filter: blur(14px);
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom-color: rgba(255,255,255,0.08);
+    box-shadow: 0 20px 48px -18px rgba(0,0,0,0.45);
   }
+  #site-header.is-sticky .header-inner { height: 4.35rem; }
 
-  /* Hero v6 Styles */
+  .cta-core { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; }
+  .btn-lavender {
+    background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241,236,255,0.95) 100%);
+    color: #171443;
+    border: 1px solid rgba(255,255,255,0.72);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 22px rgba(15,8,44,0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .btn-lavender:hover { transform: scale(1.02); box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 14px 28px rgba(15,8,44,0.34); }
+
+  /* Hero Sync */
   #hero-section.hero-v6 {
-    position: relative; min-height: 80svh; padding: 120px 1.5rem 80px;
+    position: relative; min-height: 85svh; padding: 7.5rem 1.5rem 5rem;
     overflow: hidden; isolation: isolate; display: flex; align-items: center; justify-content: center;
     background: #061542;
   }
@@ -87,72 +102,46 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     background-size: 220px; mix-blend-mode: overlay; opacity: 0.6;
   }
   #hero-section .av6-content { max-width: 920px; margin: 0 auto; text-align: center; }
-  #hero-section .av6-title {
-    font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1.05; letter-spacing: -0.04em; font-weight: 800; margin-bottom: 24px; color: white;
+  #hero-section .av6-title { font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.15; letter-spacing: -0.02em; font-weight: 800; margin-bottom: 24px; text-shadow: 0 2px 24px rgba(0,0,0,0.2); color: white; }
+  #hero-section .av6-sub { max-width: 640px; margin: 0 auto 40px; font-size: clamp(0.95rem, 2vw, 1.15rem); line-height: 1.6; color: rgba(255,255,255,0.85); }
+  
+  .av6-btn-primary {
+    min-width: 240px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%);
+    color: #171443;
+    border-radius: 12px;
+    padding: 18px 32px;
+    font-weight: 700;
+    border: 1px solid rgba(255,255,255,0.72);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 22px rgba(15, 8, 44, 0.3);
+    transition: all 0.3s var(--ease-out-expo);
   }
-  #hero-section .av6-sub { max-width: 680px; margin: 0 auto 40px; font-size: clamp(1.1rem, 2vw, 1.25rem); line-height: 1.6; color: rgba(255,255,255,0.85); }
+  .av6-btn-primary:hover { transform: scale(1.02); box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 14px 28px rgba(15, 8, 44, 0.34); }
 
-  /* Premium Buttons */
-  .btn-after {
-    background: linear-gradient(180deg, #7c3aed 0%, #6d28d9 100%);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 16px -4px rgba(108,69,192,0.5);
-    border: 1px solid rgba(124,58,237,0.5);
+  /* New Services Component (Bento-style Grid) */
+  .services-bento { display: grid; grid-template-columns: repeat(1, 1fr); gap: 2rem; }
+  @media (min-width: 1024px) { .services-bento { grid-template-columns: repeat(3, 1fr); gap: 3rem; } }
+  .bento-card {
+    background: white; border-radius: 2rem; padding: 3rem;
+    border: 1px solid rgba(6, 21, 66, 0.06);
+    transition: all 0.5s var(--ease-out-expo);
+    display: flex; flex-direction: column;
   }
+  .bento-card:hover { transform: translateY(-8px); box-shadow: 0 30px 60px -12px rgba(6, 21, 66, 0.12); border-color: rgba(108, 69, 192, 0.15); }
+  .check-icon { color: #6b38fb; }
 
-  /* Cards Premium Style */
-  .service-card {
-    background: white; padding: 3rem; border-radius: 2.5rem;
-    border: 1px solid rgba(6, 21, 66, 0.05);
-    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.02);
-    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  }
-  .service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 30px 60px -12px rgba(6, 21, 66, 0.15);
-    border-color: rgba(108, 69, 192, 0.2);
-  }
+  /* Klaro Sync (Complete Index CSS) */
+  #klaro, #klaro .klaro { margin: 0 !important; padding: 0 !important; z-index: 999999999 !important; }
+  #klaro .klaro .cookie-notice { background-color: #ffffff !important; color: #061542 !important; border-radius: 0 !important; box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important; border-top: 1px solid #f3f4f6 !important; padding: 0 !important; position: fixed !important; bottom: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; max-width: 100% !important; z-index: 999999999 !important; margin: 0 !important; transform: none !important; }
+  #klaro .klaro .cookie-notice .cn-body { max-width: 1200px !important; margin: 0 auto !important; padding: 20px !important; display: flex !important; flex-direction: column !important; gap: 20px !important; }
+  #klaro .klaro .cm-btn-success { background-color: #6b38fb !important; color: #ffffff !important; border-radius: 16px !important; font-weight: 700 !important; padding: 14px 32px !important; }
+  #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-decline { background-color: #f3f4f6 !important; color: #4b5563 !important; border-radius: 16px !important; }
 
-  /* Bottom Bars */
-  #mobile-bottom-nav {
-    position: fixed; bottom: 0; left: 0; right: 0; z-index: 50;
-    background: #061542; border-top: 1px solid rgba(255,255,255,0.1);
-    transform: translateY(100%); transition: transform 0.4s var(--ease-out-expo);
-  }
-  #sticky-bottom-bar {
-    position: fixed; bottom: 0; left: 0; right: 0; z-index: 40;
-    background: rgba(255,255,255,0.9); backdrop-filter: blur(20px);
-    border-top: 1px solid rgba(6,21,66,0.05);
-    transform: translateY(100%); transition: transform 0.4s var(--ease-out-expo);
-  }
-  .visible { transform: translateY(0) !important; }
-
-  /* Modals Master Style (Sync with Index) */
-  .modal-overlay {
-    position: fixed; inset: 0; background: rgba(6, 14, 43, 0.85); backdrop-filter: blur(12px);
-    z-index: 100; display: flex; align-items: center; justify-content: center; p: 1.5rem;
-    opacity: 0; visibility: hidden; transition: all 0.4s var(--ease-out-expo);
-  }
-  .modal-overlay.active { opacity: 1; visibility: visible; }
-  .modal-panel {
-    background: white; width: 100%; max-width: 640px; border-radius: 2.5rem;
-    transform: scale(0.9) translateY(20px); transition: all 0.4s var(--ease-out-expo);
-  }
-  .modal-overlay.active .modal-panel { transform: scale(1) translateY(0); }
-
-  .form-input {
-    width: 100%; background: #f3f4f6; padding: 1.25rem; border-radius: 1.25rem;
-    border: none; outline: none; transition: all 0.3s ease;
-  }
-  .form-input:focus { ring: 2px solid rgba(108, 69, 192, 0.2); }
-  .btn-submit {
-    width: 100%; padding: 1.25rem; border-radius: 1.25rem; background: linear-gradient(180deg, #7c3aed 0%, #6d28d9 100%);
-    color: white; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em;
-  }
-
-  /* Klaro Customization */
-  #klaro .klaro .cookie-notice { background: #fff !important; color: #061542 !important; border-radius: 24px !important; box-shadow: 0 20px 50px rgba(0,0,0,0.2) !important; }
-  #klaro .klaro .cm-btn-success { background: #6c45c0 !important; color: #fff !important; }
-  body.modal-open { overflow: hidden !important; }
+  /* Bottom Bar Sync */
+  #mobile-bottom-nav { position: fixed; left: 0; right: 0; bottom: 0; transform: translateY(100%); transition: transform 0.4s var(--ease-out-expo); background: linear-gradient(160deg, rgba(12, 26, 84, 0.88) 0%, rgba(43, 32, 105, 0.86) 52%, rgba(94, 54, 150, 0.78) 100%); border-top: 1px solid rgba(255,255,255,0.14); backdrop-filter: blur(16px); z-index: 60; }
+  .scrolled #mobile-bottom-nav { transform: translateY(0); }
+  #sticky-bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; transform: translateY(100%); transition: transform 0.4s var(--ease-out-expo); background: white; border-top: 1px solid rgba(6,21,66,0.05); z-index: 40; }
+  #sticky-bottom-bar.visible { transform: translateY(0); }
 
   .reveal-ready { transition: opacity 0.8s var(--ease-out-expo), transform 0.8s var(--ease-out-expo); }
   .reveal-hidden { opacity: 0; transform: translateY(30px); }
@@ -161,161 +150,165 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 <body class="bg-background text-on-background">
 
-<!-- HEADER -->
-<header id="site-header">
-  <div class="max-w-[1440px] mx-auto h-20 md:h-24 flex items-center justify-between px-6 md:px-12">
-    <a href="index.html" class="outline-none"><img alt="aripa" class="h-6 md:h-7" src="./assets/aripa-logo.png"/></a>
-    <nav class="hidden lg:flex items-center gap-12">
-      <a class="text-white font-bold text-sm" href="servicios.html">Servicios</a>
-      <a class="text-white/70 hover:text-white transition-colors font-bold text-sm" href="recursos.html">Recursos</a>
-    </nav>
-    <button class="btn-after text-white px-8 py-3 rounded-xl font-bold text-sm hidden md:block" onclick="openContactModal()">HABLEMOS</button>
-    <button class="md:hidden text-white" onclick="toggleDrawer()"><svg class="icon-svg" viewBox="0 -960 960 960"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></button>
+<!-- HEADER (Sync with Index) -->
+<header id="site-header" aria-label="Cabecera principal">
+  <div class="header-inner flex items-center justify-between px-6 md:px-12 max-w-[1440px] mx-auto">
+    <div class="flex-1 flex justify-start">
+      <a href="index.html" class="flex items-center outline-none"><img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/></a>
+    </div>
+    <div class="flex-1 flex items-center justify-end gap-6">
+      <button type="button" class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
+        <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> Tengo una duda
+      </button>
+      <button type="button" class="flex items-center justify-center p-2 -mr-2 md:hidden" id="mobile-mail-btn" onclick="openContactModal()">
+        <svg class="icon-svg text-white text-2xl" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
 <main id="main-content">
-    <section id="hero-section" class="hero-v6 text-white">
-      <canvas class="av6-canvas" id="hero-gradient-canvas"></canvas>
-      <div class="av6-grain"></div>
-      <div class="av6-content">
-        <h1 class="av6-title">Optimización para la<br/><span class="text-secondary">Era de la Inteligencia</span></h1>
-        <p class="av6-sub">Combinamos arquitectura semántica avanzada, diseño del comportamiento y SEO de nueva generación para dominar la visibilidad en motores generativos y maximizar tu rentabilidad.</p>
-        <button data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" class="btn-after px-10 py-4 rounded-2xl font-bold uppercase tracking-widest text-sm shadow-2xl hover:scale-105 transition-transform">Solicitar presupuesto</button>
-      </div>
-    </section>
+  <!-- HERO (Sync with Index) -->
+  <section class="hero-v6 text-white" id="hero-section">
+    <canvas class="av6-canvas" id="hero-gradient-canvas"></canvas>
+    <div class="av6-grain"></div>
+    <div class="av6-content">
+      <h1 class="av6-title">Optimización para la<br/><span class="text-white">Era de la Inteligencia</span></h1>
+      <p class="av6-sub">Combinamos arquitectura semántica avanzada, diseño del comportamiento y SEO de nueva generación para dominar la visibilidad en motores generativos y maximizar tu rentabilidad.</p>
+      <button data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" class="cta-core av6-btn-primary">Solicitar presupuesto</button>
+    </div>
+  </section>
 
-    <section class="py-24 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios-grid">
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
-        <!-- GEO / SEO -->
-        <div class="service-card reveal-ready">
-          <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8">
-            <svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M440-80v-367L216-447l24-53 264-380v367l224 0-24 53-264 380Z"/></svg>
-          </div>
-          <h3 class="text-2xl font-extrabold font-headline text-primary mb-5">GEO & SEO Estratégico</h3>
-          <p class="text-on-surface-variant leading-relaxed mb-6">Dominamos el <strong>Generative Engine Optimization (GEO)</strong>. No solo optimizamos para Google; preparamos tu marca para ser la respuesta recomendada por LLMs (ChatGPT, Perplexity, Gemini). Construimos autoridad temática mediante clústeres semánticos que garantizan visibilidad en la nueva era de la búsqueda conversacional.</p>
-          <ul class="space-y-3 text-sm text-on-surface-variant font-medium">
-            <li class="flex items-center gap-3">✓ Citación en Motores Generativos</li>
-            <li class="flex items-center gap-3">✓ Arquitectura de Datos Estructurados</li>
-            <li class="flex items-center gap-3">✓ Dominio de Intención de Búsqueda</li>
-          </ul>
-        </div>
-        <!-- CRO -->
-        <div class="service-card reveal-ready">
-          <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8">
-            <svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M280-280h80v-280h-80v280Zm160 0h80v-440h-80v440Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Z"/></svg>
-          </div>
-          <h3 class="text-2xl font-extrabold font-headline text-primary mb-5">CRO & Rentabilidad</h3>
-          <p class="text-on-surface-variant leading-relaxed mb-6">Analizamos científicamente el comportamiento del usuario para eliminar cada punto de fricción en tu funnel. Utilizamos <strong>analítica avanzada y experimentación continua</strong> para transformar el tráfico existente en ingresos, optimizando el ROAS y reduciendo el coste de adquisición mediante mejoras técnicas basadas en datos reales.</p>
-          <ul class="space-y-3 text-sm text-on-surface-variant font-medium">
-            <li class="flex items-center gap-3">✓ Auditoría de Fugas de Conversión</li>
-            <li class="flex items-center gap-3">✓ Testeo A/B Basado en Hipótesis</li>
-            <li class="flex items-center gap-3">✓ Optimización de LTV y Retención</li>
-          </ul>
-        </div>
-        <!-- UX / Behavioral -->
-        <div class="service-card reveal-ready">
-          <div class="w-16 h-16 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8">
-            <svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Z"/></svg>
-          </div>
-          <h3 class="text-2xl font-extrabold font-headline text-primary mb-5">UX & Behavioral Design</h3>
-          <p class="text-on-surface-variant leading-relaxed mb-6">Diseñamos ecosistemas digitales utilizando principios de <strong>Economía del Comportamiento y Psicología Cognitiva</strong>. No solo creamos interfaces estéticas; construimos experiencias que reducen la carga cognitiva y guían de forma natural al usuario hacia la conversión, eliminando barreras psicológicas invisibles.</p>
-          <ul class="space-y-3 text-sm text-on-surface-variant font-medium">
-            <li class="flex items-center gap-3">✓ Diseño Conductual (Nudging)</li>
-            <li class="flex items-center gap-3">✓ Optimización de Carga Cognitiva</li>
-            <li class="flex items-center gap-3">✓ Prototipado Basado en Evidencia</li>
-          </ul>
-        </div>
+  <!-- SERVICES BENTO GRID -->
+  <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios">
+    <div class="services-bento">
+      <!-- SEO / GEO -->
+      <div class="bento-card reveal-ready">
+        <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8"><svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M440-80v-367L216-447l24-53 264-380v367l224 0-24 53-264 380Z"/></svg></div>
+        <h3 class="text-2xl font-extrabold text-primary mb-5">GEO & SEO Estratégico</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-8">Dominamos el <strong>GEO (Generative Engine Optimization)</strong>. Preparamos tu marca para ser la respuesta recomendada por LLMs como ChatGPT y Gemini, construyendo autoridad temática mediante clústeres semánticos avanzados.</p>
+        <ul class="mt-auto space-y-4 text-sm text-on-surface-variant font-semibold">
+          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Citación en Motores de IA</li>
+          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Arquitectura de Datos Estructurados</li>
+          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Autoridad Temática Sectorial</li>
+        </ul>
       </div>
-    </section>
+      <!-- CRO -->
+      <div class="bento-card reveal-ready">
+        <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8"><svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M280-280h80v-280h-80v280Zm160 0h80v-440h-80v440Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Z"/></svg></div>
+        <h3 class="text-2xl font-extrabold text-primary mb-5">CRO & Rentabilidad</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-8">Transformamos el tráfico existente en ingresos reales. Analizamos fugas de conversión y aplicamos experimentación científica A/B para maximizar el ROAS y rentabilizar cada visita mediante datos accionables.</p>
+        <ul class="mt-auto space-y-4 text-sm text-on-surface-variant font-semibold">
+          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Análisis de Fricción en Funnel</li>
+          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Experimentación A/B Avanzada</li>
+          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Optimización de ROAS y LTV</li>
+        </ul>
+      </div>
+      <!-- UX -->
+      <div class="bento-card reveal-ready">
+        <div class="w-14 h-14 rounded-2xl bg-secondary/10 flex items-center justify-center mb-8"><svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Z"/></svg></div>
+        <h3 class="text-2xl font-extrabold text-primary mb-5">UX & Behavioral Design</h3>
+        <p class="text-on-surface-variant leading-relaxed mb-8">Diseñamos ecosistemas digitales basados en Psicología Cognitiva. Reducimos la carga cognitiva del usuario y aplicamos principios de Behavioral Economics para guiar de forma fluida hacia la acción deseada.</p>
+        <ul class="mt-auto space-y-4 text-sm text-on-surface-variant font-semibold">
+          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Diseño de Carga Cognitiva Mínima</li>
+          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Economía del Comportamiento (Nudges)</li>
+          <li class="flex items-center gap-3"><svg class="icon-svg check-icon w-5 h-5" viewBox="0 0 24 24"><path fill="currentColor" d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/></svg> Prototipado Basado en Evidencia</li>
+        </ul>
+      </div>
+    </div>
+  </section>
 </main>
 
-<!-- FOOTER -->
-<footer class="bg-[#061542] text-[#fcf9f8] pt-24 pb-48 md:pb-64 px-6 md:px-12 border-t border-white/5">
-  <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-12 text-center">
-    <a href="index.html" class="flex items-center gap-3"><img alt="aripa" class="h-10" src="./assets/aripa-logo.png"/></a>
-    <nav class="flex flex-wrap justify-center gap-10">
-      <a class="text-white/40 hover:text-white transition-colors text-sm font-medium" href="politica-cookies.html">Política de cookies</a>
-      <a class="text-white/40 hover:text-white transition-colors text-sm font-medium" href="politica-privacidad.html">Privacidad</a>
-      <a class="text-white/40 hover:text-white transition-colors text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
+<!-- FOOTER (Sync with Index) -->
+<footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-20 px-6 md:px-12 border-t border-white/5">
+  <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
+    <a href="index.html" class="flex items-center gap-2 md:gap-3 group" aria-label="Aripa - Ir al inicio">
+      <img alt="aripa" class="h-8 md:h-10 w-auto object-contain" src="./assets/aripa-logo.png" width="106" height="32"/>
+    </a>
+    <nav class="flex flex-wrap justify-center gap-6 md:gap-10">
+      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-cookies.html">Política de cookies</a>
+      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-privacidad.html">Privacidad</a>
+      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
     </nav>
-    <div class="max-w-xl text-white/40 text-[10px] uppercase tracking-[0.2em] leading-relaxed">
+    <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4">
       Consultoría estratégica enfocada en optimización basada en datos y sistemas conversacionales (GEO). Transformamos activos digitales en autoridad temática y crecimiento de alto rendimiento.
     </div>
-    <a href="https://www.linkedin.com/company/aripa/" target="_blank" class="hover:opacity-80 transition-opacity"><svg class="h-6 w-6" viewBox="0 0 24 24" fill="white"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
-    <p class="text-white/40 text-[10px] uppercase tracking-widest">© 2026 aripa Consulting | Javier Rodriguez de la Orden.</p>
+    <div class="flex items-center gap-4">
+      <a href="https://www.linkedin.com/company/aripa/" target="_blank" class="group transition-transform hover:scale-110"><svg class="h-6 w-6 group-hover:opacity-80 transition-opacity" viewBox="0 0 24 24" fill="white"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+    </div>
+    <p class="text-white/40 text-[10px] uppercase tracking-widest leading-relaxed">© 2026 aripa Consulting | Javier Rodriguez de la Orden.</p>
   </div>
 </footer>
 
-<!-- BOTTOM BARS -->
-<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-4 bg-[#061542]/95 backdrop-blur-2xl md:hidden" id="mobile-bottom-nav">
-  <button class="btn-after w-full text-white py-4 rounded-xl font-bold tracking-widest uppercase text-xs" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta">HABLEMOS</button>
+<!-- BOTTOM BARS (Sync with Index) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl md:hidden" id="mobile-bottom-nav" style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
+  <button type="button" class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta">HABLEMOS</button>
 </nav>
 
-<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/90 backdrop-blur-xl border-t border-black/5 px-12 py-5 items-center justify-between" id="sticky-bottom-bar">
+<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 px-6 md:px-12 py-4 items-center justify-between" id="sticky-bottom-bar">
   <div class="flex flex-col">
-    <span class="text-primary font-extrabold text-sm tracking-tight flex items-center gap-2"><svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M120-120v-542l200-200 160 160 260-260 56 56-316 316-160-160-144 144v486h-56Z"/></svg> ¿Hablamos de tu próxima fase de crecimiento?</span>
-    <span class="text-[11px] text-on-surface-variant font-medium ml-8">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
+    <span class="text-primary font-bold text-sm tracking-tight flex items-center gap-2"><svg class="icon-svg text-secondary text-lg" viewBox="0 -960 960 960"><path d="M120-160q-33 0-56.5-23.5T40-240q0-33 23.5-56.5T120-320h10.5q4.5 0 9.5 2l182-182q-2-5-2-9.5V-520q0-33 23.5-56.5T400-600q33 0 56.5 23.5T480-520q0 2-2 20l102 102q5-2 9.5-2h21q4.5 0 9.5 2l142-142q-2-5-2-9.5V-560q0-33 23.5-56.5T840-640q33 0 56.5 23.5T920-560q0 33-23.5 56.5T840-480h-10.5q-4.5 0-9.5-2L678-340q2 5 2 9.5v10.5q0 33-23.5 56.5T600-240q-33 0-56.5-23.5T520-320v-10.5q0-4.5 2-9.5L420-442q-5 2-9.5 2H400q-2 0-20-2L198-260q2 5 2 9.5v10.5q0 33-23.5 56.5T120-160Zm40-401-25-54-54-25 54-25 25-54 25 54 54 25-54 25-25 54Zm440-39-38-82-82-38 82-38 38-82 38 82 82 38-82 38-38 82Z"/></svg> ¿Hablamos de tu próxima fase de crecimiento?</span>
+    <span class="text-[11px] font-normal text-on-surface-variant ml-7">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
   </div>
-  <button class="btn-after text-white px-10 py-3 rounded-xl font-bold text-xs uppercase tracking-widest" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta">HABLEMOS</button>
+  <button type="button" class="cta-core btn-after text-white px-8 py-3 rounded-xl flex items-center justify-center gap-2" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta">HABLEMOS</button>
 </div>
 
 <!-- CONTACT MODAL -->
 <div class="modal-overlay" id="contact-modal">
-  <div class="modal-panel p-8 md:p-12 relative">
-    <h4 class="text-3xl md:text-4xl font-extrabold text-primary mb-2">Hablemos</h4>
-    <p class="text-on-surface-variant mb-10 font-medium">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
+  <div class="modal-panel p-8 md:p-12">
+    <div class="flex justify-between items-start gap-4 mb-8">
+      <h2 class="text-2xl md:text-4xl font-extrabold text-primary">Hablemos</h2>
+      <button class="text-primary/40 hover:text-primary transition-colors" onclick="closeModal('contact-modal')"><svg class="icon-svg text-3xl" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
+    </div>
     <form class="space-y-6" onsubmit="handleFormSubmit(event)">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <input type="text" name="name" placeholder="Nombre" required class="form-input"/>
         <input type="tel" name="phone" placeholder="Teléfono" required class="form-input"/>
       </div>
       <input type="email" name="email" placeholder="Email Corporativo" required class="form-input"/>
-      <select name="service" class="form-input">
-        <option value="conversion">Conversión & CRO</option>
-        <option value="seo-geo">SEO & GEO</option>
-        <option value="ux">UX & Behavioral</option>
-        <option value="general">Consulta general</option>
-      </select>
+      <select name="service" class="form-input"><option value="conversion">Conversión & CRO</option><option value="seo-geo">SEO & GEO</option><option value="ux">UX & Behavioral</option><option value="general">Consulta general</option></select>
       <textarea name="message" placeholder="¿Cómo podemos ayudarte?" class="form-input min-h-[120px] resize-none"></textarea>
       <button type="submit" id="submit-btn" class="btn-submit">Enviar Solicitud</button>
     </form>
-    <button class="absolute top-8 right-8 text-primary/30 hover:text-primary transition-colors" onclick="closeModal('contact-modal')"><svg class="icon-svg text-2xl" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></button>
   </div>
 </div>
 
 <!-- SUCCESS MODAL -->
-<div class="modal-overlay" id="success-modal">
+<div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true">
   <div class="modal-panel p-10 md:p-16 text-center">
     <div class="bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 w-full max-w-[200px]" style="height: 56px; min-height: 56px;">
-      <svg class="icon-svg text-secondary text-3xl" viewBox="0 -960 960 960"><path d="M160-120v-560q0-33 23.5-56.5T240-760h160v-80q0-33 23.5-56.5T480-960h160q33 0 56.5 23.5T752-840v80h160q33 0 56.5 23.5T1024-680v560H160Zm80-80h704v-480H240v480Zm240-560h160v-80H480v80Z"/></svg>
+      <svg class="icon-svg text-secondary mb-4 text-3xl" style="fill: currentColor;" viewBox="0 -960 960 960"><path d="M160-120v-560q0-33 23.5-56.5T240-760h160v-80q0-33 23.5-56.5T480-960h160q33 0 56.5 23.5T752-840v80h160q33 0 56.5 23.5T1024-680v560H160Zm80-80h704v-480H240v480Zm240-560h160v-80H480v80Z"/></svg>
     </div>
     <h2 class="text-3xl font-extrabold font-headline text-primary mb-4">¡Solicitud recibida!</h2>
     <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
       Tu mensaje ha sido entregado correctamente. Un consultor senior revisará tu caso personalmente y recibirás una respuesta en menos de 24 horas.
     </p>
-    <button type="button" class="btn-submit !w-auto px-12" onclick="closeModal('success-modal')">ENTENDIDO</button>
+    <button type="button" class="cta-core btn-lavender !w-auto px-12 py-4 rounded-xl" onclick="closeModal('success-modal')">
+      ENTENDIDO
+    </button>
   </div>
 </div>
 
 <script>
 (function () {
-  window.toggleDrawer = function () {
-    const d = document.getElementById('drawer');
-    if (d) d.classList.toggle('invisible');
-  };
-
   window.openContactModal = () => { document.getElementById('contact-modal').classList.add('active'); document.body.classList.add('modal-open'); };
   window.closeModal = (id) => { document.getElementById(id).classList.remove('active'); document.body.classList.remove('modal-open'); };
+
+  let heroBottom = 0;
+  const updateMetrics = () => {
+    const hero = document.getElementById('hero-section');
+    heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 220;
+  };
+  window.addEventListener('resize', updateMetrics);
+  updateMetrics();
 
   const updateShellUI = () => {
     const h = document.getElementById('site-header');
     const s = document.getElementById('sticky-bottom-bar');
-    const m = document.getElementById('mobile-bottom-nav');
     const scrollY = window.scrollY;
     h?.classList.toggle('is-sticky', scrollY > 20);
-    s?.classList.toggle('visible', window.innerWidth >= 768 && scrollY > 600);
-    m?.classList.toggle('visible', window.innerWidth < 768 && scrollY > 150);
+    document.body.classList.toggle('scrolled', scrollY > 150);
+    s?.classList.toggle('visible', window.innerWidth >= 768 && scrollY > heroBottom - 200);
   };
   window.addEventListener('scroll', updateShellUI, { passive: true });
   window.addEventListener('resize', updateShellUI);
@@ -366,8 +359,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         body: JSON.stringify(Object.fromEntries(new FormData(e.target).entries()))
       });
       if (response.ok) { 
-        document.getElementById('contact-modal').classList.remove('active');
-        document.getElementById('success-modal').classList.add('active');
+        closeModal('contact-modal');
+        setTimeout(() => {
+          document.getElementById('success-modal').classList.add('active');
+          document.body.classList.add('modal-open');
+        }, 300);
         e.target.reset(); 
       }
     } catch (error) { alert('Error de conexión.'); } finally { btn.disabled = false; btn.innerText = originalText; }
