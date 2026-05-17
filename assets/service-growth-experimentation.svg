@@ -1,40 +1,62 @@
 <svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="960" y2="720" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="86" y1="62" x2="864" y2="648" gradientUnits="userSpaceOnUse">
       <stop stop-color="#fffdfb"/>
-      <stop offset="0.5" stop-color="#fcf9f8"/>
-      <stop offset="1" stop-color="#f5efff"/>
+      <stop offset=".52" stop-color="#f6f2ff"/>
+      <stop offset="1" stop-color="#eff7ff"/>
     </linearGradient>
-    <filter id="glow" x="180" y="80" width="600" height="540" filterUnits="userSpaceOnUse">
-      <feDropShadow dx="0" dy="30" stdDeviation="35" flood-color="#6b38fb" flood-opacity="0.14"/>
+    <linearGradient id="navy" x1="188" y1="160" x2="784" y2="568" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#061542"/>
+      <stop offset="1" stop-color="#123074"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="240" y1="318" x2="742" y2="502" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8b65ff"/>
+      <stop offset="1" stop-color="#5d31ee"/>
+    </linearGradient>
+    <filter id="shadow" x="54" y="46" width="852" height="636" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="30" stdDeviation="28" flood-color="#061542" flood-opacity=".14"/>
+    </filter>
+    <filter id="card" x="0" y="0" width="960" height="720" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#061542" flood-opacity=".10"/>
     </filter>
   </defs>
   <rect width="960" height="720" fill="url(#bg)"/>
-  
-  <circle cx="780" cy="200" r="150" fill="#6b38fb" opacity="0.04"/>
-  <circle cx="180" cy="520" r="130" fill="#061542" opacity="0.03"/>
-  
-  <g filter="url(#glow)">
-    <!-- Base Panel -->
-    <rect x="230" y="140" width="500" height="380" rx="32" fill="#ffffff" stroke="#e8e2f5" stroke-width="4"/>
-    
-    <!-- Grid ground line -->
-    <line x1="280" y1="440" x2="680" y2="440" stroke="#e5e7eb" stroke-width="3" stroke-linecap="round"/>
-    
-    <!-- Steps -->
-    <!-- Step 1 -->
-    <rect x="310" y="380" width="90" height="60" rx="12" fill="#6b38fb" fill-opacity="0.08" stroke="#6b38fb" stroke-opacity="0.2" stroke-width="2"/>
-    <!-- Step 2 -->
-    <rect x="430" y="300" width="90" height="140" rx="12" fill="#6b38fb" fill-opacity="0.15" stroke="#6b38fb" stroke-opacity="0.3" stroke-width="2"/>
-    <!-- Step 3 -->
-    <rect x="550" y="200" width="90" height="240" rx="12" fill="#061542"/>
-    
-    <!-- Dynamic soaring curve arrow -->
-    <path d="M355 350 C 430 330, 480 250, 595 160" stroke="#6b38fb" stroke-width="8" stroke-linecap="round"/>
-    <!-- Arrow head -->
-    <path d="M560 162 L600 156 L594 196" stroke="#6b38fb" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
-    
-    <!-- Target Dot -->
-    <circle cx="595" cy="160" r="10" fill="#6b38fb" stroke="#ffffff" stroke-width="3"/>
+  <circle cx="782" cy="158" r="108" fill="#6b38fb" opacity=".08"/>
+  <circle cx="174" cy="560" r="118" fill="#061542" opacity=".05"/>
+  <g filter="url(#shadow)">
+    <rect x="118" y="94" width="724" height="532" rx="44" fill="#fff"/>
+    <rect x="154" y="132" width="652" height="456" rx="30" fill="#fbfaf8" stroke="#e7e1f4"/>
+  </g>
+  <g filter="url(#card)">
+    <rect x="190" y="170" width="580" height="86" rx="24" fill="url(#navy)"/>
+    <text x="226" y="207" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Experiment portfolio</text>
+    <text x="226" y="232" fill="#cfc8ff" font-family="Arial, Helvetica, sans-serif" font-size="13">Prioritize, test, learn and scale what works</text>
+  </g>
+  <g filter="url(#card)">
+    <rect x="204" y="312" width="156" height="164" rx="26" fill="#fff" stroke="#e8e2f5"/>
+    <rect x="402" y="312" width="156" height="164" rx="26" fill="#fff" stroke="#e8e2f5"/>
+    <rect x="600" y="312" width="156" height="164" rx="26" fill="#fff" stroke="#e8e2f5"/>
+  </g>
+  <rect x="232" y="344" width="74" height="28" rx="14" fill="#f0ecff"/>
+  <rect x="430" y="344" width="74" height="28" rx="14" fill="#f0ecff"/>
+  <rect x="628" y="344" width="74" height="28" rx="14" fill="#061542"/>
+  <text x="238" y="414" fill="#061542" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Hypothesis</text>
+  <text x="450" y="414" fill="#061542" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Test</text>
+  <text x="648" y="414" fill="#061542" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Scale</text>
+  <rect x="236" y="438" width="86" height="10" rx="5" fill="#e0d9f8"/>
+  <rect x="434" y="438" width="86" height="10" rx="5" fill="#e0d9f8"/>
+  <rect x="632" y="438" width="86" height="10" rx="5" fill="#e0d9f8"/>
+  <path d="M360 394H400M400 394L384 378M400 394L384 410" stroke="#6b38fb" stroke-width="5" stroke-linecap="round"/>
+  <path d="M558 394H598M598 394L582 378M598 394L582 410" stroke="#6b38fb" stroke-width="5" stroke-linecap="round"/>
+  <path d="M232 522C316 558 450 566 562 530C630 508 698 466 754 412" stroke="url(#violet)" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="232" cy="522" r="9" fill="#6b38fb"/>
+  <circle cx="754" cy="412" r="9" fill="#6b38fb"/>
+  <g filter="url(#card)">
+    <rect x="220" y="524" width="164" height="46" rx="23" fill="#061542"/>
+    <text x="252" y="553" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Learning loop</text>
+  </g>
+  <g filter="url(#card)">
+    <rect x="616" y="266" width="124" height="42" rx="21" fill="#fff" stroke="#ded8f5"/>
+    <text x="644" y="293" fill="#6b38fb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Validated</text>
   </g>
 </svg>
