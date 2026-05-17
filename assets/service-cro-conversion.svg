@@ -1,0 +1,26 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="720" fill="#fbfaf8"/>
+  <rect x="84" y="78" width="792" height="564" rx="44" fill="#fff" stroke="#ece8f6"/>
+  <circle cx="790" cy="146" r="64" fill="#6b38fb" opacity=".08"/>
+  <circle cx="168" cy="558" r="84" fill="#061542" opacity=".05"/>
+  <rect x="148" y="136" width="664" height="448" rx="28" fill="#f8f6ff" stroke="#e7e1fb"/>
+  <rect x="188" y="176" width="230" height="72" rx="18" fill="#061542"/>
+  <text x="214" y="207" fill="#fff" font-family="Arial, sans-serif" font-size="15" font-weight="700">FUNNEL HEALTH</text>
+  <text x="214" y="231" fill="#cfc7ff" font-family="Arial, sans-serif" font-size="13">Friccion y conversion</text>
+  <rect x="460" y="178" width="120" height="34" rx="17" fill="#fff" stroke="#ddd5fb"/>
+  <text x="484" y="201" fill="#6b38fb" font-family="Arial, sans-serif" font-size="14" font-weight="700">+12.4%</text>
+  <rect x="600" y="178" width="172" height="34" rx="17" fill="#fff" stroke="#ddd5fb"/>
+  <text x="626" y="201" fill="#061542" font-family="Arial, sans-serif" font-size="13" font-weight="700">Landing audit</text>
+  <path d="M244 294H716L638 372H322L244 294Z" fill="#ede8ff" stroke="#d9cffd"/>
+  <path d="M312 392H648L592 460H368L312 392Z" fill="#d9cffd" stroke="#c8bafa"/>
+  <path d="M386 480H574L532 534H428L386 480Z" fill="#061542"/>
+  <text x="348" y="325" fill="#061542" font-family="Arial, sans-serif" font-size="18" font-weight="700">Trafico cualificado</text>
+  <text x="413" y="427" fill="#061542" font-family="Arial, sans-serif" font-size="18" font-weight="700">Friccion reducida</text>
+  <text x="437" y="514" fill="#fff" font-family="Arial, sans-serif" font-size="17" font-weight="700">Conversion</text>
+  <path d="M218 534C286 502 335 538 394 504C456 468 493 402 568 404C622 405 655 432 708 386" stroke="#6b38fb" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="708" cy="386" r="10" fill="#6b38fb"/>
+  <rect x="174" y="512" width="124" height="44" rx="14" fill="#fff" stroke="#e6e0f8"/>
+  <text x="194" y="540" fill="#061542" font-family="Arial, sans-serif" font-size="13" font-weight="700">Microcopy</text>
+  <rect x="660" y="492" width="116" height="44" rx="14" fill="#fff" stroke="#e6e0f8"/>
+  <text x="686" y="520" fill="#061542" font-family="Arial, sans-serif" font-size="13" font-weight="700">CTA claro</text>
+</svg>

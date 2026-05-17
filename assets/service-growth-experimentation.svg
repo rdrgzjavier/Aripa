@@ -1,0 +1,26 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="720" fill="#fbfaf8"/>
+  <rect x="84" y="78" width="792" height="564" rx="44" fill="#fff" stroke="#ece8f6"/>
+  <rect x="152" y="138" width="656" height="444" rx="30" fill="#f8f6ff" stroke="#e6e0fa"/>
+  <text x="206" y="198" fill="#061542" font-family="Arial, sans-serif" font-size="18" font-weight="700">EXPERIMENTATION SYSTEM</text>
+  <text x="206" y="226" fill="#6f7282" font-family="Arial, sans-serif" font-size="14">Hipotesis, test y aprendizaje incremental</text>
+  <rect x="204" y="282" width="148" height="170" rx="24" fill="#fff" stroke="#e7e1fb"/>
+  <rect x="406" y="282" width="148" height="170" rx="24" fill="#fff" stroke="#e7e1fb"/>
+  <rect x="608" y="282" width="148" height="170" rx="24" fill="#fff" stroke="#e7e1fb"/>
+  <circle cx="278" cy="332" r="26" fill="#ede8ff"/>
+  <circle cx="480" cy="332" r="26" fill="#ede8ff"/>
+  <circle cx="682" cy="332" r="26" fill="#061542"/>
+  <text x="252" y="398" fill="#061542" font-family="Arial, sans-serif" font-size="15" font-weight="700">Ideas</text>
+  <text x="449" y="398" fill="#061542" font-family="Arial, sans-serif" font-size="15" font-weight="700">Test</text>
+  <text x="653" y="398" fill="#061542" font-family="Arial, sans-serif" font-size="15" font-weight="700">Scale</text>
+  <rect x="236" y="418" width="86" height="10" rx="5" fill="#d8d0f8"/>
+  <rect x="438" y="418" width="86" height="10" rx="5" fill="#d8d0f8"/>
+  <rect x="640" y="418" width="86" height="10" rx="5" fill="#d8d0f8"/>
+  <path d="M356 366H398M398 366L382 350M398 366L382 382" stroke="#6b38fb" stroke-width="5" stroke-linecap="round"/>
+  <path d="M558 366H600M600 366L584 350M600 366L584 382" stroke="#6b38fb" stroke-width="5" stroke-linecap="round"/>
+  <path d="M248 500C336 544 452 550 560 518C632 496 698 462 756 406" stroke="#6b38fb" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="248" cy="500" r="9" fill="#6b38fb"/>
+  <circle cx="756" cy="406" r="9" fill="#6b38fb"/>
+  <rect x="204" y="512" width="154" height="38" rx="19" fill="#061542"/>
+  <text x="234" y="536" fill="#fff" font-family="Arial, sans-serif" font-size="13" font-weight="700">Learning loop</text>
+</svg>

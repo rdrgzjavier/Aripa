@@ -1,0 +1,23 @@
+<svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="960" height="720" fill="#fbfaf8"/>
+  <rect x="84" y="78" width="792" height="564" rx="44" fill="#fff" stroke="#ece8f6"/>
+  <rect x="154" y="136" width="652" height="448" rx="30" fill="#f8f6ff" stroke="#e6e0fa"/>
+  <text x="204" y="194" fill="#061542" font-family="Arial, sans-serif" font-size="18" font-weight="700">MEASUREMENT PLAN</text>
+  <text x="204" y="222" fill="#6f7282" font-family="Arial, sans-serif" font-size="14">Eventos, objetivos y lectura accionable</text>
+  <rect x="204" y="266" width="230" height="238" rx="24" fill="#fff" stroke="#e8e2fb"/>
+  <rect x="472" y="266" width="284" height="238" rx="24" fill="#fff" stroke="#e8e2fb"/>
+  <path d="M232 446H408" stroke="#ebe6fa" stroke-width="2"/>
+  <rect x="252" y="390" width="30" height="56" rx="8" fill="#d8d0f8"/>
+  <rect x="300" y="350" width="30" height="96" rx="8" fill="#c7b9f9"/>
+  <rect x="348" y="314" width="30" height="132" rx="8" fill="#6b38fb"/>
+  <text x="242" y="306" fill="#061542" font-family="Arial, sans-serif" font-size="14" font-weight="700">Conversion events</text>
+  <rect x="506" y="314" width="214" height="14" rx="7" fill="#061542" opacity=".85"/>
+  <rect x="506" y="354" width="184" height="12" rx="6" fill="#d8d0f8"/>
+  <rect x="506" y="384" width="146" height="12" rx="6" fill="#e5defa"/>
+  <path d="M506 448C540 424 571 436 604 402C638 366 674 372 720 332" stroke="#6b38fb" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="720" cy="332" r="10" fill="#6b38fb"/>
+  <rect x="600" y="168" width="156" height="54" rx="18" fill="#061542"/>
+  <text x="631" y="201" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="700">Dato fiable</text>
+  <rect x="204" y="526" width="552" height="24" rx="12" fill="#efeafd"/>
+  <rect x="204" y="526" width="372" height="24" rx="12" fill="#061542"/>
+</svg>
