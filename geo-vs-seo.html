@@ -4,8 +4,8 @@
 <link rel="preconnect" href="https://app.cal.com"/>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GEO vs SEO: El futuro de la visibilidad | Aripa Blog</title>
-<meta name="description" content="Descubre las diferencias entre el SEO tradicional y el nuevo GEO (Generative Engine Optimization) para dominar ChatGPT y Gemini."/>
+<title>GEO vs SEO: visibilidad en Google, ChatGPT y Gemini | Aripa Blog</title>
+<meta name="description" content="Guia practica sobre SEO, GEO y AEO para mejorar la visibilidad de marca en Google, ChatGPT, Gemini y otros entornos de busqueda generativa."/>
 <link rel="canonical" href="https://aripa.es/geo-vs-seo.html"/>
 <link rel="preload" href="./style.css" as="style">
 <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
@@ -20,9 +20,6 @@
 <meta name="author" content="Javier Rodriguez de la Orden">
 
 <link rel="stylesheet" href="./style.css">
-<style>
-  .icon-svg { width: 24px; height: 24px; fill: currentColor; display: inline-block; vertical-align: middle; }
-
 <style>
   .glass-header { background-color: rgba(6,21,66,0.8); backdrop-filter: blur(12px); }
   .btn-after {
@@ -43,6 +40,310 @@
     padding-bottom: env(safe-area-inset-bottom, 0px);
   }
   .scrolled #mobile-bottom-nav { transform: translateY(0); }
+  .drawer-transition { transition: transform 300ms ease-in-out; }
+  body.modal-open { overflow:hidden; overscroll-behavior:contain; }
+  .modal-overlay { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background:rgba(6,21,66,.85); backdrop-filter:blur(12px); z-index:100; padding:1.5rem; opacity:0; pointer-events:none; transition:opacity .3s ease; }
+  .modal-overlay.active { opacity:1; pointer-events:auto; }
+  .modal-panel { background:#fff; width:100%; max-width:36rem; border-radius:2rem; position:relative; max-height:90vh; overflow-y:auto; box-shadow:0 30px 60px -12px rgba(0,0,0,.4); transform:scale(.95); transition:transform .3s cubic-bezier(.34,1.56,.64,1); }
+  .modal-overlay.active .modal-panel { transform:scale(1); }
+  .form-input { width:100%; background:#f7f3f2; border:2px solid transparent; border-radius:1rem; padding:1rem 1.5rem; font-size:1rem; transition:all .2s ease; color:var(--primary); }
+  .form-input:focus { outline:none; background:#fff; border-color:var(--secondary-container); box-shadow:0 0 0 4px rgba(108,69,192,.1); }
+  .form-label { display:block; font-size:10px; font-weight:800; text-transform:uppercase; letter-spacing:.1em; color:rgba(6,21,66,.4); margin-bottom:.75rem; margin-left:.25rem; }
+  .btn-submit { width:100%; background:linear-gradient(135deg,#8b5cf6,#6d28d9); color:#fff; font-weight:800; text-transform:uppercase; letter-spacing:.1em; padding:1.25rem; border-radius:1.25rem; box-shadow:0 10px 25px -5px rgba(109,40,217,.4); transition:all .3s ease; }
+  .btn-submit:hover { transform:translateY(-2px); box-shadow:0 15px 30px -5px rgba(109,40,217,.5); }
+  #recursos-grid { padding-top:6rem; padding-bottom:7rem; }
+  #author-module { padding-bottom:7rem; }
+  @media(min-width:768px){ #recursos-grid{padding-top:8rem;padding-bottom:9rem;} #author-module{padding-bottom:10rem;} }
+  .article-shell { padding-top:7rem; padding-bottom:7rem; }
+  @media(min-width:768px){ .article-shell{padding-top:9rem;padding-bottom:9rem;} }
+  .article-card { background:#fff; border:1px solid rgba(107,56,251,.12); box-shadow:0 24px 70px rgba(6,21,66,.06); }
+  .article-body h2 { color:var(--primary); font-family:var(--font-headline); font-weight:800; letter-spacing:-.02em; font-size:clamp(1.65rem,3vw,2.25rem); margin-top:3rem; margin-bottom:1rem; }
+  .article-body h3 { color:var(--primary); font-family:var(--font-headline); font-weight:800; font-size:1.25rem; margin-top:2rem; margin-bottom:.75rem; }
+  .article-body p { color:var(--on-surface-variant); line-height:1.8; margin-bottom:1.25rem; }
+  .article-body ul { display:grid; gap:.9rem; margin:1.5rem 0; }
+  .article-body li { color:var(--on-surface-variant); line-height:1.7; padding-left:1rem; border-left:3px solid rgba(107,56,251,.22); }
+  /* Klaro Consent Manager Customization - FINAL VERSION */
+  #klaro, #klaro .klaro {
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 999999999 !important;
+  }
+  body:has(#klaro .klaro .cm-modal.cm-shown) {
+    overflow: hidden !important;
+  }
+  #klaro .klaro .cookie-notice {
+    background-color: #ffffff !important;
+    color: #061542 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important;
+    border-top: 1px solid rgba(107, 56, 251, 0.2) !important;
+    border-top: 1px solid #f3f4f6 !important;
+    padding: 0 !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    z-index: 999999999 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+  #klaro .klaro .cookie-notice .cn-body {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  #klaro .klaro .cookie-notice .cn-body p {
+    color: #061542 !important;
+    margin: 0 !important;
+  }
+  #klaro .klaro .cookie-notice .cn-ok {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 10px 4px !important;
+  }
+  #klaro .klaro .cookie-notice .cn-ok > * {
+    width: 100% !important;
+    margin: 0 !important;
+    flex: 1 1 100% !important;
+    display: block !important;
+    text-align: center !important;
+  }
+  #klaro .klaro .cookie-notice .cn-ok .cm-btn,
+  #klaro .klaro .cookie-notice .cn-ok .cm-link,
+  #klaro .klaro .cookie-notice .cn-ok a {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 12px !important;
+    display: block !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* DESKTOP CAPA 1 */
+  @media (min-width: 1024px) {
+    #klaro .klaro .cookie-notice .cn-body {
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      gap: 40px !important;
+      display: flex !important;
+    }
+    #klaro .klaro .cookie-notice .cn-body p {
+      max-width: 55% !important;
+      margin: 0 !important;
+    }
+    #klaro .klaro .cookie-notice .cn-ok {
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      width: auto !important;
+      min-width: max-content !important;
+      max-width: none !important;
+      gap: 16px !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      display: flex !important;
+    }
+    /* Force margin on the first button of the group to ensure separation */
+    #klaro .klaro .cookie-notice .cn-buttons .cm-btn:first-child {
+      margin-right: 16px !important;
+    }
+    #klaro .klaro .cookie-notice .cn-buttons {
+      display: flex !important;
+      flex-direction: row !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    #klaro .klaro .cookie-notice .cn-ok > *,
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn,
+    #klaro .klaro .cookie-notice .cn-ok .cm-link,
+    #klaro .klaro .cookie-notice .cn-ok a {
+      width: auto !important;
+      margin: 0 !important;
+      flex: 0 0 auto !important;
+      display: inline-block !important;
+      white-space: nowrap !important;
+    }
+  }
+
+  /* MOBILE CAPA 1 REPLICA CAPA 2 */
+  @media (max-width: 767px) {
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn {
+      width: 100% !important;
+      display: block !important;
+      margin-bottom: 8px !important;
+    }
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  #klaro .klaro .cookie-notice p {
+    color: #061542 !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+  }
+  /* Buttons Styling */
+  #klaro .klaro .cm-btn {
+    border-radius: 16px !important;
+    font-weight: 700 !important;
+    padding: 14px 32px !important;
+    border: none !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 0.95rem !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    margin: 8px 0 !important; /* Hard vertical margin for mobile */
+  }
+  @media (min-width: 1024px) {
+    #klaro .klaro .cm-btn {
+      width: auto !important;
+      margin: 0 12px !important; /* Hard horizontal margin for desktop */
+    }
+  }
+  #klaro .klaro .cm-btn-success {
+    background-color: #6b38fb !important;
+    color: #ffffff !important;
+    order: 3 !important;
+  }
+  #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-second, #klaro .klaro .cm-btn-decline {
+    background-color: #f3f4f6 !important;
+    color: #4b5563 !important;
+    order: 2 !important;
+  }
+  /* Ghost Button Link */
+  #klaro .klaro .cm-link {
+    color: #6b38fb !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    font-size: 0.95rem !important;
+    padding: 0 !important;
+    background: none !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    order: 1 !important;
+    border: none !important;
+    margin: 12px 0 !important; /* Vertical margin for mobile */
+  }
+  @media (min-width: 1024px) {
+    #klaro .klaro .cm-link {
+      width: auto !important;
+      padding: 14px 0 !important; /* Match vertical padding of buttons */
+      display: inline-flex !important;
+      line-height: 1 !important;
+      margin: 0 12px !important; /* Horizontal margin for desktop */
+    }
+  }
+
+  /* Capa 2 - Modal Robustness Refinements (FORCE) */
+  #klaro .klaro .cm-modal .cm-panel .cm-header,
+  #klaro .klaro .cm-header {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #061542 !important;
+  }
+  #klaro .klaro .cm-modal .cm-panel .cm-header * {
+    color: #061542 !important;
+  }
+
+  @media (max-width: 767px) {
+    #klaro .klaro .cm-modal .cm-panel .cm-footer,
+    #klaro .klaro .cm-footer,
+    #klaro .klaro .cm-footer .cm-buttons,
+    #klaro .klaro .cm-footer-buttons {
+      display: flex !important;
+      flex-direction: column !important;
+      flex-flow: column nowrap !important;
+      gap: 6px !important;
+      padding: 10px 4px !important;
+      height: auto !important;
+      width: 100% !important;
+    }
+    #klaro .klaro .cm-modal .cm-panel .cm-footer .cm-btn,
+    #klaro .klaro .cm-footer .cm-btn,
+    #klaro .klaro .cm-footer .cm-buttons .cm-btn,
+    #klaro .klaro .cm-btn {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 2px 0 !important;
+      display: block !important;
+      flex: 1 1 100% !important;
+    }
+  }
+
+  #klaro .klaro .cm-modal .cm-header .cm-close {
+    color: #061542 !important;
+  }
+  #klaro .klaro .cm-modal .cm-body {
+    padding: 20px !important;
+    background: #fff !important;
+  }
+  /* Force text colors in Modal - Universal */
+  #klaro .klaro .cm-modal p,
+  #klaro .klaro .cm-modal span,
+  #klaro .klaro .cm-modal div,
+  #klaro .klaro .cm-modal .cm-app-description,
+  #klaro .klaro .cm-modal .cm-app-title,
+  #klaro .klaro .cm-modal .cm-list-description,
+  #klaro .klaro .cm-modal .cm-purpose-description {
+    color: #061542 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  /* Toggle Switch - OFF state (gray) */
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch .slider {
+    background-color: #d1d5db !important;
+    transition: background-color 0.3s ease !important;
+  }
+  /* Toggle Switch - ON state (green) */
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch input:checked + .slider,
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch.is-checked .slider,
+  #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .slider,
+  #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .cm-switch .slider {
+    background-color: #22c55e !important;
+  }
+  #klaro .klaro .cm-modal .cm-footer {
+    border-top: 1px solid #f3f4f6 !important;
+    background: #fff !important;
+    padding: 20px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  #klaro .klaro .cm-modal .cm-footer .cm-btn {
+    flex: 1 1 auto !important;
+    min-width: 120px !important;
+  }
+  #klaro .klaro .cm-powered-by {
+    display: none !important;
+  }
+
+  /* Overlay */
+  body:has(#klaro .cookie-notice) {
+    overflow: hidden !important;
+  }
+  body:has(#klaro .cookie-notice)::before {
+    content: '' !important;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(6, 21, 66, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    z-index: 99999997 !important;
+    pointer-events: auto !important;
+  }
 </style>
 </head>
 <body class="bg-background text-on-background">
@@ -107,61 +408,26 @@
   </div>
 </header>
 
-  <main>
-    <div class="h-20 md:h-28"></div>
-    
-    <section class="max-w-4xl mx-auto py-16 px-6 md:py-24">
-      <div class="mb-12">
-        <a href="recursos.html" class="inline-flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-widest mb-6 hover:translate-x-[-4px] transition-transform">
-          <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m313-440 224 224-57 56-320-320 320-320 57 56-224 224h487v80H313Z"/></svg> Volver a Recursos
-        </a>
-        <h1 class="text-4xl md:text-6xl font-black font-headline text-primary tracking-tighter leading-tight mb-6">
-          GEO vs SEO: Cómo optimizar tu marca para ser citado por ChatGPT y Gemini
-        </h1>
-        <div class="flex items-center gap-4 text-xs font-bold uppercase tracking-widest text-secondary/60">
-          <span>Abril 2026</span>
-          <span class="w-1.5 h-1.5 rounded-full bg-secondary/30"></span>
-          <span>Estrategia IA</span>
-        </div>
+  <main id="main-content" class="article-shell bg-background">
+  <article class="max-w-[1120px] mx-auto px-6 md:px-12">
+    <a href="recursos.html" class="inline-flex items-center gap-2 text-secondary font-bold text-xs uppercase tracking-widest mb-10 hover:text-primary transition-colors">Volver a recursos</a>
+    <div class="article-card rounded-[2rem] overflow-hidden">
+      <div class="p-8 md:p-14 lg:p-20 border-b border-primary/10 bg-gradient-to-br from-white to-[#f7f3f2]">
+        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-5">SEO / GEO</p>
+        <h1 class="text-primary font-headline font-extrabold text-4xl md:text-6xl leading-[.95] tracking-tight mb-8">GEO vs SEO: como preparar tu marca para Google, ChatGPT y Gemini</h1>
+        <p class="text-on-surface-variant text-lg md:text-2xl leading-relaxed max-w-3xl">La visibilidad organica ya no depende solo del ranking clasico. Las marcas necesitan ser encontrables, comprensibles y recomendables en buscadores, asistentes y respuestas generativas.</p>
+        <div class="mt-10 flex flex-wrap gap-3 text-xs font-bold uppercase tracking-widest text-primary/45"><span>Javier Rodriguez de la Orden</span><span>Lectura estrategica</span></div>
       </div>
-
-      <div class="prose prose-lg max-w-none text-on-surface-variant leading-relaxed space-y-8 font-medium">
-        <p class="text-xl text-primary font-bold">
-          La búsqueda tradicional está muriendo. Ya no solo buscamos en Google; ahora preguntamos a IAs. El GEO (Generative Engine Optimization) es tu nueva ventaja competitiva.
-        </p>
-
-        <h2 class="text-2xl md:text-3xl font-black font-headline text-primary pt-8">¿Qué es el GEO?</h2>
-        <p>
-          Si el SEO se trata de "posicionar en links", el <strong>GEO</strong> se trata de "ser citado en respuestas". Los motores de búsqueda generativos (SGE de Google, ChatGPT Search, Perplexity) no muestran 10 links azules; construyen un párrafo de respuesta basado en fuentes de confianza.
-        </p>
-
-        <div class="bg-secondary/5 p-8 rounded-3xl border border-secondary/10 my-12">
-          <h3 class="text-lg font-bold text-secondary mb-4 uppercase tracking-widest">Los 3 Pilares del GEO</h3>
-          <ul class="space-y-4">
-            <li class="flex items-start gap-3"><svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="m344-60-76-128-144-32 14-148-98-112 98-112-14-148 144-32 76-128 136 58 136-58 76 128 144 32-14 148 98 112-98 112 14 148-144 32-76 128-136-58-136 58Zm34-102 102-44 102 44 56-96 110-24-10-112 74-84-74-84 10-112-110-24-56-96-102 44-102-44-56 96-110 24 10 112-74 84 74 84-10 112 110 24 56 96Zm102-178 204-204-56-56-148 148-72-72-56 56 128 128Z"/></svg> <strong>Autoridad de Entidad:</strong> Datos estructurados que confirman quién eres.</li>
-            <li class="flex items-start gap-3"><svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M480-160q-100 0-170-70t-70-170q0-100 70-170t170-70q100 0 170 70t70 170q0 100-70 170t-170 70Zm0-80q67 0 113.5-46.5T640-400q0-67-46.5-113.5T480-560q-67 0-113.5 46.5T320-400q0 67 46.5 113.5T480-240Z"/></svg> <strong>Relevancia de Respuesta:</strong> Contenido diseñado no para keywords, sino para resolver dudas complejas.</li>
-            <li class="flex items-start gap-3"><svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M720-80q-50 0-85-35t-35-85q0-7 1-14.5t3-13.5L322-392q-17 12-37 18.5t-41 6.5q-58 0-99-41t-41-99q0-58 41-99t99-41q21 0 41 6.5t37 18.5l282-164q-2-6-3-13.5t-1-14.5q0-50 35-85t85-35q50 0 85 35t35 85q0 50-35 85t-85 35q-21 0-41-6.5t-37-18.5L298-432q2-6 3-13.5t1-14.5q0 7-1 14.5t-3 13.5l282 164q17-12 37-18.5t41-6.5q58 0 99 41t41 99q0 58-41 99t-99 41ZM720-160q17 0 28.5-11.5T760-200q0-17-11.5-28.5T720-240q-17 0-28.5 11.5T680-200q0 17 11.5 28.5T720-160ZM244-407q17 0 28.5-11.5T284-447q0-17-11.5-28.5T244-487q-17 0-28.5 11.5T204-447q0 17 11.5 28.5T244-407Zm476-313q17 0 28.5-11.5T760-760q0-17-11.5-28.5T720-800q-17 0-28.5 11.5T680-760q0 17 11.5 28.5T720-720Z"/></svg> <strong>Citabilidad:</strong> Estructurar frases cortas y potentes que las IAs puedan "copiar y pegar" fácilmente.</li>
-          </ul>
-        </div>
-
-        <h2 class="text-2xl md:text-3xl font-black font-headline text-primary pt-8">La Hoja de Ruta</h2>
-        <p>
-          Para 2026, el 50% de las búsquedas comerciales se resolverán mediante IA. Si tu marca no aparece en esas respuestas, simplemente no existes para el consumidor moderno. En Aripa, ayudamos a las empresas a realizar esta transición técnica y de contenido.
-        </p>
+      <div class="grid lg:grid-cols-[1fr_320px] gap-0">
+        <div class="article-body p-8 md:p-14 lg:p-20"><h2>SEO, GEO y AEO no compiten: se complementan</h2><p>El SEO sigue siendo la base para que una marca sea encontrada en Google. El GEO ampl&iacute;a esa base para que tambi&eacute;n sea interpretada y citada por sistemas generativos como ChatGPT, Gemini o Perplexity. El AEO trabaja la respuesta directa: claridad, estructura y autoridad.</p><h2>Que cambia en la visibilidad generativa</h2><p>Los motores conversacionales no solo leen palabras clave. Buscan entidades claras, contexto, pruebas, consistencia sem&aacute;ntica y contenido que pueda resumirse sin perder rigor. La pregunta deja de ser solo en qu&eacute; posici&oacute;n apareces y pasa a ser si tu marca forma parte de la respuesta.</p><h3>Prioridades practicas</h3><ul><li>Definir entidades, servicios, problemas y audiencias con lenguaje consistente.</li><li>Crear contenidos que expliquen decisiones, metodolog&iacute;a, evidencia y casos de uso.</li><li>Conectar contenido, datos estructurados y experiencia de usuario para reducir ambig&uuml;edad.</li><li>Medir consultas, menciones, leads cualificados y conversiones, no solo trafico.</li></ul><h2>Como lo trabajamos en Aripa</h2><p>Una estrategia moderna combina arquitectura SEO, contenido orientado a decision, analitica y CRO. No se trata de publicar mas, sino de construir activos digitales que los usuarios y los sistemas puedan entender, comparar y recomendar.</p></div>
+        <aside class="bg-[#061542] text-white p-8 md:p-10 flex flex-col justify-between gap-10">
+          <div><p class="text-white/45 text-[10px] font-bold uppercase tracking-widest mb-4">Aripa</p><h2 class="text-2xl font-headline font-extrabold mb-4">Optimizacion con criterio de negocio</h2><p class="text-white/65 leading-relaxed">CRO, analitica, UX y GEO conectados para mejorar visibilidad, confianza y conversion.</p></div>
+          <button class="btn-after px-6 py-4 rounded-2xl text-white font-bold uppercase tracking-widest text-xs hover:scale-[1.02] transition-transform" onclick="openModal('contact-modal')">Hablemos</button>
+        </aside>
       </div>
-
-      <!-- Compact Author Strip -->
-      <div class="mt-20 pt-12 border-t border-secondary/10">
-        <div class="bg-white p-6 rounded-3xl border border-secondary/10 shadow-xl flex items-center gap-6 max-w-2xl">
-          <img alt="Javier Rodriguez de la Orden" class="w-20 h-20 rounded-full object-cover shadow-md" src="./assets/javier-profile.png"/>
-          <div>
-            <h4 class="font-black font-headline text-primary text-xl">Javier Rodriguez de la Orden</h4>
-            <p class="text-sm text-on-surface-variant leading-relaxed">Fundador de Aripa & Docente en Shifta by Elisava. Experto en CRO y estrategia GEO.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
+    </div>
+  </article>
+</main>
 
   <!-- Same Footer -->
   <!-- FOOTER -->
@@ -329,73 +595,91 @@
     Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
     Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view","useSlotsViewOnSmallScreen":true});
   </script>
-
-  <!-- Success Modal -->
-  <div id="success-feedback-modal" class="success-modal">
-    <div class="success-modal-content">
-        <div class="success-icon">
-            <svg class="icon-svg" style="width:32px;height:32px;" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm128-400-184 184-88-88-56 56 144 144 240-240-56-56Z"/></svg>
-        </div>
-        <h3 class="success-title">Gracias</h3>
-        <p class="success-desc">Hemos recibido tu mensaje. Te contactaremos pronto.</p>
-        <button class="btn-close-success" onclick="closeSuccessModal()">Cerrar</button>
-    </div>
-  </div>
-
-  <!-- Contact Modal -->
-  <div class="fixed inset-0 bg-black/60 backdrop-blur-sm z-[90] flex items-center justify-center p-6 hidden" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
-    <div class="modal-panel bg-white w-full max-w-md md:max-w-xl rounded-2xl md:rounded-3xl p-8 md:p-12 relative overflow-hidden shadow-2xl max-h-[90vh] overflow-y-auto">
-      <div class="mb-6 md:mb-8">
-        <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-2" id="contact-modal-title">Hablemos</h4>
-        <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
-      </div>
-      <form class="space-y-4 md:space-y-6" id="contact-form" onsubmit="handleFormSubmit(event)">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
-          <div>
-            <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-name">Nombre *</label>
-            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
-                   id="c-name" placeholder="Tu nombre" required type="text"/>
-          </div>
-          <div>
-            <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-phone">Teléfono *</label>
-            <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
-                   id="c-phone" placeholder="+34 000 000 000" required type="tel"/>
-          </div>
-        </div>
-        <div>
-          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-email">Email Corporativo *</label>
-          <input class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 transition-all"
-                 id="c-email" placeholder="email@empresa.com" required type="email"/>
-        </div>
-        <div>
-          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-service">Servicio de interés</label>
-          <select class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 appearance-none" id="c-service">
-            <option value="general">Consulta general</option>
-          </select>
-        </div>
-        <div>
-          <label class="block text-[10px] font-bold uppercase tracking-widest text-on-surface/60 mb-1 md:mb-2" for="c-message">Mensaje</label>
-          <textarea class="w-full bg-surface-container-low border-none rounded-xl px-4 md:px-6 py-3 md:py-4 text-sm focus:ring-2 focus:ring-secondary/20 min-h-[100px] transition-all"
-                    id="c-message" placeholder="¿Cómo podemos ayudarte?"></textarea>
-        </div>
-        <button class="w-full py-4 btn-after text-white font-bold rounded-xl active:scale-95 transition-all" id="submit-btn" type="submit">
-          Enviar Solicitud
-        </button>
-      </form>
-      <button class="absolute top-4 right-4 text-on-surface-variant hover:text-primary transition-colors"
-              onclick="closeModal('contact-modal')">
-        <svg class="icon-svg text-2xl" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+<!-- CONTACT MODAL -->
+<div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <div class="modal-panel p-8 md:p-12">
+    <div class="flex justify-between items-start gap-4 mb-8">
+      <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="modal-title">Hablemos</h2>
+      <button class="flex-shrink-0 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('contact-modal')" aria-label="Cerrar">
+        <svg class="icon-svg text-3xl" style="width:1.875rem;height:1.875rem;" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
       </button>
     </div>
-  </div>
 
+    <div class="mb-10">
+      <p class="text-on-surface-variant text-base leading-relaxed">
+        Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.
+      </p>
+    </div>
+
+    <form class="space-y-8" id="contact-form" onsubmit="handleFormSubmit(event)">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="space-y-3">
+          <label class="form-label" for="name">Nombre *</label>
+          <input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre" required>
+        </div>
+        <div class="space-y-3">
+          <label class="form-label" for="phone">Teléfono *</label>
+          <input type="tel" id="phone" name="phone" class="form-input" placeholder="+34 600 000 000" required>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <label class="form-label" for="email">Email Corporativo *</label>
+        <input type="email" id="email" name="email" class="form-input" placeholder="email@empresa.com" required>
+      </div>
+
+      <div class="space-y-3">
+        <label class="form-label" for="service">Servicio de interés</label>
+        <div class="relative">
+          <select id="service" name="service" class="form-input appearance-none cursor-pointer pr-12">
+            <option value="general">Consulta general</option>
+            <option value="cro">CRO y optimización de conversión</option>
+            <option value="ux">UX/UI orientado a negocio</option>
+            <option value="analitica">Analítica y medición</option>
+            <option value="growth">Growth y experimentación</option>
+            <option value="seo_geo">SEO / GEO / contenido estructurado</option>
+            <option value="landings">Landings y activos digitales</option>
+            <option value="automatizacion">Automatización operativa</option>
+            <option value="servicios_complementarios">Servicios complementarios para empresas</option>
+          </select>
+          <svg class="icon-svg absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+        </div>
+      </div>
+
+      <div class="space-y-3">
+        <label class="form-label" for="message">Mensaje</label>
+        <textarea id="message" name="message" class="form-input min-h-[120px] resize-none" placeholder="¿Cómo podemos ayudarte?"></textarea>
+      </div>
+
+      <button type="submit" class="btn-submit mt-4" id="submit-btn">
+        ENVIAR SOLICITUD
+      </button>
+    </form>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL -->
+<div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true">
+  <div class="modal-panel p-10 md:p-16 text-center">
+    <div class="bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 w-full max-w-[200px]" style="height: 56px; min-height: 56px;">
+      <svg class="icon-svg text-secondary mb-4 text-3xl" style="fill: currentColor;" viewBox="0 -960 960 960"><path d="M160-120v-560q0-33 23.5-56.5T240-760h160v-80q0-33 23.5-56.5T480-960h160q33 0 56.5 23.5T752-840v80h160q33 0 56.5 23.5T1024-680v560H160Zm80-80h704v-480H240v480Zm240-560h160v-80H480v80Z"/></svg>
+    </div>
+    <h2 class="text-3xl font-extrabold font-headline text-primary mb-4">¡Solicitud recibida!</h2>
+    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
+      Tu mensaje ha sido entregado correctamente. Un consultor senior revisará tu caso personalmente y recibirás una respuesta en menos de 24 horas.
+      <span class="block mt-4 text-sm opacity-70">Nota: Si no recibes noticias nuestras, por favor revisa tu bandeja de <strong>correo no deseado (spam)</strong>.</span>
+    </p>
+    <button type="button" class="btn-submit !w-auto px-12" onclick="closeModal('success-modal')">
+      ENTENDIDO
+    </button>
+  </div>
+</div>
+<script>
+(function(){
+  window.openModal = function(id){ const m=document.getElementById(id); if(!m) return; document.body.classList.add('modal-open'); m.classList.add('active'); };
+  window.closeModal = function(id){ const m=document.getElementById(id); if(!m) return; m.classList.remove('active'); if(!document.querySelector('.modal-overlay.active')) document.body.classList.remove('modal-open'); };
+  window.handleFormSubmit = async function(event){ event.preventDefault(); const form=event.target; const btn=document.getElementById('submit-btn'); const original=btn?btn.textContent:''; if(btn){btn.textContent='ENVIANDO...'; btn.disabled=true;} try{ const fd=new FormData(form); const res=await fetch('https://formspree.io/f/mkgwowpy',{method:'POST',body:fd,headers:{Accept:'application/json'}}); if(!res.ok) throw new Error('form'); form.reset(); closeModal('contact-modal'); setTimeout(()=>openModal('success-modal'),250); }catch(e){ alert('No se ha podido enviar el formulario. Por favor, escribenos directamente a contacto@aripa.es'); } finally{ if(btn){btn.textContent=original; btn.disabled=false;} } };
+})();
+</script>
 </body>
 </html>
-
-
-
-
-
-
-
-
