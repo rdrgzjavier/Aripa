@@ -1,23 +1,60 @@
 <svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="960" height="720" fill="#fbfaf8"/>
-  <rect x="84" y="78" width="792" height="564" rx="44" fill="#fff" stroke="#ece8f6"/>
-  <rect x="154" y="136" width="652" height="448" rx="30" fill="#f8f6ff" stroke="#e6e0fa"/>
-  <text x="204" y="194" fill="#061542" font-family="Arial, sans-serif" font-size="18" font-weight="700">MEASUREMENT PLAN</text>
-  <text x="204" y="222" fill="#6f7282" font-family="Arial, sans-serif" font-size="14">Eventos, objetivos y lectura accionable</text>
-  <rect x="204" y="266" width="230" height="238" rx="24" fill="#fff" stroke="#e8e2fb"/>
-  <rect x="472" y="266" width="284" height="238" rx="24" fill="#fff" stroke="#e8e2fb"/>
-  <path d="M232 446H408" stroke="#ebe6fa" stroke-width="2"/>
-  <rect x="252" y="390" width="30" height="56" rx="8" fill="#d8d0f8"/>
-  <rect x="300" y="350" width="30" height="96" rx="8" fill="#c7b9f9"/>
-  <rect x="348" y="314" width="30" height="132" rx="8" fill="#6b38fb"/>
-  <text x="242" y="306" fill="#061542" font-family="Arial, sans-serif" font-size="14" font-weight="700">Conversion events</text>
-  <rect x="506" y="314" width="214" height="14" rx="7" fill="#061542" opacity=".85"/>
-  <rect x="506" y="354" width="184" height="12" rx="6" fill="#d8d0f8"/>
-  <rect x="506" y="384" width="146" height="12" rx="6" fill="#e5defa"/>
-  <path d="M506 448C540 424 571 436 604 402C638 366 674 372 720 332" stroke="#6b38fb" stroke-width="6" stroke-linecap="round"/>
-  <circle cx="720" cy="332" r="10" fill="#6b38fb"/>
-  <rect x="600" y="168" width="156" height="54" rx="18" fill="#061542"/>
-  <text x="631" y="201" fill="#fff" font-family="Arial, sans-serif" font-size="16" font-weight="700">Dato fiable</text>
-  <rect x="204" y="526" width="552" height="24" rx="12" fill="#efeafd"/>
-  <rect x="204" y="526" width="372" height="24" rx="12" fill="#061542"/>
+  <defs>
+    <linearGradient id="bg" x1="90" y1="66" x2="864" y2="648" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffdfb"/>
+      <stop offset=".5" stop-color="#f5f2ff"/>
+      <stop offset="1" stop-color="#eef6ff"/>
+    </linearGradient>
+    <linearGradient id="navy" x1="170" y1="154" x2="780" y2="568" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#061542"/>
+      <stop offset="1" stop-color="#123074"/>
+    </linearGradient>
+    <linearGradient id="violet" x1="270" y1="320" x2="742" y2="496" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#8b65ff"/>
+      <stop offset="1" stop-color="#5d31ee"/>
+    </linearGradient>
+    <filter id="shadow" x="54" y="46" width="852" height="636" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="30" stdDeviation="28" flood-color="#061542" flood-opacity=".14"/>
+    </filter>
+    <filter id="card" x="0" y="0" width="960" height="720" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#061542" flood-opacity=".10"/>
+    </filter>
+  </defs>
+  <rect width="960" height="720" fill="url(#bg)"/>
+  <circle cx="790" cy="156" r="106" fill="#6b38fb" opacity=".08"/>
+  <circle cx="172" cy="562" r="120" fill="#061542" opacity=".05"/>
+  <g filter="url(#shadow)">
+    <rect x="118" y="94" width="724" height="532" rx="44" fill="#fff"/>
+    <rect x="152" y="132" width="656" height="456" rx="30" fill="#fbfaf8" stroke="#e7e1f4"/>
+  </g>
+  <g filter="url(#card)">
+    <rect x="190" y="170" width="580" height="86" rx="24" fill="url(#navy)"/>
+    <text x="226" y="207" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Measurement control room</text>
+    <text x="226" y="232" fill="#cfc8ff" font-family="Arial, Helvetica, sans-serif" font-size="13">Events, goals and decision-ready reporting</text>
+  </g>
+  <g filter="url(#card)">
+    <rect x="204" y="304" width="244" height="196" rx="28" fill="#fff" stroke="#e8e2f5"/>
+    <rect x="488" y="304" width="268" height="196" rx="28" fill="#fff" stroke="#e8e2f5"/>
+  </g>
+  <text x="236" y="346" fill="#061542" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Event quality</text>
+  <rect x="236" y="374" width="150" height="12" rx="6" fill="#e7e1f7"/>
+  <rect x="236" y="408" width="174" height="12" rx="6" fill="#d6ccf8"/>
+  <rect x="236" y="442" width="116" height="12" rx="6" fill="#e7e1f7"/>
+  <circle cx="406" cy="380" r="9" fill="#6b38fb"/>
+  <circle cx="430" cy="414" r="9" fill="#061542"/>
+  <circle cx="372" cy="448" r="9" fill="#6b38fb" opacity=".6"/>
+  <text x="524" y="346" fill="#061542" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Performance signal</text>
+  <path d="M526 454H720" stroke="#edf0f8" stroke-width="2"/>
+  <rect x="548" y="400" width="26" height="54" rx="7" fill="#e4defb"/>
+  <rect x="596" y="366" width="26" height="88" rx="7" fill="#c9bafa"/>
+  <rect x="644" y="326" width="26" height="128" rx="7" fill="url(#violet)"/>
+  <path d="M528 436C570 402 604 416 642 372C668 342 690 350 722 320" stroke="#061542" stroke-width="4" stroke-linecap="round"/>
+  <g filter="url(#card)">
+    <rect x="610" y="266" width="136" height="42" rx="21" fill="#fff" stroke="#ded8f5"/>
+    <text x="638" y="293" fill="#6b38fb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Clean data</text>
+  </g>
+  <g filter="url(#card)">
+    <rect x="322" y="526" width="316" height="56" rx="20" fill="#061542"/>
+    <text x="382" y="560" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Measure what changes decisions</text>
+  </g>
 </svg>

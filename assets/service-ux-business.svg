@@ -1,28 +1,59 @@
 <svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <rect width="960" height="720" fill="#fbfaf8"/>
-  <rect x="84" y="76" width="792" height="568" rx="44" fill="#fff" stroke="#ece8f6"/>
-  <rect x="152" y="134" width="656" height="452" rx="30" fill="#f8f6ff" stroke="#e6e0fa"/>
-  <rect x="194" y="176" width="572" height="80" rx="20" fill="#061542"/>
-  <circle cx="224" cy="216" r="8" fill="#ff8a8a"/>
-  <circle cx="250" cy="216" r="8" fill="#ffd26b"/>
-  <circle cx="276" cy="216" r="8" fill="#8fe0b8"/>
-  <text x="318" y="221" fill="#fff" font-family="Arial, sans-serif" font-size="17" font-weight="700">EXPERIENCIA ORIENTADA A ACCION</text>
-  <rect x="206" y="296" width="252" height="208" rx="24" fill="#fff" stroke="#e7e1fb"/>
-  <rect x="502" y="296" width="252" height="208" rx="24" fill="#fff" stroke="#e7e1fb"/>
-  <rect x="236" y="332" width="166" height="18" rx="9" fill="#061542" opacity=".85"/>
-  <rect x="236" y="368" width="176" height="12" rx="6" fill="#d8d0f8"/>
-  <rect x="236" y="394" width="130" height="12" rx="6" fill="#e5defa"/>
-  <rect x="236" y="438" width="118" height="36" rx="18" fill="#6b38fb"/>
-  <text x="264" y="462" fill="#fff" font-family="Arial, sans-serif" font-size="13" font-weight="700">CTA</text>
-  <path d="M432 456C486 424 501 386 552 366" stroke="#6b38fb" stroke-width="5" stroke-linecap="round" stroke-dasharray="8 12"/>
-  <path d="M552 366L528 361M552 366L536 386" stroke="#6b38fb" stroke-width="5" stroke-linecap="round"/>
-  <rect x="536" y="334" width="160" height="16" rx="8" fill="#061542" opacity=".85"/>
-  <rect x="536" y="370" width="178" height="12" rx="6" fill="#d8d0f8"/>
-  <rect x="536" y="398" width="132" height="12" rx="6" fill="#e5defa"/>
-  <rect x="536" y="444" width="146" height="38" rx="19" fill="#061542"/>
-  <text x="570" y="469" fill="#fff" font-family="Arial, sans-serif" font-size="13" font-weight="700">Decidir</text>
-  <rect x="608" y="160" width="132" height="42" rx="21" fill="#fff" stroke="#ded7f6"/>
-  <text x="635" y="187" fill="#6b38fb" font-family="Arial, sans-serif" font-size="14" font-weight="700">+31% claridad</text>
-  <rect x="194" y="530" width="572" height="24" rx="12" fill="#efeafd"/>
-  <rect x="194" y="530" width="402" height="24" rx="12" fill="#6b38fb" opacity=".85"/>
+  <defs>
+    <linearGradient id="bg" x1="94" y1="60" x2="866" y2="646" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fffdfb"/>
+      <stop offset=".52" stop-color="#f4f1ff"/>
+      <stop offset="1" stop-color="#eef7fb"/>
+    </linearGradient>
+    <linearGradient id="screen" x1="208" y1="166" x2="725" y2="564" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#07184a"/>
+      <stop offset="1" stop-color="#123074"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="268" y1="336" x2="706" y2="446" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6b38fb"/>
+      <stop offset="1" stop-color="#8b65ff"/>
+    </linearGradient>
+    <filter id="shadow" x="58" y="46" width="844" height="638" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="30" stdDeviation="28" flood-color="#061542" flood-opacity=".14"/>
+    </filter>
+    <filter id="card" x="0" y="0" width="960" height="720" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#061542" flood-opacity=".10"/>
+    </filter>
+  </defs>
+  <rect width="960" height="720" fill="url(#bg)"/>
+  <circle cx="770" cy="158" r="104" fill="#6b38fb" opacity=".08"/>
+  <circle cx="178" cy="540" r="120" fill="#061542" opacity=".05"/>
+  <g filter="url(#shadow)">
+    <rect x="128" y="96" width="704" height="528" rx="44" fill="#fff"/>
+    <rect x="168" y="138" width="624" height="444" rx="30" fill="#fbfaf8" stroke="#e7e1f4"/>
+  </g>
+  <g filter="url(#card)">
+    <rect x="220" y="178" width="520" height="342" rx="28" fill="#fff" stroke="#e8e2f5"/>
+    <rect x="220" y="178" width="520" height="70" rx="28" fill="url(#screen)"/>
+    <circle cx="258" cy="213" r="7" fill="#ff8a8a"/>
+    <circle cx="282" cy="213" r="7" fill="#ffd36d"/>
+    <circle cx="306" cy="213" r="7" fill="#86ddb4"/>
+    <text x="344" y="219" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Decision-led interface review</text>
+  </g>
+  <rect x="260" y="288" width="190" height="170" rx="22" fill="#f7f5ff" stroke="#e4def8"/>
+  <rect x="508" y="288" width="190" height="170" rx="22" fill="#f7f5ff" stroke="#e4def8"/>
+  <rect x="286" y="320" width="118" height="14" rx="7" fill="#061542" opacity=".86"/>
+  <rect x="286" y="352" width="136" height="10" rx="5" fill="#d8d0f7"/>
+  <rect x="286" y="376" width="104" height="10" rx="5" fill="#e8e3f8"/>
+  <rect x="286" y="414" width="92" height="34" rx="17" fill="url(#accent)"/>
+  <text x="312" y="436" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">CTA</text>
+  <rect x="534" y="320" width="118" height="14" rx="7" fill="#061542" opacity=".86"/>
+  <rect x="534" y="352" width="136" height="10" rx="5" fill="#d8d0f7"/>
+  <rect x="534" y="376" width="104" height="10" rx="5" fill="#e8e3f8"/>
+  <rect x="534" y="414" width="118" height="34" rx="17" fill="#061542"/>
+  <text x="560" y="436" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Next step</text>
+  <path d="M452 390C486 360 506 360 538 390" stroke="#6b38fb" stroke-width="5" stroke-linecap="round" stroke-dasharray="7 10"/>
+  <g filter="url(#card)">
+    <rect x="600" y="126" width="150" height="48" rx="24" fill="#fff" stroke="#e1daf7"/>
+    <text x="630" y="156" fill="#6b38fb" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Less friction</text>
+  </g>
+  <g filter="url(#card)">
+    <rect x="242" y="548" width="476" height="42" rx="21" fill="#061542"/>
+    <text x="350" y="574" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Clarity, hierarchy and business intent</text>
+  </g>
 </svg>
