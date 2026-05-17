@@ -1068,7 +1068,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
            onclick="openModal('service-modal-conversion')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
-          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M280-280h80v-200h-80v200Zm160 0h80v-320h-80v320Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm0-80h640v-560H160v560Z"/></svg>
+          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <circle cx="12" cy="12" r="6" />
+            <circle cx="12" cy="12" r="2" fill="currentColor" />
+          </svg>
         </div>
         <div class="flex flex-col h-full">
           <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">CRO y optimización de conversión</h3>
@@ -1122,7 +1126,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
            class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
            onclick="openModal('service-modal-growth')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
-          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M200-200v-80h404L200-684l56-56 404 404v-404h80v540H200Z"/></svg>
+          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
+            <polyline points="16 7 22 7 22 13" />
+          </svg>
         </div>
         <div class="flex flex-col h-full">
           <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">Growth y experimentación</h3>
@@ -1592,14 +1599,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="relative">
           <select id="service" name="service" class="form-input appearance-none cursor-pointer pr-12">
             <option value="general">Consulta general</option>
-            <option value="cro">CRO y optimización de conversión</option>
-            <option value="ux">UX/UI orientado a negocio</option>
-            <option value="analitica">Analítica y medición</option>
-            <option value="growth">Growth y experimentación</option>
-            <option value="seo_geo">SEO / GEO / contenido estructurado</option>
-            <option value="landings">Landings y activos digitales</option>
-            <option value="automatizacion">Automatización operativa</option>
-            <option value="servicios_complementarios">Servicios complementarios para empresas</option>
+            <option value="cro">CRO y Conversión</option>
+            <option value="ux">UX/UI de Negocio</option>
+            <option value="analitica">Analítica y Medición</option>
+            <option value="growth">Growth y Experimentación</option>
+            <option value="seo_geo">SEO, GEO y Contenido</option>
+            <option value="landings">Landings y Activos Web</option>
+            <option value="automatizacion">Automatización</option>
+            <option value="servicios_complementarios">Servicios B2B / Soporte</option>
           </select>
           <svg class="icon-svg absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
         </div>
@@ -1610,8 +1617,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <textarea id="message" name="message" class="form-input min-h-[120px] resize-none" placeholder="¿Cómo podemos ayudarte?"></textarea>
       </div>
 
-      <button type="submit" class="btn-submit mt-4" id="submit-btn">
+      <button type="submit" class="inline-flex items-center gap-3 px-8 py-5 rounded-xl bg-[#061542] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#6b38fb] hover:scale-[1.02] active:scale-95 transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(107,56,251,0.25)] justify-center w-full mt-4" id="submit-btn">
         ENVIAR SOLICITUD
+        <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
       </button>
     </form>
   </div>
@@ -1628,7 +1636,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Tu mensaje ha sido entregado correctamente. Un consultor senior revisará tu caso personalmente y recibirás una respuesta en menos de 24 horas.
       <span class="block mt-4 text-sm opacity-70">Nota: Si no recibes noticias nuestras, por favor revisa tu bandeja de <strong>correo no deseado (spam)</strong>.</span>
     </p>
-    <button type="button" class="btn-submit !w-auto px-12" onclick="closeModal('success-modal')">
+    <button type="button" class="inline-flex items-center gap-3 px-12 py-4 rounded-xl bg-[#061542] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#6b38fb] hover:scale-[1.02] active:scale-95 transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(107,56,251,0.25)] w-auto mt-4" onclick="closeModal('success-modal')">
       ENTENDIDO
     </button>
   </div>
