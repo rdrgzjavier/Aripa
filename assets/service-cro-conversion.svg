@@ -1,58 +1,43 @@
 <svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="86" y1="64" x2="858" y2="656" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="0" y1="0" x2="960" y2="720" gradientUnits="userSpaceOnUse">
       <stop stop-color="#fffdfb"/>
-      <stop offset=".55" stop-color="#f7f3ff"/>
-      <stop offset="1" stop-color="#edf5ff"/>
+      <stop offset="0.5" stop-color="#fcf9f8"/>
+      <stop offset="1" stop-color="#f5efff"/>
     </linearGradient>
-    <linearGradient id="navy" x1="224" y1="174" x2="743" y2="549" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#07184a"/>
-      <stop offset="1" stop-color="#0f2b6f"/>
+    <linearGradient id="funnel-grad-1" x1="480" y1="180" x2="480" y2="280" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7c3aed"/>
+      <stop offset="1" stop-color="#6b38fb"/>
     </linearGradient>
-    <linearGradient id="violet" x1="331" y1="242" x2="674" y2="525" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#8b65ff"/>
-      <stop offset="1" stop-color="#5b2eee"/>
+    <linearGradient id="funnel-grad-2" x1="480" y1="310" x2="480" y2="400" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#6b38fb"/>
+      <stop offset="1" stop-color="#061542"/>
     </linearGradient>
-    <filter id="shadow" x="54" y="42" width="852" height="642" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="30" stdDeviation="28" flood-color="#061542" flood-opacity=".14"/>
-    </filter>
-    <filter id="soft" x="0" y="0" width="960" height="720" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="16" stdDeviation="18" flood-color="#061542" flood-opacity=".11"/>
+    <filter id="glow" x="200" y="100" width="560" height="520" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="25" stdDeviation="30" flood-color="#6b38fb" flood-opacity="0.12"/>
     </filter>
   </defs>
   <rect width="960" height="720" fill="url(#bg)"/>
-  <circle cx="778" cy="144" r="112" fill="#6b38fb" opacity=".08"/>
-  <circle cx="172" cy="592" r="118" fill="#061542" opacity=".05"/>
-  <g filter="url(#shadow)">
-    <rect x="118" y="92" width="724" height="536" rx="42" fill="#fff"/>
-    <rect x="150" y="126" width="660" height="468" rx="30" fill="#fbfaf8" stroke="#e8e2f5"/>
+  
+  <!-- Subtle decorative ambient orbs -->
+  <circle cx="780" cy="180" r="140" fill="#6b38fb" opacity="0.04"/>
+  <circle cx="180" cy="540" r="160" fill="#061542" opacity="0.03"/>
+  
+  <!-- Minimalist Funnel Art -->
+  <g filter="url(#glow)">
+    <!-- Top Funnel Ring -->
+    <path d="M220 220 C 220 180, 740 180, 740 220 C 740 260, 220 260, 220 220 Z" fill="url(#funnel-grad-1)" opacity="0.8"/>
+    <ellipse cx="480" cy="220" rx="260" ry="40" fill="none" stroke="#ffffff" stroke-width="3" opacity="0.6"/>
+
+    <!-- Mid Funnel Ring -->
+    <path d="M320 370 C 320 340, 640 340, 640 370 C 640 400, 320 400, 320 370 Z" fill="url(#funnel-grad-2)" opacity="0.9"/>
+    <ellipse cx="480" cy="370" rx="160" ry="25" fill="none" stroke="#ffffff" stroke-width="2" opacity="0.4"/>
+
+    <!-- Bottom Funnel Ring (Active) -->
+    <ellipse cx="480" cy="510" rx="70" ry="12" fill="#061542"/>
+    <ellipse cx="480" cy="510" rx="70" ry="12" fill="none" stroke="#6b38fb" stroke-width="4"/>
+    
+    <!-- Connectors -->
+    <path d="M220 220 L320 370 M740 220 L640 370 M320 370 L410 510 M640 370 L550 510" stroke="#6b38fb" stroke-width="3" stroke-dasharray="10 8" opacity="0.3"/>
   </g>
-  <g filter="url(#soft)">
-    <rect x="190" y="168" width="580" height="94" rx="24" fill="url(#navy)"/>
-    <text x="226" y="207" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Conversion audit workspace</text>
-    <text x="226" y="234" fill="#cfc8ff" font-family="Arial, Helvetica, sans-serif" font-size="13">Landing, form and checkout friction review</text>
-    <rect x="614" y="188" width="116" height="42" rx="21" fill="#fff" opacity=".12"/>
-    <text x="644" y="215" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">CRO</text>
-  </g>
-  <g filter="url(#soft)">
-    <rect x="214" y="306" width="226" height="202" rx="28" fill="#fff" stroke="#ece7f7"/>
-    <rect x="520" y="306" width="226" height="202" rx="28" fill="#fff" stroke="#ece7f7"/>
-    <path d="M258 446H400" stroke="#eef0f8" stroke-width="2"/>
-    <rect x="274" y="393" width="24" height="53" rx="7" fill="#e4defb"/>
-    <rect x="314" y="354" width="24" height="92" rx="7" fill="#c9bafa"/>
-    <rect x="354" y="326" width="24" height="120" rx="7" fill="url(#violet)"/>
-    <text x="254" y="350" fill="#061542" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Drop-off map</text>
-    <text x="254" y="374" fill="#7c8090" font-family="Arial, Helvetica, sans-serif" font-size="12">Where users leave</text>
-    <path d="M562 452C590 430 610 438 638 408C668 376 690 380 716 342" stroke="#6b38fb" stroke-width="6" stroke-linecap="round"/>
-    <circle cx="716" cy="342" r="10" fill="#6b38fb"/>
-    <text x="560" y="350" fill="#061542" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Lift forecast</text>
-    <text x="560" y="374" fill="#7c8090" font-family="Arial, Helvetica, sans-serif" font-size="12">Impact by priority</text>
-  </g>
-  <path d="M440 408C468 380 490 380 520 408" stroke="#061542" stroke-width="4" stroke-linecap="round" stroke-dasharray="8 10"/>
-  <g filter="url(#soft)">
-    <rect x="360" y="528" width="240" height="56" rx="20" fill="#061542"/>
-    <text x="399" y="562" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Prioritized fixes, not opinions</text>
-  </g>
-  <rect x="642" y="264" width="96" height="32" rx="16" fill="#eff6ff" stroke="#dae7ff"/>
-  <text x="664" y="285" fill="#0f2b6f" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">+11.8%</text>
 </svg>

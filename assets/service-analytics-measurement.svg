@@ -1,60 +1,40 @@
 <svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="90" y1="66" x2="864" y2="648" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="0" y1="0" x2="960" y2="720" gradientUnits="userSpaceOnUse">
       <stop stop-color="#fffdfb"/>
-      <stop offset=".5" stop-color="#f5f2ff"/>
-      <stop offset="1" stop-color="#eef6ff"/>
+      <stop offset="0.5" stop-color="#fcf9f8"/>
+      <stop offset="1" stop-color="#f5efff"/>
     </linearGradient>
-    <linearGradient id="navy" x1="170" y1="154" x2="780" y2="568" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#061542"/>
-      <stop offset="1" stop-color="#123074"/>
-    </linearGradient>
-    <linearGradient id="violet" x1="270" y1="320" x2="742" y2="496" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#8b65ff"/>
-      <stop offset="1" stop-color="#5d31ee"/>
-    </linearGradient>
-    <filter id="shadow" x="54" y="46" width="852" height="636" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="30" stdDeviation="28" flood-color="#061542" flood-opacity=".14"/>
-    </filter>
-    <filter id="card" x="0" y="0" width="960" height="720" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#061542" flood-opacity=".10"/>
+    <filter id="shadow" x="180" y="100" width="600" height="520" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="25" stdDeviation="30" flood-color="#6b38fb" flood-opacity="0.1"/>
     </filter>
   </defs>
   <rect width="960" height="720" fill="url(#bg)"/>
-  <circle cx="790" cy="156" r="106" fill="#6b38fb" opacity=".08"/>
-  <circle cx="172" cy="562" r="120" fill="#061542" opacity=".05"/>
+  
+  <circle cx="820" cy="220" r="130" fill="#6b38fb" opacity="0.04"/>
+  <circle cx="160" cy="500" r="140" fill="#061542" opacity="0.03"/>
+  
   <g filter="url(#shadow)">
-    <rect x="118" y="94" width="724" height="532" rx="44" fill="#fff"/>
-    <rect x="152" y="132" width="656" height="456" rx="30" fill="#fbfaf8" stroke="#e7e1f4"/>
-  </g>
-  <g filter="url(#card)">
-    <rect x="190" y="170" width="580" height="86" rx="24" fill="url(#navy)"/>
-    <text x="226" y="207" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="700">Measurement control room</text>
-    <text x="226" y="232" fill="#cfc8ff" font-family="Arial, Helvetica, sans-serif" font-size="13">Events, goals and decision-ready reporting</text>
-  </g>
-  <g filter="url(#card)">
-    <rect x="204" y="304" width="244" height="196" rx="28" fill="#fff" stroke="#e8e2f5"/>
-    <rect x="488" y="304" width="268" height="196" rx="28" fill="#fff" stroke="#e8e2f5"/>
-  </g>
-  <text x="236" y="346" fill="#061542" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Event quality</text>
-  <rect x="236" y="374" width="150" height="12" rx="6" fill="#e7e1f7"/>
-  <rect x="236" y="408" width="174" height="12" rx="6" fill="#d6ccf8"/>
-  <rect x="236" y="442" width="116" height="12" rx="6" fill="#e7e1f7"/>
-  <circle cx="406" cy="380" r="9" fill="#6b38fb"/>
-  <circle cx="430" cy="414" r="9" fill="#061542"/>
-  <circle cx="372" cy="448" r="9" fill="#6b38fb" opacity=".6"/>
-  <text x="524" y="346" fill="#061542" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Performance signal</text>
-  <path d="M526 454H720" stroke="#edf0f8" stroke-width="2"/>
-  <rect x="548" y="400" width="26" height="54" rx="7" fill="#e4defb"/>
-  <rect x="596" y="366" width="26" height="88" rx="7" fill="#c9bafa"/>
-  <rect x="644" y="326" width="26" height="128" rx="7" fill="url(#violet)"/>
-  <path d="M528 436C570 402 604 416 642 372C668 342 690 350 722 320" stroke="#061542" stroke-width="4" stroke-linecap="round"/>
-  <g filter="url(#card)">
-    <rect x="610" y="266" width="136" height="42" rx="21" fill="#fff" stroke="#ded8f5"/>
-    <text x="638" y="293" fill="#6b38fb" font-family="Arial, Helvetica, sans-serif" font-size="13" font-weight="700">Clean data</text>
-  </g>
-  <g filter="url(#card)">
-    <rect x="322" y="526" width="316" height="56" rx="20" fill="#061542"/>
-    <text x="382" y="560" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="15" font-weight="700">Measure what changes decisions</text>
+    <!-- Base Panel -->
+    <rect x="230" y="140" width="500" height="380" rx="32" fill="#ffffff" stroke="#e8e2f5" stroke-width="4"/>
+    
+    <!-- Y-Axis Grid Lines -->
+    <line x1="280" y1="420" x2="680" y2="420" stroke="#f3f4f6" stroke-width="2"/>
+    <line x1="280" y1="330" x2="680" y2="330" stroke="#f3f4f6" stroke-width="2"/>
+    <line x1="280" y1="240" x2="680" y2="240" stroke="#f3f4f6" stroke-width="2"/>
+    
+    <!-- Abstract Bar Charts -->
+    <rect x="310" y="350" width="30" height="70" rx="8" fill="#6b38fb" fill-opacity="0.1"/>
+    <rect x="380" y="290" width="30" height="130" rx="8" fill="#6b38fb" fill-opacity="0.2"/>
+    <rect x="450" y="260" width="30" height="160" rx="8" fill="#6b38fb" fill-opacity="0.3"/>
+    <rect x="520" y="190" width="30" height="230" rx="8" fill="#061542" fill-opacity="0.8"/>
+    <rect x="590" y="220" width="30" height="200" rx="8" fill="#6b38fb"/>
+    
+    <!-- Soaring Trend Line overlay -->
+    <path d="M325 330 Q 425 310, 465 240 T 605 170" stroke="#6b38fb" stroke-width="6" stroke-linecap="round"/>
+    
+    <!-- Highlight Nodes -->
+    <circle cx="465" cy="240" r="10" fill="#6b38fb" stroke="#ffffff" stroke-width="3"/>
+    <circle cx="605" cy="170" r="12" fill="#061542" stroke="#ffffff" stroke-width="4"/>
   </g>
 </svg>

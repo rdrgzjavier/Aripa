@@ -1,59 +1,48 @@
 <svg width="960" height="720" viewBox="0 0 960 720" fill="none" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <linearGradient id="bg" x1="94" y1="60" x2="866" y2="646" gradientUnits="userSpaceOnUse">
+    <linearGradient id="bg" x1="0" y1="0" x2="960" y2="720" gradientUnits="userSpaceOnUse">
       <stop stop-color="#fffdfb"/>
-      <stop offset=".52" stop-color="#f4f1ff"/>
-      <stop offset="1" stop-color="#eef7fb"/>
+      <stop offset="0.5" stop-color="#fcf9f8"/>
+      <stop offset="1" stop-color="#f5efff"/>
     </linearGradient>
-    <linearGradient id="screen" x1="208" y1="166" x2="725" y2="564" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#07184a"/>
-      <stop offset="1" stop-color="#123074"/>
-    </linearGradient>
-    <linearGradient id="accent" x1="268" y1="336" x2="706" y2="446" gradientUnits="userSpaceOnUse">
-      <stop stop-color="#6b38fb"/>
-      <stop offset="1" stop-color="#8b65ff"/>
-    </linearGradient>
-    <filter id="shadow" x="58" y="46" width="844" height="638" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="30" stdDeviation="28" flood-color="#061542" flood-opacity=".14"/>
-    </filter>
-    <filter id="card" x="0" y="0" width="960" height="720" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#061542" flood-opacity=".10"/>
+    <filter id="shadow" x="180" y="100" width="600" height="520" filterUnits="userSpaceOnUse">
+      <feDropShadow dx="0" dy="25" stdDeviation="30" flood-color="#061542" flood-opacity="0.08"/>
     </filter>
   </defs>
   <rect width="960" height="720" fill="url(#bg)"/>
-  <circle cx="770" cy="158" r="104" fill="#6b38fb" opacity=".08"/>
-  <circle cx="178" cy="540" r="120" fill="#061542" opacity=".05"/>
+  
+  <!-- Ambient Orbs -->
+  <circle cx="200" cy="200" r="120" fill="#6b38fb" opacity="0.04"/>
+  <circle cx="800" cy="500" r="150" fill="#061542" opacity="0.03"/>
+  
+  <!-- Minimalist UX Layout -->
   <g filter="url(#shadow)">
-    <rect x="128" y="96" width="704" height="528" rx="44" fill="#fff"/>
-    <rect x="168" y="138" width="624" height="444" rx="30" fill="#fbfaf8" stroke="#e7e1f4"/>
-  </g>
-  <g filter="url(#card)">
-    <rect x="220" y="178" width="520" height="342" rx="28" fill="#fff" stroke="#e8e2f5"/>
-    <rect x="220" y="178" width="520" height="70" rx="28" fill="url(#screen)"/>
-    <circle cx="258" cy="213" r="7" fill="#ff8a8a"/>
-    <circle cx="282" cy="213" r="7" fill="#ffd36d"/>
-    <circle cx="306" cy="213" r="7" fill="#86ddb4"/>
-    <text x="344" y="219" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Decision-led interface review</text>
-  </g>
-  <rect x="260" y="288" width="190" height="170" rx="22" fill="#f7f5ff" stroke="#e4def8"/>
-  <rect x="508" y="288" width="190" height="170" rx="22" fill="#f7f5ff" stroke="#e4def8"/>
-  <rect x="286" y="320" width="118" height="14" rx="7" fill="#061542" opacity=".86"/>
-  <rect x="286" y="352" width="136" height="10" rx="5" fill="#d8d0f7"/>
-  <rect x="286" y="376" width="104" height="10" rx="5" fill="#e8e3f8"/>
-  <rect x="286" y="414" width="92" height="34" rx="17" fill="url(#accent)"/>
-  <text x="312" y="436" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">CTA</text>
-  <rect x="534" y="320" width="118" height="14" rx="7" fill="#061542" opacity=".86"/>
-  <rect x="534" y="352" width="136" height="10" rx="5" fill="#d8d0f7"/>
-  <rect x="534" y="376" width="104" height="10" rx="5" fill="#e8e3f8"/>
-  <rect x="534" y="414" width="118" height="34" rx="17" fill="#061542"/>
-  <text x="560" y="436" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Next step</text>
-  <path d="M452 390C486 360 506 360 538 390" stroke="#6b38fb" stroke-width="5" stroke-linecap="round" stroke-dasharray="7 10"/>
-  <g filter="url(#card)">
-    <rect x="600" y="126" width="150" height="48" rx="24" fill="#fff" stroke="#e1daf7"/>
-    <text x="630" y="156" fill="#6b38fb" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Less friction</text>
-  </g>
-  <g filter="url(#card)">
-    <rect x="242" y="548" width="476" height="42" rx="21" fill="#061542"/>
-    <text x="350" y="574" fill="#fff" font-family="Arial, Helvetica, sans-serif" font-size="14" font-weight="700">Clarity, hierarchy and business intent</text>
+    <!-- Main Browser Container -->
+    <rect x="230" y="140" width="500" height="380" rx="32" fill="#ffffff" stroke="#e8e2f5" stroke-width="4"/>
+    
+    <!-- Browser Dots -->
+    <circle cx="280" cy="180" r="8" fill="#ef4444" opacity="0.5"/>
+    <circle cx="304" cy="180" r="8" fill="#f59e0b" opacity="0.5"/>
+    <circle cx="328" cy="180" r="8" fill="#10b981" opacity="0.5"/>
+    
+    <!-- Main Banner Element -->
+    <rect x="270" y="220" width="420" height="100" rx="20" fill="#6b38fb" fill-opacity="0.08" stroke="#6b38fb" stroke-opacity="0.2" stroke-width="2"/>
+    
+    <!-- Hero Button Mockup -->
+    <rect x="310" y="250" width="120" height="40" rx="20" fill="#061542"/>
+    <circle cx="610" cy="270" r="24" fill="#6b38fb" opacity="0.8"/>
+    
+    <!-- Grid Modules -->
+    <rect x="270" y="350" width="195" height="120" rx="20" fill="#fcf9f8" stroke="#e8e2f5" stroke-width="2"/>
+    <rect x="495" y="350" width="195" height="120" rx="20" fill="#fcf9f8" stroke="#e8e2f5" stroke-width="2"/>
+    
+    <!-- Simple wire lines inside modules -->
+    <rect x="300" y="380" width="80" height="12" rx="6" fill="#061542" opacity="0.1"/>
+    <rect x="300" y="404" width="130" height="8" rx="4" fill="#061542" opacity="0.05"/>
+    <rect x="300" y="420" width="100" height="8" rx="4" fill="#061542" opacity="0.05"/>
+    
+    <rect x="525" y="380" width="80" height="12" rx="6" fill="#6b38fb" opacity="0.2"/>
+    <rect x="525" y="404" width="130" height="8" rx="4" fill="#061542" opacity="0.05"/>
+    <rect x="525" y="420" width="100" height="8" rx="4" fill="#061542" opacity="0.05"/>
   </g>
 </svg>
