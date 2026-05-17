@@ -124,7 +124,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .form-input { width: 100%; background: #f7f3f2; border: 2px solid transparent; border-radius: 1rem; padding: 1rem 1.5rem; font-size: 1rem; transition: all 0.2s ease; color: var(--color-on-background); }
   .form-input:focus { outline: none; background: white; border-color: var(--color-secondary); box-shadow: 0 0 0 4px rgba(108, 69, 192, 0.1); }
   .form-label { display: block; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(6, 21, 66, 0.4); margin-bottom: 0.75rem; margin-left: 0.25rem; }
-  .btn-submit { width: 100%; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: white; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 1.25rem; border-radius: 1.25rem; box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.4); transition: all 0.3s ease; }
+  .btn-submit { display: inline-flex; align-items: center; justify-content: center; gap: 0.75rem; width: 100%; background-color: #061542; color: white; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 1.25rem; border-radius: 1rem; box-shadow: 0 10px 25px rgba(6, 21, 66, 0.1); transition: all 0.3s ease; }
+  .btn-submit:hover { background-color: #6b38fb; transform: translateY(-2px) scale(1.02); box-shadow: 0 10px 25px rgba(107, 56, 251, 0.25); }
+  .btn-submit:active { transform: translateY(0) scale(0.95); }
 
   /* Hero Adjustments */
   #hero-section.hero-v6 { position: relative; min-height: 85svh; padding: 7.5rem 1.5rem 5rem; overflow: hidden; isolation: isolate; display: flex; align-items: center; justify-content: center; }
@@ -218,14 +220,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <canvas class="av6-canvas" id="hero-gradient-canvas"></canvas>
     <div class="av6-grain"></div>
     <div class="av6-content">
-      <h1 class="av6-title">Optimización para la<br/><span class="text-white">Era del CRO, SEO y GEO</span></h1>
+      <h1 class="av6-title">Optimizamos tu conversión y<br/><span class="text-white">visibilidad en la era de la IA</span></h1>
       <p class="av6-sub">Consultoría de optimización digital para mejorar conversión, claridad y rendimiento de negocio mediante CRO, UX, analítica y growth.</p>
       <button type="button" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="cta-core av6-btn-primary">Solicitar presupuesto</button>
     </div>
   </section>
 
   <!-- EXPERTISE SECTIONS - NIVEL 1 -->
-  <section class="max-w-[1440px] mx-auto px-6 md:px-12 pt-36 pb-16 md:pt-48 md:pb-24" id="servicios-principales">
+  <section class="max-w-[1440px] mx-auto px-6 md:px-12 pt-44 pb-16 md:pt-60 md:pb-24" id="servicios-principales">
     <div class="mb-16">
       <span class="expertise-label">Núcleo de Especialización</span>
       <h2 class="text-3xl md:text-5xl font-extrabold font-headline text-primary tracking-tighter mb-4">Optimización y crecimiento digital</h2>
@@ -336,62 +338,78 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <!-- Card 1 -->
-      <article class="group relative bg-white/50 p-6 md:p-7 rounded-2xl border border-outline-variant/10 hover:bg-[#061542] hover:shadow-xl transition-all duration-500 flex flex-col min-h-[320px]">
-        <div class="w-12 h-12 rounded-full bg-secondary/5 group-hover:bg-white/10 transition-colors flex items-center justify-center mb-8">
+      <button type="button"
+           class="group relative bg-white p-8 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] hover:shadow-2xl transition-all duration-500 flex flex-col gap-6 text-left w-full min-h-[360px]"
+           onclick="openContactModal('seo_geo')">
+        <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <svg class="icon-svg text-secondary text-2xl group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/></svg>
         </div>
-        <h4 class="text-lg font-bold text-primary font-headline mb-3 group-hover:text-white transition-colors">SEO / GEO / contenido estructurado</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-8 group-hover:text-white/80 transition-colors">Trabajamos estructura, semántica y contenido útil para mejorar visibilidad orgánica y preparar la web para buscadores y entornos de respuesta generativa.</p>
-        <div class="mt-auto">
-          <button type="button" class="inline-flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 hover:translate-x-1 text-left w-fit" onclick="openContactModal('seo_geo')">
-            Consultar <svg class="icon-svg text-xs text-secondary group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-          </button>
+        <div class="flex flex-col h-full w-full">
+          <h4 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">SEO / GEO / contenido estructurado</h4>
+          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-8">Trabajamos estructura, semántica y contenido útil para mejorar visibilidad orgánica y preparar la web para buscadores y entornos de respuesta generativa.</p>
+          <div class="mt-auto">
+            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
+              Consultar <svg class="icon-svg text-xs pointer-events-none" aria-hidden="true" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+            </span>
+          </div>
         </div>
-      </article>
+      </button>
 
       <!-- Card 2 -->
-      <article class="group relative bg-white/50 p-6 md:p-7 rounded-2xl border border-outline-variant/10 hover:bg-[#061542] hover:shadow-xl transition-all duration-500 flex flex-col min-h-[320px]">
-        <div class="w-12 h-12 rounded-full bg-secondary/5 group-hover:bg-white/10 transition-colors flex items-center justify-center mb-8">
+      <button type="button"
+           class="group relative bg-white p-8 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] hover:shadow-2xl transition-all duration-500 flex flex-col gap-6 text-left w-full min-h-[360px]"
+           onclick="openContactModal('landings')">
+        <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <svg class="icon-svg text-secondary text-2xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm0 0v-400 400Z"/></svg>
         </div>
-        <h4 class="text-lg font-bold text-primary font-headline mb-3 group-hover:text-white transition-colors">Landings y activos digitales</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-8 group-hover:text-white/80 transition-colors">Creamos páginas y activos orientados a campañas, captación y conversión, con foco en claridad, velocidad y medición.</p>
-        <div class="mt-auto">
-          <button type="button" class="inline-flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 hover:translate-x-1 text-left w-fit" onclick="openContactModal('landings')">
-            Consultar <svg class="icon-svg text-xs text-secondary group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-          </button>
+        <div class="flex flex-col h-full w-full">
+          <h4 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">Landings y activos digitales</h4>
+          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-8">Creamos páginas y activos orientados a campañas, captación y conversión, con foco en claridad, velocidad y medición.</p>
+          <div class="mt-auto">
+            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
+              Consultar <svg class="icon-svg text-xs pointer-events-none" aria-hidden="true" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+            </span>
+          </div>
         </div>
-      </article>
+      </button>
 
       <!-- Card 3 -->
-      <article class="group relative bg-white/50 p-6 md:p-7 rounded-2xl border border-outline-variant/10 hover:bg-[#061542] hover:shadow-xl transition-all duration-500 flex flex-col min-h-[320px]">
-        <div class="w-12 h-12 rounded-full bg-secondary/5 group-hover:bg-white/10 transition-colors flex items-center justify-center mb-8">
-          <svg class="icon-svg text-secondary text-2xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M370-80l-16-128q-18-7-33-16t-29-22l-120 48-100-174 102-78q-2-9-2-19v-22q0-10 2-20L72-610l100-174 120-48q14-13 29-22t33-16l16-128h200l16 128q18 7 33 16t29 22l120-48 100 174-102 78q2 9 2 19v22q0 10-2 20l102 78-100 174-120-48q-14 13-29 22t-33 16L590-80H370Zm110-260q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41Z"/></svg>
+      <button type="button"
+           class="group relative bg-white p-8 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] hover:shadow-2xl transition-all duration-500 flex flex-col gap-6 text-left w-full min-h-[360px]"
+           onclick="openContactModal('automatizacion')">
+        <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
+          <svg class="icon-svg text-secondary text-2xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M370-80l-16-128q-18-7-33-16t-29-22l-120 48-100-174 102-78q-2-9-2-19v-22q0-10 2-20L72-610l100-174 120 48q14-13 29-22t33-16l16-128h200l16 128q18 7 33 16t29 22l120-48 100 174-102 78q2 9 2 19v22q0 10-2 20l102 78-100 174-120-48q-14 13-29 22t-33 16L590-80H370Zm110-260q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41Z"/></svg>
         </div>
-        <h4 class="text-lg font-bold text-primary font-headline mb-3 group-hover:text-white transition-colors">Automatización operativa</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-8 group-hover:text-white/80 transition-colors">Aplicamos automatización cuando ayuda a reducir tareas manuales, mejorar seguimiento comercial o hacer más eficiente el proceso de captación.</p>
-        <div class="mt-auto">
-          <button type="button" class="inline-flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 hover:translate-x-1 text-left w-fit" onclick="openContactModal('automatizacion')">
-            Consultar <svg class="icon-svg text-xs text-secondary group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-          </button>
+        <div class="flex flex-col h-full w-full">
+          <h4 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">Automatización operativa</h4>
+          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-8">Aplicamos automatización cuando ayuda a reducir tareas manuales, mejorar seguimiento comercial o hacer más eficiente el proceso de captación.</p>
+          <div class="mt-auto">
+            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
+              Consultar <svg class="icon-svg text-xs pointer-events-none" aria-hidden="true" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+            </span>
+          </div>
         </div>
-      </article>
+      </button>
 
       <!-- Card 4 -->
-      <article class="group relative bg-white/50 p-6 md:p-7 rounded-2xl border border-outline-variant/10 hover:bg-[#061542] hover:shadow-xl transition-all duration-500 flex flex-col min-h-[320px]">
-        <div class="w-12 h-12 rounded-full bg-secondary/5 group-hover:bg-white/10 transition-colors flex items-center justify-center mb-8">
+      <button type="button"
+           class="group relative bg-white p-8 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] hover:shadow-2xl transition-all duration-500 flex flex-col gap-6 text-left w-full min-h-[360px]"
+           onclick="openContactModal('servicios_complementarios')">
+        <div class="flex-shrink-0 w-14 h-14 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <svg class="icon-svg text-secondary text-2xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm0-80h640v-440H160v440Zm240-520h160v-80H400v80ZM160-200v-440 440Z"/></svg>
         </div>
-        <h4 class="text-lg font-bold text-primary font-headline mb-3 group-hover:text-white transition-colors">Servicios complementarios</h4>
-        <p class="text-sm text-on-surface-variant leading-relaxed mb-8 group-hover:text-white/80 transition-colors">Mantenemos una red de partners validados para abordar áreas de ahorro, eficiencia y consultoría técnica cuando existe encaje y viabilidad.</p>
-        <div class="mt-auto">
-          <button type="button" class="inline-flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all duration-300 hover:translate-x-1 text-left w-fit" onclick="openContactModal('servicios_complementarios')">
-            Consultar <svg class="icon-svg text-xs text-secondary group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-          </button>
+        <div class="flex flex-col h-full w-full">
+          <h4 class="text-xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">Servicios complementarios</h4>
+          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-sm mb-8">Mantenemos una red de partners validados para abordar áreas de ahorro, eficiencia y consultoría técnica cuando existe encaje y viabilidad.</p>
+          <div class="mt-auto">
+            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
+              Consultar <svg class="icon-svg text-xs pointer-events-none" aria-hidden="true" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+            </span>
+          </div>
         </div>
-      </article>
+      </button>
     </div>
   </section>
 </main>
@@ -459,20 +477,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         <div class="relative">
           <select id="service" name="service" class="form-input appearance-none cursor-pointer pr-12">
             <option value="general">Consulta general</option>
-            <option value="cro">CRO y optimización de conversión</option>
-            <option value="ux">UX/UI orientado a negocio</option>
-            <option value="analitica">Analítica y medición</option>
-            <option value="growth">Growth y experimentación</option>
-            <option value="seo_geo">SEO / GEO / contenido estructurado</option>
-            <option value="landings">Landings y activos digitales</option>
-            <option value="automatizacion">Automatización operativa</option>
-            <option value="servicios_complementarios">Servicios complementarios para empresas</option>
+            <option value="cro">CRO y Conversión</option>
+            <option value="ux">UX/UI de Negocio</option>
+            <option value="analitica">Analítica y Medición</option>
+            <option value="growth">Growth y Experimentación</option>
+            <option value="seo_geo">SEO, GEO y Contenido</option>
+            <option value="landings">Landings y Activos Web</option>
+            <option value="automatizacion">Automatización</option>
+            <option value="servicios_complementarios">Servicios B2B / Soporte</option>
           </select>
           <svg class="icon-svg absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
         </div>
       </div>
       <div class="space-y-3"><label class="form-label" for="message">Mensaje</label><textarea id="message" name="message" class="form-input min-h-[120px] resize-none" placeholder="¿Cómo podemos ayudarte?"></textarea></div>
-      <button type="submit" class="btn-submit mt-4" id="submit-btn">ENVIAR SOLICITUD</button>
+      <button type="submit" class="btn-submit mt-4" id="submit-btn">
+        ENVIAR SOLICITUD
+        <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
+      </button>
     </form>
   </div>
 </div>
