@@ -752,5 +752,65 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       })(window, document, "clarity", "script", "wd9btxwafk");
   </script>
 
+  <!-- High-Priority Universal Text Enforcement -->
+  <script type="text/javascript">
+    (function() {
+      const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
+      const enforceKlaroCopy = () => {
+        const paragraphs = document.querySelectorAll('#klaro p, #id-cookie-notice p');
+        paragraphs.forEach(p => {
+          const txt = p.innerText || '';
+          if (
+            txt.includes('¿Podríamos habilitar') ||
+            txt.includes('Hola!') ||
+            txt.includes('herramientas de análisis') ||
+            txt.includes('herramientas de analisis')
+          ) {
+            if (p.innerText !== targetText) p.innerText = targetText;
+          }
+        });
+
+        const controls = document.querySelectorAll('#klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
+        controls.forEach(btn => {
+          const txt = (btn.innerText || '').trim();
+
+          if (
+            txt.includes('Descartar todas') ||
+            txt.includes('Rechazar todas') ||
+            txt === 'Descartar' ||
+            txt === 'Rechazar'
+          ) {
+            if (btn.innerText !== 'Rechazar') btn.innerText = 'Rechazar';
+          } else if (
+            txt.includes('Aceptar todas') ||
+            txt.includes('Aceptar seleccionadas') ||
+            txt.includes('Aceptar seleccionados') ||
+            txt.includes('De acuerdo') ||
+            txt === 'Aceptar'
+          ) {
+            if (btn.innerText !== 'Aceptar') btn.innerText = 'Aceptar';
+          } else if (
+            txt.includes('Quiero elegir') ||
+            txt.includes('Configurar') ||
+            txt.includes('Guardar')
+          ) {
+            if (btn.innerText !== 'Configurar') btn.innerText = 'Configurar';
+          }
+        });
+
+        const notice = document.querySelector('#id-cookie-notice .cookie-notice, #klaro .cookie-notice');
+        if (notice && !notice.hasAttribute('aria-label')) {
+          notice.setAttribute('aria-label', 'Aviso de cookies y privacidad');
+          notice.setAttribute('role', 'dialog');
+        }
+      };
+
+      const observer = new MutationObserver(enforceKlaroCopy);
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      setTimeout(enforceKlaroCopy, 200);
+      setTimeout(enforceKlaroCopy, 1000);
+    })();
+  </script>
+
 </body>
 </html>
