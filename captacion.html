@@ -54,6 +54,167 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End MailerLite Universal -->
 
     <style>
+        /* ══════════════════════════════════════════
+           SISTEMA DE DISEÑO (Sincronizado con index)
+        ══════════════════════════════════════════ */
+        :root {
+            --color-primary: 220 80% 14%;
+            --color-secondary: 261 84% 63%; /* #7c3aed for WCAG AA contrast */
+            --color-background: 220 80% 10%;
+        }
+
+        body {
+            background-color: hsl(var(--color-primary));
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            min-height: 100dvh;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+
+        /* Animated Canvas Background */
+        .av6-canvas { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -2; pointer-events: none; }
+        .av6-grain { position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: 0.04; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+
+        #site-header .header-inner {
+            height: 4.25rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+        }
+        @media (min-width: 768px) {
+            #site-header .header-inner { height: 5rem; }
+        }
+
+        /* ── Componente Lead (Ajuste ATF) ── */
+        .main-wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1.5rem 4rem;
+            min-height: 100vh;
+            min-height: 100dvh;
+            position: relative;
+            z-index: 10;
+        }
+
+        .glass-card {
+            width: 100%;
+            max-width: 540px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(24px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 40px;
+            padding: 3.5rem 2rem;
+            text-align: center;
+            box-shadow: 0 40px 120px rgba(0,0,0,0.6);
+            transform: translateY(-8vh);
+        }
+
+        @media (max-width: 768px) {
+            .glass-card {
+                transform: none;
+                padding: 2.5rem 1.5rem;
+                margin-top: 1rem;
+            }
+            h1 { font-size: 2.2rem; }
+            p.subtle { margin-bottom: 2rem; }
+        }
+
+        @media (min-width: 768px) {
+            .glass-card { padding: 4.5rem 3rem; }
+        }
+
+        h1 {
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(2.4rem, 7vw, 4.2rem);
+            font-weight: 800;
+            line-height: 1.05;
+            margin-bottom: 1.2rem;
+            letter-spacing: -0.03em;
+            color: #fff;
+        }
+
+        p.subtle {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 1.05rem;
+            line-height: 1.6;
+            margin-bottom: 3rem;
+            max-width: 440px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ── Formulario & Input (Mejora Foco) ── */
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+        }
+
+        .input-group {
+            background: rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 12px;
+            width: 100%;
+            max-width: 320px;
+            height: 3.8rem;
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            transition: all 0.3s ease;
+        }
+        /* Propuesta de foco sin borde azul: Brillo interno sutil */
+        .input-group:focus-within {
+            border-color: #6c45c0;
+            box-shadow: 0 0 0 1px #6c45c0, 0 0 15px rgba(108, 69, 192, 0.2);
+        }
+
+        input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            color: #fff;
+            font-size: 1rem;
+            outline: none !important;
+            box-shadow: none !important;
+            text-align: center;
+        }
+        input:focus { outline: none !important; box-shadow: none !important; }
+        input::placeholder { color: rgba(255, 255, 255, 0.25); }
+
+        /* CTA Unirme (Réplica exacta de Index) */
+        .btn-unirme {
+            width: 100%;
+            max-width: 320px;
+            background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%);
+            color: #171443;
+            border-radius: 12px;
+            padding: 16px 28px;
+            font-weight: 700;
+            border: 1px solid rgba(255,255,255,0.72);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 22px rgba(15, 8, 44, 0.3);
+            cursor: pointer;
+            transition: transform 0.2s;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .btn-unirme:hover { transform: scale(1.02); }
+
+        @media (min-width: 768px) {
+            .btn-unirme { min-width: 220px; }
+        }
+
+        /* ── Social Proof ── */
+        .social-proof { display: flex; flex-direction: column; align-items: center; gap: 12px; }
+        .avatars { display: flex; }
+        .avatar { width: 34px; height: 34px; border: 2px solid #060e2b; border-radius: 50%; margin-left: -12px; }
+        .avatar:first-child { margin-left: 0; }
+        .proof-text { font-size: 0.85rem; color: rgba(255, 255, 255, 0.4); }
         .modal-overlay {
             position: fixed;
             inset: 0;
@@ -103,289 +264,65 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     </style>
 
     <style>
-  /* Klaro Consent Manager Customization - FINAL VERSION */
-  #klaro, #klaro .klaro {
-    margin: 0 !important;
-    padding: 0 !important;
-    z-index: 999999999 !important;
-  }
-  body:has(#klaro .klaro .cm-modal.cm-shown) {
-    overflow: hidden !important;
-  }
-  #klaro .klaro .cookie-notice {
-    background-color: #ffffff !important;
-    color: #061542 !important;
-    border-radius: 0 !important;
-    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important;
-    border-top: 1px solid rgba(107, 56, 251, 0.2) !important;
-    border-top: 1px solid #f3f4f6 !important;
-    padding: 0 !important;
-    position: fixed !important;
-    bottom: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    width: 100% !important;
-    max-width: 100% !important;
-    z-index: 999999999 !important;
-    margin: 0 !important;
-    transform: none !important;
-  }
-  #klaro .klaro .cookie-notice .cn-body {
-    max-width: 1200px !important;
-    margin: 0 auto !important;
-    padding: 20px !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 20px !important;
-  }
-  #klaro .klaro .cookie-notice .cn-body p {
-    color: #061542 !important;
-    margin: 0 !important;
-  }
-  #klaro .klaro .cookie-notice .cn-ok {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 8px !important;
-    width: 100% !important;
-    padding: 10px 4px !important;
-  }
-  #klaro .klaro .cookie-notice .cn-ok > * {
-    width: 100% !important;
-    margin: 0 !important;
-    flex: 1 1 100% !important;
-    display: block !important;
-    text-align: center !important;
-  }
-  #klaro .klaro .cookie-notice .cn-ok .cm-btn,
-  #klaro .klaro .cookie-notice .cn-ok .cm-link,
-  #klaro .klaro .cookie-notice .cn-ok a {
-    width: 100% !important;
-    margin: 0 !important;
-    padding: 12px !important;
-    display: block !important;
-    text-align: center !important;
-    box-sizing: border-box !important;
-  }
-
-  /* DESKTOP CAPA 1 */
-  @media (min-width: 1024px) {
-    #klaro .klaro .cookie-notice .cn-body {
-      flex-direction: row !important;
-      justify-content: space-between !important;
-      flex-wrap: nowrap !important;
-      align-items: center !important;
-      gap: 40px !important;
-      display: flex !important;
-    }
-    #klaro .klaro .cookie-notice .cn-body p {
-      max-width: 55% !important;
-      margin: 0 !important;
-    }
-    #klaro .klaro .cookie-notice .cn-ok {
-      flex-direction: row !important;
-      flex-wrap: nowrap !important;
-      width: auto !important;
-      min-width: max-content !important;
-      max-width: none !important;
-      gap: 16px !important;
-      align-items: center !important;
-      justify-content: flex-end !important;
-      display: flex !important;
-    }
-    /* Force margin on the first button of the group to ensure separation */
-    #klaro .klaro .cookie-notice .cn-buttons .cm-btn:first-child {
-      margin-right: 16px !important;
-    }
-    #klaro .klaro .cookie-notice .cn-buttons {
-      display: flex !important;
-      flex-direction: row !important;
-      margin: 0 !important;
-      padding: 0 !important;
-    }
-    #klaro .klaro .cookie-notice .cn-ok > *,
-    #klaro .klaro .cookie-notice .cn-ok .cm-btn,
-    #klaro .klaro .cookie-notice .cn-ok .cm-link,
-    #klaro .klaro .cookie-notice .cn-ok a {
-      width: auto !important;
-      margin: 0 !important;
-      flex: 0 0 auto !important;
-      display: inline-block !important;
-      white-space: nowrap !important;
-    }
-  }
-
-  /* MOBILE CAPA 1 REPLICA CAPA 2 */
-  @media (max-width: 767px) {
-    #klaro .klaro .cookie-notice .cn-ok .cm-btn {
-      width: 100% !important;
-      display: block !important;
-      margin-bottom: 8px !important;
-    }
-    #klaro .klaro .cookie-notice .cn-ok .cm-btn:last-child {
-      margin-bottom: 0 !important;
-    }
-  }
-
-  #klaro .klaro .cookie-notice p {
-    color: #061542 !important;
-    font-size: 1rem !important;
-    line-height: 1.5 !important;
-    font-weight: 500 !important;
-    margin: 0 !important;
-  }
-  /* Buttons Styling */
-  #klaro .klaro .cm-btn {
-    border-radius: 16px !important;
-    font-weight: 700 !important;
-    padding: 14px 32px !important;
-    border: none !important;
-    width: 100% !important;
-    text-align: center !important;
-    font-size: 0.95rem !important;
-    box-shadow: none !important;
-    cursor: pointer !important;
-    margin: 8px 0 !important; /* Hard vertical margin for mobile */
-  }
-  @media (min-width: 1024px) {
-    #klaro .klaro .cm-btn {
-      width: auto !important;
-      margin: 0 12px !important; /* Hard horizontal margin for desktop */
-    }
-  }
-  #klaro .klaro .cm-btn-success {
-    background-color: #6b38fb !important;
-    color: #ffffff !important;
-    order: 3 !important;
-  }
-  #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-second, #klaro .klaro .cm-btn-decline {
-    background-color: #f3f4f6 !important;
-    color: #4b5563 !important;
-    order: 2 !important;
-  }
-  /* Ghost Button Link */
-  #klaro .klaro .cm-link {
-    color: #6b38fb !important;
-    font-weight: 700 !important;
-    text-decoration: none !important;
-    font-size: 0.95rem !important;
-    padding: 0 !important;
-    background: none !important;
-    width: 100% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    order: 1 !important;
-    border: none !important;
-    margin: 12px 0 !important; /* Vertical margin for mobile */
-  }
-  @media (min-width: 1024px) {
-    #klaro .klaro .cm-link {
-      width: auto !important;
-      padding: 14px 0 !important; /* Match vertical padding of buttons */
-      display: inline-flex !important;
-      line-height: 1 !important;
-      margin: 0 12px !important; /* Horizontal margin for desktop */
-    }
-  }
-
-  /* Capa 2 - Modal Robustness Refinements (FORCE) */
-  #klaro .klaro .cm-modal .cm-panel .cm-header,
-  #klaro .klaro .cm-header {
-    background-color: #ffffff !important;
-    background: #ffffff !important;
-    color: #061542 !important;
-  }
-  #klaro .klaro .cm-modal .cm-panel .cm-header * {
-    color: #061542 !important;
-  }
-
-  @media (max-width: 767px) {
-    #klaro .klaro .cm-modal .cm-panel .cm-footer,
-    #klaro .klaro .cm-footer,
-    #klaro .klaro .cm-footer .cm-buttons,
-    #klaro .klaro .cm-footer-buttons {
-      display: flex !important;
-      flex-direction: column !important;
-      flex-flow: column nowrap !important;
-      gap: 6px !important;
-      padding: 10px 4px !important;
-      height: auto !important;
-      width: 100% !important;
-    }
-    #klaro .klaro .cm-modal .cm-panel .cm-footer .cm-btn,
-    #klaro .klaro .cm-footer .cm-btn,
-    #klaro .klaro .cm-footer .cm-buttons .cm-btn,
-    #klaro .klaro .cm-btn {
-      width: 100% !important;
-      max-width: 100% !important;
-      margin: 2px 0 !important;
-      display: block !important;
-      flex: 1 1 100% !important;
-    }
-  }
-
-  #klaro .klaro .cm-modal .cm-header .cm-close {
-    color: #061542 !important;
-  }
-  #klaro .klaro .cm-modal .cm-body {
-    padding: 20px !important;
-    background: #fff !important;
-  }
-  /* Force text colors in Modal - Universal */
-  #klaro .klaro .cm-modal p,
-  #klaro .klaro .cm-modal span,
-  #klaro .klaro .cm-modal div,
-  #klaro .klaro .cm-modal .cm-app-description,
-  #klaro .klaro .cm-modal .cm-app-title,
-  #klaro .klaro .cm-modal .cm-list-description,
-  #klaro .klaro .cm-modal .cm-purpose-description {
-    color: #061542 !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-  }
-  /* Toggle Switch - OFF state (gray) */
-  #klaro .klaro .cm-modal .cm-list-label .cm-switch .slider {
-    background-color: #d1d5db !important;
-    transition: background-color 0.3s ease !important;
-  }
-  /* Toggle Switch - ON state (green) */
-  #klaro .klaro .cm-modal .cm-list-label .cm-switch input:checked + .slider,
-  #klaro .klaro .cm-modal .cm-list-label .cm-switch.is-checked .slider,
-  #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .slider,
-  #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .cm-switch .slider {
-    background-color: #22c55e !important;
-  }
-  #klaro .klaro .cm-modal .cm-footer {
-    border-top: 1px solid #f3f4f6 !important;
-    background: #fff !important;
-    padding: 20px !important;
-    display: flex !important;
-    flex-wrap: wrap !important;
-    gap: 10px !important;
-  }
-  #klaro .klaro .cm-modal .cm-footer .cm-btn {
-    flex: 1 1 auto !important;
-    min-width: 120px !important;
-  }
-  #klaro .klaro .cm-powered-by {
-    display: none !important;
-  }
-
-  /* Overlay */
-  body:has(#klaro .cookie-notice) {
-    overflow: hidden !important;
-  }
-  body:has(#klaro .cookie-notice)::before {
-    content: '' !important;
-    position: fixed !important;
-    inset: 0 !important;
-    background: rgba(6, 21, 66, 0.8) !important;
-    backdrop-filter: blur(10px) !important;
-    -webkit-backdrop-filter: blur(10px) !important;
-    z-index: 99999997 !important;
-    pointer-events: auto !important;
-  }
-</style>
+      /* --- Klaro Customization Block --- */
+      #klaro, #klaro .klaro { margin: 0 !important; padding: 0 !important; z-index: 999999999 !important; }
+      body:has(#klaro .klaro .cm-modal.cm-shown) { overflow: hidden !important; }
+      #klaro .klaro .cookie-notice {
+        background-color: #ffffff !important; color: #061542 !important; border-radius: 0 !important;
+        box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important; border-top: 1px solid #f3f4f6 !important;
+        padding: 0 !important; position: fixed !important; bottom: 0 !important; left: 0 !important;
+        right: 0 !important; width: 100% !important; max-width: 100% !important; z-index: 999999999 !important;
+        margin: 0 !important; transform: none !important;
+      }
+      #klaro .klaro .cookie-notice .cn-body {
+        max-width: 1200px !important; margin: 0 auto !important; padding: 20px !important;
+        display: flex !important; flex-direction: column !important; gap: 20px !important;
+      }
+      #klaro .klaro .cookie-notice .cn-body p { color: #061542 !important; margin: 0 !important; }
+      #klaro .klaro .cookie-notice .cn-ok {
+        display: flex !important; flex-direction: column !important; gap: 8px !important;
+        width: 100% !important; padding: 10px 4px !important;
+      }
+      #klaro .klaro .cookie-notice .cn-ok > * { width: 100% !important; margin: 0 !important; flex: 1 1 100% !important; display: block !important; text-align: center !important; }
+      #klaro .klaro .cookie-notice .cn-ok .cm-btn, #klaro .klaro .cookie-notice .cn-ok .cm-link, #klaro .klaro .cookie-notice .cn-ok a {
+        width: 100% !important; margin: 0 !important; padding: 12px !important; display: block !important; text-align: center !important; box-sizing: border-box !important;
+      }
+      @media (min-width: 1024px) {
+        #klaro .klaro .cookie-notice .cn-body { flex-direction: row !important; justify-content: space-between !important; flex-wrap: nowrap !important; align-items: center !important; gap: 40px !important; display: flex !important; }
+        #klaro .klaro .cookie-notice .cn-body p { max-width: 55% !important; margin: 0 !important; }
+        #klaro .klaro .cookie-notice .cn-ok { flex-direction: row !important; flex-wrap: nowrap !important; width: auto !important; min-width: max-content !important; max-width: none !important; gap: 16px !important; align-items: center !important; justify-content: flex-end !important; display: flex !important; }
+        #klaro .klaro .cookie-notice .cn-buttons .cm-btn:first-child { margin-right: 16px !important; }
+        #klaro .klaro .cookie-notice .cn-buttons { display: flex !important; flex-direction: row !important; margin: 0 !important; padding: 0 !important; }
+        #klaro .klaro .cookie-notice .cn-ok > *, #klaro .klaro .cookie-notice .cn-ok .cm-btn, #klaro .klaro .cookie-notice .cn-ok .cm-link, #klaro .klaro .cookie-notice .cn-ok a { width: auto !important; margin: 0 !important; flex: 0 0 auto !important; display: inline-block !important; white-space: nowrap !important; }
+      }
+      @media (max-width: 767px) {
+        #klaro .klaro .cookie-notice .cn-ok .cm-btn { width: 100% !important; display: block !important; margin-bottom: 8px !important; }
+        #klaro .klaro .cookie-notice .cn-ok .cm-btn:last-child { margin-bottom: 0 !important; }
+      }
+      #klaro .klaro .cookie-notice p { color: #061542 !important; font-size: 1rem !important; line-height: 1.5 !important; font-weight: 500 !important; margin: 0 !important; }
+      #klaro .klaro .cm-btn { border-radius: 16px !important; font-weight: 700 !important; padding: 14px 32px !important; border: none !important; width: 100% !important; text-align: center !important; font-size: 0.95rem !important; box-shadow: none !important; cursor: pointer !important; margin: 8px 0 !important; }
+      @media (min-width: 1024px) { #klaro .klaro .cm-btn { width: auto !important; margin: 0 12px !important; } }
+      #klaro .klaro .cm-btn-success { background-color: #6b38fb !important; color: #ffffff !important; order: 3 !important; }
+      #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-second, #klaro .klaro .cm-btn-decline { background-color: #f3f4f6 !important; color: #4b5563 !important; order: 2 !important; }
+      #klaro .klaro .cm-link { color: #6b38fb !important; font-weight: 700 !important; text-decoration: none !important; font-size: 0.95rem !important; padding: 0 !important; background: none !important; width: 100% !important; display: flex !important; align-items: center !important; justify-content: center !important; order: 1 !important; border: none !important; margin: 12px 0 !important; }
+      @media (min-width: 1024px) { #klaro .klaro .cm-link { width: auto !important; padding: 14px 0 !important; display: inline-flex !important; line-height: 1 !important; margin: 0 12px !important; } }
+      #klaro .klaro .cm-modal .cm-panel .cm-header, #klaro .klaro .cm-header { background-color: #ffffff !important; background: #ffffff !important; color: #061542 !important; }
+      #klaro .klaro .cm-modal .cm-panel .cm-header * { color: #061542 !important; }
+      @media (max-width: 767px) {
+        #klaro .klaro .cm-modal .cm-panel .cm-footer, #klaro .klaro .cm-footer, #klaro .klaro .cm-footer .cm-buttons, #klaro .klaro .cm-footer-buttons { display: flex !important; flex-direction: column !important; flex-flow: column nowrap !important; gap: 6px !important; padding: 10px 4px !important; height: auto !important; width: 100% !important; }
+        #klaro .klaro .cm-modal .cm-panel .cm-footer .cm-btn, #klaro .klaro .cm-footer .cm-btn, #klaro .klaro .cm-footer .cm-buttons .cm-btn, #klaro .klaro .cm-btn { width: 100% !important; max-width: 100% !important; margin: 2px 0 !important; display: block !important; flex: 1 1 100% !important; }
+      }
+      #klaro .klaro .cm-modal .cm-header .cm-close { color: #061542 !important; }
+      #klaro .klaro .cm-modal .cm-body { padding: 20px !important; background: #fff !important; }
+      #klaro .klaro .cm-modal p, #klaro .klaro .cm-modal span, #klaro .klaro .cm-modal div, #klaro .klaro .cm-modal .cm-app-description, #klaro .klaro .cm-modal .cm-app-title, #klaro .klaro .cm-modal .cm-list-description, #klaro .klaro .cm-modal .cm-purpose-description { color: #061542 !important; opacity: 1 !important; visibility: visible !important; }
+      #klaro .klaro .cm-modal .cm-list-label .cm-switch .slider { background-color: #d1d5db !important; transition: background-color 0.3s ease !important; }
+      #klaro .klaro .cm-modal .cm-list-label .cm-switch input:checked + .slider, #klaro .klaro .cm-modal .cm-list-label .cm-switch.is-checked .slider, #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .slider, #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .cm-switch .slider { background-color: #22c55e !important; }
+      #klaro .klaro .cm-modal .cm-footer { border-top: 1px solid #f3f4f6 !important; background: #fff !important; padding: 20px !important; display: flex !important; flex-wrap: wrap !important; gap: 10px !important; }
+      #klaro .klaro .cm-modal .cm-footer .cm-btn { flex: 1 1 auto !important; min-width: 120px !important; }
+      #klaro .klaro .cm-powered-by { display: none !important; }
+      body:has(#klaro .cookie-notice) { overflow: hidden !important; }
+      body:has(#klaro .cookie-notice)::before { content: '' !important; position: fixed !important; inset: 0 !important; background: rgba(6, 21, 66, 0.8) !important; backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important; z-index: 99999997 !important; pointer-events: auto !important; }
+    </style>
 </head>
 <body>
     <canvas class="av6-canvas" id="hero-gradient-canvas" aria-hidden="true"></canvas>
@@ -409,11 +346,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <section class="glass-card">
             <h1>Únete a la lista</h1>
             <p class="subtle">Recibe estrategias exclusivas de SEO, CRO y Crecimiento Digital directamente en tu bandeja.</p>
-            <form 
-                class="form-container ml-block-form" 
-                action="https://assets.mailerlite.com/jsonp/2289362/forms/185572320552683418/subscribe" 
-                data-code="nInGkp" 
-                method="POST" 
+            <form
+                class="form-container ml-block-form"
+                action="https://assets.mailerlite.com/jsonp/2289362/forms/185572320552683418/subscribe"
+                data-code="nInGkp"
+                method="POST"
                 onsubmit="handleMLSubmit(event)">
                 <div class="input-group">
                     <input type="email" name="fields[email]" placeholder="tu@empresa.com" required>
@@ -431,32 +368,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </section>
     </main>
 
-    <!-- FOOTER -->
-<footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-20 px-6 md:px-12 border-t border-white/5">
-  <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
-    <a href="/" class="flex items-center gap-2 md:gap-3 group" aria-label="Aripa - Ir al inicio">
-      <img alt="aripa" class="h-8 md:h-10 w-auto object-contain" src="./assets/aripa-logo.png" width="106" height="32" loading="eager" fetchpriority="high"/>
-    </a>
-    <nav class="flex flex-wrap justify-center gap-6 md:gap-10">
-      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-cookies.html">Política de cookies</a>
-      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-privacidad.html">Privacidad</a>
-      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
-    </nav>
-    <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4">
-      Consultoría de optimización digital, CRO, analítica y GEO para convertir datos, contenido y experiencia de usuario en crecimiento medible.
-    </div>
-    <div class="flex items-center gap-4">
-      <a href="https://www.linkedin.com/company/aripa/" target="_blank" rel="noopener noreferrer" class="group transition-transform hover:scale-110" aria-label="LinkedIn de aripa">
-        <svg class="h-6 w-6 group-hover:opacity-80 transition-opacity" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-        </svg>
-      </a>
-    </div>
-    <p class="text-white/40 text-[10px] font-body max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest">
-      © 2026 aripa Consulting | Javier Rodriguez de la Orden. Transformando datos en activos estratégicos de alto rendimiento.
-    </p>
-  </div>
-</footer>
+    <footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-64 md:pb-80 px-6 md:px-12 border-t border-white/5">
+      <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
+        <div class="flex items-center gap-3">
+          <img alt="aripa" class="h-8 object-contain" src="./assets/aripa-logo.png" width="106" height="32"/>
+        </div>
+        <nav class="flex flex-wrap justify-center gap-6 md:gap-10">
+          <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-cookies.html">Política de cookies</a>
+          <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="privacidad.html">Privacidad</a>
+          <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
+        </nav>
+        <p class="text-white/40 text-[10px] font-body max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest">
+          © 2026 aripa Consulting | Javier Rodriguez de la Orden.
+        </p>
+      </div>
+    </footer>
 
     <!-- SUCCESS MODAL -->
     <div id="successModal" class="modal-overlay">
@@ -494,54 +420,40 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             const h = document.getElementById('site-header');
             if (window.scrollY > 20) h.classList.add('is-sticky'); else h.classList.remove('is-sticky');
         });
-        // High-Priority Universal Text Enforcement
+        // Klaro Customization & Accessibility Fix
         (function() {
           const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
-          const buttonMap = [
-            { label: 'Rechazar', patterns: ['Descartar todas', 'Rechazar todas', 'Descartar', 'Rechazar'] },
-            { label: 'Aceptar', patterns: ['Aceptar todas', 'Aceptar seleccionadas', 'Aceptar seleccionados', 'De acuerdo', 'Aceptar'] },
-            { label: 'Configurar', patterns: ['Quiero elegir', 'Configurar', 'Guardar', 'Guardar configuración', 'Guardar seleccionadas', 'Guardar seleccionados'] }
-          ];
-
           const enforceText = () => {
-            const paragraphs = document.querySelectorAll('#klaro p, #id-cookie-notice p, #klaro #id-cookie-notice');
-            paragraphs.forEach(p => {
-              const txt = p.innerText || '';
-              if (
-                txt.includes('¿Podríamos habilitar') ||
-                txt.includes('Podríamos habilitar') ||
-                txt.includes('Podriamos habilitar') ||
-                txt.includes('Hola!') ||
-                txt.includes('We use cookies') ||
-                txt.includes('Usamos cookies') ||
-                txt.includes('herramientas de análisis') ||
-                txt.includes('herramientas de analisis')
-              ) {
-                if (p.innerText !== targetText) p.innerText = targetText;
-              }
-            });
-
-            const controls = document.querySelectorAll('#klaro button, #id-cookie-notice button, #klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
-            controls.forEach(btn => {
-              const txt = (btn.innerText || '').trim();
-              if (!txt) return;
-              const match = buttonMap.find(item => item.patterns.some(pattern => txt.includes(pattern) || txt === pattern));
-              if (match && btn.innerText !== match.label) btn.innerText = match.label;
-            });
-
             const notice = document.querySelector('#id-cookie-notice .cookie-notice, #klaro .cookie-notice');
             if (notice && !notice.hasAttribute('aria-label')) {
               notice.setAttribute('aria-label', 'Aviso de cookies y privacidad');
               notice.setAttribute('role', 'dialog');
             }
+            document.querySelectorAll('#klaro p, #id-cookie-notice p').forEach(p => {
+              const txt = p.innerText || '';
+              if (txt.includes('¿Podríamos habilitar') || txt.includes('Podríamos habilitar') || txt.includes('Podriamos habilitar') || txt.includes('Hola!') || txt.includes('We use cookies') || txt.includes('Usamos cookies') || txt.includes('herramientas de análisis') || txt.includes('herramientas de analisis')) {
+                if (p.innerText !== targetText) p.innerText = targetText;
+              }
+            });
+            document.querySelectorAll('#klaro button, #id-cookie-notice button, #klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link').forEach(btn => {
+              const txt = (btn.innerText || '').trim();
+              if (!txt) return;
+              if (txt.includes('Descartar todas') || txt.includes('Rechazar todas') || txt === 'Descartar' || txt === 'Rechazar') {
+                if (btn.innerText !== 'Rechazar') btn.innerText = 'Rechazar';
+              } else if (txt.includes('Aceptar todas') || txt.includes('Aceptar seleccionadas') || txt.includes('Aceptar seleccionados') || txt.includes('De acuerdo') || txt === 'Aceptar') {
+                if (btn.innerText !== 'Aceptar') btn.innerText = 'Aceptar';
+              } else if (txt.includes('Quiero elegir') || txt.includes('Configurar') || txt.includes('Guardar')) {
+                if (btn.innerText !== 'Configurar') btn.innerText = 'Configurar';
+              }
+            });
           };
-
           const observer = new MutationObserver(enforceText);
           observer.observe(document.documentElement, { childList: true, subtree: true, characterData: true });
           setTimeout(enforceText, 50);
           setTimeout(enforceText, 200);
           setTimeout(enforceText, 1000);
         })();
+
         // Bridge Klaro to GTM Consent Mode v2
         window.addEventListener('load', function() {
           if (typeof klaro !== 'undefined') {
