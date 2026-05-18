@@ -53,7 +53,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <!-- End MailerLite Universal -->
 
-    <style>`n.modal-overlay {
+    <style>
+        .modal-overlay {
             position: fixed;
             inset: 0;
             background: rgba(6, 14, 43, 0.8);
@@ -492,31 +493,52 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         window.addEventListener('scroll', () => {
             const h = document.getElementById('site-header');
             if (window.scrollY > 20) h.classList.add('is-sticky'); else h.classList.remove('is-sticky');
-        });`n        // High-Priority Universal Text Enforcement
+        });
+        // High-Priority Universal Text Enforcement
         (function() {
           const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
+          const buttonMap = [
+            { label: 'Rechazar', patterns: ['Descartar todas', 'Rechazar todas', 'Descartar', 'Rechazar'] },
+            { label: 'Aceptar', patterns: ['Aceptar todas', 'Aceptar seleccionadas', 'Aceptar seleccionados', 'De acuerdo', 'Aceptar'] },
+            { label: 'Configurar', patterns: ['Quiero elegir', 'Configurar', 'Guardar', 'Guardar configuración', 'Guardar seleccionadas', 'Guardar seleccionados'] }
+          ];
+
           const enforceText = () => {
-            const paragraphs = document.querySelectorAll('#klaro p, #id-cookie-notice p');
+            const paragraphs = document.querySelectorAll('#klaro p, #id-cookie-notice p, #klaro #id-cookie-notice');
             paragraphs.forEach(p => {
               const txt = p.innerText || '';
-              if (txt.includes('¿Podríamos habilitar') || txt.includes('Hola!') || txt.includes('herramientas de análisis') || txt.includes('herramientas de analisis')) {
+              if (
+                txt.includes('¿Podríamos habilitar') ||
+                txt.includes('Podríamos habilitar') ||
+                txt.includes('Podriamos habilitar') ||
+                txt.includes('Hola!') ||
+                txt.includes('We use cookies') ||
+                txt.includes('Usamos cookies') ||
+                txt.includes('herramientas de análisis') ||
+                txt.includes('herramientas de analisis')
+              ) {
                 if (p.innerText !== targetText) p.innerText = targetText;
               }
             });
-            const allBtns = document.querySelectorAll('#klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
-            allBtns.forEach(btn => {
+
+            const controls = document.querySelectorAll('#klaro button, #id-cookie-notice button, #klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
+            controls.forEach(btn => {
               const txt = (btn.innerText || '').trim();
-              if (txt.includes('Descartar todas') || txt.includes('Rechazar todas') || txt === 'Descartar' || txt === 'Rechazar') {
-                if (btn.innerText !== 'Rechazar') btn.innerText = 'Rechazar';
-              } else if (txt.includes('Aceptar todas') || txt.includes('Aceptar seleccionadas') || txt.includes('Aceptar seleccionados') || txt.includes('De acuerdo') || txt === 'Aceptar') {
-                if (btn.innerText !== 'Aceptar') btn.innerText = 'Aceptar';
-              } else if (txt.includes('Quiero elegir') || txt.includes('Configurar') || txt.includes('Guardar')) {
-                if (btn.innerText !== 'Configurar') btn.innerText = 'Configurar';
-              }
+              if (!txt) return;
+              const match = buttonMap.find(item => item.patterns.some(pattern => txt.includes(pattern) || txt === pattern));
+              if (match && btn.innerText !== match.label) btn.innerText = match.label;
             });
+
+            const notice = document.querySelector('#id-cookie-notice .cookie-notice, #klaro .cookie-notice');
+            if (notice && !notice.hasAttribute('aria-label')) {
+              notice.setAttribute('aria-label', 'Aviso de cookies y privacidad');
+              notice.setAttribute('role', 'dialog');
+            }
           };
+
           const observer = new MutationObserver(enforceText);
-          observer.observe(document.documentElement, { childList: true, subtree: true });
+          observer.observe(document.documentElement, { childList: true, subtree: true, characterData: true });
+          setTimeout(enforceText, 50);
           setTimeout(enforceText, 200);
           setTimeout(enforceText, 1000);
         })();
