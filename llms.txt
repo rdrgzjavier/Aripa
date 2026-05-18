@@ -26,3 +26,14 @@ Aripa no optimiza por intuición. Analizamos el "porqué" de cada interacción m
 - Fundador: Javier Rodriguez de la Orden.
 - Sede: España.
 - Alcance: Global (Remoto).
+
+### Entidades relacionadas
+- CRO (Conversion Rate Optimization)
+- UX Design
+- Behavioral Economics
+- Digital Analytics
+
+### Casos de uso
+- SaaS
+- eCommerce
+- Lead generation
