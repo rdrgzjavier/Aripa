@@ -14,5 +14,7 @@ User-agent: CCBot
 Allow: /
 User-agent: Google-Extended
 Allow: /
+User-agent: Googlebot
+Allow: /
 
 Sitemap: https://aripa.es/sitemap.xml
