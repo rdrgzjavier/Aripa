@@ -1,0 +1,22 @@
+# Cloudflare Pages — Redirects
+# https://developers.cloudflare.com/pages/platform/redirects/
+#
+# Formato: /origen    /destino    [código HTTP]
+# Máximo: 2.000 reglas estáticas + 100 dinámicas
+
+# Fuerza trailing-slash canónica (opcional — descomenta si lo necesitas)
+# /servicios     /servicios/    301
+
+# Página personalizada 404 (Cloudflare Pages la sirve automáticamente
+# si existe /404.html en la raíz — no hace falta regla aquí)
+# Canonical URL consolidation for SEO/GEO
+/index.html                  /                         301
+/servicios.html              /servicios                301
+/recursos.html               /recursos                 301
+/geo-vs-seo.html             /geo-vs-seo               301
+/behavioral-economics-cro.html /behavioral-economics-cro 301
+/aviso-legal.html            /aviso-legal              301
+/politica-cookies.html       /politica-cookies         301
+/politica-privacidad.html    /politica-privacidad      301
+/privacidad                  /politica-privacidad      301
+/privacidad.html             /politica-privacidad      301
