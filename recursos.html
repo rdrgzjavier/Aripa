@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="es">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Recursos Estratégicos | Aripa</title>
+<meta name="description" content="Artículos y guías sobre SEO/GEO, CRO y Behavioral Economics."/>
+
+<script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBK55KW8');</script>
+<!-- End Google Tag Manager -->
+
+<link rel="canonical" href="https://aripa.es/recursos"/>
+<link rel="preload" href="./style.css" as="style">
+<link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-600.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/aripa-logo.png" as="image">
+
+<link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
+<link rel="icon" href="/assets/favicon-64.png" sizes="64x64">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+
+<meta name="robots" content="index, follow">
+<meta name="author" content="Javier Rodriguez de la Orden">
+
+<link rel="stylesheet" href="./style.css">
+<style>
+  :root {
+    --color-primary:               220 80% 14%;
+    --color-primary-container:     225 51% 23%;
+    --color-secondary:             261 84% 63%;
+    --color-secondary-container:   264 97% 74%;
+    --color-on-primary-container:  224 34% 66%;
+    --color-background:            20  33% 98%;
+    --color-surface:               20  33% 98%;
+    --color-surface-container-low: 24  20% 95%;
+    --color-on-background:         180  2% 11%;
+    --color-on-surface:            180  2% 11%;
+    --color-on-surface-variant:    234  5% 29%;
+    --color-outline-variant:       246  9% 80%;
+    --color-wa-light:              145 63% 49%;
+    --color-wa-dark:               170 79% 31%;
+    --duration-fast:    150ms;
+    --duration-base:    300ms;
+    --duration-slow:    500ms;
+    --ease-out-expo:    cubic-bezier(0.16, 1, 0.3, 1);
+    --ease-spring:      cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  body { font-family: 'Inter', sans-serif; }
+  .font-brand { font-family: 'Inter', sans-serif; }
+  .font-headline { font-family: 'Inter', sans-serif; }
+  .icon-svg { width: 24px; height: 24px; fill: currentColor; display: inline-block; vertical-align: middle; }
+
+  :focus-visible { outline: 2px solid #6c45c0; outline-offset: 3px; border-radius: 4px; }
+
+  .skip-nav { position: absolute; top: -100%; left: 1rem; z-index: 9999; padding: 0.5rem 1rem; background: #6c45c0; color: #fff; font-weight: 700; border-radius: 0 0 8px 8px; text-decoration: none; transition: top 150ms; }
+  .skip-nav:focus { top: 0; }
+
+  .btn-after {
+    background: linear-gradient(180deg, #7c3aed 0%, #6d28d9 100%);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.3), 0 8px 16px -4px rgba(108,69,192,0.5);
+    border: 1px solid rgba(124, 58, 237, 0.5);
+  }
+
+  #site-header {
+    position: fixed; top: 0; width: 100%; z-index: 50; background-color: transparent; backdrop-filter: blur(0px); box-shadow: none; border-bottom: 1px solid transparent; transition: background-color var(--duration-base) var(--ease-out-expo), backdrop-filter var(--duration-base) var(--ease-out-expo), box-shadow var(--duration-base) var(--ease-out-expo), border-color var(--duration-base) var(--ease-out-expo);
+  }
+  #site-header .header-inner { height: 4.25rem; transition: height var(--duration-base) var(--ease-out-expo), padding var(--duration-base) var(--ease-out-expo); }
+  #site-header.is-sticky { background-color: rgba(6, 21, 66, 0.82); backdrop-filter: blur(14px); border-bottom-color: rgba(255,255,255,0.08); box-shadow: 0 20px 48px -18px rgba(0,0,0,0.45); }
+  #site-header.is-sticky .header-inner { height: 3.9rem; }
+  .cta-core { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; }
+  @media (min-width: 768px) { #site-header .header-inner { height: 5rem; } #site-header.is-sticky .header-inner { height: 4.35rem; } }
+
+  .btn-lavender {
+    background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%);
+    color: #171443;
+    border: 1px solid rgba(255,255,255,0.72);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 22px rgba(15, 8, 44, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .btn-lavender:hover { transform: scale(1.02); box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 14px 28px rgba(15, 8, 44, 0.34); }
+
+  #sticky-bottom-bar { transform: translateY(100%); transition: transform var(--duration-base) cubic-bezier(0.4,0,0.2,1), visibility var(--duration-base); visibility: hidden; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid rgba(6,21,66,0.05); z-index: 40; }
+  #sticky-bottom-bar.visible { transform: translateY(0); visibility: visible; }
+
+  #mobile-bottom-nav { position: fixed; left: 0; right: 0; bottom: 0; transform: translateY(100%); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); padding-bottom: max(12px, env(safe-area-inset-bottom, 0px)); background: linear-gradient(160deg, rgba(12, 26, 84, 0.88) 0%, rgba(43, 32, 105, 0.86) 52%, rgba(94, 54, 150, 0.78) 100%); border-top: 1px solid rgba(255,255,255,0.14); box-shadow: 0 -14px 38px rgba(5, 8, 24, 0.35); backdrop-filter: blur(16px); z-index: 60; visibility: hidden; }
+  .scrolled #mobile-bottom-nav { transform: translateY(0); visibility: visible; }
+  #mobile-bottom-nav .btn-after { background: linear-gradient(180deg, rgba(255,255,255,0.98) 0%, rgba(238, 231, 255, 0.96) 100%); color: #161341; border: 1px solid rgba(255,255,255,0.7); box-shadow: 0 1px 0 rgba(255,255,255,0.9) inset, 0 8px 22px rgba(17, 14, 58, 0.28); }
+
+  /* --- Modal System --- */
+  body.modal-open { overflow: hidden; overscroll-behavior: contain; }
+  .modal-overlay { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(6, 21, 66, 0.85); backdrop-filter: blur(12px); z-index: 100; padding: 1.5rem; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
+  .modal-overlay.active { opacity: 1; pointer-events: auto; }
+  .modal-panel { background: white; width: 100%; max-width: 36rem; border-radius: 2rem; position: relative; max-height: 90vh; overflow-y: auto; box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.4); transform: scale(0.95); transition: transform 0.3s var(--ease-spring); }
+  .modal-overlay.active .modal-panel { transform: scale(1); }
+  .form-input { width: 100%; background: #f7f3f2; border: 2px solid transparent; border-radius: 1rem; padding: 1rem 1.5rem; font-size: 1rem; transition: all 0.2s ease; color: var(--color-on-background); }
+  .form-input:focus { outline: none; background: white; border-color: var(--color-secondary); box-shadow: 0 0 0 4px rgba(108, 69, 192, 0.1); }
+  .form-label { display: block; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(6, 21, 66, 0.4); margin-bottom: 0.75rem; margin-left: 0.25rem; }
+  .btn-submit { width: 100%; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: white; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 1.25rem; border-radius: 1.25rem; box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.4); transition: all 0.3s ease; }
+
+  /* Hero Adjustments */
+  #hero-section.hero-v6 { position: relative; min-height: 85svh; padding: 7.5rem 1.5rem 5rem; overflow: hidden; isolation: isolate; display: flex; align-items: center; justify-content: center; }
+  #hero-section .av6-canvas { position: absolute; inset: 0; width: 100%; height: 100%; z-index: -3; }
+  #hero-section .av6-grain { position: absolute; inset: 0; z-index: -2; pointer-events: none; background-size: 220px; mix-blend-mode: overlay; opacity: 0.6; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E"); }
+  #hero-section .av6-content { max-width: 920px; margin: 0 auto; text-align: center; }
+  #hero-section .av6-title { font-size: clamp(2.25rem, 6vw, 3.75rem); line-height: 1.1; letter-spacing: -0.03em; font-weight: 800; margin-bottom: 24px; text-shadow: 0 2px 24px rgba(0,0,0,0.2); color: white; }
+  #hero-section .av6-sub { max-width: 640px; margin: 0 auto 40px; font-size: clamp(1rem, 2vw, 1.25rem); line-height: 1.6; color: rgba(255,255,255,0.9); }
+  #hero-section .av6-btn-primary { min-width: 260px; background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%); color: #171443; border-radius: 12px; padding: 20px 36px; font-weight: 700; border: 1px solid rgba(255,255,255,0.72); box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 12px 28px rgba(15, 8, 44, 0.3); }
+  @media (min-width: 1024px) { #hero-section.hero-v6 { height: 800px; min-height: 800px; padding: 0; } }
+
+  /* Author module scoped spacing */
+  #author-module { margin-top: 5rem !important; padding-top: 0 !important; }
+  #author-module .author-inner { padding-top: 4.5rem !important; }
+  #author-module .author-kicker { display: block; margin-bottom: 1.5rem !important; }
+  #author-module .author-layout { display: grid; grid-template-columns: 200px minmax(0, 1fr); column-gap: 4rem; row-gap: 2.5rem; }
+  #author-module .author-credentials { margin-top: 4.5rem !important; padding-top: 2.5rem !important; display: grid !important; justify-items: center; gap: 1.5rem !important; text-align: center; }
+  #author-module .author-brands { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); justify-items: center; align-items: center; gap: clamp(1.25rem, 4vw, 3rem); width: min(100%, 36rem); margin: 0 auto; }
+  #author-module .author-link { display: inline-flex; justify-content: center; justify-self: center; }
+  @media (max-width: 767px) {
+    #author-module { margin-top: 4rem !important; }
+    #author-module .author-inner { padding-top: 3.5rem !important; }
+    #author-module .author-layout { grid-template-columns: 1fr; row-gap: 2rem; }
+    #author-module .author-credentials { margin-top: 3.25rem !important; padding-top: 2rem !important; gap: 1.25rem !important; }
+    #author-module .author-brands { gap: clamp(1rem, 4vw, 1.75rem); width: 100%; }
+  }
+
+  /* Klaro Consent Manager Customization - FINAL VERSION */
+  #klaro, #klaro .klaro {
+    margin: 0 !important;
+    padding: 0 !important;
+    z-index: 999999999 !important;
+  }
+  body:has(#klaro .klaro .cm-modal.cm-shown) {
+    overflow: hidden !important;
+  }
+  #klaro .klaro .cookie-notice {
+    background-color: #ffffff !important;
+    color: #061542 !important;
+    border-radius: 0 !important;
+    box-shadow: 0 -15px 35px rgba(0, 0, 0, 0.2) !important;
+    border-top: 1px solid rgba(107, 56, 251, 0.2) !important;
+    border-top: 1px solid #f3f4f6 !important;
+    padding: 0 !important;
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    z-index: 999999999 !important;
+    margin: 0 !important;
+    transform: none !important;
+  }
+  #klaro .klaro .cookie-notice .cn-body {
+    max-width: 1200px !important;
+    margin: 0 auto !important;
+    padding: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  #klaro .klaro .cookie-notice .cn-body p {
+    color: #061542 !important;
+    margin: 0 !important;
+  }
+  #klaro .klaro .cookie-notice .cn-ok {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 10px 4px !important;
+  }
+  #klaro .klaro .cookie-notice .cn-ok > * {
+    width: 100% !important;
+    margin: 0 !important;
+    flex: 1 1 100% !important;
+    display: block !important;
+    text-align: center !important;
+  }
+  #klaro .klaro .cookie-notice .cn-ok .cm-btn,
+  #klaro .klaro .cookie-notice .cn-ok .cm-link,
+  #klaro .klaro .cookie-notice .cn-ok a {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 12px !important;
+    display: block !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+  }
+
+  /* DESKTOP CAPA 1 */
+  @media (min-width: 1024px) {
+    #klaro .klaro .cookie-notice .cn-body {
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      flex-wrap: nowrap !important;
+      align-items: center !important;
+      gap: 40px !important;
+      display: flex !important;
+    }
+    #klaro .klaro .cookie-notice .cn-body p {
+      max-width: 55% !important;
+      margin: 0 !important;
+    }
+    #klaro .klaro .cookie-notice .cn-ok {
+      flex-direction: row !important;
+      flex-wrap: nowrap !important;
+      width: auto !important;
+      min-width: max-content !important;
+      max-width: none !important;
+      gap: 16px !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      display: flex !important;
+    }
+    /* Force margin on the first button of the group to ensure separation */
+    #klaro .klaro .cookie-notice .cn-buttons .cm-btn:first-child {
+      margin-right: 16px !important;
+    }
+    #klaro .klaro .cookie-notice .cn-buttons {
+      display: flex !important;
+      flex-direction: row !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    #klaro .klaro .cookie-notice .cn-ok > *,
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn,
+    #klaro .klaro .cookie-notice .cn-ok .cm-link,
+    #klaro .klaro .cookie-notice .cn-ok a {
+      width: auto !important;
+      margin: 0 !important;
+      flex: 0 0 auto !important;
+      display: inline-block !important;
+      white-space: nowrap !important;
+    }
+  }
+
+  /* MOBILE CAPA 1 REPLICA CAPA 2 */
+  @media (max-width: 767px) {
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn {
+      width: 100% !important;
+      display: block !important;
+      margin-bottom: 8px !important;
+    }
+    #klaro .klaro .cookie-notice .cn-ok .cm-btn:last-child {
+      margin-bottom: 0 !important;
+    }
+  }
+
+  #klaro .klaro .cookie-notice p {
+    color: #061542 !important;
+    font-size: 1rem !important;
+    line-height: 1.5 !important;
+    font-weight: 500 !important;
+    margin: 0 !important;
+  }
+  /* Buttons Styling */
+  #klaro .klaro .cm-btn {
+    border-radius: 16px !important;
+    font-weight: 700 !important;
+    padding: 14px 32px !important;
+    border: none !important;
+    width: 100% !important;
+    text-align: center !important;
+    font-size: 0.95rem !important;
+    box-shadow: none !important;
+    cursor: pointer !important;
+    margin: 8px 0 !important; /* Hard vertical margin for mobile */
+  }
+  @media (min-width: 1024px) {
+    #klaro .klaro .cm-btn {
+      width: auto !important;
+      margin: 0 12px !important; /* Hard horizontal margin for desktop */
+    }
+  }
+  #klaro .klaro .cm-btn-success {
+    background-color: #6b38fb !important;
+    color: #ffffff !important;
+    order: 3 !important;
+  }
+  #klaro .klaro .cm-btn-danger, #klaro .klaro .cm-btn-info, #klaro .klaro .cm-btn-second, #klaro .klaro .cm-btn-decline {
+    background-color: #f3f4f6 !important;
+    color: #4b5563 !important;
+    order: 2 !important;
+  }
+  /* Ghost Button Link */
+  #klaro .klaro .cm-link {
+    color: #6b38fb !important;
+    font-weight: 700 !important;
+    text-decoration: none !important;
+    font-size: 0.95rem !important;
+    padding: 0 !important;
+    background: none !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    order: 1 !important;
+    border: none !important;
+    margin: 12px 0 !important; /* Vertical margin for mobile */
+  }
+  @media (min-width: 1024px) {
+    #klaro .klaro .cm-link {
+      width: auto !important;
+      padding: 14px 0 !important; /* Match vertical padding of buttons */
+      display: inline-flex !important;
+      line-height: 1 !important;
+      margin: 0 12px !important; /* Horizontal margin for desktop */
+    }
+  }
+
+  /* Capa 2 - Modal Robustness Refinements (FORCE) */
+  #klaro .klaro .cm-modal .cm-panel .cm-header,
+  #klaro .klaro .cm-header {
+    background-color: #ffffff !important;
+    background: #ffffff !important;
+    color: #061542 !important;
+  }
+  #klaro .klaro .cm-modal .cm-panel .cm-header * {
+    color: #061542 !important;
+  }
+
+  @media (max-width: 767px) {
+    #klaro .klaro .cm-modal .cm-panel .cm-footer,
+    #klaro .klaro .cm-footer,
+    #klaro .klaro .cm-footer .cm-buttons,
+    #klaro .klaro .cm-footer-buttons {
+      display: flex !important;
+      flex-direction: column !important;
+      flex-flow: column nowrap !important;
+      gap: 6px !important;
+      padding: 10px 4px !important;
+      height: auto !important;
+      width: 100% !important;
+    }
+    #klaro .klaro .cm-modal .cm-panel .cm-footer .cm-btn,
+    #klaro .klaro .cm-footer .cm-btn,
+    #klaro .klaro .cm-footer .cm-buttons .cm-btn,
+    #klaro .klaro .cm-btn {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 2px 0 !important;
+      display: block !important;
+      flex: 1 1 100% !important;
+    }
+  }
+
+  #klaro .klaro .cm-modal .cm-header .cm-close {
+    color: #061542 !important;
+  }
+  #klaro .klaro .cm-modal .cm-body {
+    padding: 20px !important;
+    background: #fff !important;
+  }
+  /* Force text colors in Modal - Universal */
+  #klaro .klaro .cm-modal p,
+  #klaro .klaro .cm-modal span,
+  #klaro .klaro .cm-modal div,
+  #klaro .klaro .cm-modal .cm-app-description,
+  #klaro .klaro .cm-modal .cm-app-title,
+  #klaro .klaro .cm-modal .cm-list-description,
+  #klaro .klaro .cm-modal .cm-purpose-description {
+    color: #061542 !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+  }
+  /* Toggle Switch - OFF state (gray) */
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch .slider {
+    background-color: #d1d5db !important;
+    transition: background-color 0.3s ease !important;
+  }
+  /* Toggle Switch - ON state (green) */
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch input:checked + .slider,
+  #klaro .klaro .cm-modal .cm-list-label .cm-switch.is-checked .slider,
+  #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .slider,
+  #klaro .klaro .cm-modal .cm-list-input:checked + .cm-list-label .cm-switch .slider {
+    background-color: #22c55e !important;
+  }
+  #klaro .klaro .cm-modal .cm-footer {
+    border-top: 1px solid #f3f4f6 !important;
+    background: #fff !important;
+    padding: 20px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  #klaro .klaro .cm-modal .cm-footer .cm-btn {
+    flex: 1 1 auto !important;
+    min-width: 120px !important;
+  }
+  #klaro .klaro .cm-powered-by {
+    display: none !important;
+  }
+
+  /* Overlay */
+  body:has(#klaro .cookie-notice) {
+    overflow: hidden !important;
+  }
+  body:has(#klaro .cookie-notice)::before {
+    content: '' !important;
+    position: fixed !important;
+    inset: 0 !important;
+    background: rgba(6, 21, 66, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    z-index: 99999997 !important;
+    pointer-events: auto !important;
+  }
+
+  .reveal-ready { transition: opacity 1s var(--ease-out-expo), transform 1s var(--ease-out-expo); }
+  .reveal-hidden { opacity: 0; transform: translateY(30px); }
+  .reveal-visible { opacity: 1; transform: translateY(0); }
+</style>
+
+</head>
+<body class="bg-background text-on-background">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBK55KW8"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!-- HEADER -->
+  <header id="site-header" aria-label="Cabecera principal">
+    <div class="header-inner flex items-center justify-between px-6 md:px-12 max-w-[1440px] mx-auto">
+      <div class="flex-1 flex justify-start">
+        <a href="index.html" class="flex items-center outline-none"><img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/></a>
+      </div>
+      <div class="flex-1 flex items-center justify-end gap-6">
+        <button type="button" class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
+          <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> Tengo una duda
+        </button>
+        <button type="button" class="flex items-center justify-center p-2 -mr-2 md:hidden" id="mobile-mail-btn" onclick="openContactModal()">
+          <svg class="icon-svg text-white text-2xl" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main-content">
+    <!-- HERO -->
+    <section class="hero-v6 text-white" id="hero-section">
+      <canvas class="av6-canvas" id="hero-gradient-canvas"></canvas>
+      <div class="av6-grain"></div>
+      <div class="av6-content">
+        <h1 class="av6-title">Recursos<br/><span class="text-white">Estratégicos</span></h1>
+        <p class="av6-sub">Compartimos nuestra visión sobre el futuro del crecimiento digital, desde la optimización para buscadores de IA hasta la psicología del consumidor.</p>
+        <button type="button" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="cta-core av6-btn-primary">Solicitar análisis</button>
+      </div>
+    </section>
+
+
+    <!-- Recursos Intro -->
+    <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" aria-labelledby="recursos-intro-title">
+      <div class="mb-12 md:mb-16 max-w-5xl">
+        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Biblioteca de crecimiento</p>
+        <h2 id="recursos-intro-title" class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">
+          Recursos para optimizar conversi&oacute;n, visibilidad y experiencia digital con criterio de negocio
+        </h2>
+        <p class="text-base md:text-lg text-on-surface-variant leading-relaxed max-w-4xl">
+          Una base editorial para trabajar mejor el CRO, el SEO/GEO, la anal&iacute;tica y la experiencia de usuario sin separar estrategia, datos y contenido.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 border-b border-secondary/10 pb-16 md:pb-20">
+        <div class="lg:col-span-7 space-y-6">
+          <p class="text-base md:text-lg leading-relaxed text-on-surface-variant">
+            Esta secci&oacute;n re&uacute;ne art&iacute;culos, gu&iacute;as y reflexiones pr&aacute;cticas sobre crecimiento digital para equipos que necesitan tomar mejores decisiones con datos, no solo acumular m&aacute;s tr&aacute;fico. En Aripa trabajamos la optimizaci&oacute;n desde una mirada integrada: conversi&oacute;n, experiencia de usuario, anal&iacute;tica, SEO, GEO y experimentaci&oacute;n deben leerse juntos cuando el objetivo es mejorar el rendimiento real de una web, una landing page, un ecommerce o un servicio digital.
+          </p>
+          <p class="text-base md:text-lg leading-relaxed text-on-surface-variant">
+            Aqu&iacute; encontrar&aacute;s contenido pensado para entender c&oacute;mo se comportan los usuarios, qu&eacute; fricciones reducen la conversi&oacute;n, c&oacute;mo priorizar mejoras en un funnel y de qu&eacute; manera una arquitectura de informaci&oacute;n clara ayuda tanto a las personas como a los buscadores y a los sistemas de inteligencia artificial. Hablamos de CRO, UX/UI orientado a negocio, anal&iacute;tica web, medici&oacute;n, posicionamiento org&aacute;nico y contenido preparado para ser interpretado, citado y contextualizado por modelos como ChatGPT, Gemini o Perplexity.
+          </p>
+          <p class="text-base md:text-lg leading-relaxed text-on-surface-variant">
+            La idea no es publicar teor&iacute;a por publicar. Cada recurso busca aportar contexto sem&aacute;ntico, criterios de priorizaci&oacute;n y ejemplos aplicables para detectar oportunidades, ordenar hip&oacute;tesis y conectar cada cambio con una m&eacute;trica de negocio: leads cualificados, tasa de conversi&oacute;n, ingresos, retenci&oacute;n, eficiencia de captaci&oacute;n o calidad de la experiencia. Esta biblioteca seguir&aacute; creciendo como punto de partida para auditor&iacute;as de conversi&oacute;n, estrategia SEO/GEO, dise&ntilde;o de experimentos, mejora de contenidos y toma de decisiones basada en evidencia real, con una lectura clara para equipos de marketing, producto, contenidos y negocio digital en crecimiento medible.
+          </p>
+        </div>
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4" aria-label="Temas principales de recursos Aripa">
+          <article class="border border-secondary/10 bg-white/60 p-5 md:p-6 rounded-xl">
+            <h3 class="text-primary font-bold text-xs uppercase tracking-widest mb-3">Conversi&oacute;n</h3>
+            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">CRO, funnels, fricciones, test A/B y behavioral economics.</p>
+          </article>
+          <article class="border border-secondary/10 bg-white/60 p-5 md:p-6 rounded-xl">
+            <h3 class="text-primary font-bold text-xs uppercase tracking-widest mb-3">Visibilidad</h3>
+            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">SEO t&eacute;cnico, GEO, contenidos citables y motores generativos.</p>
+          </article>
+          <article class="border border-secondary/10 bg-white/60 p-5 md:p-6 rounded-xl">
+            <h3 class="text-primary font-bold text-xs uppercase tracking-widest mb-3">Medici&oacute;n</h3>
+            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">Anal&iacute;tica web, hip&oacute;tesis, priorizaci&oacute;n y decisiones basadas en evidencia.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Artículos Grid (Con padding superior e inferior robusto para no tocar el hero) -->
+    <section class="px-6 md:px-12 max-w-[1440px] mx-auto pt-0 pb-16 md:pb-24" id="recursos-grid">
+      <div class="mb-10 md:mb-16 text-center md:text-left">
+        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-4">NUESTROS ARTÍCULOS</p>
+        <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter">Últimos recursos y reflexiones</h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+
+        <a href="geo-vs-seo.html" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
+            <span>Abril 2026</span>
+            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
+            <span>6 min lectura</span>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
+              GEO vs SEO: Cómo optimizar tu marca para ser citado por ChatGPT y Gemini
+            </h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
+              La búsqueda está cambiando. El GEO (Generative Engine Optimization) es el conjunto de técnicas necesarias para que las IAs te citen.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
+            LEER ARTÍCULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+          </div>
+        </a>
+
+        <a href="behavioral-economics-cro.html" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
+            <span>Abril 2026</span>
+            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
+            <span>8 min lectura</span>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
+              Behavioral Economics y CRO: La ciencia detrás de la conversión en 2026
+            </h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
+              ¿Por qué compramos lo que compramos? Aplicamos la psicología para reducir la fricción y aumentar ventas.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
+            LEER ARTÍCULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- Modulo Author -->
+    <section class="px-6 md:px-12 max-w-[1440px] mx-auto pt-14 md:pt-20 pb-20 md:pb-28" id="author-module" aria-labelledby="author-title">
+      <div class="author-inner border-t border-secondary/20 pt-14 md:pt-20">
+        <div class="max-w-5xl">
+          <p class="author-kicker text-secondary font-bold tracking-widest text-[10px] uppercase mb-6">Sobre el autor</p>
+          <h2 id="author-title" class="text-3xl md:text-5xl font-extrabold font-headline text-primary tracking-tight leading-tight mb-8">
+            Javier Rodr&iacute;guez de la Orden
+          </h2>
+          <div class="author-layout grid md:grid-cols-[200px_minmax(0,1fr)] gap-10 md:gap-16">
+            <div class="text-primary/45 text-[10px] font-bold uppercase tracking-widest leading-loose">
+              <p>Consultor senior</p>
+              <p>CRO, UX y Growth</p>
+              <p>Docente Shifta</p>
+            </div>
+            <div class="space-y-6">
+              <p class="text-xl md:text-2xl text-primary font-headline font-semibold leading-snug tracking-tight">
+                Estrategia, anal&iacute;tica y experimentaci&oacute;n aplicadas a mejorar activos digitales con impacto real en negocio.
+              </p>
+              <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
+                Javier combina consultor&iacute;a de crecimiento digital, CRO y dise&ntilde;o orientado a decisi&oacute;n para ayudar a equipos a entender qu&eacute; frena la conversi&oacute;n, priorizar mejoras y convertir aprendizaje en rendimiento medible.
+              </p>
+              <p class="text-base text-on-surface-variant leading-relaxed">
+                Tambi&eacute;n es docente en el <strong class="text-primary font-semibold">Posgrado en Gesti&oacute;n de Producto Digital de Shifta by Elisava</strong>, donde trabaja la conexi&oacute;n entre producto, experiencia de usuario y negocio.
+              </p>
+            </div>
+          </div>
+          <div class="author-credentials mt-14 md:mt-16 border-t border-secondary/10 pt-8 md:pt-10">
+            <div class="author-brands">
+              <span class="text-primary font-bold text-[10px] sm:text-[11px] uppercase tracking-widest">Mindshare</span>
+              <span class="text-primary font-bold text-[10px] sm:text-[11px] uppercase tracking-widest">L&iacute;nea Directa</span>
+              <span class="text-primary font-bold text-[10px] sm:text-[11px] uppercase tracking-widest">Shifta</span>
+            </div>
+            <a href="https://www.linkedin.com/in/jro1" target="_blank" rel="noopener noreferrer" class="author-link text-secondary font-bold text-[10px] sm:text-[11px] uppercase tracking-widest hover:text-primary hover:underline underline-offset-4">
+              LinkedIn
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================
+       CONTACT MODAL (Synced with index.html)
+  =========================================== -->
+  <div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title" onclick="if(event.target===this) closeModal('contact-modal')">
+    <div class="modal-panel p-8 md:p-12">
+      <div class="mb-6 md:mb-8 text-left">
+        <h4 class="text-2xl md:text-3xl font-extrabold font-headline text-primary mb-2" id="contact-modal-title">Hablemos</h4>
+        <p class="text-on-surface-variant text-sm md:text-base leading-relaxed">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
+      </div>
+      <form class="space-y-4 md:space-y-6 text-left" id="contact-form" onsubmit="handleFormSubmit(event)">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <div>
+            <label class="form-label" for="c-name">Nombre *</label>
+            <input class="form-input" id="c-name" name="name" placeholder="Tu nombre" required type="text" oninput="this.value = this.value.replace(/[0-9]/g, '')"/>
+          </div>
+          <div>
+            <label class="form-label" for="c-phone">Teléfono *</label>
+            <input class="form-input" id="c-phone" name="phone" placeholder="+34 000 000 000" required type="tel" oninput="this.value = this.value.replace(/[a-zA-ZáéíóúÁÉÍÓÚñÑ]/g, '')"/>
+          </div>
+        </div>
+        <div>
+          <label class="form-label" for="c-email">Email Corporativo *</label>
+          <input class="form-input" id="c-email" name="email" placeholder="email@empresa.com" required type="email"/>
+        </div>
+        <div>
+          <label class="form-label" for="service">Servicio de interés</label>
+          <div class="relative">
+            <select class="form-input appearance-none pr-12 cursor-pointer" id="service" name="service">
+              <option value="general">Consulta general</option>
+              <option value="CRO y Conversión">CRO y Conversión</option>
+              <option value="UX/UI de Negocio">UX/UI de Negocio</option>
+              <option value="Analítica y Medición">Analítica y Medición</option>
+              <option value="Growth y Experimentación">Growth y Experimentación</option>
+              <option value="SEO, GEO y Contenido">SEO, GEO y Contenido</option>
+              <option value="Landings y Activos Web">Landings y Activos Web</option>
+              <option value="Automatización">Automatización</option>
+              <option value="Servicios B2B / Soporte">Servicios B2B / Soporte</option>
+            </select>
+            <svg class="icon-svg absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
+          </div>
+        </div>
+        <div>
+          <label class="form-label" for="c-message">Mensaje</label>
+          <textarea class="form-input min-h-[100px] md:min-h-[120px]" id="c-message" name="message" placeholder="¿Cómo podemos ayudarte?"></textarea>
+        </div>
+        <div class="flex justify-start">
+          <button class="cta-core px-12 py-5 btn-after text-white rounded-xl md:rounded-2xl active:scale-95 transition-all disabled:opacity-50 disabled:cursor-not-allowed inline-flex items-center gap-2" id="submit-btn" type="submit">
+            <span>Enviar Solicitud</span>
+            <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+          </button>
+        </div>
+      </form>
+      <button class="absolute top-4 right-4 md:top-8 md:right-8 text-on-surface-variant hover:text-primary transition-colors" onclick="closeModal('contact-modal')" aria-label="Cerrar formulario de contacto">
+        <svg class="icon-svg text-2xl md:text-3xl" aria-hidden="true" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+<footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-20 px-6 md:px-12 border-t border-white/5">
+  <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
+    <a href="/" class="flex items-center gap-2 md:gap-3 group" aria-label="Aripa - Ir al inicio">
+      <img alt="aripa" class="h-8 md:h-10 w-auto object-contain" src="./assets/aripa-logo.png" width="106" height="32" loading="eager" fetchpriority="high"/>
+    </a>
+    <nav class="flex flex-wrap justify-center gap-6 md:gap-10">
+      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-cookies.html">Política de cookies</a>
+      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="politica-privacidad.html">Privacidad</a>
+      <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="aviso-legal.html">Aviso legal</a>
+    </nav>
+    <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4">
+      Consultoría de optimización digital, CRO, analítica y GEO para convertir datos, contenido y experiencia de usuario en crecimiento medible.
+    </div>
+    <div class="flex items-center gap-4">
+      <a href="https://www.linkedin.com/company/aripa/" target="_blank" rel="noopener noreferrer" class="group transition-transform hover:scale-110" aria-label="LinkedIn de aripa">
+        <svg class="h-6 w-6 group-hover:opacity-80 transition-opacity" viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+        </svg>
+      </a>
+    </div>
+    <p class="text-white/40 text-[10px] font-body max-w-xs md:max-w-lg leading-relaxed uppercase tracking-widest">
+      © 2026 aripa Consulting | Javier Rodriguez de la Orden. Transformando datos en activos estratégicos de alto rendimiento.
+    </p>
+  </div>
+</footer>
+
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-center items-center px-6 py-3 bg-[#061542]/90 backdrop-blur-2xl shadow-[0_-8px_30px_rgba(0,0,0,0.12)] rounded-t-3xl border-t border-white/5 md:hidden invisible"
+     id="mobile-bottom-nav"
+     aria-hidden="true"
+     style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
+  <button class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">
+    <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>
+    HABLEMOS
+  </button>
+</nav>
+
+<div class="fixed bottom-0 left-0 right-0 z-40 hidden md:flex bg-white/80 backdrop-blur-xl border-t border-secondary/10 shadow-[0_-10px_30px_rgba(0,0,0,0.05)] px-6 md:px-12 py-4 items-center justify-between pointer-events-none invisible"
+     id="sticky-bottom-bar"
+     aria-hidden="true">
+  <div class="flex flex-col">
+    <span class="text-primary font-bold font-headline text-sm tracking-tight flex items-center gap-2">
+      <svg class="icon-svg text-secondary text-lg" viewBox="0 -960 960 960"><path d="M120-160q-33 0-56.5-23.5T40-240q0-33 23.5-56.5T120-320h10.5q4.5 0 9.5 2l182-182q-2-5-2-9.5V-520q0-33 23.5-56.5T400-600q33 0 56.5 23.5T480-520q0 2-2 20l102 102q5-2 9.5-2h21q4.5 0 9.5 2l142-142q-2-5-2-9.5V-560q0-33 23.5-56.5T840-640q33 0 56.5 23.5T920-560q0 33-23.5 56.5T840-480h-10.5q-4.5 0-9.5-2L678-340q2 5 2 9.5v10.5q0 33-23.5 56.5T600-240q-33 0-56.5-23.5T520-320v-10.5q0-4.5 2-9.5L420-442q-5 2-9.5 2H400q-2 0-20-2L198-260q2 5 2 9.5v10.5q0 33-23.5 56.5T120-160Zm40-401-25-54-54-25 54-25 25-54 25 54 54 25-54 25-25 54Zm440-39-38-82-82-38 82-38 38-82 38 82 82 38-82 38-38 82Z"/></svg> ¿Hablamos de tu próxima fase de crecimiento?
+    </span>
+    <span class="text-[11px] font-normal text-on-surface-variant ml-7">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
+  </div>
+  <div class="flex items-center gap-3 pointer-events-auto">
+    <button class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2"
+            data-cal-link="aripa/hoja-de-ruta"  data-cal-namespace="hoja-de-ruta"  data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":true}' tabindex="-1">
+      <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg> HABLEMOS
+    </button>
+  </div>
+</div>
+
+  <script>
+    (function () {
+      const setInteractive = (root, active) => {
+        if (!root) return;
+        root.classList.toggle('invisible', !active);
+        root.classList.toggle('visible', active);
+        root.setAttribute('aria-hidden', active ? 'false' : 'true');
+        root.querySelectorAll('button, a').forEach(el => el.setAttribute('tabindex', active ? '0' : '-1'));
+      };
+
+      window.openContactModal = function (serviceValue) {
+        const modal = document.getElementById('contact-modal');
+        if (!modal) return;
+        if (serviceValue) { const select = modal.querySelector('select[name="service"]'); if (select) select.value = serviceValue; }
+        modal.classList.add('active');
+        document.body.classList.add('modal-open');
+      };
+
+      window.closeModal = function(id) {
+        const modal = document.getElementById(id);
+        if (!modal) return;
+        modal.classList.remove('active');
+        document.body.classList.remove('modal-open');
+      };
+
+      const updateShellUI = () => {
+        const header = document.getElementById('site-header');
+        const stickyBar = document.getElementById('sticky-bottom-bar');
+        const mobileNav = document.getElementById('mobile-bottom-nav');
+        const hero = document.getElementById('hero-section');
+        const heroBottom = hero ? hero.offsetTop + hero.offsetHeight : 220;
+        header?.classList.toggle('is-sticky', window.scrollY > 20);
+        document.body.classList.toggle('scrolled', window.scrollY > 150);
+        setInteractive(stickyBar, window.innerWidth >= 768 && window.scrollY > heroBottom - 200);
+        setInteractive(mobileNav, window.innerWidth < 768 && window.scrollY > 150);
+      };
+      window.addEventListener('scroll', updateShellUI, { passive: true });
+      window.addEventListener('resize', updateShellUI);
+      updateShellUI();
+    }());
+  </script>
+
+  <!-- Cal element-click embed code begins -->
+  <script type="text/javascript">
+    (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
+    Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
+    Cal.ns["hoja-de-ruta"]("ui", {"hideEventTypeDetails":false,"layout":"month_view","useSlotsViewOnSmallScreen":true});
+  </script>
+
+  <!-- Success Modal -->
+  <div id="success-modal" class="modal-overlay" onclick="if(event.target===this) closeModal('success-modal')">
+    <div class="modal-panel max-w-sm p-8 text-center relative">
+        <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
+            <svg class="w-8 h-8 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
+        </div>
+        <h3 class="text-2xl font-black font-headline text-primary mb-2">¡Gracias!</h3>
+        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Hemos recibido tu solicitud correctamente. Te contactaremos en menos de 24h.</p>
+        <button class="cta-core w-full py-4 btn-after text-white rounded-xl active:scale-95 transition-all" onclick="closeModal('success-modal')">Cerrar</button>
+    </div>
+  </div>
+
+  <script>
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('reveal-visible'); });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.reveal-ready').forEach(el => { el.classList.add('reveal-hidden'); revealObserver.observe(el); });
+
+    // Dynamic Gradient Canvas Animation
+    (function () {
+      const canvas = document.getElementById('hero-gradient-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d'), ORBS = [
+        { color: [26, 42, 108], r: 1.06, ax: 0.30, ay: 0.22, px: 0.12, py: 0.16, speed: 0.0000037 },
+        { color: [90, 50, 160], r: 1.00, ax: 0.27, ay: 0.34, px: 0.55, py: 0.22, speed: 0.0000028 },
+        { color: [160, 80, 180], r: 0.96, ax: 0.22, ay: 0.38, px: 0.79, py: 0.58, speed: 0.0000022 },
+        { color: [220, 95, 160], r: 0.90, ax: 0.35, ay: 0.24, px: 0.42, py: 0.76, speed: 0.0000031 }
+      ];
+      const resize = () => { canvas.width = window.innerWidth; canvas.height = window.innerHeight; };
+      resize(); window.addEventListener('resize', resize);
+      const orbPos = (orb, t) => ({ x: Math.max(0, Math.min(1, orb.px + orb.ax * Math.sin(t * orb.speed * 1000 + orb.color[0]))) * canvas.width, y: Math.max(0, Math.min(1, orb.py + orb.ay * Math.cos(t * orb.speed * 700 + orb.color[2]))) * canvas.height });
+      const draw = (ts) => {
+        const W = canvas.width, H = canvas.height; ctx.fillStyle = '#0e1240'; ctx.fillRect(0, 0, W, H); ctx.globalCompositeOperation = 'screen';
+        for (const orb of ORBS) {
+          const p = orbPos(orb, ts), r = orb.r * Math.max(W, H), [cr, cg, cb] = orb.color;
+          const g = ctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, r);
+          g.addColorStop(0, `rgba(${cr},${cg},${cb},0.40)`); g.addColorStop(0.45, `rgba(${cr},${cg},${cb},0.14)`); g.addColorStop(1, `rgba(${cr},${cg},${cb},0)`);
+          ctx.fillStyle = g; ctx.fillRect(0, 0, W, H);
+        }
+        ctx.globalCompositeOperation = 'source-over'; requestAnimationFrame(draw);
+      };
+      requestAnimationFrame(draw);
+    })();
+
+    // Form Handling with Formspree
+    window.handleFormSubmit = async (e) => {
+      e.preventDefault();
+      const btn = document.getElementById('submit-btn');
+      btn.disabled = true; btn.innerText = 'ENVIANDO...';
+      try {
+        const response = await fetch("https://formspree.io/f/maqalopa", { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(Object.fromEntries(new FormData(e.target).entries())) });
+        if (response.ok) { closeModal('contact-modal'); setTimeout(() => { document.getElementById('success-modal').classList.add('active'); document.body.classList.add('modal-open'); }, 300); e.target.reset(); }
+      } catch (error) { alert('Error de conexión.'); } finally { btn.disabled = false; btn.innerText = 'ENVIAR SOLICITUD'; }
+    };
+  </script>
+
+  <!-- Clarity -->
+  <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window, document, "clarity", "script", "wd9btxwafk");
+  </script>
+
+  <!-- High-Priority Universal Text Enforcement -->
+  <script type="text/javascript">
+    (function() {
+      const targetText = 'Utilizamos herramientas de análisis para entender cómo interactúas con nuestra consultoría y mejorar tu experiencia. ¿Nos das tu consentimiento?';
+      const enforceKlaroCopy = () => {
+        const paragraphs = document.querySelectorAll('#klaro p, #id-cookie-notice p');
+        paragraphs.forEach(p => {
+          const txt = p.innerText || '';
+          if (
+            txt.includes('¿Podríamos habilitar') ||
+            txt.includes('Hola!') ||
+            txt.includes('herramientas de análisis') ||
+            txt.includes('herramientas de analisis')
+          ) {
+            if (p.innerText !== targetText) p.innerText = targetText;
+          }
+        });
+
+        const controls = document.querySelectorAll('#klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
+        controls.forEach(btn => {
+          const txt = (btn.innerText || '').trim();
+
+          if (
+            txt.includes('Descartar todas') ||
+            txt.includes('Rechazar todas') ||
+            txt === 'Descartar' ||
+            txt === 'Rechazar'
+          ) {
+            if (btn.innerText !== 'Rechazar') btn.innerText = 'Rechazar';
+          } else if (
+            txt.includes('Aceptar todas') ||
+            txt.includes('Aceptar seleccionadas') ||
+            txt.includes('Aceptar seleccionados') ||
+            txt.includes('De acuerdo') ||
+            txt === 'Aceptar'
+          ) {
+            if (btn.innerText !== 'Aceptar') btn.innerText = 'Aceptar';
+          } else if (
+            txt.includes('Quiero elegir') ||
+            txt.includes('Configurar') ||
+            txt.includes('Guardar')
+          ) {
+            if (btn.innerText !== 'Configurar') btn.innerText = 'Configurar';
+          }
+        });
+
+        const notice = document.querySelector('#id-cookie-notice .cookie-notice, #klaro .cookie-notice');
+        if (notice && !notice.hasAttribute('aria-label')) {
+          notice.setAttribute('aria-label', 'Aviso de cookies y privacidad');
+          notice.setAttribute('role', 'dialog');
+        }
+      };
+
+      const observer = new MutationObserver(enforceKlaroCopy);
+      observer.observe(document.documentElement, { childList: true, subtree: true });
+      setTimeout(enforceKlaroCopy, 200);
+      setTimeout(enforceKlaroCopy, 1000);
+    })();
+  </script>
+
+</body>
+</html>
