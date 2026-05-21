@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.article-body h2 {
+  @apply text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-6 mt-16;
+}
+.article-body h3 {
+  @apply text-xl md:text-2xl font-bold font-headline text-primary tracking-tight mb-4 mt-10;
+}
+.article-body h4 {
+  @apply text-lg md:text-xl font-bold font-headline text-primary leading-tight mb-3 mt-8;
+}
+.article-body p {
+  @apply text-base md:text-lg text-on-surface-variant leading-relaxed mb-6 font-body;
+}
+.article-body ul {
+  @apply text-base md:text-lg text-on-surface-variant leading-relaxed mb-6 font-body list-disc pl-6 marker:text-secondary;
+}
+.article-body li {
+  @apply mb-3;
+}
+.article-body strong, .article-body b {
+  @apply font-bold text-primary;
+}
