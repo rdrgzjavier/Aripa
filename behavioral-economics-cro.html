@@ -504,6 +504,43 @@ body { font-family: 'Inter', sans-serif; }
     }
   }
   /* Success modal styles removed */
+  
+  /* Restored Article CSS */
+  #recursos-grid { padding-top:6rem; padding-bottom:7rem; }
+  #author-module { padding-bottom:7rem; }
+  @media(min-width:768px){ #recursos-grid{padding-top:8rem;padding-bottom:9rem;} #author-module{padding-bottom:10rem;} }
+  .article-shell { padding-top:7rem; padding-bottom:7rem; }
+  @media(min-width:768px){ .article-shell{padding-top:9rem;padding-bottom:9rem;} }
+  .article-card { background:#fff; border:1px solid rgba(107,56,251,.12); box-shadow:0 24px 70px rgba(6,21,66,.06); }
+  .article-body h2 { color:var(--primary); font-family:var(--font-headline); font-weight:800; letter-spacing:-.02em; font-size:clamp(1.65rem,3vw,2.25rem); margin-top:3rem; margin-bottom:1rem; }
+  .article-body h3 { color:var(--primary); font-family:var(--font-headline); font-weight:800; font-size:1.25rem; margin-top:2rem; margin-bottom:.75rem; }
+  .article-body p { color:var(--on-surface-variant); line-height:1.8; margin-bottom:1.25rem; }
+  .article-body ul { display:grid; gap:.9rem; margin:1.5rem 0; }
+  .article-body li { color:var(--on-surface-variant); line-height:1.7; padding-left:1rem; border-left:3px solid rgba(107,56,251,.22); }
+  
+  /* Global av6-btn-primary (not scoped to hero-section) */
+  .av6-btn-primary {
+    min-width: 240px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%);
+    color: #171443;
+    border-radius: 12px;
+    padding: 18px 32px;
+    font-weight: 700;
+    border: 1px solid rgba(255,255,255,0.72);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 22px rgba(15, 8, 44, 0.3);
+  }
+  .av6-btn-primary:hover {
+    transform: scale(1.02);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 14px 28px rgba(15, 8, 44, 0.34);
+  }
+  @media (max-width: 767px) {
+    .av6-btn-primary {
+      width: 100%;
+      min-width: 0;
+      max-width: 340px;
+    }
+  }
+
   /* Klaro Consent Manager Customization - FINAL VERSION */
   #klaro, #klaro .klaro {
     margin: 0 !important;
