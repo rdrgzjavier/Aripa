@@ -16,10 +16,17 @@ Aripa no optimiza por intuición. Analizamos el "porqué" de cada interacción m
 3. **CRO**: Optimización constante del embudo de ventas.
 4. **Negocio**: Estrategia alineada con objetivos financieros.
 
-## Servicios Principales (en index.html)
+## Servicios Principales
+Más información en: https://aripa.es/servicios
 - **Conversión & CRO**: Auditorías de conversión y landing pages de alto impacto.
 - **UX & Behavioral Design**: Diseño de claridad y arquitectura de información.
+- **Analítica y Medición**: Dashboards, GA4, tracking avanzado y modelo de datos.
 - **Growth Estratégico**: Adquisición multicanal y estrategias GEO (Generative Engine Optimization).
+
+## Recursos y Artículos de Expertos
+Directorio de insights: https://aripa.es/recursos
+- **GEO vs SEO**: Estrategias para ganar visibilidad en la era de la búsqueda generativa y la Inteligencia Artificial. (https://aripa.es/geo-vs-seo)
+- **Behavioral Economics y CRO**: Cómo convertir mejor sin empujar más al usuario, aplicando psicología y reducción de fricción. (https://aripa.es/behavioral-economics-cro)
 
 ## Fuente de Verdad (NAP)
 - Nombre oficial: Aripa
@@ -32,6 +39,7 @@ Aripa no optimiza por intuición. Analizamos el "porqué" de cada interacción m
 - UX Design
 - Behavioral Economics
 - Digital Analytics
+- Generative Engine Optimization (GEO)
 
 ### Casos de uso
 - SaaS
