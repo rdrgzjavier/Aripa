@@ -24,3 +24,18 @@
 .article-body strong, .article-body b {
   @apply font-bold text-primary;
 }
+
+
+@layer components {
+  .btn-lavender {
+    background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%);
+    color: #171443 !important;
+    border: 1px solid rgba(255,255,255,0.72);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 22px rgba(15, 8, 44, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .btn-lavender:hover {
+    transform: scale(1.02);
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 14px 28px rgba(15, 8, 44, 0.34);
+  }
+}

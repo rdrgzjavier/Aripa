@@ -100,14 +100,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .cta-core { font-family: 'Inter', sans-serif; font-weight: 700; font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; line-height: 1; }
   @media (min-width: 768px) { #site-header .header-inner { height: 5rem; } #site-header.is-sticky .header-inner { height: 4.35rem; } }
 
-  .btn-lavender {
-    background: linear-gradient(180deg, rgba(255,255,255,0.99) 0%, rgba(241, 236, 255, 0.95) 100%);
-    color: #171443;
-    border: 1px solid rgba(255,255,255,0.72);
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.9), 0 8px 22px rgba(15, 8, 44, 0.3);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  }
-  .btn-lavender:hover { transform: scale(1.02); box-shadow: inset 0 1px 0 rgba(255,255,255,0.95), 0 14px 28px rgba(15, 8, 44, 0.34); }
+  
 
   #sticky-bottom-bar { transform: translateY(100%); transition: transform var(--duration-base) cubic-bezier(0.4,0,0.2,1), visibility var(--duration-base); visibility: hidden; position: fixed; bottom: 0; left: 0; right: 0; background: white; border-top: 1px solid rgba(6,21,66,0.05); z-index: 40; }
   #sticky-bottom-bar.visible { transform: translateY(0); visibility: visible; }
@@ -204,7 +197,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       <a href="index.html" class="flex items-center outline-none"><img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/></a>
     </div>
     <div class="flex-1 flex items-center justify-end gap-6">
-      <button type="button" class="cta-core hidden md:flex btn-lavender text-white px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
+      <button type="button" class="cta-core hidden md:flex btn-lavender px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
         <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> CONTACTAR
       </button>
       <button type="button" class="flex items-center justify-center p-2 -mr-2 md:hidden" id="mobile-mail-btn" onclick="openContactModal()">
