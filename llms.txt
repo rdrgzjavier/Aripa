@@ -26,10 +26,10 @@ Más información en: https://aripa.es/servicios
 ## Recursos y Artículos de Expertos
 Directorio de insights: https://aripa.es/recursos
 - **GEO vs SEO**: Estrategias para ganar visibilidad en la era de la búsqueda generativa y la Inteligencia Artificial. (https://aripa.es/geo-vs-seo)
-- **Behavioral Economics y CRO**: C?mo convertir mejor sin empujar m?s al usuario, aplicando psicolog?a y reducci?n de fricci?n. (https://aripa.es/behavioral-economics-cro)
-- **Landings para PYMES**: C?mo convertir tr?fico en oportunidades reales conectando mensaje, confianza, UX y formulario. (https://aripa.es/landing-pages-pymes)
-- **Growth marketing para PYMES**: M?todo pr?ctico para ordenar captaci?n, conversi?n y medici?n sin dispersar recursos. (https://aripa.es/growth-marketing-pymes)
-- **Web posicionada para negocio**: SEO/GEO, arquitectura de informaci?n y conversi?n para webs de servicios. (https://aripa.es/web-posicionada-negocio)
+- **Behavioral Economics y CRO**: Cómo convertir mejor sin empujar más al usuario, aplicando psicología y reducción de fricción. (https://aripa.es/behavioral-economics-cro)
+- **Landings para PYMES**: Cómo convertir tráfico en oportunidades reales conectando mensaje, confianza, UX y formulario. (https://aripa.es/landing-pages-pymes)
+- **Growth marketing para PYMES**: Método práctico para ordenar captación, conversión y medición sin dispersar recursos. (https://aripa.es/growth-marketing-pymes)
+- **Web posicionada para negocio**: SEO/GEO, arquitectura de información y conversión para webs de servicios. (https://aripa.es/web-posicionada-negocio)
 
 ## Fuente de Verdad (NAP)
 - Nombre oficial: Aripa
