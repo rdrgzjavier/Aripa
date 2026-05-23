@@ -627,7 +627,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="flex justify-between items-start gap-4 mb-8">
       <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="modal-title">Hablemos</h2>
       <button class="flex-shrink-0 text-primary/40 hover:text-primary transition-colors" onclick="closeModal('contact-modal')" aria-label="Cerrar">
-        <svg class="icon-svg text-3xl" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+        <svg class="icon-svg text-3xl" style="width:1.875rem;height:1.875rem;" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
       </button>
     </div>
     
@@ -672,8 +672,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <textarea id="message" name="message" class="form-input min-h-[120px] resize-none" placeholder="¿Cómo podemos ayudarte?"></textarea>
       </div>
 
-      <button type="submit" class="btn-submit mt-4" id="submit-btn">
+      <button type="submit" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#061542] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#6b38fb] hover:scale-[1.02] active:scale-95 transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(107,56,251,0.25)] w-fit mt-4" id="submit-btn">
         ENVIAR SOLICITUD
+        <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
       </button>
     </form>
   </div>
@@ -689,7 +690,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       Tu mensaje ha sido entregado correctamente. Un consultor senior revisará tu caso personalmente y recibirás una respuesta en menos de 24 horas.
       <span class="block mt-4 text-sm opacity-70">Nota: Si no recibes noticias nuestras, por favor revisa tu bandeja de <strong>correo no deseado (spam)</strong>.</span>
     </p>
-    <button type="button" class="btn-submit w-full max-w-[220px] mx-auto px-8" onclick="closeModal('success-modal')">
+    <button type="button" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#061542] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#6b38fb] hover:scale-[1.02] active:scale-95 transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(107,56,251,0.25)] w-full max-w-[220px] mx-auto mt-4" onclick="closeModal('success-modal')">
       ENTENDIDO
     </button>
   </div>
