@@ -857,7 +857,7 @@ body { font-family: 'Inter', sans-serif; }
 </style>
 
 </head>
-<body class="bg-background text-on-background selection:bg-secondary/30">
+<body data-page="home" class="bg-background text-on-background selection:bg-secondary/30">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBK55KW8"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -931,7 +931,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main id="main-content" tabindex="-1" class="focus:outline-none">
 
   <!-- Hero (evolución v6) -->
-  <section class="hero-v6 text-white" id="hero-section">
+  <section class="hero-v6 text-white" id="hero-section" data-track-section="hero">
     <canvas class="av6-canvas" id="hero-gradient-canvas" aria-hidden="true"></canvas>
     <div class="av6-grain" aria-hidden="true"></div>
 
@@ -966,7 +966,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- Problem Module (New) -->
-  <section class="py-24 md:py-32 bg-white border-b border-secondary/5" id="problema">
+  <section class="py-24 md:py-32 bg-white border-b border-secondary/5" id="problema" data-track-section="problem">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="mb-16 md:mb-20">
         <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">La realidad del mercado</p>
@@ -1038,7 +1038,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- Services -->
-  <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios">
+  <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios" data-track-section="services">
     <!-- Nivel 1 — Área principal -->
     <div class="mb-12 md:mb-16">
       <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Optimización y crecimiento digital</p>
@@ -1199,7 +1199,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
   <!-- Methodology -->
-  <section class="py-24 md:py-32 bg-surface-container-low" id="metodologia">
+  <section class="py-24 md:py-32 bg-surface-container-low" id="metodologia" data-track-section="process">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">El Método Aripa</p>
       <div class="mb-12 md:mb-20">
@@ -1276,7 +1276,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- Diferencial -->
-  <section class="py-24 md:py-32 bg-surface-container-low" id="diferencial">
+  <section class="py-24 md:py-32 bg-surface-container-low" id="diferencial" data-track-section="differentiator">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
         <div class="reveal-ready" data-delay="1">
@@ -1318,7 +1318,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- Principios de Optimización -->
-  <section class="py-24 md:py-32 bg-white border-y border-outline-variant/10" id="principios">
+  <section class="py-24 md:py-32 bg-white border-y border-outline-variant/10" id="principios" data-track-section="principles">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="mb-16 md:mb-20">
         <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">PRINCIPIOS DE OPTIMIZACIÓN</p>
@@ -1376,7 +1376,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <section class="py-24 md:py-32 bg-white" id="faq">
+  <section class="py-24 md:py-32 bg-white" id="faq" data-track-section="faq">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="mb-12 md:mb-16">
         <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Resolviendo dudas</p>
@@ -1556,7 +1556,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </div>
 
 <!-- CONTACT MODAL -->
-<div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<div class="modal-overlay" id="contact-modal" data-track-section="contact" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal-panel p-8 md:p-12">
     <div class="flex justify-between items-start gap-4 mb-8">
       <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="modal-title">Hablemos</h2>
@@ -1956,6 +1956,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   })();
 </script>
+<script src="/analytics/sectionTracking.js" defer></script>
 <script src="/assets/js/aripa-analytics.js" defer></script>
 </body>
 </html>

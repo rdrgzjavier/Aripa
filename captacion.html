@@ -323,7 +323,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       body:has(#klaro .cookie-notice)::before { content: '' !important; position: fixed !important; inset: 0 !important; background: rgba(6, 21, 66, 0.8) !important; backdrop-filter: blur(10px) !important; -webkit-backdrop-filter: blur(10px) !important; z-index: 99999997 !important; pointer-events: auto !important; }
     </style>
 </head>
-<body>
+<body data-page="capture">
     <canvas class="av6-canvas" id="hero-gradient-canvas" aria-hidden="true"></canvas>
     <div class="av6-grain" aria-hidden="true"></div>
 
@@ -342,7 +342,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </header>
 
     <main class="main-wrapper">
-        <section class="glass-card">
+        <section class="glass-card" data-track-section="capture_form">
             <h1>Únete a la lista</h1>
             <p class="subtle">Recibe estrategias exclusivas de SEO, CRO y Crecimiento Digital directamente en tu bandeja.</p>
             <form
@@ -521,6 +521,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wd9btxwafk");
     </script>
+<script src="/analytics/sectionTracking.js" defer></script>
 <script src="/assets/js/aripa-analytics.js" defer></script>
 </body>
 </html>

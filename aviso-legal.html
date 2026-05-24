@@ -90,7 +90,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   body { font-family: 'Inter', sans-serif; background-color: #fcf9f8; color: #061542; }
   .font-headline { font-family: 'Inter', sans-serif; font-weight: 800; }
-  
+
   /* Header Logic from Index */
   #site-header {
     position: fixed;
@@ -117,7 +117,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .btn-lavender .icon-svg {
     color: #171443;
   }
-  
+
   /* Manual padding utilities as they are missing in style.css */
   .py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
   @media (min-width: 768px) {
@@ -130,14 +130,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
 
   /* Hero Styles & Typography */
-  #hero-section.hero-v6 { 
-    position: relative; 
-    min-height: 45vh; 
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
-    overflow: hidden; 
-    background: #061542; 
+  #hero-section.hero-v6 {
+    position: relative;
+    min-height: 45vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: #061542;
     isolation: isolate;
   }
   .av6-canvas { position: absolute; inset: 0; z-index: -3; width: 100%; height: 100%; }
@@ -228,7 +228,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   .form-label { display: block; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(6, 21, 66, 0.4); margin-bottom: 0.75rem; margin-left: 0.25rem; }
   .btn-submit { width: 100%; background: linear-gradient(135deg, #8b5cf6 0%, #6d28d9 100%); color: white; font-weight: 800; text-transform: uppercase; letter-spacing: 0.1em; padding: 1.25rem; border-radius: 1.25rem; box-shadow: 0 10px 25px -5px rgba(109, 40, 217, 0.4); transition: all 0.3s ease; }
   .btn-submit:hover { transform: translateY(-2px); box-shadow: 0 15px 30px -5px rgba(109, 40, 217, 0.5); }
-  
+
   /* Klaro Consent Manager Customization - FINAL VERSION */
   #klaro, #klaro .klaro {
     margin: 0 !important;
@@ -338,7 +338,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       white-space: nowrap !important;
     }
   }
-  
+
   /* MOBILE CAPA 1 REPLICA CAPA 2 */
   @media (max-width: 767px) {
     #klaro .klaro .cookie-notice .cn-ok .cm-btn {
@@ -372,8 +372,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     margin: 8px 0 !important;
   }
   @media (min-width: 1024px) {
-    #klaro .klaro .cm-btn { 
-      width: auto !important; 
+    #klaro .klaro .cm-btn {
+      width: auto !important;
       margin: 0 12px !important;
     }
   }
@@ -404,8 +404,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     margin: 12px 0 !important;
   }
   @media (min-width: 1024px) {
-    #klaro .klaro .cm-link { 
-      width: auto !important; 
+    #klaro .klaro .cm-link {
+      width: auto !important;
       padding: 14px 0 !important;
       display: inline-flex !important;
       line-height: 1 !important;
@@ -423,7 +423,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   #klaro .klaro .cm-modal .cm-panel .cm-header * {
     color: #061542 !important;
   }
-  
+
   @media (max-width: 767px) {
     #klaro .klaro .cm-modal .cm-panel .cm-footer,
     #klaro .klaro .cm-footer,
@@ -456,10 +456,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     padding: 20px !important;
     background: #fff !important;
   }
-  #klaro .klaro .cm-modal p, 
+  #klaro .klaro .cm-modal p,
   #klaro .klaro .cm-modal span,
   #klaro .klaro .cm-modal div,
-  #klaro .klaro .cm-modal .cm-app-description, 
+  #klaro .klaro .cm-modal .cm-app-description,
   #klaro .klaro .cm-modal .cm-app-title,
   #klaro .klaro .cm-modal .cm-list-description,
   #klaro .klaro .cm-modal .cm-purpose-description {
@@ -511,7 +511,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
 </head>
 
-<body>
+<body data-page="legal">
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBK55KW8"
@@ -544,7 +544,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <main id="main-content">
 
   <!-- HERO SECTION -->
-  <section id="hero-section" class="hero-v6">
+  <section id="hero-section" class="hero-v6" data-track-section="hero">
     <canvas class="av6-canvas" id="hero-gradient-canvas"></canvas>
     <div class="av6-grain" aria-hidden="true"></div>
     <div class="av6-content">
@@ -554,7 +554,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- CONTENIDO LEGAL -->
-  <section class="my-24 md:my-32 px-6 md:px-12 py-6 md:py-12 max-w-4xl mx-auto">
+  <section class="my-24 md:my-32 px-6 md:px-12 py-6 md:py-12 max-w-4xl mx-auto" data-track-section="legal_content">
     <div class="legal-card">
       <div class="legal-prose">
         <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se exponen a continuación los datos identificativos del titular del sitio web.</p>
@@ -622,7 +622,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </footer>
 
 <!-- MODALS -->
-<div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<div class="modal-overlay" id="contact-modal" data-track-section="contact" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal-panel p-8 md:p-12">
     <div class="flex justify-between items-start gap-4 mb-8">
       <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="modal-title">Hablemos</h2>
@@ -630,7 +630,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <svg class="icon-svg text-3xl" style="width:1.875rem;height:1.875rem;" viewBox="0 -960 960 960"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
       </button>
     </div>
-    
+
     <div class="mb-10">
       <p class="text-on-surface-variant text-base leading-relaxed">
         Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.
@@ -781,11 +781,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       const allBtns = document.querySelectorAll('#klaro .cm-btn, #id-cookie-notice .cm-btn, #klaro .cm-link, #id-cookie-notice .cm-link');
       allBtns.forEach(btn => {
         const txt = btn.innerText;
-        
+
         // RECHAZAR (Covers Layer 1 and 2)
         if (txt.includes('Descartar todas') || txt.includes('Rechazar todas') || txt === 'Descartar') {
           if (btn.innerText !== 'Rechazar') btn.innerText = 'Rechazar';
-        } 
+        }
         // GUARDAR (Specific for Layer 2 selections)
         else if (txt.includes('Aceptar seleccionadas') || txt.includes('Aceptar seleccionados') || txt.includes('Guardar')) {
           if (btn.innerText !== 'Guardar') btn.innerText = 'Guardar';
@@ -851,6 +851,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "wd9btxwafk");
 </script>
+<script src="/analytics/sectionTracking.js" defer></script>
 <script src="/assets/js/aripa-analytics.js" defer></script>
 </body>
 </html>

@@ -4,8 +4,6 @@
   var startedForms = new WeakSet();
   var submittedForms = new WeakSet();
   var generatedLead = false;
-  var scrollMarks = [25, 50, 75, 90];
-  var firedScroll = {};
   var firedTimers = {};
   var pageMeta = getPageMeta();
 
@@ -117,18 +115,6 @@
     observer.observe(modal, { attributes: true, attributeFilter: ['class'] });
   }
 
-  function trackScrollDepth() {
-    var doc = document.documentElement;
-    var scrollable = Math.max(1, doc.scrollHeight - window.innerHeight);
-    var depth = Math.min(100, Math.round((window.scrollY / scrollable) * 100));
-    scrollMarks.forEach(function (mark) {
-      if (depth >= mark && !firedScroll[mark]) {
-        firedScroll[mark] = true;
-        push('scroll_depth', { percent_scrolled: mark });
-      }
-    });
-  }
-
   function trackTimers() {
     [30, 60, 120].forEach(function (seconds) {
       window.setTimeout(function () {
@@ -139,27 +125,6 @@
     });
   }
 
-  function trackArticleProgress() {
-    var body = document.querySelector('.article-body');
-    if (!body) return;
-    var articleMarks = [25, 50, 75, 100];
-    var fired = {};
-    window.addEventListener('scroll', function () {
-      var rect = body.getBoundingClientRect();
-      var total = Math.max(1, body.offsetHeight - window.innerHeight);
-      var read = Math.min(100, Math.max(0, Math.round(((0 - rect.top) / total) * 100)));
-      articleMarks.forEach(function (mark) {
-        if (read >= mark && !fired[mark]) {
-          fired[mark] = true;
-          push('article_progress', {
-            article_title: cleanText(document.querySelector('h1') && document.querySelector('h1').innerText),
-            percent_read: mark
-          });
-        }
-      });
-    }, { passive: true });
-  }
-
   document.addEventListener('DOMContentLoaded', function () {
     push('aripa_page_view', {
       page_title: document.title,
@@ -168,9 +133,7 @@
     document.addEventListener('click', trackClick, true);
     document.addEventListener('focusin', trackFormStart, true);
     document.addEventListener('submit', trackFormSubmit, true);
-    window.addEventListener('scroll', trackScrollDepth, { passive: true });
     watchLeadSuccess();
     trackTimers();
-    trackArticleProgress();
   });
 })();

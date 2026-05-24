@@ -530,7 +530,7 @@ body { font-family: 'Inter', sans-serif; }
     }
   }
   /* Success modal styles removed */
-  
+
   /* Restored Article CSS */
   #recursos-grid { padding-top:6rem; padding-bottom:7rem; }
   #author-module { padding-bottom:7rem; }
@@ -538,7 +538,7 @@ body { font-family: 'Inter', sans-serif; }
   .article-shell { padding-top:5rem; padding-bottom:4rem; }
   @media(min-width:768px){ .article-shell{padding-top:6rem;padding-bottom:5rem;} }
   .article-card { background:#fff; border:1px solid rgba(107,56,251,.12); box-shadow:0 24px 70px rgba(6,21,66,.06); }
-  
+
   /* Global av6-btn-primary (not scoped to hero-section) */
   .av6-btn-primary {
     min-width: 240px;
@@ -846,7 +846,7 @@ body { font-family: 'Inter', sans-serif; }
   }
 </style>
 </head>
-<body class="bg-background text-on-background selection:bg-secondary/30">
+<body data-page="article" class="bg-background text-on-background selection:bg-secondary/30">
 
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KBK55KW8"
@@ -915,14 +915,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </header>
 
-  <main id="main-content" class="article-shell bg-white">
+  <main id="main-content" class="article-shell bg-white" data-track-section="article">
   <article class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12">
     <div class="lg:col-span-8 lg:col-start-3">
     <a href="recursos.html" class="flex items-center gap-2 text-secondary font-bold text-[11px] uppercase tracking-widest mb-6 md:mb-8 hover:text-primary transition-colors group w-fit">
       <svg class="icon-svg text-lg transition-transform group-hover:-translate-x-1" viewBox="0 -960 960 960"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
       Volver a recursos
     </a>
-    
+
       <div class="mb-5 md:mb-8 border-b border-primary/10 pb-5 md:pb-6">
         <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-8">LANDINGS / CRO</p>
         <h1 class="text-primary font-headline font-extrabold text-4xl md:text-6xl leading-[.95] tracking-tight mb-10">Anal&iacute;tica para PYMES: medir lo que importa antes de invertir m&aacute;s</h1>
@@ -935,7 +935,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <span class="text-secondary">3 min de lectura</span>
         </div>
       </div>
-      
+
         <div class="article-body pb-8 text-lg"><h2>Medir no es mirar informes: es reducir incertidumbre</h2>
 <p>En muchas PYMES la anal&iacute;tica aparece tarde. Se instala GA4, se revisan visitas de vez en cuando y se mira si el tr&aacute;fico sube o baja. El problema es que ese dato, aislado, ayuda poco. Una web puede crecer en sesiones y no mejorar en negocio. Tambi&eacute;n puede tener menos tr&aacute;fico y generar contactos de mayor calidad.</p>
 <p>La pregunta no deber&iacute;a ser solo cu&aacute;nta gente entra, sino qu&eacute; intenci&oacute;n trae, qu&eacute; p&aacute;ginas consulta, qu&eacute; acciones realiza y qu&eacute; se&ntilde;ales indican que est&aacute; cerca de pedir informaci&oacute;n. Esa lectura permite decidir mejor d&oacute;nde invertir: contenido, campa&ntilde;as, UX, SEO, landings o mejora del formulario.</p>
@@ -943,24 +943,24 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <p>La base es sencilla: p&aacute;ginas vistas, origen del tr&aacute;fico, clics en CTAs, apertura de formularios, intentos de env&iacute;o, leads recibidos, profundidad de scroll y tiempo de interacci&oacute;n. No hace falta empezar con un sistema enorme. Hace falta un modelo que responda a preguntas de negocio.</p>
 <p>Por ejemplo: qu&eacute; servicio despierta m&aacute;s inter&eacute;s, qu&eacute; art&iacute;culo trae usuarios cualificados, qu&eacute; CTA funciona mejor en m&oacute;vil, cu&aacute;ntas personas empiezan el formulario y no lo terminan, o si una landing genera intenci&oacute;n pero falla en el &uacute;ltimo paso.</p>
 <h3>Eventos que convierten datos en decisiones</h3>
-<ul><li><strong>cta_click:</strong> ayuda a saber qu&eacute; mensajes y ubicaciones provocan acci&oacute;n.</li><li><strong>form_start:</strong> muestra si el formulario invita a empezar.</li><li><strong>form_submit_attempt:</strong> permite detectar intenci&oacute;n incluso antes del lead final.</li><li><strong>generate_lead:</strong> mide la conversi&oacute;n real que llega al negocio.</li><li><strong>scroll_depth:</strong> indica si el contenido se consume o queda abandonado.</li></ul>
+<ul><li><strong>cta_click:</strong> ayuda a saber qu&eacute; mensajes y ubicaciones provocan acci&oacute;n.</li><li><strong>form_start:</strong> muestra si el formulario invita a empezar.</li><li><strong>form_submit_attempt:</strong> permite detectar intenci&oacute;n incluso antes del lead final.</li><li><strong>generate_lead:</strong> mide la conversi&oacute;n real que llega al negocio.</li><li><strong>gtm.scrollDepth:</strong> indica si el contenido se consume o queda abandonado, gestionado desde GTM nativo.</li></ul>
 <h2>El error habitual: medir demasiado tarde</h2>
 <p>Si solo se mide el lead final, se pierde mucha informaci&oacute;n. Entre la visita y el contacto hay microdecisiones: leer, comparar, abrir una secci&oacute;n, hacer clic, volver atr&aacute;s, empezar un formulario o abandonar. Entender esos pasos ayuda a encontrar mejoras peque&ntilde;as con impacto real.</p>
 <p>Tambi&eacute;n evita discusiones basadas en gustos. Si un bloque recibe mucha atenci&oacute;n pero pocos clics, quiz&aacute;s necesita un CTA mejor. Si una p&aacute;gina se lee hasta el final pero no convierte, puede faltar prueba o una propuesta m&aacute;s concreta. Si nadie llega al formulario, el problema est&aacute; antes.</p>
 <h2>Una medici&oacute;n &uacute;til tiene que ser ligera</h2>
 <p>Para una PYME, el objetivo no es montar una arquitectura de datos compleja desde el primer d&iacute;a. Lo importante es tener una taxonom&iacute;a clara, eventos bien nombrados y una lectura mensual que conecte marketing con negocio. Menos ruido, m&aacute;s se&ntilde;ales.</p>
 <p>En Aripa planteamos la anal&iacute;tica como una herramienta de priorizaci&oacute;n. Sirve para saber qu&eacute; mejorar primero, qu&eacute; contenido ampliar, qu&eacute; canal merece inversi&oacute;n y qu&eacute; parte de la experiencia est&aacute; frenando oportunidades. Medir bien no sustituye la estrategia, pero hace que cada decisi&oacute;n tenga menos niebla.</p></div>
-        
-      <aside class="group relative bg-white p-8 md:p-12 rounded-3xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col md:flex-row gap-8 md:gap-12 text-left w-full items-start md:items-center justify-between">
+
+      <aside class="group relative bg-white p-8 md:p-12 rounded-3xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col md:flex-row gap-8 md:gap-12 text-left w-full items-start md:items-center justify-between" data-track-section="article_cta">
         <div class="flex flex-col max-w-2xl">
           <span class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-4 group-hover:text-white/60 transition-colors">ARIPA CONSULTING</span>
           <h2 class="text-2xl md:text-3xl font-extrabold font-headline text-primary group-hover:text-white transition-colors mb-4 leading-tight">¿Tu negocio pierde conversiones y no sabes dónde?</h2>
           <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base md:text-lg transition-colors">Identificamos fricciones ocultas en tu embudo y diseñamos una hoja de ruta estratégica para impulsar tu rentabilidad.</p>
         </div>
-        
+
         <div class="flex-shrink-0 mt-2 md:mt-0 w-full md:w-auto">
           <button type="button" class="cta-core inline-flex items-center justify-center w-full md:w-max gap-3 px-8 py-4 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all bg-transparent group-hover:bg-white/10 active:scale-95" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
-            CONTACTAR 
+            CONTACTAR
             <svg class="icon-svg text-base transition-transform group-hover:translate-x-1" viewBox="0 -960 960 960"><path d="M504-480 320-664l56-56 240 240-240 240-56-56 184-184Z"/></svg>
           </button>
         </div>
@@ -1024,7 +1024,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </button>
   </div>
 </div>
-<div class="modal-overlay" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+<div class="modal-overlay" id="contact-modal" data-track-section="contact" role="dialog" aria-modal="true" aria-labelledby="modal-title">
   <div class="modal-panel p-8 md:p-12">
     <div class="flex justify-between items-start gap-4 mb-8">
       <h2 class="text-2xl md:text-4xl font-extrabold font-headline text-primary" id="modal-title">Hablemos</h2>
@@ -1387,6 +1387,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   })();
 </script>
+<script src="/analytics/sectionTracking.js" defer></script>
 <script src="/assets/js/aripa-analytics.js" defer></script>
 </body>
 </html>
