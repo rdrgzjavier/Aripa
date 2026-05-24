@@ -40,3 +40,8 @@ Más información en: https://aripa.es/servicios
 - SaaS
 - eCommerce
 - Lead generation
+
+## Nuevos recursos editoriales
+- Captacion de leads B2B para PYMES: como mejorar calidad de oportunidades, landings y medicion. (https://aripa.es/captacion-leads-b2b-pymes)
+- SEO local para PYMES de servicios: visibilidad, confianza y conversion en busquedas locales. (https://aripa.es/seo-local-pymes-servicios)
+- Arquitectura de contenidos SEO/GEO: ordenar servicios, articulos y entidades para personas, buscadores e IA. (https://aripa.es/arquitectura-contenidos-seo-geo)
