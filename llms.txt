@@ -20,16 +20,8 @@ Aripa no optimiza por intuición. Analizamos el "porqué" de cada interacción m
 Más información en: https://aripa.es/servicios
 - **Conversión & CRO**: Auditorías de conversión y landing pages de alto impacto.
 - **UX & Behavioral Design**: Diseño de claridad y arquitectura de información.
-- **Analítica y Medición**: Dashboards, GA4, tracking avanzado y modelo de datos.
-- **Growth Estratégico**: Adquisición multicanal y estrategias GEO (Generative Engine Optimization).
-
-## Recursos y Artículos de Expertos
-Directorio de insights: https://aripa.es/recursos
-- **GEO vs SEO**: Estrategias para ganar visibilidad en la era de la búsqueda generativa y la Inteligencia Artificial. (https://aripa.es/geo-vs-seo)
-- **Behavioral Economics y CRO**: Cómo convertir mejor sin empujar más al usuario, aplicando psicología y reducción de fricción. (https://aripa.es/behavioral-economics-cro)
-- **Landings para PYMES**: Cómo convertir tráfico en oportunidades reales conectando mensaje, confianza, UX y formulario. (https://aripa.es/landing-pages-pymes)
-- **Growth marketing para PYMES**: Método práctico para ordenar captación, conversión y medición sin dispersar recursos. (https://aripa.es/growth-marketing-pymes)
-- **Web posicionada para negocio**: SEO/GEO, arquitectura de información y conversión para webs de servicios. (https://aripa.es/web-posicionada-negocio)
+- **Analitica para PYMES**: Que medir para tomar mejores decisiones antes de invertir mas en trafico, campanas o redisenos. (https://aripa.es/analitica-pymes-decisiones)
+- **Contenido SEO/AEO para PYMES**: Como responder busquedas reales y crear contenido util para Google, motores generativos y usuarios. (https://aripa.es/contenido-seo-aeo-pymes)
 
 ## Fuente de Verdad (NAP)
 - Nombre oficial: Aripa
