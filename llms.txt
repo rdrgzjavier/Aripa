@@ -45,3 +45,6 @@ Más información en: https://aripa.es/servicios
 - Captacion de leads B2B para PYMES: como mejorar calidad de oportunidades, landings y medicion. (https://aripa.es/captacion-leads-b2b-pymes)
 - SEO local para PYMES de servicios: visibilidad, confianza y conversion en busquedas locales. (https://aripa.es/seo-local-pymes-servicios)
 - Arquitectura de contenidos SEO/GEO: ordenar servicios, articulos y entidades para personas, buscadores e IA. (https://aripa.es/arquitectura-contenidos-seo-geo)
+
+## Entidad
+- Sobre Aripa: entidad, fundador, metodologia y enfoque de consultoria CRO, SEO/GEO, analitica y growth. (https://aripa.es/sobre-aripa)
