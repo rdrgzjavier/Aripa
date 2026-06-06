@@ -857,6 +857,89 @@ body { font-family: 'Inter', sans-serif; }
     z-index: 99999997 !important;
     pointer-events: auto !important;
   }
+
+  /* Home color rhythm: selected modules with Aripa palette */
+  .home-bleed {
+    box-shadow: 0 0 0 100vmax var(--home-band-bg);
+    clip-path: inset(0 -100vmax);
+  }
+  .home-dark-band {
+    --home-band-bg: #061542;
+    background: radial-gradient(circle at 16% 10%, rgba(166,127,253,0.22), transparent 24rem), linear-gradient(135deg, #061542 0%, #111b4b 58%, #2d1d62 100%);
+    color: #fcf9f8;
+  }
+  .home-dark-band > div:first-child .text-primary,
+  .home-dark-band > div:first-child h2,
+  .home-dark-band > div:first-child h3,
+  .home-dark-band > div:first-child p:not(.text-secondary) {
+    color: #fcf9f8 !important;
+  }
+  .home-dark-band > div:first-child .text-on-surface-variant,
+  .home-dark-band > div:first-child p.text-on-surface-variant {
+    color: rgba(252,249,248,0.78) !important;
+  }
+  .home-dark-band > div:first-child .text-secondary,
+  .home-dark-band > div:first-child p.text-secondary {
+    color: #cdbdff !important;
+  }
+  .home-dark-band .border-outline-variant\/10 {
+    border-color: rgba(252,249,248,0.14) !important;
+  }
+  .home-dark-copy .text-primary,
+  .home-dark-copy h2,
+  .home-dark-copy h3,
+  .home-dark-copy p:not(.text-secondary) {
+    color: #fcf9f8 !important;
+  }
+  .home-dark-copy .text-on-surface-variant,
+  .home-dark-copy p.text-on-surface-variant {
+    color: rgba(252,249,248,0.78) !important;
+  }
+  .home-dark-copy .text-secondary,
+  .home-dark-copy p.text-secondary {
+    color: #cdbdff !important;
+  }
+  .home-dark-band article.bg-white,
+  .home-dark-band button.bg-white,
+  .home-dark-band .bg-white,
+  .home-dark-band .bg-white\/50 {
+    background: rgba(255,255,255,0.96) !important;
+  }
+  .home-dark-band article:hover,
+  .home-dark-band button:hover {
+    background: #6c45c0 !important;
+  }
+  .home-dark-panel {
+    --home-band-bg: #101b4a;
+    background: radial-gradient(circle at 78% 18%, rgba(166,127,253,0.20), transparent 24rem), linear-gradient(135deg, #061542 0%, #101b4a 54%, #221753 100%);
+    color: #fcf9f8;
+  }
+  .home-dark-panel .text-primary,
+  .home-dark-panel h2,
+  .home-dark-panel h3 {
+    color: #fcf9f8 !important;
+  }
+  .home-dark-panel .text-on-surface-variant {
+    color: rgba(252,249,248,0.76) !important;
+  }
+  .home-dark-panel .text-secondary {
+    color: #cdbdff !important;
+  }
+  .home-dark-panel .bg-white\/50 {
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.12) !important;
+  }
+  .home-dark-panel .bg-white\/50:hover {
+    background: rgba(255,255,255,0.14) !important;
+  }
+  .home-faq-band {
+    --home-band-bg: #f1ecff;
+    background: radial-gradient(circle at 90% 12%, rgba(108,69,192,0.12), transparent 22rem), linear-gradient(180deg, #f1ecff 0%, #fcf9f8 100%);
+  }
+  .home-faq-band details {
+    background: rgba(255,255,255,0.72);
+    border-color: rgba(108,69,192,0.16);
+  }
 </style>
 
 </head>
@@ -1034,9 +1117,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- Services -->
-  <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" id="servicios" data-track-section="services">
+  <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto home-bleed home-dark-band" id="servicios" data-track-section="services">
     <!-- Nivel 1 — Área principal -->
-    <div class="mb-12 md:mb-16">
+    <div class="mb-12 md:mb-16 home-dark-copy">
       <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Optimización y crecimiento digital</p>
       <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">&Aacute;reas que ayudan a convertir mejor</h2>
       <p class="text-base md:text-lg text-on-surface-variant leading-relaxed max-w-4xl">
@@ -1127,7 +1210,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- Nivel 2 — Capacidades complementarias -->
     <div class="mt-8 md:mt-12 pt-24 md:pt-28 border-t border-outline-variant/10">
-      <div class="mb-12">
+      <div class="mb-12 home-dark-copy">
         <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Capacidades que refuerzan la optimización</p>
         <h3 class="text-2xl md:text-3xl font-extrabold font-headline text-primary tracking-tighter mb-4">Servicios y soporte complementario</h3>
         <p class="text-base md:text-lg text-on-surface-variant leading-relaxed max-w-4xl">
@@ -1276,7 +1359,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- Diferencial -->
-  <section class="py-24 md:py-32 bg-surface-container-low" id="diferencial" data-track-section="value_proposition">
+  <section class="py-24 md:py-32 bg-surface-container-low home-bleed home-dark-panel" id="diferencial" data-track-section="value_proposition">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center">
         <div class="reveal-ready" data-delay="1">
@@ -1376,7 +1459,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <section class="py-24 md:py-32 bg-white" id="faq" data-track-section="faq">
+  <section class="py-24 md:py-32 bg-white home-bleed home-faq-band" id="faq" data-track-section="faq">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12">
       <div class="mb-12 md:mb-16">
         <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Resolviendo dudas</p>
