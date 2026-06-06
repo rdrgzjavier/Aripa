@@ -860,18 +860,8 @@ body { font-family: 'Inter', sans-serif; }
 
   /* Home color rhythm: selected modules with Aripa palette */
   .home-bleed {
-    position: relative;
-    isolation: isolate;
-  }
-  .home-bleed::before {
-    content: "";
-    position: absolute;
-    inset: 0 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    background: var(--home-band-bg);
-    z-index: -1;
-    pointer-events: none;
+    box-shadow: 0 0 0 100vmax var(--home-band-bg);
+    clip-path: inset(0 -100vmax);
   }
   .home-dark-band {
     --home-band-bg: radial-gradient(circle at 16% 10%, rgba(166,127,253,0.22), transparent 24rem), linear-gradient(135deg, #061542 0%, #111b4b 58%, #2d1d62 100%);
