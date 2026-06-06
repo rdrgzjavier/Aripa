@@ -860,12 +860,22 @@ body { font-family: 'Inter', sans-serif; }
 
   /* Home color rhythm: selected modules with Aripa palette */
   .home-bleed {
-    box-shadow: 0 0 0 100vmax var(--home-band-bg);
-    clip-path: inset(0 -100vmax);
+    position: relative;
+    isolation: isolate;
+  }
+  .home-bleed::before {
+    content: "";
+    position: absolute;
+    inset: 0 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    background: var(--home-band-bg);
+    z-index: -1;
+    pointer-events: none;
   }
   .home-dark-band {
-    --home-band-bg: #061542;
-    background: radial-gradient(circle at 16% 10%, rgba(166,127,253,0.22), transparent 24rem), linear-gradient(135deg, #061542 0%, #111b4b 58%, #2d1d62 100%);
+    --home-band-bg: radial-gradient(circle at 16% 10%, rgba(166,127,253,0.22), transparent 24rem), linear-gradient(135deg, #061542 0%, #111b4b 58%, #2d1d62 100%);
+    background: var(--home-band-bg);
     color: #fcf9f8;
   }
   .home-dark-band > div:first-child .text-primary,
@@ -910,8 +920,8 @@ body { font-family: 'Inter', sans-serif; }
     background: #6c45c0 !important;
   }
   .home-dark-panel {
-    --home-band-bg: #101b4a;
-    background: radial-gradient(circle at 78% 18%, rgba(166,127,253,0.20), transparent 24rem), linear-gradient(135deg, #061542 0%, #101b4a 54%, #221753 100%);
+    --home-band-bg: radial-gradient(circle at 78% 18%, rgba(166,127,253,0.20), transparent 24rem), linear-gradient(135deg, #061542 0%, #101b4a 54%, #221753 100%);
+    background: var(--home-band-bg);
     color: #fcf9f8;
   }
   .home-dark-panel .text-primary,
@@ -933,8 +943,8 @@ body { font-family: 'Inter', sans-serif; }
     background: rgba(255,255,255,0.14) !important;
   }
   .home-faq-band {
-    --home-band-bg: #f1ecff;
-    background: radial-gradient(circle at 90% 12%, rgba(108,69,192,0.12), transparent 22rem), linear-gradient(180deg, #f1ecff 0%, #fcf9f8 100%);
+    --home-band-bg: radial-gradient(circle at 90% 12%, rgba(108,69,192,0.12), transparent 22rem), linear-gradient(180deg, #f1ecff 0%, #fcf9f8 100%);
+    background: var(--home-band-bg);
   }
   .home-faq-band details {
     background: rgba(255,255,255,0.72);
