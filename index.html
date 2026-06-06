@@ -919,6 +919,38 @@ body { font-family: 'Inter', sans-serif; }
   .home-dark-band button:hover {
     background: #6c45c0 !important;
   }
+  .home-dark-band .optimization-card {
+    background: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.12) !important;
+    box-shadow: none !important;
+  }
+  .home-dark-band .optimization-card:hover {
+    background: rgba(255,255,255,0.14) !important;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.18) !important;
+  }
+  .home-dark-band .optimization-card h3,
+  .home-dark-band .optimization-card h4 {
+    color: #fcf9f8 !important;
+  }
+  .home-dark-band .optimization-card p {
+    color: rgba(252,249,248,0.76) !important;
+  }
+  .home-dark-band .optimization-card .bg-secondary\/5 {
+    background: rgba(255,255,255,0.08) !important;
+  }
+  .home-dark-band .optimization-card:hover .bg-secondary\/5 {
+    background: rgba(255,255,255,0.14) !important;
+  }
+  .home-dark-band .optimization-card .text-secondary,
+  .home-dark-band .optimization-card svg.text-secondary {
+    color: #cdbdff !important;
+  }
+  .home-dark-band .optimization-card span {
+    color: #cdbdff !important;
+  }
+  .home-dark-band .optimization-card:hover span {
+    color: #fcf9f8 !important;
+  }
   .home-dark-panel {
     --home-band-bg: radial-gradient(circle at 78% 18%, rgba(166,127,253,0.20), transparent 24rem), linear-gradient(135deg, #061542 0%, #101b4a 54%, #221753 100%);
     background: var(--home-band-bg);
@@ -1140,7 +1172,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-28 md:mb-36">
       <!-- 1. CRO y optimización de conversión -->
       <button type="button"
-           class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
+           class="optimization-card group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 transition-all duration-300 cursor-pointer flex flex-col gap-8 text-left w-full"
            onclick="openModal('service-modal-conversion')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1162,7 +1194,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- 2. UX/UI orientado a negocio -->
       <button type="button"
-           class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
+           class="optimization-card group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 transition-all duration-300 cursor-pointer flex flex-col gap-8 text-left w-full"
            onclick="openModal('service-modal-ux')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>
@@ -1180,7 +1212,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- 3. Analítica y medición -->
       <button type="button"
-           class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
+           class="optimization-card group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 transition-all duration-300 cursor-pointer flex flex-col gap-8 text-left w-full"
            onclick="openModal('service-modal-analytics')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M280-280h80v-280h-80v280Zm160 0h80v-440h-80v440Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm0-80h640v-560H160v560Zm0 0v-560 560Z"/></svg>
@@ -1198,7 +1230,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <!-- 4. Growth y experimentación -->
       <button type="button"
-           class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
+           class="optimization-card group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 transition-all duration-300 cursor-pointer flex flex-col gap-8 text-left w-full"
            onclick="openModal('service-modal-growth')">
         <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
           <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
@@ -1230,7 +1262,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         <!-- 1. SEO / GEO -->
-        <article class="group relative bg-white p-6 md:p-7 rounded-2xl border border-secondary/10 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col min-h-[320px]" onclick="openContactModal('seo_geo')">
+        <article class="optimization-card group relative bg-white p-6 md:p-7 rounded-2xl border border-secondary/10 transition-all duration-300 cursor-pointer flex flex-col min-h-[320px]" onclick="openContactModal('seo_geo')">
           <div class="w-12 h-12 rounded-full bg-secondary/5 group-hover:bg-white/10 flex items-center justify-center mb-8 transition-colors duration-500">
             <svg class="icon-svg text-secondary group-hover:text-white text-2xl transition-colors duration-500" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/></svg>
           </div>
@@ -1244,7 +1276,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </article>
 
         <!-- 2. Landings -->
-        <article class="group relative bg-white p-6 md:p-7 rounded-2xl border border-secondary/10 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col min-h-[320px]" onclick="openContactModal('landings')">
+        <article class="optimization-card group relative bg-white p-6 md:p-7 rounded-2xl border border-secondary/10 transition-all duration-300 cursor-pointer flex flex-col min-h-[320px]" onclick="openContactModal('landings')">
           <div class="w-12 h-12 rounded-full bg-secondary/5 group-hover:bg-white/10 flex items-center justify-center mb-8 transition-colors duration-500">
             <svg class="icon-svg text-secondary group-hover:text-white text-2xl transition-colors duration-500" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm0 0v-400 400Z"/></svg>
           </div>
@@ -1258,7 +1290,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </article>
 
         <!-- 3. Automatización -->
-        <article class="group relative bg-white p-6 md:p-7 rounded-2xl border border-secondary/10 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col min-h-[320px]" onclick="openContactModal('automatizacion')">
+        <article class="optimization-card group relative bg-white p-6 md:p-7 rounded-2xl border border-secondary/10 transition-all duration-300 cursor-pointer flex flex-col min-h-[320px]" onclick="openContactModal('automatizacion')">
           <div class="w-12 h-12 rounded-full bg-secondary/5 group-hover:bg-white/10 flex items-center justify-center mb-8 transition-colors duration-500">
             <svg class="icon-svg text-secondary group-hover:text-white text-2xl transition-colors duration-500" viewBox="0 -960 960 960"><path d="M370-80l-16-128q-18-7-33-16t-29-22l-120 48-100-174 102-78q-2-9-2-19v-22q0-10 2-20L72-610l100-174 120 48q14-13 29-22t33-16l16-128h200l16 128q18 7 33 16t29 22l120-48 100 174-102 78q2 9 2 19v22q0 10-2 20l102 78-100 174-120-48q-14 13-29 22t-33 16L590-80H370Zm110-260q58 0 99-41t41-99q0-58-41-99t-99-41q-58 0-99 41t-41 99q0 58 41 99t99 41Z"/></svg>
           </div>
@@ -1272,7 +1304,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </article>
 
         <!-- 4. Servicios complementarios -->
-        <article class="group relative bg-white p-6 md:p-7 rounded-2xl border border-secondary/10 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col min-h-[320px]" onclick="openContactModal('servicios_complementarios')">
+        <article class="optimization-card group relative bg-white p-6 md:p-7 rounded-2xl border border-secondary/10 transition-all duration-300 cursor-pointer flex flex-col min-h-[320px]" onclick="openContactModal('servicios_complementarios')">
           <div class="w-12 h-12 rounded-full bg-secondary/5 group-hover:bg-white/10 flex items-center justify-center mb-8 transition-colors duration-500">
             <svg class="icon-svg text-secondary group-hover:text-white text-2xl transition-colors duration-500" viewBox="0 -960 960 960"><path d="M160-120q-33 0-56.5-23.5T80-200v-440q0-33 23.5-56.5T160-720h160v-80q0-33 23.5-56.5T400-880h160q33 0 56.5 23.5T640-800v80h160q33 0 56.5 23.5T880-640v440q0 33-23.5 56.5T800-120H160Zm0-80h640v-440H160v440Zm240-520h160v-80H400v80ZM160-200v-440 440Z"/></svg>
           </div>
