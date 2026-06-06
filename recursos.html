@@ -8,6 +8,18 @@
 
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
 
+<!-- GTM Consent Mode Default State (AEPD 2023 Compliance) -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied',
+    'wait_for_update': 500
+  });
+</script>
 <!-- Google Tag Manager -->
 <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -1020,15 +1032,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     };
   </script>
 
-  <!-- Clarity -->
-  <script type="text/javascript">
-      (function(c,l,a,r,i,t,y){
-          c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-          t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-      })(window, document, "clarity", "script", "wd9btxwafk");
-  </script>
-
   <!-- High-Priority Universal Text Enforcement -->
   <script type="text/javascript">
     (function() {
@@ -1088,6 +1091,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       setTimeout(enforceKlaroCopy, 1000);
     })();
   </script>
+<script src="/assets/js/consent-analytics.js" defer></script>
 <script src="/analytics/sectionTracking.js" defer></script>
 <script src="/assets/js/aripa-analytics.js" defer></script>
 </body>

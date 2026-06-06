@@ -6,14 +6,6 @@
     <title>Aripa | Únete a la lista</title>
     <meta name="description" content="Recibe estrategias exclusivas de SEO, CRO y Crecimiento Digital aplicadas con IA."/>
 
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-KBK55KW8');</script>
-<!-- End Google Tag Manager -->
-
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
 
 <!-- GTM Consent Mode Default State (AEPD 2023 Compliance) -->
@@ -28,6 +20,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'wait_for_update': 500
   });
 </script>
+
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KBK55KW8');</script>
+<!-- End Google Tag Manager -->
 
 <link rel="canonical" href="https://aripa.es/captacion"/>
 <link rel="preload" href="/style.css" as="style">
@@ -472,7 +473,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
               update: function(m, name, value) {
                 if ((name === 'google-analytics' || name === 'google-tag-manager') && value) {
                   gtag('consent', 'update', {
-                    'analytics_storage': 'granted', 'ad_storage': 'granted', 'ad_user_data': 'granted', 'ad_personalization': 'granted'
+                    'analytics_storage': 'granted', 'ad_storage': 'denied', 'ad_user_data': 'denied', 'ad_personalization': 'denied'
                   });
                 }
               }
@@ -509,18 +510,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             requestAnimationFrame(draw);
         }());
     </script>
-
-    <!-- Clarity -->
-    <script
-      type="text/plain"
-      data-name="microsoft-clarity"
-    >
-    (function(c,l,a,r,i,t,y){
-       c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-       t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-       y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wd9btxwafk");
-    </script>
+<script src="/assets/js/consent-analytics.js" defer></script>
 <script src="/analytics/sectionTracking.js" defer></script>
 <script src="/assets/js/aripa-analytics.js" defer></script>
 </body>
