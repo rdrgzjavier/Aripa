@@ -1,8 +1,14 @@
 (function () {
+  if (window.location.protocol === 'http:' && /(^|\.)aripa\.es$/.test(window.location.hostname)) {
+    window.location.replace('https://' + window.location.host + window.location.pathname + window.location.search + window.location.hash);
+    return;
+  }
+
   var clarityId = 'wd9btxwafk';
   var gaMeasurementId = 'G-8METZ78PVG';
   var clarityLoaded = false;
   var gaLoaded = false;
+  var isSecureContext = window.location.protocol === 'https:';
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
@@ -36,7 +42,7 @@
   }
 
   function loadGoogleAnalytics() {
-    if (gaLoaded) return;
+    if (gaLoaded || !isSecureContext) return;
     gaLoaded = true;
 
     var script = document.createElement('script');
@@ -47,6 +53,9 @@
     window.gtag('js', new Date());
     window.gtag('config', gaMeasurementId, {
       anonymize_ip: true,
+      cookie_domain: 'aripa.es',
+      cookie_flags: 'SameSite=Lax;Secure',
+      cookie_update: true,
       send_page_view: true
     });
   }
