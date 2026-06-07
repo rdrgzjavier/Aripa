@@ -8,6 +8,7 @@
   var gtmId = 'GTM-KBK55KW8';
   var clarityLoaded = false;
   var gtmLoaded = false;
+  var lastConsentState = null;
 
   window.dataLayer = window.dataLayer || [];
   window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
@@ -91,10 +92,33 @@
     if (granted) {
       loadGoogleTagManager();
       loadClarity();
-      window.dataLayer.push({ event: 'analytics_consent_update', analytics_consent: 'granted' });
+      if (lastConsentState !== 'granted') {
+        window.dataLayer.push({ event: 'analytics_consent_update', analytics_consent: 'granted' });
+        lastConsentState = 'granted';
+      }
     } else {
-      window.dataLayer.push({ event: 'analytics_consent_update', analytics_consent: 'denied' });
+      if (lastConsentState !== 'denied') {
+        window.dataLayer.push({ event: 'analytics_consent_update', analytics_consent: 'denied' });
+        lastConsentState = 'denied';
+      }
     }
+  }
+
+  function readKlaroConsent() {
+    if (typeof window.klaro === 'undefined' || !window.klaro.getManager) return false;
+    syncFromKlaro(window.klaro.getManager());
+    return true;
+  }
+
+  function scheduleConsentSync() {
+    [0, 150, 500, 1000].forEach(function (delay) {
+      window.setTimeout(readKlaroConsent, delay);
+    });
+  }
+
+  function isKlaroInteraction(target) {
+    if (!target || !target.closest) return false;
+    return !!target.closest('.klaro, .cookie-modal, .cookie-notice, .cm-modal, .cm-notice, .cm-btn, .cookie-notice-buttons');
   }
 
   function initConsentBridge() {
@@ -108,6 +132,8 @@
         update: function (updatedManager, name) {
           if (name === 'google-analytics' || name === 'google-tag-manager' || name === 'microsoft-clarity') {
             syncFromKlaro(updatedManager || manager);
+          } else {
+            scheduleConsentSync();
           }
         }
       });
@@ -117,6 +143,14 @@
   }
 
   clearDeprecatedCookies();
+
+  document.addEventListener('click', function (event) {
+    if (isKlaroInteraction(event.target)) scheduleConsentSync();
+  }, true);
+
+  ['klaro:consentChanged', 'klaro:consent', 'klaro:save'].forEach(function (eventName) {
+    window.addEventListener(eventName, scheduleConsentSync);
+  });
 
   window.addEventListener('load', function () {
     if (initConsentBridge()) return;
