@@ -1086,13 +1086,13 @@ body { font-family: 'Inter', sans-serif; }
 </div>
 
 <!-- SUCCESS MODAL -->
-<div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true">
+<div class="modal-overlay" id="success-modal" role="dialog" aria-modal="true" aria-labelledby="success-modal-title" aria-describedby="success-modal-description">
   <div class="modal-panel p-10 md:p-16 text-center">
     <div class="bg-secondary/10 rounded-2xl flex items-center justify-center mx-auto mb-8 w-full max-w-[200px]" style="height: 56px; min-height: 56px;">
       <svg class="icon-svg text-secondary text-3xl" style="fill: currentColor;" viewBox="0 -960 960 960"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>
     </div>
-    <h2 class="text-3xl font-extrabold font-headline text-primary mb-4">¡Solicitud recibida!</h2>
-    <p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
+    <h2 id="success-modal-title" class="text-3xl font-extrabold font-headline text-primary mb-4">¡Solicitud recibida!</h2>
+    <p id="success-modal-description" class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
       Tu mensaje ha sido entregado correctamente. Un consultor senior revisará tu caso personalmente y recibirás una respuesta en menos de 24 horas.
       <span class="block mt-4 text-sm opacity-70">Nota: Si no recibes noticias nuestras, por favor revisa tu bandeja de <strong>correo no deseado (spam)</strong>.</span>
     </p>

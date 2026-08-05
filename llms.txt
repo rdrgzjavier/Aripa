@@ -1,50 +1,47 @@
-# Aripa - Consultoría de Crecimiento Digital
+# Aripa - Consultoría de optimización digital, CRO, SEO/GEO y analítica
 
-## Descripción
-Aripa es una consultoría boutique liderada por Javier Rodriguez de la Orden, especializada en detectar y resolver problemas de conversión en negocios digitales. Combinamos análisis de comportamiento (UX), analítica avanzada y CRO (Conversion Rate Optimization).
+## Sitio principal
+- [Home de Aripa](https://aripa.es/)
+- [Servicios de optimización digital](https://aripa.es/servicios)
+- [Recursos editoriales](https://aripa.es/recursos)
+- [Sobre Aripa](https://aripa.es/sobre-aripa)
+- [Contacto y captación](https://aripa.es/captacion)
 
-## Información Principal
-- URL: https://aripa.es
-- Lema: Optimización con propósito para negocios digitales.
-- Contacto: hola@aripa.es / Formulario en web.
-- Especialidad: CRO, UX, Analítica y Growth Estratégico.
+## Qué es Aripa
+Aripa es una consultoría boutique liderada por Javier Rodríguez de la Orden. Ayuda a pymes y negocios digitales de habla hispana a detectar problemas de conversión, mejorar la claridad de sus activos digitales y tomar decisiones con datos.
 
-## Propuesta de Valor
-Aripa no optimiza por intuición. Analizamos el "porqué" de cada interacción mediante:
-1. **Comportamiento**: Análisis de la psicología del usuario.
-2. **Analítica**: Datos accionables para decisiones técnicas.
-3. **CRO**: Optimización constante del embudo de ventas.
-4. **Negocio**: Estrategia alineada con objetivos financieros.
+El enfoque combina CRO, UX orientado a negocio, analítica digital, SEO/GEO, growth marketing y creación de landings o webs preparadas para captar, convertir y ser comprendidas por buscadores y sistemas de respuesta generativa.
 
-## Servicios Principales
-Más información en: https://aripa.es/servicios
-- **Conversión & CRO**: Auditorías de conversión y landing pages de alto impacto.
-- **UX & Behavioral Design**: Diseño de claridad y arquitectura de información.
-- **Analitica para PYMES**: Que medir para tomar mejores decisiones antes de invertir mas en trafico, campanas o redisenos. (https://aripa.es/analitica-pymes-decisiones)
-- **Contenido SEO/AEO para PYMES**: Como responder busquedas reales y crear contenido util para Google, motores generativos y usuarios. (https://aripa.es/contenido-seo-aeo-pymes)
+## Servicios principales
+- [CRO y optimización de conversión](https://aripa.es/servicios)
+- [UX/UI orientado a negocio](https://aripa.es/servicios)
+- [Analítica y medición](https://aripa.es/servicios)
+- [Growth y experimentación](https://aripa.es/servicios)
+- [SEO, GEO y contenido estructurado](https://aripa.es/servicios)
+- [Landings y activos digitales](https://aripa.es/servicios)
 
-## Fuente de Verdad (NAP)
+## Recursos editoriales recomendados
+- [GEO vs SEO: cómo cambia la visibilidad orgánica con los motores generativos](https://aripa.es/geo-vs-seo)
+- [Behavioral economics aplicado al CRO](https://aripa.es/behavioral-economics-cro)
+- [Growth marketing para pymes](https://aripa.es/growth-marketing-pymes)
+- [Landing pages para pymes](https://aripa.es/landing-pages-pymes)
+- [Web posicionada para negocio](https://aripa.es/web-posicionada-negocio)
+- [Analítica para pymes: decisiones antes de invertir más](https://aripa.es/analitica-pymes-decisiones)
+- [Arquitectura de contenidos SEO/GEO](https://aripa.es/arquitectura-contenidos-seo-geo)
+- [Auditoría web para pymes](https://aripa.es/auditoria-web-pymes)
+- [Captación de leads B2B para pymes](https://aripa.es/captacion-leads-b2b-pymes)
+- [Contenido SEO/AEO para pymes](https://aripa.es/contenido-seo-aeo-pymes)
+- [SEO local para pymes de servicios](https://aripa.es/seo-local-pymes-servicios)
+
+## Entidad y fuente de verdad
 - Nombre oficial: Aripa
-- Fundador: Javier Rodriguez de la Orden.
-- Sede: España.
-- Alcance: Global (Remoto).
+- Fundador: Javier Rodríguez de la Orden
+- Ubicación: España
+- Idioma principal: español
+- Alcance: consultoría remota para pymes y negocios digitales
+- Contacto: [Formulario de contacto](https://aripa.es/)
 
-### Entidades relacionadas
-- CRO (Conversion Rate Optimization)
-- UX Design
-- Behavioral Economics
-- Digital Analytics
-- Generative Engine Optimization (GEO)
-
-### Casos de uso
-- SaaS
-- eCommerce
-- Lead generation
-
-## Nuevos recursos editoriales
-- Captacion de leads B2B para PYMES: como mejorar calidad de oportunidades, landings y medicion. (https://aripa.es/captacion-leads-b2b-pymes)
-- SEO local para PYMES de servicios: visibilidad, confianza y conversion en busquedas locales. (https://aripa.es/seo-local-pymes-servicios)
-- Arquitectura de contenidos SEO/GEO: ordenar servicios, articulos y entidades para personas, buscadores e IA. (https://aripa.es/arquitectura-contenidos-seo-geo)
-
-## Entidad
-- Sobre Aripa: entidad, fundador, metodologia y enfoque de consultoria CRO, SEO/GEO, analitica y growth. (https://aripa.es/sobre-aripa)
+## Información legal
+- [Política de privacidad](https://aripa.es/politica-privacidad)
+- [Política de cookies](https://aripa.es/politica-cookies)
+- [Aviso legal](https://aripa.es/aviso-legal)

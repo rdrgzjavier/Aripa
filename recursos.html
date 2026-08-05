@@ -966,13 +966,13 @@
   </script>
 
   <!-- Success Modal -->
-  <div id="success-modal" class="modal-overlay" onclick="if(event.target===this) closeModal('success-modal')">
+  <div id="success-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="success-modal-title" aria-describedby="success-modal-description" onclick="if(event.target===this) closeModal('success-modal')">
     <div class="modal-panel max-w-sm p-8 text-center relative">
         <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6 text-green-600">
             <svg class="w-8 h-8 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
         </div>
-        <h3 class="text-2xl font-black font-headline text-primary mb-2">¡Gracias!</h3>
-        <p class="text-on-surface-variant text-sm leading-relaxed mb-6">Hemos recibido tu solicitud correctamente. Te contactaremos en menos de 24h.</p>
+        <h3 id="success-modal-title" class="text-2xl font-black font-headline text-primary mb-2">¡Gracias!</h3>
+        <p id="success-modal-description" class="text-on-surface-variant text-sm leading-relaxed mb-6">Hemos recibido tu solicitud correctamente. Te contactaremos en menos de 24h.</p>
         <button class="cta-core w-full max-w-[220px] mx-auto py-4 btn-after text-white rounded-xl active:scale-95 transition-all" onclick="closeModal('success-modal')">ENTENDIDO</button>
     </div>
   </div>
