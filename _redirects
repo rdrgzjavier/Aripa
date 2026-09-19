@@ -26,7 +26,11 @@
 /web-posicionada-negocio.html /web-posicionada-negocio 301
 /auditoria-web-pymes.html    /auditoria-web-pymes    301
 /analitica-pymes-decisiones.html /analitica-pymes-decisiones 301
-/contenido-seo-aeo-pymes.html /contenido-seo-aeo-pymes 301
+/contenido-seo-pymes.html /contenido-seo-pymes 301
+# Preserve existing links to the renamed article.
+/contenido-seo-aeo-pymes.html /contenido-seo-pymes 301
+/contenido-seo-aeo-pymes /contenido-seo-pymes 301
+/contenido-seo-aeo-pymes/ /contenido-seo-pymes 301
 /prev-geo.html               /geo-vs-seo             301
 /captacion-leads-b2b-pymes.html /captacion-leads-b2b-pymes 301
 /seo-local-pymes-servicios.html /seo-local-pymes-servicios 301

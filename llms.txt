@@ -30,7 +30,7 @@ El enfoque combina CRO, UX orientado a negocio, analítica digital, SEO/GEO, gro
 - [Arquitectura de contenidos SEO/GEO](https://aripa.es/arquitectura-contenidos-seo-geo)
 - [Auditoría web para pymes](https://aripa.es/auditoria-web-pymes)
 - [Captación de leads B2B para pymes](https://aripa.es/captacion-leads-b2b-pymes)
-- [Contenido SEO/AEO para pymes](https://aripa.es/contenido-seo-aeo-pymes)
+- [Contenido SEO para pymes](https://aripa.es/contenido-seo-pymes)
 - [SEO local para pymes de servicios](https://aripa.es/seo-local-pymes-servicios)
 
 ## Entidad y fuente de verdad
