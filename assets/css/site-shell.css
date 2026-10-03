@@ -6,7 +6,25 @@ html { scroll-padding-top: 6rem; }
 .modal-overlay:not(.active) { display: none; }
 .modal-overlay.active { display: flex; }
 .aripa-header .aripa-header-inner { max-width: 1440px; margin: auto; padding: 0 3rem; min-height: 5rem; display: flex; align-items: center; gap: 2rem; }
-#site-header.aripa-header { background: rgba(6,21,66,.94); border-bottom: 1px solid rgba(255,255,255,.1); }
+#site-header.aripa-header {
+  background-color: rgba(6,21,66,.94);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255,255,255,.1);
+  transition: background-color .3s cubic-bezier(.16,1,.3,1), backdrop-filter .3s cubic-bezier(.16,1,.3,1), border-color .3s cubic-bezier(.16,1,.3,1), box-shadow .3s cubic-bezier(.16,1,.3,1);
+}
+/* A transparent header lets the animated or gradient Hero continue behind the navigation. */
+#site-header.aripa-header.aripa-hero-header:not(.is-sticky) {
+  background-color: transparent;
+  backdrop-filter: blur(0);
+  border-bottom-color: transparent;
+  box-shadow: none;
+}
+#site-header.aripa-header.aripa-hero-header.is-sticky {
+  background-color: rgba(6,21,66,.82);
+  backdrop-filter: blur(14px);
+  border-bottom-color: rgba(255,255,255,.08);
+  box-shadow: 0 20px 48px -18px rgba(0,0,0,.45);
+}
 .aripa-logo { flex: 0 0 auto; }
 .aripa-logo img { width: 80px; height: 24px; object-fit: contain; }
 .aripa-navigation { display: flex; align-items: center; justify-content: flex-end; gap: 1.8rem; flex: 1; }

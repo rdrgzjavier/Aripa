@@ -30,6 +30,7 @@ python tests/static-check.py
 node tests/analytics-regression.cjs
 node tests/ui-regression.cjs
 node tests/design-regression.cjs
+node tests/header-regression.cjs
 ```
 
 Las pruebas de navegador necesitan Playwright y un navegador Edge instalado. Se pueden indicar `PLAYWRIGHT_MODULE` y `PLAYWRIGHT_CHANNEL=msedge` si no están en el `PATH`. La prueba de UI requiere la vista local en ejecución. Las peticiones externas se interceptan en las pruebas de formularios y consentimiento, de modo que no se envían solicitudes reales. `tests/static-check.py` valida enlaces internos, imágenes, JSON-LD, metadata y sitemap.
