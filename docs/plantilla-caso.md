@@ -2,7 +2,7 @@
 
 Estado: borrador interno. Este documento no es un caso publicable y no contiene resultados atribuibles a clientes.
 
-La página `/casos/` muestra por ahora experiencia profesional y docente ya descrita en el repositorio. No hay documentación suficiente para convertir las referencias de Auto Solutions, Mamás de Cielo y Tierra o Tenlo en casos completos. La experiencia en Mindshare y Línea Directa no debe presentarse como contratación de Aripa. Shifta se describe como docencia.
+La página `/casos/` enlaza el caso de la auditoría del site en desarrollo de SHIFTA by Elisava, descrito sin capturas, hallazgos internos ni resultados no verificables. También muestra experiencia profesional y docente. No hay documentación suficiente para convertir las referencias de Auto Solutions, Mamás de Cielo y Tierra o Tenlo en casos completos. La experiencia en Mindshare y Línea Directa no debe presentarse como contratación de Aripa. La docencia en SHIFTA es una relación distinta de la auditoría.
 
 ## Identificación y fuentes
 

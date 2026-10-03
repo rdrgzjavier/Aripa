@@ -65,6 +65,7 @@ body[data-page="resource_hub"] #hero-section .av6-ctas{justify-content:flex-star
 .home-service-list h3{font-size:clamp(1.15rem,1.8vw,1.65rem);font-weight:800;letter-spacing:-.035em;line-height:1.2}
 .home-service-list p{color:#ddd8ed;font-size:.9rem;line-height:1.6}
 .offer-list article[id]{scroll-margin-top:7rem}
+.offer-list article a{color:#5931a7;text-decoration:underline;text-underline-offset:3px;font-weight:700}.offer-list article a:focus-visible{outline:2px solid #7c3aed;outline-offset:3px}
 @media(max-width:959px){.home-service-list a{grid-template-columns:110px 1fr;gap:1rem}.home-service-list p{grid-column:2;grid-row:2}}
 @media(max-width:767px){body[data-page="services"] #hero-section .av6-content,body[data-page="resource_hub"] #hero-section .av6-content{padding:0}.aripa-subpage .about-hero>div,.aripa-subpage .cases-hero>div{padding:0}.home-service-list a{grid-template-columns:1fr;gap:.4rem}.home-service-list a>span:first-child{grid-column:1}.home-service-list h3{grid-column:1;grid-row:2}.home-service-list p{grid-column:1;grid-row:3}}
 .issue2-principles{background:#fff}

@@ -26,7 +26,7 @@ class Page(HTMLParser):
     def handle_data(self, data):
         if self.script is not None: self.script+=data
     def handle_startendtag(self, tag, attrs): self.handle_starttag(tag,attrs)
-pages={p:Page(p) for p in list(root.glob('*.html'))+list((root/'casos').glob('*.html'))}
+pages={p:Page(p) for p in root.rglob('*.html') if not any(part in {'.git', 'node_modules'} for part in p.relative_to(root).parts)}
 errors=[]
 def resolve(url, source):
     u=urlsplit(url)
