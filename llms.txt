@@ -6,7 +6,7 @@
 - [Insights](https://aripa.es/recursos)
 - [Casos y experiencia](https://aripa.es/casos/)
 - [Sobre Aripa](https://aripa.es/sobre-aripa)
-- [Contacto y captación](https://aripa.es/captacion)
+- [Solicitar análisis](https://aripa.es/#contacto)
 
 ## Qué es Aripa
 Aripa es una consultoría boutique liderada por Javier Rodríguez de la Orden. Ayuda a pymes y negocios digitales de habla hispana a detectar problemas de conversión, mejorar la claridad de sus activos digitales y tomar decisiones con datos.

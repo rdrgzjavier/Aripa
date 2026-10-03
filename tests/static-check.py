@@ -48,7 +48,10 @@ for file,page in pages.items():
     content=unescape(file.read_text(encoding='utf-8'))
     if re.search(r'[↗→➡➜➝➔➞⇗]',content): errors.append(f'{name}: decorative arrow glyph')
     if page.h1!=1: errors.append(f'{name}: {page.h1} H1 headings')
-    if len(page.canonical)!=1: errors.append(f'{name}: canonical count {len(page.canonical)}')
+    if name == '404.html':
+        if page.canonical or 'noindex' not in page.meta.get('robots',''):
+            errors.append('404.html: should be noindex without canonical')
+    elif len(page.canonical)!=1: errors.append(f'{name}: canonical count {len(page.canonical)}')
     if not page.meta.get('description'): errors.append(f'{name}: missing description')
     for ident,count in Counter(page.ids).items():
         if count>1: errors.append(f'{name}: duplicate id {ident}')

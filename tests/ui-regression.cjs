@@ -7,7 +7,7 @@ const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4173';
 const out = process.env.REVIEW_OUTPUT || path.resolve(__dirname, '../../review');
 fs.mkdirSync(out, { recursive:true });
 const root = path.resolve(__dirname, '..');
-const routes = ['/', ...fs.readdirSync(root).filter(f=>f.endsWith('.html') && f !== 'index.html').map(f=>'/' + f.replace('.html','')), '/casos/', '/casos/shifta-auditoria/'];
+const routes = ['/', ...fs.readdirSync(root).filter(f=>f.endsWith('.html') && !['index.html','404.html'].includes(f)).map(f=>'/' + f.replace('.html','')), '/casos/', '/casos/shifta-auditoria/'];
 (async () => {
   const browser = await chromium.launch({ headless:true, channel:process.env.PLAYWRIGHT_CHANNEL || 'msedge' });
   const context = await browser.newContext();
@@ -62,6 +62,15 @@ const routes = ['/', ...fs.readdirSync(root).filter(f=>f.endsWith('.html') && f 
           }
         }
       }
+    }
+    for (const width of [375, 1440]) {
+      await page.setViewportSize({width,height:900});
+      const response = await page.goto(base+'/missing-page-aripa-qa');
+      assert.equal(response.status(),404,'Unknown route returns 404');
+      assert.equal(await page.locator('h1').count(),1,'404 has one h1');
+      assert.equal(await page.locator('meta[name=robots]').getAttribute('content'),'noindex, follow','404 is not indexable');
+      assert.equal(await page.evaluate(()=>document.documentElement.scrollWidth > innerWidth + 1),false,'404 has no horizontal overflow');
+      assert.equal(await page.locator('nav[aria-label="Explorar Aripa"] a').count(),4,'404 recovery links');
     }
     await page.setViewportSize({width:1440,height:900});
     await page.goto(base+'/');

@@ -18,7 +18,11 @@ http.createServer((req, res) => {
     file = path.join(file, 'index.html');
   }
   if (!fs.existsSync(file) && !path.extname(file)) file += '.html';
-  if (!fs.existsSync(file) || !fs.statSync(file).isFile()) { res.writeHead(404); res.end('Not found'); return; }
+  if (!fs.existsSync(file) || !fs.statSync(file).isFile()) {
+    res.writeHead(404, { 'Content-Type':'text/html; charset=utf-8', 'Cache-Control':'no-store' });
+    fs.createReadStream(path.join(root, '404.html')).pipe(res);
+    return;
+  }
   res.writeHead(200, { 'Content-Type': mime[path.extname(file)] || 'application/octet-stream', 'Cache-Control':'no-store', ...(csp ? { 'Content-Security-Policy': csp } : {}) });
   fs.createReadStream(file).pipe(res);
 }).listen(Number(process.env.PORT) || 4173, '127.0.0.1', () => console.log('Aripa preview: http://127.0.0.1:' + (process.env.PORT || 4173)));
