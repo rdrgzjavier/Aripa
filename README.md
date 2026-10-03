@@ -1,90 +1,39 @@
-# aripa — Deploy en Cloudflare Pages
+# Aripa
 
-## Estructura del proyecto
+Sitio estático de [aripa.es](https://aripa.es), publicado con Cloudflare Pages. La fuente de verdad es este repositorio. `style.css` se genera desde `input.css` con Tailwind.
 
-```
-aripa-cloudflare/
-├── index.html          ← La página (= newsource.html renombrada)
-├── style.css           ← CSS compilado (también generado por el build)
-├── input.css           ← Entrada de Tailwind para el compilador
-├── tailwind.config.js  ← Configuración de Tailwind v3
-├── package.json        ← Scripts de build y dependencias
-├── _headers            ← Headers de seguridad y caché (Cloudflare)
-├── _redirects          ← Reglas de redirección (Cloudflare)
-├── assets/
-│   └── aripa-logo.png  ← ⚠️  AÑADIR MANUALMENTE antes de desplegar
-└── README.md
+## Vista local
+
+```sh
+npm ci
+npm run build
+npm run preview
 ```
 
-> **⚠️ Antes de desplegar**: copia el archivo `aripa-logo.png` dentro de `assets/`.
-> La página lo referencia en `./assets/aripa-logo.png`.
+La vista local queda en `http://127.0.0.1:4173`. El servidor de `scripts/preview.cjs` reproduce las redirecciones estáticas de `_redirects` y aplica la política de seguridad de `_headers` para facilitar la revisión. Para editar clases Tailwind, vuelve a ejecutar `npm run build`.
 
----
+## Páginas principales
 
-## Pasos para desplegar en Cloudflare Pages
+- `/`: narrativa comercial y formulario de contacto.
+- `/servicios`: CRO, UX/UI, analítica y Growth.
+- `/casos/`: experiencia y estructura para futuros casos documentados.
+- `/recursos`: Insights, organizados en cuatro temas.
+- `/sobre-aripa`: Javier Rodríguez de la Orden y el enfoque de Aripa.
 
-### 1. Subir la carpeta a GitHub
-Crea un repositorio nuevo (p. ej. `aripa-web`) y sube el contenido de esta carpeta:
-```bash
-git init
-git remote add origin https://github.com/TU_USUARIO/aripa-web.git
-git add .
-git commit -m "chore: deploy inicial aripa en Cloudflare Pages"
-git push -u origin main
+Cada página está escrita en HTML. `assets/css/site-shell.css` y `assets/js/site-shell.js` aportan la tipografía, la navegación y el formulario compartidos. La escala y los criterios para nuevas páginas se documentan en `docs/sistema-visual.md`. `assets/js/aripa-analytics.js` registra eventos, `assets/js/consent-analytics.js` conecta Klaro con GTM y Clarity, y `analytics/sectionTracking.js` mide las secciones. La medición comienza denegada; el contenedor GTM y Clarity se cargan según el consentimiento. El formulario de contacto envía a Formspree y muestra el éxito únicamente cuando la respuesta de envío es correcta. La página `/captacion` es una suscripción independiente a MailerLite.
+
+## Comprobaciones de la Fase 1
+
+```sh
+npm run build
+python tests/static-check.py
+node tests/analytics-regression.cjs
+node tests/ui-regression.cjs
+node tests/design-regression.cjs
 ```
 
-### 2. Conectar con Cloudflare Pages
-1. Ve a [dash.cloudflare.com](https://dash.cloudflare.com) → **Workers & Pages** → **Create**
-2. Selecciona **Pages** → **Connect to Git**
-3. Elige el repositorio `aripa-web`
-4. Configura el build:
+Las pruebas de navegador necesitan Playwright y un navegador Edge instalado. Se pueden indicar `PLAYWRIGHT_MODULE` y `PLAYWRIGHT_CHANNEL=msedge` si no están en el `PATH`. La prueba de UI requiere la vista local en ejecución. Las peticiones externas se interceptan en las pruebas de formularios y consentimiento, de modo que no se envían solicitudes reales. `tests/static-check.py` valida enlaces internos, imágenes, JSON-LD, metadata y sitemap.
 
-| Campo | Valor |
-|---|---|
-| Framework preset | **None** |
-| Build command | `npm run build` |
-| Build output directory | `/` (raíz) |
-| Root directory | `/` (raíz) |
-| Node.js version | **18.x** |
+## Casos reales
 
-5. Haz clic en **Save and Deploy**
-
-Cloudflare instalará dependencias, compilará Tailwind y desplegará automáticamente.
-
-### 3. Conectar tu dominio personalizado
-1. Dentro del proyecto en Cloudflare Pages → **Custom domains**
-2. Añade `aripa.es` y sigue el asistente para actualizar los DNS
-
----
-
-## Flujo de trabajo una vez desplegado
-
-Cada vez que hagas cambios:
-```bash
-git add .
-git commit -m "feat: descripción del cambio"
-git push
-```
-Cloudflare detectará el push, ejecutará `npm run build` y redesployará en menos de 30 segundos.
-
----
-
-## Desarrollo local
-
-```bash
-# Instalar dependencias (solo la primera vez)
-npm install
-
-# Compilar CSS y ver cambios en tiempo real
-npm run dev
-```
-Luego abre `index.html` directamente en el navegador.
-
----
-
-## Assets pendientes de añadir
-
-| Archivo | Ruta esperada | Uso |
-|---|---|---|
-| `aripa-logo.png` | `assets/aripa-logo.png` | Logo en header, drawer y footer |
-| `og-image.jpg` | `og-image.jpg` (raíz) | Imagen Open Graph para redes sociales |
+`docs/plantilla-caso.md` recoge los datos y permisos necesarios antes de publicar un caso. Por ahora la página pública explica la experiencia disponible y la estructura editorial; no hay resultados ni métricas de clientes publicados sin evidencia.

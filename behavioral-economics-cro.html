@@ -17,7 +17,7 @@
 <meta property="article:author" content="Javier Rodríguez de la Orden"/>
 <meta property="article:published_time" content="2024-03-05T08:00:00+01:00"/>
 <meta property="article:modified_time" content="2026-05-27T08:00:00+02:00"/>
-<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Behavioral Economics y CRO: Cómo Aumentar Conversiones | Aripa"/>
 <meta name="twitter:description" content="Aplica principios de economía del comportamiento (Behavioral Economics) para mejorar tu CRO. Descubre cómo los sesgos cognitivos del usuario influyen en la conversión."/>
 
@@ -67,7 +67,7 @@
 
 
 
-<link rel="preload" href="./style.css" as="style">
+<link rel="preload" href="/style.css?v=20261003" as="style">
 <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/aripa-logo.png" as="image">
 
@@ -78,7 +78,7 @@
 <meta name="robots" content="index, follow">
 <meta name="author" content="Javier Rodriguez de la Orden">
 
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="/style.css?v=20261003">
 <style>
   :root {
     --color-primary:               220 80% 14%;
@@ -844,6 +844,33 @@ body { font-family: 'Inter', sans-serif; }
     pointer-events: auto !important;
   }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Aripa",
+      "item": "https://aripa.es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insights",
+      "item": "https://aripa.es/recursos"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Behavioral Economics y CRO: convertir mejor sin empujar más",
+      "item": "https://aripa.es/behavioral-economics-cro"
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/css/site-shell.css?v=20261003">
 </head>
 <body data-page="article" class="bg-background text-on-background selection:bg-secondary/30">
 <!-- MOBILE DRAWER (hidden on md+) -->
@@ -865,7 +892,7 @@ body { font-family: 'Inter', sans-serif; }
     </div>
     <!-- Hidden for MVP as requested -->
     <div class="hidden">
-      <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="/servicios">
+      <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="/servicios#ux">
         <svg class="icon-svg text-secondary" viewBox="0 -960 960 960"><path d="M120-120v-533l200-200 160 160 214-214 46 46-260 260-160-160-154 154v487h-46Zm400 0v-240h46v240h-46Zm160 0v-400h46v400h-46Zm160 0v-160h46v160h-46Z"/></svg> Servicios
       </a>
       <a class="flex items-center gap-4 text-[#fcf9f8] py-4 px-4 hover:bg-white/5 rounded-lg transition-colors font-headline" href="/recursos">
@@ -880,48 +907,31 @@ body { font-family: 'Inter', sans-serif; }
 </div>
 
 <!-- HEADER -->
-<header id="site-header" aria-label="Cabecera principal">
-  <div class="header-inner flex items-center justify-between px-6 md:px-12 max-w-[1440px] mx-auto">
-    <!-- Left Column: Logo -->
-    <div class="flex-1 flex justify-start">
-      <a href="/" class="flex items-center outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg">
-        <img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/>
-      </a>
-    </div>
-
-    <!-- Center Column: Nav (Hidden for MVP) -->
-    <nav class="hidden items-center justify-center gap-10 lg:gap-14">
-      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="/servicios">Servicios</a>
-      <a class="text-white/80 hover:text-white transition-colors font-headline font-semibold text-sm" href="/recursos">Recursos</a>
+<header id="site-header" class="aripa-header" aria-label="Cabecera principal">
+  <div class="aripa-header-inner">
+    <a class="aripa-logo" href="/" aria-label="Aripa — inicio"><img src="/assets/aripa-logo.png" alt="Aripa" width="80" height="24"></a>
+    <button class="aripa-menu-toggle" type="button" id="navigation-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menú</span></button>
+    <nav class="aripa-navigation" id="primary-navigation" aria-label="Navegación principal">
+      <a href="/servicios">Servicios</a>
+<a href="/casos/">Casos</a>
+<a href="/recursos">Insights</a>
+<a href="/sobre-aripa">Sobre Aripa</a>
+      <a class="cta-core btn-lavender aripa-nav-cta" href="/#contacto" data-contact-link>Solicitar análisis</a>
     </nav>
-
-    <!-- Right Column: CTA & Burger -->
-    <div class="flex-1 flex items-center justify-end gap-6">
-      <button type="button" class="cta-core hidden md:flex btn-lavender px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
-        <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
-        CONTACTAR
-      </button>
-      <button type="button" class="flex items-center justify-center p-2 -mr-2 md:hidden" aria-label="Abrir formulario de contacto" id="mobile-mail-btn" onclick="openContactModal()">
-        <svg class="icon-svg text-white text-2xl" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
-      </button>
-    </div>
   </div>
 </header>
 
   <main id="main-content" class="article-shell bg-white" data-track-section="article_content">
   <article class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-12">
     <div class="lg:col-span-8 lg:col-start-3">
-    <a href="/recursos" class="flex items-center gap-2 text-secondary font-bold text-[11px] uppercase tracking-widest mb-6 md:mb-8 hover:text-primary transition-colors group w-fit">
-      <svg class="icon-svg text-lg transition-transform group-hover:-translate-x-1" viewBox="0 -960 960 960"><path d="M400-80 0-480l400-400 71 71-329 329 329 329-71 71Z"/></svg>
-      Volver a recursos
-    </a>
+    <nav class="flex flex-wrap items-center gap-2 text-sm text-on-surface-variant mb-6 md:mb-8" aria-label="Ruta de navegación"><a href="/" class="text-secondary hover:underline">Aripa</a><span aria-hidden="true">/</span><a href="/recursos" class="text-secondary hover:underline">Insights</a><span aria-hidden="true">/</span><span aria-current="page">Behavioral Economics y CRO: convertir mejor sin empujar más</span></nav>
 
       <div class="mb-5 md:mb-8 border-b border-primary/10 pb-5 md:pb-6">
-        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-8">CRO / Behavioral Design</p>
+        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-8"><a href="/recursos#ux-comportamiento" class="hover:underline underline-offset-4">UX y comportamiento</a></p>
         <h1 class="text-primary font-headline font-extrabold text-4xl md:text-6xl leading-[.95] tracking-tight mb-10">Behavioral Economics y CRO: convertir mejor sin empujar más</h1>
         <p class="text-on-surface-variant text-lg md:text-2xl leading-relaxed max-w-3xl">La conversión mejora cuando la experiencia reduce fricción, aumenta confianza y facilita decisiones. Ese es el punto donde behavioral economics, UX y analítica se encuentran.</p>
         <div class="mt-10 md:mt-12 pt-6 md:pt-8 border-t border-secondary/10 flex flex-wrap gap-4 text-[11px] font-bold uppercase tracking-widest text-primary/50 items-center">
-          <span>Javier Rodríguez de la Orden</span>
+          <a href="/sobre-aripa/" class="hover:underline underline-offset-4">Javier Rodríguez de la Orden</a>
           <span class="w-1 h-1 rounded-full bg-secondary/40"></span>
           <span>Actualizado en mayo de 2026</span>
           <span class="w-1 h-1 rounded-full bg-secondary/40"></span>
@@ -951,13 +961,14 @@ body { font-family: 'Inter', sans-serif; }
 <p>El comportamiento no se interpreta solo mirando la p&aacute;gina. Conviene medir scroll, clics, aperturas de formulario, env&iacute;os, abandono, interacci&oacute;n con secciones y calidad posterior del lead. Esos datos no sustituyen el criterio, pero evitan que la optimizaci&oacute;n dependa de gustos personales.</p>
 <p>Si una secci&oacute;n recibe mucha atenci&oacute;n pero pocos clics, quiz&aacute;s necesita un siguiente paso m&aacute;s claro. Si muchas personas empiezan el formulario y no lo env&iacute;an, puede haber fricci&oacute;n en campos, expectativa o confianza. Si un art&iacute;culo se lee pero no conecta con servicios, hay un problema de arquitectura.</p>
 <h2>De la intuici&oacute;n a un m&eacute;todo</h2>
-<p>En Aripa combinamos anal&iacute;tica, UX, investigaci&oacute;n y experimentaci&oacute;n para convertir observaciones en decisiones. La meta no es cambiar elementos al azar, sino mejorar la arquitectura de decisi&oacute;n que sostiene cada conversi&oacute;n. Este enfoque conecta con el trabajo de <a href="/servicios">CRO, anal&iacute;tica y growth</a> y con otros contenidos de la biblioteca de <a href="/recursos">recursos</a>.</p><h2>Cu&aacute;ndo una mejora de CRO no deber&iacute;a lanzarse</h2><p>No todas las ideas merecen convertirse en test. Si no existe suficiente tr&aacute;fico, si la medici&oacute;n es fr&aacute;gil o si el cambio no responde a una hip&oacute;tesis clara, puede ser mejor observar, cualificar leads o revisar primero el mensaje. El CRO tambi&eacute;n consiste en saber qu&eacute; no tocar todav&iacute;a.</p><p>En webs peque&ntilde;as, muchas decisiones se validan combinando datos cuantitativos con lectura cualitativa: formularios abandonados, secciones ignoradas, clics en CTAs secundarios, preguntas recurrentes de clientes o dudas que aparecen en llamadas comerciales.</p></div>
+<p>En Aripa combinamos anal&iacute;tica, UX, investigaci&oacute;n y experimentaci&oacute;n para convertir observaciones en decisiones. La meta no es cambiar elementos al azar, sino mejorar la arquitectura de decisi&oacute;n que sostiene cada conversi&oacute;n. Este enfoque conecta con el trabajo de <a href="/servicios#ux">CRO, anal&iacute;tica y growth</a> y con otros contenidos de la biblioteca de <a href="/recursos">Insights</a>.</p><h2>Cu&aacute;ndo una mejora de CRO no deber&iacute;a lanzarse</h2><p>No todas las ideas merecen convertirse en test. Si no existe suficiente tr&aacute;fico, si la medici&oacute;n es fr&aacute;gil o si el cambio no responde a una hip&oacute;tesis clara, puede ser mejor observar, cualificar leads o revisar primero el mensaje. El CRO tambi&eacute;n consiste en saber qu&eacute; no tocar todav&iacute;a.</p><p>En webs peque&ntilde;as, muchas decisiones se validan combinando datos cuantitativos con lectura cualitativa: formularios abandonados, secciones ignoradas, clics en CTAs secundarios, preguntas recurrentes de clientes o dudas que aparecen en llamadas comerciales.</p></div>
 
       <aside class="group relative bg-white p-8 md:p-12 rounded-3xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 shadow-sm hover:shadow-2xl flex flex-col md:flex-row gap-8 md:gap-12 text-left w-full items-start md:items-center justify-between" data-track-section="next_step">
         <div class="flex flex-col max-w-2xl">
           <span class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-4 group-hover:text-white/60 transition-colors">ARIPA CONSULTING</span>
           <h2 class="text-2xl md:text-3xl font-extrabold font-headline text-primary group-hover:text-white transition-colors mb-4 leading-tight">¿Tu negocio pierde conversiones y no sabes dónde?</h2>
-          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base md:text-lg transition-colors">Identificamos fricciones ocultas en tu embudo y diseñamos una hoja de ruta estratégica para impulsar tu rentabilidad.</p>
+          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base md:text-lg transition-colors">Revisaré personalmente tu contexto para entender qué frena las oportunidades y qué merece la pena analizar primero.</p>
+          <a href="/servicios#ux" class="mt-4 text-secondary group-hover:text-white font-bold underline underline-offset-4">Ver UX/UI y comportamiento</a>
         </div>
 
         <div class="flex-shrink-0 mt-2 md:mt-0 w-full md:w-auto">
@@ -974,6 +985,7 @@ body { font-family: 'Inter', sans-serif; }
   <!-- Same Footer -->
   <!-- FOOTER -->
 <footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-20 px-6 md:px-12 border-t border-white/5">
+<nav class="aripa-footer-nav" aria-label="Explorar Aripa"><a href="/servicios">Servicios</a><a href="/casos/">Casos</a><a href="/recursos">Insights</a><a href="/sobre-aripa">Sobre Aripa</a></nav>
   <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
     <a href="/" class="flex items-center gap-2 md:gap-3 group" aria-label="Aripa - Ir al inicio">
       <img alt="aripa" class="h-8 md:h-10 w-auto object-contain" src="./assets/aripa-logo.png" width="106" height="32" loading="eager" fetchpriority="high"/>
@@ -1037,55 +1049,27 @@ body { font-family: 'Inter', sans-serif; }
 
     <div class="mb-10">
       <p class="text-on-surface-variant text-base leading-relaxed">
-        Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.
+        Cuéntame qué quieres resolver. Revisaré personalmente tu caso para valorar el siguiente paso.
       </p>
     </div>
 
-    <form class="space-y-8" id="contact-form" onsubmit="handleFormSubmit(event)">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="form-field">
-          <label class="form-label" for="name">Nombre *</label>
-          <input type="text" id="name" name="name" class="form-input" placeholder="Tu nombre" required>
-        </div>
-        <div class="form-field">
-          <label class="form-label" for="phone">Teléfono *</label>
-          <input type="tel" id="phone" name="phone" class="form-input" placeholder="+34 600 000 000" required>
-        </div>
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="email">Email Corporativo *</label>
-        <input type="email" id="email" name="email" class="form-input" placeholder="email@empresa.com" required>
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="service">Servicio de interés</label>
-        <div class="relative">
-          <select id="service" name="service" class="form-input appearance-none cursor-pointer pr-12">
-            <option value="general">Consulta general</option>
-            <option value="cro">CRO y Conversión</option>
-            <option value="ux">UX/UI de Negocio</option>
-            <option value="analitica">Analítica y Medición</option>
-            <option value="growth">Growth y Experimentación</option>
-            <option value="seo_geo">SEO, GEO y Contenido</option>
-            <option value="landings">Landings y Activos Web</option>
-            <option value="automatizacion">Automatización</option>
-            <option value="servicios_complementarios">Servicios B2B / Soporte</option>
-          </select>
-          <svg class="icon-svg absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-        </div>
-      </div>
-
-      <div class="form-field">
-        <label class="form-label" for="message">Mensaje</label>
-        <textarea id="message" name="message" class="form-input min-h-[120px] resize-none" placeholder="¿Cómo podemos ayudarte?"></textarea>
-      </div>
-
-      <button type="submit" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#061542] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#6b38fb] hover:scale-[1.02] active:scale-95 transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(107,56,251,0.25)] w-fit mt-4" id="submit-btn">
-        ENVIAR SOLICITUD
-        <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
-      </button>
-    </form>
+    <form class="phase1-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+  <div class="form-field"><label class="form-label" for="problem">¿Qué quieres resolver? *</label><input class="form-input" id="problem" name="problem" type="text" placeholder="Por ejemplo: llegan visitas, pero pocos contactos" maxlength="250" required></div>
+  <div class="form-field"><label class="form-label" for="website">URL de tu web <span>(opcional)</span></label><input class="form-input" id="website" name="website" type="url" placeholder="https://tuweb.com" autocomplete="url" inputmode="url"></div>
+  <div class="form-field"><label class="form-label" for="message">Breve contexto <span>(opcional)</span></label><textarea class="form-input" id="message" name="message" placeholder="Qué ocurre, qué habéis probado o qué os gustaría mejorar" maxlength="3000"></textarea></div>
+  <div class="contact-row">
+    <div class="form-field"><label class="form-label" for="name">Nombre *</label><input class="form-input" id="name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required></div>
+    <div class="form-field"><label class="form-label" for="email">Email *</label><input class="form-input" id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
+  </div>
+  <div class="form-field"><label class="form-label" for="phone">Teléfono <span>(opcional)</span></label><input class="form-input" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Si prefieres que te llame"></div>
+  <!-- Preserve service attribution from service CTAs without asking visitors to diagnose themselves. -->
+  <select id="service" name="service" hidden aria-hidden="true" tabindex="-1">
+    <option value="general">Consulta general</option><option value="cro">CRO y Conversión</option><option value="ux">UX/UI de Negocio</option><option value="analitica">Analítica y Medición</option><option value="growth">Growth y Experimentación</option><option value="seo_geo">SEO, GEO y Contenido</option><option value="landings">Landings y Activos Web</option><option value="automatizacion">Automatización</option><option value="servicios_complementarios">Servicios B2B / Soporte</option>
+  </select>
+  <p class="contact-help">Usaré tus datos para responder a esta solicitud. <a href="/politica-privacidad">Consulta la política de privacidad</a>.</p>
+  <p class="form-error" role="alert" tabindex="-1" hidden>No se ha podido enviar la solicitud. Tus datos siguen aquí para que puedas intentarlo de nuevo. También puedes escribir a <a href="mailto:hola@aripa.es">hola@aripa.es</a>.</p>
+  <button type="submit" class="cta-core bg-primary text-white rounded-xl px-8 py-4 disabled:opacity-50" id="submit-btn">Enviar solicitud</button>
+</form>
   </div>
 </div>
 
@@ -1097,7 +1081,7 @@ body { font-family: 'Inter', sans-serif; }
     </div>
     <h2 id="success-modal-title" class="text-3xl font-extrabold font-headline text-primary mb-4">¡Solicitud recibida!</h2>
     <p id="success-modal-description" class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
-      Tu mensaje ha sido entregado correctamente. Un consultor senior revisará tu caso personalmente y recibirás una respuesta en menos de 24 horas.
+      He recibido tu solicitud. Revisaré personalmente tu caso y te responderé con el siguiente paso.
       <span class="block mt-4 text-sm opacity-70">Nota: Si no recibes noticias nuestras, por favor revisa tu bandeja de <strong>correo no deseado (spam)</strong>.</span>
     </p>
     <button type="button" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#061542] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#6b38fb] hover:scale-[1.02] active:scale-95 transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(107,56,251,0.25)] w-full max-w-[220px] mx-auto mt-4" onclick="closeModal('success-modal')">
@@ -1174,37 +1158,7 @@ body { font-family: 'Inter', sans-serif; }
     if (_lastFocusedEl) _lastFocusedEl.focus();
   };
 
-  window.handleFormSubmit = async (e) => {
-    e.preventDefault();
-    const form = e.target;
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.innerHTML;
-    submitBtn.disabled = true;
-    submitBtn.innerHTML = 'ENVIANDO...';
 
-    try {
-      const fd = new FormData(form);
-      const data = Object.fromEntries(fd.entries());
-      const response = await fetch("https://formspree.io/f/maqalopa", {
-        method: 'POST',
-        headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
-      });
-
-      if (response.ok) {
-        closeModal('contact-modal');
-        setTimeout(() => openModal('success-modal'), 250);
-        form.reset();
-      } else {
-        alert('Hubo un problema al enviar. Inténtalo de nuevo.');
-      }
-    } catch (err) {
-      alert('Error de conexión. Inténtalo de nuevo.');
-    } finally {
-      submitBtn.disabled = false;
-      submitBtn.innerHTML = originalText;
-    }
-  };
 
   window.closeSuccessModal = () => {
     closeModal('success-modal');
@@ -1382,6 +1336,7 @@ body { font-family: 'Inter', sans-serif; }
 </script>
 <script src="/assets/js/consent-analytics.js" defer></script>
 <script src="/analytics/sectionTracking.js" defer></script>
-<script src="/assets/js/aripa-analytics.js" defer></script>
+<script src="/assets/js/aripa-analytics.js?v=20261003" defer></script>
+<script src="/assets/js/site-shell.js?v=20261003" defer></script>
 </body>
 </html>

@@ -2,7 +2,6 @@
   window.dataLayer = window.dataLayer || [];
 
   var startedForms = new WeakSet();
-  var submittedForms = new WeakSet();
   var generatedLead = false;
   var firedTimers = {};
   var pageMeta = getPageMeta();
@@ -22,12 +21,14 @@
   }
 
   function getPageMeta() {
-    var pathName = window.location.pathname.replace(/^\//, '').replace(/\.html$/, '') || 'home';
+    var pathName = window.location.pathname.replace(/^\/+|\/+$/g, '').replace(/\.html$/, '') || 'home';
     var pageType = 'other';
     var group = 'site';
     if (pathName === 'home' || pathName === 'index') { pageType = 'home'; group = 'home'; }
     else if (pathName === 'servicios' || pathName === 'captacion') { pageType = 'service'; group = 'services'; }
     else if (pathName === 'recursos') { pageType = 'resource_hub'; group = 'resources'; }
+    else if (pathName === 'casos') { pageType = 'case_studies'; group = 'cases'; }
+    else if (pathName === 'sobre-aripa') { pageType = 'about'; }
     else if (document.querySelector('.article-body')) { pageType = 'article'; group = 'resources'; }
     else if (/politica|aviso-legal|privacidad/.test(pathName)) { pageType = 'legal'; group = 'legal'; }
     return { page_slug: pathName, page_type: pageType, content_group: group };
@@ -56,7 +57,7 @@
     var text = cleanText(el.innerText || el.getAttribute('aria-label') || el.getAttribute('href') || '');
     var destination = getDestination(el);
     var isCal = !!el.getAttribute('data-cal-link');
-    var isContact = /openContactModal|contact-modal|contactar|hablemos/i.test(destination + ' ' + text);
+    var isContact = /openContactModal|contact-modal|#contacto|contactar|hablemos|solicitar an[aá]lisis/i.test(destination + ' ' + text);
     var isResource = !!el.closest('#recursos-grid');
 
     push('cta_click', {
@@ -88,8 +89,7 @@
 
   function trackFormSubmit(e) {
     var form = e.target;
-    if (!form || form.id !== 'contact-form' || submittedForms.has(form)) return;
-    submittedForms.add(form);
+    if (!form || form.id !== 'contact-form') return;
     var service = form.querySelector('[name="service"]');
     push('form_submit_attempt', {
       form_id: form.id,

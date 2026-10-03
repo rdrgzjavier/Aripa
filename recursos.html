@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Recursos Estratégicos | Aripa</title>
-<meta name="description" content="Artículos y guías sobre SEO/GEO, CRO, growth marketing, landings y optimización digital para PYMES."/>
+<title>Insights de CRO, UX, analítica y Growth | Aripa</title>
+<meta name="description" content="Insights sobre CRO, UX y comportamiento, analítica y Growth. Criterios prácticos para detectar fricciones y mejorar activos digitales."/>
 
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
 
@@ -23,7 +23,7 @@
 
 
 <link rel="canonical" href="https://aripa.es/recursos"/>
-<link rel="preload" href="./style.css" as="style">
+<link rel="preload" href="/style.css?v=20261003" as="style">
 <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/aripa-logo.png" as="image">
 
@@ -34,7 +34,7 @@
 <meta name="robots" content="index, follow">
 <meta name="author" content="Javier Rodriguez de la Orden">
 
-<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="/style.css?v=20261003">
 <style>
   :root {
     --color-primary:               220 80% 14%;
@@ -423,27 +423,87 @@
     {
       "@type": "CollectionPage",
       "@id": "https://aripa.es/recursos#collection",
-      "name": "Recursos de optimizacion digital, SEO, GEO, CRO y analitica",
+      "name": "Insights de CRO, UX, analítica y Growth",
       "url": "https://aripa.es/recursos",
-      "description": "Biblioteca editorial de Aripa sobre CRO, SEO, GEO, analitica, landings y growth para PYMES y equipos de negocio digital.",
-      "isPartOf": { "@type": "WebSite", "@id": "https://aripa.es/#website" },
-      "mainEntity": { "@id": "https://aripa.es/recursos#itemlist" }
+      "description": "Artículos de Aripa sobre conversión, experiencia de usuario, medición y experimentación.",
+      "isPartOf": {
+        "@type": "WebSite",
+        "@id": "https://aripa.es/#website"
+      },
+      "mainEntity": {
+        "@id": "https://aripa.es/recursos#itemlist"
+      }
     },
     {
       "@type": "ItemList",
       "@id": "https://aripa.es/recursos#itemlist",
       "itemListElement": [
-        { "@type": "ListItem", "position": 1, "name": "GEO vs SEO: como preparar tu marca para Google, ChatGPT y Gemini", "url": "https://aripa.es/geo-vs-seo" },
-        { "@type": "ListItem", "position": 2, "name": "Behavioral Economics y CRO: convertir mejor sin empujar mas", "url": "https://aripa.es/behavioral-economics-cro" },
-        { "@type": "ListItem", "position": 3, "name": "Landings para PYMES: convertir trafico en oportunidades reales", "url": "https://aripa.es/landing-pages-pymes" },
-        { "@type": "ListItem", "position": 4, "name": "Growth marketing para PYMES", "url": "https://aripa.es/growth-marketing-pymes" },
-        { "@type": "ListItem", "position": 5, "name": "Web posicionada para negocio", "url": "https://aripa.es/web-posicionada-negocio" },
-        { "@type": "ListItem", "position": 6, "name": "Auditoria web para PYMES", "url": "https://aripa.es/auditoria-web-pymes" },
-        { "@type": "ListItem", "position": 7, "name": "Analitica para PYMES", "url": "https://aripa.es/analitica-pymes-decisiones" },
-        { "@type": "ListItem", "position": 8, "name": "Contenido SEO para PYMES", "url": "https://aripa.es/contenido-seo-pymes" },
-        { "@type": "ListItem", "position": 9, "name": "Captacion de leads B2B para PYMES", "url": "https://aripa.es/captacion-leads-b2b-pymes" },
-        { "@type": "ListItem", "position": 10, "name": "SEO local para PYMES de servicios", "url": "https://aripa.es/seo-local-pymes-servicios" },
-        { "@type": "ListItem", "position": 11, "name": "Arquitectura de contenidos SEO GEO", "url": "https://aripa.es/arquitectura-contenidos-seo-geo" }
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Landings para PYMES: convertir trafico en oportunidades reales",
+          "url": "https://aripa.es/landing-pages-pymes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Auditoria web para PYMES",
+          "url": "https://aripa.es/auditoria-web-pymes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Captacion de leads B2B para PYMES",
+          "url": "https://aripa.es/captacion-leads-b2b-pymes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Behavioral Economics y CRO: convertir mejor sin empujar mas",
+          "url": "https://aripa.es/behavioral-economics-cro"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Arquitectura de contenidos SEO GEO",
+          "url": "https://aripa.es/arquitectura-contenidos-seo-geo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Web posicionada para negocio",
+          "url": "https://aripa.es/web-posicionada-negocio"
+        },
+        {
+          "@type": "ListItem",
+          "position": 7,
+          "name": "Analitica para PYMES",
+          "url": "https://aripa.es/analitica-pymes-decisiones"
+        },
+        {
+          "@type": "ListItem",
+          "position": 8,
+          "name": "Growth marketing para PYMES",
+          "url": "https://aripa.es/growth-marketing-pymes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 9,
+          "name": "GEO vs SEO: como preparar tu marca para Google, ChatGPT y Gemini",
+          "url": "https://aripa.es/geo-vs-seo"
+        },
+        {
+          "@type": "ListItem",
+          "position": 10,
+          "name": "Contenido SEO para PYMES",
+          "url": "https://aripa.es/contenido-seo-pymes"
+        },
+        {
+          "@type": "ListItem",
+          "position": 11,
+          "name": "SEO local para PYMES de servicios",
+          "url": "https://aripa.es/seo-local-pymes-servicios"
+        }
       ]
     },
     {
@@ -452,30 +512,67 @@
       "name": "Aripa",
       "url": "https://aripa.es/",
       "logo": "https://aripa.es/assets/aripa-logo.png",
-      "founder": { "@type": "Person", "name": "Javier Rodriguez de la Orden" },
-      "knowsAbout": ["CRO", "UX", "Analitica digital", "SEO", "GEO", "Growth marketing"]
+      "founder": {
+        "@type": "Person",
+        "name": "Javier Rodriguez de la Orden"
+      },
+      "knowsAbout": [
+        "CRO",
+        "UX",
+        "Analitica digital",
+        "SEO",
+        "GEO",
+        "Growth marketing"
+      ]
     }
   ]
 }
 </script>
+<meta property="og:title" content="Insights de CRO, UX, analítica y Growth | Aripa"/>
+<meta property="og:description" content="Insights sobre CRO, UX y comportamiento, analítica y Growth. Criterios prácticos para detectar fricciones y mejorar activos digitales."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://aripa.es/recursos"/>
+<meta property="og:image" content="https://aripa.es/assets/aripa-logo.png"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Insights de CRO, UX, analítica y Growth | Aripa"/>
+<meta name="twitter:description" content="Insights sobre CRO, UX y comportamiento, analítica y Growth. Criterios prácticos para detectar fricciones y mejorar activos digitales."/>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Aripa",
+      "item": "https://aripa.es/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Insights",
+      "item": "https://aripa.es/recursos"
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/assets/css/site-shell.css?v=20261003">
 </head>
 <body data-page="resource_hub" class="bg-background text-on-background">
 <!-- HEADER -->
-  <header id="site-header" aria-label="Cabecera principal">
-    <div class="header-inner flex items-center justify-between px-6 md:px-12 max-w-[1440px] mx-auto">
-      <div class="flex-1 flex justify-start">
-        <a href="/" class="flex items-center outline-none"><img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/></a>
-      </div>
-      <div class="flex-1 flex items-center justify-end gap-6">
-        <button type="button" class="cta-core hidden md:flex btn-lavender px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap" onclick="openContactModal()">
-          <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg> CONTACTAR
-        </button>
-        <button type="button" class="flex items-center justify-center p-2 -mr-2 md:hidden" id="mobile-mail-btn" onclick="openContactModal()">
-          <svg class="icon-svg text-white text-2xl" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280L160-640v400h640v-400L480-440Zm0-80 320-200H160l320 200ZM160-640v-80 480-400Z"/></svg>
-        </button>
-      </div>
-    </div>
-  </header>
+  <header id="site-header" class="aripa-header" aria-label="Cabecera principal">
+  <div class="aripa-header-inner">
+    <a class="aripa-logo" href="/" aria-label="Aripa — inicio"><img src="/assets/aripa-logo.png" alt="Aripa" width="80" height="24"></a>
+    <button class="aripa-menu-toggle" type="button" id="navigation-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menú</span></button>
+    <nav class="aripa-navigation" id="primary-navigation" aria-label="Navegación principal">
+      <a href="/servicios">Servicios</a>
+<a href="/casos/">Casos</a>
+<a href="/recursos" aria-current="page">Insights</a>
+<a href="/sobre-aripa">Sobre Aripa</a>
+      <a class="cta-core btn-lavender aripa-nav-cta" href="/#contacto" data-contact-link>Solicitar análisis</a>
+    </nav>
+  </div>
+</header>
 
   <main id="main-content">
     <!-- HERO -->
@@ -483,108 +580,37 @@
       <canvas class="av6-canvas" id="hero-gradient-canvas"></canvas>
       <div class="av6-grain"></div>
       <div class="av6-content">
-        <h1 class="av6-title">Recursos<br/><span class="text-white">Estrat&eacute;gicos</span></h1>
-        <p class="av6-sub">Compartimos nuestra visión sobre el futuro del crecimiento digital, desde la optimización para buscadores de IA hasta la psicología del consumidor.</p>
-        <button type="button" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}' class="cta-core av6-btn-primary">Solicitar análisis</button>
+        <h1 class="av6-title">Insights para<br/><span class="text-white">decidir mejor</span></h1>
+        <p class="av6-sub">Ideas y criterios para entender dónde se pierden oportunidades: conversión, experiencia de usuario, medición y experimentación.</p>
+        <button onclick="openContactModal()" type="button" class="cta-core av6-btn-primary">Solicitar análisis</button>
       </div>
     </section>
 
 
-    <!-- Recursos Intro -->
-    <section class="py-24 md:py-32 px-6 md:px-12 max-w-[1440px] mx-auto" aria-labelledby="recursos-intro-title" data-track-section="intro">
-      <div class="mb-12 md:mb-16 max-w-5xl">
-        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Biblioteca de crecimiento</p>
-        <h2 id="recursos-intro-title" class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">
-          Recursos para optimizar conversi&oacute;n, visibilidad y experiencia digital con criterio de negocio
-        </h2>
-        <p class="text-base md:text-lg text-on-surface-variant leading-relaxed max-w-4xl">
-          Una base editorial para trabajar mejor el CRO, el SEO/GEO, la anal&iacute;tica y la experiencia de usuario sin separar estrategia, datos y contenido.
-        </p>
+    <!-- Insights: navegación por temas -->
+    <section class="py-16 md:py-24 px-6 md:px-12 max-w-[1440px] mx-auto" aria-labelledby="recursos-intro-title" data-track-section="intro">
+      <nav class="flex flex-wrap gap-3 text-sm text-on-surface-variant mb-8" aria-label="Ruta de navegación"><a class="text-secondary hover:underline" href="/">Aripa</a><span aria-hidden="true">/</span><span aria-current="page">Insights</span></nav>
+      <div class="mb-10 max-w-4xl">
+        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Explora por problema</p>
+        <h2 id="recursos-intro-title" class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">Cuatro perspectivas sobre tu negocio</h2>
+        <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">Artículos y guías de Javier Rodríguez de la Orden para conectar comportamiento, datos y decisiones. Elige el tema que encaje con el problema que quieres resolver.</p>
       </div>
-
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 border-b border-secondary/10 pb-16 md:pb-20">
-        <div class="lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-          <div class="space-y-4">
-            <h3 class="text-primary font-bold text-xs uppercase tracking-widest">Qué encontrarás</h3>
-            <p class="text-base md:text-lg leading-relaxed text-on-surface-variant">
-              Esta secci&oacute;n re&uacute;ne art&iacute;culos, gu&iacute;as y reflexiones pr&aacute;cticas sobre crecimiento digital para equipos que necesitan tomar mejores decisiones con datos, no solo acumular m&aacute;s tr&aacute;fico. En Aripa trabajamos la optimizaci&oacute;n desde una mirada integrada: conversi&oacute;n, experiencia de usuario, anal&iacute;tica, SEO, GEO y experimentaci&oacute;n deben leerse juntos cuando el objetivo es mejorar el rendimiento real de una web, una landing page, un ecommerce o un servicio digital.
-            </p>
-          </div>
-          <div class="space-y-4">
-            <h3 class="text-primary font-bold text-xs uppercase tracking-widest">Contexto semántico</h3>
-            <p class="text-base md:text-lg leading-relaxed text-on-surface-variant">
-              Aqu&iacute; encontrar&aacute;s contenido pensado para entender c&oacute;mo se comportan los usuarios, qu&eacute; fricciones reducen la conversi&oacute;n, c&oacute;mo priorizar mejoras en un funnel y de qu&eacute; manera una arquitectura de informaci&oacute;n clara ayuda tanto a las personas como a los buscadores y a los sistemas de inteligencia artificial. Hablamos de CRO, UX/UI orientado a negocio, anal&iacute;tica web, medici&oacute;n, posicionamiento org&aacute;nico y contenido preparado para ser interpretado, citado y contextualizado por modelos como ChatGPT, Gemini o Perplexity.
-            </p>
-          </div>
-          <div class="md:col-span-2 pt-6 md:pt-8">
-            <p class="text-base md:text-lg leading-relaxed text-on-surface-variant max-w-5xl">
-              La idea no es publicar teor&iacute;a por publicar. Cada recurso busca aportar contexto sem&aacute;ntico, criterios de priorizaci&oacute;n y ejemplos aplicables para detectar oportunidades, ordenar hip&oacute;tesis y conectar cada cambio con una m&eacute;trica de negocio: leads cualificados, tasa de conversi&oacute;n, ingresos, retenci&oacute;n, eficiencia de captaci&oacute;n o calidad de la experiencia. Esta biblioteca seguir&aacute; creciendo como punto de partida para auditor&iacute;as de conversi&oacute;n, estrategia SEO/GEO, dise&ntilde;o de experimentos, mejora de contenidos y toma de decisiones basada en evidencia real, con una lectura clara para equipos de marketing, producto, contenidos y negocio digital en crecimiento medible.
-            </p>
-          </div>
-        </div>
-        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-4 mt-4 lg:mt-0" aria-label="Temas principales de recursos Aripa">
-          <article class="border border-secondary/10 bg-white/60 p-6 md:p-6 rounded-xl">
-            <h3 class="text-primary font-bold text-xs uppercase tracking-widest mb-3">Conversi&oacute;n</h3>
-            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">CRO, funnels, fricciones, test A/B y behavioral economics.</p>
-          </article>
-          <article class="border border-secondary/10 bg-white/60 p-6 md:p-6 rounded-xl">
-            <h3 class="text-primary font-bold text-xs uppercase tracking-widest mb-3">Visibilidad</h3>
-            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">SEO t&eacute;cnico, GEO, contenidos citables y motores generativos.</p>
-          </article>
-          <article class="border border-secondary/10 bg-white/60 p-6 md:p-6 rounded-xl">
-            <h3 class="text-primary font-bold text-xs uppercase tracking-widest mb-3">Medici&oacute;n</h3>
-            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed">Anal&iacute;tica web, hip&oacute;tesis, priorizaci&oacute;n y decisiones basadas en evidencia.</p>
-          </article>
-        </div>
-      </div>
+      <nav class="grid grid-cols-1 md:grid-cols-2 gap-6" aria-label="Temas de Insights">
+        <a class="bg-white p-6 rounded-2xl border border-secondary/20 hover:border-secondary transition-colors" href="#cro-conversion"><span class="block text-xl font-bold text-primary mb-3">CRO y conversión</span><span class="text-on-surface-variant leading-relaxed">Landings, diagnósticos y captación de leads: detectar fricciones y facilitar el siguiente paso.</span></a>
+        <a class="bg-white p-6 rounded-2xl border border-secondary/20 hover:border-secondary transition-colors" href="#ux-comportamiento"><span class="block text-xl font-bold text-primary mb-3">UX y comportamiento</span><span class="text-on-surface-variant leading-relaxed">Cómo deciden las personas y cómo ordenar la experiencia, el contenido y las señales de confianza.</span></a>
+        <a class="bg-white p-6 rounded-2xl border border-secondary/20 hover:border-secondary transition-colors" href="#analitica-medicion"><span class="block text-xl font-bold text-primary mb-3">Analítica y medición</span><span class="text-on-surface-variant leading-relaxed">Eventos y criterios para distinguir visitas, intención y oportunidades reales.</span></a>
+        <a class="bg-white p-6 rounded-2xl border border-secondary/20 hover:border-secondary transition-colors" href="#growth-experimentacion"><span class="block text-xl font-bold text-primary mb-3">Growth y experimentación</span><span class="text-on-surface-variant leading-relaxed">Priorizar hipótesis y canales de captación. Incluye contenidos existentes sobre búsqueda orgánica, SEO y GEO.</span></a>
+      </nav>
     </section>
-    <!-- Artículos Grid (Con padding superior e inferior robusto para no tocar el hero) -->
-    <section class="px-6 md:px-12 max-w-[1440px] mx-auto pt-0 pb-16 md:pb-24" id="recursos-grid" data-track-section="resources">
-      <div class="mb-10 md:mb-16 text-center md:text-left">
-        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">NUESTROS ARTÍCULOS</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter">Últimos recursos y reflexiones</h2>
-      </div>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
-
-        <a href="/geo-vs-seo" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
-          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
-            <span>Abril 2026</span>
-            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
-            <span>5 min lectura</span>
-          </div>
-          <div class="space-y-4">
-            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
-              GEO vs SEO: Cómo optimizar tu marca para ser citado por ChatGPT y Gemini
-            </h3>
-            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
-              La búsqueda está cambiando. El GEO (Generative Engine Optimization) es el conjunto de técnicas necesarias para que las IAs te citen.
-            </p>
-          </div>
-          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
-            LEER ARTÍCULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-          </div>
-        </a>
-
-        <a href="/behavioral-economics-cro" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
-          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
-            <span>Abril 2026</span>
-            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
-            <span>5 min lectura</span>
-          </div>
-          <div class="space-y-4">
-            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
-              Behavioral Economics y CRO: La ciencia detrás de la conversión en 2026
-            </h3>
-            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
-              ¿Por qué compramos lo que compramos? Aplicamos la psicología para reducir la fricción y aumentar ventas.
-            </p>
-          </div>
-          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
-            LEER ARTÍCULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-          </div>
-        </a>
-
-        <a href="/landing-pages-pymes" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+    <div class="px-6 md:px-12 max-w-[1440px] mx-auto pb-16 md:pb-24" id="recursos-grid" data-track-section="resources">
+      <section id="cro-conversion" aria-labelledby="cro-conversion-title" class="mb-16 md:mb-24" style="scroll-margin-top: 7rem;">
+        <div class="mb-10 max-w-4xl">
+          <h2 id="cro-conversion-title" class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">CRO y conversión</h2>
+          <p class="text-on-surface-variant leading-relaxed mb-4">Landings, diagnósticos y captación de leads: detectar fricciones y facilitar el siguiente paso.</p>
+          <a href="/servicios#cro" class="text-secondary font-bold hover:underline underline-offset-4">Ver cómo se trabaja en Aripa →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <a href="/landing-pages-pymes" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
           <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
             <span>Mayo 2026</span>
             <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
@@ -603,45 +629,7 @@
           </div>
         </a>
 
-        <a href="/growth-marketing-pymes" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
-          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
-            <span>Mayo 2026</span>
-            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
-            <span>3 min lectura</span>
-          </div>
-          <div class="space-y-4">
-            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
-              Growth marketing para PYMES: crecer sin convertir cada canal en una apuesta
-            </h3>
-            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
-              Un enfoque práctico para priorizar captación, conversión y medición sin dispersar al equipo.
-            </p>
-          </div>
-          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
-            LEER ARTÍCULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-          </div>
-        </a>
-
-        <a href="/web-posicionada-negocio" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
-          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
-            <span>Mayo 2026</span>
-            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
-            <span>4 min lectura</span>
-          </div>
-          <div class="space-y-4">
-            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
-              Web posicionada para negocio: que te encuentren y quieran hablar contigo
-            </h3>
-            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
-              SEO/GEO, arquitectura de información y conversión trabajando como un mismo activo digital.
-            </p>
-          </div>
-          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
-            LEER ARTÍCULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-          </div>
-        </a>
-
-        <a href="/auditoria-web-pymes" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+          <a href="/auditoria-web-pymes" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
           <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
             <span>Mayo 2026</span>
             <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
@@ -660,47 +648,7 @@
           </div>
         </a>
 
-        <a href="/analitica-pymes-decisiones" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
-          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
-            <span>Mayo 2026</span>
-            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
-            <span>3 min lectura</span>
-          </div>
-          <div class="space-y-4">
-            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
-              Anal&iacute;tica para PYMES: medir lo que importa antes de invertir m&aacute;s
-            </h3>
-            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
-              Qu&eacute; eventos y se&ntilde;ales ayudan a saber si una web est&aacute; generando intenci&oacute;n, leads y decisiones &uacute;tiles.
-            </p>
-          </div>
-          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
-            LEER ART&Iacute;CULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-          </div>
-        </a>
-
-        <a href="/contenido-seo-pymes" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
-          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
-            <span>Mayo 2026</span>
-            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
-            <span>3 min lectura</span>
-          </div>
-          <div class="space-y-4">
-            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
-              Contenido SEO para PYMES: responder b&uacute;squedas reales sin sonar gen&eacute;rico
-            </h3>
-            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
-              C&oacute;mo crear contenido que ayude a ser encontrado, entendido y elegido por personas, Google y sistemas de IA.
-            </p>
-          </div>
-          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
-            LEER ART&Iacute;CULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-          </div>
-        </a>
-
-
-
-        <a href="/captacion-leads-b2b-pymes" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+          <a href="/captacion-leads-b2b-pymes" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
           <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
             <span>Mayo 2026</span>
             <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
@@ -718,27 +666,35 @@
             LEER ART&Iacute;CULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
           </div>
         </a>
-
-        <a href="/seo-local-pymes-servicios" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+        </div>
+      </section>
+      <section id="ux-comportamiento" aria-labelledby="ux-comportamiento-title" class="mb-16 md:mb-24" style="scroll-margin-top: 7rem;">
+        <div class="mb-10 max-w-4xl">
+          <h2 id="ux-comportamiento-title" class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">UX y comportamiento</h2>
+          <p class="text-on-surface-variant leading-relaxed mb-4">Cómo deciden las personas y cómo ordenar la experiencia, el contenido y las señales de confianza.</p>
+          <a href="/servicios#ux" class="text-secondary font-bold hover:underline underline-offset-4">Ver cómo se trabaja en Aripa →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <a href="/behavioral-economics-cro" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
           <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
-            <span>Mayo 2026</span>
+            <span>Abril 2026</span>
             <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
-            <span>4 min lectura</span>
+            <span>5 min lectura</span>
           </div>
           <div class="space-y-4">
             <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
-              SEO local para PYMES de servicios: aparecer cuando el cliente ya est&aacute; buscando
+              Behavioral Economics y CRO: convertir mejor sin empujar más
             </h3>
             <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
-              Una gu&iacute;a pr&aacute;ctica para conectar b&uacute;squedas locales, p&aacute;ginas de servicio, confianza y conversi&oacute;n sin caer en contenido gen&eacute;rico.
+              Cómo aplicar principios de comportamiento para detectar fricciones y plantear mejoras que puedan evaluarse.
             </p>
           </div>
           <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
-            LEER ART&Iacute;CULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+            LEER ARTÍCULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
           </div>
         </a>
 
-        <a href="/arquitectura-contenidos-seo-geo" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+          <a href="/arquitectura-contenidos-seo-geo" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
           <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
             <span>Mayo 2026</span>
             <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
@@ -757,8 +713,138 @@
           </div>
         </a>
 
-      </div>
-    </section>
+          <a href="/web-posicionada-negocio" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
+            <span>Mayo 2026</span>
+            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
+            <span>4 min lectura</span>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
+              Web posicionada para negocio: que te encuentren y quieran hablar contigo
+            </h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
+              SEO/GEO, arquitectura de información y conversión trabajando como un mismo activo digital.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
+            LEER ARTÍCULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+          </div>
+        </a>
+        </div>
+      </section>
+      <section id="analitica-medicion" aria-labelledby="analitica-medicion-title" class="mb-16 md:mb-24" style="scroll-margin-top: 7rem;">
+        <div class="mb-10 max-w-4xl">
+          <h2 id="analitica-medicion-title" class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">Analítica y medición</h2>
+          <p class="text-on-surface-variant leading-relaxed mb-4">Eventos y criterios para distinguir visitas, intención y oportunidades reales.</p>
+          <a href="/servicios#analytics" class="text-secondary font-bold hover:underline underline-offset-4">Ver cómo se trabaja en Aripa →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <a href="/analitica-pymes-decisiones" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
+            <span>Mayo 2026</span>
+            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
+            <span>3 min lectura</span>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
+              Anal&iacute;tica para PYMES: medir lo que importa antes de invertir m&aacute;s
+            </h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
+              Qu&eacute; eventos y se&ntilde;ales ayudan a saber si una web est&aacute; generando intenci&oacute;n, leads y decisiones &uacute;tiles.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
+            LEER ART&Iacute;CULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+          </div>
+        </a>
+        </div>
+      </section>
+      <section id="growth-experimentacion" aria-labelledby="growth-experimentacion-title" class="mb-16 md:mb-24" style="scroll-margin-top: 7rem;">
+        <div class="mb-10 max-w-4xl">
+          <h2 id="growth-experimentacion-title" class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">Growth y experimentación</h2>
+          <p class="text-on-surface-variant leading-relaxed mb-4">Priorizar hipótesis y canales de captación. Incluye contenidos existentes sobre búsqueda orgánica, SEO y GEO.</p>
+          <a href="/servicios#growth" class="text-secondary font-bold hover:underline underline-offset-4">Ver cómo se trabaja en Aripa →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+          <a href="/growth-marketing-pymes" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
+            <span>Mayo 2026</span>
+            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
+            <span>3 min lectura</span>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
+              Growth marketing para PYMES: crecer sin convertir cada canal en una apuesta
+            </h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
+              Un enfoque práctico para priorizar captación, conversión y medición sin dispersar al equipo.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
+            LEER ARTÍCULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+          </div>
+        </a>
+
+          <a href="/geo-vs-seo" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
+            <span>Abril 2026</span>
+            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
+            <span>5 min lectura</span>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
+              GEO vs SEO: cómo preparar tu marca para Google, ChatGPT y Gemini
+            </h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
+              La búsqueda está cambiando. El GEO (Generative Engine Optimization) es el conjunto de técnicas necesarias para que las IAs te citen.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
+            LEER ARTÍCULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+          </div>
+        </a>
+
+          <a href="/contenido-seo-pymes" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
+            <span>Mayo 2026</span>
+            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
+            <span>3 min lectura</span>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
+              Contenido SEO para PYMES: responder b&uacute;squedas reales sin sonar gen&eacute;rico
+            </h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
+              C&oacute;mo crear contenido que ayude a ser encontrado, entendido y elegido por personas, Google y sistemas de IA.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
+            LEER ART&Iacute;CULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+          </div>
+        </a>
+
+          <a href="/seo-local-pymes-servicios" class="group relative bg-white p-8 md:p-10 rounded-xl md:rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-6 text-left outline-none focus-visible:ring-4 focus-visible:ring-secondary/50 block">
+          <div class="flex items-center gap-4 text-[10px] font-bold uppercase tracking-widest text-secondary group-hover:text-white/60">
+            <span>Mayo 2026</span>
+            <span class="w-1 h-1 bg-secondary group-hover:text-white/60 rounded-full"></span>
+            <span>4 min lectura</span>
+          </div>
+          <div class="space-y-4">
+            <h3 class="text-2xl md:text-3xl font-black font-headline text-primary tracking-tight leading-tight group-hover:text-white transition-colors">
+              SEO local para PYMES de servicios: aparecer cuando el cliente ya est&aacute; buscando
+            </h3>
+            <p class="text-on-surface-variant leading-relaxed text-sm md:text-base group-hover:text-white/80 transition-colors">
+              Una gu&iacute;a pr&aacute;ctica para conectar b&uacute;squedas locales, p&aacute;ginas de servicio, confianza y conversi&oacute;n sin caer en contenido gen&eacute;rico.
+            </p>
+          </div>
+          <div class="mt-auto pt-4 flex items-center gap-2 text-secondary group-hover:text-white font-bold text-xs uppercase tracking-widest underline decoration-2 underline-offset-8 transition-colors">
+            LEER ART&Iacute;CULO <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
+          </div>
+        </a>
+        </div>
+      </section>
+    </div>
 
     <!-- Modulo Author -->
     <section class="px-6 md:px-12 max-w-[1440px] mx-auto pt-14 md:pt-20 pb-20 md:pb-28" id="author-module" aria-labelledby="author-title" data-track-section="author">
@@ -792,6 +878,7 @@
               <span class="text-primary font-bold text-[10px] sm:text-[11px] uppercase tracking-widest">L&iacute;nea Directa</span>
               <span class="text-primary font-bold text-[10px] sm:text-[11px] uppercase tracking-widest">Shifta</span>
             </div>
+            <a href="/sobre-aripa/" class="author-link text-secondary font-bold text-[10px] sm:text-[11px] uppercase tracking-widest hover:text-primary hover:underline underline-offset-4">Sobre Aripa</a>
             <a href="https://www.linkedin.com/in/jro1" target="_blank" rel="noopener noreferrer" class="author-link text-secondary font-bold text-[10px] sm:text-[11px] uppercase tracking-widest hover:text-primary hover:underline underline-offset-4">
               LinkedIn
             </a>
@@ -815,55 +902,32 @@
       </div>
 
       <div class="mb-10">
-        <p class="text-on-surface-variant text-base leading-relaxed">Cuéntanos tu proyecto y un consultor senior te contactará en menos de 24h.</p>
+        <p class="text-on-surface-variant text-base leading-relaxed">Cuéntame qué quieres resolver. Revisaré personalmente tu caso para valorar el siguiente paso.</p>
       </div>
 
-      <form class="space-y-8 text-left" id="contact-form" onsubmit="handleFormSubmit(event)">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <label class="form-label" for="c-name">Nombre *</label>
-            <input class="form-input" id="c-name" name="name" placeholder="Tu nombre" required type="text" oninput="this.value = this.value.replace(/[0-9]/g, '')"/>
-          </div>
-          <div>
-            <label class="form-label" for="c-phone">Teléfono *</label>
-            <input class="form-input" id="c-phone" name="phone" placeholder="+34 600 000 000" required type="tel" oninput="this.value = this.value.replace(/[a-zA-ZáéíóúÁÉÍÓÚñÑ]/g, '')"/>
-          </div>
-        </div>
-        <div>
-          <label class="form-label" for="c-email">Email Corporativo *</label>
-          <input class="form-input" id="c-email" name="email" placeholder="email@empresa.com" required type="email"/>
-        </div>
-        <div>
-          <label class="form-label" for="service">Servicio de interés</label>
-          <div class="relative">
-            <select class="form-input appearance-none pr-12 cursor-pointer" id="service" name="service">
-              <option value="general">Consulta general</option>
-              <option value="CRO y Conversión">CRO y Conversión</option>
-              <option value="UX/UI de Negocio">UX/UI de Negocio</option>
-              <option value="Analítica y Medición">Analítica y Medición</option>
-              <option value="Growth y Experimentación">Growth y Experimentación</option>
-              <option value="SEO, GEO y Contenido">SEO, GEO y Contenido</option>
-              <option value="Landings y Activos Web">Landings y Activos Web</option>
-              <option value="Automatización">Automatización</option>
-              <option value="Servicios B2B / Soporte">Servicios B2B / Soporte</option>
-            </select>
-            <svg class="icon-svg absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-primary/40" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg>
-          </div>
-        </div>
-        <div>
-          <label class="form-label" for="c-message">Mensaje</label>
-          <textarea class="form-input min-h-[120px] resize-none" id="c-message" name="message" placeholder="¿Cómo podemos ayudarte?"></textarea>
-        </div>
-        <button type="submit" class="inline-flex items-center gap-3 px-8 py-4 rounded-xl bg-[#061542] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#6b38fb] hover:scale-[1.02] active:scale-95 transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(107,56,251,0.25)] w-fit mt-4 disabled:opacity-50 disabled:cursor-not-allowed" id="submit-btn">
-          ENVIAR SOLICITUD
-          <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="m560-240-56-58 142-142H160v-80h486L504-662l56-58 240 240-240 240Z"/></svg>
-        </button>
-      </form>
+      <form class="phase1-form" id="contact-form" onsubmit="handleFormSubmit(event)">
+  <div class="form-field"><label class="form-label" for="problem">¿Qué quieres resolver? *</label><input class="form-input" id="problem" name="problem" type="text" placeholder="Por ejemplo: llegan visitas, pero pocos contactos" maxlength="250" required></div>
+  <div class="form-field"><label class="form-label" for="website">URL de tu web <span>(opcional)</span></label><input class="form-input" id="website" name="website" type="url" placeholder="https://tuweb.com" autocomplete="url" inputmode="url"></div>
+  <div class="form-field"><label class="form-label" for="message">Breve contexto <span>(opcional)</span></label><textarea class="form-input" id="message" name="message" placeholder="Qué ocurre, qué habéis probado o qué os gustaría mejorar" maxlength="3000"></textarea></div>
+  <div class="contact-row">
+    <div class="form-field"><label class="form-label" for="name">Nombre *</label><input class="form-input" id="name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required></div>
+    <div class="form-field"><label class="form-label" for="email">Email *</label><input class="form-input" id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
+  </div>
+  <div class="form-field"><label class="form-label" for="phone">Teléfono <span>(opcional)</span></label><input class="form-input" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Si prefieres que te llame"></div>
+  <!-- Preserve service attribution from service CTAs without asking visitors to diagnose themselves. -->
+  <select id="service" name="service" hidden aria-hidden="true" tabindex="-1">
+    <option value="general">Consulta general</option><option value="cro">CRO y Conversión</option><option value="ux">UX/UI de Negocio</option><option value="analitica">Analítica y Medición</option><option value="growth">Growth y Experimentación</option><option value="seo_geo">SEO, GEO y Contenido</option><option value="landings">Landings y Activos Web</option><option value="automatizacion">Automatización</option><option value="servicios_complementarios">Servicios B2B / Soporte</option>
+  </select>
+  <p class="contact-help">Usaré tus datos para responder a esta solicitud. <a href="/politica-privacidad">Consulta la política de privacidad</a>.</p>
+  <p class="form-error" role="alert" tabindex="-1" hidden>No se ha podido enviar la solicitud. Tus datos siguen aquí para que puedas intentarlo de nuevo. También puedes escribir a <a href="mailto:hola@aripa.es">hola@aripa.es</a>.</p>
+  <button type="submit" class="cta-core bg-primary text-white rounded-xl px-8 py-4 disabled:opacity-50" id="submit-btn">Enviar solicitud</button>
+</form>
     </div>
   </div>
 
   <!-- FOOTER -->
 <footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-20 px-6 md:px-12 border-t border-white/5">
+<nav class="aripa-footer-nav" aria-label="Explorar Aripa"><a href="/servicios">Servicios</a><a href="/casos/">Casos</a><a href="/recursos">Insights</a><a href="/sobre-aripa">Sobre Aripa</a></nav>
   <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
     <a href="/" class="flex items-center gap-2 md:gap-3 group" aria-label="Aripa - Ir al inicio">
       <img alt="aripa" class="h-8 md:h-10 w-auto object-contain" src="./assets/aripa-logo.png" width="106" height="32" loading="eager" fetchpriority="high"/>
@@ -972,7 +1036,7 @@
             <svg class="w-8 h-8 fill-current" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path></svg>
         </div>
         <h3 id="success-modal-title" class="text-2xl font-black font-headline text-primary mb-2">¡Gracias!</h3>
-        <p id="success-modal-description" class="text-on-surface-variant text-sm leading-relaxed mb-6">Hemos recibido tu solicitud correctamente. Te contactaremos en menos de 24h.</p>
+        <p id="success-modal-description" class="text-on-surface-variant text-sm leading-relaxed mb-6">He recibido tu solicitud. Revisaré personalmente tu caso y te responderé con el siguiente paso.</p>
         <button class="cta-core w-full max-w-[220px] mx-auto py-4 btn-after text-white rounded-xl active:scale-95 transition-all" onclick="closeModal('success-modal')">ENTENDIDO</button>
     </div>
   </div>
@@ -1010,15 +1074,7 @@
     })();
 
     // Form Handling with Formspree
-    window.handleFormSubmit = async (e) => {
-      e.preventDefault();
-      const btn = document.getElementById('submit-btn');
-      btn.disabled = true; btn.innerText = 'ENVIANDO...';
-      try {
-        const response = await fetch("https://formspree.io/f/maqalopa", { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(Object.fromEntries(new FormData(e.target).entries())) });
-        if (response.ok) { closeModal('contact-modal'); setTimeout(() => { document.getElementById('success-modal').classList.add('active'); document.body.classList.add('modal-open'); }, 300); e.target.reset(); }
-      } catch (error) { alert('Error de conexión.'); } finally { btn.disabled = false; btn.innerText = 'ENVIAR SOLICITUD'; }
-    };
+
   </script>
 
   <!-- High-Priority Universal Text Enforcement -->
@@ -1082,6 +1138,7 @@
   </script>
 <script src="/assets/js/consent-analytics.js" defer></script>
 <script src="/analytics/sectionTracking.js" defer></script>
-<script src="/assets/js/aripa-analytics.js" defer></script>
+<script src="/assets/js/aripa-analytics.js?v=20261003" defer></script>
+<script src="/assets/js/site-shell.js?v=20261003" defer></script>
 </body>
 </html>

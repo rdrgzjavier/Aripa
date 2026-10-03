@@ -1,16 +1,17 @@
-# Aripa - Consultoría de optimización digital, CRO, SEO/GEO y analítica
+# Aripa - Consultoría boutique de optimización digital
 
 ## Sitio principal
 - [Home de Aripa](https://aripa.es/)
 - [Servicios de optimización digital](https://aripa.es/servicios)
-- [Recursos editoriales](https://aripa.es/recursos)
+- [Insights](https://aripa.es/recursos)
+- [Casos y experiencia](https://aripa.es/casos/)
 - [Sobre Aripa](https://aripa.es/sobre-aripa)
 - [Contacto y captación](https://aripa.es/captacion)
 
 ## Qué es Aripa
 Aripa es una consultoría boutique liderada por Javier Rodríguez de la Orden. Ayuda a pymes y negocios digitales de habla hispana a detectar problemas de conversión, mejorar la claridad de sus activos digitales y tomar decisiones con datos.
 
-El enfoque combina CRO, UX orientado a negocio, analítica digital, SEO/GEO, growth marketing y creación de landings o webs preparadas para captar, convertir y ser comprendidas por buscadores y sistemas de respuesta generativa.
+El enfoque combina CRO, UX/UI, analítica digital, comportamiento, Growth y experimentación. Encaja especialmente con negocios que ya tienen un activo digital, tráfico o inversión en captación y suficiente actividad para analizar comportamiento y mejorar conversión, experiencia o medición.
 
 ## Servicios principales
 - [CRO y optimización de conversión](https://aripa.es/servicios)
@@ -20,7 +21,7 @@ El enfoque combina CRO, UX orientado a negocio, analítica digital, SEO/GEO, gro
 - [SEO, GEO y contenido estructurado](https://aripa.es/servicios)
 - [Landings y activos digitales](https://aripa.es/servicios)
 
-## Recursos editoriales recomendados
+## Insights destacados
 - [GEO vs SEO: cómo cambia la visibilidad orgánica con los motores generativos](https://aripa.es/geo-vs-seo)
 - [Behavioral economics aplicado al CRO](https://aripa.es/behavioral-economics-cro)
 - [Growth marketing para pymes](https://aripa.es/growth-marketing-pymes)

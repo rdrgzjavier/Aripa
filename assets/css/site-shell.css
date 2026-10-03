@@ -1,0 +1,172 @@
+/* Shared navigation and contact UI, using the existing Aripa palette and type. */
+@font-face { font-family: Inter; font-style: normal; font-weight: 400; font-display: swap; src: url('/assets/fonts/inter-400.woff2') format('woff2'); }
+@font-face { font-family: Inter; font-style: normal; font-weight: 500; font-display: swap; src: url('/assets/fonts/inter-500.woff2') format('woff2'); }
+@font-face { font-family: Inter; font-style: normal; font-weight: 600; font-display: swap; src: url('/assets/fonts/inter-600.woff2') format('woff2'); }
+html { scroll-padding-top: 6rem; }
+.modal-overlay:not(.active) { display: none; }
+.modal-overlay.active { display: flex; }
+.aripa-header .aripa-header-inner { max-width: 1440px; margin: auto; padding: 0 3rem; min-height: 5rem; display: flex; align-items: center; gap: 2rem; }
+#site-header.aripa-header { background: rgba(6,21,66,.94); border-bottom: 1px solid rgba(255,255,255,.1); }
+.aripa-logo { flex: 0 0 auto; }
+.aripa-logo img { width: 80px; height: 24px; object-fit: contain; }
+.aripa-navigation { display: flex; align-items: center; justify-content: flex-end; gap: 1.8rem; flex: 1; }
+.aripa-navigation a { color: rgba(255,255,255,.85); font-size: .875rem; font-weight: 600; padding: .65rem 0; white-space: nowrap; }
+.aripa-navigation a:hover, .aripa-navigation a[aria-current="page"] { color: white; text-decoration: underline; text-underline-offset: 6px; }
+.aripa-navigation .aripa-nav-cta { padding: 1rem 1.25rem; border-radius: .75rem; color: #171443; text-decoration: none; }
+.aripa-menu-toggle { display: none; color: white; border: 1px solid #ffffff40; border-radius: .75rem; padding: .6rem .8rem; min-height: 44px; align-items: center; gap: .5rem; }
+.aripa-menu-toggle svg { width: 22px; height: 22px; }
+.aripa-menu-toggle:focus-visible, .aripa-navigation a:focus-visible { outline: 2px solid #cbb7ff; outline-offset: 4px; }
+.aripa-footer-nav { display: flex; justify-content: center; gap: 1rem 2rem; flex-wrap: wrap; margin: 0 auto 2rem; }
+.aripa-footer-nav a { color: #fff; font-size: .875rem; }
+.aripa-footer-nav a:hover { text-decoration: underline; }
+.phase1-section { padding-top: 4rem; padding-bottom: 4rem; }
+.phase1-link { display: inline-block; color: #6c45c0; font-weight: 700; margin-top: 1.5rem; text-decoration: underline; text-underline-offset: 4px; }
+.home-dark-band .phase1-link, .home-dark-panel .phase1-link { color: #e5d9ff; }
+.phase1-card { background: white; border: 1px solid #6c45c026; border-radius: 1rem; padding: 1.5rem; }
+.phase1-card h3 { font-weight: 700; font-size: 1.125rem; color: #061542; margin-bottom: .75rem; }
+.phase1-card p { color: #45464f; line-height: 1.65; }
+.phase1-card a { text-decoration: underline; text-underline-offset: 4px; }
+.phase1-eyebrow { color: #6c45c0; font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .12em; margin-bottom: .75rem; }
+.phase1-title { font-size: clamp(1.75rem, 3vw, 2.5rem); font-weight: 800; letter-spacing: -.04em; line-height: 1.15; margin-bottom: 1.25rem; }
+.phase1-copy { color: #45464f; line-height: 1.75; max-width: 52rem; }
+.phase1-cta { background: radial-gradient(circle at 80% 10%, #6c45c066, transparent 65%), #061542; color: white; text-align: center; }
+.phase1-cta p { color: #ffffffe0; margin: 0 auto 1.5rem; max-width: 42rem; line-height: 1.75; }
+.phase1-cta a { display: inline-block; padding: 1rem 1.5rem; border-radius: .75rem; }
+#contact-form.phase1-form { display: grid; gap: 1.15rem; text-align: left; }
+#contact-form.phase1-form > * { margin: 0; }
+#contact-form .contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+#contact-form .form-label { display: block; margin: 0 0 .4rem; text-transform: none; letter-spacing: normal; font-size: .875rem; color: #45464f; }
+#contact-form .form-input { width: 100%; margin: 0; min-height: 46px; padding: .75rem 1rem; }
+#contact-modal .modal-panel > .flex:first-child { margin-bottom: 1rem; }
+#contact-modal .modal-panel > .mb-10 { margin-bottom: 1.25rem; }
+#contact-form textarea.form-input { min-height: 86px; resize: vertical; }
+#contact-form .contact-help { color: #45464f; font-size: .8rem; line-height: 1.6; }
+#contact-form .contact-help a { color: #6c45c0; text-decoration: underline; }
+#contact-form .form-error { color: #9b1c31; padding: .8rem; border: 1px solid #9b1c3140; border-radius: .5rem; font-size: .875rem; }
+#contact-form .form-error[hidden] { display: none; }
+#contact-form [type="submit"] { min-height: 48px; }
+@media (min-width: 768px) { .phase1-section { padding-top: 5rem; padding-bottom: 5rem; } }
+@media (max-width: 959px) {
+  .aripa-header .aripa-header-inner { min-height: 4.25rem; padding: 0 1.5rem; justify-content: space-between; }
+  .aripa-menu-toggle { display: inline-flex; }
+  .aripa-navigation { display: none; position: absolute; left: 0; right: 0; top: 100%; background: #061542; padding: 1rem 1.5rem 1.5rem; border-top: 1px solid #ffffff26; box-shadow: 0 20px 30px #06154233; max-height: calc(100dvh - 4.25rem); overflow: auto; }
+  .aripa-navigation.is-open { display: flex; flex-direction: column; align-items: stretch; gap: .3rem; }
+  .aripa-navigation a { padding: .85rem .5rem; }
+  .aripa-navigation .aripa-nav-cta { margin-top: .75rem; text-align: center; }
+}
+@media (max-width: 479px) {
+  #contact-form .contact-row { grid-template-columns: 1fr; }
+  #contact-modal .modal-panel { padding: 1.5rem; }
+}
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+/* Interior pages use the same type scale, surfaces and motion as Home and Servicios. */
+.aripa-subpage { --aripa-ink: #061542; --aripa-purple: #7c3aed; --aripa-muted: #45464f; }
+.aripa-subpage .about-hero,
+.aripa-subpage .cases-hero {
+  min-height: 78svh;
+  padding: 7.5rem 1.5rem 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  text-align: center;
+  background: radial-gradient(circle at 66% 55%, rgba(151, 78, 168, .72), transparent 42%),
+              radial-gradient(circle at 26% 15%, rgba(112, 69, 187, .62), transparent 45%),
+              linear-gradient(135deg, #101947, #30216a 58%, #58368b);
+}
+.aripa-subpage .about-hero::before,
+.aripa-subpage .cases-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.72' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.055'/%3E%3C/svg%3E");
+  background-size: 220px;
+  mix-blend-mode: overlay;
+  opacity: .6;
+}
+.aripa-subpage .about-hero > div,
+.aripa-subpage .cases-hero > div { max-width: 920px; }
+.aripa-subpage .breadcrumb { justify-content: center; color: rgba(255,255,255,.8); font-size: .875rem; margin-bottom: 2rem; }
+.aripa-subpage .about-hero h1,
+.aripa-subpage .cases-hero h1 {
+  max-width: 920px;
+  margin: 0 auto 1.5rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 1.15;
+  letter-spacing: -.02em;
+  font-weight: 800;
+  text-shadow: 0 2px 24px rgba(0,0,0,.2);
+}
+.aripa-subpage .about-hero h1 + p,
+.aripa-subpage .cases-hero h1 + p {
+  max-width: 640px;
+  margin: 0 auto;
+  font-size: clamp(.95rem, 2vw, 1.15rem);
+  line-height: 1.6;
+  color: rgba(255,255,255,.85);
+}
+.aripa-subpage .about-hero .text-white\/70,
+.aripa-subpage .cases-hero .text-white\/70 { color: rgba(255,255,255,.78); font-size: .7rem; letter-spacing: .12em; }
+.aripa-subpage .section-wrap { padding: 4rem 1.5rem; }
+.aripa-subpage .section-wrap h2 {
+  font-size: clamp(1.875rem, 4vw, 2.25rem);
+  line-height: 1.15;
+  letter-spacing: -.04em;
+  font-weight: 800;
+  color: var(--aripa-ink);
+}
+.aripa-subpage .section-wrap h3,
+.aripa-subpage .section-wrap .pill strong,
+.aripa-subpage .section-wrap .case-structure dt { font-size: 1.125rem; line-height: 1.35; font-weight: 700; color: var(--aripa-ink); }
+.aripa-subpage .section-wrap p,
+.aripa-subpage .section-wrap dd,
+.aripa-subpage .section-wrap .pill span { line-height: 1.75; }
+.aripa-subpage .section-wrap .eyebrow { color: #6c45c0; font-size: .7rem; font-weight: 700; letter-spacing: .12em; }
+.aripa-subpage .pill h3 { display: block; margin-bottom: .5rem; }
+.aripa-subpage .pill,
+.aripa-subpage .experience-card { border: 1px solid rgba(108,69,192,.15); border-radius: 1rem; background: #fff; padding: 1.5rem; box-shadow: 0 1px 4px rgba(6,21,66,.03); }
+.aripa-subpage .pill,
+.aripa-subpage .experience-card,
+.aripa-subpage .about-button,
+.aripa-subpage .cases-button { transition: transform .3s ease, box-shadow .3s ease, background .3s ease; }
+.aripa-subpage .pill:hover,
+.aripa-subpage .experience-card:hover { transform: translateY(-3px); box-shadow: 0 16px 30px rgba(6,21,66,.08); }
+.aripa-subpage .about-button,
+.aripa-subpage .cases-button {
+  background: linear-gradient(135deg, #8b5cf6, #6d28d9);
+  border: 1px solid rgba(255,255,255,.3);
+  box-shadow: 0 10px 25px -5px rgba(109,40,217,.4);
+  font-size: .875rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  min-height: 48px;
+}
+.aripa-subpage .about-button:hover,
+.aripa-subpage .cases-button:hover { background: linear-gradient(135deg, #7c3aed, #5b21b6); transform: translateY(-2px); }
+.aripa-subpage .about-link,
+.aripa-subpage .cases-link { color: #6c45c0; font-weight: 700; }
+@media (min-width: 768px) {
+  .aripa-subpage .section-wrap { padding: 5rem 3rem; }
+}
+@media (min-width: 1024px) {
+  .aripa-subpage .about-hero,
+  .aripa-subpage .cases-hero { min-height: 800px; padding-top: 5rem; padding-bottom: 5rem; }
+}
+@media (max-width: 767px) {
+  .aripa-subpage .about-hero,
+  .aripa-subpage .cases-hero { min-height: 78svh; padding-top: 7rem; padding-bottom: 4rem; }
+  .aripa-subpage .about-hero h1,
+  .aripa-subpage .cases-hero h1 { font-size: clamp(2rem, 10vw, 2.25rem); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .aripa-subpage .pill,
+  .aripa-subpage .experience-card,
+  .aripa-subpage .about-button,
+  .aripa-subpage .cases-button { transition: none; }
+}

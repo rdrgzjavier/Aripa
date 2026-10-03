@@ -35,3 +35,9 @@
 /captacion-leads-b2b-pymes.html /captacion-leads-b2b-pymes 301
 /seo-local-pymes-servicios.html /seo-local-pymes-servicios 301
 /arquitectura-contenidos-seo-geo.html /arquitectura-contenidos-seo-geo 301
+
+# Keep the established About URL; new cases use a directory canonical.
+/sobre-aripa.html            /sobre-aripa              301
+/sobre-aripa/                /sobre-aripa              301
+/casos                      /casos/                   301
+/casos/index.html           /casos/                   301

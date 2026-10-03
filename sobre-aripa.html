@@ -3,14 +3,34 @@
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Sobre Aripa | Consultoria CRO, SEO/GEO y optimizacion digital</title>
-<meta name="description" content="Conoce Aripa, consultoria de optimizacion digital, CRO, analitica y SEO/GEO fundada por Javier Rodriguez de la Orden para ayudar a PYMES y equipos B2B a convertir mejor."/>
+<title>Sobre Aripa y Javier Rodríguez de la Orden | Optimización digital</title>
+<meta name="description" content="Aripa es la consultora boutique de Javier Rodríguez de la Orden: CRO, UX/UI, analítica, comportamiento y experimentación para mejorar activos digitales."/>
 <link rel="canonical" href="https://aripa.es/sobre-aripa"/>
 <meta name="robots" content="index, follow">
-<link rel="stylesheet" href="./style.css">
+<meta name="author" content="Javier Rodríguez de la Orden">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aripa.es/sobre-aripa">
+<meta property="og:title" content="Sobre Aripa y Javier Rodríguez de la Orden">
+<meta property="og:description" content="Consultoría boutique de optimización digital con criterio de negocio, datos y atención directa de Javier.">
+<meta property="og:image" content="https://aripa.es/assets/aripa-logo.png">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Aripa">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Sobre Aripa y Javier Rodríguez de la Orden">
+<meta name="twitter:description" content="CRO, UX/UI, analítica y experimentación para mejorar activos digitales.">
+<meta name="twitter:image" content="https://aripa.es/assets/aripa-logo.png">
+<link rel="stylesheet" href="/style.css?v=20261003">
 <link rel="preload" href="/assets/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<script>
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = window.gtag || function () { window.dataLayer.push(arguments); };
+  window.gtag('consent', 'default', {
+    ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+    analytics_storage: 'denied', wait_for_update: 500
+  });
+</script>
 <script defer src="https://api.kiprotect.com/v1/privacy-managers/e3cb79646023d0b96b4c9ac607166e87/klaro.js"></script>
 <script type="application/ld+json">
 {
@@ -21,7 +41,7 @@
       "@id": "https://aripa.es/sobre-aripa#about",
       "url": "https://aripa.es/sobre-aripa",
       "name": "Sobre Aripa",
-      "description": "Pagina de entidad de Aripa, consultoria de optimizacion digital, CRO, analitica, SEO y GEO para PYMES y equipos B2B.",
+      "description": "Consultoría boutique de optimización digital fundada y dirigida por Javier Rodríguez de la Orden: CRO, UX/UI, analítica y experimentación.",
       "about": { "@id": "https://aripa.es/#organization" },
       "mainEntity": { "@id": "https://aripa.es/#organization" }
     },
@@ -33,18 +53,25 @@
       "logo": "https://aripa.es/assets/aripa-logo.png",
       "founder": { "@id": "https://aripa.es/#javier-rodriguez" },
       "areaServed": "ES",
-      "knowsAbout": ["CRO", "UX", "Analitica digital", "SEO", "GEO", "Growth marketing", "Landing pages", "Optimizacion de conversion"],
+      "knowsAbout": ["CRO", "UX/UI", "Analítica digital", "Comportamiento del usuario", "Growth", "Experimentación"],
       "sameAs": ["https://www.linkedin.com/company/aripa/"]
     },
     {
       "@type": "Person",
       "@id": "https://aripa.es/#javier-rodriguez",
-      "name": "Javier Rodriguez de la Orden",
-      "jobTitle": "Consultor senior de optimizacion digital, CRO y growth",
+      "name": "Javier Rodríguez de la Orden",
+      "jobTitle": "Fundador y consultor de optimización digital, CRO y growth",
       "worksFor": { "@id": "https://aripa.es/#organization" },
       "url": "https://aripa.es/sobre-aripa",
       "sameAs": ["https://www.linkedin.com/in/jro1"],
-      "knowsAbout": ["CRO", "UX", "Analitica digital", "SEO", "GEO", "Growth marketing", "Producto digital"]
+      "knowsAbout": ["CRO", "UX/UI", "Analítica digital", "Comportamiento del usuario", "Growth", "Producto digital"]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Aripa", "item": "https://aripa.es/" },
+        { "@type": "ListItem", "position": 2, "name": "Sobre Aripa", "item": "https://aripa.es/sobre-aripa" }
+      ]
     }
   ]
 }
@@ -70,81 +97,111 @@
   .pill { border:1px solid rgba(124,58,237,.14); background:white; border-radius:16px; padding:1.25rem; }
   .pill strong { display:block; color:#061542; margin-bottom:.5rem; }
   .pill span { color:#4a4a55; line-height:1.6; font-size:.95rem; }
+  .about-actions { display:flex; gap:1.25rem; flex-wrap:wrap; align-items:center; margin-top:2rem; }
+  .about-link { color:#6c45c0; text-decoration:underline; text-underline-offset:4px; font-weight:600; }
+  .about-button { display:inline-flex; align-items:center; justify-content:center; padding:1rem 1.5rem; border-radius:12px; background:#061542; color:white; font-weight:600; text-align:center; }
+  .about-button:hover { background:#6c45c0; }
+  .about-link:focus-visible,.about-button:focus-visible { outline:3px solid #a67ffd; outline-offset:4px; }
+  .breadcrumb { display:flex; flex-wrap:wrap; gap:.6rem; color:rgba(255,255,255,.8); font-size:.8rem; margin-bottom:2rem; }
+  .breadcrumb a { text-decoration:underline; text-underline-offset:3px; }
+  @media (max-width:767px) { .about-hero { min-height:auto; padding-top:7.5rem; padding-bottom:4rem; } }
 </style>
+<link rel="stylesheet" href="/assets/css/site-shell.css?v=20261003">
 </head>
-<body data-page="about" class="bg-background text-on-background">
-<header id="site-header" aria-label="Cabecera principal">
-  <div class="header-inner flex items-center justify-between px-6 md:px-12 max-w-[1440px] mx-auto">
-    <a href="/" class="flex items-center outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg"><img alt="aripa" class="h-6 object-contain" src="./assets/aripa-logo.png" width="80" height="24"/></a>
-    <a href="/" class="cta-core hidden md:flex btn-lavender px-8 py-3 rounded-xl transition-all active:scale-95 items-center gap-2 whitespace-nowrap">Volver a la web</a>
+<body data-page="about" class="aripa-subpage bg-background text-on-background">
+<header id="site-header" class="aripa-header" aria-label="Cabecera principal">
+  <div class="aripa-header-inner">
+    <a class="aripa-logo" href="/" aria-label="Aripa — inicio"><img src="/assets/aripa-logo.png" alt="Aripa" width="80" height="24"></a>
+    <button class="aripa-menu-toggle" type="button" id="navigation-toggle" aria-controls="primary-navigation" aria-expanded="false" aria-label="Abrir menú"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span>Menú</span></button>
+    <nav class="aripa-navigation" id="primary-navigation" aria-label="Navegación principal">
+      <a href="/servicios">Servicios</a>
+<a href="/casos/">Casos</a>
+<a href="/recursos">Insights</a>
+<a href="/sobre-aripa" aria-current="page">Sobre Aripa</a>
+      <a class="cta-core btn-lavender aripa-nav-cta" href="/#contacto" data-contact-link>Solicitar análisis</a>
+    </nav>
   </div>
 </header>
 <main id="main-content">
   <section class="about-hero" data-track-section="hero">
     <div class="max-w-[1440px] mx-auto w-full">
+      <nav aria-label="Ruta de navegación"><ol class="breadcrumb"><li><a href="/">Aripa</a></li><li aria-hidden="true">/</li><li aria-current="page">Sobre Aripa</li></ol></nav>
       <p class="text-white/70 font-bold tracking-widest text-[10px] uppercase mb-4">Sobre Aripa</p>
-      <h1 class="font-headline font-extrabold text-5xl md:text-7xl leading-[.95] tracking-tight max-w-5xl mb-8">Optimizacion digital con criterio de negocio, datos y experiencia de usuario.</h1>
-      <p class="text-white/80 text-lg md:text-2xl leading-relaxed max-w-3xl">Aripa ayuda a PYMES y equipos B2B a entender por que una web no convierte, que contenido necesita para ser encontrada y que decisiones deben medirse antes de invertir mas en trafico.</p>
+      <h1 class="font-headline font-extrabold text-5xl md:text-7xl leading-[.95] tracking-tight max-w-5xl mb-8">Optimización digital con criterio y trato directo.</h1>
+      <p class="text-white/80 text-lg md:text-2xl leading-relaxed max-w-3xl">Soy Javier Rodríguez de la Orden, responsable de Aripa. Te ayudo a detectar dónde tu negocio está perdiendo oportunidades y a decidir qué conviene mejorar primero.</p>
     </div>
   </section>
   <section class="section-wrap grid-two" data-track-section="about_content">
     <div>
       <p class="eyebrow">Entidad y enfoque</p>
-      <h2 class="font-headline text-4xl md:text-5xl leading-none tracking-tight">Una consultoria pequena para problemas digitales concretos.</h2>
+      <h2 class="font-headline text-4xl md:text-5xl leading-none tracking-tight">Una consultora boutique centrada en mejorar lo que ya tienes.</h2>
     </div>
     <div class="prose">
-      <p><strong>Aripa</strong> nace como una consultoria de optimizacion digital orientada a mejorar activos existentes: webs, landings, formularios, contenidos, medicion y recorridos de conversion. El foco no esta en producir mas piezas sin direccion, sino en ordenar lo que ya existe para que trabaje mejor.</p>
-      <p>El trabajo combina CRO, UX, analitica, SEO y GEO. Esa mezcla permite mirar una pagina desde tres preguntas: si el usuario entiende el valor, si Google y los sistemas generativos interpretan bien la entidad, y si los datos permiten decidir que mejorar despues.</p>
-      <p>Aripa trabaja especialmente con PYMES, negocios de servicios y equipos que necesitan crecer sin convertir cada canal en una apuesta. La meta es construir claridad, medir comportamiento y priorizar mejoras con impacto real en captacion, conversion y calidad de oportunidades.</p>
+      <p><strong>Aripa</strong> trabaja sobre activos digitales existentes: webs, landings, formularios, medición y recorridos de conversión. El punto de partida es entender qué está frenando una oportunidad y qué evidencia tenemos para actuar.</p>
+      <p>Combino CRO, UX/UI, analítica, comportamiento, Growth y experimentación. Eso permite conectar lo que necesita tu negocio con lo que una persona entiende, hace y encuentra al usar tu web.</p>
+      <p>Revisaré personalmente tu caso. Definiremos un alcance concreto, las prioridades y cómo evaluar los cambios antes de ponerlos en marcha.</p>
+      <a class="about-link" href="/servicios">Ver las formas de trabajar con Aripa</a>
     </div>
   </section>
   <section class="section-wrap bg-white" data-track-section="person">
     <div class="grid-two">
       <div>
-        <p class="eyebrow">Javier Rodriguez de la Orden</p>
-        <h2 class="font-headline text-4xl md:text-5xl leading-none tracking-tight">Consultoria, producto, analitica y docencia.</h2>
+        <p class="eyebrow">Javier Rodríguez de la Orden</p>
+        <h2 class="font-headline text-4xl md:text-5xl leading-none tracking-tight">Consultoría, producto, analítica y docencia.</h2>
       </div>
       <div class="prose">
-        <p>Javier Rodriguez de la Orden es consultor senior en optimizacion digital, CRO, UX y growth. Su trayectoria combina experiencia en entornos de marketing, producto y negocio digital, con trabajo en contextos como Mindshare, Linea Directa y Shifta.</p>
-        <p>Tambien es docente en el Posgrado en Gestion de Producto Digital de Shifta by Elisava, donde trabaja la conexion entre producto, experiencia de usuario y negocio. Esa mirada practica marca la forma de trabajar de Aripa: diagnosticar antes de proponer, medir antes de escalar y explicar cada decision con claridad.</p>
+        <p>Mi trayectoria combina consultoría de optimización digital, marketing, producto y negocio, con experiencia en contextos como Mindshare y Línea Directa.</p>
+        <p>También soy docente en el Posgrado en Gestión de Producto Digital de Shifta by Elisava, donde trabajo la conexión entre producto, experiencia de usuario y negocio.</p>
+        <p>Esa mirada práctica guía Aripa: diagnosticar antes de proponer, medir antes de escalar y explicar cada decisión con claridad.</p>
+        <div class="about-actions"><a class="about-link" href="https://www.linkedin.com/in/jro1" target="_blank" rel="noopener noreferrer">Mi trayectoria en LinkedIn</a><a class="about-link" href="/casos/">Casos y experiencia</a></div>
       </div>
     </div>
   </section>
   <section class="section-wrap" data-track-section="methodology">
     <div class="max-w-4xl mb-12">
-      <p class="eyebrow">Metodo</p>
-      <h2 class="font-headline text-4xl md:text-5xl leading-none tracking-tight mb-6">De la intuicion a una hoja de ruta medible.</h2>
-      <p class="text-on-surface-variant text-lg leading-relaxed">El proceso de Aripa se apoya en diagnostico, priorizacion y experimentacion. Cada proyecto empieza entendiendo el negocio, el comportamiento del usuario y el estado real de la medicion.</p>
+      <p class="eyebrow">Método Aripa</p>
+      <h2 class="font-headline text-4xl md:text-5xl leading-none tracking-tight mb-6">Del diagnóstico a una hoja de ruta medible.</h2>
+      <p class="text-on-surface-variant text-lg leading-relaxed">Cada proyecto empieza entendiendo el negocio, el comportamiento del usuario y el estado real de la medición.</p>
     </div>
     <div class="pill-grid">
-      <div class="pill"><strong>1. Diagnosticar</strong><span>Revision de propuesta, UX, contenido, analitica, SEO/GEO y fricciones del recorrido.</span></div>
-      <div class="pill"><strong>2. Priorizar</strong><span>Hipotesis ordenadas por impacto, esfuerzo, evidencia disponible y valor para negocio.</span></div>
-      <div class="pill"><strong>3. Mejorar</strong><span>Implementacion, medicion y aprendizaje para convertir cambios en rendimiento acumulado.</span></div>
+      <div class="pill"><h3>1. Diagnosticar</h3><span>Revisar la propuesta, la experiencia, los datos y las fricciones del recorrido.</span></div>
+      <div class="pill"><h3>2. Priorizar</h3><span>Ordenar hipótesis por evidencia, impacto esperado, esfuerzo y valor para el negocio.</span></div>
+      <div class="pill"><h3>3. Mejorar y aprender</h3><span>Implementar cambios y evaluar lo que ocurre, con experimentos cuando los datos lo permiten.</span></div>
     </div>
   </section>
-  <section class="section-wrap bg-white" data-track-section="services">
+  <section class="section-wrap bg-white" data-track-section="ideal_client">
     <div class="max-w-4xl mb-12">
-      <p class="eyebrow">Servicios principales</p>
-      <h2 class="font-headline text-4xl md:text-5xl leading-none tracking-tight mb-6">CRO, SEO/GEO, analitica y growth trabajando juntos.</h2>
-      <p class="text-on-surface-variant text-lg leading-relaxed">Aripa no separa visibilidad, experiencia y conversion cuando el problema es de rendimiento digital. Una web puede atraer trafico y seguir perdiendo oportunidades si no explica bien, no mide bien o no acompana la decision.</p>
+      <p class="eyebrow">Para quién encaja</p>
+      <h2 class="font-headline text-4xl md:text-5xl leading-none tracking-tight mb-6">Hay actividad. Ahora toca entender cómo mejorarla.</h2>
+      <p class="text-on-surface-variant text-lg leading-relaxed">Aripa encaja especialmente con negocios que ya tienen un activo digital, tráfico o inversión en captación y suficiente actividad para analizar comportamiento. PYMES, negocios de servicios y equipos B2B que necesitan mejorar conversión, experiencia o medición.</p>
     </div>
     <div class="pill-grid">
-      <div class="pill"><strong>CRO y conversion</strong><span>Fricciones, formularios, CTAs, funnels, landings y oportunidades de mejora.</span></div>
-      <div class="pill"><strong>SEO y GEO</strong><span>Arquitectura, contenido, entidades, datos estructurados y respuesta generativa.</span></div>
-      <div class="pill"><strong>Analitica y growth</strong><span>Eventos, dashboards, experimentos, priorizacion y aprendizaje accionable.</span></div>
+      <div class="pill"><h3>Un activo en marcha</h3><span>Una web, una landing o un producto donde ya ocurren visitas, consultas o ventas.</span></div>
+      <div class="pill"><h3>Un problema concreto</h3><span>Contactos escasos, abandonos, dudas en el recorrido o datos que no permiten decidir.</span></div>
+      <div class="pill"><h3>Capacidad de actuar</h3><span>Disposición para priorizar, aplicar cambios y revisar lo aprendido.</span></div>
     </div>
+    <p class="text-on-surface-variant leading-relaxed mt-8">Si todavía hay poco volumen, el primer paso puede ser revisar la propuesta, la UX y la medición. Un test A/B solo tiene sentido cuando hay datos suficientes para interpretarlo.</p>
+  </section>
+  <section class="section-wrap" data-track-section="final_cta">
+    <p class="eyebrow">Hablemos de tu situación</p>
+    <h2 class="font-headline text-4xl md:text-5xl leading-none tracking-tight max-w-4xl mb-6">Cuéntame qué quieres resolver.</h2>
+    <p class="text-on-surface-variant text-lg leading-relaxed max-w-3xl">Revisaré personalmente tu caso y te responderé para valorar el encaje y el siguiente paso.</p>
+    <div class="about-actions"><a class="about-button cta-core" href="/#contacto">Solicitar análisis</a><a class="about-link" href="/recursos">Explorar Insights</a></div>
   </section>
 </main>
 <footer class="bg-[#061542] text-[#fcf9f8] pt-12 md:pt-24 pb-20 px-6 md:px-12 border-t border-white/5">
+<nav class="aripa-footer-nav" aria-label="Explorar Aripa"><a href="/servicios">Servicios</a><a href="/casos/">Casos</a><a href="/recursos">Insights</a><a href="/sobre-aripa">Sobre Aripa</a></nav>
   <div class="max-w-[1440px] mx-auto flex flex-col items-center gap-8 md:gap-12 text-center">
-    <a href="/" aria-label="Aripa - Ir al inicio"><img alt="aripa" class="h-8 md:h-10 w-auto object-contain" src="./assets/aripa-logo.png" width="106" height="32"/></a>
-    <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4">Consultoria de optimizacion digital, CRO, analitica y GEO para convertir datos, contenido y experiencia de usuario en crecimiento medible.</div>
+    <a href="/" aria-label="Aripa - Ir al inicio"><img alt="aripa" class="h-8 md:h-10 w-auto object-contain" src="/assets/aripa-logo.png" width="106" height="32"/></a>
+    <div class="max-w-md text-white/40 text-[10px] uppercase tracking-widest leading-relaxed mt-4">Consultoría boutique de optimización digital: CRO, UX/UI, analítica y experimentación.</div>
     <a class="text-white/40 hover:text-white transition-colors text-xs md:text-sm font-medium" href="https://www.linkedin.com/company/aripa/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <p class="text-white/40 text-[10px] max-w-lg leading-relaxed uppercase tracking-widest">&copy; 2026 Aripa Consulting | Javier Rodriguez de la Orden.</p>
+    <p class="text-white/40 text-[10px] max-w-lg leading-relaxed uppercase tracking-widest">&copy; 2026 Aripa Consulting | Javier Rodríguez de la Orden.</p>
   </div>
+<nav class="aripa-footer-nav" aria-label="Información legal"><a href="/politica-cookies">Política de cookies</a><a href="/politica-privacidad">Privacidad</a><a href="/aviso-legal">Aviso legal</a></nav>
 </footer>
 <script src="/assets/js/consent-analytics.js" defer></script>
 <script src="/analytics/sectionTracking.js" defer></script>
-<script src="/assets/js/aripa-analytics.js" defer></script>
+<script src="/assets/js/aripa-analytics.js?v=20261003" defer></script>
+<script src="/assets/js/site-shell.js?v=20261003" defer></script>
 </body>
 </html>
