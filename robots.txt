@@ -18,3 +18,4 @@ User-agent: Googlebot
 Allow: /
 
 Sitemap: https://aripa.es/sitemap.xml
+Agentmap: https://aripa.es/.well-known/ai-catalog.json

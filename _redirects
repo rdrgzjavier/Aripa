@@ -10,6 +10,7 @@
 # Página personalizada 404 (Cloudflare Pages la sirve automáticamente
 # si existe /404.html en la raíz — no hace falta regla aquí)
 # Canonical URL consolidation for SEO/GEO
+/ai-catalog.json             /.well-known/ai-catalog.json 301
 /index.html                  /                         301
 /servicios.html              /servicios                301
 /recursos.html               /recursos                 301
