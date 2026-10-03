@@ -1,6 +1,7 @@
 """Check HTML, local links/assets, JSON-LD and the sitemap without network access."""
 from pathlib import Path
 from html.parser import HTMLParser
+from html import unescape
 from urllib.parse import urlsplit, unquote
 from collections import Counter
 import json, re, sys, xml.etree.ElementTree as ET
@@ -38,6 +39,8 @@ def resolve(url, source):
     return p.resolve(),u.fragment
 for file,page in pages.items():
     name=str(file.relative_to(root))
+    content=unescape(file.read_text(encoding='utf-8'))
+    if re.search(r'[↗→➡➜➝➔➞⇗]',content): errors.append(f'{name}: decorative arrow glyph')
     if page.h1!=1: errors.append(f'{name}: {page.h1} H1 headings')
     if len(page.canonical)!=1: errors.append(f'{name}: canonical count {len(page.canonical)}')
     if not page.meta.get('description'): errors.append(f'{name}: missing description')
