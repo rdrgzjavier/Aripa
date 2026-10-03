@@ -117,3 +117,18 @@ body[data-page="resource_hub"] #hero-section .av6-ctas{justify-content:flex-star
 .service-faq-list details p{max-width:760px;margin-top:1rem;color:#45464f;font-size:.94rem;line-height:1.7}
 .service-faq-list summary:focus-visible{outline:2px solid #7c3aed;outline-offset:4px}
 @media(max-width:767px){.service-faq-intro h2{font-size:clamp(2rem,9vw,3rem)}}
+
+/* Home: reserve numbered sequences for the actual method, not every content type. */
+body[data-page="home"] .diagnostic-panel-question{font-size:clamp(1.45rem,2vw,2rem);font-weight:800;line-height:1.18;letter-spacing:-.04em;margin:2rem 0 1.25rem;max-width:26rem}
+body[data-page="home"] .diagnostic-panel-copy{font-size:.95rem;line-height:1.65;color:#eee8f6;max-width:27rem}
+body[data-page="home"] .home-problem-story{border-top:2px solid #061542;padding-top:1.25rem}
+body[data-page="home"] .home-problem-story p{font-size:1.08rem;line-height:1.7;color:#45464f;margin:0 0 1.25rem}
+body[data-page="home"] .home-case-story{border-top:2px solid #061542;padding-top:1.25rem}
+body[data-page="home"] .home-case-label{font-size:.72rem!important;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:#7c3aed!important}
+body[data-page="home"] .home-case-story h3{font-size:clamp(1.7rem,2.4vw,2.25rem);font-weight:800;letter-spacing:-.04em;color:#061542;margin:.8rem 0}
+body[data-page="home"] .home-case-story p:not(.home-case-label){font-size:1rem;line-height:1.7;color:#45464f;margin-bottom:1.4rem}
+body[data-page="home"] .home-fit-story{border-top:2px solid #061542;padding-top:1.25rem}
+body[data-page="home"] .home-fit-story h3{font-size:1.4rem;font-weight:800;letter-spacing:-.03em;color:#061542;margin-bottom:.75rem}
+body[data-page="home"] .home-fit-story p{font-size:1rem;line-height:1.7;color:#45464f;margin:0 0 1rem}
+body[data-page="home"] .principles-ledger li{grid-template-columns:1fr;gap:0}
+@media(max-width:767px){body[data-page="home"] .diagnostic-panel-question{margin-top:1.25rem}}
