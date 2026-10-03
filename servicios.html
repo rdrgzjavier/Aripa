@@ -247,11 +247,46 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "mainEntity": [
-    { "@type": "Question", "name": "Cuanto tarda una auditoria o diagnostico inicial", "acceptedAnswer": { "@type": "Answer", "text": "Depende del tamano de la web y de la calidad de la medicion existente, pero una primera lectura accionable suele poder prepararse en una o dos semanas." } },
-    { "@type": "Question", "name": "Que se entrega al finalizar", "acceptedAnswer": { "@type": "Answer", "text": "Una hoja de ruta priorizada con hallazgos, hipotesis, oportunidades, recomendaciones de UX, contenido y medicion, y criterios para decidir que ejecutar primero." } },
-    { "@type": "Question", "name": "Como se mide si mejora la conversion", "acceptedAnswer": { "@type": "Answer", "text": "Antes de ejecutar se definen eventos y metricas como clics en CTA, inicio de formulario, envios, calidad de lead, lectura de secciones, scroll y comportamiento posterior." } },
-    { "@type": "Question", "name": "Cuando conviene trabajar SEO GEO junto con CRO", "acceptedAnswer": { "@type": "Answer", "text": "Cuando la web necesita ser encontrada, entendida y elegida. SEO y contenido ayudan a trabajar la visibilidad; CRO ayuda a que ese tráfico encuentre una experiencia clara y medible. La aparición en respuestas de IA no está garantizada." } },
-    { "@type": "Question", "name": "Es necesario redisenar toda la web", "acceptedAnswer": { "@type": "Answer", "text": "No siempre. Muchas mejoras salen de reorganizar mensajes, formularios, CTAs, bloques de confianza, enlazado interno o medicion. Si hace falta rediseno, se justifica con diagnostico." } }
+    {
+      "@type": "Question",
+      "name": "¿Cuánto tarda una auditoría o diagnóstico inicial?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Tras revisar el activo y la medición propongo el alcance y el calendario. El tiempo depende del número de páginas, los datos disponibles y si se incluye implementación."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué se entrega al finalizar?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Un alcance acordado, hallazgos explicados, hipótesis priorizadas y criterios para decidir qué ejecutar primero."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo se mide si mejora la conversión?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Antes de ejecutar definimos la acción de negocio y las señales que permiten evaluarla, desde el inicio del formulario hasta la calidad del contacto recibido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Qué pasa si la medición no es fiable?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Primero identifico las brechas: eventos ausentes, duplicados o poco útiles. La auditoría de medición puede ser el primer trabajo antes de proponer cambios más amplios."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede empezar por una sola página?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Si la fricción está concentrada en una landing o un formulario, podemos acotar el trabajo a ese activo y evaluar lo aprendido."
+      }
+    }
   ]
 }
 </script>
@@ -284,7 +319,7 @@
 }
 </script>
 <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261003-4">
-<link rel="stylesheet" href="/assets/css/issue2-editorial.css?v=20261003-4">
+<link rel="stylesheet" href="/assets/css/issue2-editorial.css?v=20261003-5">
 </head>
 <body data-page="services" class="bg-background text-on-background">
 
@@ -425,47 +460,20 @@
 <article id="auditoria-medicion"><span>03 / Medición</span><div><h3>Auditoría de medición</h3><p>Para equipos que no confían en sus datos o no pueden leer el funnel.</p></div><div><p><strong>Alcance:</strong> eventos, objetivos, consentimiento y calidad del dato.</p><p><strong>Entregables:</strong> diagnóstico de brechas, plan de medición y prioridades de corrección.</p></div><button type="button" onclick="openContactModal('analitica')">Consultar alcance</button></article>
 <article id="sprint-optimizacion"><span>04 / Aprendizaje</span><div><h3>Sprint de optimización</h3><p>Para negocios con una hipótesis priorizada y capacidad de actuar.</p></div><div><p><strong>Alcance:</strong> un problema, cambios acordados y método de evaluación adecuado al volumen.</p><p><strong>Entregables:</strong> intervención, lectura de señales y recomendación del siguiente paso.</p></div><button type="button" onclick="openContactModal('growth')">Consultar alcance</button></article>
 </div></div></section>
-  <section class="max-w-[1440px] mx-auto px-6 md:px-12 py-16 md:py-24 border-t border-outline-variant/20 bg-surface-container-low" id="metodologia-servicios" data-track-section="process">
-    <div class="max-w-4xl mb-12">
-      <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Metodolog&iacute;a y entregables</p>
-      <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">De diagn&oacute;stico a hoja de ruta accionable</h2>
-      <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">Primero reviso el estado real de la web, la medición, el mensaje y el recorrido del usuario. Después acordamos el alcance y las prioridades: diagnóstico puntual, acompañamiento a la ejecución o mejora continua, según la necesidad y la capacidad del negocio.</p>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
-      <article class="bg-white p-8 rounded-2xl border border-secondary/10 shadow-sm">
-        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-4">01 Diagn&oacute;stico</p>
-        <h3 class="text-xl font-extrabold font-headline text-primary mb-4">Qu&eacute; est&aacute; frenando el rendimiento</h3>
-        <p class="text-on-surface-variant leading-relaxed">Reviso propuesta, UX, contenido, analítica, velocidad, estructura SEO y puntos de fuga del recorrido.</p>
-      </article>
-      <article class="bg-white p-8 rounded-2xl border border-secondary/10 shadow-sm">
-        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-4">02 Priorizaci&oacute;n</p>
-        <h3 class="text-xl font-extrabold font-headline text-primary mb-4">Qu&eacute; merece la pena hacer primero</h3>
-        <p class="text-on-surface-variant leading-relaxed">Priorizo hipótesis por impacto esperado, esfuerzo, evidencia y capacidad de medición.</p>
-      </article>
-      <article class="bg-white p-8 rounded-2xl border border-secondary/10 shadow-sm">
-        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-4">03 Ejecuci&oacute;n</p>
-        <h3 class="text-xl font-extrabold font-headline text-primary mb-4">C&oacute;mo se convierte en mejora</h3>
-        <p class="text-on-surface-variant leading-relaxed">Acordamos entregables concretos: diagnóstico, hoja de ruta, plan de medición, recomendaciones de UX o experimentos.</p>
-      </article>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8" style="margin-top: 3rem;">
-      <div class="bg-white p-8 rounded-2xl border border-secondary/10 shadow-sm">
-        <h3 class="text-xl font-extrabold font-headline text-primary mb-4">Cu&aacute;ndo tiene sentido contratar</h3>
-        <ul class="space-y-3 text-on-surface-variant leading-relaxed">
-          <li>Cuando hay tr&aacute;fico, pero pocos contactos o leads de baja calidad.</li>
-          <li>Cuando la web no explica bien la propuesta o los servicios.</li>
-          <li>Cuando GA4/GTM mide visitas, pero no intenci&oacute;n ni conversi&oacute;n real.</li>
-          <li>Cuando SEO, contenidos y CRO trabajan por separado.</li>
-        </ul>
+  <section class="phase1-section service-method-section" id="metodologia-servicios" data-track-section="process">
+    <div class="issue2-wrap">
+      <div class="service-method-intro">
+        <div><p class="phase1-eyebrow">Método Aripa</p><h2>Del diagnóstico a una prioridad que se pueda ejecutar.</h2></div>
+        <p>Reviso el problema, la experiencia y la medición antes de proponer cambios. El alcance se ajusta al activo y a la capacidad de actuar.</p>
       </div>
-      <div class="bg-white p-8 rounded-2xl border border-secondary/10 shadow-sm">
-        <h3 class="text-xl font-extrabold font-headline text-primary mb-4">Qu&eacute; puedes esperar</h3>
-        <ul class="space-y-3 text-on-surface-variant leading-relaxed">
-          <li>Un diagn&oacute;stico entendible, no un informe decorativo.</li>
-          <li>Hip&oacute;tesis priorizadas y conectadas con m&eacute;tricas de negocio.</li>
-          <li>Recomendaciones accionables para UX, contenido, medici&oacute;n y captaci&oacute;n.</li>
-          <li>Un sistema para aprender de cada cambio.</li>
-        </ul>
+      <ol class="service-method-steps">
+        <li><span>01 / Diagnóstico</span><h3>Entender qué frena el avance</h3><p>Recorrido, propuesta, contenido, UX y calidad de los datos disponibles.</p></li>
+        <li><span>02 / Priorización</span><h3>Elegir qué merece atención primero</h3><p>Hallazgos e hipótesis ordenados por impacto esperado, esfuerzo e incertidumbre.</p></li>
+        <li><span>03 / Acción</span><h3>Convertir el criterio en mejora</h3><p>Definir entregables, responsables y señales para evaluar lo que se ponga en marcha.</p></li>
+      </ol>
+      <div class="service-method-outcome">
+        <div><h3>Cuándo encaja</h3><p>Cuando hay tráfico pero pocos contactos, la propuesta no se entiende bien o la medición no permite localizar el problema.</p></div>
+        <div><h3>Qué recibirás</h3><p>Un alcance acordado, hallazgos explicados y prioridades que puedan convertirse en decisiones y cambios concretos.</p></div>
       </div>
     </div>
   </section>
@@ -476,82 +484,31 @@
     <a class="hover:underline underline-offset-4" href="/recursos">Explorar Insights</a>
   </nav>
 
-  <!-- COMPLEMENTARY SERVICES - NIVEL 2 -->
-  <section class="max-w-[1440px] mx-auto px-6 md:px-12 py-16 md:py-24 border-t border-outline-variant/20 reveal-ready" id="capacidades-complementarias" data-track-section="capabilities">
-    <div class="max-w-4xl mb-12">
-      <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">Aplicaciones del diagnóstico</h2>
-      <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">
-        SEO, contenido y landings se trabajan cuando el diagnóstico detecta que forman parte del problema de conversión o captación. El alcance se acuerda para cada proyecto.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-      <!-- 1. SEO / GEO / contenido estructurado -->
-      <button type="button"
-           class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
-           onclick="openContactModal('seo_geo')">
-        <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
-          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/></svg>
-        </div>
-        <div class="flex flex-col h-full">
-          <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">SEO, GEO y contenido</h3>
-          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base mb-8">Reviso estructura, accesibilidad y contenido para facilitar que usuarios y buscadores entiendan la oferta. El trabajo de GEO no garantiza menciones ni recomendaciones en respuestas de IA.</p>
-          <div class="mt-auto">
-            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
-              Consultar
-            </span>
-          </div>
-        </div>
-      </button>
-
-      <!-- 2. Landings y activos -->
-      <button type="button"
-           class="group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 hover:bg-[#061542] transition-all duration-500 cursor-pointer shadow-sm hover:shadow-2xl flex flex-col gap-8 text-left w-full"
-           onclick="openContactModal('landings')">
-        <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
-          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm0 0v-400 400Z"/></svg>
-        </div>
-        <div class="flex flex-col h-full">
-          <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">Landings y activos</h3>
-          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base mb-8">Optimizo landings y activos de captación a partir de una hipótesis: mensaje, jerarquía, confianza y formulario, con medición para evaluar los cambios.</p>
-          <div class="mt-auto">
-            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
-              Consultar
-            </span>
-          </div>
-        </div>
-      </button>
-
+  <section class="phase1-section service-applications" id="capacidades-complementarias" data-track-section="capabilities">
+    <div class="issue2-wrap">
+      <div class="service-applications-intro">
+        <p class="phase1-eyebrow">Capacidad complementaria</p>
+        <h2>Visibilidad que ayuda a entender la oferta.</h2>
+        <p>SEO y contenido entran en el trabajo cuando el problema también está en cómo se encuentra o se comprende una página.</p>
+      </div>
+      <div class="service-application-detail">
+        <div><span>01 / Captación y comprensión</span><h3>SEO, GEO y contenido</h3></div>
+        <div><p>Reviso estructura, accesibilidad y contenido para que la oferta sea más clara para las personas y más fácil de interpretar por los buscadores. El diagnóstico decide si esta capacidad forma parte del alcance.</p><button type="button" onclick="openContactModal('seo_geo')">Consultar alcance</button></div>
+      </div>
+      <p class="service-application-link">¿El problema está en una página de campaña? <a href="/servicios#optimizacion-landing">Ver optimización de landing</a>.</p>
     </div>
   </section>
 
-  <section class="max-w-[1440px] mx-auto px-6 md:px-12 py-16 md:py-24 border-t border-outline-variant/20 bg-white" id="faq-servicios" data-track-section="faq">
-    <div class="max-w-[1280px] mb-12">
-      <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Preguntas frecuentes</p>
-      <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">Dudas habituales antes de trabajar una optimizaci&oacute;n digital</h2>
-      <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">Estas respuestas ayudan a entender tiempos, alcance, medici&oacute;n y encaje antes de solicitar una revisi&oacute;n.</p>
-    </div>
-    <div class="space-y-4 max-w-5xl">
-      <details class="group bg-surface-container-low rounded-2xl p-6 md:p-8 border border-secondary/10">
-        <summary class="flex items-center justify-between cursor-pointer text-primary font-headline font-bold text-lg md:text-xl">&iquest;Cu&aacute;nto tarda una auditor&iacute;a o diagn&oacute;stico inicial?<svg class="icon-svg group-open:rotate-180 transition-transform text-secondary" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg></summary>
-        <p class="mt-4 text-on-surface-variant leading-relaxed">Depende del tama&ntilde;o de la web y de la calidad de la medici&oacute;n existente, pero una primera lectura accionable suele poder prepararse en una o dos semanas.</p>
-      </details>
-      <details class="group bg-surface-container-low rounded-2xl p-6 md:p-8 border border-secondary/10">
-        <summary class="flex items-center justify-between cursor-pointer text-primary font-headline font-bold text-lg md:text-xl">&iquest;Qu&eacute; se entrega al finalizar?<svg class="icon-svg group-open:rotate-180 transition-transform text-secondary" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg></summary>
-        <p class="mt-4 text-on-surface-variant leading-relaxed">Una hoja de ruta priorizada con hallazgos, hip&oacute;tesis, oportunidades, recomendaciones de UX/contenido/medici&oacute;n y criterios para decidir qu&eacute; ejecutar primero.</p>
-      </details>
-      <details class="group bg-surface-container-low rounded-2xl p-6 md:p-8 border border-secondary/10">
-        <summary class="flex items-center justify-between cursor-pointer text-primary font-headline font-bold text-lg md:text-xl">&iquest;C&oacute;mo se mide si mejora la conversi&oacute;n?<svg class="icon-svg group-open:rotate-180 transition-transform text-secondary" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg></summary>
-        <p class="mt-4 text-on-surface-variant leading-relaxed">Antes de ejecutar, definimos eventos y m&eacute;tricas: clics en CTA, inicio de formulario, env&iacute;os, calidad de lead, lectura de secciones, scroll y comportamiento posterior.</p>
-      </details>
-      <details class="group bg-surface-container-low rounded-2xl p-6 md:p-8 border border-secondary/10">
-        <summary class="flex items-center justify-between cursor-pointer text-primary font-headline font-bold text-lg md:text-xl">&iquest;Cu&aacute;ndo conviene trabajar SEO/GEO junto con CRO?<svg class="icon-svg group-open:rotate-180 transition-transform text-secondary" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg></summary>
-        <p class="mt-4 text-on-surface-variant leading-relaxed">Cuando la web necesita ser encontrada, entendida y elegida. SEO y contenido ayudan a trabajar la visibilidad; CRO ayuda a que ese tráfico encuentre una experiencia clara y medible. La aparición en respuestas de IA no está garantizada.</p>
-      </details>
-      <details class="group bg-surface-container-low rounded-2xl p-6 md:p-8 border border-secondary/10">
-        <summary class="flex items-center justify-between cursor-pointer text-primary font-headline font-bold text-lg md:text-xl">&iquest;Es necesario redise&ntilde;ar toda la web?<svg class="icon-svg group-open:rotate-180 transition-transform text-secondary" viewBox="0 -960 960 960"><path d="M480-345 240-585l56-56 184 184 184-184 56 56-240 240Z"/></svg></summary>
-        <p class="mt-4 text-on-surface-variant leading-relaxed">No siempre. Muchas mejoras salen de reorganizar mensajes, formularios, CTAs, bloques de confianza, enlazado interno o medici&oacute;n. Si hace falta redise&ntilde;o, se justifica con diagn&oacute;stico.</p>
-      </details>
+  <section class="phase1-section service-faq" id="faq-servicios" data-track-section="faq">
+    <div class="issue2-wrap">
+      <div class="service-faq-intro"><p class="phase1-eyebrow">Preguntas frecuentes</p><h2>Antes de empezar un trabajo de optimización.</h2></div>
+      <div class="service-faq-list">
+        <details><summary>¿Cuánto tarda una auditoría o diagnóstico inicial?</summary><p>Tras revisar el activo y la medición propongo el alcance y el calendario. El tiempo depende del número de páginas, los datos disponibles y si se incluye implementación.</p></details>
+        <details><summary>¿Qué se entrega al finalizar?</summary><p>Un alcance acordado, hallazgos explicados, hipótesis priorizadas y criterios para decidir qué ejecutar primero.</p></details>
+        <details><summary>¿Cómo se mide si mejora la conversión?</summary><p>Antes de ejecutar definimos la acción de negocio y las señales que permiten evaluarla, desde el inicio del formulario hasta la calidad del contacto recibido.</p></details>
+        <details><summary>¿Qué pasa si la medición no es fiable?</summary><p>Primero identifico las brechas: eventos ausentes, duplicados o poco útiles. La auditoría de medición puede ser el primer trabajo antes de proponer cambios más amplios.</p></details>
+        <details><summary>¿Se puede empezar por una sola página?</summary><p>Sí. Si la fricción está concentrada en una landing o un formulario, podemos acotar el trabajo a ese activo y evaluar lo aprendido.</p></details>
+      </div>
     </div>
   </section>
 </main>

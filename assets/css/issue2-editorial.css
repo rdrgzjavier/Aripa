@@ -76,3 +76,39 @@ body[data-page="resource_hub"] #hero-section .av6-ctas{justify-content:flex-star
 .principles-ledger h3{font-size:1.15rem;font-weight:800;color:#061542;line-height:1.3}
 .principles-ledger p{font-size:.9rem;color:#45464f;line-height:1.6;margin-top:.35rem}
 @media(max-width:767px){.principles-ledger li{grid-template-columns:2.4rem 1fr;gap:.8rem}.principles-intro h2{font-size:clamp(2rem,9vw,3rem)}}
+
+.service-method-section{background:#f3eefb}
+.service-method-intro{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(280px,.6fr);gap:5rem;align-items:end;margin-bottom:3rem}
+.service-method-intro h2,.service-applications-intro h2{font:800 clamp(2.1rem,4vw,3.75rem)/1.08 Inter,sans-serif;letter-spacing:-.055em;color:#061542;margin:.75rem 0 0}
+.service-method-intro>p,.service-applications-intro>p:not(.phase1-eyebrow){font-size:1.05rem;line-height:1.7;color:#45464f;max-width:700px}
+.service-method-steps{list-style:none;margin:0;padding:0;border-top:2px solid #061542}
+.service-method-steps li{display:grid;grid-template-columns:150px minmax(250px,.9fr) minmax(250px,1.1fr);gap:2rem;padding:1.4rem 0;border-bottom:1px solid #d8cde6;align-items:baseline}
+.service-method-steps li>span,.service-application-detail span{color:#7c3aed;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em}
+.service-method-steps h3,.service-application-detail h3{font-size:clamp(1.15rem,1.7vw,1.5rem);font-weight:800;color:#061542;letter-spacing:-.035em;line-height:1.25}
+.service-method-steps p,.service-application-detail p{font-size:.94rem;line-height:1.6;color:#45464f}
+.service-method-outcome{display:grid;grid-template-columns:1fr 1fr;gap:5rem;padding-top:2.5rem}
+.service-method-outcome h3{font-size:1.1rem;font-weight:800;color:#061542;margin-bottom:.5rem}
+.service-method-outcome p{font-size:.94rem;line-height:1.6;color:#45464f;max-width:500px}
+.service-applications{background:#fcf9f8}
+.service-applications-intro{max-width:850px;margin-bottom:3rem}
+.service-applications-intro h2{margin-bottom:1rem}
+.service-application-detail{display:grid;grid-template-columns:minmax(250px,.7fr) minmax(300px,1.3fr);gap:4rem;border-top:2px solid #061542;border-bottom:1px solid #d8cde6;padding:1.8rem 0}
+.service-application-detail h3{margin-top:.5rem}
+.service-application-detail button,.service-application-link a{display:inline-block;margin-top:1rem;color:#6c45c0;text-decoration:underline;text-underline-offset:4px;font-weight:800;font-size:.9rem}
+.service-application-detail button:focus-visible,.service-application-link a:focus-visible{outline:2px solid #7c3aed;outline-offset:4px}
+.service-application-link{margin-top:1.3rem;font-size:.9rem;color:#45464f}
+.service-application-link a{margin:0}
+@media(max-width:959px){.service-method-intro{grid-template-columns:1fr;gap:1rem}.service-method-steps li{grid-template-columns:110px 1fr;gap:1rem}.service-method-steps p{grid-column:2}.service-application-detail{gap:2rem}}
+@media(max-width:767px){.service-method-intro h2,.service-applications-intro h2{font-size:clamp(2rem,9vw,3rem)}.service-method-steps li{grid-template-columns:1fr;gap:.45rem}.service-method-steps p{grid-column:1}.service-method-outcome,.service-application-detail{grid-template-columns:1fr;gap:1.5rem}}
+.service-faq{background:#fff}
+.service-faq-intro{max-width:850px;margin-bottom:2.5rem}
+.service-faq-intro h2{font:800 clamp(2.1rem,4vw,3.75rem)/1.08 Inter,sans-serif;letter-spacing:-.055em;color:#061542;margin:.75rem 0}
+.service-faq-list{border-top:2px solid #061542;max-width:950px}
+.service-faq-list details{border-bottom:1px solid #d8cde6;padding:1.25rem 0}
+.service-faq-list summary{display:flex;align-items:baseline;justify-content:space-between;gap:1rem;cursor:pointer;color:#061542;font-weight:800;font-size:1.08rem;list-style:none}
+.service-faq-list summary::-webkit-details-marker{display:none}
+.service-faq-list summary::after{content:'+';color:#7c3aed;font-size:1.45rem;font-weight:500;line-height:1}
+.service-faq-list details[open] summary::after{content:'−'}
+.service-faq-list details p{max-width:760px;margin-top:1rem;color:#45464f;font-size:.94rem;line-height:1.7}
+.service-faq-list summary:focus-visible{outline:2px solid #7c3aed;outline-offset:4px}
+@media(max-width:767px){.service-faq-intro h2{font-size:clamp(2rem,9vw,3rem)}}
