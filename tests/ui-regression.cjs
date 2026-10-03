@@ -45,6 +45,14 @@ const routes = ['/', ...fs.readdirSync(root).filter(f=>f.endsWith('.html') && f 
           assert.equal(await page.locator('#navigation-toggle').isVisible(),false);
         }
         assert.deepEqual(await page.locator('#primary-navigation a').allTextContents(),['Servicios','Casos','Insights','Sobre Aripa','Solicitar análisis']);
+        if (['/servicios','/recursos','/casos/','/sobre-aripa'].includes(route)) {
+          const hero = page.locator('section[data-track-section="hero"]');
+          assert.equal(await hero.locator('nav[aria-label="Ruta de navegación"]').count(),1,route+' hero breadcrumb');
+          assert.equal(await hero.locator('h1').count(),1,route+' hero h1');
+          assert.equal(await hero.locator('h1 + p').count(),1,route+' hero explanation');
+          assert.equal(await hero.locator('.cta-core').isVisible(),true,route+' hero CTA');
+          assert.equal(await page.locator('nav[aria-label="Ruta de navegación"]').count(),1,route+' one visible breadcrumb');
+        }
         assert.deepEqual(errors,[],route+' console '+width);
         report.push({route,width,status:'passed'});
         if (['/','/servicios','/recursos','/sobre-aripa','/casos/'].includes(route)) {
@@ -65,6 +73,11 @@ const routes = ['/', ...fs.readdirSync(root).filter(f=>f.endsWith('.html') && f 
     await page.locator('#primary-navigation a[data-contact-link]').click();
     await page.waitForURL(base+'/#contacto');
     await page.locator('#contact-modal.active').waitFor();
+    for (const route of ['/casos/','/sobre-aripa']) {
+      await page.goto(base+route);
+      await page.locator('.interior-hero-cta').click();
+      await page.locator('#contact-modal.active').waitFor();
+    }
     await page.screenshot({animations:'disabled',path:path.join(out,'contact-desktop.png')});
     await page.keyboard.press('Escape');
     await page.locator('#contact-modal').waitFor({state:'hidden'});
