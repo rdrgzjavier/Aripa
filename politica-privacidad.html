@@ -638,19 +638,16 @@
     </div>
 
     <form class="phase1-form" id="contact-form" onsubmit="handleFormSubmit(event)">
-  <div class="form-field"><label class="form-label" for="problem">¿Qué quieres resolver? *</label><input class="form-input" id="problem" name="problem" type="text" placeholder="Por ejemplo: llegan visitas, pero pocos contactos" maxlength="250" required></div>
-  <div class="form-field"><label class="form-label" for="website">URL de tu web <span>(opcional)</span></label><input class="form-input" id="website" name="website" type="url" placeholder="https://tuweb.com" autocomplete="url" inputmode="url"></div>
-  <div class="form-field"><label class="form-label" for="message">Breve contexto <span>(opcional)</span></label><textarea class="form-input" id="message" name="message" placeholder="Qué ocurre, qué habéis probado o qué os gustaría mejorar" maxlength="3000"></textarea></div>
   <div class="contact-row">
     <div class="form-field"><label class="form-label" for="name">Nombre *</label><input class="form-input" id="name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required></div>
     <div class="form-field"><label class="form-label" for="email">Email *</label><input class="form-input" id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
   </div>
+  <div class="form-field"><label class="form-label" for="website">Web *</label><input class="form-input" id="website" name="website" type="url" placeholder="https://tuweb.com" autocomplete="url" inputmode="url" required></div>
+  <div class="form-field"><label class="form-label" for="problem">¿Qué quieres mejorar? *</label><select class="form-input" id="problem" name="problem" required><option value="" disabled selected>Selecciona lo que más se parece a tu situación</option><option value="trafico_poca_conversion">Tengo tráfico pero convierto poco</option><option value="landings_campanas">Mis landings o campañas no rinden como esperaba</option><option value="formularios_funnel">Pierdo usuarios en formularios o funnel</option><option value="medicion">No confío en mis datos o medición</option><option value="oportunidades">Quiero identificar oportunidades de mejora</option><option value="priorizacion">Necesito priorizar qué hacer primero</option><option value="otro">Otro</option></select></div>
+  <div class="form-field"><label class="form-label" for="message">¿Qué está ocurriendo? *</label><textarea class="form-input" id="message" name="message" placeholder="Cuéntame brevemente qué observas y qué habéis probado" maxlength="3000" required></textarea></div>
   <div class="form-field"><label class="form-label" for="phone">Teléfono <span>(opcional)</span></label><input class="form-input" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Si prefieres que te llame"></div>
-  <!-- Preserve service attribution from service CTAs without asking visitors to diagnose themselves. -->
-  <select id="service" name="service" hidden aria-hidden="true" tabindex="-1">
-    <option value="general">Consulta general</option><option value="cro">CRO y Conversión</option><option value="ux">UX/UI de Negocio</option><option value="analitica">Analítica y Medición</option><option value="growth">Growth y Experimentación</option><option value="seo_geo">SEO, GEO y Contenido</option><option value="landings">Landings y Activos Web</option><option value="automatizacion">Automatización</option><option value="servicios_complementarios">Servicios B2B / Soporte</option>
-  </select>
-  <p class="contact-help">Usaré tus datos para responder a esta solicitud. <a href="/politica-privacidad">Consulta la política de privacidad</a>.</p>
+  <select id="service" name="service" hidden aria-hidden="true" tabindex="-1"><option value="general">Consulta general</option><option value="cro">CRO y Conversión</option><option value="ux">UX/UI de Negocio</option><option value="analitica">Analítica y Medición</option><option value="growth">Growth y Experimentación</option><option value="seo_geo">SEO, GEO y Contenido</option><option value="landings">Landings y Activos Web</option><option value="automatizacion">Automatización</option><option value="servicios_complementarios">Servicios B2B / Soporte</option></select>
+  <p class="contact-help">Primero revisaré tu solicitud. Te recomendaré un siguiente paso y, si hay encaje, podremos conversar. <a href="/politica-privacidad">Consulta la política de privacidad</a>.</p>
   <p class="form-error" role="alert" tabindex="-1" hidden>No se ha podido enviar la solicitud. Tus datos siguen aquí para que puedas intentarlo de nuevo. También puedes escribir a <a href="mailto:hola@aripa.es">hola@aripa.es</a>.</p>
   <button type="submit" class="cta-core bg-primary text-white rounded-xl px-8 py-4 disabled:opacity-50" id="submit-btn">Enviar solicitud</button>
 </form>
@@ -665,7 +662,7 @@
     <h2 id="success-modal-title" class="text-3xl font-extrabold font-headline text-primary mb-4">¡Solicitud recibida!</h2>
     <p id="success-modal-description" class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
       He recibido tu solicitud. Revisaré personalmente tu caso y te responderé con el siguiente paso.
-      <span class="block mt-4 text-sm opacity-70">Nota: Si no recibes noticias nuestras, por favor revisa tu bandeja de <strong>correo no deseado (spam)</strong>.</span>
+      <span class="block mt-4 text-sm opacity-70">Si no encuentras mi respuesta, revisa tu bandeja de <strong>correo no deseado (spam)</strong>.</span>
     </p>
     <button type="button" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#061542] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#6b38fb] hover:scale-[1.02] active:scale-95 transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(107,56,251,0.25)] w-full max-w-[220px] mx-auto mt-4" onclick="closeModal('success-modal')">
       ENTENDIDO

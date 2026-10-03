@@ -45,34 +45,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Por dónde empezamos?",
+      "name": "¿Necesito un volumen mínimo de tráfico?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Por entender qué quieres resolver, revisar tu activo digital y valorar qué información tenemos. Con ese contexto, acordaremos un alcance y las prioridades antes de implementar cambios."
+        "text": "Para revisar claridad, experiencia y medición no hace falta un umbral universal. Sí conviene que exista un activo digital en uso y actividad suficiente para observar el problema. Un test A/B exige más volumen y una medición fiable."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Necesito mucho tráfico para trabajar CRO?",
+      "name": "¿Qué ocurre después de solicitar una revisión?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Depende del problema y del método. Con poco volumen podemos revisar experiencia, mensajes y medición. Para un test A/B necesitaremos actividad suficiente y un diseño que permita interpretar los resultados."
+        "text": "Revisaré personalmente tu web y lo que me cuentes. Si puedo aportar valor, te recomendaré un siguiente paso y una conversación cuando haya encaje. La solicitud no reserva automáticamente una sesión."
       }
     },
     {
       "@type": "Question",
-      "name": "¿En cuánto tiempo se ven resultados?",
+      "name": "¿Implementas las mejoras o solo entregas recomendaciones?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Depende del punto de partida, el alcance y el volumen de actividad. Definimos qué medir y cuándo revisarlo; no es responsable prometer un incremento de conversión ni un plazo universal."
+        "text": "Depende del alcance que acordemos. Un diagnóstico puede terminar en una hoja de ruta; una optimización de landing o un sprint puede incluir implementación y seguimiento. Lo dejaré claro antes de empezar."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Podéis garantizar que mi marca aparezca en respuestas de IA?",
+      "name": "¿Cuándo tiene sentido hacer un test A/B?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "No. Podemos facilitar que buscadores y sistemas generativos comprendan y recuperen información útil de tu marca. La indexación, la citación y la recomendación dependen de esos sistemas y no están garantizadas."
+        "text": "Cuando hay una hipótesis concreta, una métrica fiable y suficiente actividad para interpretar el resultado. Con poco volumen suele ser más útil mejorar primero la experiencia y la medición."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Hace falta rediseñar toda la web?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No necesariamente. Muchas fricciones se pueden abordar con cambios focalizados en mensaje, jerarquía, formularios o recorrido. El diagnóstico ayuda a decidir si una intervención mayor está justificada."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cuánto dura un diagnóstico?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Depende del activo, la calidad de los datos y el alcance. Tras la revisión inicial propondré entregables y plazo concretos; no hay una duración idéntica para todos los negocios."
       }
     }
   ]
@@ -985,6 +1001,7 @@ body { font-family: 'Inter', sans-serif; }
 </style>
 
 <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261003-2">
+<link rel="stylesheet" href="/assets/css/issue2-editorial.css?v=20261003">
 </head>
 <body data-page="home" class="bg-background text-on-background selection:bg-secondary/30">
 <!-- Skip navigation â€“ accessibility -->
@@ -1033,80 +1050,19 @@ body { font-family: 'Inter', sans-serif; }
           Ver servicios
         </a>
       </div>
+      <aside class="diagnostic-panel hero-animate-4" aria-label="Cómo pensamos un diagnóstico">
+        <div class="diagnostic-panel-head"><span>Mapa de diagnóstico</span><span>Esquema metodológico</span></div>
+        <ol><li><strong>Señal</strong><span>¿Dónde se interrumpe el recorrido?</span></li><li><strong>Evidencia</strong><span>¿Qué muestran el comportamiento y la medición?</span></li><li><strong>Hipótesis</strong><span>¿Qué conviene comprobar antes de cambiar?</span></li><li><strong>Decisión</strong><span>¿Qué mejora priorizar y cómo evaluarla?</span></li></ol>
+      </aside>
     </div>
   </section>
 
   <!-- Problem Module (New) -->
-  <section class="phase1-section bg-white border-b border-secondary/5" id="problema" data-track-section="pain_points">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-      <div class="mb-16 md:mb-20">
-        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">La realidad del mercado</p>
-        <h2 class="text-3xl md:text-5xl font-extrabold font-headline text-primary tracking-tighter mb-6 outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg p-1" tabindex="0">
-          Más tráfico no resuelve todas las fugas de tu negocio.
-        </h2>
-        <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
-          Antes de invertir más, conviene revisar <span class="text-primary font-bold">claridad, confianza, experiencia y conversión.</span>
-        </p>
-      </div>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-12">
-        <!-- Fricción 1 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="1" tabindex="0" role="article" aria-label="Fricción 1: Usuarios que abandonan">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
-            <svg class="icon-svg text-secondary text-2xl md:text-3xl" viewBox="0 -960 960 960"><path d="M480-480q-66 0-113-47t-47-113q0-66 47-113t113-47q66 0 113 47t47 113q0 66-47 113t-113 47ZM160-240v-32q0-34 17.5-62.5T224-378q62-31 126-46.5T480-440q66 0 130 15.5T736-378q29 15 46.5 43.5T800-272v32H160Z"/></svg>
-          </div>
-          <div>
-            <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Usuarios que abandonan</h3>
-            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed md:mt-1">Tráfico que llega pero huye antes de entender tu valor real.</p>
-          </div>
-        </div>
-
-        <!-- Fricción 2 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="2" tabindex="0" role="article" aria-label="Fricción 2: Landings que no convierten">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
-            <svg class="icon-svg text-secondary text-2xl md:text-3xl" viewBox="0 -960 960 960"><path d="M480-80q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320 84-84-56-56-84 84-84-84-56 56 84 84-84 84 56 56 84-84 84 84 56-56-84-84Z"/></svg>
-          </div>
-          <div>
-            <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Landings que no convierten</h3>
-            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed md:mt-1">Páginas de destino que consumen presupuesto sin generar leads.</p>
-          </div>
-        </div>
-
-        <!-- Fricción 3 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="3" tabindex="0" role="article" aria-label="Fricción 3: Funnels con pérdidas">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
-            <svg class="icon-svg text-secondary text-2xl md:text-3xl" viewBox="0 -960 960 960"><path d="M440-160q-17 0-28.5-11.5T400-200v-240L168-736q-15-20-4.5-42t36.5-22h560q26 0 36.5 22t-4.5 42L560-440v240q0 17-11.5 28.5T520-160h-80Z"/></svg>
-          </div>
-          <div>
-            <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Funnels con pérdidas</h3>
-            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed md:mt-1">Fugas invisibles de dinero en cada paso de la navegación.</p>
-          </div>
-        </div>
-
-        <!-- Fricción 4 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="4" tabindex="0" role="article" aria-label="Fricción 4: Mensajes poco claros">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
-            <svg class="icon-svg text-secondary text-2xl md:text-3xl" viewBox="0 -960 960 960"><path d="M240-400h320v-80H240v80Zm0-120h480v-80H240v80Zm0-120h480v-80H240v80ZM80-80v-720q0-33 23.5-56.5T160-880h640q33 0 56.5 23.5T880-800v480q0 33-23.5 56.5T800-240H240L80-80Z"/></svg>
-          </div>
-          <div>
-            <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Mensajes poco claros</h3>
-            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed md:mt-1">Propuestas de valor genéricas que no resuenan con tu cliente.</p>
-          </div>
-        </div>
-
-        <!-- Fricción 5 -->
-        <div class="group flex gap-6 md:flex-col md:gap-0 md:space-y-6 reveal-ready" data-delay="5" tabindex="0" role="article" aria-label="Fricción 5: Decisiones por intuición">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/15 transition-colors" aria-hidden="true">
-            <svg class="icon-svg text-secondary text-2xl md:text-3xl" viewBox="0 -960 960 960"><path d="M560-160v-80h104L537-367l57-57 126 126v-102h80v240H560Zm-344 0-56-56 504-504H560v-80h240v240h-80v-104L216-160Zm56-504L160-776l56-56 112 112-56 56Z"/></svg>
-          </div>
-          <div>
-            <h3 class="text-lg md:text-xl font-bold text-primary font-headline mb-2 md:mb-0 leading-tight">Decisiones por intuición</h3>
-            <p class="text-sm md:text-base text-on-surface-variant leading-relaxed md:mt-1">Cambios basados en "me gusta" en lugar de datos de comportamiento.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+  <section class="phase1-section issue2-problem" id="problema" data-track-section="pain_points">
+  <div class="issue2-wrap"><div class="issue2-intro"><div><p class="phase1-eyebrow">01 / Leer el recorrido</p><h2>La conversión se pierde a lo largo de un recorrido.</h2><p>Antes de invertir más en captación, conviene averiguar dónde aparecen dudas, esfuerzo o abandono.</p></div><p class="issue2-note">Es un mapa de preguntas, no un resultado atribuido a un cliente.</p></div>
+  <ol class="journey-map"><li><span>01 / Llega</span><h3>Entrada</h3><p>¿Coinciden la promesa de la campaña y lo que ofrece la página?</p><small>Señal: relevancia</small></li><li><span>02 / Entiende</span><h3>Claridad</h3><p>¿Se comprende la oferta y para quién es?</p><small>Señal: comprensión</small></li><li><span>03 / Confía</span><h3>Evidencia</h3><p>¿Hay información suficiente para avanzar sin dudas?</p><small>Señal: confianza</small></li><li><span>04 / Actúa</span><h3>Siguiente paso</h3><p>¿El formulario o la compra facilitan la decisión?</p><small>Señal: fricción</small></li></ol>
+  <a class="phase1-link" href="/servicios">Ver cómo abordo estas fricciones →</a></div>
+</section>
 
   <!-- Services -->
   <section class="phase1-section home-dark-band overflow-x-hidden" id="servicios" data-track-section="services">
@@ -1206,102 +1162,18 @@ body { font-family: 'Inter', sans-serif; }
   </section>
 
   <!-- Methodology -->
-  <section class="py-16 md:py-24 bg-surface-bright" id="experiencia" aria-label="Experiencia y colaboraciones" data-track-section="clients">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-      <div class="mb-12 md:mb-16">
-        <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Experiencia y colaboraciones</p>
-        <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter outline-none focus-visible:ring-2 focus-visible:ring-secondary/50 rounded-lg p-1" tabindex="0">
-          Experiencia en producto, estrategia y crecimiento
-        </h2>
-      </div>
-      <p class="text-on-surface-variant text-base md:text-lg leading-relaxed max-w-3xl mb-10">Proyectos, colaboraciones y docencia vinculados a la trayectoria de Javier. Los casos completos se publicarán cuando sea posible compartir su contexto, intervención y resultados con evidencia.</p>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 items-center opacity-80 grayscale contrast-125 reveal-ready" data-delay="1">
-        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white focus-within:ring-2 focus-within:ring-secondary/40 outline-none focus-within:opacity-100 focus-within:grayscale-0 transition-all" tabindex="0" role="img" aria-label="Contexto: SHIFTA by Elisava">
-          <img alt="Isotipo de SHIFTA by Elisava" style="max-height: 36px; width: auto; object-fit: contain;" src="./assets/shifta-logo.jpg" width="56" height="56"/>
-          <span class="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-center leading-tight">SHIFTA<br/><span class="font-normal text-[10px] md:text-[11px] tracking-widest">BY ELISAVA</span></span>
-        </div>
-        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white focus-within:ring-2 focus-within:ring-secondary/40 outline-none focus-within:opacity-100 focus-within:grayscale-0 transition-all" tabindex="0" role="img" aria-label="Contexto: Auto Solutions Car-Service">
-          <img alt="Logotipo de Auto Solutions Car-Service" style="max-height: 30px; max-width: 112px; width: auto; object-fit: contain;" src="./assets/auto-solutions-car-service-logo.jpg" width="112" height="42"/>
-          <span class="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-center leading-tight">AUTO<br/>SOLUTIONS</span>
-        </div>
-        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white focus-within:ring-2 focus-within:ring-secondary/40 outline-none focus-within:opacity-100 focus-within:grayscale-0 transition-all" tabindex="0" role="img" aria-label="Colaboraci&oacute;n: Mam&aacute;s de Cielo y Tierra">
-          <img alt="Isotipo de Mam&aacute;s de Cielo y Tierra" style="max-height: 36px; width: auto; object-fit: contain;" src="./assets/mamas-cielo-tierra-logo.png" width="56" height="56"/>
-          <span class="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-center leading-tight">MAM&Aacute;S<br/>DE CIELO Y TIERRA</span>
-        </div>
-        <div class="flex flex-col items-center justify-center gap-2 p-6 h-28 border border-outline-variant/10 rounded-xl bg-white focus-within:ring-2 focus-within:ring-secondary/40 outline-none focus-within:opacity-100 focus-within:grayscale-0 transition-all" tabindex="0" role="img" aria-label="Contexto: Tenlo">
-          <img alt="Tenlo" style="max-height: 36px; width: auto; object-fit: contain;" src="./assets/Tenlo.png" width="80" height="48"/>
-          <span class="text-[10px] md:text-[11px] font-black uppercase tracking-widest text-center leading-tight">TENLO</span>
-        </div>
-      </div>
-      <a class="phase1-link" href="/casos/">Explorar casos y experiencia →</a>
-    </div>
-  </section>
+  <section class="phase1-section issue2-experience" id="experiencia" aria-label="Experiencia y trayectoria" data-track-section="clients"><div class="issue2-wrap issue2-split"><div><p class="phase1-eyebrow">Experiencia y credibilidad</p><h2>El criterio viene de trabajar entre negocio, producto y experiencia.</h2><p>Aripa está dirigida por Javier Rodríguez de la Orden. Su trayectoria reúne consultoría, producto digital, marketing, analítica y docencia.</p><a class="phase1-link" href="/sobre-aripa">Conocer a Javier y su recorrido →</a></div><div class="experience-ledger"><div><span>01 / Trayectoria</span><h3>Contextos de negocio distintos</h3><p>Experiencia profesional en entornos como Mindshare y Línea Directa. Se presenta como trayectoria de Javier, no como proyectos de cliente de Aripa.</p></div><div><span>02 / Docencia</span><h3>Producto digital en SHIFTA by Elisava</h3><p>Docencia en el Posgrado en Gestión de Producto Digital, conectando producto, experiencia y negocio.</p></div><div><span>03 / Casos</span><h3>Solo con evidencia publicable</h3><p>Los casos completos incluirán contexto, papel de Aripa, intervención y aprendizajes documentados.</p><a href="/casos/">Ver casos y experiencia ↗</a></div></div></div></section>
 
-<section class="phase1-section bg-surface-container-low" id="metodologia" data-track-section="process">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-      <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">El Método Aripa</p>
-      <div class="mb-12 md:mb-20">
-        <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">¿Cómo trabajamos la optimización digital?</h2>
-        <p class="text-base md:text-lg text-on-surface-variant leading-relaxed">Analizamos comportamiento, detectamos fricciones y priorizamos mejoras orientadas a conversión, negocio y crecimiento sostenible.</p>
-      </div>
-
-      <div class="space-y-8 md:space-y-0 md:grid md:grid-cols-4 md:gap-12">
-        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="1. Diagnóstico y contexto">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
-            <svg class="icon-svg text-secondary md:text-3xl" viewBox="0 -960 960 960"><path d="M784-120 532-372q-30 24-69 38t-83 14q-109 0-184.5-75.5T120-580q0-109 75.5-184.5T380-840q109 0 184.5 75.5T640-580q0 44-14 83t-38 69l252 252-56 56ZM380-200q75 0 127.5-52.5T560-380q0-75-52.5-127.5T380-560q-75 0-127.5 52.5T200-380q0 75 52.5 127.5T380-200Z"/></svg>
-          </div>
-          <div>
-            <h3 class="text-lg md:text-xl font-bold text-primary font-headline">1. Diagnóstico y contexto</h3>
-            <p class="text-sm md:text-base text-on-surface-variant mt-1 leading-relaxed">Análisis de activos digitales, comportamiento de usuario, métricas y puntos de fricción para detectar oportunidades reales de mejora.</p>
-          </div>
-        </div>
-        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="2. Análisis y priorización">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
-            <svg class="icon-svg text-secondary md:text-3xl" viewBox="0 -960 960 960"><path d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h560q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-120H200Zm160-200h320v-80H360v80Zm0-120h320v-80H360v80Zm0-120h320v-80H360v80Z"/></svg>
-          </div>
-          <div>
-            <h3 class="text-lg md:text-xl font-bold text-primary font-headline">2. Análisis y priorización</h3>
-            <p class="text-sm md:text-base text-on-surface-variant mt-1 leading-relaxed">Evaluamos datos, hipótesis y patrones de uso para priorizar acciones según impacto potencial, esfuerzo y objetivos de negocio.</p>
-          </div>
-        </div>
-        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="3. Implementación y validación">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
-            <svg class="icon-svg text-secondary md:text-3xl" viewBox="0 -960 960 960"><path d="M440-80v-367L216-447l24-53 264-380v367l224 0-24 53-264 380Z"/></svg>
-          </div>
-          <div>
-            <h3 class="text-lg md:text-xl font-bold text-primary font-headline">3. Implementación y validación</h3>
-            <p class="text-sm md:text-base text-on-surface-variant mt-1 leading-relaxed">Diseño e implementación de mejoras en experiencia, estructura y conversión, acompañadas de medición y validación continua.</p>
-          </div>
-        </div>
-        <div class="flex gap-6 md:flex-col md:gap-0 md:space-y-6" tabindex="0" role="article" aria-label="4. Optimización continua">
-          <div class="flex-shrink-0 w-12 h-12 md:w-16 md:h-16 rounded-full bg-secondary/10 flex items-center justify-center" aria-hidden="true">
-            <svg class="icon-svg text-secondary md:text-3xl" viewBox="0 -960 960 960"><path d="m120-200 280-280 160 160 303-303-56-57-247 247-160-160L80-256l40 56Z"/></svg>
-          </div>
-          <div>
-            <h3 class="text-lg md:text-xl font-bold text-primary font-headline">4. Optimización continua</h3>
-            <p class="text-sm md:text-base text-on-surface-variant mt-1 leading-relaxed">Iteración constante basada en aprendizaje, comportamiento y resultados para reducir fricción y mejorar rendimiento digital.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+<section class="phase1-section issue2-method" id="metodologia" data-track-section="process"><div class="issue2-wrap">
+  <div class="issue2-intro"><div><p class="phase1-eyebrow">02 / Método Aripa</p><h2>Del hallazgo a una decisión que se pueda explicar.</h2><p>La mejora empieza por un problema observable. Cada recomendación debe dejar claro qué sabemos, qué suponemos y qué evaluaremos.</p></div><p class="issue2-note">Un test A/B solo entra si el volumen y la calidad de la medición permiten aprender.</p></div>
+  <ol class="method-ledger"><li><span>01</span><h3>Observar</h3><p>Entender contexto, recorrido, datos disponibles y límites de la medición.</p></li><li><span>02</span><h3>Formular</h3><p>Separar hallazgos de hipótesis para no vender intuición como evidencia.</p></li><li><span>03</span><h3>Priorizar</h3><p>Valorar impacto esperado, esfuerzo, incertidumbre y capacidad de ejecución.</p></li><li><span>04</span><h3>Aprender</h3><p>Implementar lo razonable y revisar si apareció la señal esperada.</p></li></ol>
+  <a class="phase1-link" href="/servicios">Explorar las formas de trabajar →</a></div></section>
 
   <!-- Casos de Éxito -->
 
 
   <!-- Diferencial -->
-  <section class="phase1-section bg-surface-container-low" id="para-quien" data-track-section="ideal_client">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-      <p class="phase1-eyebrow">Para quién encaja Aripa</p>
-      <h2 class="phase1-title text-primary">Ya tienes actividad digital. Ahora necesitas entender qué mejorar.</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-        <article class="phase1-card"><h3>Un activo en marcha</h3><p>Una web, ecommerce, landing o producto digital donde las personas ya pueden descubrirte, contactar o comprar.</p></article>
-        <article class="phase1-card"><h3>Tráfico o inversión en captación</h3><p>Recibes visitas o inviertes en atraerlas y quieres entender dónde se pierden oportunidades antes de aumentar el presupuesto.</p></article>
-        <article class="phase1-card"><h3>Actividad para aprender</h3><p>Hay suficiente uso para analizar comportamiento y margen para implementar mejoras en conversión, experiencia o medición.</p></article>
-      </div>
-      <p class="phase1-copy mt-6">Si todavía hay poco volumen, el primer paso puede ser cualitativo o de medición. Un test A/B solo tiene sentido cuando los datos y el contexto permiten interpretarlo.</p>
-    </div>
-  </section>
+  <section class="phase1-section issue2-fit" id="para-quien" data-track-section="ideal_client"><div class="issue2-wrap issue2-split"><div><p class="phase1-eyebrow">03 / Encaje</p><h2>Trabajamos mejor cuando ya existe algo que observar.</h2><p>Aripa encaja con negocios que tienen un activo digital en marcha y quieren decidir qué mejorar antes de invertir más.</p></div><div><ol class="fit-list"><li><span>01</span><div><h3>Un activo en uso</h3><p>Web, ecommerce, landing o producto donde las personas puedan descubrirte, contactar o comprar.</p></div></li><li><span>02</span><div><h3>Tráfico o inversión en captación</h3><p>Actividad suficiente para identificar dónde se pierden oportunidades.</p></div></li><li><span>03</span><div><h3>Capacidad de actuar</h3><p>Margen para mejorar conversión, experiencia o medición y revisar lo aprendido.</p></div></li></ol><p class="issue2-note">Con poco volumen, el primer paso suele ser cualitativo o de medición; no prometería un test A/B.</p></div></div></section>
   <section class="phase1-section bg-white" id="quien-esta-detras" data-track-section="founder">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
       <div><p class="phase1-eyebrow">Quién está detrás</p><h2 class="phase1-title text-primary">Soy Javier Rodríguez de la Orden.</h2></div>
@@ -1318,7 +1190,7 @@ body { font-family: 'Inter', sans-serif; }
           Criterios para decidir qué merece la pena cambiar
         </h2>
         <p class="text-lg md:text-xl text-on-surface-variant leading-relaxed">
-          No aplicamos recetas genéricas. Cada mejora parte de una lectura crítica del comportamiento, la medición y el impacto real en negocio.
+          No aplico recetas genéricas. Cada mejora parte de una lectura crítica del comportamiento, la medición y el impacto real en negocio.
         </p>
       </div>
 
@@ -1362,24 +1234,10 @@ body { font-family: 'Inter', sans-serif; }
     </div>
   </section>
 
-  <section class="phase1-section bg-surface-container-low" id="insights" data-track-section="featured_insights">
-    <div class="max-w-[1440px] mx-auto px-6 md:px-12">
-      <p class="phase1-eyebrow">Insights destacados</p>
-      <h2 class="phase1-title text-primary">Ideas para analizar antes de cambiar.</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8">
-        <article class="phase1-card"><p class="phase1-eyebrow">UX y comportamiento</p><h3><a href="/behavioral-economics-cro">Behavioral economics aplicado al CRO</a></h3><p>Cómo influye la toma de decisiones en una experiencia digital.</p></article>
-        <article class="phase1-card"><p class="phase1-eyebrow">Analítica y medición</p><h3><a href="/analitica-pymes-decisiones">Qué medir antes de invertir más</a></h3><p>Datos que ayudan a conectar actividad y decisiones de negocio.</p></article>
-        <article class="phase1-card"><p class="phase1-eyebrow">Growth y experimentación</p><h3><a href="/growth-marketing-pymes">Growth marketing para pymes</a></h3><p>Hipótesis, prioridades y aprendizaje para orientar el crecimiento.</p></article>
-      </div>
-      <a class="phase1-link" href="/recursos">Explorar todos los Insights →</a>
-    </div>
-  </section>
+  <section class="phase1-section issue2-insights" id="insights" data-track-section="featured_insights"><div class="issue2-wrap"><div class="issue2-intro"><div><p class="phase1-eyebrow">04 / Insights</p><h2>Ideas para analizar antes de cambiar.</h2><p>Lecturas sobre comportamiento, medición y experimentación aplicadas a decisiones de negocio.</p></div><a class="phase1-link" href="/recursos">Explorar todos los Insights →</a></div>
+  <div class="editorial-links"><a href="/behavioral-economics-cro"><span>UX / comportamiento</span><strong>Behavioral economics aplicado al CRO</strong><em>Cómo influye la toma de decisiones en una experiencia digital ↗</em></a><a href="/analitica-pymes-decisiones"><span>Analítica / medición</span><strong>Qué medir antes de invertir más</strong><em>Conectar actividad, señales y decisiones de negocio ↗</em></a><a href="/growth-marketing-pymes"><span>Growth / experimentación</span><strong>Growth marketing para pymes</strong><em>Hipótesis y prioridades para aprender con criterio ↗</em></a></div></div></section>
 
-<section class="phase1-section home-faq-band" id="faq" data-track-section="faq"><div class="max-w-[1440px] mx-auto px-6 md:px-12"><p class="phase1-eyebrow">Antes de empezar</p><h2 class="phase1-title text-primary">Preguntas frecuentes</h2><div class="max-w-5xl space-y-4"><details class="border border-outline-variant/30 rounded-xl p-6"><summary class="cursor-pointer font-bold text-primary">¿Por dónde empezamos?</summary><p class="phase1-copy mt-4">Por entender qué quieres resolver, revisar tu activo digital y valorar qué información tenemos. Con ese contexto, acordaremos un alcance y las prioridades antes de implementar cambios.</p></details>
-<details class="border border-outline-variant/30 rounded-xl p-6"><summary class="cursor-pointer font-bold text-primary">¿Necesito mucho tráfico para trabajar CRO?</summary><p class="phase1-copy mt-4">Depende del problema y del método. Con poco volumen podemos revisar experiencia, mensajes y medición. Para un test A/B necesitaremos actividad suficiente y un diseño que permita interpretar los resultados.</p></details>
-<details class="border border-outline-variant/30 rounded-xl p-6"><summary class="cursor-pointer font-bold text-primary">¿En cuánto tiempo se ven resultados?</summary><p class="phase1-copy mt-4">Depende del punto de partida, el alcance y el volumen de actividad. Definimos qué medir y cuándo revisarlo; no es responsable prometer un incremento de conversión ni un plazo universal.</p></details>
-<details class="border border-outline-variant/30 rounded-xl p-6"><summary class="cursor-pointer font-bold text-primary">¿Podéis garantizar que mi marca aparezca en respuestas de IA?</summary><p class="phase1-copy mt-4">No. Podemos facilitar que buscadores y sistemas generativos comprendan y recuperen información útil de tu marca. La indexación, la citación y la recomendación dependen de esos sistemas y no están garantizadas.</p></details>
-</div></div></section>
+<section class="phase1-section home-faq-band" id="faq" data-track-section="faq"><div class="max-w-[1440px] mx-auto px-6 md:px-12"><p class="phase1-eyebrow">Antes de empezar</p><h2 class="phase1-title text-primary">Preguntas frecuentes</h2><div class="max-w-5xl home-faq-list"><details><summary>¿Necesito un volumen mínimo de tráfico?</summary><p>Para revisar claridad, experiencia y medición no hace falta un umbral universal. Sí conviene que exista un activo digital en uso y actividad suficiente para observar el problema. Un test A/B exige más volumen y una medición fiable.</p></details><details><summary>¿Qué ocurre después de solicitar una revisión?</summary><p>Revisaré personalmente tu web y lo que me cuentes. Si puedo aportar valor, te recomendaré un siguiente paso y una conversación cuando haya encaje. La solicitud no reserva automáticamente una sesión.</p></details><details><summary>¿Implementas las mejoras o solo entregas recomendaciones?</summary><p>Depende del alcance que acordemos. Un diagnóstico puede terminar en una hoja de ruta; una optimización de landing o un sprint puede incluir implementación y seguimiento. Lo dejaré claro antes de empezar.</p></details><details><summary>¿Cuándo tiene sentido hacer un test A/B?</summary><p>Cuando hay una hipótesis concreta, una métrica fiable y suficiente actividad para interpretar el resultado. Con poco volumen suele ser más útil mejorar primero la experiencia y la medición.</p></details><details><summary>¿Hace falta rediseñar toda la web?</summary><p>No necesariamente. Muchas fricciones se pueden abordar con cambios focalizados en mensaje, jerarquía, formularios o recorrido. El diagnóstico ayuda a decidir si una intervención mayor está justificada.</p></details><details><summary>¿Cuánto dura un diagnóstico?</summary><p>Depende del activo, la calidad de los datos y el alcance. Tras la revisión inicial propondré entregables y plazo concretos; no hay una duración idéntica para todos los negocios.</p></details></div></div></section>
   <section class="phase1-section phase1-cta px-6 md:px-12" id="contacto" data-track-section="final_cta">
     <h2 class="phase1-title">¿Dónde está perdiendo oportunidades tu negocio?</h2>
     <p>Cuéntame qué ocurre y comparte tu web. Revisaré personalmente tu caso para valorar si Aripa encaja y cuál sería el siguiente paso.</p>
@@ -1421,9 +1279,9 @@ body { font-family: 'Inter', sans-serif; }
      id="mobile-bottom-nav"
      aria-hidden="true"
      style="padding-bottom: max(12px, env(safe-area-inset-bottom))">
-  <button type="button" class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
+  <button type="button" class="cta-core w-full text-white py-4 px-6 rounded-xl btn-after border border-white/20 active:scale-95 transition-transform flex items-center justify-center gap-3" onclick="openContactModal()">
     <svg class="icon-svg" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg>
-    HABLEMOS
+    SOLICITAR ANÁLISIS
   </button>
 </nav>
 
@@ -1433,13 +1291,13 @@ body { font-family: 'Inter', sans-serif; }
      aria-hidden="true">
   <div class="flex flex-col">
     <span class="text-primary font-bold font-headline text-sm tracking-tight flex items-center gap-2">
-    <svg class="icon-svg text-secondary text-lg" viewBox="0 -960 960 960"><path d="M120-160q-33 0-56.5-23.5T40-240q0-33 23.5-56.5T120-320h10.5q4.5 0 9.5 2l182-182q-2-5-2-9.5V-520q0-33 23.5-56.5T400-600q33 0 56.5 23.5T480-520q0 2-2 20l102 102q5-2 9.5-2h21q4.5 0 9.5 2l142-142q-2-5-2-9.5V-560q0-33 23.5-56.5T840-640q33 0 56.5 23.5T920-560q0 33-23.5 56.5T840-480h-10.5q-4.5 0-9.5-2L678-340q2 5 2 9.5v10.5q0 33-23.5 56.5T600-240q-33 0-56.5-23.5T520-320v-10.5q0-4.5 2-9.5L420-442q-5 2-9.5 2H400q-2 0-20-2L198-260q2 5 2 9.5v10.5q0 33-23.5 56.5T120-160Zm40-401-25-54-54-25 54-25 25-54 25 54 54 25-54 25-25 54Zm440-39-38-82-82-38 82-38 38-82 38 82 82 38-82 38-38 82Z"/></svg> ¿Hablamos de tu próxima fase de crecimiento?
+    <svg class="icon-svg text-secondary text-lg" viewBox="0 -960 960 960"><path d="M120-160q-33 0-56.5-23.5T40-240q0-33 23.5-56.5T120-320h10.5q4.5 0 9.5 2l182-182q-2-5-2-9.5V-520q0-33 23.5-56.5T400-600q33 0 56.5 23.5T480-520q0 2-2 20l102 102q5-2 9.5-2h21q4.5 0 9.5 2l142-142q-2-5-2-9.5V-560q0-33 23.5-56.5T840-640q33 0 56.5 23.5T920-560q0 33-23.5 56.5T840-480h-10.5q-4.5 0-9.5-2L678-340q2 5 2 9.5v10.5q0 33-23.5 56.5T600-240q-33 0-56.5-23.5T520-320v-10.5q0-4.5 2-9.5L420-442q-5 2-9.5 2H400q-2 0-20-2L198-260q2 5 2 9.5v10.5q0 33-23.5 56.5T120-160Zm40-401-25-54-54-25 54-25 25-54 25 54 54 25-54 25-25 54Zm440-39-38-82-82-38 82-38 38-82 38 82 82 38-82 38-38 82Z"/></svg> Empieza por una revisión de tu web
     </span>
-    <span class="text-[11px] font-normal text-on-surface-variant ml-7">Sesión estratégica de 45 min. Sin coste. Sin compromiso.</span>
+    <span class="text-[11px] font-normal text-on-surface-variant ml-7">Solicitud → revisión inicial → recomendación → conversación si hay encaje.</span>
   </div>
   <div class="flex items-center gap-3 pointer-events-auto">
-    <button type="button" class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2" data-cal-link="aripa/hoja-de-ruta" data-cal-namespace="hoja-de-ruta" data-cal-config='{"layout":"month_view","useSlotsViewOnSmallScreen":"true"}'>
-      <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg> HABLEMOS
+    <button type="button" class="cta-core btn-after text-white px-8 py-3 rounded-xl shadow-xl flex items-center justify-center gap-2" onclick="openContactModal()">
+      <svg class="icon-svg text-lg" viewBox="0 -960 960 960"><path d="M200-80q-33 0-56.5-23.5T120-160v-560q0-33 23.5-56.5T200-800h40v-80h80v80h320v-80h80v80h40q33 0 56.5 23.5T840-720v560q0 33-23.5 56.5T760-80H200Zm0-80h560v-400H200v400Zm0-480h560v-80H200v80Zm0 0v-80 80Zm280 240q-17 0-28.5-11.5T440-440q0-17 11.5-28.5T480-480q17 0 28.5 11.5T520-440q0 17-11.5 28.5T480-400Zm-188.5-11.5Q280-423 280-440t11.5-28.5Q303-480 320-480t28.5 11.5Q360-457 360-440t-11.5 28.5Q337-400 320-400t-28.5-11.5ZM640-400q-17 0-28.5-11.5T600-440q0-17 11.5-28.5T640-480q17 0 28.5 11.5T680-440q0 17-11.5 28.5T640-400ZM480-240q-17 0-28.5-11.5T440-280q0-17 11.5-28.5T480-320q17 0 28.5 11.5T520-280q0 17-11.5 28.5T480-240Zm-188.5-11.5Q280-263 280-280t11.5-28.5Q303-320 320-320t28.5 11.5Q360-297 360-280t-11.5 28.5Q337-240 320-240t-28.5-11.5ZM640-240q-17 0-28.5-11.5T600-280q0-17 11.5-28.5T640-320q17 0 28.5 11.5T680-280q0 17-11.5 28.5T640-240Z"/></svg> SOLICITAR ANÁLISIS
     </button>
   </div>
 </div>
@@ -1545,19 +1403,16 @@ body { font-family: 'Inter', sans-serif; }
     </div>
 
     <form class="phase1-form" id="contact-form" onsubmit="handleFormSubmit(event)">
-  <div class="form-field"><label class="form-label" for="problem">¿Qué quieres resolver? *</label><input class="form-input" id="problem" name="problem" type="text" placeholder="Por ejemplo: llegan visitas, pero pocos contactos" maxlength="250" required></div>
-  <div class="form-field"><label class="form-label" for="website">URL de tu web <span>(opcional)</span></label><input class="form-input" id="website" name="website" type="url" placeholder="https://tuweb.com" autocomplete="url" inputmode="url"></div>
-  <div class="form-field"><label class="form-label" for="message">Breve contexto <span>(opcional)</span></label><textarea class="form-input" id="message" name="message" placeholder="Qué ocurre, qué habéis probado o qué os gustaría mejorar" maxlength="3000"></textarea></div>
   <div class="contact-row">
     <div class="form-field"><label class="form-label" for="name">Nombre *</label><input class="form-input" id="name" name="name" type="text" autocomplete="name" placeholder="Tu nombre" required></div>
     <div class="form-field"><label class="form-label" for="email">Email *</label><input class="form-input" id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
   </div>
+  <div class="form-field"><label class="form-label" for="website">Web *</label><input class="form-input" id="website" name="website" type="url" placeholder="https://tuweb.com" autocomplete="url" inputmode="url" required></div>
+  <div class="form-field"><label class="form-label" for="problem">¿Qué quieres mejorar? *</label><select class="form-input" id="problem" name="problem" required><option value="" disabled selected>Selecciona lo que más se parece a tu situación</option><option value="trafico_poca_conversion">Tengo tráfico pero convierto poco</option><option value="landings_campanas">Mis landings o campañas no rinden como esperaba</option><option value="formularios_funnel">Pierdo usuarios en formularios o funnel</option><option value="medicion">No confío en mis datos o medición</option><option value="oportunidades">Quiero identificar oportunidades de mejora</option><option value="priorizacion">Necesito priorizar qué hacer primero</option><option value="otro">Otro</option></select></div>
+  <div class="form-field"><label class="form-label" for="message">¿Qué está ocurriendo? *</label><textarea class="form-input" id="message" name="message" placeholder="Cuéntame brevemente qué observas y qué habéis probado" maxlength="3000" required></textarea></div>
   <div class="form-field"><label class="form-label" for="phone">Teléfono <span>(opcional)</span></label><input class="form-input" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Si prefieres que te llame"></div>
-  <!-- Preserve service attribution from service CTAs without asking visitors to diagnose themselves. -->
-  <select id="service" name="service" hidden aria-hidden="true" tabindex="-1">
-    <option value="general">Consulta general</option><option value="cro">CRO y Conversión</option><option value="ux">UX/UI de Negocio</option><option value="analitica">Analítica y Medición</option><option value="growth">Growth y Experimentación</option><option value="seo_geo">SEO, GEO y Contenido</option><option value="landings">Landings y Activos Web</option><option value="automatizacion">Automatización</option><option value="servicios_complementarios">Servicios B2B / Soporte</option>
-  </select>
-  <p class="contact-help">Usaré tus datos para responder a esta solicitud. <a href="/politica-privacidad">Consulta la política de privacidad</a>.</p>
+  <select id="service" name="service" hidden aria-hidden="true" tabindex="-1"><option value="general">Consulta general</option><option value="cro">CRO y Conversión</option><option value="ux">UX/UI de Negocio</option><option value="analitica">Analítica y Medición</option><option value="growth">Growth y Experimentación</option><option value="seo_geo">SEO, GEO y Contenido</option><option value="landings">Landings y Activos Web</option><option value="automatizacion">Automatización</option><option value="servicios_complementarios">Servicios B2B / Soporte</option></select>
+  <p class="contact-help">Primero revisaré tu solicitud. Te recomendaré un siguiente paso y, si hay encaje, podremos conversar. <a href="/politica-privacidad">Consulta la política de privacidad</a>.</p>
   <p class="form-error" role="alert" tabindex="-1" hidden>No se ha podido enviar la solicitud. Tus datos siguen aquí para que puedas intentarlo de nuevo. También puedes escribir a <a href="mailto:hola@aripa.es">hola@aripa.es</a>.</p>
   <button type="submit" class="cta-core bg-primary text-white rounded-xl px-8 py-4 disabled:opacity-50" id="submit-btn">Enviar solicitud</button>
 </form>
@@ -1573,7 +1428,7 @@ body { font-family: 'Inter', sans-serif; }
     <h2 id="success-modal-title" class="text-3xl font-extrabold font-headline text-primary mb-4">¡Solicitud recibida!</h2>
     <p id="success-modal-description" class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-10">
       He recibido tu solicitud. Revisaré personalmente tu caso y te responderé con el siguiente paso.
-      <span class="block mt-4 text-sm opacity-70">Nota: Si no recibes noticias nuestras, por favor revisa tu bandeja de <strong>correo no deseado (spam)</strong>.</span>
+      <span class="block mt-4 text-sm opacity-70">Si no encuentras mi respuesta, revisa tu bandeja de <strong>correo no deseado (spam)</strong>.</span>
     </p>
     <button type="button" class="inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-[#061542] text-white font-bold text-sm uppercase tracking-widest hover:bg-[#6b38fb] hover:scale-[1.02] active:scale-95 transition-all shadow-lg hover:shadow-[0_10px_25px_rgba(107,56,251,0.25)] w-full max-w-[220px] mx-auto mt-4" onclick="closeModal('success-modal')">
       ENTENDIDO
@@ -1740,14 +1595,6 @@ body { font-family: 'Inter', sans-serif; }
   requestAnimationFrame(draw);
 }());
 </script>
-
-<!-- Cal element-click embed code begins -->
-<script type="text/javascript">
-  (function (C, A, L) { let p = function (a, ar) { a.q.push(ar); }; let d = C.document; C.Cal = C.Cal || function () { let cal = C.Cal; let ar = arguments; if (!cal.loaded) { cal.ns = {}; cal.q = cal.q || []; d.head.appendChild(d.createElement("script")).src = A; cal.loaded = true; } if (ar[0] === L) { const api = function () { p(api, arguments); }; const namespace = ar[1]; api.q = api.q || []; if(typeof namespace === "string"){cal.ns[namespace] = cal.ns[namespace] || api;p(cal.ns[namespace], ar);p(cal, ["initNamespace", namespace]);} else p(cal, ar); return;} p(cal, ar); }; })(window, "https://app.cal.com/embed/embed.js", "init");
-  Cal("init", "hoja-de-ruta", {origin:"https://app.cal.com"});
-  Cal.ns["hoja-de-ruta"]("ui", {"theme":"light","styles":{"branding":{"brandColor":"#061542"}},"hideEventTypeDetails":false,"layout":"month_view"});
-</script>
-<!-- Cal element-click embed code ends -->
 
   <!-- High-Priority Universal Text Enforcement -->
   <script type="text/javascript">
