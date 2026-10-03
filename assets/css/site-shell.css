@@ -5,6 +5,10 @@
 html { scroll-padding-top: 6rem; }
 .modal-overlay:not(.active) { display: none; }
 .modal-overlay.active { display: flex; }
+/* The dialog panel receives programmatic focus for assistive technology. It is not
+   itself an interactive control; keyboard focus remains visible on its controls. */
+.modal-overlay .modal-panel:focus { outline: none; }
+.cta-core { text-align: center; justify-content: center; align-items: center; }
 .aripa-header .aripa-header-inner { max-width: 1440px; margin: auto; padding: 0 3rem; min-height: 5rem; display: flex; align-items: center; gap: 2rem; }
 #site-header.aripa-header {
   background-color: rgba(6,21,66,.94);
@@ -50,20 +54,20 @@ html { scroll-padding-top: 6rem; }
 .phase1-cta { background: radial-gradient(circle at 80% 10%, #6c45c066, transparent 65%), #061542; color: white; text-align: center; }
 .phase1-cta p { color: #ffffffe0; margin: 0 auto 1.5rem; max-width: 42rem; line-height: 1.75; }
 .phase1-cta a { display: inline-block; padding: 1rem 1.5rem; border-radius: .75rem; }
-#contact-form.phase1-form { display: grid; gap: 1.15rem; text-align: left; }
+#contact-form.phase1-form { display: grid; gap: .85rem; text-align: left; }
 #contact-form.phase1-form > * { margin: 0; }
 #contact-form .contact-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 #contact-form .form-label { display: block; margin: 0 0 .4rem; text-transform: none; letter-spacing: normal; font-size: .875rem; color: #45464f; }
 #contact-form .form-input { width: 100%; margin: 0; min-height: 46px; padding: .75rem 1rem; }
 #contact-modal .modal-panel > .flex:first-child { margin-bottom: 1rem; }
-#contact-modal .modal-panel > .mb-10 { margin-bottom: 1.25rem; }
-#contact-form textarea.form-input { min-height: 86px; resize: vertical; }
+#contact-modal .modal-panel > .mb-10 { margin-bottom: .85rem; }
+#contact-form textarea.form-input { min-height: 76px; resize: vertical; }
 #contact-form .contact-help { color: #45464f; font-size: .8rem; line-height: 1.6; }
 #contact-form .contact-help a { color: #6c45c0; text-decoration: underline; }
 #contact-form .form-error { color: #9b1c31; padding: .8rem; border: 1px solid #9b1c3140; border-radius: .5rem; font-size: .875rem; }
 #contact-form .form-error[hidden] { display: none; }
 #contact-form [type="submit"] { min-height: 48px; }
-@media (min-width: 768px) { .phase1-section { padding-top: 5rem; padding-bottom: 5rem; } }
+@media (min-width: 768px) { .phase1-section { padding-top: 5rem; padding-bottom: 5rem; } #contact-modal .modal-panel { padding: 2rem; } }
 @media (max-width: 959px) {
   .aripa-header .aripa-header-inner { min-height: 4.25rem; padding: 0 1.5rem; justify-content: space-between; }
   .aripa-menu-toggle { display: inline-flex; }

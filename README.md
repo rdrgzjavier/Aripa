@@ -31,9 +31,10 @@ node tests/analytics-regression.cjs
 node tests/ui-regression.cjs
 node tests/design-regression.cjs
 node tests/header-regression.cjs
+node tests/cta-focus-audit.cjs
 ```
 
-Las pruebas de navegador necesitan Playwright y un navegador Edge instalado. Se pueden indicar `PLAYWRIGHT_MODULE` y `PLAYWRIGHT_CHANNEL=msedge` si no están en el `PATH`. La prueba de UI requiere la vista local en ejecución. Las peticiones externas se interceptan en las pruebas de formularios y consentimiento, de modo que no se envían solicitudes reales. `tests/static-check.py` valida enlaces internos, imágenes, JSON-LD, metadata y sitemap.
+Las pruebas de navegador necesitan Playwright y un navegador Edge instalado. Se pueden indicar `PLAYWRIGHT_MODULE` y `PLAYWRIGHT_CHANNEL=msedge` si no están en el `PATH`. Las pruebas de UI y CTA requieren la vista local en ejecución. Las peticiones externas se interceptan en las pruebas de formularios y consentimiento, de modo que no se envían solicitudes reales. `tests/static-check.py` valida enlaces internos, imágenes, JSON-LD, metadata y sitemap. `tests/cta-focus-audit.cjs` comprueba el texto de los CTA en cuatro anchos y el foco del diálogo con ratón y teclado.
 
 ## Casos reales
 

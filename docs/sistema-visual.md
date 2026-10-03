@@ -21,7 +21,7 @@ Referencia práctica derivada de la Home y Servicios. Las páginas nuevas reutil
 | Fondo cálido | `#fcf9f8` |
 | Texto secundario | `#45464f` |
 
-Los héroes usan azules y morados superpuestos con un grano sutil. En páginas con Hero, el encabezado es transparente arriba para mostrar ese mismo fondo y pasa a vidrio oscuro con desenfoque al desplazarse; las páginas sin Hero conservan el encabezado azul. Las tarjetas son blancas, tienen radio de 16 px, borde morado tenue y una elevación discreta al pasar el cursor. El CTA principal usa el degradado morado de los botones del formulario; sobre fondo oscuro se conserva el botón lavanda. Las transiciones respetan `prefers-reduced-motion`.
+Los héroes usan azules y morados superpuestos con un grano sutil. En páginas con Hero, el encabezado es transparente arriba para mostrar ese mismo fondo y pasa a vidrio oscuro con desenfoque al desplazarse; las páginas sin Hero conservan el encabezado azul. La animación compartida del degradado se detiene fuera de pantalla, al ocultar la pestaña y cuando la persona prefiere menos movimiento. Las tarjetas son blancas, tienen radio de 16 px, borde morado tenue y una elevación discreta al pasar el cursor. El CTA principal usa el degradado morado de los botones del formulario; sobre fondo oscuro se conserva el botón lavanda. Las transiciones respetan `prefers-reduced-motion`.
 
 ## Composición
 
