@@ -2,7 +2,7 @@
 const assert = require('node:assert/strict');
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4173';
-const routes = ['/', '/servicios', '/casos/', '/sobre-aripa'];
+const routes = ['/', '/servicios', '/recursos', '/casos/', '/sobre-aripa'];
 
 (async () => {
   const browser = await chromium.launch({ headless: true, channel: process.env.PLAYWRIGHT_CHANNEL || 'msedge' });
@@ -43,11 +43,12 @@ const routes = ['/', '/servicios', '/casos/', '/sobre-aripa'];
       const services = readings[`/servicios:${width}`];
       assert.ok(home.fonts.some(font => font.startsWith('Inter:')), 'Home must load the shared Inter font');
       assert.ok(services.fonts.some(font => font.startsWith('Inter:')), 'Servicios must load the shared Inter font');
-      for (const route of ['/casos/', '/sobre-aripa']) {
+      for (const route of ['/servicios', '/recursos', '/casos/', '/sobre-aripa']) {
         const current = readings[`${route}:${width}`];
         assert.ok(current.fonts.some(font => font.startsWith('Inter:')), `${route}: shared Inter font must load`);
         assert.match(current.h1.family, /Inter/i, `${route}: H1 font`);
-        assert.equal(current.h1.align, 'center', `${route}: H1 alignment`);
+        assert.equal(current.h1.align, 'left', `${route}: H1 alignment`);
+        if (route === '/servicios' || route === '/recursos') continue;
         assert.ok(current.h1.size >= Math.min(home.h1.size, services.h1.size) - 1, `${route}: H1 too small`);
         assert.ok(current.h1.size <= Math.max(home.h1.size, services.h1.size) + 1, `${route}: H1 too large`);
         assert.ok(current.h2.size <= Math.max(home.h2.size, services.h2.size) + 1, `${route}: H2 too large`);

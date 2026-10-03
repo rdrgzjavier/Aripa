@@ -1001,7 +1001,7 @@ body { font-family: 'Inter', sans-serif; }
 </style>
 
 <link rel="stylesheet" href="/assets/css/site-shell.css?v=20261003-4">
-<link rel="stylesheet" href="/assets/css/issue2-editorial.css?v=20261003-2">
+<link rel="stylesheet" href="/assets/css/issue2-editorial.css?v=20261003-3">
 </head>
 <body data-page="home" class="bg-background text-on-background selection:bg-secondary/30">
 <!-- Skip navigation â€“ accessibility -->
@@ -1051,7 +1051,7 @@ body { font-family: 'Inter', sans-serif; }
         </a>
       </div>
       <aside class="diagnostic-panel hero-animate-4" aria-label="Cómo pensamos un diagnóstico">
-        <div class="diagnostic-panel-head"><span>Mapa de diagnóstico</span><span>Esquema metodológico</span></div>
+        <p class="diagnostic-panel-head">De la señal a la decisión</p>
         <ol><li><strong>Señal</strong><span>¿Dónde se interrumpe el recorrido?</span></li><li><strong>Evidencia</strong><span>¿Qué muestran el comportamiento y la medición?</span></li><li><strong>Hipótesis</strong><span>¿Qué conviene comprobar antes de cambiar?</span></li><li><strong>Decisión</strong><span>¿Qué mejora priorizar y cómo evaluarla?</span></li></ol>
       </aside>
     </div>
@@ -1059,113 +1059,33 @@ body { font-family: 'Inter', sans-serif; }
 
   <!-- Problem Module (New) -->
   <section class="phase1-section issue2-problem" id="problema" data-track-section="pain_points">
-  <div class="issue2-wrap"><div class="issue2-intro"><div><p class="phase1-eyebrow">01 / Leer el recorrido</p><h2>La conversión se pierde a lo largo de un recorrido.</h2><p>Antes de invertir más en captación, conviene averiguar dónde aparecen dudas, esfuerzo o abandono.</p></div><p class="issue2-note">Es un mapa de preguntas, no un resultado atribuido a un cliente.</p></div>
+  <div class="issue2-wrap"><div class="issue2-intro"><div><p class="phase1-eyebrow">01 / Leer el recorrido</p><h2>La conversión se pierde a lo largo de un recorrido.</h2><p>Antes de invertir más en captación, conviene averiguar dónde aparecen dudas, esfuerzo o abandono.</p></div></div>
   <ol class="journey-map"><li><span>01 / Llega</span><h3>Entrada</h3><p>¿Coinciden la promesa de la campaña y lo que ofrece la página?</p><small>Señal: relevancia</small></li><li><span>02 / Entiende</span><h3>Claridad</h3><p>¿Se comprende la oferta y para quién es?</p><small>Señal: comprensión</small></li><li><span>03 / Confía</span><h3>Evidencia</h3><p>¿Hay información suficiente para avanzar sin dudas?</p><small>Señal: confianza</small></li><li><span>04 / Actúa</span><h3>Siguiente paso</h3><p>¿El formulario o la compra facilitan la decisión?</p><small>Señal: fricción</small></li></ol>
   <a class="phase1-link" href="/servicios">Ver cómo abordo estas fricciones →</a></div>
 </section>
 
   <!-- Services -->
-  <section class="phase1-section home-dark-band overflow-x-hidden" id="servicios" data-track-section="services">
-    <div class="px-6 md:px-12 max-w-[1440px] mx-auto">
-    <!-- Nivel 1 — Área principal -->
-    <div class="mb-12 md:mb-16 home-dark-copy">
-      <p class="text-secondary font-bold tracking-widest text-[10px] uppercase mb-2">Optimización y crecimiento digital</p>
-      <h2 class="text-3xl md:text-4xl font-extrabold font-headline text-primary tracking-tighter mb-4">Formas de mejorar lo que ya tienes</h2>
-      <p class="text-base md:text-lg text-on-surface-variant leading-relaxed max-w-4xl">
-        Podemos empezar por un diagnóstico, llevar las prioridades a la práctica o acompañar un ciclo de mejora. El alcance parte de tu problema, tus datos y tu capacidad de ejecución.
-      </p>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-      <!-- 1. CRO y optimización de conversión -->
-      <button type="button"
-           class="optimization-card group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 transition-all duration-300 cursor-pointer flex flex-col gap-8 text-left w-full"
-           onclick="openModal('service-modal-conversion')">
-        <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
-          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="12" cy="12" r="10" />
-            <circle cx="12" cy="12" r="6" />
-            <circle cx="12" cy="12" r="2" fill="currentColor" />
-          </svg>
-        </div>
-        <div class="flex flex-col h-full">
-          <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">CRO y optimización de conversión</h3>
-          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base mb-8">Detectamos puntos de fuga, fricciones y oportunidades de mejora para aumentar el rendimiento de landings, formularios y funnels digitales.</p>
-          <div class="mt-auto">
-            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
-              Saber más <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-            </span>
-          </div>
-        </div>
-      </button>
-
-      <!-- 2. UX/UI orientado a negocio -->
-      <button type="button"
-           class="optimization-card group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 transition-all duration-300 cursor-pointer flex flex-col gap-8 text-left w-full"
-           onclick="openModal('service-modal-ux')">
-        <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
-          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M200-200h57l391-391-57-57-391 391v57Zm-80 80v-170l528-527q12-11 26.5-17t30.5-6q16 0 31 6t26 18l55 56q12 11 17.5 26t5.5 30q0 16-5.5 30.5T817-647L290-120H120Zm640-584-56-56 56 56Zm-141 85-28-29 57 57-29-28Z"/></svg>
-        </div>
-        <div class="flex flex-col h-full">
-          <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">UX/UI orientado a negocio</h3>
-          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base mb-8">Diseñamos experiencias más claras, comprensibles y orientadas a acción, reduciendo carga cognitiva y mejorando la toma de decisiones del usuario.</p>
-          <div class="mt-auto">
-            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
-              Saber más <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-            </span>
-          </div>
-        </div>
-      </button>
-
-      <!-- 3. Analítica y medición -->
-      <button type="button"
-           class="optimization-card group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 transition-all duration-300 cursor-pointer flex flex-col gap-8 text-left w-full"
-           onclick="openModal('service-modal-analytics')">
-        <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
-          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 -960 960 960"><path d="M280-280h80v-280h-80v280Zm160 0h80v-440h-80v440Zm160 0h80v-120h-80v120ZM160-120q-33 0-56.5-23.5T80-200v-560q0-33 23.5-56.5T160-840h640q33 0 56.5 23.5T880-760v560q0 33-23.5 56.5T800-120H160Zm0-80h640v-560H160v560Zm0 0v-560 560Z"/></svg>
-        </div>
-        <div class="flex flex-col h-full">
-          <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">Analítica y medición</h3>
-          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base mb-8">Definimos eventos, objetivos y cuadros de lectura para entender qué ocurre en cada punto crítico y tomar decisiones con datos fiables.</p>
-          <div class="mt-auto">
-            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
-              Saber más <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-            </span>
-          </div>
-        </div>
-      </button>
-
-      <!-- 4. Growth y experimentación -->
-      <button type="button"
-           class="optimization-card group relative bg-white p-8 md:p-10 rounded-2xl border border-secondary/10 md:border-2 md:border-secondary/20 transition-all duration-300 cursor-pointer flex flex-col gap-8 text-left w-full"
-           onclick="openModal('service-modal-growth')">
-        <div class="flex-shrink-0 w-16 h-16 flex items-center justify-center bg-secondary/5 rounded-full group-hover:bg-white/10 transition-colors">
-          <svg class="icon-svg text-secondary text-3xl group-hover:text-white transition-colors" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="22 7 13.5 15.5 8.5 10.5 2 17" />
-            <polyline points="16 7 22 7 22 13" />
-          </svg>
-        </div>
-        <div class="flex flex-col h-full">
-          <h3 class="text-2xl font-extrabold font-headline text-secondary group-hover:text-white transition-colors mb-3">Growth y experimentación</h3>
-          <p class="text-on-surface-variant group-hover:text-white/80 leading-relaxed text-base mb-8">Priorizamos hipótesis, lanzamos mejoras y aprendemos de cada iteración para escalar lo que funciona y descartar lo que no aporta impacto.</p>
-          <div class="mt-auto">
-            <span class="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-secondary/30 text-secondary group-hover:border-white/40 group-hover:text-white font-bold text-xs uppercase tracking-widest transition-all">
-              Saber más <svg class="icon-svg text-sm" viewBox="0 -960 960 960"><path d="m600-200-57-56 184-184H80v-80h647L543-704l57-56 280 280-280 280Z"/></svg>
-            </span>
-          </div>
-        </div>
-      </button>
-    </div>
-
-    <a class="phase1-link" href="/servicios">Ver cómo podemos trabajar juntos →</a>
+  <section class="phase1-section home-dark-band issue2-home-services" id="servicios" data-track-section="services">
+    <div class="issue2-wrap">
+      <div class="issue2-intro"><div>
+        <p class="phase1-eyebrow">Formas de trabajar</p>
+        <h2>Empieza por el problema que necesitas resolver.</h2>
+        <p>El trabajo puede comenzar con un diagnóstico concreto o con una mejora ya identificada. La evidencia marca el siguiente paso.</p>
+      </div></div>
+      <div class="home-service-list">
+        <a href="/servicios#diagnostico-conversion"><span>01 / Detectar</span><h3>Diagnóstico de conversión</h3><p>Localizar dónde se pierden oportunidades y ordenar qué conviene mejorar.</p><span aria-hidden="true" class="home-service-arrow">↗</span></a>
+        <a href="/servicios#optimizacion-landing"><span>02 / Aclarar</span><h3>Optimización de landing</h3><p>Revisar mensaje, estructura y fricciones de una página clave.</p><span aria-hidden="true" class="home-service-arrow">↗</span></a>
+        <a href="/servicios#auditoria-medicion"><span>03 / Entender</span><h3>Auditoría de medición</h3><p>Comprobar si los datos permiten interpretar el recorrido y tomar decisiones.</p><span aria-hidden="true" class="home-service-arrow">↗</span></a>
+        <a href="/servicios#sprint-optimizacion"><span>04 / Mejorar</span><h3>Sprint de optimización</h3><p>Priorizar cambios, ponerlos en práctica y revisar lo aprendido.</p><span aria-hidden="true" class="home-service-arrow">↗</span></a>
+      </div>
     </div>
   </section>
 
   <!-- Methodology -->
-  <section class="phase1-section issue2-experience" id="experiencia" aria-label="Experiencia y trayectoria" data-track-section="clients"><div class="issue2-wrap issue2-split"><div><p class="phase1-eyebrow">Experiencia y credibilidad</p><h2>El criterio viene de trabajar entre negocio, producto y experiencia.</h2><p>Aripa está dirigida por Javier Rodríguez de la Orden. Su trayectoria reúne consultoría, producto digital, marketing, analítica y docencia.</p><a class="phase1-link" href="/sobre-aripa">Conocer a Javier y su recorrido →</a></div><div class="experience-ledger"><div><span>01 / Trayectoria</span><h3>Contextos de negocio distintos</h3><p>Experiencia profesional en entornos como Mindshare y Línea Directa. Se presenta como trayectoria de Javier, no como proyectos de cliente de Aripa.</p></div><div><span>02 / Docencia</span><h3>Producto digital en SHIFTA by Elisava</h3><p>Docencia en el Posgrado en Gestión de Producto Digital, conectando producto, experiencia y negocio.</p></div><div><span>03 / Casos</span><h3>Solo con evidencia publicable</h3><p>Los casos completos incluirán contexto, papel de Aripa, intervención y aprendizajes documentados.</p><a href="/casos/">Ver casos y experiencia ↗</a></div></div></div></section>
+  <section class="phase1-section issue2-experience" id="experiencia" aria-label="Experiencia y trayectoria" data-track-section="clients"><div class="issue2-wrap issue2-split"><div><p class="phase1-eyebrow">Experiencia y credibilidad</p><h2>El criterio viene de trabajar entre negocio, producto y experiencia.</h2><p>Aripa está dirigida por Javier Rodríguez de la Orden. Su trayectoria reúne consultoría, producto digital, marketing, analítica y docencia.</p><a class="phase1-link" href="/sobre-aripa">Conocer a Javier y su recorrido →</a></div><div class="experience-ledger"><div><span>01 / Trayectoria</span><h3>Contextos de negocio distintos</h3><p>Experiencia profesional en entornos como Mindshare y Línea Directa.</p></div><div><span>02 / Docencia</span><h3>Producto digital en SHIFTA by Elisava</h3><p>Docencia en el Posgrado en Gestión de Producto Digital, conectando producto, experiencia y negocio.</p></div><div><span>03 / Casos</span><h3>Decisiones que se pueden explicar</h3><p>El trabajo parte del contexto y termina con prioridades claras para actuar y aprender.</p><a href="/casos/">Ver casos y experiencia ↗</a></div></div></div></section>
 
 <section class="phase1-section issue2-method" id="metodologia" data-track-section="process"><div class="issue2-wrap">
-  <div class="issue2-intro"><div><p class="phase1-eyebrow">02 / Método Aripa</p><h2>Del hallazgo a una decisión que se pueda explicar.</h2><p>La mejora empieza por un problema observable. Cada recomendación debe dejar claro qué sabemos, qué suponemos y qué evaluaremos.</p></div><p class="issue2-note">Un test A/B solo entra si el volumen y la calidad de la medición permiten aprender.</p></div>
+  <div class="issue2-intro"><div><p class="phase1-eyebrow">02 / Método Aripa</p><h2>Del hallazgo a una decisión que se pueda explicar.</h2><p>La mejora empieza por un problema observable. Cada recomendación debe dejar claro qué sabemos, qué suponemos y qué evaluaremos.</p></div></div>
   <ol class="method-ledger"><li><span>01</span><h3>Observar</h3><p>Entender contexto, recorrido, datos disponibles y límites de la medición.</p></li><li><span>02</span><h3>Formular</h3><p>Separar hallazgos de hipótesis para no vender intuición como evidencia.</p></li><li><span>03</span><h3>Priorizar</h3><p>Valorar impacto esperado, esfuerzo, incertidumbre y capacidad de ejecución.</p></li><li><span>04</span><h3>Aprender</h3><p>Implementar lo razonable y revisar si apareció la señal esperada.</p></li></ol>
   <a class="phase1-link" href="/servicios">Explorar las formas de trabajar →</a></div></section>
 
@@ -1173,7 +1093,7 @@ body { font-family: 'Inter', sans-serif; }
 
 
   <!-- Diferencial -->
-  <section class="phase1-section issue2-fit" id="para-quien" data-track-section="ideal_client"><div class="issue2-wrap issue2-split"><div><p class="phase1-eyebrow">03 / Encaje</p><h2>Trabajamos mejor cuando ya existe algo que observar.</h2><p>Aripa encaja con negocios que tienen un activo digital en marcha y quieren decidir qué mejorar antes de invertir más.</p></div><div><ol class="fit-list"><li><span>01</span><div><h3>Un activo en uso</h3><p>Web, ecommerce, landing o producto donde las personas puedan descubrirte, contactar o comprar.</p></div></li><li><span>02</span><div><h3>Tráfico o inversión en captación</h3><p>Actividad suficiente para identificar dónde se pierden oportunidades.</p></div></li><li><span>03</span><div><h3>Capacidad de actuar</h3><p>Margen para mejorar conversión, experiencia o medición y revisar lo aprendido.</p></div></li></ol><p class="issue2-note">Con poco volumen, el primer paso suele ser cualitativo o de medición; no prometería un test A/B.</p></div></div></section>
+  <section class="phase1-section issue2-fit" id="para-quien" data-track-section="ideal_client"><div class="issue2-wrap issue2-split"><div><p class="phase1-eyebrow">03 / Encaje</p><h2>Trabajamos mejor cuando ya existe algo que observar.</h2><p>Aripa encaja con negocios que tienen un activo digital en marcha y quieren decidir qué mejorar antes de invertir más.</p></div><div><ol class="fit-list"><li><span>01</span><div><h3>Un activo en uso</h3><p>Web, ecommerce, landing o producto donde las personas puedan descubrirte, contactar o comprar.</p></div></li><li><span>02</span><div><h3>Tráfico o inversión en captación</h3><p>Actividad suficiente para identificar dónde se pierden oportunidades.</p></div></li><li><span>03</span><div><h3>Capacidad de actuar</h3><p>Margen para mejorar conversión, experiencia o medición y revisar lo aprendido.</p></div></li></ol></div></div></section>
   <section class="phase1-section bg-white" id="quien-esta-detras" data-track-section="founder">
     <div class="max-w-[1440px] mx-auto px-6 md:px-12 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
       <div><p class="phase1-eyebrow">Quién está detrás</p><h2 class="phase1-title text-primary">Soy Javier Rodríguez de la Orden.</h2></div>
