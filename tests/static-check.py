@@ -28,6 +28,10 @@ class Page(HTMLParser):
     def handle_startendtag(self, tag, attrs): self.handle_starttag(tag,attrs)
 pages={p:Page(p) for p in root.rglob('*.html') if not any(part in {'.git', 'node_modules'} for part in p.relative_to(root).parts)}
 errors=[]
+for catalog_name in ('ai-catalog.json', 'ard.json'):
+    catalog=json.loads((root/'.well-known'/catalog_name).read_text(encoding='utf-8'))
+    if catalog.get('specVersion')!='1.0' or catalog.get('host',{}).get('displayName')!='Aripa' or catalog.get('entries')!=[]:
+        errors.append(f'{catalog_name}: invalid or unexpected agent catalog')
 def resolve(url, source):
     u=urlsplit(url)
     if u.scheme and (u.scheme not in ['http','https'] or u.netloc!='aripa.es'): return None,None
