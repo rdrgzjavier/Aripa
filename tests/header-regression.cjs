@@ -5,7 +5,7 @@ const path = require('node:path');
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4173';
 const out = process.env.REVIEW_OUTPUT || path.resolve(__dirname, '../../review');
-const heroRoutes = ['/', '/servicios', '/recursos', '/casos/', '/sobre-aripa', '/aviso-legal', '/politica-cookies', '/politica-privacidad'];
+const heroRoutes = ['/', '/servicios', '/recursos', '/casos/', '/casos/shifta-auditoria/', '/sobre-aripa', '/aviso-legal', '/politica-cookies', '/politica-privacidad'];
 const plainRoute = '/analitica-pymes-decisiones';
 
 (async () => {
@@ -52,6 +52,6 @@ const plainRoute = '/analitica-pymes-decisiones';
       assert.equal(await page.locator('#site-header.aripa-hero-header').count(), 0, 'Article has no Hero marker');
       assert.match(state.color, /^rgba?\(6, 21, 66,?/, 'Article keeps dark header');
     }
-    console.log('PASS: 8 Hero pages transparent → dark on scroll → transparent at top; plain article stays dark, desktop and mobile.');
+    console.log(`PASS: ${heroRoutes.length} Hero pages transparent → dark on scroll → transparent at top; plain article stays dark, desktop and mobile.`);
   } finally { await browser.close(); }
 })().catch(error => { console.error(error); process.exitCode = 1; });

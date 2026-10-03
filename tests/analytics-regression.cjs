@@ -128,6 +128,7 @@ async function fillContactForm(page) {
       ['/servicios/', 'servicios', 'service', 'services'],
       ['/recursos/', 'recursos', 'resource_hub', 'resources'],
       ['/casos/', 'casos', 'case_studies', 'cases'],
+      ['/casos/shifta-auditoria/', 'casos/shifta-auditoria', 'case_study', 'cases'],
       ['/sobre-aripa/', 'sobre-aripa', 'about', 'site']
     ]) {
       await page.goto('http://analytics.fixture' + urlPath);
@@ -142,6 +143,23 @@ async function fillContactForm(page) {
       assert.equal(clicks.at(-1).cta_location, 'header');
     }
     console.log('PASS: canonical path metadata and contact CTA classification');
+
+    await page.goto('http://analytics.fixture/');
+    await page.evaluate(() => {
+      const consent = document.createElement('div');
+      consent.id = 'klaro';
+      consent.innerHTML = '<button type="button" class="cm-btn">Aceptar</button>';
+      document.body.appendChild(consent);
+      consent.querySelector('button').click();
+      const menu = document.createElement('button');
+      menu.id = 'navigation-toggle';
+      menu.type = 'button';
+      menu.textContent = 'Menú';
+      document.body.appendChild(menu);
+      menu.click();
+    });
+    assert.equal((await eventList(page, 'cta_click')).length, 0, 'Consent and menu toggle must not count as CTAs');
+    console.log('PASS: consent and menu controls excluded from CTA analytics');
 
     for (const consentName of ['google-analytics', 'google-tag-manager', 'microsoft-clarity']) {
       requested.length = 0;

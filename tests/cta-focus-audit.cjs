@@ -3,7 +3,7 @@ const fs = require('node:fs');
 const path = require('node:path');
 const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4173';
 const root = path.resolve(__dirname, '..');
-const routes = ['/', ...fs.readdirSync(root).filter(name => name.endsWith('.html') && name !== 'index.html').map(name => '/' + name.replace(/\.html$/, '')), '/casos/'];
+const routes = ['/', ...fs.readdirSync(root).filter(name => name.endsWith('.html') && name !== 'index.html').map(name => '/' + name.replace(/\.html$/, '')), '/casos/', '/casos/shifta-auditoria/'];
 
 (async () => {
   const browser = await chromium.launch({ headless: true, channel: process.env.PLAYWRIGHT_CHANNEL || 'msedge' });

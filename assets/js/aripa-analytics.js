@@ -28,6 +28,7 @@
     else if (pathName === 'servicios' || pathName === 'captacion') { pageType = 'service'; group = 'services'; }
     else if (pathName === 'recursos') { pageType = 'resource_hub'; group = 'resources'; }
     else if (pathName === 'casos') { pageType = 'case_studies'; group = 'cases'; }
+    else if (pathName.indexOf('casos/') === 0) { pageType = 'case_study'; group = 'cases'; }
     else if (pathName === 'sobre-aripa') { pageType = 'about'; }
     else if (document.querySelector('.article-body')) { pageType = 'article'; group = 'resources'; }
     else if (/politica|aviso-legal|privacidad/.test(pathName)) { pageType = 'legal'; group = 'legal'; }
@@ -54,6 +55,7 @@
   function trackClick(e) {
     var el = e.target.closest('a, button, [onclick], [data-cal-link]');
     if (!el) return;
+    if (el.id === 'navigation-toggle' || el.closest('#klaro, #id-cookie-notice, .klaro, .cookie-notice, .cm-modal')) return;
     var text = cleanText(el.innerText || el.getAttribute('aria-label') || el.getAttribute('href') || '');
     var destination = getDestination(el);
     var isCal = !!el.getAttribute('data-cal-link');
