@@ -152,3 +152,24 @@ body[data-page="resource_hub"] nav[aria-label="Temas de Insights"] a:focus-visib
   body.aripa-subpage .about-hero,
   body.aripa-subpage .cases-hero{min-height:0;padding-bottom:3.5rem}
 }
+
+/* Keep article dates and reading times distinct in the editorial list. */
+body[data-page="resource_hub"] #recursos-grid section>div.grid>a>div:first-child{
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  gap:.2rem;
+}
+body[data-page="resource_hub"] #recursos-grid section>div.grid>a>div:first-child>span:nth-child(2){display:none}
+@media(max-width:767px){
+  body[data-page="resource_hub"] #recursos-grid section>div.grid>a>div:first-child{
+    flex-direction:row;
+    flex-wrap:wrap;
+    column-gap:.65rem;
+    row-gap:.25rem;
+  }
+  body[data-page="resource_hub"] #recursos-grid section>div.grid>a>div:first-child>span:last-child{
+    border-left:1px solid currentColor;
+    padding-left:.65rem;
+  }
+}
