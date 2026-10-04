@@ -139,3 +139,16 @@ body[data-page="home"] .principles-ledger li{grid-template-columns:1fr;gap:0}
 @media (min-width:768px) and (max-width:959px){body[data-page="resource_hub"] nav[aria-label="Temas de Insights"] a:first-child{padding-left:1.2rem}}
 @media (hover:none){body[data-page="resource_hub"] nav[aria-label="Temas de Insights"] a:hover{background:transparent}}
 body[data-page="resource_hub"] nav[aria-label="Temas de Insights"] a:focus-visible{outline:2px solid #7c3aed;outline-offset:-2px}
+
+/* Short interior heroes should not reserve an entire screen when the copy fits sooner. */
+@media (min-width:768px){
+  body[data-page="services"] #hero-section.hero-v6,
+  body[data-page="resource_hub"] #hero-section.hero-v6{height:auto;min-height:580px}
+  body[data-page="home"] #hero-section.hero-v6{height:auto;min-height:660px}
+  body.aripa-subpage .about-hero,
+  body.aripa-subpage .cases-hero{min-height:600px}
+}
+@media (max-width:767px){
+  body.aripa-subpage .about-hero,
+  body.aripa-subpage .cases-hero{min-height:0;padding-bottom:3.5rem}
+}
