@@ -110,6 +110,7 @@
 <link rel="canonical" href="https://aripa.es/"/>
 <link rel="preload" href="/style.css?v=20261003-2" as="style">
 <link rel="preload" href="/assets/aripa-logo.png" as="image" fetchpriority="high">
+<link rel="preload" href="/assets/js/hero-gradient.js?v=20261004-1" as="script">
 
 <link rel="icon" href="/assets/favicon-32.png" sizes="32x32">
 <link rel="icon" href="/assets/favicon-64.png" sizes="64x64">
@@ -448,6 +449,7 @@ body { font-family: 'Inter', sans-serif; }
   .reveal-ready[data-delay="5"] { transition-delay: 400ms; }
   #hero-section.hero-v6 {
     position: relative;
+    background: radial-gradient(circle at 65% 45%, rgba(128, 71, 163, .86), transparent 48%), linear-gradient(135deg, #0e1240 0%, #28205d 58%, #4b2b70 100%);
     min-height: 85svh;
     padding: 7.5rem 1.5rem 5rem;
     overflow: hidden;
@@ -1172,7 +1174,7 @@ body { font-family: 'Inter', sans-serif; }
     <div class="form-field"><label class="form-label" for="email">Email *</label><input class="form-input" id="email" name="email" type="email" autocomplete="email" placeholder="tu@email.com" required></div>
   </div>
   <div class="form-field"><label class="form-label" for="website">Web <span>(si ya tienes una)</span></label><input class="form-input" id="website" name="website" type="url" placeholder="https://tuweb.com" autocomplete="url" inputmode="url"></div>
-  <div class="form-field"><label class="form-label" for="problem">¿Qué quieres mejorar? *</label><select class="form-input" id="problem" name="problem" required><option value="" disabled selected>Selecciona lo que más se parece a tu situación</option><option value="web_nueva">Necesito crear una web</option><option value="trafico_poca_conversion">Tengo tráfico pero convierto poco</option><option value="landings_campanas">Mis landings o campañas no rinden como esperaba</option><option value="formularios_funnel">Pierdo usuarios en formularios o funnel</option><option value="medicion">No sé qué canales me traen clientes</option><option value="seo_geo">Quiero mejorar mi visibilidad en buscadores</option><option value="automatizacion">Quiero ahorrar tiempo con automatizaciones</option><option value="oportunidades">Quiero identificar oportunidades de mejora</option><option value="priorizacion">Necesito priorizar qué hacer primero</option><option value="otro">Otro</option></select></div>
+  <div class="form-field"><label class="form-label" for="problem">¿Qué quieres mejorar? *</label><select class="form-input" id="problem" name="problem" required><option value="" disabled selected>Elige una opción</option><option value="web_nueva">Crear una web</option><option value="trafico_poca_conversion">Más contactos o ventas</option><option value="landings_campanas">Mejorar campañas o páginas</option><option value="formularios_funnel">Reducir abandonos</option><option value="medicion">Entender mis datos</option><option value="seo_geo">Aparecer en buscadores</option><option value="automatizacion">Automatizar tareas</option><option value="priorizacion">Saber qué mejorar primero</option><option value="otro">Otro</option></select></div>
   <div class="form-field"><label class="form-label" for="message">¿Qué está ocurriendo? *</label><textarea class="form-input" id="message" name="message" placeholder="Describe brevemente qué observas y qué habéis probado" maxlength="3000" required></textarea></div>
   <div class="form-field"><label class="form-label" for="phone">Teléfono <span>(opcional)</span></label><input class="form-input" id="phone" name="phone" type="tel" autocomplete="tel" placeholder="Si prefieres que te llame"></div>
   <select id="service" name="service" hidden aria-hidden="true" tabindex="-1"><option value="general">Consulta general</option><option value="cro">CRO y Conversión</option><option value="ux">UX/UI de Negocio</option><option value="analitica">Analítica y Medición</option><option value="growth">Growth y Experimentación</option><option value="seo_geo">SEO, GEO y Contenido</option><option value="landings">Landings y Activos Web</option><option value="automatizacion">Automatización</option><option value="servicios_complementarios">Servicios B2B / Soporte</option></select>
@@ -1421,7 +1423,7 @@ body { font-family: 'Inter', sans-serif; }
     });
   })();
 </script>
-<script src="/assets/js/hero-gradient.js?v=20261003" defer></script>
+<script src="/assets/js/hero-gradient.js?v=20261004-1" async></script>
 <script src="/assets/js/consent-analytics.js" defer></script>
 <script src="/analytics/sectionTracking.js" defer></script>
 <script src="/assets/js/aripa-analytics.js?v=20261003-2" defer></script>

@@ -1,4 +1,4 @@
-# Aripa - Consultoría boutique de optimización digital
+# Aripa - Consultoría digital para pymes
 
 ## Sitio principal
 - [Home de Aripa](https://aripa.es/)
@@ -11,26 +11,27 @@
 - [Solicitar análisis](https://aripa.es/#contacto)
 
 ## Qué es Aripa
-Aripa es una consultoría boutique de optimización digital. Crea webs y mejora activos digitales para ayudar a pymes y negocios de habla hispana a captar clientes con decisiones basadas en el contexto y los datos disponibles.
+Aripa ayuda a pymes a crear y mejorar webs, ganar visibilidad en buscadores, convertir visitas en oportunidades y simplificar procesos digitales. El objetivo es que los activos digitales aporten más al negocio.
 
-El enfoque combina CRO, UX/UI, analítica digital, comportamiento, Growth y experimentación. Trabaja tanto con negocios que necesitan crear su web como con quienes quieren mejorar una web existente.
+Combina diseño, contenido, UX, analítica y optimización de conversión. La experimentación se utiliza cuando hay datos y actividad suficientes para comparar opciones. GEO se trata como visibilidad en experiencias de búsqueda con IA, apoyada en buenas prácticas de SEO, sin prometer menciones ni posiciones.
 
 ## Servicios principales
 - [CRO y optimización de conversión](https://aripa.es/servicios)
 - [UX/UI orientado a negocio](https://aripa.es/servicios)
 - [Analítica y medición](https://aripa.es/servicios)
 - [Growth y experimentación](https://aripa.es/servicios)
-- [SEO, GEO y contenido estructurado](https://aripa.es/servicios)
+- [SEO y visibilidad en buscadores](https://aripa.es/servicios#capacidades-complementarias)
 - [Creación y mejora de webs](https://aripa.es/servicios#optimizacion-landing)
+- [Automatización de procesos digitales](https://aripa.es/servicios#automatizacion-procesos)
 
 ## Insights destacados
-- [GEO vs SEO: cómo cambia la visibilidad orgánica con los motores generativos](https://aripa.es/geo-vs-seo)
-- [Behavioral economics aplicado al CRO](https://aripa.es/behavioral-economics-cro)
+- [SEO y GEO: visibilidad en la búsqueda con IA](https://aripa.es/geo-vs-seo)
+- [Comportamiento y conversión](https://aripa.es/behavioral-economics-cro)
 - [Growth marketing para pymes](https://aripa.es/growth-marketing-pymes)
 - [Landing pages para pymes](https://aripa.es/landing-pages-pymes)
-- [Web posicionada para negocio](https://aripa.es/web-posicionada-negocio)
-- [Analítica para pymes: decisiones antes de invertir más](https://aripa.es/analitica-pymes-decisiones)
-- [Arquitectura de contenidos SEO/GEO](https://aripa.es/arquitectura-contenidos-seo-geo)
+- [Una web visible que también convence](https://aripa.es/web-posicionada-negocio)
+- [Analítica web para pymes](https://aripa.es/analitica-pymes-decisiones)
+- [Arquitectura de contenidos para SEO y búsqueda con IA](https://aripa.es/arquitectura-contenidos-seo-geo)
 - [Auditoría web para pymes](https://aripa.es/auditoria-web-pymes)
 - [Captación de leads B2B para pymes](https://aripa.es/captacion-leads-b2b-pymes)
 - [Contenido SEO para pymes](https://aripa.es/contenido-seo-pymes)
