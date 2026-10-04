@@ -24,7 +24,7 @@ html { scroll-padding-top: 6rem; }
   box-shadow: none;
 }
 #site-header.aripa-header.aripa-hero-header.is-sticky {
-  background-color: rgba(6,21,66,.82);
+  background-color: #061542;
   backdrop-filter: blur(14px);
   border-bottom-color: rgba(255,255,255,.08);
   box-shadow: 0 20px 48px -18px rgba(0,0,0,.45);
