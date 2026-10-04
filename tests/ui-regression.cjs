@@ -92,7 +92,7 @@ const routes = ['/', ...fs.readdirSync(root).filter(f=>f.endsWith('.html') && ![
     await page.locator('#contact-modal').waitFor({state:'hidden'});
     await page.goto(base+'/');
     const sections = await page.locator('main > section').evaluateAll(nodes=>nodes.map(n=>n.dataset.trackSection));
-    assert.deepEqual(sections,['hero','pain_points','services','clients','process','ideal_client','founder','principles','featured_insights','faq','final_cta']);
+    assert.deepEqual(sections,['hero','pain_points','services','clients','process','ideal_client','principles','featured_insights','faq','final_cta']);
     await page.locator('#primary-navigation a[data-contact-link]').click();
     await page.locator('#contact-form button[type=submit]').click();
     assert.equal(await page.locator('#success-modal').isVisible(),false,'Invalid empty form cannot count as success');

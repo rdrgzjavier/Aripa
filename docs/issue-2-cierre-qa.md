@@ -32,7 +32,7 @@ Revisión del 3 de octubre de 2026 sobre el estado de `main` y los ajustes final
 
 ## Ajustes realizados en el cierre
 
-- Aripa pasa a ser el sujeto de los trabajos, la auditoría SHIFTA, las respuestas y las propuestas. Javier permanece como responsable/autor en el contexto de «quién está detrás», autorías y datos legales.
+- Aripa pasa a ser el sujeto de los trabajos, la auditoría SHIFTA, las respuestas y las propuestas. La información personal se concentra en Sobre Aripa; el titular legal permanece identificado en Aviso Legal y Privacidad.
 - El footer deja de destacar GEO y aumenta el contraste de su texto pequeño.
 - Se retiraron promesas absolutas de un modal antiguo de CRO/UX y se sincronizaron fechas visibles de artículos con `dateModified`.
 - La URL SHIFTA se clasifica como `case_study` en `aripa_page_view`.

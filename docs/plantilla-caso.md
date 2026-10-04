@@ -10,7 +10,7 @@ La página `/casos/` enlaza el caso de la auditoría del site en desarrollo de S
 - Responsable del cliente y alcance del permiso de publicación:
 - Relación: cliente de Aripa, colaboración, empleo anterior o docencia:
 - Fechas del trabajo:
-- Papel concreto de Javier / Aripa y otros participantes:
+- Papel concreto de Aripa y otros participantes:
 - Fuentes internas que respaldan lo narrado:
 - Servicios relacionados: CRO/conversión, UX/comportamiento, analítica/medición, Growth/experimentación:
 

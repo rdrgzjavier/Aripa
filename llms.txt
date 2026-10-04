@@ -11,7 +11,7 @@
 - [Solicitar análisis](https://aripa.es/#contacto)
 
 ## Qué es Aripa
-Aripa es una consultoría boutique liderada por Javier Rodríguez de la Orden. Crea webs y mejora activos digitales para ayudar a pymes y negocios de habla hispana a captar clientes con decisiones basadas en el contexto y los datos disponibles.
+Aripa es una consultoría boutique de optimización digital. Crea webs y mejora activos digitales para ayudar a pymes y negocios de habla hispana a captar clientes con decisiones basadas en el contexto y los datos disponibles.
 
 El enfoque combina CRO, UX/UI, analítica digital, comportamiento, Growth y experimentación. Trabaja tanto con negocios que necesitan crear su web como con quienes quieren mejorar una web existente.
 
@@ -38,7 +38,6 @@ El enfoque combina CRO, UX/UI, analítica digital, comportamiento, Growth y expe
 
 ## Entidad y fuente de verdad
 - Nombre oficial: Aripa
-- Fundador: Javier Rodríguez de la Orden
 - Ubicación: España
 - Idioma principal: español
 - Alcance: consultoría remota para pymes y negocios digitales
