@@ -96,6 +96,13 @@ const routes = ['/', ...fs.readdirSync(root).filter(f=>f.endsWith('.html') && ![
     await page.locator('#primary-navigation a[data-contact-link]').click();
     await page.locator('#contact-form button[type=submit]').click();
     assert.equal(await page.locator('#success-modal').isVisible(),false,'Invalid empty form cannot count as success');
+    await page.locator('#name').fill('Prueba');
+    await page.locator('#email').fill('prueba@example.com');
+    await page.locator('#problem').selectOption('web_nueva');
+    await page.locator('#message').fill('Necesito una web nueva.');
+    assert.equal(await page.locator('#contact-form').evaluate(form=>form.checkValidity()),true,'A new-web lead can continue without an existing URL');
+    await page.locator('#website').fill('no-es-una-url');
+    assert.equal(await page.locator('#contact-form').evaluate(form=>form.checkValidity()),false,'An entered website must be a valid URL');
     await page.keyboard.press('Escape');
     assert.equal(await page.locator('#primary-navigation a[data-contact-link]').evaluate(el=>el===document.activeElement),true,'Focus returns to opener');
     await page.setViewportSize({width:390,height:844});

@@ -7,6 +7,7 @@
 #hero-section .av6-content{max-width:1320px!important;width:100%;display:grid!important;grid-template-columns:minmax(0,1.25fr) minmax(360px,.8fr);grid-template-rows:auto auto auto;gap:0 5rem;align-items:center;justify-items:start;text-align:left;margin:auto}
 #hero-section .av6-title{grid-column:1;grid-row:1;max-width:760px;font-size:clamp(3rem,5vw,5rem);line-height:1.02;letter-spacing:-.055em;margin:0 0 1.5rem}
 #hero-section .av6-sub{grid-column:1;grid-row:2;max-width:680px;margin:0 0 2rem;font-size:clamp(1.05rem,1.35vw,1.3rem)}
+.av6-process{list-style:disc;padding-left:1.4rem}.av6-process li+li{margin-top:.45rem}.av6-process li::marker{color:#d4c2ff}
 #hero-section .av6-ctas{grid-column:1;grid-row:3;justify-content:flex-start}
 #hero-section .av6-btn-primary,#hero-section .av6-btn-secondary{min-width:0;padding:1rem 1.45rem}
 .diagnostic-panel{grid-column:2;grid-row:1/4;width:100%;border:1px solid rgba(255,255,255,.23);border-radius:1.25rem;background:rgba(8,17,58,.16);backdrop-filter:blur(18px);padding:1.5rem;box-shadow:0 25px 70px rgba(4,8,42,.16)}
