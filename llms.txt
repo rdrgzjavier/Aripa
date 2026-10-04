@@ -25,6 +25,11 @@ Combina diseño, contenido, UX, analítica y optimización de conversión. La ex
 - [Automatización de procesos digitales](https://aripa.es/servicios#automatizacion-procesos)
 
 ## Insights destacados
+- [SEO para búsquedas con IA: prepara tus páginas de servicio](https://aripa.es/seo-busqueda-ia-paginas-servicio): Qué debe explicar una página de servicio para ayudar a quien busca, también cuando Google muestra respuestas con IA.
+- [INP en móvil: cuando tu web tarda en responder](https://aripa.es/inp-web-movil-conversion): Cómo detectar botones, menús y formularios lentos en móvil y decidir qué corregir antes de perder consultas.
+- [GA4 y consentimiento: por qué faltan contactos en tus informes](https://aripa.es/ga4-consentimiento-leads): Cómo revisar formularios, eventos y consentimiento cuando GA4 muestra menos leads que tu correo o CRM.
+- [Automatizar consultas sin perder el trato humano](https://aripa.es/automatizar-consultas-pymes): Qué pasos de la captación conviene automatizar en una pyme y cuáles deben conservar una revisión humana.
+- [¿Poco tráfico para un test A/B? Cómo mejorar igual](https://aripa.es/experimentar-poco-trafico): Alternativas útiles para mejorar una web de pyme cuando las visitas no permiten comparar dos versiones con fiabilidad.
 - [SEO y GEO: visibilidad en la búsqueda con IA](https://aripa.es/geo-vs-seo)
 - [Comportamiento y conversión](https://aripa.es/behavioral-economics-cro)
 - [Growth marketing para pymes](https://aripa.es/growth-marketing-pymes)
