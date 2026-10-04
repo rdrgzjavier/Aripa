@@ -5,7 +5,7 @@ const path = require('node:path');
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4173';
 const out = process.env.REVIEW_OUTPUT || path.resolve(__dirname, '../../review');
-const heroRoutes = ['/', '/servicios', '/recursos', '/casos/', '/casos/shifta-auditoria/', '/sobre-aripa', '/aviso-legal', '/politica-cookies', '/politica-privacidad'];
+const heroRoutes = ['/', '/servicios', '/recursos', '/casos/', '/casos/shifta-auditoria/', '/casos/mamas-de-cielo-y-tierra/', '/sobre-aripa', '/aviso-legal', '/politica-cookies', '/politica-privacidad'];
 const plainRoute = '/analitica-pymes-decisiones';
 
 (async () => {

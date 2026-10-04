@@ -7,7 +7,7 @@ const base = process.env.PREVIEW_URL || 'http://127.0.0.1:4173';
 const out = process.env.REVIEW_OUTPUT || path.resolve(__dirname, '../../review');
 fs.mkdirSync(out, { recursive:true });
 const root = path.resolve(__dirname, '..');
-const routes = ['/', ...fs.readdirSync(root).filter(f=>f.endsWith('.html') && !['index.html','404.html'].includes(f)).map(f=>'/' + f.replace('.html','')), '/casos/', '/casos/shifta-auditoria/'];
+const routes = ['/', ...fs.readdirSync(root).filter(f=>f.endsWith('.html') && !['index.html','404.html'].includes(f)).map(f=>'/' + f.replace('.html','')), '/casos/', '/casos/shifta-auditoria/', '/casos/mamas-de-cielo-y-tierra/'];
 (async () => {
   const browser = await chromium.launch({ headless:true, channel:process.env.PLAYWRIGHT_CHANNEL || 'msedge' });
   const context = await browser.newContext();
