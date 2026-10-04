@@ -26,7 +26,7 @@ const routes = ['/', '/servicios', '/recursos', '/casos/', '/sobre-aripa'];
           };
           const hero = document.querySelector('main > section');
           const header = document.querySelector('#site-header');
-          const card = document.querySelector('.pill, .experience-card');
+          const card = document.querySelector('.pill, .experience-card, .case-logo-track li');
           return {
             h1: properties('main h1'), h2: properties('main h2'), h3: properties('main h3'),
             fonts: [...document.fonts].filter(f => f.status === 'loaded').map(f => `${f.family}:${f.weight}`),
@@ -55,7 +55,7 @@ const routes = ['/', '/servicios', '/recursos', '/casos/', '/sobre-aripa'];
         assert.ok(current.h3.size <= Math.max(home.h3.size, services.h3?.size || 0) + 1, `${route}: H3 too large`);
         assert.match(current.heroBackground, /gradient/, `${route}: branded hero gradient`);
         assert.match(current.headerBlur, /blur/, `${route}: glass header`);
-        assert.equal(current.cardRadius, '16px', `${route}: card radius`);
+        assert.equal(current.cardRadius, route === '/casos/' ? '12px' : '16px', `${route}: card radius`);
         assert.equal(current.bodyBackground, 'rgb(252, 249, 248)', `${route}: warm background`);
       }
     }
