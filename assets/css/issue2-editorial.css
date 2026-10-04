@@ -173,3 +173,23 @@ body[data-page="resource_hub"] #recursos-grid section>div.grid>a>div:first-child
     padding-left:.65rem;
   }
 }
+
+/* Let section introductions use the free width of the existing layout on desktop. */
+@media(min-width:960px){
+  body[data-page="home"] #servicios .issue2-intro,
+  body[data-page="home"] #metodologia .issue2-intro,
+  body[data-page="services"] #ofertas .issue2-intro{grid-template-columns:minmax(0,1fr)}
+
+  body[data-page="home"] #insights .issue2-intro{grid-template-columns:minmax(0,1fr) auto;gap:2rem}
+
+  body[data-page="home"] #servicios .issue2-intro p:not(.phase1-eyebrow),
+  body[data-page="home"] #metodologia .issue2-intro p:not(.phase1-eyebrow),
+  body[data-page="home"] #insights .issue2-intro p:not(.phase1-eyebrow),
+  body[data-page="services"] #ofertas .issue2-intro p:not(.phase1-eyebrow),
+  body[data-page="services"] #servicios-principales p.max-w-4xl,
+  body[data-page="services"] .service-applications-intro,
+  body[data-page="services"] .service-applications-intro>p:not(.phase1-eyebrow),
+  body[data-page="cases"] [data-track-section="final_cta"]>p.max-w-3xl,
+  body[data-page="resource_hub"] [data-track-section="intro"] .max-w-4xl,
+  body[data-page="about"] [data-track-section="ideal_client"]>.max-w-4xl{max-width:none}
+}
