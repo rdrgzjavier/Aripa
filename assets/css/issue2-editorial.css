@@ -135,3 +135,7 @@ body[data-page="home"] .principles-ledger li{grid-template-columns:1fr;gap:0}
 @media(max-width:767px){body[data-page="home"] .diagnostic-panel-question{margin-top:1.25rem}}
 @media(max-width:1100px){.offer-list article{grid-template-columns:minmax(180px,.9fr) minmax(220px,1.3fr)}}
 @media(max-width:767px){.offer-list article{grid-template-columns:1fr}.offer-list article>div:nth-of-type(2){grid-column:1}}
+/* Insights: equal alignment in the two-column layout; touch does not retain hover emphasis. */
+@media (min-width:768px) and (max-width:959px){body[data-page="resource_hub"] nav[aria-label="Temas de Insights"] a:first-child{padding-left:1.2rem}}
+@media (hover:none){body[data-page="resource_hub"] nav[aria-label="Temas de Insights"] a:hover{background:transparent}}
+body[data-page="resource_hub"] nav[aria-label="Temas de Insights"] a:focus-visible{outline:2px solid #7c3aed;outline-offset:-2px}
