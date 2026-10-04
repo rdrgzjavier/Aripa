@@ -89,11 +89,11 @@
   .case-showcase-controls button:focus-visible,.case-logo-track:focus-visible { outline:3px solid #7c3aed; outline-offset:3px; }
   .case-showcase-controls button:disabled { opacity:.4; cursor:default; }
   .case-logo-track { display:flex; gap:1rem; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:thin; padding:.2rem .2rem 1rem; }
-  .case-logo-track li { flex:0 0 min(66vw,220px); aspect-ratio:1; min-width:0; scroll-snap-align:start; background:white; border:1px solid #ded6e8; border-radius:0; padding:1.5rem; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.25rem; text-align:center; }
-  .case-logo-track img { width:96px; height:96px; object-fit:contain; flex:none; filter:grayscale(1) contrast(1.55); }
-  .case-logo-track span { color:#061542; font-size:.85rem; line-height:1.3; font-weight:800; text-transform:uppercase; letter-spacing:.04em; }
-  @media(min-width:768px) { .case-showcase { padding:3rem; } .case-logo-track li { flex-basis:240px; } }
-  @media(min-width:1024px) { .case-showcase-controls { display:none; } .case-logo-track { overflow:visible; justify-content:center; padding:.2rem; } .case-logo-track li { flex-basis:260px; } }
+  .case-logo-track li { flex:0 0 112px; aspect-ratio:1; min-width:0; scroll-snap-align:start; background:white; border:1px solid #ded6e8; border-radius:0; padding:.65rem; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:.5rem; text-align:center; }
+  .case-logo-track img { width:44px; height:44px; object-fit:contain; flex:none; filter:grayscale(1) contrast(1.55); }
+  .case-logo-track span { color:#061542; font-size:.62rem; line-height:1.2; font-weight:800; text-transform:uppercase; letter-spacing:.025em; }
+  @media(min-width:768px) { .case-showcase { padding:3rem; } }
+  @media(min-width:1024px) { .case-showcase-inner { display:grid; grid-template-columns:minmax(0,1fr) auto; align-items:center; gap:2rem; } .case-showcase-head { margin:0; } .case-showcase-controls { display:none; } .case-logo-track { overflow:visible; padding:.2rem; } }
   @media(min-width:768px) { #site-header .header-inner { height:5rem; } .section-wrap { padding:6rem 3rem; } .experience-grid { grid-template-columns:1fr 1fr; } .case-structure { grid-template-columns:repeat(3,1fr); } }
   @media(max-width:767px) { .cases-hero { padding-top:7.5rem; padding-bottom:4rem; } }
 </style>
@@ -206,5 +206,6 @@
     update();
   })();
 </script>
+<script src="/assets/js/klaro-copy.js?v=20261004-1" defer></script>
 </body>
 </html>
