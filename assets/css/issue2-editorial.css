@@ -176,6 +176,10 @@ body[data-page="resource_hub"] #recursos-grid section>div.grid>a>div:first-child
 
 /* Let section introductions use the free width of the existing layout on desktop. */
 @media(min-width:960px){
+  /* Align interior Hero copy with the shared 48px desktop edge. */
+  body.aripa-subpage .about-hero,
+  body.aripa-subpage .cases-hero{padding-left:0!important;padding-right:0!important}
+
   body[data-page="home"] #servicios .issue2-intro,
   body[data-page="home"] #metodologia .issue2-intro,
   body[data-page="services"] #ofertas .issue2-intro{grid-template-columns:minmax(0,1fr)}
