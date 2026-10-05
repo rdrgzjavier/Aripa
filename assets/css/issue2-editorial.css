@@ -180,6 +180,26 @@ body[data-page="resource_hub"] #recursos-grid section>div.grid>a>div:first-child
   body.aripa-subpage .about-hero,
   body.aripa-subpage .cases-hero{padding-left:0!important;padding-right:0!important}
 
+  /* Interior Heroes share one vertical rhythm; Home keeps its distinct split layout. */
+  body[data-page="services"] #hero-section.hero-v6,
+  body[data-page="resource_hub"] #hero-section.hero-v6,
+  body.aripa-subpage .about-hero,
+  body.aripa-subpage .cases-hero{height:580px;min-height:580px;padding-top:0!important;padding-bottom:0!important;display:block!important}
+
+  body[data-page="services"] #hero-section .av6-content,
+  body[data-page="resource_hub"] #hero-section .av6-content,
+  body.aripa-subpage .about-hero>div:not(.av6-grain),
+  body.aripa-subpage .cases-hero>div:not(.av6-grain){padding-top:112px!important}
+
+  body[data-page="services"] #hero-section .av6-sub,
+  body[data-page="resource_hub"] #hero-section .av6-sub,
+  body.aripa-subpage .about-hero h1+p,
+  body.aripa-subpage .cases-hero h1+p{min-height:96px}
+
+  body[data-page="services"] #hero-section .av6-btn-primary,
+  body[data-page="resource_hub"] #hero-section .av6-btn-primary,
+  body.aripa-subpage .interior-hero-cta{height:46px;min-height:46px;padding:0 1.45rem!important}
+
   body[data-page="home"] #servicios .issue2-intro,
   body[data-page="home"] #metodologia .issue2-intro,
   body[data-page="services"] #ofertas .issue2-intro{grid-template-columns:minmax(0,1fr)}
