@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title description">
+  <title id="title">Aripa — Consultoría digital para pymes</title>
+  <desc id="description">Más oportunidades para tu negocio.</desc>
+  <defs>
+    <linearGradient id="background" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#071744"/>
+      <stop offset="0.54" stop-color="#29205f"/>
+      <stop offset="1" stop-color="#7c3aed"/>
+    </linearGradient>
+    <radialGradient id="light" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#c4b5fd" stop-opacity=".5"/>
+      <stop offset="1" stop-color="#c4b5fd" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#background)"/>
+  <circle cx="940" cy="155" r="360" fill="url(#light)"/>
+  <circle cx="1080" cy="525" r="300" fill="url(#light)" opacity=".52"/>
+  <path d="M60 509H1140" stroke="#fff" stroke-opacity=".3"/>
+  <text x="60" y="98" fill="#fff" font-family="Arial, sans-serif" font-size="60" font-weight="700" font-style="italic" letter-spacing="-5">aripa</text>
+  <text x="60" y="194" fill="#ded6fe" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="3">CONSULTORÍA DIGITAL PARA PYMES</text>
+  <text x="60" y="294" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="70" font-weight="800" letter-spacing="-2.5">Más oportunidades</text>
+  <text x="60" y="374" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="70" font-weight="800" letter-spacing="-2.5">para tu negocio.</text>
+  <text x="60" y="453" fill="#eeeafd" font-family="Inter, Arial, sans-serif" font-size="29" font-weight="400">Creamos y mejoramos webs, visibilidad</text>
+  <text x="60" y="492" fill="#eeeafd" font-family="Inter, Arial, sans-serif" font-size="29" font-weight="400">y procesos digitales para pymes.</text>
+  <text x="60" y="570" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="22" font-weight="700">aripa.es</text>
+</svg>
