@@ -25,6 +25,11 @@ Combina diseño, contenido, UX, analítica y optimización de conversión. La ex
 - [Automatización de procesos digitales](https://aripa.es/servicios#automatizacion-procesos)
 
 ## Insights destacados
+- [Perfil de Empresa en Google para pymes](https://aripa.es/perfil-empresa-google-pymes): Cómo cuidar la información local para que las personas entiendan qué haces y cómo contactar.
+- [Search Console para pymes](https://aripa.es/search-console-pymes): Qué mirar antes de cambiar una web a partir de páginas, consultas y clics.
+- [Accesibilidad web para pymes](https://aripa.es/accesibilidad-web-pymes): Mejoras para que más personas entiendan la oferta y completen un formulario.
+- [LCP y velocidad web](https://aripa.es/lcp-web-pymes): Cómo revisar si el contenido principal aparece a tiempo.
+- [Datos estructurados para pymes](https://aripa.es/datos-estructurados-pymes): Cómo ofrecer contexto a los buscadores sin prometer resultados.
 - [SEO para búsquedas con IA: prepara tus páginas de servicio](https://aripa.es/seo-busqueda-ia-paginas-servicio): Qué debe explicar una página de servicio para ayudar a quien busca, también cuando Google muestra respuestas con IA.
 - [INP en móvil: cuando tu web tarda en responder](https://aripa.es/inp-web-movil-conversion): Cómo detectar botones, menús y formularios lentos en móvil y decidir qué corregir antes de perder consultas.
 - [GA4 y consentimiento: por qué faltan contactos en tus informes](https://aripa.es/ga4-consentimiento-leads): Cómo revisar formularios, eventos y consentimiento cuando GA4 muestra menos leads que tu correo o CRM.
