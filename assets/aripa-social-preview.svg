@@ -16,7 +16,7 @@
   <circle cx="940" cy="155" r="360" fill="url(#light)"/>
   <circle cx="1080" cy="525" r="300" fill="url(#light)" opacity=".52"/>
   <path d="M60 509H1140" stroke="#fff" stroke-opacity=".3"/>
-  <text x="60" y="98" fill="#fff" font-family="Arial, sans-serif" font-size="60" font-weight="700" font-style="italic" letter-spacing="-5">aripa</text>
+  <!-- The published PNG composites the approved Aripa mark here. -->
   <text x="60" y="194" fill="#ded6fe" font-family="Inter, Arial, sans-serif" font-size="19" font-weight="700" letter-spacing="3">CONSULTORÍA DIGITAL PARA PYMES</text>
   <text x="60" y="294" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="70" font-weight="800" letter-spacing="-2.5">Más oportunidades</text>
   <text x="60" y="374" fill="#fff" font-family="Inter, Arial, sans-serif" font-size="70" font-weight="800" letter-spacing="-2.5">para tu negocio.</text>
