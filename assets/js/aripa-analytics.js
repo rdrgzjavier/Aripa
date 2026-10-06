@@ -127,6 +127,30 @@
     });
   }
 
+  function trackArticleProgress() {
+    var article = document.querySelector('.article-body');
+    if (!article) return;
+    var milestones = [50, 90];
+    var reached = {};
+
+    function measureProgress() {
+      var rect = article.getBoundingClientRect();
+      var articleHeight = Math.max(article.offsetHeight, 1);
+      var viewed = Math.min(Math.max(window.innerHeight - rect.top, 0), articleHeight);
+      var percent = Math.round((viewed / articleHeight) * 100);
+      milestones.forEach(function (milestone) {
+        if (percent >= milestone && !reached[milestone]) {
+          reached[milestone] = true;
+          push('article_progress', { article_progress: milestone });
+        }
+      });
+    }
+
+    window.addEventListener('scroll', measureProgress, { passive: true });
+    window.addEventListener('resize', measureProgress);
+    measureProgress();
+  }
+
   document.addEventListener('DOMContentLoaded', function () {
     push('aripa_page_view', {
       page_title: document.title,
@@ -137,5 +161,6 @@
     document.addEventListener('submit', trackFormSubmit, true);
     watchLeadSuccess();
     trackTimers();
+    trackArticleProgress();
   });
 })();
