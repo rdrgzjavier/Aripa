@@ -104,6 +104,13 @@
   .pill { border:1px solid rgba(124,58,237,.14); background:white; border-radius:16px; padding:1.25rem; }
   .pill strong { display:block; color:#061542; margin-bottom:.5rem; }
   .pill span { color:#4a4a55; line-height:1.6; font-size:.95rem; }
+  .about-method-steps { display:grid; grid-template-columns:1fr; list-style:none; margin:0; padding:0; border-top:2px solid #061542; border-bottom:1px solid #ddd5e8; }
+  .about-method-steps li { padding:1.5rem 0; border-bottom:1px solid #ddd5e8; }
+  .about-method-steps li:last-child { border-bottom:0; }
+  .about-method-number { display:block; margin-bottom:.65rem; color:#6c45c0; font-size:.72rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+  .about-method-steps h3 { margin:0 0 .6rem; color:#061542; font-size:1.15rem; }
+  .about-method-steps p { margin:0; color:#4a4a55; line-height:1.65; font-size:.95rem; }
+  @media (min-width:768px){ .about-method-steps{grid-template-columns:repeat(3,1fr)} .about-method-steps li{padding:1.5rem 1.5rem;border-bottom:0;border-right:1px solid #ddd5e8} .about-method-steps li:first-child{padding-left:0}.about-method-steps li:last-child{border-right:0} }
   .about-actions { display:flex; gap:1.25rem; flex-wrap:wrap; align-items:center; margin-top:2rem; }
   .about-link { color:#6c45c0; text-decoration:underline; text-underline-offset:4px; font-weight:600; }
   .about-button { display:inline-flex; align-items:center; justify-content:center; padding:1rem 1.5rem; border-radius:12px; background:#061542; color:white; font-weight:600; text-align:center; }
@@ -175,11 +182,11 @@
       <h2 class="font-headline text-4xl md:text-5xl leading-none tracking-tight mb-6">Cómo será el trabajo contigo.</h2>
       <p class="text-on-surface-variant text-lg leading-relaxed">Acordamos contigo qué necesita tu negocio, qué trabajo tiene sentido y cómo se sabrá si ha ayudado.</p>
     </div>
-    <div class="pill-grid">
-      <div class="pill"><h3>1. Diagnosticar</h3><span>Entender tu oferta, tu web y las dificultades que encuentran tus clientes.</span></div>
-      <div class="pill"><h3>2. Priorizar</h3><span>Elegir las mejoras con más sentido para tus objetivos y recursos.</span></div>
-      <div class="pill"><h3>3. Mejorar y aprender</h3><span>Poner en marcha los cambios acordados y comprobar su efecto.</span></div>
-    </div>
+    <ol class="about-method-steps">
+      <li><span class="about-method-number">01 / Diagnosticar</span><h3>Entender el punto de partida</h3><p>Revisar tu oferta, tu web y las dificultades que encuentran tus clientes.</p></li>
+      <li><span class="about-method-number">02 / Priorizar</span><h3>Elegir qué merece atención</h3><p>Decidir las mejoras con más sentido para tus objetivos y recursos.</p></li>
+      <li><span class="about-method-number">03 / Mejorar</span><h3>Ponerlo en marcha</h3><p>Aplicar los cambios acordados y comprobar qué ayuda a avanzar.</p></li>
+    </ol>
   </section>
   <section class="section-wrap bg-white" data-track-section="ideal_client">
     <div class="max-w-4xl mb-12">
