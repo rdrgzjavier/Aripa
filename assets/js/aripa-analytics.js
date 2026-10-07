@@ -5,15 +5,35 @@
   var generatedLead = false;
   var firedTimers = {};
   var pageMeta = getPageMeta();
+  var directGa4Events = {
+    aripa_page_view: true,
+    form_start: true,
+    form_submit_attempt: true,
+    engagement_time: true,
+    article_progress: true
+  };
 
   function push(eventName, params) {
-    window.dataLayer.push(Object.assign({
+    var eventData = Object.assign({
       event: eventName,
       page_type: pageMeta.page_type,
       page_slug: pageMeta.page_slug,
       content_group: pageMeta.content_group,
       device_type: window.matchMedia('(max-width: 767px)').matches ? 'mobile' : 'desktop'
-    }, params || {}));
+    }, params || {});
+
+    window.dataLayer.push(eventData);
+
+    /*
+     * The events below do not have a dedicated GTM event tag. Sending them
+     * through the Google tag keeps the existing GTM events untouched, honours
+     * Consent Mode and never includes form fields or other personal data.
+     */
+    if (directGa4Events[eventName] && typeof window.gtag === 'function') {
+      var ga4Params = Object.assign({}, eventData);
+      delete ga4Params.event;
+      window.gtag('event', eventName, ga4Params);
+    }
   }
 
   function cleanText(value) {
