@@ -32,7 +32,9 @@ La etiqueta base usa `G-8METZ78PVG` y se activa solo después del consentimiento
 
 Etiquetas de evento ya existentes: `cta_click`, `generate_lead`, `schedule_intent`, `scroll_depth`, `section_view` y `section_engagement`.
 
-Para los eventos de diagnóstico, crear una única etiqueta de evento GA4 llamada `GA4 - diagnostic_events` y un único activador de evento personalizado llamado `EV - diagnostic_events`:
+`aripa_page_view`, `form_start`, `form_submit_attempt`, `engagement_time` y `article_progress` se envían desde `assets/js/aripa-analytics.js` mediante la etiqueta de Google ya configurada. El script conserva además el evento equivalente en `dataLayer`, por lo que GTM Preview permite revisarlo. Esta vía respeta el estado de consentimiento que aplica Klaro/Consent Mode y no añade etiquetas ni carga librerías duplicadas.
+
+Si en el futuro se decide centralizar también estos eventos en GTM, sustituir el envío directo, nunca duplicarlo, por una única etiqueta de evento GA4 llamada `GA4 - diagnostic_events` y un único activador de evento personalizado llamado `EV - diagnostic_events`:
 
 - Nombre del evento de la etiqueta: `{{Event}}`.
 - Patrón del activador: `^(aripa_page_view|form_start|form_submit_attempt|engagement_time|article_progress)$`.
