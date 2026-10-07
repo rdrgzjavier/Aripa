@@ -196,7 +196,8 @@ body[data-page="resource_hub"] #recursos-grid section>div.grid>a>div:first-child
   body[data-page="home"] #metodologia .issue2-intro,
   body[data-page="services"] #ofertas .issue2-intro{grid-template-columns:minmax(0,1fr)}
 
-  body[data-page="home"] #insights .issue2-intro{grid-template-columns:minmax(0,1fr) auto;gap:2rem}
+  body[data-page="home"] #insights .issue2-intro{grid-template-columns:minmax(0,1fr);gap:1.25rem}
+  body[data-page="home"] #insights .phase1-link{display:inline-block;margin-top:1.35rem}
 
   body[data-page="home"] #servicios .issue2-intro p:not(.phase1-eyebrow),
   body[data-page="home"] #metodologia .issue2-intro p:not(.phase1-eyebrow),
